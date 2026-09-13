@@ -21,7 +21,7 @@ import { offsetContour, contourPath, verify, clipContour, clipByDistance } from 
 import { Path, polyContour, circlePath, add, sub, mul, unit, len, dot } from '../v5/geom.mjs';
 import { sharpEndIn } from '../v5/icons.mjs';
 import { flatten } from '../v5/offset.mjs';
-import { readSubpaths, skeletonOf, deFillet } from './his.mjs';
+import { readSubpaths, skeletonOf, deFillet, lineCross, arcOf } from './his.mjs';
 import { offsetPath, verify as verifyOffset } from '../../.claude/skills/icon-system/tools/offset.mjs';
 import { strokedBBox, outlines, minGap } from '../../pipeline/lib/geom.mjs';
 
@@ -602,16 +602,138 @@ const LANDING_BODY = (() => {
   return mapPath(turned, (q) => [q[0] + 12 - (b[0] + b[2]) / 2, q[1] + 3 - b[1]]);
 })();
 
+/**
+ * A contour with its specks taken out: pieces shorter than `eps`, control
+ * polygon and all. His nose tip carries two cubics 0.005 long, and offsetting
+ * them gave the join round the tip tangents that point anywhere, so the 1-unit
+ * arc there came out as four chords and the fill's nose showed facets 0.09 deep
+ * (found 13 Sep 2026). The stroke keeps his path; only the offset reads this.
+ */
+function dropSpecks(d, eps = 0.02) {
+  const t = d.match(/[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?/gi) || [];
+  let i = 0, cur = null, out = '';
+  const f = (q) => `${q[0]} ${q[1]}`;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === 'M') { cur = [+t[i++], +t[i++]]; out += `M${f(cur)}`; }
+    else if (c === 'L') { const q = [+t[i++], +t[i++]]; if (len(sub(q, cur)) >= eps) { out += `L${f(q)}`; cur = q; } }
+    else if (c === 'C') {
+      const c1 = [+t[i++], +t[i++]], c2 = [+t[i++], +t[i++]], q = [+t[i++], +t[i++]];
+      if (len(sub(c1, cur)) + len(sub(c2, c1)) + len(sub(q, c2)) >= eps) { out += `C${f(c1)} ${f(c2)} ${f(q)}`; cur = q; }
+    } else if (c === 'Z' || c === 'z') out += 'Z';
+  }
+  return out;
+}
+
+/**
+ * Sharp for a drawing whose corners are his r=0.5 fillets on free cubics, 13 Sep
+ * 2026. Each fillet (an arc under r=1.2) becomes the vertex its two tangents
+ * meet at, so every line and curve beside it keeps its direction and nothing
+ * kinks. A vertex whose round join would paint past the rounded drawing's box
+ * slides inward along the tangent that has to stay put (the one running on to a
+ * curve), and the free line on its other side takes the turn.
+ */
+function sharpenFillets(d, maxR = 1.2) {
+  const t = d.match(/[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?/gi) || [];
+  const segs = []; let i = 0, cur = null, start = null, closed = false;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === 'M') { cur = [+t[i++], +t[i++]]; start = cur; }
+    else if (c === 'L') { const q = [+t[i++], +t[i++]]; segs.push({ L: true, p0: cur, p1: q }); cur = q; }
+    else if (c === 'C') { const c1 = [+t[i++], +t[i++]], c2 = [+t[i++], +t[i++]], q = [+t[i++], +t[i++]]; segs.push({ C: true, p0: cur, c1, c2, p1: q }); cur = q; }
+    else if (c === 'Z' || c === 'z') closed = true;
+  }
+  const n = segs.length, at = (k) => segs[((k % n) + n) % n];
+  for (const s of segs) if (s.C && len(sub(s.p1, s.p0)) > 1e-3) {
+    try { const a = arcOf({ a: s.p0, c1: s.c1, c2: s.c2, b: s.p1 }, 0.02); if (a.r < maxR) s.fillet = a; } catch { /* a free curve */ }
+  }
+  const dirIn = (s) => unit(s.L ? sub(s.p1, s.p0) : sub(s.p1, s.c2)), dirOut = (s) => unit(s.L ? sub(s.p1, s.p0) : sub(s.c1, s.p0));
+  // a line is FREE at its far end when that end is a fillet vertex or a corner
+  const freeBefore = (k) => { const a = at(k - 1); if (!a.L) return false; if (!closed && k - 1 === 0) return true; const b = at(k - 2); return !!b.fillet || Math.abs(cross(dirIn(b), dirOut(a))) > 0.02; };
+  const freeAfter = (k) => { const a = at(k + 1); if (!a.L) return false; if (!closed && k + 1 === n - 1) return true; const b = at(k + 2); return !!b.fillet || Math.abs(cross(dirIn(a), dirOut(b))) > 0.02; };
+  const box = strokedBBox(d, 1, 'round');
+  segs.forEach((s, k) => {
+    if (!s.fillet) return;
+    let V = lineCross({ p0: s.p0, p1: s.c1 }, { p0: s.c2, p1: s.p1 });
+    const over = [box[0] - (V[0] - 1), box[1] - (V[1] - 1), (V[0] + 1) - box[2], (V[1] + 1) - box[3]];
+    if (Math.max(...over) > 1e-3) {
+      // try each way in and keep the one that turns its neighbours least: along
+      // the incoming tangent, along the outgoing one, or down the bisector
+      const u = unit(sub(s.p0, V)), w = unit(sub(s.p1, V));
+      const turnOf = (Vn, far) => { const a = unit(sub(far, V)), b = unit(sub(far, Vn)); return Math.abs(Math.asin(Math.max(-1, Math.min(1, cross(a, b))))); };
+      const farIn = freeBefore(k) ? at(k - 1).p0 : s.p0, farOut = freeAfter(k) ? at(k + 1).p1 : s.p1;
+      let best = null;
+      for (const dir of [u, w, unit(add(u, w))]) {
+        let need = 0, ok = true;
+        [[0, 1], [1, 1], [0, -1], [1, -1]].forEach(([ax, sg], j) => { if (over[j] > 0) { const c = sg * dir[ax]; if (c <= 1e-6) ok = false; else need = Math.max(need, over[j] / c); } });
+        if (!ok) continue;
+        const Vn = add(V, mul(dir, need)), cost = Math.max(turnOf(Vn, farIn), turnOf(Vn, farOut));
+        if (!best || cost < best.cost) best = { Vn, cost };
+      }
+      V = best.Vn;
+    }
+    s.V = V;
+  });
+  const f = (q) => `${fmtN(q[0])} ${fmtN(q[1])}`;
+  let out = `M${f(segs[0].fillet ? segs[0].V : segs[0].p0)}`;
+  segs.forEach((s, k) => {
+    const next = at(k + 1), prev = at(k - 1);
+    if (s.fillet) { out += `L${f(s.V)}`; return; }
+    if (s.L) { if (next.fillet && (k < n - 1 || closed)) return; out += `L${f(s.p1)}`; return; }
+    if (prev.fillet && (k > 0 || closed)) out += `L${f(s.p0)}`;
+    out += `C${f(s.c1)} ${f(s.c2)} ${f(s.p1)}`;
+  });
+  return out + (closed ? 'Z' : '');
+}
+const cross = (a, b) => a[0] * b[1] - a[1] * b[0];
+
+/**
+ * A plate's convex r=1 join arcs as the points they round, for a sharp fill with
+ * true corners. A point that would stand past `box` is cut on the box's edge,
+ * the house rule for every sharp end: it paints to the round sibling's box, no
+ * further.
+ */
+function miterJoins(d, box = [1, 1, 23, 23]) {
+  const t = d.match(/[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?/gi) || [];
+  let i = 0, cur = null, out = '', count = 0;
+  const f = (q) => `${fmtN(q[0])} ${fmtN(q[1])}`;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === 'M') { cur = [+t[i++], +t[i++]]; out += `M${f(cur)}`; }
+    else if (c === 'L') { cur = [+t[i++], +t[i++]]; out += `L${f(cur)}`; }
+    else if (c === 'C') {
+      const c1 = [+t[i++], +t[i++]], c2 = [+t[i++], +t[i++]], q = [+t[i++], +t[i++]];
+      let arc = null; try { arc = arcOf({ a: cur, c1, c2, b: q }, 0.01); } catch { /* free */ }
+      const sweep = arc ? Math.abs(arc.a1 - arc.a0) : 0;
+      if (arc && Math.abs(arc.r - 1) < 0.02 && sweep > 5 && sweep < 150) {
+        const V = lineCross({ p0: cur, p1: c1 }, { p0: c2, p1: q });
+        const edges = [[0, box[0]], [1, box[1]], [0, box[2]], [1, box[3]]].filter(([ax, v], j) => (j < 2 ? V[ax] < v - 1e-6 : V[ax] > v + 1e-6));
+        if (!edges.length) out += `L${f(V)}L${f(q)}`;
+        else {
+          const [ax, v] = edges[0];
+          const hit = (a, b) => { const k = (v - a[ax]) / (b[ax] - a[ax]); return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k]; };
+          out += `L${f(hit(cur, V))}L${f(hit(q, V))}L${f(q)}`;
+        }
+        count++;
+      }
+      else out += `C${f(c1)} ${f(c2)} ${f(q)}`;
+      cur = q;
+    } else if (c === 'Z' || c === 'z') out += 'Z';
+  }
+  return out;
+}
+
 function planePair(body) {
   const BOX = [1, 3, 23, 21];
   const out = {};
   for (const sharp of [false, true]) {
     const key = sharp ? 'sharp' : 'regular';
     const rule = run([[2, 20], [22, 20]], sharp, [true, true], BOX);
-    const fine = refineCubics(body);
+    const drawn = sharp ? sharpenFillets(dropSpecks(body)) : body;
+    const fine = refineCubics(dropSpecks(drawn));
     const plate = snapPath(trimInset(offsetPath(fine, 1), fine, 1));
     verifyOffset(fine, plate, 1, 0.02);
-    const d = body + rule;
+    const d = drawn + rule;
     out[`stroke.${key}`] = [S(d)];
     out[`duotone.${key}`] = [P(plate), S(d)];
     out[`fill.${key}`] = [F_(plate), S(rule)];
@@ -797,6 +919,8 @@ const LEAF_STALK = 'M12.5003 14.0037C10.5004 18.5012 6.2492 17.7512 3.0003 21';
 
 const LEAF_BOX = [2, 2, 22, 22];
 
+
+
 SETS['leaf'] = () => {
   const BOX = LEAF_BOX;
   const out = {};
@@ -804,9 +928,13 @@ SETS['leaf'] = () => {
     const key = sharp ? 'sharp' : 'regular';
     // only the stalk's outer end is free; its other end is buried in the body
     const stalk = sharp ? stubbed(LEAF_STALK, [false, true], BOX) : LEAF_STALK;
-    const plate = snapPath(offsetPath(LEAF_BODY, 1));
-    verifyOffset(LEAF_BODY, plate, 1, 0.05);
-    const d = LEAF_BODY + stalk;
+    const body = LEAF_BODY;
+    // refined first: one cubic offset per long curve left the fill 0.06 inside
+    // the stroke's own outer edge along the top (found 13 Sep 2026)
+    const fine = refineCubics(body);
+    const plate = snapPath(trimInset(offsetPath(fine, 1), fine, 1));
+    verifyOffset(fine, plate, 1, 0.02);
+    const d = body + stalk;
     out[`stroke.${key}`] = [S(d)];
     out[`duotone.${key}`] = [P(plate), S(d)];
     out[`fill.${key}`] = [F_(plate), S(stalk)];
@@ -1420,14 +1548,18 @@ SETS['pig'] = () => {
     const key = sharp ? 'sharp' : 'regular';
     // the tail dies in the body at one end and curls free at the other
     const tail = sharp ? stubbed(PIG.tail, [false, true], BOX) : PIG.tail;
-    const fine = refineCubics(PIG.body);
+    // sharp: his fillets as vertices, and the fill's corners as points, the
+    // way piggy-bank took them on his word of 13 Sep 2026
+    const body = sharp ? sharpenFillets(PIG.body) : PIG.body;
+    const fine = refineCubics(body);
     const plate = snapPath(trimInset(offsetPath(fine, 1), fine, 1));
     verifyOffset(fine, plate, 1, 0.02);
+    const solid = sharp ? snapPath(miterJoins(plate, BOX)) : plate;
     const eye = circlePath(PIG.eye, 1);
-    const d = PIG.body + tail;
+    const d = body + tail;
     out[`stroke.${key}`] = [S(d), F_(eye)];
     out[`duotone.${key}`] = [P(plate), S(d), F_(eye)];
-    out[`fill.${key}`] = [F_(plate + holeAgainst(plate, eye)), S(tail)];
+    out[`fill.${key}`] = [F_(solid + holeAgainst(solid, eye)), S(tail)];
   }
   return out;
 };
@@ -1454,26 +1586,114 @@ const PIGGY_PLATE = {
   sharp: 'M12.2064 5.5027C12.3515 5.2496 12.5572 4.9788 12.8253 4.7134C13.095 4.4464 13.4326 4.1802 13.845 3.9401C14.2577 3.6997 14.7434 3.4865 15.3083 3.3242C15.8731 3.162 16.5141 3.0515 17.2375 3.014C17.6708 2.9916 18.0649 3.16 18.3439 3.4344C18.6209 3.7069 18.7895 4.0872 18.7895 4.5V7.4175C18.7895 7.5279 18.6378 7.0463 18.6999 7.1326C18.762 7.2188 18.4379 6.9564 18.5391 7.0005C19.0704 7.2322 19.5133 7.567 19.8613 7.9924C20.2066 8.4145 20.4387 8.9011 20.5849 9.4165C20.7304 9.9294 20.7932 10.4784 20.7979 11.0409C20.799 11.1849 20.5771 10.6324 20.6699 10.7289C20.7627 10.8254 20.1702 10.579 20.314 10.579H21.5C21.9139 10.579 22.2902 10.7479 22.5606 11.0183C22.831 11.2886 23 11.665 23 12.079V13.9211C23 14.3351 22.831 14.7114 22.5606 14.9817C22.2903 15.2521 21.914 15.4211 21.5 15.4211H20.2839C20.1459 15.4211 20.7456 15.1682 20.6593 15.2584C20.573 15.3486 20.799 14.7247 20.8069 14.8626C20.8229 15.1421 20.8373 15.5208 20.7852 15.932C20.7324 16.3489 20.6096 16.8156 20.342 17.2746C20.0719 17.7381 19.6758 18.1562 19.128 18.5C18.5866 18.8397 17.9119 19.098 17.0851 19.2703C16.9648 19.2953 17.4189 19.0268 17.3437 19.1157C17.2684 19.2047 17.4598 18.6721 17.4598 18.795V21.5C17.4598 21.9139 17.2909 22.2902 17.0206 22.5606C16.7502 22.831 16.3738 23 15.9598 23H13.8308C13.5932 23 13.3624 22.9436 13.156 22.8396C12.9496 22.7356 12.7669 22.5838 12.6255 22.3928L10.82 19.9555C10.7729 19.8919 11.0657 20.1391 10.9968 20.1044C10.9281 20.0698 11.301 20.1579 11.2218 20.1579H10.6729C10.5937 20.1579 10.9666 20.0698 10.8977 20.1045C10.829 20.1391 11.1218 19.8919 11.0746 19.9555L9.2693 22.3928C9.1279 22.5837 8.9453 22.7355 8.7388 22.8396C8.5323 22.9437 8.3015 23 8.0639 23H5.8795C5.4655 23 5.0892 22.831 4.8189 22.5606C4.5486 22.2903 4.3795 21.914 4.3795 21.5V19.4879C4.3795 19.3878 4.5113 19.8385 4.4586 19.7576C4.4061 19.6769 4.7298 19.9628 4.6399 19.9189C4.2489 19.7277 3.8823 19.5048 3.5433 19.2464C3.204 18.9879 2.8949 18.6958 2.6185 18.3682C2.3421 18.0407 2.1013 17.6813 1.8962 17.2901C1.6912 16.8992 1.5232 16.4792 1.3904 16.0309C1.2577 15.5828 1.1602 15.1064 1.0958 14.6021C1.0314 14.0978 1 13.564 1 13C1 12.4741 1.0532 11.9673 1.1575 11.4818C1.262 10.9961 1.4171 10.5344 1.6192 10.0988C1.7569 9.802 1.9077 9.5122 2.0718 9.2309C2.2359 8.9495 2.4133 8.6764 2.6043 8.413L4.2236 9.5869C5.2077 10.0275 6.2739 10.2553 7.3522 10.2553C10.0583 10.2553 12.2064 7.66453 12.2064 5.5027ZM10 4C10 5.6569 8.6569 7 7 7C5.3431 7 4 5.6569 4 4C4 2.3431 5.3431 1 7 1C8.6569 1 10 2.3431 10 4Z',
 };
 
+/**
+ * His sharp plate, with the loops taken out, 13 Sep 2026. The file carries
+ * seven tiny self-crossing loops, one at every concave corner: the ear, both
+ * sides of the snout, the belly, the back leg and two at the crotch. Outlining
+ * a stroke leaves them, a nonzero renderer hides them, and Figma paints fills
+ * evenodd, so each one showed as a white nick in the sharp fill. Away from the
+ * mouth his two plates are the same outline, and the rounded one has exactly
+ * those corners trimmed clean, so sharp is the rounded plate with his sharp
+ * mouth in place of the round cap, and the coin disc as he drew it.
+ */
+const PIGGY_SHARP_CLEAN = (() => {
+  const cap = 'C2.7923 8.1536 3.0934 8 3.4139 8C8.5 10 10 8.5 12.2064 5.5027Z';
+  const mouth = 'L4.2236 9.5869C5.2077 10.0275 6.2739 10.2553 7.3522 10.2553C10.0583 10.2553 12.2064 7.66453 12.2064 5.5027Z';
+  const coin = 'M10 4C10 5.6569 8.6569 7 7 7C5.3431 7 4 5.6569 4 4C4 2.3431 5.3431 1 7 1C8.6569 1 10 2.3431 10 4Z';
+  const [body] = PIGGY_PLATE.regular.split(cap);
+  if (!PIGGY_PLATE.regular.includes(cap) || !PIGGY_PLATE.sharp.includes(mouth + coin)) throw new Error('piggy-bank: a plate moved');
+  return body + mouth + coin;
+})();
+
 const PIGGY = {
   body: 'M13.074 6C13.4604 5.3259 14.6805 4.1477 17.2892 4.0127C17.5649 3.9984 17.7895 4.2239 17.7895 4.5L17.7895 7.4175C17.7895 7.6383 17.9368 7.8288 18.1392 7.9171C19.311 8.4281 19.7857 9.5613 19.7979 11.0491C19.8002 11.3367 20.0264 11.579 20.314 11.579L21.5 11.579C21.7761 11.579 22 11.8028 22 12.079L22 13.9211C22 14.1972 21.7761 14.4211 21.5 14.4211L20.2839 14.4211C20.0078 14.4211 19.7927 14.6441 19.8085 14.9198C19.8692 15.978 19.8425 17.6743 16.8811 18.2913C16.6406 18.3414 16.4598 18.5493 16.4598 18.795L16.4598 21.5C16.4598 21.7761 16.236 22 15.9598 22L13.8308 22C13.6724 22 13.5233 21.9249 13.429 21.7976L11.6236 19.3603C11.5293 19.233 11.3802 19.1579 11.2218 19.1579L10.6729 19.1579C10.5145 19.1579 10.3654 19.233 10.2711 19.3603L8.4657 21.7976C8.3714 21.9249 8.2224 22 8.0639 22L5.8795 22C5.6034 22 5.3795 21.7761 5.3795 21.5L5.3795 19.4879C5.3795 19.2877 5.2589 19.1084 5.0791 19.0205C3.0584 18.0324 2 16.1626 2 13C2 12.0836 2.1851 11.2551 2.5263 10.5197C2.7763 9.9809 3.072 9.4716 3.4139 9',
   coin: [7, 4, 2],
   eye: [16, 10.5],
 };
 
+/**
+ * Three changes of 13 Sep 2026, all on his word.
+ *
+ * THE ROUNDED LIP. His back curve left the cap circle at its top, (3.4139, 8),
+ * already heading down and right, so it cut 0.058 off the stroke's own round
+ * cap and the fill showed a flat there. The cap arc now runs on to the point
+ * where the curve can leave the circle on its tangent, the tangent from his
+ * first control point (8.5, 10), and the curve keeps both of his controls.
+ *
+ * SHARP CORNERS. His sharp stroke was the rounded one with flat ends, so the
+ * ear, the snout, the belly, the legs and the crotch kept their r=0.5 fillets.
+ * Every fillet is now the vertex its two tangents meet at, the way the sharp
+ * hands took theirs. The two open ends are his and stay where they were.
+ *
+ * SHARP FILL. It takes true corners like the hands' fills: the seven convex
+ * r=1.5 arcs of the plate become the points its edges meet at. The duotone
+ * keeps the arcs, which sit inside the stroke's round joins and never show.
+ */
+const PIGGY_LIP = (() => {
+  const C = [3.4139, 9], P0 = [2.6043, 8.413], E = [8.5, 10];
+  const v = sub(E, C), t1 = Math.atan2(v[1], v[0]) - Math.acos(1 / len(v));
+  const a0 = Math.atan2(P0[1] - C[1], P0[0] - C[0]);
+  const T = add(C, [Math.cos(t1), Math.sin(t1)]);
+  const k = (4 / 3) * Math.tan((t1 - a0) / 4), tan = (a) => [-Math.sin(a), Math.cos(a)];
+  const c1 = add(P0, mul(tan(a0), k)), c2 = sub(T, mul(tan(t1), k));
+  const f = (q) => `${fmtN(q[0])} ${fmtN(q[1])}`;
+  return ['C2.7923 8.1536 3.0934 8 3.4139 8C8.5 10', `C${f(c1)} ${f(c2)} ${f(T)}C8.5 10`];
+})();
+const piggySwap = (d, pairs) => pairs.reduce((acc, [a, b]) => {
+  if (!acc.includes(a)) throw new Error(`piggy-bank: no ${a.slice(0, 24)}`);
+  return acc.replace(a, b);
+}, d);
+const PIGGY_REGULAR = piggySwap(PIGGY_PLATE.regular, [PIGGY_LIP]);
+
+const PIGGY_SHARP_BODY = (() => {
+  const t = PIGGY.body.match(/[MLC]|-?\d*\.?\d+/g);
+  let i = 0, cur = null, out = '', fillets = 0;
+  const pt = () => [+t[i++], +t[i++]], f = (q) => `${fmtN(q[0])} ${fmtN(q[1])}`;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === 'M' || c === 'L') { cur = pt(); out += c + f(cur); continue; }
+    const c1 = pt(), c2 = pt(), p3 = pt();
+    if (len(sub(p3, cur)) < 0.8) {
+      out += `L${f(lineCross({ p0: cur, p1: c1 }, { p0: c2, p1: p3 }))}L${f(p3)}`;
+      fillets++;
+    } else out += `C${f(c1)} ${f(c2)} ${f(p3)}`;
+    cur = p3;
+  }
+  if (fillets !== 14) throw new Error(`piggy-bank: ${fillets} fillets, not 14`);
+  return out;
+})();
+
+const PIGGY_SHARP_FILL = (() => {
+  const f = (q) => `${fmtN(q[0])} ${fmtN(q[1])}`;
+  const ear = lineCross({ p0: [16.5141, 3.0515], p1: [17.2375, 3.014] }, { p0: [18.7895, 4.5], p1: [18.7895, 5] });
+  const front = lineCross({ p0: [15.9598, 23], p1: [13.8308, 23] }, { p0: [10.9699, 20.1579], p1: [12.6255, 22.3928] });
+  const back = lineCross({ p0: [10.9247, 20.1579], p1: [9.2693, 22.3928] }, { p0: [8.0639, 23], p1: [5.8795, 23] });
+  return piggySwap(PIGGY_SHARP_CLEAN, [
+    ['C17.6708 2.9916 18.0649 3.16 18.3439 3.4344C18.6209 3.7069 18.7895 4.0872 18.7895 4.5', `L${f(ear)}L18.7895 4.5`],
+    ['C21.9139 10.579 22.2902 10.7479 22.5606 11.0183C22.831 11.2886 23 11.665 23 12.079', 'L23 10.579L23 12.079'],
+    ['C23 14.3351 22.831 14.7114 22.5606 14.9817C22.2903 15.2521 21.914 15.4211 21.5 15.4211', 'L23 15.4211L21.5 15.4211'],
+    ['C17.4598 21.9139 17.2909 22.2902 17.0206 22.5606C16.7502 22.831 16.3738 23 15.9598 23', 'L17.4598 23L15.9598 23'],
+    ['C13.5932 23 13.3624 22.9436 13.156 22.8396C12.9496 22.7356 12.7669 22.5838 12.6255 22.3928', `L${f(front)}L12.6255 22.3928`],
+    ['C9.1279 22.5837 8.9453 22.7355 8.7388 22.8396C8.5323 22.9437 8.3015 23 8.0639 23', `L${f(back)}L8.0639 23`],
+    ['C5.4655 23 5.0892 22.831 4.8189 22.5606C4.5486 22.2903 4.3795 21.914 4.3795 21.5', 'L4.3795 23L4.3795 21.5'],
+  ]);
+})();
+
 SETS['piggy-bank'] = () => {
   const BOX = [1, 1, 23, 23];
   const out = {};
   for (const sharp of [false, true]) {
     const key = sharp ? 'sharp' : 'regular';
-    const body = PIGGY.body;
-    const plate = PIGGY_PLATE[key];
+    const body = sharp ? PIGGY_SHARP_BODY : PIGGY.body;
+    const plate = sharp ? PIGGY_SHARP_CLEAN : PIGGY_REGULAR;
+    const solid = sharp ? PIGGY_SHARP_FILL : PIGGY_REGULAR;
     const coin = circlePath([PIGGY.coin[0], PIGGY.coin[1]], PIGGY.coin[2]);
     const disc = circlePath([PIGGY.coin[0], PIGGY.coin[1]], PIGGY.coin[2] + 1);
     const eye = circlePath(PIGGY.eye, 1);
     const d = body + coin;
     out[`stroke.${key}`] = [S(d), F_(eye)];
     out[`duotone.${key}`] = [P(plate), S(d), F_(eye)];
-    out[`fill.${key}`] = [F_(plate + holeAgainst(plate, eye))];
+    out[`fill.${key}`] = [F_(solid + holeAgainst(solid, eye))];
   }
   return out;
 };
@@ -1719,19 +1939,48 @@ const BIRD = {
   eye: [16, 8],
 };
 
+/**
+ * SHARP, 13 Sep 2026. His ask of 12 Sep, "can bird's beak and wing bottom parts
+ * be more sharper in sharp corner?", was lost when the batch changed sessions,
+ * and sharp shipped with both of his r=0.47 fillets. The beak and the tail tip
+ * are true points now. Each vertex sits on its own bisector where its round
+ * join paints the rounded sibling's whole-number edge, x=1 for the tail and
+ * x=23 for the beak, and the belly cubic takes the tail vertex's move at its
+ * start, control point with it, so it still leaves the point on its own tangent.
+ */
+const birdPoint = (a, v, b, x) => {
+  const n = (p) => { const L = Math.hypot(p[0], p[1]); return [p[0] / L, p[1] / L]; };
+  const u = n(sub(a, v)), w = n(sub(b, v)), bis = n(add(u, w));
+  const t = (x - v[0]) / bis[0];
+  return add(v, mul(bis, t));
+};
+const BIRD_SHARP = (() => {
+  const A0 = [10.8703, 7.09631], A = [2.09556, 18.7651], B = [2.53791, 19.5002], c1 = [4.92655, 19.1754];
+  const V = lineCross({ p0: A0, p1: A }, { p0: B, p1: c1 });
+  const Vp = birdPoint(A0, V, c1, 2);
+  const shift = sub(Vp, B), c1p = add(c1, shift);
+  const tailOld = 'L2.09556 18.7651C1.8455 19.0976 2.11884 19.5572 2.53791 19.5002C4.92655 19.1754';
+  const tailNew = `L${fmtN(Vp[0])} ${fmtN(Vp[1])}C${fmtN(c1p[0])} ${fmtN(c1p[1])}`;
+  const swap = (d) => { if (!d.includes(tailOld)) throw new Error('bird: the tail fillet moved'); return d.replace(tailOld, tailNew); };
+  const b0 = [20.0269, 7.24186], b1 = [21.8164, 8.63661], b2 = [21.6925, 9.45086], b3 = [20.0269, 10.1];
+  const W = birdPoint(b0, lineCross({ p0: b0, p1: b1 }, { p0: b3, p1: b2 }), b3, 22);
+  return { body: swap(BIRD.body), tail: swap(BIRD.tail), beak: `M20.0269 7.24186L${fmtN(W[0])} ${fmtN(W[1])}L20.0269 10.1` };
+})();
+
 SETS['bird'] = () => {
   const BOX = [1, 2, 23, 22];
   const wingD = `M${fmtN(BIRD.wing[0][0])} ${fmtN(BIRD.wing[0][1])}C${BIRD.wing.slice(1).map((q) => `${fmtN(q[0])} ${fmtN(q[1])}`).join(' ')}`;
   const out = {};
   for (const sharp of [false, true]) {
     const key = sharp ? 'sharp' : 'regular';
+    const G = sharp ? { ...BIRD, ...BIRD_SHARP } : BIRD;
     // only the legs have a free end; the wing and the beak both die in the body
     const legs = BIRD.legs.map((l) => run(l, sharp, [false, true], BOX)).join('');
-    const fine = refineCubics(BIRD.body);
+    const fine = refineCubics(G.body);
     const plate = snapPath(trimInset(offsetPath(fine, 1), fine, 1));
     verifyOffset(fine, plate, 1, 0.02);
     const eye = circlePath(BIRD.eye, 1);
-    const d = BIRD.body + wingD + BIRD.beak + legs;
+    const d = G.body + wingD + G.beak + legs;
     out[`stroke.${key}`] = [S(d), F_(eye)];
     out[`duotone.${key}`] = [P(plate), S(d), F_(eye)];
     // HIS CALL, 12 Sep 2026: the fill opens the TAIL, not the wing line. The
@@ -1741,10 +1990,10 @@ SETS['bird'] = () => {
     // both of the wing's ends and left the tail reading as a loose piece.
     // the tail's apex is where the body's straight edge meets the wing, and the
     // knockout has to reach the point they really cross 1.82 in from it
-    const inset = snapPath(insetCross(offsetPath(BIRD.tail, -1), BIRD.tail, 1));
+    const inset = snapPath(insetCross(offsetPath(G.tail, -1), G.tail, 1));
     out[`fill.${key}`] = [
       F_(plate + holeAgainst(plate, inset) + holeAgainst(plate, eye)),
-      S(BIRD.beak + legs),
+      S(G.beak + legs),
     ];
   }
   return out;
@@ -1905,8 +2154,17 @@ function dropSegsAt(cx, cy, R, sharp) {
  * are a vertical and a near-vertical where the real faces stand at 41 and 35
  * degrees — and that is the part he asked to have done properly, so the stroke
  * is his and the plate is solved off it.
+ *
+ * Two of his points moved, 13 Sep 2026, and nothing else. His tail piece ran
+ * to (8, 18), 4.7 degrees off the arc's own tangent, so the bar's outer edge
+ * kinked where the two met: that is mark 1 of his 12 Sep "minor sizing/alignment
+ * issues", the one fix of that round that never landed. It keeps his length,
+ * 0.6923, laid along the tangent. And the apex slid 0.0621 up its own right
+ * face, which leaves that face on the same line and still tangent to the drop,
+ * so the mitre paints the top at 2.00 where it painted 2.06: whole padding on
+ * every side, as the rounded drop has.
  */
-const DROPLETS_SHARP_CUT = 'M12 5L13.8 3.43896L18.9775 8.79657C20.2748 10.1391 21 11.9331 21 13.8C21 17.7765 17.7765 21 13.8 21C11.7344 21 9.7682 20.1128 8.4014 18.564L8 18';
+const DROPLETS_SHARP_CUT = 'M12 5L13.7568 3.3943L18.9775 8.79657C20.2748 10.1391 21 11.9331 21 13.8C21 17.7765 17.7765 21 13.8 21C11.7344 21 9.7682 20.1128 8.4014 18.564L7.9434 18.0449';
 
 const DROPLETS_BIG = [13.8, 13.8, 7.2];
 const DROPLETS_SMALL = [7.2353, 10.4118, 4.2353];
