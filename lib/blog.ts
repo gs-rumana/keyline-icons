@@ -496,6 +496,62 @@ export const BLOG_SOCIAL_CARD_ICONS = 6
  * of it is drawings rather than housekeeping. The formatting marks follow,
  * because fourteen of the thirty-five are one shelf.
  */
+/** All fifty-three of v0.9.0, most recognisable first, then release order. */
+export const BLOG_V090_THUMBNAIL_ICON_NAMES = [
+  "plane", "bot", "leaf", "flask-conical", "truck-check", "brain",
+  "plane-takeoff", "plane-landing", "ship", "train", "bike", "truck-electric",
+  "truck-plus", "truck-minus", "truck-x", "truck-arrow-up", "truck-arrow-down",
+  "truck-arrow-left", "truck-arrow-right", "tree-palm", "wind-turbine",
+  "droplet", "droplet-off", "droplets", "bird", "pig", "piggy-bank",
+  "brain-circuit", "flask-conical-off", "flask-round", "test-tube",
+  "test-tube-diagonal", "test-tubes", "lungs", "ear", "ear-listen",
+  "ear-waveform", "thermometer", "thermometer-sun", "thermometer-snowflake",
+  "temperature-empty", "temperature-quarter", "temperature-half",
+  "temperature-high", "temperature-full", "earbuds", "airpods",
+  "airpods-open", "hand-pointer", "hand-pointer-down", "hand-pointer-left",
+  "hand-pointer-right", "radar",
+] as const
+
+/** Transport, Nature and Animals, and the money box that is not an animal. */
+export const BLOG_V090_TRANSPORT_ICON_NAMES = [
+  "plane", "plane-takeoff", "plane-landing", "ship", "train", "bike",
+] as const
+export const BLOG_V090_NATURE_ICON_NAMES = [
+  "tree-palm", "leaf", "wind-turbine", "droplet", "droplet-off", "droplets",
+] as const
+export const BLOG_V090_ANIMAL_ICON_NAMES = ["bird", "pig", "piggy-bank"] as const
+
+/** AI, Science and Health. */
+export const BLOG_V090_AI_ICON_NAMES = ["bot", "brain-circuit"] as const
+export const BLOG_V090_SCIENCE_ICON_NAMES = [
+  "flask-conical", "flask-conical-off", "flask-round",
+  "test-tube", "test-tube-diagonal", "test-tubes",
+] as const
+export const BLOG_V090_HEALTH_ICON_NAMES = [
+  "brain", "lungs", "ear", "ear-listen", "ear-waveform", "thermometer",
+] as const
+
+/** The rest of the twenty-nine, filed with shelves that already existed. */
+export const BLOG_V090_MEASURE_ICON_NAMES = [
+  "temperature-empty", "temperature-quarter", "temperature-half",
+  "temperature-high", "temperature-full", "thermometer-sun",
+  "thermometer-snowflake",
+] as const
+export const BLOG_V090_HAND_ICON_NAMES = [
+  "hand-pointer", "hand-pointer-right", "hand-pointer-down", "hand-pointer-left",
+] as const
+export const BLOG_V090_LISTEN_ICON_NAMES = [
+  "earbuds", "airpods", "airpods-open", "radar",
+] as const
+
+/** The base and its nine, and the drawing whose name turned round. */
+export const BLOG_V090_TRUCK_ICON_NAMES = [
+  "truck", "truck-plus", "truck-minus", "truck-check", "truck-x",
+  "truck-arrow-up", "truck-arrow-down", "truck-arrow-left",
+  "truck-arrow-right", "truck-electric",
+] as const
+export const BLOG_V090_RENAMED_ICON_NAMES = ["hand-heart"] as const
+
 /** All thirty-three of v0.8.0, most recognisable first, then release order. */
 export const BLOG_V080_THUMBNAIL_ICON_NAMES = [
   "printer", "coffee", "bed", "key", "palette", "film",
@@ -2524,7 +2580,347 @@ const BATCH_0_8_0: BlogPost = {
   ],
 }
 
+const BATCH_0_9_0: BlogPost = {
+  /* Named for what the post is found by, on his word (14 Sep 2026): the truck
+     is the story inside it, but nobody searches for a truck's free corner, and
+     the six shelves are what a search for these icons types. */
+  slug: "transport-nature-ai-science-health-icons",
+  version: "0.9.0",
+  title: "53 free shadcn/ui icons for transport, nature, AI and health",
+  description:
+    "v0.9.0: 53 free, MIT-licensed SVG icons for React and " +
+    "shadcn/ui. Planes, trains, leaves, a bot, flasks, lungs and " +
+    "thermometers, in stroke, duotone and fill.",
+  standfirst:
+    "Everything that landed in v0.9.0: planes, a ship and a train, water and " +
+    "leaves, a bot, flasks and test tubes, lungs and ears, the temperatures, " +
+    "and a truck that finally takes a sign. Free SVG icons for shadcn/ui, " +
+    "drawn on one 24×24 grid.",
+  date: "2026-09-13",
+  updated: "2026-09-13",
+  readingMinutes: 5,
+  thumbnail: BLOG_V090_THUMBNAIL_ICON_NAMES,
+  keywords: [
+    "icon set update",
+    "free svg icons",
+    "shadcn/ui icons",
+    "transport icons",
+    "react icons",
+    "plane icon",
+    "truck icons",
+    "nature icons",
+    "ai icon",
+    "bot icon",
+    "science icons",
+    "flask icon",
+    "health icons",
+    "thermometer icon",
+  ],
+  body: [
+    {
+      kind: "p",
+      text:
+        "Fifty-three new drawings, which takes the set to 851 names, and six " +
+        "new shelves to hold them.",
+    },
+    {
+      kind: "p",
+      text:
+        "Most of the batch is subjects the set had no drawings for at all: " +
+        "things that move, things that grow, and the tools of a lab and a " +
+        "clinic. The rest fills out families the set already had: a truck " +
+        "that carries a sign, a hand that points four ways and a temperature " +
+        "at five levels.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_THUMBNAIL_ICON_NAMES,
+        caption: "All fifty-three.",
+      },
+    },
+
+    { kind: "h2", text: "Six shelves opened", id: "shelves" },
+    {
+      kind: "p",
+      text:
+        "The set went from 31 categories to 37, because nothing that existed " +
+        "could take these. Transport took the plane with its takeoff and " +
+        "landing, the ship, the train and the bike. Nature took the palm, the " +
+        "leaf, the wind turbine and the droplet in all three of its states. " +
+        "Animals took the bird and the pig.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_TRANSPORT_ICON_NAMES,
+        caption: "Transport: a plane taking off and landing, a ship, a train and a bike.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_NATURE_ICON_NAMES,
+        caption: "Nature: a palm, a leaf, a turbine and the water.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "The piggy bank is shelved with the wallet. A shelf follows what a " +
+        "thing is, and a money box is not an animal, so `piggy-bank` is in " +
+        "Finance while `pig` is in Animals.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_ANIMAL_ICON_NAMES,
+        caption: "The bird, the pig, and the pig that holds coins.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "AI took the bot and the brain wired to a circuit. Science took the " +
+        "flasks and the test tubes, with the off state and the rack. Health " +
+        "took the brain, the lungs, the ear with what it hears, and the " +
+        "clinical thermometer.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_AI_ICON_NAMES,
+        caption: "AI, which is two names. A shelf of two is fine.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_SCIENCE_ICON_NAMES,
+        caption: "Science: the glassware.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_HEALTH_ICON_NAMES,
+        caption: "Health.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "The brain is drawn from above, three lobes a side. Two a side read " +
+        "as a butterfly.",
+    },
+
+    { kind: "h2", text: "Filed with what was already there", id: "families" },
+    {
+      kind: "p",
+      text:
+        "The rest of the new drawings joined shelves that existed. The five " +
+        "temperature levels and the two weather thermometers went to Weather, " +
+        "the earbuds went beside the headphones in Media, the radar beside " +
+        "the compass in Maps, and the pointing hand to the cursors.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_MEASURE_ICON_NAMES,
+        caption: "Empty to full, then hot and cold.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_HAND_ICON_NAMES,
+        caption: "One hand, turned to face each way.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_LISTEN_ICON_NAMES,
+        caption: "Earbuds, the case shut and open, and the radar.",
+      },
+    },
+
+    { kind: "h2", text: "A truck with one free corner", id: "truck" },
+    {
+      kind: "p",
+      text:
+        "Signs go in a corner. `file-plus`, `calendar-check` and `mail-x` all " +
+        "open their body at the bottom right and put the sign in the gap. " +
+        "The truck has no bottom right to give. A 6 unit sign there sits 2 " +
+        "units into the rear wheel, and at the top right it sits 2 units into " +
+        "the cab roof. Neither a wheel nor a roof can be opened.",
+    },
+    {
+      kind: "p",
+      text:
+        "The cargo box can, at its top left. It cannot hold a sign closed, " +
+        "because its walls are 10 units apart inside and a sign wants 8 plus " +
+        "2 clear on each side. So the box opens, and the question was how.",
+    },
+    {
+      kind: "p",
+      text:
+        "The first answer tightened the box's two top corners from a radius " +
+        "of 3 to 2, which made room for the usual 6 unit sign with a straight " +
+        "cut. Laid over the truck that already shipped, the smaller corner " +
+        "read as a mistake rather than a choice, so the truck stayed as it " +
+        "is. The second answer cut into the rounded corner itself. That " +
+        "left a round end whose top reached 3.17 on the rounded drawing " +
+        "and 3 on the sharp one, so on the minus and the check the sharp " +
+        "truck painted outside its rounded twin.",
+    },
+    {
+      kind: "p",
+      text:
+        "The third answer stops the outline exactly where the corner's curve " +
+        "turns straight, at 11 across and 4 down, the one cut that leaves both " +
+        "treatments at 3. The round end of that cut reaches 10 across, and " +
+        "the sign has to stop 2 units short of it. A sign of size s ends at " +
+        "3 plus s, so s is 5.",
+    },
+    {
+      kind: "note",
+      text:
+        "Five units is a size nothing else in the set uses: lists take 4 and " +
+        "every other corner family takes 6. It is what this body allows.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "diagnostic",
+        panels: [
+          {
+            title: "`truck` laid over `truck-plus`",
+            a: { name: "truck", take: "current" },
+            b: { name: "truck-plus", take: "current" },
+            verdict: { text: "The truck itself does not move", tone: "good" },
+          },
+        ],
+        caption:
+          "The only colour is the corner that opens and the sign inside it. " +
+          "Every one of the nine covers the same box as `truck`, to four " +
+          "decimals, in both corner treatments.",
+        legend: {
+          a: "only the truck",
+          b: "only the compound",
+          both: "both",
+        },
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_TRUCK_ICON_NAMES,
+        caption:
+          "The base and its nine. The bolt is an object rather than a sign, so " +
+          "it is drawn at its size rather than shrunk off `zap`.",
+      },
+    },
+
+    { kind: "h2", text: "A grey sliver since August", id: "sliver" },
+    {
+      kind: "p",
+      text:
+        "Looking this closely at the truck turned up something older. On the " +
+        "sharp duotone truck, the stroke ends square at the rear wheel from " +
+        "two directions, and the corner between those two ends is left " +
+        "unpainted. The grey shape underneath ran straight across it, so a " +
+        "sliver of grey showed past the black. It had shipped that way since " +
+        "August, and every compound copies its grey shape.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "diagnostic",
+        panels: [
+          {
+            title: "The sharp duotone truck, as it shipped and as it ships now",
+            a: { name: "truck", take: "before" },
+            b: { name: "truck", take: "after" },
+          },
+          {
+            title: "Beside the rear wheel",
+            a: { name: "truck", take: "before" },
+            b: { name: "truck", take: "after" },
+            viewBox: "13.5 17.5 2 2",
+            verdict: { text: "0.17 of a unit of grey past the black", tone: "bad" },
+          },
+        ],
+        caption:
+          "At its widest the sliver is 0.17 of a unit, which at 24px is a " +
+          "sixth of a pixel. The grey now follows the wheel up to the corner " +
+          "and back down. There is no second colour because the fix only took " +
+          "grey away.",
+        legend: {
+          a: "only the old truck",
+          b: "only the new one",
+          both: "both",
+        },
+      },
+    },
+
+    { kind: "h2", text: "One name turned round", id: "rename" },
+    {
+      kind: "p",
+      text:
+        "`heart-hand` is `hand-heart` now. The drawing is a heart held in an " +
+        "open hand, so the hand is the thing and the heart says which kind, " +
+        "which is the order every other name in the set follows. The old name " +
+        "still finds it in search. In React, `HeartHand` is `HandHeart`.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V090_RENAMED_ICON_NAMES,
+        caption: "The same drawing under the right name.",
+      },
+    },
+
+    { kind: "h2", text: "Getting it", id: "getting-it" },
+    {
+      kind: "link",
+      href: "/icons",
+      label: "Browse the set",
+      text: "All 851 drawings, in three styles and two corner treatments.",
+    },
+    {
+      kind: "link",
+      href: "/install",
+      label: "Install",
+      text:
+        "The React package, the CLI, the shadcn registry, the MCP server and " +
+        "the Figma plugin.",
+    },
+    {
+      kind: "link",
+      href: "/changelog",
+      label: "Changelog",
+      text:
+        "What moved, generated off git, with every redraw shown before and " +
+        "after.",
+    },
+  ],
+}
+
 export const BLOG_POSTS: readonly BlogPost[] = [
+  BATCH_0_9_0,
   BATCH_0_8_0,
   BATCH_0_7_0,
   BATCH_0_6_0,
