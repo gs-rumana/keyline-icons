@@ -113,6 +113,19 @@ github.com/keyline-icons/keyline-icons
 
 Changelog
 
+0.9.0 — 13 September 2026
+53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
+
+* Transport: a plane taking off and landing, a ship, a train and a bike
+* Nature: a palm, a leaf, a wind turbine and a droplet with its off and plural forms
+* Animals: a bird and a pig, with the piggy bank beside the wallet in Finance
+* AI and Science: a bot, a brain wired to a circuit, flasks and test tubes
+* Health: a brain, lungs, three ears and a clinical thermometer
+* Others: five temperature levels, two weather thermometers, earbuds and their case open and shut, a radar, and a pointing hand in four directions
+* Nine truck modifiers: plus, minus, check, x, four arrows and electric
+* Transport, Nature, Animals, AI, Science and Health opened as shelves of their own, taking categories from 31 to 37
+* heart-hand is hand-heart now, and the old name still finds it
+
 0.8.0 — 11 September 2026
 33 new drawings, taking the set to 798 names and 4,094 SVGs, and five new shelves. Every one of them came off a month of empty searches on the site: the words people typed and got nothing back for.
 
@@ -268,6 +281,25 @@ without a plugin update or a review cycle. A republish is only required when the
 plugin's own code changes, or when the listing copy goes stale, which it does
 every time the counts move. jsDelivr serves the repository, so the drawings have
 to be **pushed** before any of this is true for anyone but you.
+
+### 0.9.0
+
+```
+53 new drawings, taking the set to 851 names and 4,394 SVGs: planes, a ship, a
+train and a bike, a palm, a leaf, a turbine and water, a bird and a pig, a bot,
+flasks and test tubes, a brain, lungs and ears, the temperatures, earbuds, a
+radar, a pointing hand in four directions, and nine modifiers for the truck.
+
+Six shelves opened with them, taking categories from 31 to 37: Transport,
+Nature, Animals, AI, Science and Health.
+
+heart-hand is renamed hand-heart, the hand first because it is the thing that
+holds the heart. Searching the old name still finds it.
+```
+
+**A republish is required for the listing**, whose counts moved: the tagline,
+the style bullets, the totals and the category count all changed with the set.
+The plugin's own code did not change.
 
 ### 0.8.0
 
@@ -562,12 +594,26 @@ Which styles an icon has is measured rather than chosen: duotone and fill need a
 
 Every drawing exists in both treatments, so sharp is a switch rather than a second library: 4,394 variants over the same 851 names.
 
-The Catalog page files every icon under one of 31 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
+The Catalog page files every icon under one of 37 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
 Also available as React components, a shadcn registry, an MCP server for agents, a CLI, and a Figma plugin that searches the set and drops an icon straight onto the canvas.
 
 keylineicons.com
 github.com/keyline-icons/keyline-icons
+
+v0.9.0
+53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.
+
+* Transport: a plane taking off and landing, a ship, a train and a bike
+* Nature: a palm, a leaf, a wind turbine and a droplet with its off and plural forms
+* Animals: a bird and a pig, with the piggy bank beside the wallet in Finance
+* AI and Science: a bot, a brain wired to a circuit, flasks and test tubes
+* Health: a brain, lungs, three ears and a clinical thermometer
+* Singles: five temperature levels, two weather thermometers, earbuds and their case open and shut, a radar, and a pointing hand in four directions
+* Nine truck modifiers: plus, minus, check, x, four arrows and electric
+* Categories went from 31 to 37: Transport, Nature, Animals, AI, Science and Health took the new drawings that had nowhere honest to sit
+
+Also redrawn: the sharp duotone truck, whose grey plate no longer shows past its rear wheel.
 
 v0.8.0
 33 new drawings, and five new shelves. The set is 798 names now, 681 component sets and 4,094 variants, up from 765 and 3,896. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
