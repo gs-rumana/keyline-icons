@@ -123,7 +123,7 @@
       "width": 742,
       "icons": 2,
       "variants": 12,
-      "bytes": 18693
+      "bytes": 19115
     },
     {
       "file": "arrows-1.html",
@@ -603,7 +603,7 @@
       "width": 742,
       "icons": 6,
       "variants": 24,
-      "bytes": 38364
+      "bytes": 39630
     },
     {
       "file": "layout-1.html",
@@ -747,7 +747,7 @@
       "width": 742,
       "icons": 0,
       "variants": 46,
-      "bytes": 39792
+      "bytes": 40003
     },
     {
       "file": "maps-3.html",
@@ -771,7 +771,7 @@
       "width": 742,
       "icons": 58,
       "variants": 40,
-      "bytes": 38854
+      "bytes": 39487
     },
     {
       "file": "media-2.html",
@@ -879,7 +879,7 @@
       "width": 742,
       "icons": 0,
       "variants": 42,
-      "bytes": 35948
+      "bytes": 36792
     },
     {
       "file": "science.html",
@@ -891,7 +891,7 @@
       "width": 742,
       "icons": 6,
       "variants": 36,
-      "bytes": 31242
+      "bytes": 32508
     },
     {
       "file": "shapes-1.html",
@@ -1107,7 +1107,7 @@
       "width": 742,
       "icons": 0,
       "variants": 44,
-      "bytes": 39889
+      "bytes": 40944
     },
     {
       "file": "weather-3.html",
@@ -1119,7 +1119,7 @@
       "width": 742,
       "icons": 0,
       "variants": 24,
-      "bytes": 27218
+      "bytes": 27640
     },
     {
       "file": "web-1.html",
@@ -1211,7 +1211,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 76796
+      "bytes": 83857
     }
   ]
 }
