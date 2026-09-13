@@ -7,6 +7,7 @@ import {
   ArrowUTurnLeft,
   BarChart,
   Bed,
+  Bird,
   Bold,
   Check,
   ChevronDown,
@@ -23,6 +24,7 @@ import {
   GitBranch,
   Globe,
   GraduationCap,
+  Leaf,
   Mail,
   MapPin,
   Menu,
@@ -30,6 +32,7 @@ import {
   Palette,
   PanelLeft,
   PanelTopCloseDashed,
+  Plane,
   Play,
   Plus,
   Settings,
@@ -185,6 +188,10 @@ const CATEGORY_ICONS: Record<
   // borrowed pencil, the same call `Education` made with the mortarboard.
   Stationery: Eraser,
   Web: Globe,
+  // The three shelves batch D opened, 12 Sep 2026.
+  Transport: Plane,
+  Nature: Leaf,
+  Animals: Bird,
   [OTHER_CATEGORY]: Circle,
 }
 
