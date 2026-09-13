@@ -94,7 +94,7 @@ export function offsetContour(segs, delta) {
       // extents; open a join arc where they do not. Deciding it from the pieces
       // rather than from the source's tangents is what survives a dropped
       // segment, where the original junction no longer exists.
-      const X = crossingNear(cur, nxt, V);
+      const X = crossingNear(cur, nxt, V, (q) => within(cur, q) && within(nxt, q));
       if (X && within(cur, X) && within(nxt, X)) {
         setEnd(cur, X, 'end');
         setEnd(nxt, X, 'start');
@@ -135,8 +135,14 @@ function within(s, p) {
 const spanOf = (s) => (s.type === 'L' ? len(sub(s.p1, s.p0)) : Math.abs(((s.a1 - s.a0) * Math.PI) / 180) * s.r);
 const shorter = (cur, nxt, live, k) => (spanOf(cur) <= spanOf(nxt) ? k : (k + 1) % live.length);
 
-/** Where two offset pieces cross, nearest the junction they came from. */
-function crossingNear(a, b, V) {
+/**
+ * Where two offset pieces cross, nearest the junction they came from, and
+ * among the crossings that lie within both pieces first. Two circles cross
+ * twice at the same distance from the point where they touch, and on the hand's
+ * knuckles (10 Sep 2026) the tie went to the crossing below the cusp, outside
+ * both arcs, so the junction fell through to a join arc dipping into the ink.
+ */
+function crossingNear(a, b, V, prefer = null) {
   const cands = [];
   const lineOf = (s) => ({ p: s.p0, u: unit(sub(s.p1, s.p0)) });
   if (a.type === 'L' && b.type === 'L') {
@@ -159,7 +165,8 @@ function crossingNear(a, b, V) {
     }
   }
   if (!cands.length) return null;
-  return cands.reduce((best, c) => (len(sub(c, V)) < len(sub(best, V)) ? c : best));
+  const pool = prefer && cands.some(prefer) ? cands.filter(prefer) : cands;
+  return pool.reduce((best, c) => (len(sub(c, V)) < len(sub(best, V)) ? c : best));
 }
 
 // Trimming shortens an arc; it must never turn it round, so the new angle is

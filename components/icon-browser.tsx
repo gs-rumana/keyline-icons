@@ -9,6 +9,7 @@ import {
   Bed,
   Bird,
   Bold,
+  Bot,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -21,10 +22,12 @@ import {
   Eraser,
   FaceSmile,
   File,
+  FlaskConical,
   GitBranch,
   Globe,
   GraduationCap,
   Leaf,
+  Lungs,
   Mail,
   MapPin,
   Menu,
@@ -192,6 +195,10 @@ const CATEGORY_ICONS: Record<
   Transport: Plane,
   Nature: Leaf,
   Animals: Bird,
+  // The three shelves batch B opened, 13 Sep 2026.
+  AI: Bot,
+  Science: FlaskConical,
+  Health: Lungs,
   [OTHER_CATEGORY]: Circle,
 }
 
