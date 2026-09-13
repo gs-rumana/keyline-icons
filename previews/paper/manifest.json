@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 681,
-  "names": 798,
-  "variants": 4094,
+  "icons": 734,
+  "names": 851,
+  "variants": 4394,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -125,6 +125,30 @@
       "icons": 0,
       "variants": 12,
       "bytes": 12405
+    },
+    {
+      "file": "ai.html",
+      "artboard": "AI",
+      "category": "AI",
+      "part": 1,
+      "parts": 1,
+      "into": "artboard",
+      "width": 742,
+      "icons": 2,
+      "variants": 12,
+      "bytes": 19115
+    },
+    {
+      "file": "animals.html",
+      "artboard": "Animals",
+      "category": "Animals",
+      "part": 1,
+      "parts": 1,
+      "into": "artboard",
+      "width": 742,
+      "icons": 2,
+      "variants": 12,
+      "bytes": 27858
     },
     {
       "file": "arrows-1.html",
@@ -323,10 +347,10 @@
       "artboard": "Commerce",
       "category": "Commerce",
       "part": 1,
-      "parts": 5,
+      "parts": 6,
       "into": "artboard",
       "width": 742,
-      "icons": 26,
+      "icons": 35,
       "variants": 36,
       "bytes": 36851
     },
@@ -335,7 +359,7 @@
       "artboard": "Commerce",
       "category": "Commerce",
       "part": 2,
-      "parts": 5,
+      "parts": 6,
       "into": "rows",
       "width": 742,
       "icons": 0,
@@ -347,7 +371,7 @@
       "artboard": "Commerce",
       "category": "Commerce",
       "part": 3,
-      "parts": 5,
+      "parts": 6,
       "into": "rows",
       "width": 742,
       "icons": 0,
@@ -359,7 +383,7 @@
       "artboard": "Commerce",
       "category": "Commerce",
       "part": 4,
-      "parts": 5,
+      "parts": 6,
       "into": "rows",
       "width": 742,
       "icons": 0,
@@ -371,12 +395,24 @@
       "artboard": "Commerce",
       "category": "Commerce",
       "part": 5,
-      "parts": 5,
+      "parts": 6,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 6,
-      "bytes": 5573
+      "variants": 36,
+      "bytes": 37090
+    },
+    {
+      "file": "commerce-6.html",
+      "artboard": "Commerce",
+      "category": "Commerce",
+      "part": 6,
+      "parts": 6,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 24,
+      "bytes": 24702
     },
     {
       "file": "controls.html",
@@ -566,9 +602,9 @@
       "parts": 3,
       "into": "artboard",
       "width": 742,
-      "icons": 16,
+      "icons": 17,
       "variants": 44,
-      "bytes": 38844
+      "bytes": 38859
     },
     {
       "file": "finance-2.html",
@@ -579,8 +615,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 48,
-      "bytes": 40421
+      "variants": 38,
+      "bytes": 31814
     },
     {
       "file": "finance-3.html",
@@ -591,8 +627,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 12,
-      "bytes": 8524
+      "variants": 28,
+      "bytes": 31680
     },
     {
       "file": "food-drink.html",
@@ -653,6 +689,18 @@
       "icons": 0,
       "variants": 48,
       "bytes": 37734
+    },
+    {
+      "file": "health.html",
+      "artboard": "Health",
+      "category": "Health",
+      "part": 1,
+      "parts": 1,
+      "into": "artboard",
+      "width": 742,
+      "icons": 6,
+      "variants": 24,
+      "bytes": 39630
     },
     {
       "file": "home.html",
@@ -794,9 +842,9 @@
       "parts": 3,
       "into": "artboard",
       "width": 742,
-      "icons": 15,
+      "icons": 16,
       "variants": 42,
-      "bytes": 38903
+      "bytes": 38914
     },
     {
       "file": "maps-2.html",
@@ -807,8 +855,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 42,
-      "bytes": 35699
+      "variants": 46,
+      "bytes": 40003
     },
     {
       "file": "maps-3.html",
@@ -820,7 +868,7 @@
       "width": 742,
       "icons": 0,
       "variants": 6,
-      "bytes": 5936
+      "bytes": 5917
     },
     {
       "file": "media-1.html",
@@ -830,9 +878,9 @@
       "parts": 8,
       "into": "artboard",
       "width": 742,
-      "icons": 56,
-      "variants": 46,
-      "bytes": 40128
+      "icons": 59,
+      "variants": 40,
+      "bytes": 39487
     },
     {
       "file": "media-2.html",
@@ -843,8 +891,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 48,
-      "bytes": 37505
+      "variants": 54,
+      "bytes": 38450
     },
     {
       "file": "media-3.html",
@@ -856,7 +904,7 @@
       "width": 742,
       "icons": 0,
       "variants": 42,
-      "bytes": 38932
+      "bytes": 38692
     },
     {
       "file": "media-4.html",
@@ -868,7 +916,7 @@
       "width": 742,
       "icons": 0,
       "variants": 42,
-      "bytes": 38498
+      "bytes": 38695
     },
     {
       "file": "media-5.html",
@@ -879,8 +927,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 54,
-      "bytes": 37228
+      "variants": 48,
+      "bytes": 39187
     },
     {
       "file": "media-6.html",
@@ -891,8 +939,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 54,
-      "bytes": 39424
+      "variants": 62,
+      "bytes": 40176
     },
     {
       "file": "media-7.html",
@@ -903,8 +951,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 56,
-      "bytes": 38560
+      "variants": 54,
+      "bytes": 38390
     },
     {
       "file": "media-8.html",
@@ -915,8 +963,20 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 18,
-      "bytes": 13681
+      "variants": 36,
+      "bytes": 27973
+    },
+    {
+      "file": "nature.html",
+      "artboard": "Nature",
+      "category": "Nature",
+      "part": 1,
+      "parts": 1,
+      "into": "artboard",
+      "width": 742,
+      "icons": 6,
+      "variants": 32,
+      "bytes": 41527
     },
     {
       "file": "pointers-1.html",
@@ -926,9 +986,9 @@
       "parts": 2,
       "into": "artboard",
       "width": 742,
-      "icons": 8,
+      "icons": 12,
       "variants": 42,
-      "bytes": 38207
+      "bytes": 38227
     },
     {
       "file": "pointers-2.html",
@@ -939,8 +999,20 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 18,
-      "bytes": 15600
+      "variants": 42,
+      "bytes": 36792
+    },
+    {
+      "file": "science.html",
+      "artboard": "Science",
+      "category": "Science",
+      "part": 1,
+      "parts": 1,
+      "into": "artboard",
+      "width": 742,
+      "icons": 6,
+      "variants": 36,
+      "bytes": 32508
     },
     {
       "file": "shapes-1.html",
@@ -1135,6 +1207,30 @@
       "bytes": 8737
     },
     {
+      "file": "transport-1.html",
+      "artboard": "Transport",
+      "category": "Transport",
+      "part": 1,
+      "parts": 2,
+      "into": "artboard",
+      "width": 742,
+      "icons": 6,
+      "variants": 30,
+      "bytes": 40177
+    },
+    {
+      "file": "transport-2.html",
+      "artboard": "Transport",
+      "category": "Transport",
+      "part": 2,
+      "parts": 2,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 6,
+      "bytes": 5726
+    },
+    {
       "file": "users.html",
       "artboard": "Users",
       "category": "Users",
@@ -1151,24 +1247,36 @@
       "artboard": "Weather",
       "category": "Weather",
       "part": 1,
-      "parts": 2,
+      "parts": 3,
       "into": "artboard",
       "width": 742,
-      "icons": 12,
+      "icons": 19,
       "variants": 42,
-      "bytes": 41856
+      "bytes": 41874
     },
     {
       "file": "weather-2.html",
       "artboard": "Weather",
       "category": "Weather",
       "part": 2,
-      "parts": 2,
+      "parts": 3,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 26,
-      "bytes": 22442
+      "variants": 44,
+      "bytes": 40944
+    },
+    {
+      "file": "weather-3.html",
+      "artboard": "Weather",
+      "category": "Weather",
+      "part": 3,
+      "parts": 3,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 24,
+      "bytes": 27640
     },
     {
       "file": "web-1.html",
@@ -1260,7 +1368,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 64614
+      "bytes": 125998
     }
   ]
 }
