@@ -7,6 +7,7 @@ import {
   ArrowUTurnLeft,
   BarChart,
   Bold,
+  Bot,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -17,9 +18,11 @@ import {
   DiagramProject,
   FaceSmile,
   File,
+  FlaskConical,
   GitBranch,
   Globe,
   GraduationCap,
+  Lungs,
   Mail,
   MapPin,
   Menu,
@@ -168,6 +171,10 @@ const CATEGORY_ICONS: Record<
   Sport: Trophy,
   Tools: Wrench,
   Web: Globe,
+  // The three shelves batch B opened, 13 Sep 2026.
+  AI: Bot,
+  Science: FlaskConical,
+  Health: Lungs,
   [OTHER_CATEGORY]: Circle,
 }
 

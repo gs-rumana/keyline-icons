@@ -133,8 +133,10 @@ export const CATEGORIES = [
     // `flag` and `traffic-light` are both road furniture: a marker you plant
     // and the lights at the junction, next to the routes they sit on.
     label: "Maps",
-    match: /^(map|compass|building|route|flag$|traffic-light)/,
-    blurb: "Pins, maps, compasses, routes, flags and the lights at the junction.",
+    // `radar` joined on 13 Sep 2026 with batch B: a sweep over rings is the
+    // screen that finds where things are, and it sits beside the compass.
+    match: /^(map|compass|building|route|radar|flag$|traffic-light)/,
+    blurb: "Pins, maps, compasses, routes, the radar, flags and the lights at the junction.",
   },
   {
     // Ahead of Layout, whose `list` prefix would otherwise claim `list-music`.
@@ -152,9 +154,11 @@ export const CATEGORIES = [
     // wherever the two disagree — the same call the taxonomy makes for `wifi`.
     label: "Media",
     match:
-      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue)/,
+      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|earbuds|airpods|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue)/,
+    // `earbuds` and `airpods` beside `headphones`, 13 Sep 2026: what you listen
+    // through files where listening does, not with the phone they pair to.
     blurb:
-      "Playback, volume, capture, casting and the sound and image marks.",
+      "Playback, volume, capture, casting, the sound and image marks and what you listen through.",
   },
   // `activity` is a pulse trace, not a transport control — it reads against the
   // bar charts and the signal bars, which is where the design file files it too.
@@ -188,8 +192,10 @@ export const CATEGORIES = [
   },
   {
     label: "Pointers",
-    match: /^cursor/,
-    blurb: "Cursors and the states they carry.",
+    // The pointing hand is the other cursor, the one a link shows, so its four
+    // directions file here rather than on a shelf of hands the set does not have.
+    match: /^(cursor|hand-pointer)/,
+    blurb: "Cursors, the pointing hand and the states they carry.",
   },
   {
     // Ahead of Layout, which owns the `align-offset-*` family: those nudge an
@@ -258,6 +264,30 @@ export const CATEGORIES = [
     match: /^graduation-cap/,
     blurb: "The mortarboard.",
   },
+  // Three shelves opened 13 Sep 2026 with the twenty-nine of batch B, whose
+  // names had been filing under Other. Each files by what the drawing IS.
+  {
+    // The machine that thinks: the bot and the brain wired to a circuit. The
+    // bare `brain` is an organ and goes to Health, which is why this is
+    // anchored on the two names rather than on `brain`.
+    label: "AI",
+    match: /^(bot$|brain-circuit)/,
+    blurb: "The bot and the brain wired to a circuit.",
+  },
+  {
+    label: "Science",
+    match: /^(flask|test-tube)/,
+    blurb: "Flasks and test tubes, with the off state and the rack.",
+  },
+  {
+    // The body and what measures it. `ear` is anchored so `earbuds` falls
+    // through to Media, and `thermometer$` so the weather thermometers fall
+    // through to Weather: a clinical stick takes a temperature, a tube beside a
+    // sun reports one.
+    label: "Health",
+    match: /^(brain$|lungs|ear(-|$)|thermometer$)/,
+    blurb: "The brain, the lungs, the ear and what it hears, and the clinical thermometer.",
+  },
   {
     // `crown` is what a winner gets, so it sits with the trophy rather than
     // with the marks in Actions.
@@ -301,8 +331,11 @@ export const CATEGORIES = [
     // Prefixes rather than exact names, so the compounds this family is being
     // drawn towards land here too: `cloud-rain`, `sunrise`, `moon-star`.
     label: "Weather",
-    match: /^(sun|moon|cloud|umbrella|parasol)/,
-    blurb: "Sun, moon, cloud and the states between them.",
+    // `temperature-*` and the two weather thermometers joined on 13 Sep 2026:
+    // how hot it is outside is the weather, and the sun and the snowflake on
+    // them say so.
+    match: /^(sun|moon|cloud|umbrella|parasol|temperature|thermometer-)/,
+    blurb: "Sun, moon, cloud, the temperatures and the states between them.",
   },
 ] as const
 

@@ -393,3 +393,72 @@ export function unionContours(contours, runs, half = 1, cap = 'round') {
   }
   return loops;
 }
+
+/**
+ * `outer` less every contour in `cutters`, as closed loops: the boundary of the
+ * difference, walked from the pieces of `outer` that lie outside every cutter
+ * and the pieces of each cutter that lie inside `outer`, the latter reversed.
+ * Written 13 Sep 2026 for `hand-pointer`'s fill, whose finger gaps open through
+ * the rim at the knuckle notches, where a knockout wholly inside the plate
+ * would have left a hairline of solid across each gap.
+ */
+export function subtractContours(outer, cutters) {
+  const sample = (segs) => segs.flatMap((s) => {
+    const k = s.type === 'L' ? 1 : Math.max(8, Math.ceil(Math.abs(s.a1 - s.a0) / 4));
+    return Array.from({ length: k }, (_, i) => (s.type === 'L' ? add(s.p0, mul(sub(s.p1, s.p0), i / k)) : onArc(s.c, s.r, s.a0 + ((s.a1 - s.a0) * i) / k)));
+  });
+  const inside = (poly, p) => {
+    let c = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const a = poly[i], b = poly[j];
+      if ((a[1] > p[1]) !== (b[1] > p[1]) && p[0] < ((b[0] - a[0]) * (p[1] - a[1])) / (b[1] - a[1]) + a[0]) c = !c;
+    }
+    return c;
+  };
+  const area = (poly) => poly.reduce((s, p, i) => { const q = poly[(i + 1) % poly.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0);
+  const wind = Math.sign(area(sample(outer)));
+  const cut = cutters.map((c) => (Math.sign(area(sample(c))) === wind ? c : [...c].reverse().map(revSeg)));
+  const polyOuter = sample(outer), polyCut = cut.map(sample);
+  const pieces = (segs, others, keep) => {
+    const kept = [];
+    for (const s of segs) {
+      const ts = [0, 1];
+      for (const o of others) for (const p of crossings(s, o)) {
+        if (!within(s, p) || !within(o, p)) continue;
+        const t = paramOf(s, p);
+        if (t > 1e-6 && t < 1 - 1e-6) ts.push(t);
+      }
+      ts.sort((a, b) => a - b);
+      for (let k = 0; k < ts.length - 1; k++) {
+        if (ts[k + 1] - ts[k] < 1e-6) continue;
+        if (keep(at(s, (ts[k] + ts[k + 1]) / 2))) kept.push(cut1(s, ts[k], ts[k + 1]));
+      }
+    }
+    return kept;
+  };
+  const cut1 = (s, t0, t1) => (s.type === 'L'
+    ? { type: 'L', p0: at(s, t0), p1: at(s, t1) }
+    : { type: 'A', c: s.c, r: s.r, a0: s.a0 + (s.a1 - s.a0) * t0, a1: s.a0 + (s.a1 - s.a0) * t1 });
+  const allCut = cut.flat();
+  const kept = [
+    ...pieces(outer, allCut, (p) => !polyCut.some((pc) => inside(pc, p))),
+    ...cut.flatMap((c, i) => pieces(c, [...outer, ...cut.filter((_, j) => j !== i).flat()], (p) => inside(polyOuter, p) && !polyCut.some((pc, j) => j !== i && inside(pc, p))).map(revSeg).reverse()),
+  ];
+  const near = (p, q) => len(sub(p, q)) < 1e-6;
+  const used = new Set();
+  const loops = [];
+  for (const seed of kept) {
+    if (used.has(seed)) continue;
+    const loop = [];
+    let cur = seed;
+    for (let g = 0; g < kept.length + 2; g++) {
+      used.add(cur); loop.push(cur);
+      const next = kept.find((s) => !used.has(s) && near(startPt(s), endPt(cur)));
+      if (!next) break;
+      cur = next;
+    }
+    if (!near(endPt(loop[loop.length - 1]), startPt(loop[0]))) throw new Error('subtractContours: a loop does not close');
+    loops.push(loop);
+  }
+  return loops;
+}
