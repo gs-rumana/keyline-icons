@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og"
 
+import { BrandMarkFlat } from "@/components/brand-mark"
 import { loadIcons, STYLES } from "@/lib/icons"
 import { SET_LICENSE, SET_TITLE } from "@/lib/site-chrome"
 
@@ -59,7 +60,6 @@ export const contentType = "image/png"
 
 const INK = "#0a0a0a"
 const PRIMARY = "#006aa5"
-const ON_PRIMARY = "#fafafa"
 const MUTED = "#737373"
 const HAIRLINE = "#e5e5e5"
 
@@ -89,22 +89,9 @@ export default async function Image() {
             Two children, so `display: flex` is stated. Satori refuses to guess,
             and this is the element the rule bites on most often. */}
       <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-        {/* The mark, at the same proportions `components/brand-mark.tsx` draws
-              it: a flat --primary tile carrying the pennant, so it needs nothing
-              behind it. */}
-        <svg width="88" height="88" viewBox="0 0 40 40" fill="none">
-          <path
-            d="M31.916 0H8.07899C3.61455 0 0 3.615 0 8.08V31.925C0 36.385 3.61455 40 8.07899 40H31.921C36.3805 40 40 36.385 40 31.92V8.08C39.995 3.615 36.3805 0 31.916 0Z"
-            fill={PRIMARY}
-          />
-          <path
-            d="M13 28.3445V11.6597C13 11.3284 13.3162 11.0887 13.6351 11.1783L26.6351 14.8269C26.8509 14.8874 27 15.0842 27 15.3083V24.7811C27 25.0064 26.8494 25.2038 26.6322 25.2634L13.6322 28.8267C13.314 28.9139 13 28.6745 13 28.3445Z"
-            fill={ON_PRIMARY}
-            stroke={ON_PRIMARY}
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
+        {/* The mark as `components/brand-mark.tsx` draws it: `shapes-2` in its
+              three styles, on its own ink box, with nothing behind it. */}
+        <BrandMarkFlat size={72} color={PRIMARY} />
 
         <div style={{ fontSize: 40, color: INK, letterSpacing: -1 }}>
           {SET_TITLE}

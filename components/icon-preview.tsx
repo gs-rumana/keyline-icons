@@ -766,7 +766,7 @@ export function IconPreview({
                         }
                       >
                         {person.mark === "brand" ? (
-                          <BrandMark className="size-5 rounded-[5px]" />
+                          <BrandMark className="size-5" />
                         ) : avatar ? (
                           <Image
                             src={avatar}

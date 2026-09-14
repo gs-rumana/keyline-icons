@@ -109,11 +109,11 @@ export function SiteFooter() {
             wordmark's own small print rather than as a separate band.
           */}
           <div>
-            {/* The bar's brand without its panel — same mark, same 28px, and
+            {/* The bar's brand without its panel — same mark, same 24px, and
                 the same destination: the landing page, now that `/` renders
                 one rather than forwarding to the browser. */}
             <Link href="/" prefetch={false} className="flex items-center gap-2">
-              <BrandMark className="size-7" />
+              <BrandMark className="size-6" />
               <span className="text-sm font-medium tracking-tight">
                 {SET_TITLE}
               </span>

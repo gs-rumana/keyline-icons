@@ -46,12 +46,43 @@ const check = process.argv.includes("--check")
 const c = (n, s) => `\x1b[${n}m${s}\x1b[0m`
 
 /**
- * The primary token pair, resolved to literals. Neither a favicon nor an
+ * `--primary` in each theme, resolved to literals. Neither a favicon nor an
  * apple-touch-icon can read the site's theme class, so the tokens cannot come
  * along; if `--primary` ever moves, these move with it by hand.
  */
-const LIGHT = { tile: "#006aa5", glyph: "#fafafa" }
-const DARK = { tile: "#76bfe4", glyph: "#091c2c" }
+const INK = { light: "#006aa5", dark: "#76bfe4" }
+
+/**
+ * The ground under the three icons that cannot be transparent. White, so the
+ * mark is the same blue shapes it is on the site rather than a knockout on a
+ * blue square.
+ */
+const GROUND = "#ffffff"
+
+/**
+ * The drawings the logo is made of: `shapes-2`'s triangle in stroke, its circle
+ * in duotone (plate, then ring) and its square in fill, in logo.svg's order.
+ * `readMark` fails if any path stops matching its icon, or the copy the site
+ * and the OG cards draw from in `lib/brand-mark.ts`.
+ */
+const PARTS = [
+  ["stroke", 0, 0],
+  ["duotone", 0, 1],
+  ["duotone", 1, 1],
+  ["fill", 0, 2],
+]
+const MARK_TS = join(ROOT, "lib", "brand-mark.ts")
+
+/**
+ * Space around the mark, in units of its own 20-unit ink box. A tab icon gets
+ * one unit a side so the shapes do not touch the edge at 16px. The bled icons
+ * get seven, a 34-unit canvas: the mark's farthest corner sits 12.9 from the
+ * centre, inside the 13.6 of the circle Android crops a maskable icon to (80%
+ * of the width), and 20 of 34 is the share of the square an iOS glyph usually
+ * takes.
+ */
+const TAB_PAD = 1
+const BLEED_PAD = 7
 
 /** The .ico carries every size a browser or OS might ask it for. */
 const ICO_SIZES = [16, 32, 48, 64, 128, 256]
@@ -74,11 +105,9 @@ const APPLE_SIZE = 180
  *
  * Bled and opaque like the apple icon, for a second reason as well as Apple's:
  * the manifest declares them `maskable`, and Android crops a maskable icon to
- * a circle 80% of the width. The glyph runs 11.5–28.5 across a 40 viewBox once
- * its 3-unit stroke is counted, so it sits about 13.4 from the centre against
- * that circle's 16 — inside the safe zone, which is what lets one rendering
- * serve `any` and `maskable` both. Redraw the mark wider than that and they
- * have to become two files.
+ * a circle 80% of the width. `BLEED_PAD` keeps the mark inside that circle,
+ * which is what lets one rendering serve `any` and `maskable` both. Redraw the
+ * mark with a corner farther out and they have to become two files.
  */
 const MANIFEST_SIZES = [192, 512]
 
@@ -93,7 +122,7 @@ const MANIFEST_SIZES = [192, 512]
  * where nothing about the repository can reach it.
  *
  * Bled like the apple-touch-icon rather than transparent: Figma draws it on
- * both light and dark chrome, and a transparent mark disappears into one of
+ * both light and dark chrome, and a transparent blue mark goes weak on one of
  * them.
  */
 const PLUGIN_ICON_SIZE = 128
@@ -120,42 +149,61 @@ function findChrome() {
 
 /**
  * Pull the mark out of the source file rather than restating it here, so the
- * logo stays the one place the shape is defined. Two paths, tile then glyph —
- * anything else means the file was redrawn into a shape this does not
- * understand, and guessing would quietly ship a wrong icon.
+ * logo stays the one place the shape is defined. Four paths, whose painting
+ * (stroke, plate, ring, fill) is carried in the file itself and passed through
+ * untouched; only the colour is supplied, as `color` on the root.
+ *
+ * Each path is compared with the shipped icon it came from and with
+ * `lib/brand-mark.ts`. A redraw of `shapes-2` that left the logo behind would
+ * be two marks called the same thing, and nothing else would notice.
  */
-function readMark(svg) {
-  const paths = [...svg.matchAll(/<path\b([^>]*?)\/?>/g)].map((m) => m[1])
-  if (paths.length !== 2) {
+async function readMark(svg) {
+  const attr = (s, n) => (s.match(new RegExp(`\\b${n}="([^"]*)"`)) || [])[1]
+  const tags = [...svg.matchAll(/<path\b[^>]*?\/?>/g)].map((m) => m[0])
+  if (tags.length !== PARTS.length) {
     throw new Error(
-      `expected exactly 2 <path> elements in public/logo/logo.svg (tile, then glyph), found ${paths.length}`,
+      `expected ${PARTS.length} <path> elements in public/logo/logo.svg, found ${tags.length}`,
     )
   }
-  const attr = (s, n) => (s.match(new RegExp(`\\b${n}="([^"]*)"`)) || [])[1]
   const viewBox = attr(svg.match(/<svg\b([^>]*)>/)[1], "viewBox")
-  const mark = {
-    viewBox,
-    tile: attr(paths[0], "d"),
-    glyph: attr(paths[1], "d"),
-    strokeWidth: attr(paths[1], "stroke-width") ?? "3",
-    strokeLinecap: attr(paths[1], "stroke-linecap") ?? "round",
+  const box = viewBox?.split(/\s+/).map(Number)
+  if (!box || box.length !== 4 || box.some(Number.isNaN)) {
+    throw new Error(`could not read viewBox from public/logo/logo.svg`)
   }
-  for (const [k, v] of Object.entries(mark)) {
-    if (!v) throw new Error(`could not read ${k} from public/logo/logo.svg`)
+  const norm = (d) => d.replace(/\s+/g, " ").trim()
+  const subpaths = (d) => norm(d).split(/(?<=Z)\s*/).filter(Boolean).map((x) => x.trim())
+  const markTs = norm(await readFile(MARK_TS, "utf8"))
+  for (const [i, [style, pathIndex, subIndex]] of PARTS.entries()) {
+    const file = join(ROOT, "icons", style, "shapes-2.svg")
+    const icon = [...(await readFile(file, "utf8")).matchAll(/<path\b[^>]*?\bd="([^"]*)"/g)]
+    const want = icon[pathIndex] && subpaths(icon[pathIndex][1])[subIndex]
+    const got = norm(attr(tags[i], "d") ?? "")
+    if (!want || want !== got) {
+      throw new Error(
+        `public/logo/logo.svg path ${i + 1} no longer matches ${relative(ROOT, file)}; copy the icon's path across`,
+      )
+    }
+    if (!markTs.includes(got)) {
+      throw new Error(`lib/brand-mark.ts is missing path ${i + 1} of public/logo/logo.svg`)
+    }
   }
-  return mark
+  return { paths: tags.join(""), box }
 }
 
+/** The mark's ink box grown by `pad` units a side, as a viewBox string. */
+const padded = ({ box: [x, y, w, h] }, pad) =>
+  `${x - pad} ${y - pad} ${w + 2 * pad} ${h + 2 * pad}`
+
 /**
- * The tab icon. Keeps its own rounded corners and swaps on prefers-color-scheme
- * — the only theme signal a favicon gets.
+ * The tab icon. Transparent, and swaps its blue on prefers-color-scheme, the
+ * only theme signal a favicon gets.
  *
  * Note the comment below carries a warning rather than the token's name: SVG is
  * XML, a double hyphen is illegal inside an XML comment, and writing a CSS
  * custom property by name there is enough to make the file fail to parse and
  * render as a broken image in every tab.
  */
-const iconSvg = (m) => `<svg width="40" height="40" viewBox="${m.viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg">
+const iconSvg = (m) => `<svg width="40" height="40" viewBox="${padded(m, TAB_PAD)}" fill="none" xmlns="http://www.w3.org/2000/svg">
 <!--
   GENERATED by pipeline/build-brand.mjs from public/logo/logo.svg. Do not edit.
 
@@ -164,34 +212,34 @@ const iconSvg = (m) => `<svg width="40" height="40" viewBox="${m.viewBox}" fill=
   make the whole file fail to parse and render as a broken image.
 -->
 <style>
-  .tile { fill: ${LIGHT.tile} }
-  .glyph { fill: ${LIGHT.glyph}; stroke: ${LIGHT.glyph} }
+  svg { color: ${INK.light} }
   @media (prefers-color-scheme: dark) {
-    .tile { fill: ${DARK.tile} }
-    .glyph { fill: ${DARK.glyph}; stroke: ${DARK.glyph} }
+    svg { color: ${INK.dark} }
   }
 </style>
-<path class="tile" d="${m.tile}"/>
-<path class="glyph" d="${m.glyph}" stroke-width="${m.strokeWidth}" stroke-linecap="${m.strokeLinecap}"/>
+${m.paths}
 </svg>
 `
 
 /**
  * A single fixed rendering, for the formats that cannot carry two.
  *
- * `bleed` squares off the tile and fills it edge to edge. That is the
- * apple-touch-icon: iOS masks the icon with its own superellipse, so shipping
- * our rounded corners inside its rounded corners reads as a shrunken logo with
- * a dark rim. iOS also discards alpha and composites onto black, which is why
- * the bled version has no transparent pixel anywhere.
+ * Without `bleed` it is the favicon: the light blue on nothing. With it, the
+ * mark sits on an opaque `GROUND` edge to edge. That is the apple-touch-icon:
+ * iOS masks the icon with its own superellipse and discards alpha,
+ * compositing onto black, which is why the bled version has no transparent
+ * pixel anywhere.
  */
-const flatSvg = (m, size, { bleed = false } = {}) =>
-  `<svg width="${size}" height="${size}" viewBox="${m.viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg">` +
-  (bleed
-    ? `<rect width="100%" height="100%" fill="${LIGHT.tile}"/>`
-    : `<path d="${m.tile}" fill="${LIGHT.tile}"/>`) +
-  `<path d="${m.glyph}" fill="${LIGHT.glyph}" stroke="${LIGHT.glyph}" stroke-width="${m.strokeWidth}" stroke-linecap="${m.strokeLinecap}"/>` +
-  `</svg>`
+const flatSvg = (m, size, { bleed = false } = {}) => {
+  const vb = padded(m, bleed ? BLEED_PAD : TAB_PAD)
+  const [x, y, w, h] = vb.split(" ")
+  return (
+    `<svg width="${size}" height="${size}" viewBox="${vb}" fill="none" color="${INK.light}" xmlns="http://www.w3.org/2000/svg">` +
+    (bleed ? `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${GROUND}"/>` : "") +
+    m.paths +
+    `</svg>`
+  )
+}
 
 async function rasterize(chrome, dir, svg, size, name) {
   const src = join(dir, `${name}.svg`)
@@ -203,8 +251,8 @@ async function rasterize(chrome, dir, svg, size, name) {
     "--no-sandbox",
     "--hide-scrollbars",
     "--force-color-profile=srgb",
-    // Transparent, so the tile's rounded corners stay cut out. The bled
-    // apple icon paints its own opaque ground and never relies on this.
+    // Transparent, so the favicon has no ground of its own. The bled icons
+    // paint their own opaque ground and never rely on this.
     "--default-background-color=00000000",
     `--screenshot=${out}`,
     `--window-size=${size},${size}`,
@@ -252,7 +300,7 @@ async function main() {
     console.error(`No source mark at ${SRC}`)
     process.exit(1)
   }
-  const mark = readMark(await readFile(SRC, "utf8"))
+  const mark = await readMark(await readFile(SRC, "utf8"))
   const chrome = findChrome()
   const dir = await mkdtemp(join(tmpdir(), "brand-"))
 
@@ -367,9 +415,9 @@ function assertOpaque(png, label = "apple-icon") {
       [0, 1, 2]
         .map((i) => rows[y][x * channels + i].toString(16).padStart(2, "0"))
         .join("")
-    if (hex !== LIGHT.tile) {
+    if (hex !== GROUND) {
       throw new Error(
-        `${label} corner ${x},${y} is ${hex}, expected a full bleed of ${LIGHT.tile}`,
+        `${label} corner ${x},${y} is ${hex}, expected a full bleed of ${GROUND}`,
       )
     }
   }

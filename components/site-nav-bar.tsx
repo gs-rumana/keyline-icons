@@ -148,7 +148,7 @@ export function SiteNavBar({
             href="/"
             className="flex shrink-0 items-center gap-2 rounded-xl p-2 pr-3"
           >
-            <BrandMark className="size-7" />
+            <BrandMark className="size-6" />
             <span className="text-sm font-medium tracking-tight">
               {SET_TITLE}
             </span>

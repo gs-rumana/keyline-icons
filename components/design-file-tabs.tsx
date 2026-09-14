@@ -75,14 +75,14 @@ const TOOLS = [
       `auto` width browsers have historically resolved against the containing
       block rather than against the viewBox's ratio, and the failure mode is a
       mark that fills the chip. Pinning both is one class either way and cannot
-      go wrong. The lockup is 75.67 x 40, so 16 tall wants 30.27 wide, which is
-      `w-[1.892rem]` to within a hundredth of a pixel. Both numbers move when
+      go wrong. The lockup is 81.67 x 40, so 16 tall wants 32.67 wide, which is
+      `w-[2.042rem]` to within a hundredth of a pixel. Both numbers move when
       the lockup's own gap does.
 
       The other two keep the `size-4` they shipped with. A square box letterboxes
       Figma's 2:3 mark exactly as it always has; nothing about those two moves.
     */
-    logoClass: "h-4 w-[1.892rem]",
+    logoClass: "h-4 w-[2.042rem]",
   },
   {
     id: "figma",
@@ -182,34 +182,32 @@ export function DesignFileTabs({
         Two things ride on this `style`, and both have to be inline.
 
         **The mark inverts.** The button is a flat `--primary` fill and the
-        set's own mark is a `--primary` tile, so on the plugin tab it
-        painted black on black and only the pennant showed. Swapping the
-        pair gives a white tile with a black pennant in light and the
-        reverse in dark, since the two tokens trade places there.
-        `FigmaLogo` and `PaperLogo` do not read these and are unaffected.
+        set's own mark paints in `--primary`, so on the plugin tab it would
+        be blue on blue. Running it on `--primary-foreground` puts white
+        shapes on the blue in light and navy on the pale blue in dark.
+        `FigmaLogo` and `PaperLogo` do not read this and are unaffected.
 
         **The size is written here, not in a class.** `button.tsx`'s base
         carries `[&_svg:not([class*='size-'])]:size-4`, which is a
         descendant selector and therefore beats a plain `w-*` utility on the
         same element. `logoClass` has no `size-` in it, so that rule caught
-        the lockup and squared it: 75.67 x 40 letterboxed into 16 x 16 comes
-        out 16 wide and 8.5 tall, which is why it read as shrunken here and
+        the lockup and squared it: 81.67 x 40 letterboxed into 16 x 16 comes
+        out 16 wide and 7.8 tall, which is why it read as shrunken here and
         correct on the chip, where no such rule exists. An inline
         declaration beats every class rule and needs no escape hatch.
 
         20 tall rather than 16 because this is the one place the mark is the
         button's subject rather than an affordance beside a label. The width
-        follows the lockup's own ratio, 20 x 75.67 / 40.
+        follows the lockup's own ratio, 20 x 81.67 / 40.
       */}
       <active.Logo
         data-icon="inline-start"
         className="shrink-0"
         style={
           {
-            "--brand-mark-tile": "var(--primary-foreground)",
-            "--brand-mark-glyph": "var(--primary)",
+            "--brand-mark-ink": "var(--primary-foreground)",
             height: "1.25rem",
-            width: active.id === "plugin" ? "2.365rem" : "1.25rem",
+            width: active.id === "plugin" ? "2.552rem" : "1.25rem",
           } as React.CSSProperties
         }
       />

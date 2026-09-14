@@ -46,17 +46,24 @@ const PAD = 100
  * viewer theme to read, and Figma puts it on its own surface.
  */
 const BG = "#ffffff"
-const PRIMARY = "#171717"
-const ON_PRIMARY = "#fafafa"
+const PRIMARY = "#006aa5"
 const INK = "#0a0a0a"
 const MUTED = "#737373"
 const HAIRLINE = "#e5e5e5"
 
-/** The mark, at the proportions components/brand-mark.tsx draws it. */
-const TILE =
-  "M31.916 0H8.07899C3.61455 0 0 3.615 0 8.08V31.925C0 36.385 3.61455 40 8.07899 40H31.921C36.3805 40 40 36.385 40 31.92V8.08C39.995 3.615 36.3805 0 31.916 0Z"
-const PENNANT =
-  "M13 28.3445V11.6597C13 11.3284 13.3162 11.0887 13.6351 11.1783L26.6351 14.8269C26.8509 14.8874 27 15.0842 27 15.3083V24.7811C27 25.0064 26.8494 25.2038 26.6322 25.2634L13.6322 28.8267C13.314 28.9139 13 28.6745 13 28.3445Z"
+/**
+ * The mark's four paths, read from public/logo/logo.svg, which `brand:check`
+ * holds to the shipped `shapes-2` drawings. Their painting (stroke, plate,
+ * ring, fill) comes with them and paints `currentColor`, so a cover only
+ * supplies the colour.
+ */
+const MARK = (await readFile(join(ROOT, "public", "logo", "logo.svg"), "utf8"))
+  .match(/<path\b[^>]*?\/?>/g)
+  .join("")
+
+/** The mark at `px` across, with its top-left corner at (x, y). Its ink box starts at (2, 2). */
+const markAt = (x, y, px, colour) =>
+  `<g transform="translate(${x} ${y}) scale(${px / 20}) translate(-2 -2)" color="${colour}">${MARK}</g>`
 
 /**
  * The glyphs the cover leads with, in reading order.
@@ -298,11 +305,8 @@ const styles = ["stroke", "duotone", "fill"]
 const compose = (h, rows) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${h}" viewBox="0 0 ${W} ${h}">` +
   `<rect width="${W}" height="${h}" fill="${BG}"/>` +
-  // The mark, scaled off its own 40-unit box.
-  `<g transform="translate(${PAD} 96) scale(2.6)">` +
-  `<path d="${TILE}" fill="${PRIMARY}"/>` +
-  `<path d="${PENNANT}" fill="${ON_PRIMARY}" stroke="${ON_PRIMARY}" stroke-width="3" stroke-linecap="round"/>` +
-  `</g>` +
+  // The mark, 104 across: the height the old 40-unit tile stood at.
+  markAt(PAD, 96, 104, PRIMARY) +
   `<text x="${PAD}" y="322" font-family="${FONT}" font-size="96" font-weight="600" letter-spacing="-3" fill="${INK}">Keyline Icons</text>` +
   `<text x="${PAD}" y="378" font-family="${FONT}" font-size="34" fill="${MUTED}">Built for shadcn/ui · An icon set crafted with AI</text>` +
   `<line x1="${PAD}" y1="430" x2="${W - PAD}" y2="430" stroke="${HAIRLINE}" stroke-width="2"/>` +
@@ -376,6 +380,8 @@ function glyphAt(name, size) {
  */
 const COVER_DARK = "#0a0a0a"
 const COVER_INK = "#ffffff"
+/* `--primary` in the dark theme, which is what the mark wears on a black page. */
+const COVER_BRAND = "#76bfe4"
 const COVER_MUTED = "#8a8a8f"
 
 /* Tuned for a black ground rather than lifted from the FigJam palette, which is
@@ -421,10 +427,7 @@ const pluginCoverSvg = (() => {
     `<rect width="${W}" height="1080" fill="${COVER_DARK}"/>` +
     coverBlock(BLOCK_X, BLOCK_Y, COLS, CELL, GLYPH) +
     // The mark, sitting on the cap height of the wordmark below it.
-    `<g transform="translate(${PADX} 300) scale(2.6)">` +
-    `<path d="${TILE}" fill="${COVER_INK}"/>` +
-    `<path d="${PENNANT}" fill="${COVER_DARK}" stroke="${COVER_DARK}" stroke-width="3" stroke-linecap="round"/>` +
-    `</g>` +
+    markAt(PADX, 300, 104, COVER_BRAND) +
     `<text x="${PADX}" y="576" font-family="${FONT}" font-size="128" font-weight="600" ` +
     `letter-spacing="-5" fill="${COVER_INK}">Keyline Icons</text>` +
     `<text x="${PADX}" y="646" font-family="${FONT}" font-size="38" fill="${COVER_MUTED}">` +
