@@ -45,7 +45,7 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 const INK = "#0a0a0a"
-const PRIMARY = "#171717"
+const PRIMARY = "#006aa5"
 const ON_PRIMARY = "#fafafa"
 const MUTED = "#737373"
 const HAIRLINE = "#e5e5e5"

@@ -533,8 +533,8 @@ export function IconPreview({
 
                   Outlined rather than filled, so it is not read as another
                   chip like the category beside it, and so the dot keeps the
-                  foreground colour it wears in the grid instead of inverting
-                  to sit on a dark pill.
+                  blue it wears in the grid instead of inverting to sit on a
+                  filled pill.
 
                   Not hidden from a reader, unlike the grid's dot: this line is
                   the panel's own description of the icon, so it is announced
@@ -544,7 +544,7 @@ export function IconPreview({
                   <span className="flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10px] leading-4 font-semibold tracking-wide text-foreground">
                     <span
                       aria-hidden="true"
-                      className="size-1.5 shrink-0 rounded-full bg-foreground"
+                      className="size-1.5 shrink-0 rounded-full bg-primary"
                     />
                     New
                   </span>

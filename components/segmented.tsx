@@ -99,11 +99,11 @@ export function SegmentedItem({
       {badge ? (
         <span
           aria-hidden="true"
-          /* `bg-foreground` / `text-background` rather than a literal black on
-             white: the pair inverts together, so the badge stays legible in
-             dark mode instead of turning into a black pill on a dark track. */
+          /* The `--primary` pair rather than a literal blue on white: the two
+             invert together, so the badge stays legible in dark mode, where
+             the blue lightens and its ink turns navy. */
           className={cn(
-            "pointer-events-none absolute rounded-full bg-foreground font-semibold text-background",
+            "pointer-events-none absolute rounded-full bg-primary font-semibold text-primary-foreground",
             size === "sm"
               ? "-top-1.5 -right-2 px-1 text-[9px] leading-[1.4]"
               : "-top-2 -right-2.5 px-1.5 py-px text-[10px] leading-[1.3]"

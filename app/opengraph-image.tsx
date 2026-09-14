@@ -23,9 +23,9 @@ import { SET_LICENSE, SET_TITLE } from "@/lib/site-chrome"
  *   line of text.
  * - **No CSS variables and no Tailwind classes.** The colours below are the
  *   light theme's tokens resolved to hex: `--background` #ffffff, `--primary`
- *   #171717, `--primary-foreground` #fafafa, `--foreground` #0a0a0a,
- *   `--muted-foreground` #737373. This theme's greys are Tailwind's neutral
- *   scale, so those are exact and not approximations.
+ *   #006aa5, `--primary-foreground` #fafafa, `--foreground` #0a0a0a,
+ *   `--muted-foreground` #737373. The greys are Tailwind's neutral scale and
+ *   the blue is the token's own sRGB value, so none of them are approximations.
  *
  * Light only, deliberately. A card is a static image; there is no viewer theme
  * to read, and every platform that renders one puts it on its own surface.
@@ -58,7 +58,7 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 const INK = "#0a0a0a"
-const PRIMARY = "#171717"
+const PRIMARY = "#006aa5"
 const ON_PRIMARY = "#fafafa"
 const MUTED = "#737373"
 const HAIRLINE = "#e5e5e5"

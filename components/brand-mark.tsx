@@ -14,10 +14,10 @@ import type { SVGProps } from "react"
  *
  * Two notes on the translation from the original file:
  *
- * - The colours are the `--primary` pair rather than the `#171717` and `white`
- *   they were drawn as. `--primary` resolves to exactly that black in light
- *   mode, so nothing moves there — but it inverts for dark, and a fixed white
- *   pennant would have gone white-on-white. Running the glyph on
+ * - The colours are the `--primary` pair rather than the `#006aa5` and `white`
+ *   they are drawn as. `--primary` resolves to exactly that blue in light
+ *   mode, so nothing moves there. It lightens for dark, though, and a fixed
+ *   white pennant would have faded into it. Running the glyph on
  *   `--primary-foreground` means the two always invert together.
  * - The pennant is filled *and* stroked in the same colour. That stroke is not
  *   an outline; it is what fattens the shape to its drawn weight and rounds

@@ -1832,7 +1832,7 @@ export function IconBrowser({
                     {icon.isNew && (
                       <span
                         aria-hidden="true"
-                        className="pointer-events-none absolute top-1.5 right-1.5 size-1.5 rounded-full bg-foreground"
+                        className="pointer-events-none absolute top-1.5 right-1.5 size-1.5 rounded-full bg-primary"
                       />
                     )}
                   </button>

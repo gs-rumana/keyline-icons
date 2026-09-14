@@ -293,7 +293,7 @@ export default async function Page({
                 <span className="flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10px] leading-4 font-semibold tracking-wide text-foreground">
                   <span
                     aria-hidden="true"
-                    className="size-1.5 shrink-0 rounded-full bg-foreground"
+                    className="size-1.5 shrink-0 rounded-full bg-primary"
                   />
                   New
                 </span>

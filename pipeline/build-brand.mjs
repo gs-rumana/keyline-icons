@@ -50,8 +50,8 @@ const c = (n, s) => `\x1b[${n}m${s}\x1b[0m`
  * apple-touch-icon can read the site's theme class, so the tokens cannot come
  * along; if `--primary` ever moves, these move with it by hand.
  */
-const LIGHT = { tile: "#171717", glyph: "#fafafa" }
-const DARK = { tile: "#e5e5e5", glyph: "#171717" }
+const LIGHT = { tile: "#006aa5", glyph: "#fafafa" }
+const DARK = { tile: "#76bfe4", glyph: "#091c2c" }
 
 /** The .ico carries every size a browser or OS might ask it for. */
 const ICO_SIZES = [16, 32, 48, 64, 128, 256]
