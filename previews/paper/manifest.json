@@ -880,7 +880,7 @@
       "width": 742,
       "icons": 59,
       "variants": 40,
-      "bytes": 39487
+      "bytes": 40854
     },
     {
       "file": "media-2.html",
@@ -1368,7 +1368,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 125952
+      "bytes": 125911
     }
   ]
 }

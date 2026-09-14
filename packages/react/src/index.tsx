@@ -39,7 +39,7 @@ export function Activity(props: IconProps) {
 export function AirpodsOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M4 9L20 9C20.5523 9 21 9.4477 21 10L21 17C21 19.2091 19.2091 21 17 21L7 21C4.7909 21 3 19.2091 3 17L3 10C3 9.4477 3.4477 9 4 9ZM4.5505 9C3.8786 8.3417 3.5 7.4406 3.5 6.5C3.5 4.567 5.067 3 7 3L17 3C18.933 3 20.5 4.567 20.5 6.5C20.5 7.4406 20.1214 8.3417 19.4495 9M8 9C8 9.5523 8.4477 10 9 10L15 10C15.5523 10 16 9.5523 16 9" fill="none" />
+      <path d="M3 9L21 9C21.5523 9 22 9.4477 22 10L22 16C22 18.7614 19.7614 21 17 21L7 21C4.2386 21 2 18.7614 2 16L2 10C2 9.4477 2.4477 9 3 9ZM3.7961 9C1.9535 6.6308 3.461 3.4056 6.7609 3L17.2391 3C20.539 3.4056 22.0465 6.6308 20.2039 9M8 9C8 9.5523 8.4477 10 9 10L15 10C15.5523 10 16 9.5523 16 9" fill="none" />
       <path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )
@@ -48,7 +48,7 @@ export function AirpodsOpen(props: IconProps) {
 export function Airpods(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M7 3L17 3C19.2091 3 21 4.7909 21 7L21 17C21 19.2091 19.2091 21 17 21L7 21C4.7909 21 3 19.2091 3 17L3 7C3 4.7909 4.7909 3 7 3ZM3 9L21 9M9 8L15 8C15.5523 8 16 8.4477 16 9C16 9.5523 15.5523 10 15 10L9 10C8.4477 10 8 9.5523 8 9C8 8.4477 8.4477 8 9 8Z" fill="none" />
+      <path d="M7 3L17 3C19.7614 3 22 5.2386 22 8L22 16C22 18.7614 19.7614 21 17 21L7 21C4.2386 21 2 18.7614 2 16L2 8C2 5.2386 4.2386 3 7 3ZM2 9L22 9M9 8L15 8C15.5523 8 16 8.4477 16 9C16 9.5523 15.5523 10 15 10L9 10C8.4477 10 8 9.5523 8 9C8 8.4477 8.4477 8 9 8Z" fill="none" />
       <path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )

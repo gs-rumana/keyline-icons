@@ -224,6 +224,19 @@ const SIZE_KNOWN = new Set([
   // falls through. Same drawing, same box, same reason as `pen-off`.
   'message-square-off',
 ]);
+/**
+ * Drawings of a real product, which keep the product's proportions and radii
+ * rather than the set's.
+ *
+ * A generic case is a rounded box and takes the house square and the radius
+ * ladder. A branded one is recognised BY its outline: the earbuds case is 20
+ * wide by 18 on r=5, and squared to the house 18 on r=4 it stopped being that
+ * case. So these are exempt from the size a shape is held to and from the
+ * ladder, plates included, and nothing else: padding, spacing and the plate
+ * checks still apply. Zafar, 14 Sep 2026: "that's a real product and the shape
+ * with radius must be exempted in this case."
+ */
+const PRODUCT_KNOWN = new Set(['airpods', 'airpods-open']);
 const MIN_PAD = 1;
 
 /**
@@ -897,7 +910,7 @@ async function main() {
       const shape = container(name) === 'bare' ? opticalShape(els0, g) : null;
       if (isLevel(name)) { /* a partial state is meant to be partial */ }
       else if (CHEVRON.test(name)) { /* sized by the facing-apart pair — see CHEVRON */ }
-      else if (shape && !SIZE_KNOWN.has(name) && !OPEN_CONTAINER.test(name)) {
+      else if (shape && !SIZE_KNOWN.has(name) && !PRODUCT_KNOWN.has(name) && !OPEN_CONTAINER.test(name)) {
         const [tw, th] = SHAPE_SIZES[shape];
         // Twice CAP_CORNER, because a drawing can carry a diagonal free end at
         // each extreme of an axis: `arrow-down-narrow-wide` measures 22.83 for
@@ -962,6 +975,7 @@ async function main() {
       const offLadder = new Set();
       for (const m of src.matchAll(/<path d="([^"]+)"/g))
         for (const { radius } of roundedCorners(m[1])) {
+          if (PRODUCT_KNOWN.has(name)) continue;
           // A level indicator's duotone/fill inner solid is the stroke
           // drawing's painted contour, so its corners sit at r+1 of the
           // stroke's r=1.5 — 2.5 by arithmetic, not by drift. Derived, not

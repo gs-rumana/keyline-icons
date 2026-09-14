@@ -39,7 +39,7 @@ export function Activity(props: IconProps) {
 export function AirpodsOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M3 9L21 9L21 21L3 21L3 9ZM4 9L4 3L20 3L20 9M8 9L8 10L16 10L16 9" fill="none" />
+      <path d="M2 9L22 9L22 21L2 21L2 9ZM3 9L3 3L21 3L21 9M8 9L8 10L16 10L16 9" fill="none" />
       <path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )
@@ -48,7 +48,7 @@ export function AirpodsOpen(props: IconProps) {
 export function Airpods(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M8 8L16 8L16 10L8 10L8 8Z" fill="none" />
+      <path d="M2 3L22 3L22 21L2 21L2 3ZM2 9L22 9M8 8L16 8L16 10L8 10L8 8Z" fill="none" />
       <path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )

@@ -10,6 +10,8 @@
 import { add, sub, mul, unit, len } from '../v5/geom.mjs';
 import { offsetContour, contourPath, verify, flatten, clipContour, mirrorSegs } from '../v5/offset.mjs';
 import { sharpEndIn } from '../v5/icons.mjs';
+import { refineCubics, trimInset, dropSpecks } from '../batch-d/refit.mjs';
+import { offsetPath as offsetPathC, verify as verifyC } from '../../.claude/skills/icon-system/tools/offset.mjs';
 
 const rad = (a) => (a * Math.PI) / 180;
 const ang = (c, p) => (Math.atan2(p[1] - c[1], p[0] - c[0]) * 180) / Math.PI;
@@ -155,17 +157,23 @@ export function earWaveform(sharp) {
 /* --------------------------------------------------------------- airpods */
 
 /**
+ * The two cases are a real product, so they keep HIS proportions and radii
+ * rather than the set's: restored 14 Sep 2026 on his word ("that's a real
+ * product and the shape with radius must be exempted"). The first fit had
+ * squared the closed case to 18 on r=4 and narrowed the open one to match, and
+ * put circles where his lid is a curve.
+ *
  * `airpods`: his case, 2..22 by 3..21 on r=5, the lid's seam across at y=9,
  * the hinge a pill 8..16 riding the seam, and the light a mark of 2 at (12, 14),
- * 2 clear of the hinge's ink. Sharp squares the case and the pill; the light
- * stays round.
+ * 2 clear of the hinge's ink. Ink 1..23 by 2..22. Sharp squares the case and
+ * the pill on the same box; the light stays round.
  *
  * Duotone: the case's plate under it all. Fill: the case solid with the seam
  * and the hinge knocked out as one region (they overlap, and two knockouts may
  * not), the seam stopping on the walls' inner ink so the case stays one piece,
  * and the light knocked out.
  */
-const CASE = { x: [3, 21], y: [3, 21], r: 4 };
+const CASE = { x: [2, 22], y: [3, 21], r: 5 };
 function roundRect(x0, y0, x1, y1, rt, rb = rt) {
   const s = [];
   s.push(L([x0 + rt, y0], [x1 - rt, y0]));
@@ -185,24 +193,24 @@ export function airpods(sharp) {
   const r = sharp ? 0 : CASE.r;
   const body = roundRect(CASE.x[0], CASE.y[0], CASE.x[1], CASE.y[1], r);
   const plate = plateOf(body);
-  const seam = `M3 9L21 9`;
-  const pr = sharp ? 0 : 1;
+  const seam = `M${CASE.x[0]} 9L${CASE.x[1]} 9`;
   const pill = sharp ? polySegs([[8, 8], [16, 8], [16, 10], [8, 10]]) : [L([9, 8], [15, 8]), A([15, 9], 1, -90, 90), L([15, 10], [9, 10]), A([9, 9], 1, 90, 270)];
   const light = dotD([12, 14], 1);
   const strokes = contourPath(body) + seam + contourPath(pill);
   // the knockout: the seam's band between the walls' inner ink, unioned with the pill's band
+  const wi = CASE.x[0] + 1, wo = CASE.x[1] - 1;
   const k = sharp
-    ? [L([4, 8], [7, 8]), L([7, 8], [7, 8]), A([8, 8], 1, 180, 270), L([8, 7], [16, 7]), A([16, 8], 1, 270, 360), L([17, 8], [20, 8]), L([20, 8], [20, 10]), L([20, 10], [17, 10]),
-       A([16, 10], 1, 0, 90), L([16, 11], [8, 11]), A([8, 10], 1, 90, 180), L([7, 10], [4, 10]), L([4, 10], [4, 8])]
+    ? [L([wi, 8], [7, 8]), A([8, 8], 1, 180, 270), L([8, 7], [16, 7]), A([16, 8], 1, 270, 360), L([17, 8], [wo, 8]), L([wo, 8], [wo, 10]), L([wo, 10], [17, 10]),
+       A([16, 10], 1, 0, 90), L([16, 11], [8, 11]), A([8, 10], 1, 90, 180), L([7, 10], [wi, 10]), L([wi, 10], [wi, 8])]
     : (() => {
       const xo = Math.sqrt(3);                                        // the pill's r=2 end meets the seam's edge at 9 - sqrt 3
-      return [L([4, 8], [9 - xo, 8]), A([9, 9], 2, ang([9, 9], [9 - xo, 8]), -90), L([9, 7], [15, 7]), A([15, 9], 2, 270, 360 + ang([15, 9], [15 + xo, 8])), L([15 + xo, 8], [20, 8]), L([20, 8], [20, 10]),
-        L([20, 10], [15 + xo, 10]), A([15, 9], 2, ang([15, 9], [15 + xo, 10]), 90), L([15, 11], [9, 11]), A([9, 9], 2, 90, ang([9, 9], [9 - xo, 10])), L([9 - xo, 10], [4, 10]), L([4, 10], [4, 8])];
+      return [L([wi, 8], [9 - xo, 8]), A([9, 9], 2, ang([9, 9], [9 - xo, 8]), -90), L([9, 7], [15, 7]), A([15, 9], 2, 270, 360 + ang([15, 9], [15 + xo, 8])), L([15 + xo, 8], [wo, 8]), L([wo, 8], [wo, 10]),
+        L([wo, 10], [15 + xo, 10]), A([15, 9], 2, ang([15, 9], [15 + xo, 10]), 90), L([15, 11], [9, 11]), A([9, 9], 2, 90, ang([9, 9], [9 - xo, 10])), L([9 - xo, 10], [wi, 10]), L([wi, 10], [wi, 8])];
     })();
   const kn = k.filter((g) => g.type === 'A' || len(sub(g.p1, g.p0)) > 1e-9);
   const lightHole = [A([12, 14], 1, 0, 90), A([12, 14], 1, 90, 180), A([12, 14], 1, 180, 270), A([12, 14], 1, 270, 360)];
   return {
-    box: [2, 2, 22, 22],
+    box: [1, 2, 23, 22],
     variants: {
       [`stroke.${key}`]: [S(strokes), F(light)],
       [`duotone.${key}`]: [P(contourPath(plate)), S(strokes), F(light)],
@@ -213,91 +221,110 @@ export function airpods(sharp) {
 function polySegs(pts) { return pts.map((p, i) => L(p, pts[(i + 1) % pts.length])); }
 
 /**
- * `airpods-open`: the lid lifted. The body is the case below the seam (top
- * corners on r=1, bottom on r=5); the lid is a dome of two r=3.5 arcs about
- * (7, 6.5) and (17, 6.5), tangent to its top edge on y=3 and pinched back onto
- * the seam at 12 -/+ 7.45, his drawing's shape on circles. The hinge hangs under
- * the seam as half its pill.
+ * `airpods-open`: his drawing, verbatim. The body is the case below the seam,
+ * 2..22 by 9..21, top corners on r=1 and bottom on r=5; the lid is his curve,
+ * leaving the seam at 3.7961 and 20.2039, bulging out to x=3 and meeting its
+ * flat top on y=3 at 6.7609 and 17.2391. The hinge hangs under the seam as
+ * half its pill. Ink 1..23 by 2..22, the closed case's box.
  *
- * Duotone: one plate round lid and body. Fill: the lid and the body as two
- * solids, the seam between them knocked out, which is what says the lid is off;
- * the half pill and the light knocked out of the body.
+ * Sharp squares the lid on his earlier word: a box on 3..21, a unit in from the
+ * body's walls so it still reads as a separate lid, standing on the seam.
+ *
+ * Duotone: one plate round lid and body, his curve offset and checked. Fill:
+ * the lid and the body as two solids, the seam between them knocked out, which
+ * is what says the lid is off; the half pill and the light knocked out of the
+ * body.
  */
+const LID = 'M3.7961 9C1.9535 6.6308 3.461 3.4056 6.7609 3L17.2391 3C20.539 3.4056 22.0465 6.6308 20.2039 9';
+/** Cut a closed M/L/C path on the line y = at, keeping one side, closed along the line. */
+function clipY(d, at, keepAbove) {
+  const t = d.match(/[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?/gi) || [];
+  const segs = []; let i = 0, cur = null, st = null;
+  while (i < t.length) {
+    const c = t[i++];
+    if (c === 'M') { cur = [+t[i++], +t[i++]]; st = cur; }
+    else if (c === 'L') { const q = [+t[i++], +t[i++]]; segs.push([cur, cur, q, q]); cur = q; }
+    else if (c === 'C') { const k = [cur, [+t[i++], +t[i++]], [+t[i++], +t[i++]], [+t[i++], +t[i++]]]; segs.push(k); cur = k[3]; }
+    else if (len(sub(cur, st)) > 1e-9) { segs.push([cur, cur, st, st]); cur = st; }
+  }
+  const at4 = (k, s) => { const u = 1 - s; return [0, 1].map((j) => u ** 3 * k[0][j] + 3 * u * u * s * k[1][j] + 3 * u * s * s * k[2][j] + s ** 3 * k[3][j]); };
+  const cut = (k, s) => { const Lr = (a, b) => [a[0] + (b[0] - a[0]) * s, a[1] + (b[1] - a[1]) * s];
+    const p01 = Lr(k[0], k[1]), p12 = Lr(k[1], k[2]), p23 = Lr(k[2], k[3]), p012 = Lr(p01, p12), p123 = Lr(p12, p23), p = Lr(p012, p123);
+    return [[k[0], p01, p012, p], [p, p123, p23, k[3]]]; };
+  const inside = (p) => (keepAbove ? p[1] <= at + 1e-9 : p[1] >= at - 1e-9);
+  // split every segment at its crossings, then keep the pieces on the kept side
+  const pieces = [];
+  for (const k of segs) {
+    const ts = [];
+    for (let j = 0; j < 80; j++) {
+      let a = j / 80, b = (j + 1) / 80;
+      if ((at4(k, a)[1] - at) * (at4(k, b)[1] - at) < 0) {
+        for (let n = 0; n < 60; n++) { const m = (a + b) / 2; if ((at4(k, a)[1] - at) * (at4(k, m)[1] - at) <= 0) b = m; else a = m; }
+        ts.push((a + b) / 2);
+      }
+    }
+    let rest = k, lo = 0;
+    for (const s of ts) { const [h, r] = cut(rest, (s - lo) / (1 - lo)); h[3][1] = at; r[0] = h[3]; pieces.push(h); rest = r; lo = s; }
+    pieces.push(rest);
+  }
+  const kept = pieces.map((k) => inside(at4(k, 0.5)));
+  const start = kept.findIndex((v, j) => v && !kept[(j - 1 + kept.length) % kept.length]);
+  if (start < 0 || kept.filter((v, j) => v && !kept[(j - 1 + kept.length) % kept.length]).length !== 1) throw new Error('clipY: wants exactly one kept run');
+  let out = `M${pt(pieces[start][0])}`;
+  for (let j = 0; j < pieces.length; j++) {
+    const k = pieces[(start + j) % pieces.length];
+    if (!inside(at4(k, 0.5))) break;
+    const line = len(sub(k[1], k[0])) < 1e-12 && len(sub(k[2], k[3])) < 1e-12;
+    out += line ? `L${pt(k[3])}` : `C${pt(k[1])} ${pt(k[2])} ${pt(k[3])}`;
+  }
+  return out + 'Z';
+}
+
 export function airpodsOpen(sharp) {
   const key = sharp ? 'sharp' : 'regular';
-  const rt = sharp ? 0 : 1, rb = sharp ? 0 : 4;
-  const Lc = [7, 6.5], Rc = [17, 6.5], R = 3.5;
-  const dy = 9 - Lc[1], dxs = Math.sqrt(R * R - dy * dy);
-  const pinL = [Lc[0] - dxs, 9], pinR = [Rc[0] + dxs, 9];
-  const aL = ang(Lc, pinL), aR = ang(Rc, pinR);
-  // sharp squares the lid on his word: a box on 4..20, a unit in from the body's walls so it
-  // still reads as a separate lid, standing on the seam
-  const lid = sharp ? [L([4, 9], [4, 3]), L([4, 3], [20, 3]), L([20, 3], [20, 9])] : [A(Lc, R, aL, 270), L([7, 3], [17, 3]), A(Rc, R, 270, 360 + aR)];
-  if (sharp) { pinL[0] = 4; pinR[0] = 20; }
-  // body: top edge on the seam
-  const body = roundRect(3, 9, 21, 21, rt, rb);
-  // silhouette: body with the lid standing on its top edge
-  const sil = [];
-  const leftWallTop = rt ? A([3 + rt, 9 + rt], rt, 180, 270) : null;
-  sil.push(L([3, 21 - rb], [3, 9 + rt]));
-  if (leftWallTop) sil.push(leftWallTop);
-  sil.push(L([3 + rt, 9], pinL));
-  sil.push(...lid);
-  sil.push(L(pinR, [21 - rt, 9]));
-  if (rt) sil.push(A([21 - rt, 9 + rt], rt, -90, 0));
-  sil.push(L([21, 9 + rt], [21, 21 - rb]));
-  if (rb) sil.push(A([21 - rb, 21 - rb], rb, 0, 90));
-  sil.push(L([21 - rb, 21], [3 + rb, 21]));
-  if (rb) sil.push(A([3 + rb, 21 - rb], rb, 90, 180));
-  const silSegs = sil.filter((g) => g.type === 'A' || len(sub(g.p1, g.p0)) > 1e-9);
-  // the plate by hand: the lid's offset arcs meet the body's offset corners where two circles
-  // cross, which the contour offsetter cannot find across the short run of seam between them
-  const cross2 = (c1, r1, c2, r2, toward) => {
-    const d = len(sub(c2, c1)), x = (d * d + r1 * r1 - r2 * r2) / (2 * d), h = Math.sqrt(r1 * r1 - x * x);
-    const e = unit(sub(c2, c1)), n = [-e[1], e[0]], m = add(c1, mul(e, x));
-    const both = [add(m, mul(n, h)), add(m, mul(n, -h))];
-    return both.reduce((a, b) => (len(sub(b, toward)) < len(sub(a, toward)) ? b : a));
-  };
-  const cTL = [3 + rt, 9 + rt], cTR = [21 - rt, 9 + rt], rc = rt + 1;
-  const xL = cross2(Lc, R + 1, cTL, rc, [0, 7]), xR = cross2(Rc, R + 1, cTR, rc, [24, 7]);
-  let a0 = ang(Lc, xL); while (a0 > 270) a0 -= 360; while (a0 < 90) a0 += 360;
-  let a1 = ang(Rc, xR); while (a1 < 270) a1 += 360;
-  let plateSegs;
-  if (sharp) {
-    // the square lid's plate: every convex corner on r=1, the two steps where lid meets body closing to points
-    plateSegs = [L([2, 21], [2, 9]), A([3, 9], 1, 180, 270), L([3, 8], [3, 3]), A([4, 3], 1, 180, 270), L([4, 2], [20, 2]), A([20, 3], 1, 270, 360),
-      L([21, 3], [21, 8]), A([21, 9], 1, 270, 360), L([22, 9], [22, 21]), A([21, 21], 1, 0, 90), L([21, 22], [3, 22]), A([3, 21], 1, 90, 180)];
-  } else {
-    plateSegs = [A(Lc, R + 1, a0, 270), L([7, 2], [17, 2]), A(Rc, R + 1, 270, a1)];
-    let b0 = ang(cTR, xR); while (b0 > 0) b0 -= 360;
-    plateSegs.push(A(cTR, rc, b0, 0), L([22, 9 + rt], [22, 21 - rb]));
-    plateSegs.push(A([21 - rb, 21 - rb], rb + 1, 0, 90), L([21 - rb, 22], [3 + rb, 22]), A([3 + rb, 21 - rb], rb + 1, 90, 180), L([2, 21 - rb], [2, 9 + rt]));
-    let c1 = ang(cTL, xL); while (c1 < 180) c1 += 360;
-    plateSegs.push(A(cTL, rc, 180, c1));
-  }
-  const plate = plateSegs.filter((g) => g.type === 'A' || len(sub(g.p1, g.p0)) > 1e-9);
-  verify(silSegs, plate, 1);
+  const rt = sharp ? 0 : 1, rb = sharp ? 0 : 5;
+  const body = roundRect(2, 9, 22, 21, rt, rb);
   const hinge = sharp ? [L([8, 9], [8, 10]), L([8, 10], [16, 10]), L([16, 10], [16, 9])]
     : [A([9, 9], 1, 180, 90), L([9, 10], [15, 10]), A([15, 9], 1, 90, 0)];
   const light = dotD([12, 14], 1);
-  const strokes = contourPath(body) + contourPath(lid, false) + contourPath(hinge, false);
-  // fill: lid solid above the seam's ink, body solid below it
-  const lidClosed = [...lid, L(pinR, pinL)];
-  const lidSolid = clipClosed(plateOf(lidClosed), [0, 8], [0, 1], 0, -1);
   const bodySolid = clipClosed(plateOf(body), [0, 10], [0, 1], 0, 1);
-  // the half pill's band below the seam's ink
   const xo = Math.sqrt(3);
   const notch = sharp
     ? [L([7, 10], [7, 10]), A([8, 10], 1, 180, 90), L([8, 11], [16, 11]), A([16, 10], 1, 90, 0), L([17, 10], [7, 10])]
     : [A([9, 9], 2, ang([9, 9], [9 - xo, 10]), 90), L([9, 11], [15, 11]), A([15, 9], 2, 90, ang([15, 9], [15 + xo, 10])), L([15 + xo, 10], [9 - xo, 10])];
   const notchSegs = notch.filter((g) => g.type === 'A' || len(sub(g.p1, g.p0)) > 1e-9);
   const lightHole = [A([12, 14], 1, 0, 90), A([12, 14], 1, 90, 180), A([12, 14], 1, 180, 270), A([12, 14], 1, 270, 360)];
+
+  let lidD, plateD, lidSolidD;
+  if (sharp) {
+    const lid = [L([3, 9], [3, 3]), L([3, 3], [21, 3]), L([21, 3], [21, 9])];
+    lidD = contourPath(lid, false);
+    // every convex corner on r=1, the two steps where lid meets body closing to points
+    const plateSegs = [L([1, 21], [1, 9]), A([2, 9], 1, 180, 270), L([2, 8], [2, 3]), A([3, 3], 1, 180, 270), L([3, 2], [21, 2]), A([21, 3], 1, 270, 360),
+      L([22, 3], [22, 8]), A([22, 9], 1, 270, 360), L([23, 9], [23, 21]), A([22, 21], 1, 0, 90), L([22, 22], [2, 22]), A([2, 21], 1, 90, 180)];
+    const silSegs = [L([2, 21], [2, 9]), L([2, 9], [3, 9]), ...lid, L([21, 9], [22, 9]), L([22, 9], [22, 21]), L([22, 21], [2, 21])].filter((g) => len(sub(g.p1, g.p0)) > 1e-9);
+    verify(silSegs, plateSegs, 1);
+    plateD = contourPath(plateSegs);
+    lidSolidD = contourPath(clipClosed(plateOf([...lid, L([21, 9], [3, 9])]), [0, 8], [0, 1], 0, -1));
+  } else {
+    lidD = LID;
+    // the silhouette: the body with his lid standing on its top edge, as M/L/C
+    const sil = 'M2 16L2 10C2 9.4477 2.4477 9 3 9L3.7961 9' + LID.replace(/^M[-\d. ]+/, '') +
+      'L21 9C21.5523 9 22 9.4477 22 10L22 16C22 18.7614 19.7614 21 17 21L7 21C4.2386 21 2 18.7614 2 16Z';
+    const fine = refineCubics(sil);
+    plateD = dropSpecks(trimInset(offsetPathC(fine, 1), fine, 1));
+    const chk = verifyC(fine, plateD, 1);
+    if (!chk.ok) throw new Error(`airpods-open plate off by ${chk.worst.toFixed(4)}`);
+    // above the seam's ink the plate is the lid's offset and nothing else
+    lidSolidD = clipY(plateD, 8, true);
+  }
+  const strokes = contourPath(body) + lidD + contourPath(hinge, false);
   return {
-    box: [2, 2, 22, 22],
+    box: [1, 2, 23, 22],
     variants: {
       [`stroke.${key}`]: [S(strokes), F(light)],
-      [`duotone.${key}`]: [P(contourPath(plate)), S(strokes), F(light)],
-      [`fill.${key}`]: [F(contourPath(lidSolid) + contourPath(bodySolid) + holeOf(bodySolid, notchSegs) + holeOf(bodySolid, lightHole))],
+      [`duotone.${key}`]: [P(plateD), S(strokes), F(light)],
+      [`fill.${key}`]: [F(lidSolidD + contourPath(bodySolid) + holeOf(bodySolid, notchSegs) + holeOf(bodySolid, lightHole))],
     },
   };
 }

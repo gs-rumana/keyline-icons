@@ -2291,4 +2291,4 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   }
 }
 
-export { SETS, BOXES, plateOf, runPath, segsToPath, revRun, startOf, endOf, assertBox, S, F_, P };
+export { SETS, BOXES, plateOf, runPath, segsToPath, revRun, startOf, endOf, assertBox, S, F_, P, refineCubics, trimInset, dropSpecks };
