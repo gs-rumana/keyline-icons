@@ -114,7 +114,7 @@ export function SiteFooter() {
                 one rather than forwarding to the browser. */}
             <Link href="/" prefetch={false} className="flex items-center gap-2">
               <BrandMark className="size-6" />
-              <span className="text-sm font-medium tracking-tight">
+              <span className="text-base font-medium tracking-tight">
                 {SET_TITLE}
               </span>
             </Link>
