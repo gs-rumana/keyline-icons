@@ -38,13 +38,21 @@ scope. There is no provider, no context and no theme object.
 
 ## Notes
 
-**Three weights, three entry points.**
+**Three styles, two corner treatments, six entry points.**
 
 ```tsx
 import { Bell } from "@keyline-icons/react"          // stroke,  851 icons
 import { Bell } from "@keyline-icons/react/duotone"  // duotone, 698 icons
 import { Bell } from "@keyline-icons/react/fill"     // fill,    648 icons
+
+import { Bell } from "@keyline-icons/react/sharp"          // the same three,
+import { Bell } from "@keyline-icons/react/sharp/duotone"  // with butt caps and
+import { Bell } from "@keyline-icons/react/sharp/fill"     // square corners
 ```
+
+Sharp covers exactly the names the rounded entry point beside it does, and the
+export is called the same thing in both, so switching a file over is a change
+to the import path and nothing else.
 
 Separate imports rather than one component with a `weight` prop, because the
 three styles do not cover the same icons. Duotone and fill need a region to
