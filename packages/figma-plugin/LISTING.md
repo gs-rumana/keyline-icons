@@ -686,43 +686,7 @@ Sharp corners, across the whole set. Every drawing now has a squared-off twin, s
 
 Also redrawn, in both treatments: 48 drawings, mostly the -off family and the level indicators.
 
-v0.2.0
-39 new drawings, and one rename: tag-horizontal is now tag-horizontal-start, because the batch drew its mirror and neither form is the other's variant. That breaks the React import, which is why this is 0.2.0 and not 0.1.5.
-
-* Security: shield, with check, plus, minus and x
-* Tools: toolbox, wrench, hammer and pencil-ruler
-* Controls: power and power-off, grip-horizontal and grip-vertical, sliders-2-horizontal and sliders-2-vertical
-* Layout: grid-circles and grid-squares, each with a check and an x
-* Shapes: circles and circles-dashed, circle-square and circle-square-dashed
-* Commerce: percent, with circle- and square- forms, and the horizontal tag as tag-horizontal-start and tag-horizontal-end with a percent form of each
-* Others: plug, lightbulb, lightbulb-on, ban, octagon-x, cursor-off and megaphone
-
-Also redrawn: pause in bare, circle and square forms, and play in its circle and square.
-
-v0.1.4
-No drawing changes. The CLI and MCP packages were shipping 527 icons while the React package shipped 547, so all three are reissued together: 0.1.4 is the same set in every package.
-
-v0.1.3
-Two corrections: queue redrawn to 22×18, the horizontal size the set uses for a plate with rules beneath it; repeat-1's numeral given two more units of stem.
-
-v0.1.2
-20 new drawings:
-
-* Playback: repeat, repeat-1, queue, podcast and cast
-* Captions: captions and subtitles, the double-C and the ruled plate
-* Video: list-video, picture-in-picture, and six galleries, horizontal and vertical with a -start and an -end for each
-* Screen: fullscreen, fullscreen-exit, maximize and minimize
-* Files: copy-plus
-
-Also redrawn: shuffle, cut where its strands cross.
-
-v0.1.1
-24 new drawings:
-
-* Sport: trophy, award, and podium with 1, 2 and 3 place variants
-* Devices: monitor, monitor-off, bluetooth, and battery at four levels
-* Layout: layout-dashboard, and grid in 2x2, 2x3, 3x2 and 3x3
-* Others: alert, in bare, circle and square forms; building; loader; heart-hand
+Earlier releases, back to the first cut: keylineicons.com/changelog
 ```
 
 **The version history is part of this description**, the way it is in the
@@ -730,6 +694,12 @@ plugin's. The published text carried it and this file did not, so the copy here
 was short of what is actually on the page and `check-readmes` was policing an
 incomplete text. Three times in a row a request for "the full list with
 changelogs" was answered with the header alone.
+
+**The field is capped at 10,000 characters**, and the history is what grows
+into it: the 0.9.0 paste was refused at 10,896. So the oldest entries come off
+the bottom, v0.2.0 and the four 0.1.x releases on 14 Sep 2026, and a last line
+points at `keylineicons.com/changelog`, which keeps every release. Trim from
+the oldest end again whenever a new entry pushes it past about 9,500.
 
 **One line per paragraph, and that is not a style choice.** Figma's Description
 field preserves newlines rather than reflowing, so a block wrapped for a text
