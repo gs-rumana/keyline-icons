@@ -243,6 +243,15 @@ export const CATEGORIES = [
     match: /^(user|scan-face)/,
     blurb: "People, accounts and the signs that badge them.",
   },
+  // Opened 14 Sep 2026 with the six faces of 1.0.0. NOT Users: `user` is an
+  // account, a silhouette standing for whoever signs in, and these are drawn
+  // people with hair, faces and a pacifier. Anchored on each word so a later
+  // `boyfriend` or `babysitter` has to be filed on purpose.
+  {
+    label: "People",
+    match: /^(boy|girl|baby(-2)?-(boy|girl))$/,
+    blurb: "The boy, the girl and the babies, with a curl, a bow or a pacifier.",
+  },
   // Two marks, opened 11 Sep 2026. NOT Users: a Mars glyph is not a person, it
   // is the sign for one, and a shelf holds what the drawing is. Anchored on
   // purpose, so it takes a third gender mark and nothing else.

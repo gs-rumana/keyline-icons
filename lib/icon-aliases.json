@@ -2258,7 +2258,6 @@
     ],
     "arrow-down": [
       "a-arrow-down",
-      "arrow-big-down",
       "arrow-big-down-dash",
       "arrow-down-0-1",
       "arrow-down-1-0",
@@ -2269,13 +2268,11 @@
       "arrow-down-z-a"
     ],
     "arrow-left": [
-      "arrow-big-left",
       "arrow-big-left-dash",
       "arrow-left-from-line",
       "arrow-left-to-line"
     ],
     "arrow-right": [
-      "arrow-big-right",
       "arrow-big-right-dash",
       "arrow-right-from-line",
       "arrow-right-to-line",
@@ -2284,7 +2281,6 @@
     ],
     "arrow-up": [
       "a-arrow-up",
-      "arrow-big-up",
       "arrow-big-up-dash",
       "arrow-up-0-1",
       "arrow-up-1-0",
@@ -2571,21 +2567,8 @@
       "monitor-up",
       "monitor-x"
     ],
-    "panel-bottom": [
-      "panel-bottom-open"
-    ],
-    "panel-left": [
-      "panel-left-open",
-      "panels-left-bottom"
-    ],
-    "panel-right": [
-      "panel-right-open",
-      "panels-right-bottom"
-    ],
     "panel-top": [
-      "panel-top-bottom-dashed",
-      "panel-top-open",
-      "panels-top-left"
+      "panel-top-bottom-dashed"
     ],
     "pen": [
       "pen-tool"

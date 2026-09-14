@@ -601,8 +601,12 @@ const DASHED_LEVEL = /^(?:circle|square)-dashed-(?:full|half|quarter|three-quart
  * sixth of the size, not this glyph. Where a percent does want a solid, the
  * container supplies it and the sign is knocked out of the disc, exactly as
  * `circle-check` does with its mark.
+ *
+ * `heading-6` joined on 14 Sep 2026: the numeral's bowl is a closed ring, and it is
+ * a counter like `at`'s. The heading family is letterforms, stroke only like
+ * `bold`, and a 6 with its bowl filled is a blot beside an open H.
  */
-const COUNTER = new Set(['at', 'percent']);
+const COUNTER = new Set(['at', 'percent', 'heading-6']);
 
 /**
  * Drawings whose fillable region is closed by another of the icon's own
