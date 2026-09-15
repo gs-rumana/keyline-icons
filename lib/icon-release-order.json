@@ -65,7 +65,10 @@
       "banknote-2-check",
       "banknote-2-minus",
       "banknote-2-plus",
-      "banknote-2-x"
+      "banknote-2-x",
+      "rocket",
+      "rocket-2",
+      "rocket-vertical"
     ],
     "0.9.0": [
       "plane",

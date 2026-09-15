@@ -67,14 +67,14 @@ Keyline Icons
 ## Tagline
 
 ```
-915 icons, three styles, rounded or sharp corners. Searchable in Figma and FigJam.
+918 icons, three styles, rounded or sharp corners. Searchable in Figma and FigJam.
 ```
 
 Capped at 100 characters. The line above is 81, so there is still room. A
 shorter alternative if it ever needs one:
 
 ```
-915 icons in three styles, cut rounded or sharp.
+918 icons in three styles, cut rounded or sharp.
 ```
 
 ## Description
@@ -88,19 +88,19 @@ which only ever shows the newest entry. Someone deciding whether to install
 wants to see the set is maintained, and that is what a history says.
 
 ```
-Search 915 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
+Search 918 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
 
 Three styles
 
-* Stroke: 915 icons, 2px, round caps and joins
-* Duotone: 755 icons, a 40% plate under the line
-* Fill: 705 icons, solid where the glyph has a region to fill
+* Stroke: 918 icons, 2px, round caps and joins
+* Duotone: 758 icons, a 40% plate under the line
+* Fill: 708 icons, solid where the glyph has a region to fill
 
-Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 4,750 SVGs in total.
+Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 4,768 SVGs in total.
 
 56 icons also come in a square- form and 61 in a circle- form, so a container is a search away rather than a second drawing.
 
-Search knows more than the file names. 798 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
+Search knows more than the file names. 801 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
 
 In a design file an insert arrives as a 24 × 24 frame, which is what makes a row of icons line up. In FigJam it arrives as a group, so FigJam's colour control reaches the drawing instead of painting a box around it. Double-click into one and every path takes its own colour, which is how a gift gets a red box and a yellow bow, and how duotone keeps both of its tones.
 
@@ -114,12 +114,13 @@ github.com/keyline-icons/keyline-icons
 Changelog
 
 1.0.0
-64 new drawings, taking the set to 915 names and 4,750 SVGs, and a new shelf.
+67 new drawings, taking the set to 918 names and 4,768 SVGs, and a new shelf.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
 * Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
 * Finance: two banknotes, each with check, minus, plus and x
+* Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * People opened as a shelf of its own, taking categories from 37 to 38
 
@@ -228,7 +229,7 @@ expectation for an icon set. `free icons` overlaps `open source`, and page four
 marks the plugin Free natively.
 
 That leaves the five that actually distinguish it: FigJam support is rare among
-icon plugins, 755 duotone drawings are rare among icon sets, a set that ships
+icon plugins, 758 duotone drawings are rare among icon sets, a set that ships
 every drawing rounded *and* sharp is rarer still, and the rest name the audience
 rather than the artefact.
 
@@ -258,10 +259,10 @@ to be **pushed** before any of this is true for anyone but you.
 ### 1.0.0
 
 ```
-64 new drawings, taking the set to 915 names and 4,750 SVGs: a boy, a girl and
+67 new drawings, taking the set to 918 names and 4,768 SVGs: a boy, a girl and
 four babies, the panel open, closed and dashed on every side, the phone's
-calls, a tablet with eight signs, a laptop, two banknotes with their signs, the
-big arrows and the heading with its six levels.
+calls, a tablet with eight signs, a laptop, two banknotes with their signs, a
+rocket three ways, the big arrows and the heading with its six levels.
 
 People opened as a shelf with them, taking categories from 37 to 38.
 
@@ -577,13 +578,13 @@ Keyline Icons
 ### Description
 
 ```
-915 icons on a 24×24 grid, in three styles and two corner treatments: stroke, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
+918 icons on a 24×24 grid, in three styles and two corner treatments: stroke, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
 
-798 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the three styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
+801 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the three styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
 
-Which styles an icon has is measured rather than chosen: duotone and fill need a fillable region, so an open glyph like bar-chart is stroke-only, and square-bar-chart has all three. That is why the three counts differ: stroke 915, duotone 755, fill 705.
+Which styles an icon has is measured rather than chosen: duotone and fill need a fillable region, so an open glyph like bar-chart is stroke-only, and square-bar-chart has all three. That is why the three counts differ: stroke 918, duotone 758, fill 708.
 
-Every drawing exists in both treatments, so sharp is a switch rather than a second library: 4,750 variants over the same 915 names.
+Every drawing exists in both treatments, so sharp is a switch rather than a second library: 4,768 variants over the same 918 names.
 
 The Catalog page files every icon under one of 38 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
@@ -593,12 +594,13 @@ keylineicons.com
 github.com/keyline-icons/keyline-icons
 
 v1.0.0
-64 new drawings, and a new shelf. The set is 915 names now, 798 component sets and 4,750 variants, up from 851 and 4,394. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
+67 new drawings, and a new shelf. The set is 918 names now, 801 component sets and 4,768 variants, up from 851 and 4,394. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
 * Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
 * Finance: two banknotes, each with check, minus, plus and x
+* Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * Categories went from 37 to 38: People took the figures that had nowhere honest to sit
 

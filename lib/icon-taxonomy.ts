@@ -412,10 +412,12 @@ export const CATEGORIES = [
   // and the route rather than the vehicle, and Weather is the sky.
   {
     // The vehicles themselves. `plane` carries its two states with it, which is
-    // why the anchor is a prefix rather than the three names.
+    // why the anchor is a prefix rather than the three names. `rocket` joined on
+    // 15 Sep 2026 with its speed-line and upright forms: it is a vehicle before it
+    // is a launch.
     label: "Transport",
-    match: /^(plane|ship|train|bike)(-|$)/,
-    blurb: "The vehicles: plane and its two states, ship, train and bike.",
+    match: /^(plane|ship|train|bike|rocket)(-|$)/,
+    blurb: "The vehicles: plane and its two states, ship, train, bike and the rocket.",
   },
   {
     // The living and falling half of the outdoors, and `wind-turbine` with it:
