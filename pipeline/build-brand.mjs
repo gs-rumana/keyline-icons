@@ -60,12 +60,14 @@ const INK = { light: "#006aa5", dark: "#76bfe4" }
 const GROUND = "#ffffff"
 
 /**
- * The drawings the logo is made of: `shapes-2`'s triangle in stroke, its circle
- * in duotone (plate, then ring) and its square in fill, in logo.svg's order.
- * `readMark` fails if any path stops matching its icon, or the copy the site
- * and the OG cards draw from in `lib/brand-mark.ts`.
+ * The logo's paths in logo.svg's order. The sharp diamond is drawn for the logo
+ * and has no icon to match, so it is `null` here and only checked against
+ * `lib/brand-mark.ts`. The rest are `shapes-2`'s triangle in stroke, its circle
+ * in duotone (plate, then ring) and its square in fill: `readMark` fails if any
+ * stops matching its icon, or the copy the site and the OG cards draw from.
  */
 const PARTS = [
+  null,
   ["stroke", 0, 0],
   ["duotone", 0, 1],
   ["duotone", 1, 1],
@@ -74,12 +76,12 @@ const PARTS = [
 const MARK_TS = join(ROOT, "lib", "brand-mark.ts")
 
 /**
- * Space around the mark, in units of its own 20-unit ink box. A tab icon gets
+ * Space around the mark, in units of its own 21-unit ink box. A tab icon gets
  * one unit a side so the shapes do not touch the edge at 16px. The bled icons
- * get seven, a 34-unit canvas: the mark's farthest corner sits 12.9 from the
- * centre, inside the 13.6 of the circle Android crops a maskable icon to (80%
- * of the width), and 20 of 34 is the share of the square an iOS glyph usually
- * takes.
+ * get seven, a 35-unit canvas: the mark's farthest point, the fill square's
+ * corner, sits 12.9 from the centre, inside the 14 of the circle Android crops
+ * a maskable icon to (80% of the width), and 21 of 35 is about the share of
+ * the square an iOS glyph usually takes.
  */
 const TAB_PAD = 1
 const BLEED_PAD = 7
@@ -149,9 +151,10 @@ function findChrome() {
 
 /**
  * Pull the mark out of the source file rather than restating it here, so the
- * logo stays the one place the shape is defined. Four paths, whose painting
- * (stroke, plate, ring, fill) is carried in the file itself and passed through
- * untouched; only the colour is supplied, as `color` on the root.
+ * logo stays the one place the shape is defined. Five paths, whose painting
+ * (sharp line, stroke, plate, ring, fill) and the triangle's `transform` are
+ * carried in the file itself and passed through untouched; only the colour is
+ * supplied, as `color` on the root.
  *
  * Each path is compared with the shipped icon it came from and with
  * `lib/brand-mark.ts`. A redraw of `shapes-2` that left the logo behind would
@@ -173,11 +176,22 @@ async function readMark(svg) {
   const norm = (d) => d.replace(/\s+/g, " ").trim()
   const subpaths = (d) => norm(d).split(/(?<=Z)\s*/).filter(Boolean).map((x) => x.trim())
   const markTs = norm(await readFile(MARK_TS, "utf8"))
-  for (const [i, [style, pathIndex, subIndex]] of PARTS.entries()) {
+  for (const [i, part] of PARTS.entries()) {
+    const got = norm(attr(tags[i], "d") ?? "")
+    const transform = attr(tags[i], "transform")
+    if (transform && !markTs.includes(transform)) {
+      throw new Error(`lib/brand-mark.ts does not place path ${i + 1} at ${transform}`)
+    }
+    if (!part) {
+      if (!markTs.includes(got)) {
+        throw new Error(`lib/brand-mark.ts is missing path ${i + 1} of public/logo/logo.svg`)
+      }
+      continue
+    }
+    const [style, pathIndex, subIndex] = part
     const file = join(ROOT, "icons", style, "shapes-2.svg")
     const icon = [...(await readFile(file, "utf8")).matchAll(/<path\b[^>]*?\bd="([^"]*)"/g)]
     const want = icon[pathIndex] && subpaths(icon[pathIndex][1])[subIndex]
-    const got = norm(attr(tags[i], "d") ?? "")
     if (!want || want !== got) {
       throw new Error(
         `public/logo/logo.svg path ${i + 1} no longer matches ${relative(ROOT, file)}; copy the icon's path across`,

@@ -52,18 +52,18 @@ const MUTED = "#737373"
 const HAIRLINE = "#e5e5e5"
 
 /**
- * The mark's four paths, read from public/logo/logo.svg, which `brand:check`
- * holds to the shipped `shapes-2` drawings. Their painting (stroke, plate,
- * ring, fill) comes with them and paints `currentColor`, so a cover only
- * supplies the colour.
+ * The mark's paths and ink box, read from public/logo/logo.svg, which
+ * `brand:check` holds to the shipped `shapes-2` drawings. Their painting and
+ * the triangle's placement come with them and paint `currentColor`, so a cover
+ * only supplies the colour.
  */
-const MARK = (await readFile(join(ROOT, "public", "logo", "logo.svg"), "utf8"))
-  .match(/<path\b[^>]*?\/?>/g)
-  .join("")
+const LOGO = await readFile(join(ROOT, "public", "logo", "logo.svg"), "utf8")
+const MARK = LOGO.match(/<path\b[^>]*?\/?>/g).join("")
+const [MARK_X, MARK_Y, MARK_W] = LOGO.match(/viewBox="([^"]+)"/)[1].split(/\s+/).map(Number)
 
-/** The mark at `px` across, with its top-left corner at (x, y). Its ink box starts at (2, 2). */
+/** The mark at `px` across, with the top-left corner of its ink box at (x, y). */
 const markAt = (x, y, px, colour) =>
-  `<g transform="translate(${x} ${y}) scale(${px / 20}) translate(-2 -2)" color="${colour}">${MARK}</g>`
+  `<g transform="translate(${x} ${y}) scale(${px / MARK_W}) translate(${-MARK_X} ${-MARK_Y})" color="${colour}">${MARK}</g>`
 
 /**
  * The glyphs the cover leads with, in reading order.
