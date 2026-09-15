@@ -8,6 +8,7 @@ import {
   BarChart,
   Bed,
   Bird,
+  Boy,
   Bold,
   Bot,
   Check,
@@ -165,6 +166,9 @@ const CATEGORY_ICONS: Record<
   Pointers: Cursor,
   Layout: PanelLeft,
   Users: User,
+  // Opened 14 Sep 2026. The boy rather than a baby: at 16px the rail wants the
+  // face with the most to read, and a bald dome is a circle.
+  People: Boy,
   Gender: Venus,
   Actions: Check,
   // Every label in CATEGORIES needs a row here, including the ones added since:

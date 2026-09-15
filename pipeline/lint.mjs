@@ -322,11 +322,17 @@ const MAX_SKEW = 1;
  * a six-unit sign clearing the seam by 2 cannot start before 15 and cannot end
  * before 23. One unit outside the body, and no arrangement inside it.
  *
+ * `banknote-minus` and `banknote-2-minus` join it on 15 Sep 2026. The banknote's signs sit below
+ * the note's corner so its ring and ticks survive, and the note moves up 3 in
+ * the compounds to centre them, `user`'s move; check, plus and x then paint
+ * 1..23 both ways, but a minus is one bar on y=19, so its compound runs 1..20.
+ *
  * `bin` used to be listed here at 18 x 21 with 2/1 padding. It was adjudicated
  * on 16 Aug 2026 and is now 18 x 22 with 3/3/1/1 — the vertical size, centred
  * exactly — so it is neither in this set nor a finding. Do not re-raise it.
  */
 const SKEW_KNOWN = new Set([
+  'banknote-2-minus', 'banknote-minus',
   'bell-check', 'bell-dot', 'bell-minus', 'bell-plus', 'bell-x',
   'git-graph', 'git-pull-request-arrow',
   'package-arrow-down', 'package-arrow-left', 'package-arrow-right', 'package-arrow-up',
@@ -601,8 +607,12 @@ const DASHED_LEVEL = /^(?:circle|square)-dashed-(?:full|half|quarter|three-quart
  * sixth of the size, not this glyph. Where a percent does want a solid, the
  * container supplies it and the sign is knocked out of the disc, exactly as
  * `circle-check` does with its mark.
+ *
+ * `heading-6` joined on 14 Sep 2026: the numeral's bowl is a closed ring, and it is
+ * a counter like `at`'s. The heading family is letterforms, stroke only like
+ * `bold`, and a 6 with its bowl filled is a blot beside an open H.
  */
-const COUNTER = new Set(['at', 'percent']);
+const COUNTER = new Set(['at', 'percent', 'heading-6']);
 
 /**
  * Drawings whose fillable region is closed by another of the icon's own
