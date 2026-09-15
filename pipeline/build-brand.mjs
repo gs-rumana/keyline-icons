@@ -62,13 +62,12 @@ const GROUND = "#ffffff"
 /**
  * The logo's paths in logo.svg's order. The sharp diamond is drawn for the logo
  * and has no icon to match, so it is `null` here and only checked against
- * `lib/brand-mark.ts`. The rest are `shapes-2`'s triangle in stroke, its circle
- * in duotone (plate, then ring) and its square in fill: `readMark` fails if any
- * stops matching its icon, or the copy the site and the OG cards draw from.
+ * `lib/brand-mark.ts`. The rest are `shapes-2`'s circle in duotone (plate, then
+ * ring) and its square in fill: `readMark` fails if either stops matching its
+ * icon, or the copy the site and the OG cards draw from.
  */
 const PARTS = [
   null,
-  ["stroke", 0, 0],
   ["duotone", 0, 1],
   ["duotone", 1, 1],
   ["fill", 0, 2],
@@ -76,12 +75,12 @@ const PARTS = [
 const MARK_TS = join(ROOT, "lib", "brand-mark.ts")
 
 /**
- * Space around the mark, in units of its own 21-unit ink box. A tab icon gets
+ * Space around the mark, in units of its own 20.5-unit ink box. A tab icon gets
  * one unit a side so the shapes do not touch the edge at 16px. The bled icons
- * get seven, a 35-unit canvas: the mark's farthest point, the fill square's
- * corner, sits 12.9 from the centre, inside the 14 of the circle Android crops
- * a maskable icon to (80% of the width), and 21 of 35 is about the share of
- * the square an iOS glyph usually takes.
+ * get seven, a 34.5-unit canvas: the mark's farthest point, the fill square's
+ * corner, sits about 13.1 from the centre, inside the 13.8 of the circle
+ * Android crops a maskable icon to (80% of the width), and 20.5 of 34.5 is
+ * about the share of the square an iOS glyph usually takes.
  */
 const TAB_PAD = 1
 const BLEED_PAD = 7
@@ -151,10 +150,9 @@ function findChrome() {
 
 /**
  * Pull the mark out of the source file rather than restating it here, so the
- * logo stays the one place the shape is defined. Five paths, whose painting
- * (sharp line, stroke, plate, ring, fill) and the triangle's `transform` are
- * carried in the file itself and passed through untouched; only the colour is
- * supplied, as `color` on the root.
+ * logo stays the one place the shape is defined. Four paths, whose painting
+ * (sharp line, plate, ring, fill) is carried in the file itself and passed
+ * through untouched; only the colour is supplied, as `color` on the root.
  *
  * Each path is compared with the shipped icon it came from and with
  * `lib/brand-mark.ts`. A redraw of `shapes-2` that left the logo behind would

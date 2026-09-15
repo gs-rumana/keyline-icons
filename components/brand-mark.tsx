@@ -3,15 +3,13 @@ import type { SVGProps } from "react"
 import {
   BRAND_MARK,
   BRAND_MARK_PLATE_OPACITY,
-  BRAND_MARK_TRIANGLE_TRANSFORM,
   BRAND_MARK_VIEWBOX,
 } from "@/lib/brand-mark"
 
 /**
- * The site's logo mark: four shapes, one per collection, the diamond in sharp,
- * the triangle in stroke, the circle in duotone and the square in fill,
- * painted in keyline blue with nothing behind it. The geometry and why it is
- * shaped this way live in `lib/brand-mark.ts`.
+ * The site's logo mark: a sharp diamond over a duotone circle and a fill
+ * square, painted in keyline blue with nothing behind it. The geometry and why
+ * it is shaped this way live in `lib/brand-mark.ts`.
  *
  * Inlined rather than loaded from `public/logo/logo.svg`: it renders in the nav
  * on every page, and a request plus a paint-in for something that small is
@@ -58,7 +56,13 @@ export function BrandMark({
  * render a component nested inside an `<svg>`: the card came out with a blank
  * where the mark should be.
  */
-export function BrandMarkFlat({ size, color }: { size: number; color: string }) {
+export function BrandMarkFlat({
+  size,
+  color,
+}: {
+  size: number
+  color: string
+}) {
   return (
     <svg
       width={size}
@@ -73,15 +77,6 @@ export function BrandMarkFlat({ size, color }: { size: number; color: string }) 
         stroke={color}
         strokeWidth="2"
         strokeLinecap="butt"
-        strokeLinejoin="round"
-      />
-      <path
-        d={BRAND_MARK.triangle}
-        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
-        fill="none"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
@@ -113,12 +108,6 @@ function MarkPaths({ color }: { color: string }) {
     <>
       {/* Sharp: flat ends and no fillet, as the sharp collection draws. */}
       <path d={BRAND_MARK.diamond} {...line} strokeLinecap="butt" />
-      <path
-        d={BRAND_MARK.triangle}
-        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
-        {...line}
-        strokeLinecap="round"
-      />
       <path
         d={BRAND_MARK.plate}
         fill={color}

@@ -53,13 +53,14 @@ const HAIRLINE = "#e5e5e5"
 
 /**
  * The mark's paths and ink box, read from public/logo/logo.svg, which
- * `brand:check` holds to the shipped `shapes-2` drawings. Their painting and
- * the triangle's placement come with them and paint `currentColor`, so a cover
- * only supplies the colour.
+ * `brand:check` holds to the shipped `shapes-2` drawings. Their painting comes
+ * with them and paints `currentColor`, so a cover only supplies the colour.
  */
 const LOGO = await readFile(join(ROOT, "public", "logo", "logo.svg"), "utf8")
 const MARK = LOGO.match(/<path\b[^>]*?\/?>/g).join("")
-const [MARK_X, MARK_Y, MARK_W] = LOGO.match(/viewBox="([^"]+)"/)[1].split(/\s+/).map(Number)
+const [MARK_X, MARK_Y, MARK_W] = LOGO.match(/viewBox="([^"]+)"/)[1]
+  .split(/\s+/)
+  .map(Number)
 
 /** The mark at `px` across, with the top-left corner of its ink box at (x, y). */
 const markAt = (x, y, px, colour) =>
