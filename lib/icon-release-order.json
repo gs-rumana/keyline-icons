@@ -65,7 +65,17 @@
       "banknote-2-check",
       "banknote-2-minus",
       "banknote-2-plus",
-      "banknote-2-x"
+      "banknote-2-x",
+      "alarm-clock",
+      "alarm-clock-check",
+      "alarm-clock-plus",
+      "alarm-clock-minus",
+      "timer",
+      "timer-reset",
+      "snowflake",
+      "wind",
+      "table",
+      "folder-zip"
     ],
     "0.9.0": [
       "plane",

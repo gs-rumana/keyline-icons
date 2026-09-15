@@ -84,8 +84,9 @@ export const CATEGORIES = [
   },
   {
     label: "Time",
-    match: /^(calendar|clock|hourglass)/,
-    blurb: "Calendars, clocks and the hourglass, with the signs that act on them.",
+    // `alarm-clock` and the two stopwatches joined on 15 Sep 2026.
+    match: /^(calendar|clock|hourglass|alarm-clock|timer)/,
+    blurb: "Calendars, clocks, alarm clocks, stopwatches and the hourglass, with the signs that act on them.",
   },
   // `at` is anchored inside the group because the bare symbol is the whole
   // name: an unanchored `at` would hand this category every future name that
@@ -236,8 +237,10 @@ export const CATEGORIES = [
     // `fullscreen` and `fullscreen-exit` sit here with `maximize` and
     // `minimize` for the reason given under Media: brackets and diagonals
     // framing a viewport read as layout, whatever they are used to resize.
-    match: /^(panel|layout|layers|grid|list|align|menu|maximize|minimize|fullscreen)/,
-    blurb: "Panels, layers, lists, alignment, the menu marks and the fullscreen corners.",
+    // `table$` is anchored so it can never take `tablet-*`, which Devices claims
+    // first today but would not if the rows were ever reordered.
+    match: /^(panel|layout|layers|grid|table$|list|align|menu|maximize|minimize|fullscreen)/,
+    blurb: "Panels, layers, grids, the table, lists, alignment, the menu marks and the fullscreen corners.",
   },
   {
     label: "Users",
@@ -404,8 +407,11 @@ export const CATEGORIES = [
     // `temperature-*` and the two weather thermometers joined on 13 Sep 2026:
     // how hot it is outside is the weather, and the sun and the snowflake on
     // them say so.
-    match: /^(sun|moon|cloud|umbrella|parasol|temperature|thermometer-)/,
-    blurb: "Sun, moon, cloud, the temperatures and the states between them.",
+    // `wind$` is anchored because Nature, evaluated after this, owns
+    // `wind-turbine`: the turbine is a thing that stands in a field, the gust
+    // is the weather that turns it.
+    match: /^(sun|moon|cloud|umbrella|parasol|temperature|thermometer-|snowflake$|wind$)/,
+    blurb: "Sun, moon, cloud, snow, wind, the temperatures and the states between them.",
   },
   // Three shelves opened 12 Sep 2026 with the fifteen of batch D, all of which
   // had been filing under Other. Nothing existing took them: Maps is the pin

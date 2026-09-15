@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 798,
-  "names": 915,
-  "variants": 4750,
+  "icons": 808,
+  "names": 925,
+  "variants": 4798,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -590,7 +590,7 @@
       "parts": 5,
       "into": "artboard",
       "width": 742,
-      "icons": 43,
+      "icons": 44,
       "variants": 54,
       "bytes": 41677
     },
@@ -639,8 +639,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 38,
-      "bytes": 33904
+      "variants": 44,
+      "bytes": 39163
     },
     {
       "file": "finance-1.html",
@@ -782,9 +782,9 @@
       "parts": 7,
       "into": "artboard",
       "width": 742,
-      "icons": 61,
+      "icons": 62,
       "variants": 60,
-      "bytes": 42935
+      "bytes": 42953
     },
     {
       "file": "layout-2.html",
@@ -855,8 +855,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 12,
-      "bytes": 7316
+      "variants": 18,
+      "bytes": 10920
     },
     {
       "file": "mail-1.html",
@@ -1262,9 +1262,9 @@
       "parts": 4,
       "into": "artboard",
       "width": 742,
-      "icons": 32,
-      "variants": 54,
-      "bytes": 39368
+      "icons": 38,
+      "variants": 48,
+      "bytes": 39772
     },
     {
       "file": "time-2.html",
@@ -1275,8 +1275,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 66,
-      "bytes": 40918
+      "variants": 60,
+      "bytes": 39853
     },
     {
       "file": "time-3.html",
@@ -1288,7 +1288,7 @@
       "width": 742,
       "icons": 0,
       "variants": 60,
-      "bytes": 40417
+      "bytes": 37165
     },
     {
       "file": "time-4.html",
@@ -1299,8 +1299,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 12,
-      "bytes": 9120
+      "variants": 56,
+      "bytes": 40583
     },
     {
       "file": "tools-1.html",
@@ -1367,36 +1367,48 @@
       "artboard": "Weather",
       "category": "Weather",
       "part": 1,
-      "parts": 3,
+      "parts": 4,
       "into": "artboard",
       "width": 742,
-      "icons": 19,
-      "variants": 42,
-      "bytes": 41874
+      "icons": 21,
+      "variants": 38,
+      "bytes": 32409
     },
     {
       "file": "weather-2.html",
       "artboard": "Weather",
       "category": "Weather",
       "part": 2,
-      "parts": 3,
+      "parts": 4,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 44,
-      "bytes": 40944
+      "variants": 38,
+      "bytes": 39836
     },
     {
       "file": "weather-3.html",
       "artboard": "Weather",
       "category": "Weather",
       "part": 3,
-      "parts": 3,
+      "parts": 4,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 24,
-      "bytes": 27640
+      "variants": 36,
+      "bytes": 40447
+    },
+    {
+      "file": "weather-4.html",
+      "artboard": "Weather",
+      "category": "Weather",
+      "part": 4,
+      "parts": 4,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 2,
+      "bytes": 2234
     },
     {
       "file": "web-1.html",
@@ -1488,7 +1500,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 138398
+      "bytes": 146896
     }
   ]
 }
