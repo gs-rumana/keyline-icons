@@ -3,16 +3,16 @@
 [![CI](https://github.com/keyline-icons/keyline-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/keyline-icons/keyline-icons/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 
-**925 icons, drawn on one 24×24 grid, in three styles and two corner
+**928 icons, drawn on one 24×24 grid, in three styles and two corner
 treatments.** Built for shadcn/ui, crafted with AI, free under MIT.
 
 [**keylineicons.com**](https://keylineicons.com) to browse and copy.
 
 | Style | Icons | What it is |
 | --- | --- | --- |
-| `stroke` | 925 | The full set. 2px keylines on a 24 grid. |
-| `duotone` | 762 | The stroke drawing over a flat plate at reduced opacity. |
-| `fill` | 712 | Solid, with the detail knocked back out of the shape. |
+| `stroke` | 928 | The full set. 2px keylines on a 24 grid. |
+| `duotone` | 765 | The stroke drawing over a flat plate at reduced opacity. |
+| `fill` | 715 | Solid, with the detail knocked back out of the shape. |
 
 `stroke` is complete by definition: it is the drawing every other style is
 derived from. `duotone` and `fill` need a region to fill, and not every glyph
@@ -25,7 +25,7 @@ the name, which is why the counts are what they are.
 
 Every drawing in the table comes twice: rounded, with round caps and filleted
 corners, and sharp, with butt caps and square corners. Same names, same
-coverage, so 4,798 SVGs in total.
+coverage, so 4,816 SVGs in total.
 
 ```
 icons/stroke/bell.svg

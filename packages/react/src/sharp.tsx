@@ -5616,6 +5616,30 @@ export function Rewind(props: IconProps) {
   )
 }
 
+export function Rocket2(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M7.0253 19.8031L4.5355 22.2929M3.4898 17.6818L1.7071 19.4645" />
+    </Icon>
+  )
+}
+
+export function RocketVertical(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M9.3652 20.8056L14.6348 20.8056L15.8292 22L19 16.1684L15.9523 13.1206C16.0677 12.4475 16.1257 11.7657 16.1257 11.0828C16.1257 7.6016 14.6216 4.2903 12 1.9999C9.3784 4.2903 7.8743 7.6016 7.8743 11.0828C7.8743 11.7657 7.9323 12.4475 8.0477 13.1206L5 16.1684L8.1708 22L9.3652 20.8056ZM14.6348 20.8056L15.9523 13.1206M9.3652 20.8056L8.0477 13.1206" />
+    </Icon>
+  )
+}
+
+export function Rocket(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M2.0001 21.9999L4.4054 21.8679C5.5497 21.8051 6.4454 20.8589 6.4454 19.7129C6.4454 18.5209 5.4791 17.5546 4.2871 17.5546C3.1411 17.5546 2.1949 18.4503 2.1321 19.5946L2.0001 21.9999Z" />
+    </Icon>
+  )
+}
+
 export function RotateCcw(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>

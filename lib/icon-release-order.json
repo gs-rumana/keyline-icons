@@ -75,7 +75,10 @@
       "snowflake",
       "wind",
       "table",
-      "folder-zip"
+      "folder-zip",
+      "rocket",
+      "rocket-2",
+      "rocket-vertical"
     ],
     "0.9.0": [
       "plane",
