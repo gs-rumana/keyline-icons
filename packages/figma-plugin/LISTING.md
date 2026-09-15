@@ -123,7 +123,7 @@ Changelog
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * People opened as a shelf of its own, taking categories from 37 to 38
 
-Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners.
+Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners, and the coins, on rounder faces with 2 units between every coin, so they read at the set's weight.
 
 0.9.0 — 14 September 2026
 53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
@@ -266,7 +266,7 @@ big arrows and the heading with its six levels.
 People opened as a shelf with them, taking categories from 37 to 38.
 
 The four dashed close panels were redrawn so their grey sits under the frame's
-round corners.
+round corners, and the coins on rounder faces with 2 units between every coin.
 ```
 
 **A republish is required for the listing**, whose counts moved: the tagline,
@@ -602,7 +602,7 @@ v1.0.0
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * Categories went from 37 to 38: People took the figures that had nowhere honest to sit
 
-Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners.
+Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners, and the coins, on rounder faces with 2 units between every coin, so they read at the set's weight.
 
 v0.9.0
 53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.

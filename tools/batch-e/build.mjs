@@ -690,28 +690,26 @@ SETS['key-round'] = key2Set(false);
  * smaller one behind; this is the money seen from the side, stacked, which is
  * what the word means to anyone typing it into a search box.
  *
- * THE CYLINDER IS ALREADY IN THE SET and this borrows it whole: `database`
- * draws one as an ellipse of rx 8 by ry 2, vertical walls, and a division that
- * is the FRONT half of the same ellipse. Four to one is the house's read of a
- * cylinder and nothing here re-derives it: rx 6 by ry 1.5 is that ratio at the
- * size two stacks can share.
+ * THE CYLINDER IS `database`'s: an ellipse on vertical walls, a division that
+ * is the FRONT half of the same ellipse. The first cut took its four-to-one
+ * ratio at rx 6 by ry 1.5 on a 3.5 pitch, and on 15 Sep 2026 he called it too
+ * thick, "like 3px not 2px like others". It was: a face 3 units tall leaves 1
+ * unit of white inside a 2 unit ring, the pitch left 1.5 between coins, and an
+ * ellipse end curves at ry squared over rx, 0.375, under the stroke's half
+ * width, so every end of every face pinched into a blob.
  *
- *   front   centre 16, top ellipse at y=10, bottom at 20.5, divisions at 13.5
- *           and 17 — three coins on a 3.5 pitch
- *   back    centre 8, top ellipse at y=3.5, division at 7, bottom at 10.5 —
- *           two coins on the same pitch, standing higher and further back, and
- *           CUT at x=6 where the front stack takes over
+ *   rx 5 by ry 2.5   the end curves at 1.25, over the half width, and the face
+ *                    holds 3 units of white
+ *   pitch 4          2 units between coins, the house gap
+ *   front            centre 17, top face at y=11.5, division at 15.5, bottom
+ *                    at 19.5: two coins under the face
+ *   back             centre 7, top face at y=4.5, division at 8.5, bottom at
+ *                    12.5: the same two, standing up and to the left, each run
+ *                    cut where it would come within 2 of the front stack
  *
- * The cut is the composition: a round cap paints a unit past its end, so an
- * end at x=6 puts its ink at 7 and the front's leftmost ink is 9. Two units,
- * the house gap, the same argument `messages` makes. The back stack carries
- * TWO coins and not three for the same reason a comb is not a cylinder: each
- * division that survives the cut is a 4-unit prong off the left wall, and at
- * three of them the drawing reads as a fork. Two, with the bottom curve under
- * them, reads as a stack standing behind. y=10 for the front's top
- * is the other end of it: at 8.5 the two top ellipses close to 0.70 of each
- * other, and 10 is where they stand 2.18 apart, which costs the front stack
- * one coin of height and buys the pair its daylight.
+ * The narrower rx is what lets the two faces stop overlapping in x: the back
+ * face ends at 12 where the front's begins, so the pair clears by 2.45 without
+ * the front stack giving up its height.
  *
  * Ink 1..23 both ways. The back stack's left wall sets the left edge, the
  * front's right wall the right, the back's top ellipse the top and the front's
@@ -724,13 +722,13 @@ SETS['key-round'] = key2Set(false);
  *
  * The fill is the front stack solid with a band knocked out under the top face
  * and at each division, spanning the walls' inner edges so the walls stay solid
- * either side. Three bands, and the top face itself stays SOLID, which is where
+ * either side. Two bands, and the top face itself stays SOLID, which is where
  * it parts from `database`: a database's lid is a rim you look into, and the
  * top of a coin stack is a coin seen face on. The back stack stays a STROKE
  * over it, which is what `copy` and `layers` do with the element behind — a
  * fill solidifies the object in front, not the whole picture.
  */
-const CYL = { rx: 6, ry: 1.5 };
+const CYL = { rx: 5, ry: 2.5 };
 const ePt = (c, rx, ry, a) => [c[0] + rx * Math.cos((a * Math.PI) / 180), c[1] + ry * Math.sin((a * Math.PI) / 180)];
 const eTan = (rx, ry, a) => [-rx * Math.sin((a * Math.PI) / 180), ry * Math.cos((a * Math.PI) / 180)];
 
@@ -791,8 +789,8 @@ const distToPoly = (p, poly) => {
 SETS.coins = () => {
   const out = {};
   const { rx, ry } = CYL;
-  const B = [8, 3.5], F = [16, 10], BB = 10.5, FB = 20.5;
-  const BDIV = [7], FDIV = [13.5, 17];
+  const B = [7, 4.5], F = [17, 11.5], BB = 12.5, FB = 19.5;
+  const BDIV = [8.5], FDIV = [15.5];
   const aIn = (Math.acos((rx - 1) / rx) * 180) / Math.PI;           // 33.56, the wall's inner edge
 
   // the front stack: a closed silhouette for the plate, and the open runs the stroke draws
@@ -825,13 +823,10 @@ SETS.coins = () => {
   // face on, and it is solid. His call, 11 Sep 2026, and the three bands are
   // what make the fill read as coins rather than as a tin.
   //
-  // The band is 1.5, not the stroke's own 2, which is the second half of his
-  // call. At 2 the white is WIDER than the 1.5 of coin left between two of
-  // them and the stack reads as rings on a pole; at 1.5 the fill is the exact
-  // inverse of the stroke's interior, ink and white swapped, and the coins are
-  // the thing you see. It is the one place in the batch where a knockout is
-  // not the same width as the ink it replaces, and a 3.5 pitch is why.
-  const HALF = 0.75;
+  // The band is the stroke's own 2, which makes the fill the exact inverse of
+  // the stroke's interior on a 4 pitch: ink and white swapped, 2 of each. The
+  // first cut ran 1.5 because its 3.5 pitch left only 1.5 of coin between bands.
+  const HALF = 1;
   const bandAt = (y) => (cw) => {
     const [lo, hi] = cw ? [y - HALF, y + HALF] : [y + HALF, y - HALF];
     return `M${pt(ePt([F[0], lo], rx, ry, 180 - aIn))}` + earc([F[0], lo], rx, ry, 180 - aIn, aIn)
