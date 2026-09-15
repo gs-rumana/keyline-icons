@@ -108,15 +108,16 @@ export const CATEGORIES = [
     // and a wallet are money; a cart, a receipt and a parcel are a purchase.
     //
     // Evaluated before Commerce, which would otherwise take `credit-card` and
-    // `wallet` on prefixes of its own.
+    // `wallet` on prefixes of its own, and before Actions, whose unanchored `ban`
+    // would otherwise take `banknote`.
     label: "Finance",
     // `piggy-bank` is here rather than with the animals: the drawing is a pig,
     // the thing is a money box, and the shelf follows what the thing is. It also
     // has to beat Animals' `pig` below, which it does by sitting earlier.
     match:
-      /^(badge-)?(dollar-sign|euro|pound-sterling|japanese-yen|indian-rupee|swiss-franc|bitcoin|credit-card|wallet|coins|piggy-bank)/,
+      /^(badge-)?(dollar-sign|euro|pound-sterling|japanese-yen|indian-rupee|swiss-franc|bitcoin|credit-card|wallet|coins|piggy-bank|banknote)/,
     blurb:
-      "The currency marks, the payment cards, the wallet and the money box.",
+      "The currency marks, the banknotes, the payment cards, the wallet and the money box.",
   },
   {
     // `percent` is here rather than with the marks in Actions: the batch that
@@ -206,8 +207,8 @@ export const CATEGORIES = [
     // IS, and it is a desk device, not money. `usb` is a prefix, so `usb-drive`
     // and anything else on that port lands beside it.
     label: "Devices",
-    match: /^(smartphone|phone|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$))/,
-    blurb: "Phones, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code and the scan frame with what it reads.",
+    match: /^(smartphone|phone|tablet|laptop|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$))/,
+    blurb: "Phones, tablets, laptops, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code and the scan frame with what it reads.",
   },
   {
     label: "Pointers",

@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 775,
-  "names": 892,
-  "variants": 4612,
+  "icons": 798,
+  "names": 915,
+  "variants": 4750,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -443,19 +443,19 @@
       "artboard": "Devices",
       "category": "Devices",
       "part": 1,
-      "parts": 7,
+      "parts": 9,
       "into": "artboard",
       "width": 742,
-      "icons": 56,
+      "icons": 69,
       "variants": 56,
-      "bytes": 40414
+      "bytes": 40432
     },
     {
       "file": "devices-2.html",
       "artboard": "Devices",
       "category": "Devices",
       "part": 2,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
@@ -467,60 +467,84 @@
       "artboard": "Devices",
       "category": "Devices",
       "part": 3,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 42,
-      "bytes": 35077
+      "variants": 48,
+      "bytes": 38194
     },
     {
       "file": "devices-4.html",
       "artboard": "Devices",
       "category": "Devices",
       "part": 4,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 42,
-      "bytes": 39368
+      "variants": 40,
+      "bytes": 36715
     },
     {
       "file": "devices-5.html",
       "artboard": "Devices",
       "category": "Devices",
       "part": 5,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 52,
-      "bytes": 40865
+      "variants": 48,
+      "bytes": 40425
     },
     {
       "file": "devices-6.html",
       "artboard": "Devices",
       "category": "Devices",
       "part": 6,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 58,
-      "bytes": 39820
+      "variants": 54,
+      "bytes": 37320
     },
     {
       "file": "devices-7.html",
       "artboard": "Devices",
       "category": "Devices",
       "part": 7,
-      "parts": 7,
+      "parts": 9,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 24,
-      "bytes": 21127
+      "variants": 48,
+      "bytes": 37982
+    },
+    {
+      "file": "devices-8.html",
+      "artboard": "Devices",
+      "category": "Devices",
+      "part": 8,
+      "parts": 9,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 46,
+      "bytes": 35661
+    },
+    {
+      "file": "devices-9.html",
+      "artboard": "Devices",
+      "category": "Devices",
+      "part": 9,
+      "parts": 9,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 12,
+      "bytes": 11749
     },
     {
       "file": "diagrams.html",
@@ -623,36 +647,48 @@
       "artboard": "Finance",
       "category": "Finance",
       "part": 1,
-      "parts": 3,
+      "parts": 4,
       "into": "artboard",
       "width": 742,
-      "icons": 17,
-      "variants": 44,
-      "bytes": 38859
+      "icons": 27,
+      "variants": 42,
+      "bytes": 41892
     },
     {
       "file": "finance-2.html",
       "artboard": "Finance",
       "category": "Finance",
       "part": 2,
-      "parts": 3,
+      "parts": 4,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 38,
-      "bytes": 31814
+      "variants": 44,
+      "bytes": 36961
     },
     {
       "file": "finance-3.html",
       "artboard": "Finance",
       "category": "Finance",
       "part": 3,
-      "parts": 3,
+      "parts": 4,
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 28,
-      "bytes": 31680
+      "variants": 50,
+      "bytes": 39605
+    },
+    {
+      "file": "finance-4.html",
+      "artboard": "Finance",
+      "category": "Finance",
+      "part": 4,
+      "parts": 4,
+      "into": "rows",
+      "width": 742,
+      "icons": 0,
+      "variants": 34,
+      "bytes": 36409
     },
     {
       "file": "food-drink.html",
@@ -1452,7 +1488,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 116012
+      "bytes": 135933
     }
   ]
 }

@@ -466,6 +466,96 @@ export function Ban(props: IconProps) {
   )
 }
 
+export function Banknote2Check(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M15.7055 19.2971L18.3333 22L22.1467 15.76" />
+    </Icon>
+  )
+}
+
+export function Banknote2Minus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M23 19L15 19" />
+    </Icon>
+  )
+}
+
+export function Banknote2Plus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M19 15L19 23M23 19L15 19" />
+    </Icon>
+  )
+}
+
+export function Banknote2X(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
+    </Icon>
+  )
+}
+
+export function Banknote2(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M23 19C23 19.5523 22.5523 20 22 20L2 20C1.4477 20 1 19.5523 1 19L1 5C1 4.4477 1.4477 4 2 4L22 4C22.5523 4 23 4.4477 23 5L23 19Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM18 5C18 6.33333 18.8 9 22 9M18 19C18 17.6667 18.8 15 22 15M6 19C6 17.6667 5.2 15 2 15M6 5C6 6.33333 5.2 9 2 9" />
+    </Icon>
+  )
+}
+
+export function BanknoteCheck(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M15.7055 19.2971L18.3333 22L22.1467 15.76" />
+    </Icon>
+  )
+}
+
+export function BanknoteMinus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M23 19L15 19" />
+    </Icon>
+  )
+}
+
+export function BanknotePlus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M19 15L19 23M23 19L15 19" />
+    </Icon>
+  )
+}
+
+export function BanknoteX(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 1L22 1C22.5523 1 23 1.4477 23 2L23 13L13 13L13 17L2 17C1.4477 17 1 16.5523 1 16L1 2C1 1.4477 1.4477 1 2 1Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
+    </Icon>
+  )
+}
+
+export function Banknote(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M23 19C23 19.5523 22.5523 20 22 20L2 20C1.4477 20 1 19.5523 1 19L1 5C1 4.4477 1.4477 4 2 4L22 4C22.5523 4 23 4.4477 23 5L23 19Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM16 9L19 9M8 15L5 15" />
+    </Icon>
+  )
+}
+
 export function BarsProgress(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
@@ -3660,6 +3750,24 @@ export function Language(props: IconProps) {
   )
 }
 
+export function LaptopSmartphone(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M23 22C23 22.5523 22.5523 23 22 23L13 23C12.4477 23 12 22.5523 12 22L12 10C12 9.4477 12.4477 9 13 9L22 9C22.5523 9 23 9.4477 23 10L23 22Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M4 14L4 2L20 2L20 5M10 18L2 18L2 14L10 14M22 22L22 10L13 10L13 22L22 22ZM16 14L19 14" />
+    </Icon>
+  )
+}
+
+export function Laptop(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M3 15L3 4C3 3.4477 3.4477 3 4 3L20 3C20.5523 3 21 3.4477 21 4L21 15L22 15C22.5523 15 23 15.4477 23 16L23 20C23 20.5523 22.5523 21 22 21L2 21C1.4477 21 1 20.5523 1 20L1 16C1 15.4477 1.4477 15 2 15L3 15Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M4 16L4 4L20 4L20 16M2 16L22 16L22 20L2 20L2 16Z" />
+    </Icon>
+  )
+}
+
 export function Layers(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
@@ -6103,6 +6211,116 @@ export function Sunset(props: IconProps) {
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
       <path d="M1 22L23 22M12 1L12 9M8.2071 5.2071L12 9L15.7929 5.2071" fill="none" strokeOpacity={0.4} />
       <path d="M7.5 19L7.5 18C7.5 15.5147 9.5147 13.5 12 13.5C14.4853 13.5 16.5 15.5147 16.5 18L16.5 19M1 18L4.5 18M19.5 18L23 18M4.2218 10.2218L6.6967 12.6967M19.7782 10.2218L17.3033 12.6967" fill="none" />
+    </Icon>
+  )
+}
+
+export function TabletArrowDown(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M19 13L19 20M22.2929 16.7071L19 20L15.7071 16.7071" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletArrowInRight(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M15 17L22 17M18.7071 20.2929L22 17L18.7071 13.7071" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletArrowInUp(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M19 21L19 14M22.2929 17.2929L19 14L15.7071 17.2929" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletArrowLeft(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M23 17L16 17M19.2929 20.2929L16 17L19.2929 13.7071" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletCheck(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M15.7055 17.2971L18.3333 20L22.1467 13.76" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletMinus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M23 17L15 17" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletPlus(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M19 13L19 21M23 17L15 17" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletSmartphone(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M23 22C23 22.5523 22.5523 23 22 23L13 23C12.4477 23 12 22.5523 12 22L12 10C12 9.4477 12.4477 9 13 9L22 9C22.5523 9 23 9.4477 23 10L23 22Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M10 18L2 18L2 2L22 2L22 5M22 22L22 10L13 10L13 22L22 22ZM16 14L19 14" />
+      <path d="M13 6C13 6.5523 12.5523 7 12 7C11.4477 7 11 6.5523 11 6C11 5.4477 11.4477 5 12 5C12.5523 5 13 5.4477 13 6Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletVertical(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M20 23C20.5523 23 21 22.5523 21 22L21 2C21 1.4477 20.5523 1 20 1L4 1C3.4477 1 3 1.4477 3 2L3 22C3 22.5523 3.4477 23 4 23L20 23Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M20 22L4 22L4 2L20 2L20 22Z" />
+      <path d="M8 13C8.5523 13 9 12.5523 9 12C9 11.4477 8.5523 11 8 11C7.4477 11 7 11.4477 7 12C7 12.5523 7.4477 13 8 13Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function TabletX(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 3L22 3C22.5523 3 23 3.44772 23 4L23 11L13 11L13 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 11L22 4L2 4L2 20L13 20M22.2929 13.7071L15.7071 20.2929M15.7071 13.7071L22.2929 20.2929" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
+export function Tablet(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M23 20C23 20.5523 22.5523 21 22 21L2 21C1.44772 21 1 20.5523 1 20L1 4C1 3.44772 1.44772 3 2 3L22 3C22.5523 3 23 3.44772 23 4L23 20Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M22 20L22 4L2 4L2 20L22 20Z" />
+      <path d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
