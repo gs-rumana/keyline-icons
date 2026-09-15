@@ -113,6 +113,18 @@ github.com/keyline-icons/keyline-icons
 
 Changelog
 
+1.0.0
+64 new drawings, taking the set to 915 names and 4,750 SVGs, and a new shelf.
+
+* People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
+* Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
+* Finance: two banknotes, each with check, minus, plus and x
+* Arrows and Text: the big arrow in four directions, and the heading with its six levels
+* People opened as a shelf of its own, taking categories from 37 to 38
+
+Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners.
+
 0.9.0 — 14 September 2026
 53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
 
@@ -242,6 +254,24 @@ without a plugin update or a review cycle. A republish is only required when the
 plugin's own code changes, or when the listing copy goes stale, which it does
 every time the counts move. jsDelivr serves the repository, so the drawings have
 to be **pushed** before any of this is true for anyone but you.
+
+### 1.0.0
+
+```
+64 new drawings, taking the set to 915 names and 4,750 SVGs: a boy, a girl and
+four babies, the panel open, closed and dashed on every side, the phone's
+calls, a tablet with eight signs, a laptop, two banknotes with their signs, the
+big arrows and the heading with its six levels.
+
+People opened as a shelf with them, taking categories from 37 to 38.
+
+The four dashed close panels were redrawn so their grey sits under the frame's
+round corners.
+```
+
+**A republish is required for the listing**, whose counts moved: the tagline,
+the style bullets, the totals and the category count all changed with the set.
+The plugin's own code did not change.
 
 ### 0.9.0
 
@@ -555,12 +585,24 @@ Which styles an icon has is measured rather than chosen: duotone and fill need a
 
 Every drawing exists in both treatments, so sharp is a switch rather than a second library: 4,750 variants over the same 915 names.
 
-The Catalog page files every icon under one of 37 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
+The Catalog page files every icon under one of 38 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
 Also available as React components, a shadcn registry, an MCP server for agents, a CLI, and a Figma plugin that searches the set and drops an icon straight onto the canvas.
 
 keylineicons.com
 github.com/keyline-icons/keyline-icons
+
+v1.0.0
+64 new drawings, and a new shelf. The set is 915 names now, 798 component sets and 4,750 variants, up from 851 and 4,394. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
+
+* People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
+* Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
+* Finance: two banknotes, each with check, minus, plus and x
+* Arrows and Text: the big arrow in four directions, and the heading with its six levels
+* Categories went from 37 to 38: People took the figures that had nowhere honest to sit
+
+Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners.
 
 v0.9.0
 53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.
@@ -637,16 +679,6 @@ v0.4.0
 
 Also redrawn, in both treatments: 12 drawings. The seven bells carry their plate offset into the fills, and circle-navigation, credit-card, database, git-merge and package are redrawn with them.
 
-v0.3.0
-Sharp corners, across the whole set. Every drawing now has a squared-off twin, so the file went from 1,497 variants to 2,994 over the same 585 names. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link and pick the new property up.
-
-* Every component set gained a third variant property, Corners, with a regular and a sharp value
-* Sharp takes every corner to a true point and ends each stroke square; coverage matches rounded exactly, so switching a variant never leaves an empty frame
-* The Catalog page is rebuilt as a matrix: one row per name, the three styles under Regular and again under Sharp
-* Categories went from 20 to 21 when the carets and chevrons took a shelf of their own
-
-Also redrawn, in both treatments: 48 drawings, mostly the -off family and the level indicators.
-
 Earlier releases, back to the first cut: keylineicons.com/changelog
 ```
 
@@ -659,7 +691,8 @@ changelogs" was answered with the header alone.
 **The field is capped at 10,000 characters**, here and in the plugin's
 Description, and the history is what grows into both: the 0.9.0 paste was
 refused at 10,896. So the oldest entries come off
-the bottom, v0.2.0 and the four 0.1.x releases on 14 Sep 2026, and a last line
+the bottom, v0.2.0 and the four 0.1.x releases on 14 Sep 2026 and v0.3.0 on
+15 Sep 2026, and a last line
 points at `keylineicons.com/changelog`, which keeps every release. Trim from
 the oldest end again whenever a new entry pushes it past about 9,500.
 
