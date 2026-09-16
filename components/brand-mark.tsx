@@ -3,12 +3,14 @@ import type { SVGProps } from "react"
 import {
   BRAND_MARK,
   BRAND_MARK_PLATE_OPACITY,
+  BRAND_MARK_TRIANGLE_TRANSFORM,
   BRAND_MARK_VIEWBOX,
 } from "@/lib/brand-mark"
 
 /**
- * The site's logo mark: a sharp diamond over a duotone circle and a fill
- * square, painted in keyline blue with nothing behind it. The geometry and why
+ * The site's logo mark: four shapes, one per style, a sharp stroke diamond, a
+ * duotone triangle, a two-tone circle and a fill square, painted in keyline
+ * blue with nothing behind it. The geometry and why
  * it is shaped this way live in `lib/brand-mark.ts`.
  *
  * Inlined rather than loaded from `public/logo/logo.svg`: it renders in the nav
@@ -80,6 +82,12 @@ export function BrandMarkFlat({
         strokeLinejoin="round"
       />
       <path
+        d={BRAND_MARK.trianglePlate}
+        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
+        fill={color}
+        fillOpacity={BRAND_MARK_PLATE_OPACITY}
+      />
+      <path
         d={BRAND_MARK.plate}
         fill={color}
         fillOpacity={BRAND_MARK_PLATE_OPACITY}
@@ -108,6 +116,13 @@ function MarkPaths({ color }: { color: string }) {
     <>
       {/* Sharp: flat ends and no fillet, as the sharp collection draws. */}
       <path d={BRAND_MARK.diamond} {...line} strokeLinecap="butt" />
+      {/* Duotone: the plate alone, no outline. */}
+      <path
+        d={BRAND_MARK.trianglePlate}
+        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
+        fill={color}
+        fillOpacity={BRAND_MARK_PLATE_OPACITY}
+      />
       <path
         d={BRAND_MARK.plate}
         fill={color}

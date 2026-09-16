@@ -62,14 +62,16 @@ const GROUND = "#ffffff"
 /**
  * The logo's paths in logo.svg's order. The sharp diamond is drawn for the logo
  * and has no icon to match, so it is `null` here and only checked against
- * `lib/brand-mark.ts`. The rest are `shapes-2`'s circle in duotone (plate, then
- * ring) and its square in fill: `readMark` fails if either stops matching its
- * icon, or the copy the site and the OG cards draw from.
+ * `lib/brand-mark.ts`. The rest come from the drawings that define the styles
+ * they stand for: `shapes-2`'s triangle plate and its circle (plate, then ring)
+ * out of two-tone, its square out of fill. `readMark` fails if any stops
+ * matching its icon, or the copy the site and the OG cards draw from.
  */
 const PARTS = [
   null,
-  ["duotone", 0, 1],
-  ["duotone", 1, 1],
+  ["two-tone", 0, 0],
+  ["two-tone", 0, 1],
+  ["two-tone", 1, 1],
   ["fill", 0, 2],
 ]
 const MARK_TS = join(ROOT, "lib", "brand-mark.ts")
@@ -150,9 +152,10 @@ function findChrome() {
 
 /**
  * Pull the mark out of the source file rather than restating it here, so the
- * logo stays the one place the shape is defined. Four paths, whose painting
- * (sharp line, plate, ring, fill) is carried in the file itself and passed
- * through untouched; only the colour is supplied, as `color` on the root.
+ * logo stays the one place the shape is defined. Five paths, whose painting
+ * (sharp line, duotone plate, two-tone plate and ring, fill) and the triangle's
+ * `transform` are carried in the file itself and passed through untouched;
+ * only the colour is supplied, as `color` on the root.
  *
  * Each path is compared with the shipped icon it came from and with
  * `lib/brand-mark.ts`. A redraw of `shapes-2` that left the logo behind would
