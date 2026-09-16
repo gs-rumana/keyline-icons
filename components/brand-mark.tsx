@@ -3,7 +3,6 @@ import type { SVGProps } from "react"
 import {
   BRAND_MARK,
   BRAND_MARK_PLATE_OPACITY,
-  BRAND_MARK_TRIANGLE_TRANSFORM,
   BRAND_MARK_VIEWBOX,
 } from "@/lib/brand-mark"
 
@@ -83,7 +82,6 @@ export function BrandMarkFlat({
       />
       <path
         d={BRAND_MARK.trianglePlate}
-        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
         fill={color}
         fillOpacity={BRAND_MARK_PLATE_OPACITY}
       />
@@ -119,7 +117,6 @@ function MarkPaths({ color }: { color: string }) {
       {/* Duotone: the plate alone, no outline. */}
       <path
         d={BRAND_MARK.trianglePlate}
-        transform={BRAND_MARK_TRIANGLE_TRANSFORM}
         fill={color}
         fillOpacity={BRAND_MARK_PLATE_OPACITY}
       />

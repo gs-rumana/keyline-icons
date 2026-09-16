@@ -9,12 +9,18 @@
  * - bottom left, a circle in **two-tone**: the same plate under its ring,
  * - bottom right, a square in **fill**.
  *
- * The three `shapes-2` shapes are copied verbatim from the drawings that define
- * those styles, `icons/two-tone/shapes-2.svg` and `icons/fill/shapes-2.svg`
- * (the triangle moves to its cell by a `transform`, not by rewriting its path),
- * and `npm run brand:check` fails if any stops matching, here or in
- * `public/logo/logo.svg`. The diamond is the one shape drawn for the logo: no
- * icon in the set is a bare diamond.
+ * The circle and square are copied verbatim from the drawings that define their
+ * styles, `icons/two-tone/shapes-2.svg` and `icons/fill/shapes-2.svg`, and
+ * `npm run brand:check` fails if either stops matching, here or in
+ * `public/logo/logo.svg`.
+ *
+ * The diamond and the triangle are drawn for the logo. `shapes-2`'s own
+ * triangle carries a 3-unit radius on its plate, which at 16px reads as a blob
+ * rather than a triangle, so this one halves it to 1.5 and is refitted to the
+ * same 9-unit cell: same 53-degree apex, same slope-2 edges, same box. Halving
+ * the radius without refitting would push the apex a unit out of the cell,
+ * because that corner is narrow enough for a small fillet to run a long way up
+ * it.
  *
  * The diamond's tips sit half a unit outside its 9-unit cell. A diamond covers
  * half the area of the shapes beside it, so at the same box it reads smaller,
@@ -28,16 +34,13 @@ export const BRAND_MARK_VIEWBOX = "1.5 1.5 20.5 20.5"
 export const BRAND_MARK = {
   diamond: "M6.5 2.5L10.5 6.5L6.5 10.5L2.5 6.5Z",
   trianglePlate:
-    "M9.3182 3.6589 C10.4236 1.447 13.5801 1.447 14.6854 3.6589 L16.1835 6.657 C17.1798 8.6515 15.7295 10.9978 13.4999 10.9978 L10.5038 10.9978 C8.274 10.9978 6.8236 8.6516 7.8202 6.657 L9.3182 3.6589 Z",
+    "M16.1582 2.8242A1.5 1.5 0 0 1 18.8418 2.8242L21.8429 8.8294A1.5 1.5 0 0 1 20.5012 11L14.4988 11A1.5 1.5 0 0 1 13.1571 8.8294Z",
   plate:
     "M6.5 13C8.9853 13 11 15.0147 11 17.5C11 19.9853 8.9853 22 6.5 22C4.0147 22 2 19.9853 2 17.5C2 15.0147 4.0147 13 6.5 13Z",
   ring: "M10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5Z",
   square:
     "M19 13C20.6569 13 22 14.3431 22 16L22 19C22 20.6569 20.6569 22 19 22L16 22C14.3431 22 13 20.6569 13 19L13 16C13 14.3431 14.3431 13 16 13L19 13Z",
 } as const
-
-/** Where the duotone triangle sits: `shapes-2` centres it, the logo puts it top right. */
-export const BRAND_MARK_TRIANGLE_TRANSFORM = "translate(5.5 0)"
 
 /** The plate's opacity, the set's own, for both two-tone and duotone. */
 export const BRAND_MARK_PLATE_OPACITY = 0.4
