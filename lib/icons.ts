@@ -6,7 +6,7 @@ import history from "@/lib/icon-history.json"
 import notContainers from "@/lib/icon-not-containers.json"
 import badges from "@/lib/icon-badges.json"
 
-export const STYLES = ["stroke", "duotone", "fill"] as const
+export const STYLES = ["stroke", "two-tone", "duotone", "fill"] as const
 export type Style = (typeof STYLES)[number]
 
 /* Imported and re-exported rather than passed straight through, because

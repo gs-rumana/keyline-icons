@@ -371,7 +371,7 @@ export async function generateMetadata() {
     title: "Changelog",
     description:
       `Every release of Keyline Icons and what went into it. ${count} ` +
-      `drawings on one 24×24 grid, in stroke, duotone and fill, free under ` +
+      `drawings on one 24×24 grid, in stroke, two-tone, duotone and fill, free under ` +
       `the MIT licence.`,
     socialDescription:
       "Every release of Keyline Icons and what went into it, newest first.",

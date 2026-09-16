@@ -53,7 +53,7 @@ import { fileURLToPath } from "node:url"
 const ROOT = fileURLToPath(new URL("..", import.meta.url))
 const ICONS = join(ROOT, "icons")
 const OUT = join(ROOT, "previews", "paper")
-const STYLES = ["stroke", "duotone", "fill"]
+const STYLES = ["stroke", "two-tone", "duotone", "fill"]
 const CONTAINERS = ["regular", "square", "circle"]
 /**
  * The corner treatments, in the order the cards read left to right.
@@ -700,9 +700,11 @@ function catalogSheet(icons, totals, release) {
     ["arrow-down", "stroke", "regular"],
     ["square-arrow-down", "fill", "square-fill"],
     ["square-arrow-down", "duotone", "square-duotone"],
+    ["square-arrow-down", "two-tone", "square-two-tone"],
     ["square-arrow-down", "stroke", "square-stroke"],
     ["circle-arrow-down", "fill", "circle-fill"],
     ["circle-arrow-down", "duotone", "circle-duotone"],
+    ["circle-arrow-down", "two-tone", "circle-two-tone"],
     ["circle-arrow-down", "stroke", "circle-stroke"],
   ]
   const specimen = CORNERS.map(
@@ -750,7 +752,7 @@ function catalogSheet(icons, totals, release) {
         `<h2 style="margin:0;font-size:24px;font-weight:600;letter-spacing:-0.4px">Variant specimen</h2>` +
         `<p style="margin:8px 0 20px;font-size:14px;color:${MUTED}">` +
           `One drawing in every treatment the set offers: two container shapes ` +
-          `against three styles against two corner treatments, plus the bare glyph.` +
+          `against four styles against two corner treatments, plus the bare glyph.` +
         `</p>` +
         `<div style="display:flex;flex-direction:column;gap:12px">${specimen.join("")}</div>` +
 

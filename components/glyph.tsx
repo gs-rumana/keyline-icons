@@ -6,7 +6,7 @@
  * renderer. Two of these is how one surface starts disagreeing with another
  * about what an icon looks like.
  */
-export const STYLES = ["stroke", "duotone", "fill"] as const
+export const STYLES = ["stroke", "two-tone", "duotone", "fill"] as const
 export type Style = (typeof STYLES)[number]
 
 /**

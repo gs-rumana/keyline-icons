@@ -292,10 +292,16 @@ export function StyleShowcase({
         does not change whether it encloses a region a fill needs. The same
         reason the grid's own treatment chips carry no counts beside them.
       */}
-      <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:gap-8">
+      <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 xl:gap-8">
         <Card
           style="stroke"
           count={countOf("stroke")}
+          icons={icons}
+          corners={corners}
+        />
+        <Card
+          style="two-tone"
+          count={countOf("two-tone")}
           icons={icons}
           corners={corners}
         />

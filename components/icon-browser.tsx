@@ -715,7 +715,7 @@ export function IconBrowser({
   /**
    * Drawings this search would have found in one of the other two styles.
    *
-   * The empty state used to test `perStyle[style] === 0`, which counts the
+   * The empty state used to test a per-style set count for zero, which counts the
    * whole set rather than this query's matches: it is 503, 415 and 368, so it
    * is never zero and the branch it guarded was unreachable. Searching `wifi`
    * in fill therefore said "try another word" while ten wifi icons sat one tab
@@ -1105,16 +1105,6 @@ export function IconBrowser({
     preview.pickedCorners,
   ])
 
-  // How many icons the set has in each style, for the badge on each style tab.
-  // Set-wide and independent of the search, which is why the empty state counts
-  // its own matches instead: this never reaches zero.
-  const perStyle = React.useMemo(() => {
-    const c: Record<string, number> = {}
-    for (const s of STYLES)
-      c[s] = icons.filter((i) => artOf(i, s, corners)).length
-    return c
-  }, [icons, corners])
-
   /**
    * The category list: the sidebar on a wide screen, the head of the drawer on
    * a narrow one. Rows whose count is zero under the current style are dropped
@@ -1221,12 +1211,11 @@ export function IconBrowser({
             key={s}
             active={style === s}
             onClick={() => setStyle(s)}
-            className="capitalize"
           >
-            {s}
-            <span className="ml-1.5 text-xs text-muted-foreground tabular-nums">
-              {perStyle[s]}
-            </span>
+            {/* No count: since 1.0.0 every name is in all four styles, so the
+                tabs would all read the same number. Sentence case by hand,
+                because `capitalize` turns two-tone into Two-Tone. */}
+            {s[0].toUpperCase() + s.slice(1)}
           </SegmentedItem>
         ))}
       </Segmented>
@@ -1236,9 +1225,8 @@ export function IconBrowser({
      * Rounded or squared, with no count beside it.
      *
      * Every drawing exists in both treatments, so a count here would read 585
-     * against 585 and say nothing; the style tabs carry counts because picking
-     * one genuinely removes drawings. Same reason it sits in the settings
-     * cookie while style does not.
+     * against 585 and say nothing, and since 1.0.0 the style tabs dropped theirs
+     * for the same reason. It sits in the settings cookie while style does not.
      */
     const cornersGroup = (
       <Segmented aria-label="Corner treatment">

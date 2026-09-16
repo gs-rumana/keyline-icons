@@ -86,7 +86,7 @@ export const TWITTER_DEFAULTS = {
  */
 export const SITE_DESCRIPTION =
   `${SET_TITLE} is a free, ${SET_LICENSE}-licensed 24×24 icon set built for ` +
-  `shadcn/ui, drawn on one grid in stroke, duotone and fill, rounded or sharp.`
+  `shadcn/ui, drawn on one grid in stroke, two-tone, duotone and fill, rounded or sharp.`
 
 /**
  * The homepage's card, in the two strings a network actually reads.
@@ -115,12 +115,12 @@ export const homeCardTitle = (icons: number) =>
  *
  * Shorter than the page's own description on purpose: that one is written for a
  * search result and says what you can do here, this one is written for a feed
- * card and has to survive being cut off. "stroke, duotone and fill, rounded or
+ * card and has to survive being cut off. "stroke, two-tone, duotone and fill, rounded or
  * sharp" is the site's one phrase for what the set offers, spelled the same way
  * here as in `SITE_DESCRIPTION` and in the hero.
  */
 export const homeCardDescription = (icons: number) =>
-  `${icons} free icons for shadcn/ui, in stroke, duotone and fill, rounded or ` +
+  `${icons} free icons for shadcn/ui, in stroke, two-tone, duotone and fill, rounded or ` +
   `sharp. ${SET_LICENSE} licensed.`
 
 type PageMetadata = {

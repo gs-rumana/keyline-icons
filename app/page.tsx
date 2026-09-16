@@ -90,7 +90,7 @@ export async function generateMetadata(): Promise<Metadata> {
       absolute: homeCardTitle(total),
     },
     /*
-      "stroke, duotone and fill, rounded or sharp" is one phrase, spelled the
+      "stroke, two-tone, duotone and fill, rounded or sharp" is one phrase, spelled the
       same way here, on the browser's description, in `SITE_DESCRIPTION` and in
       the hero over the grid. It is one claim about what the set offers, and a
       second wording of it is how two surfaces start disagreeing about the set.
@@ -101,7 +101,7 @@ export async function generateMetadata(): Promise<Metadata> {
     */
     description:
       `${total} free ${SET_LICENSE}-licensed icons for shadcn/ui, drawn on ` +
-      `one 24×24 grid in stroke, duotone and fill, rounded or sharp. Search ` +
+      `one 24×24 grid in stroke, two-tone, duotone and fill, rounded or sharp. Search ` +
       `the set, copy any icon as SVG or JSX, or import the React components.`,
     socialDescription: homeCardDescription(total),
   })
@@ -478,7 +478,7 @@ export default async function Page() {
                   // drawings, not a fourth weight, and a card of their own
                   // would put them beside the count and the licence as though
                   // they were the same kind of fact.
-                  rest: ` per drawing: stroke, duotone and fill, each cut rounded or sharp. ${files.toLocaleString("en-US")} files in all.`,
+                  rest: ` per drawing: stroke, two-tone, duotone and fill, each cut rounded or sharp. ${files.toLocaleString("en-US")} files in all.`,
                 },
                 {
                   name: licenceGlyph,
@@ -526,12 +526,12 @@ export default async function Page() {
               Naming the styles also does the one job a heading on this page can
               do in search. "Duotone icons" is a phrase people type; "three
               weights" is not, and the page's own description already promises
-              stroke, duotone and fill, so the heading is where the page makes
+              stroke, two-tone, duotone and fill, so the heading is where the page makes
               good on it visibly. The `keyline-seo` skill's copy rules put it as
               leading with the noun someone would search for rather than with a
               mood.
             */
-            title="Stroke, duotone and fill"
+            title="Stroke, two-tone, duotone and fill"
             /*
               The lead no longer opens by repeating all three names back, now
               that the heading above it is those three names. It names the two

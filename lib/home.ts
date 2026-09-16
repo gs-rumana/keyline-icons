@@ -315,7 +315,9 @@ export const SPONSOR_ICON_NAMES = ["gift"] as const
 export const STYLE_BLURBS: Record<string, string> = {
   stroke:
     "The full set, and the drawing every other style is derived from. 2px keylines on a 24 grid.",
-  duotone:
+  "two-tone":
     "The same keylines over a flat plate at reduced opacity, for surfaces that need weight without going solid.",
+  duotone:
+    "No outline: a grey body with the detail in black, so the part that matters reads first.",
   fill: "Solid, with the detail knocked back out of the shape rather than drawn on top of it.",
 }

@@ -215,8 +215,9 @@ export const CATEGORIES = [
     label: "Pointers",
     // The pointing hand is the other cursor, the one a link shows, so its four
     // directions file here rather than on a shelf of hands the set does not have.
-    match: /^(cursor|hand-pointer)/,
-    blurb: "Cursors, the pointing hand and the states they carry.",
+    // The open and closed hands are the grab and grabbing cursors beside it.
+    match: /^(cursor|hand-(pointer|closed|open))/,
+    blurb: "Cursors, the pointing, open and closed hands and the states they carry.",
   },
   {
     // Ahead of Layout, which owns the `align-offset-*` family: those nudge an

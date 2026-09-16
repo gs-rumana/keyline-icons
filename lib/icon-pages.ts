@@ -335,7 +335,7 @@ export function iconFaq(icon: BrowserIcon, all: BrowserIcon[]): IconQuestion[] {
       question: `What styles does the ${name} icon come in?`,
       answer:
         missing.length === 0
-          ? `All three: stroke, duotone and fill. They are drawn from the same geometry, so swapping weight never moves anything.`
+          ? `All four: stroke, two-tone, duotone and fill. They are drawn from the same geometry, so swapping style never moves anything.`
           : `${listOf(styles.map((style, at) => (at === 0 ? `${style[0].toUpperCase()}${style.slice(1)}` : style)))}. ` +
             `There ${missing.length > 1 ? "are" : "is"} no ${norListOf(missing)} ` +
             `drawing${missing.length > 1 ? "s" : ""} of this one: a filled weight needs an enclosed area, ` +

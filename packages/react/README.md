@@ -1,6 +1,6 @@
 # @keyline-icons/react
 
-928 icons on one 24×24 grid, as React components. Built for shadcn/ui, free
+930 icons on one 24×24 grid, as React components. Built for shadcn/ui, free
 under MIT.
 
 [keylineicons.com](https://keylineicons.com) to browse the full set.
@@ -38,14 +38,16 @@ scope. There is no provider, no context and no theme object.
 
 ## Notes
 
-**Three styles, two corner treatments, six entry points.**
+**Four styles, two corner treatments, eight entry points.**
 
 ```tsx
-import { Bell } from "@keyline-icons/react"          // stroke,  928 icons
-import { Bell } from "@keyline-icons/react/duotone"  // duotone, 765 icons
-import { Bell } from "@keyline-icons/react/fill"     // fill,    715 icons
+import { Bell } from "@keyline-icons/react"          // stroke,  930 icons
+import { Bell } from "@keyline-icons/react/two-tone" // two-tone, 930 icons
+import { Bell } from "@keyline-icons/react/duotone"  // duotone, 930 icons
+import { Bell } from "@keyline-icons/react/fill"     // fill,    930 icons
 
-import { Bell } from "@keyline-icons/react/sharp"          // the same three,
+import { Bell } from "@keyline-icons/react/sharp"           // the same four,
+import { Bell } from "@keyline-icons/react/sharp/two-tone"  // cut sharp,
 import { Bell } from "@keyline-icons/react/sharp/duotone"  // with butt caps and
 import { Bell } from "@keyline-icons/react/sharp/fill"     // square corners
 ```
@@ -54,12 +56,12 @@ Sharp covers exactly the names the rounded entry point beside it does, and the
 export is called the same thing in both, so switching a file over is a change
 to the import path and nothing else.
 
-Separate imports rather than one component with a `weight` prop, because the
-three styles do not cover the same icons. Duotone and fill need a region to
-fill, and an open glyph like `bar-chart` has none. A single component taking a
-weight would have to accept a combination that does not exist and decide what
-to do at runtime; a missing import is a build error, which is the better time
-to find out.
+Separate imports rather than one component with a `weight` prop, so an app
+ships only the styles it imports. Since 1.0.0 all four cover every name.
+`two-tone` is what `/duotone` exported until 0.9.0, the outline over a 40%
+plate; `/duotone` now has no outline, a grey body with the detail at full
+strength. If you imported `/duotone` before 1.0.0 and want the old look, change
+the path to `/two-tone`.
 
 **Each icon carries its own root attributes** rather than inheriting a shared
 preset. Some drawings are solid by definition, `square-half` and the other

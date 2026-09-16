@@ -20,7 +20,7 @@ npx @keyline-icons/cli show check > check.svg
 
 | Option | |
 | --- | --- |
-| `-s, --style <s>` | `stroke`, `duotone` or `fill`. Default `stroke`. |
+| `-s, --style <s>` | `stroke`, `two-tone`, `duotone` or `fill`. Default `stroke`. |
 | `-c, --corners <c>` | `regular` or `sharp`. Default `regular`. |
 | `-o, --out <dir>` | Where `add` writes. Default `./icons`. |
 | `-l, --limit <n>` | Max results for `search`. Default 25. |

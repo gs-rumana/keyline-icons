@@ -293,7 +293,7 @@ const FONT =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 
 const total = available.size
-const styles = ["stroke", "duotone", "fill"]
+const styles = ["stroke", "two-tone", "duotone", "fill"]
 
 /**
  * One cover at a given height, with the glyph grid cut to `rows`.

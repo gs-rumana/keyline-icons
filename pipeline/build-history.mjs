@@ -80,13 +80,13 @@ const git = (...args) =>
     maxBuffer: 64 << 20,
   })
 
-/** The style folders. */
-const STYLES = ["stroke", "duotone", "fill"]
+/** The style folders. `two-tone` since 1.0.0, see `continues` below. */
+const STYLES = ["stroke", "two-tone", "duotone", "fill"]
 
 /**
  * Every file one name has, in the order a redraw is looked for.
  *
- * Six of them, not three: a drawing owes the same styles in both corner
+ * Eight of them, not four: a drawing owes the same styles in both corner
  * treatments, and `icons/sharp/` is as much the icon as `icons/stroke/` is.
  * A redraw that a reader can see is a redraw whatever folder it happened in.
  *
@@ -166,6 +166,48 @@ const drawings = (ref) =>
 
 
 /**
+ * Whether a ref (null: the working tree) carries the four-style split.
+ *
+ * Until 0.9.0 `duotone` was the stroke drawing over a 40% plate, and 1.0.0
+ * renamed that style `two-tone` and gave `duotone` to a new, ringless drawing
+ * made per icon. Read naively, a window across the split nominates every
+ * duotone in the set as redrawn and lists every two-tone as nothing at all,
+ * which is a thousand pairs announcing a rename.
+ */
+const splitAt = new Map()
+const isSplit = (ref) => {
+  if (!ref) return existsSync(join(ROOT, "icons", "two-tone"))
+  if (!splitAt.has(ref)) {
+    let has = false
+    try {
+      has = git("ls-tree", "--name-only", ref, "icons/").includes("icons/two-tone")
+    } catch {}
+    splitAt.set(ref, has)
+  }
+  return splitAt.get(ref)
+}
+
+/**
+ * The old duotone file across the split, and whether it is still in the set.
+ *
+ * **A drawing continues where the same document still ships.** The outlined
+ * majority is byte for byte the two-tone it became, and the ringless container
+ * duotones are byte for byte their duotone, so neither is a redraw: the note
+ * announces the rename, and a new duotone is a new style rather than a
+ * correction to anything. Only an old file that matches neither was drawn
+ * again, and it is paired with the style it became, which is the one sharing
+ * more of its lines: the plate usually survives a redraw where the outline
+ * does not. A tie goes to two-tone, which is what the old name meant.
+ */
+const continues = (old, twoTone, duotone) => {
+  if (old === twoTone || old === duotone) return null
+  const lines = (svg) => new Set((svg ?? "").split("\n").map((l) => l.trim()))
+  const was = lines(old)
+  const shared = (svg) => [...lines(svg)].filter((l) => was.has(l)).length
+  return shared(duotone) > shared(twoTone) ? "duotone" : "two-tone"
+}
+
+/**
  * A redrawn icon as the two drawings a reader is being asked to compare.
  *
  * A changelog that only *names* what was redrawn is asking the reader to
@@ -206,12 +248,11 @@ const drawings = (ref) =>
  */
 const redrawn = (name, from, to) => {
   let existed = false
-  for (const { corners, style, dir } of DRAWINGS) {
-    const path = `${dir}/${name}.svg`
-    const before = fileAt(from, path)
-    if (!before) continue
-    existed = true
-    const after = to
+  /* Across the split the old duotone is read once, under `two-tone`, and
+     `duotone` has no "before" of its own. See `continues`. */
+  const across = !isSplit(from) && isSplit(to)
+  const latest = (path) =>
+    to
       ? fileAt(to, path)
       : (() => {
           try {
@@ -220,17 +261,36 @@ const redrawn = (name, from, to) => {
             return null
           }
         })()
+  for (const { corners, style, dir } of DRAWINGS) {
+    const path = `${dir}/${name}.svg`
+    if (across && style === "duotone") continue
+    if (across && style === "two-tone") {
+      const root = corners === "sharp" ? "icons/sharp" : "icons"
+      const old = fileAt(from, `${root}/duotone/${name}.svg`)
+      if (!old) continue
+      existed = true
+      const twoTone = latest(path)
+      const duotone = latest(`${root}/duotone/${name}.svg`)
+      const became = continues(old, twoTone, duotone)
+      const after = became === "two-tone" ? twoTone : duotone
+      if (!became || !after) continue
+      return { name, style: became, corners, before: old.trim(), after: after.trim() }
+    }
+    const before = fileAt(from, path)
+    if (!before) continue
+    existed = true
+    const after = latest(path)
     if (!after || before === after) continue
     return { name, style, corners, before: before.trim(), after: after.trim() }
   }
-  /* Unreachable from `changedBetween`, which nominates modifications only and
-     so hands this nothing it cannot pair. Kept because it is the honest answer
-     to the question — a drawing the window opened with that did not move — and
-     because the surfaces already draw it, so the day something else nominates
-     a candidate this stays a caption rather than a crash. */
-  return existed
-    ? { name, style: null, corners: null, before: null, after: null }
-    : null
+  /* Reached across the split, where a duotone file nominated by the diff
+     turns out to continue as its two-tone: nothing was redrawn, so nothing is
+     listed. Before the split `changedBetween` nominated modifications only and
+     this was unreachable, so no published entry ever took the caption-only
+     form this used to return. */
+  return across || !existed
+    ? null
+    : { name, style: null, corners: null, before: null, after: null }
 }
 
 /**
@@ -353,7 +413,7 @@ for (const line of log.split("\n")) {
     continue
   }
 
-  const name = /^icons\/(?:stroke|duotone|fill)\/(.+)\.svg$/.exec(line)?.[1]
+  const name = /^icons\/(?:stroke|two-tone|duotone|fill)\/(.+)\.svg$/.exec(line)?.[1]
   if (!name || !at) continue
 
   const entry = dates.get(name)

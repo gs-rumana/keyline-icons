@@ -126,7 +126,7 @@ export function shareCopy({ icons, files }: ShareCounts): ShareCopy {
     */
     title:
       `${SET_TITLE}: ${format(icons)} free ${SET_LICENSE}-licensed icons for ` +
-      `shadcn/ui, in stroke, duotone and fill, rounded or sharp`,
+      `shadcn/ui, in stroke, two-tone, duotone and fill, rounded or sharp`,
   }
 }
 

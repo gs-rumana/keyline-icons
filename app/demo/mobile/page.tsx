@@ -36,10 +36,10 @@ export const metadata = pageMetadata({
   title: "Icons on a phone screen",
   description:
     "A whole phone app drawn end to end with Keyline Icons. Switch it in " +
-    "place between stroke, duotone and fill, rounded or sharp, and nothing " +
+    "place between stroke, two-tone, duotone and fill, rounded or sharp, and nothing " +
     "in the layout moves.",
   socialDescription:
-    "A whole phone app drawn end to end with Keyline Icons. Switch stroke, duotone and fill, rounded or sharp, in place.",
+    "A whole phone app drawn end to end with Keyline Icons. Switch stroke, two-tone, duotone and fill, rounded or sharp, in place.",
 })
 
 export default async function Page() {

@@ -103,19 +103,18 @@ export function homeFaq({
     {
       question: `What is ${SET_TITLE}?`,
       answer:
-        `A free icon set: ${total} icons drawn on one 24×24 grid, each in up to three weights: ` +
-        `stroke, duotone and fill, with rounded or sharp corners. ${SET_TAGLINE}, released under ` +
+        `A free icon set: ${total} icons drawn on one 24×24 grid, each in four styles: ` +
+        `stroke, two-tone, duotone and fill, with rounded or sharp corners. ${SET_TAGLINE}, released under ` +
         `the ${SET_LICENSE_NAME}, and crafted with AI.`,
     },
     {
-      question: `How many icons are there, and why do the three styles differ?`,
+      question: `How many icons are there, and what are the four styles?`,
       answer:
         `${byStyle.map((entry) => `${entry.count} ${entry.style}`).join(", ")}, each cut with rounded ` +
         `and with sharp corners, so ${files} SVGs in total. ` +
-        `Stroke is complete by definition, because it is the drawing the other two are derived from. ` +
-        `Duotone and fill need an area to fill, and not every glyph encloses one: bar-chart is three open ` +
-        `strokes with no interior, so it carries stroke only. That is measured off each outline rather than ` +
-        `decided by hand, which is why the counts are what they are.`,
+        `Stroke is the drawing the others start from. Two-tone keeps that outline over a 40% plate, which ` +
+        `is what duotone meant until 0.9.0. Duotone drops the outline and puts the part that matters in ` +
+        `black over a grey body. Fill is solid. Since 1.0.0 every name comes in all four.`,
     },
     {
       question: `Are the icons free to use in commercial projects?`,
@@ -146,7 +145,7 @@ export function homeFaq({
         `Because a container is a different icon, not a style of one: ${containers.square} of the ` +
         `${stroke} drawings come in a square- form and ${containers.circle} in a circle-, wrapping the base ` +
         `glyph rather than replacing it. The container also gives a glyph the enclosed area a duotone or a ` +
-        `fill needs, which is why boxed variants often have all three weights where the bare drawing has one.`,
+        `fill needs, which is why a boxed variant can show a glyph solid that the bare drawing only outlines.`,
     },
     {
       /*
@@ -159,7 +158,7 @@ export function homeFaq({
       answer:
         `Only the corners and the stroke caps. All ${total} drawings are cut both ways, in every ` +
         `weight they carry, so the two are one set with a switch on it rather than two sets: same ` +
-        `names, same 24×24 grid, same coverage in stroke, duotone and fill. Rounded takes a radius ` +
+        `names, same 24×24 grid, same coverage in stroke, two-tone, duotone and fill. Rounded takes a radius ` +
         `off one ladder at every corner and ends each stroke round; sharp takes every corner to a ` +
         `true point and squares every cap. The ink reaches exactly as far either way, so nothing in ` +
         `a layout moves when you swap one for the other.`,
@@ -202,10 +201,10 @@ export function installFaq(): FaqEntry[] {
     {
       question: `Why does each style have its own import path?`,
       answer:
-        `Because the three do not cover the same icons. Stroke has every drawing; duotone and fill only ` +
-        `those that enclose an area, so a single component taking a weight prop would accept combinations ` +
-        `that do not exist. Importing from ${REACT_PACKAGE}/duotone instead makes a missing name a build ` +
-        `error rather than a blank glyph.`,
+        `So an app ships only the styles it imports. Every name is in all four, and the import path picks ` +
+        `the look: ${REACT_PACKAGE}/two-tone for the outline over a plate, ${REACT_PACKAGE}/duotone for the ` +
+        `grey body with black detail. Code that imported /duotone before 1.0.0 and wants the old look ` +
+        `changes the path to /two-tone.`,
     },
     {
       question: `How do I size an icon inside a shadcn/ui Button?`,

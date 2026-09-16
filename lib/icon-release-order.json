@@ -78,7 +78,9 @@
       "folder-zip",
       "rocket",
       "rocket-2",
-      "rocket-vertical"
+      "rocket-vertical",
+      "hand-closed",
+      "hand-open"
     ],
     "0.9.0": [
       "plane",

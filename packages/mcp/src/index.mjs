@@ -292,7 +292,7 @@ const TOOLS = [
   {
     name: "search_icons",
     description:
-      "Find icons by name. Returns matching names and which of the three styles " +
+      "Find icons by name. Returns matching names and which of the four styles " +
       "each one has. Names are kebab-case and compounds read base-first, so a " +
       "mail icon with a tick is `mail-check`, not `check-mail`. Search the base " +
       "word to find a family. Word order does not matter and a component name " +

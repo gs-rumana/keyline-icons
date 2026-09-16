@@ -23,6 +23,7 @@ import type { Style } from "@/lib/icons"
 
 export const STYLE_OPTIONS: { value: Style; label: string }[] = [
   { value: "stroke", label: "Stroke" },
+  { value: "two-tone", label: "Two-tone" },
   { value: "duotone", label: "Duotone" },
   { value: "fill", label: "Fill" },
 ]

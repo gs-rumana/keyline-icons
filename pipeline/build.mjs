@@ -21,7 +21,7 @@ import { normalize } from './lib/svg.mjs';
 const ROOT = resolve(import.meta.dirname, '..');
 const RAW = join(ROOT, 'raw');
 const OUT = join(ROOT, 'icons');
-const STYLES = ['stroke', 'duotone', 'fill'];
+const STYLES = ['stroke', 'two-tone', 'duotone', 'fill'];
 
 /**
  * The corner treatments, and where each one lands.

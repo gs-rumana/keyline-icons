@@ -53,6 +53,7 @@ const MODULES = [
       pkg("index.tsx"),
     ],
   },
+  { style: "two-tone", corners: "regular", outs: [pkg("two-tone.tsx")] },
   { style: "duotone", corners: "regular", outs: [pkg("duotone.tsx")] },
   { style: "fill", corners: "regular", outs: [pkg("fill.tsx")] },
 
@@ -76,6 +77,7 @@ const MODULES = [
    * one treatment, and 1497 more components in every page bundle buys nothing.
    */
   { style: "stroke", corners: "sharp", outs: [pkg("sharp.tsx")] },
+  { style: "two-tone", corners: "sharp", outs: [pkg("sharp-two-tone.tsx")] },
   { style: "duotone", corners: "sharp", outs: [pkg("sharp-duotone.tsx")] },
   { style: "fill", corners: "sharp", outs: [pkg("sharp-fill.tsx")] },
 ]

@@ -28,7 +28,7 @@ import { join, resolve } from 'node:path';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const ICONS = join(ROOT, 'icons');
-const STYLES = ['stroke', 'duotone', 'fill'];
+const STYLES = ['stroke', 'two-tone', 'duotone', 'fill'];
 const CORNERS = ['regular', 'sharp'];
 
 const fix = process.argv.includes('--fix');
@@ -119,6 +119,7 @@ function counts() {
       0
     ),
     stroke: byStyle.stroke,
+    'two-tone': byStyle['two-tone'],
     duotone: byStyle.duotone,
     fill: byStyle.fill,
     square: contained('square'),
@@ -136,6 +137,7 @@ function counts() {
 const CLAIMS = [
   ['README.md', /\*\*([\d,]+) icons, drawn on one/, 'icons'],
   ['README.md', /\| `stroke` \| ([\d,]+) \|/, 'stroke'],
+  ['README.md', /\| `two-tone` \| ([\d,]+) \|/, 'two-tone'],
   ['README.md', /\| `duotone` \| ([\d,]+) \|/, 'duotone'],
   ['README.md', /\| `fill` \| ([\d,]+) \|/, 'fill'],
   ['README.md', /([\d,]+) SVGs in total/, 'files'],
@@ -143,6 +145,7 @@ const CLAIMS = [
   ['README.md', /form and ([\d,]+) in a `circle-` form/, 'circle'],
   ['packages/react/README.md', /^([\d,]+) icons on one/m, 'icons'],
   ['packages/react/README.md', /\/\/ stroke, +([\d,]+) icons/, 'stroke'],
+  ['packages/react/README.md', /\/\/ two-tone, ([\d,]+) icons/, 'two-tone'],
   ['packages/react/README.md', /\/\/ duotone, ([\d,]+) icons/, 'duotone'],
   ['packages/react/README.md', /\/\/ fill, +([\d,]+) icons/, 'fill'],
   /* This one was not here, and it went stale exactly as predicted: the plugin
@@ -154,13 +157,14 @@ const CLAIMS = [
   /* The Community listing copy. It is published prose on someone else's page
      and cannot be corrected without going back through the modal, which is
      exactly the reason it belongs here rather than in a scratch file. */
-  ['packages/figma-plugin/LISTING.md', /^([\d,]+) icons in three styles/m, 'icons'],
+  ['packages/figma-plugin/LISTING.md', /^([\d,]+) icons in four styles/m, 'icons'],
   ['packages/figma-plugin/LISTING.md', /Search ([\d,]+) icons and drop/, 'icons'],
   /* The style block is a bulleted list rather than the indented table it was
      drafted as, because that is what the modal's own editor produces. These
      matched runs of spaces and would have gone MISSING on the reformat. */
   ['packages/figma-plugin/LISTING.md', /\* Stroke: ([\d,]+) icons, 2px/, 'stroke'],
-  ['packages/figma-plugin/LISTING.md', /\* Duotone: ([\d,]+) icons, a 40%/, 'duotone'],
+  ['packages/figma-plugin/LISTING.md', /\* Two-tone: ([\d,]+) icons, a 40%/, 'two-tone'],
+  ['packages/figma-plugin/LISTING.md', /\* Duotone: ([\d,]+) icons, no outline/, 'duotone'],
   ['packages/figma-plugin/LISTING.md', /\* Fill: ([\d,]+) icons, solid/, 'fill'],
   ['packages/figma-plugin/LISTING.md', /([\d,]+) icons also come in a square- form/, 'square'],
   ['packages/figma-plugin/LISTING.md', /form and ([\d,]+) in a circle- form/, 'circle'],
@@ -176,7 +180,8 @@ const CLAIMS = [
      the listing and broke the moment the paragraph was unwrapped, reporting a
      MISSING count on prose whose number was correct. A claim is about the words
      and the number, never about where the line happens to end. */
-  ['packages/figma-plugin/LISTING.md', /three counts differ: stroke\s+([\d,]+), duotone/, 'stroke'],
+  ['packages/figma-plugin/LISTING.md', /four counts: stroke\s+([\d,]+), two-tone/, 'stroke'],
+  ['packages/figma-plugin/LISTING.md', /, two-tone ([\d,]+), duotone/, 'two-tone'],
   ['packages/figma-plugin/LISTING.md', /, duotone ([\d,]+), fill/, 'duotone'],
   ['packages/figma-plugin/LISTING.md', /, fill ([\d,]+)\./, 'fill'],
   /* Four more that were NOT here and went stale exactly as the note above
@@ -184,7 +189,7 @@ const CLAIMS = [
      the plugin's own total and the file description's both said 2,994 after
      the set reached 3,250, and the tag rationale argued from 480 duotone
      drawings when there were 522. Every claim, not the convenient ones. */
-  ['packages/figma-plugin/LISTING.md', /^([\d,]+) icons, three styles, rounded/m, 'icons'],
+  ['packages/figma-plugin/LISTING.md', /^([\d,]+) icons, four styles, rounded/m, 'icons'],
   ['packages/figma-plugin/LISTING.md', /costs you a drawing\. ([\d,]+) SVGs in total/, 'files'],
   ['packages/figma-plugin/LISTING.md', /icon plugins, ([\d,]+) duotone drawings are rare/, 'duotone'],
   ['packages/figma-plugin/LISTING.md', /a second library: ([\d,]+) variants over the same/, 'files'],
@@ -258,7 +263,7 @@ function main() {
     process.exit(1);
   }
 
-  const summary = `${want.icons} icons · ${want.files} SVGs · stroke ${want.stroke}, duotone ${want.duotone}, fill ${want.fill} · ${want.square} square, ${want.circle} circle`;
+  const summary = `${want.icons} icons · ${want.files} SVGs · stroke ${want.stroke}, two-tone ${want["two-tone"]}, duotone ${want.duotone}, fill ${want.fill} · ${want.square} square, ${want.circle} circle`;
   console.log(
     c(32, fix && stale.length
       ? `READMEs updated (${stale.length} count(s))`

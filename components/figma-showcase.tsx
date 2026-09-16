@@ -142,7 +142,7 @@ const PLUGIN_MOCKUP = {
   */
   alt:
     "The Keyline Icons plugin open in Figma: a panel floating over the " +
-    "catalogue with a search field, a Stroke, Duotone and Fill switch, and a " +
+    "catalogue with a search field, a Stroke, Two-tone, Duotone and Fill switch, and a " +
     "grid of the whole set, with the library file's own Catalog page behind it.",
 }
 

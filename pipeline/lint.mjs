@@ -21,7 +21,7 @@ import { outlines, minGap, roundedCorners, contains, diameter, subpaths, trimFre
 
 const ROOT = resolve(import.meta.dirname, '..');
 const ICONS = join(ROOT, 'icons');
-const STYLES = ['stroke', 'duotone', 'fill'];
+const STYLES = ['stroke', 'two-tone', 'duotone', 'fill'];
 
 /**
  * The corner treatments, linted as two independent sets.
@@ -413,15 +413,20 @@ const RADIUS_TOL = 0.05;
  * wall and neighbour gaps: for three in a row inside a 20-unit body, A >= 6 + d/2
  * and A <= 10 - d collapse to 1.5d <= 4, so d <= 8/3. That is where the dice pips
  * and the contained `more-*` dots sit — a bead at its ceiling, not a free choice.
+ *
+ * 4 is the bare ellipsis: `more-horizontal` and `more-vertical` came back from
+ * Zafar on 16 Sep 2026 with r=2 dots, three beads that are the whole glyph and
+ * so read at the weight of a 2-unit line rather than as punctuation on one.
  */
-const DOT_SIZES = [2, 8 / 3, 3];
+const DOT_SIZES = [2, 8 / 3, 3, 4];
 const DOT_TOL = 0.05;
 /**
  * Above this a filled circle is a drawn object rather than a dot — `map-pin`'s
  * knocked-out hole, `circle-user`'s head, a flower's petal — and it answers to
- * the drawing it belongs to rather than to this ladder.
+ * the drawing it belongs to rather than to this ladder. Just past the ellipsis
+ * bead, so its 4 still measures as a dot.
  */
-const DOT_MAX = 4;
+const DOT_MAX = 4.5;
 /** Geometry tolerance in grid units. Cubic-extremum solving lands a few parts
  *  per million off exact integers; anything under a thousandth of a unit is far
  *  below what a 24px grid can express, let alone render. */
@@ -464,6 +469,9 @@ function dotSizes(src) {
         lo = Math.min(lo, r); hi = Math.max(hi, r);
       }
       if (hi - lo > 0.02 * hi + 0.01) continue; // a rounded square, not a circle
+      // A straight-sided square samples only at its corners, which all sit at
+      // one radius, so it passes the test above; its diameter is not its width.
+      if (Math.abs(lo + hi - w) > 0.05) continue;
       out.push(lo + hi);
     }
   }
@@ -823,10 +831,11 @@ async function main() {
         }
       }
 
-      // Duotone must be two tones at the agreed secondary opacity. A drawing
-      // where every element is reduced is not a style — it is the solid at low
-      // opacity, and reads as "disabled".
-      if (style === 'duotone') {
+      // Two-tone and duotone must both be two tones at the agreed secondary
+      // opacity. Two-tone is the outline with a muted plate behind it; duotone
+      // is the plate with the detail on top and no outline. Same paint rule,
+      // so the same check runs over both.
+      if (style === 'duotone' || style === 'two-tone') {
         // A single shape can carry both tones — a reduced fill *and* a full-strength
         // stroke. Count the two channels separately rather than classifying the
         // shape, or the compact one-shape duotone reads as all-muted.
@@ -853,7 +862,16 @@ async function main() {
         // reported instead of joining a line of accepted noise.
         if (muted === 0 && !FULL_LEVEL.test(name))
           add('warn', 'DUOTONE', id, 'no reduced-opacity layer — only the complete state of a level family may do this');
-        else if (full === 0) add('error', 'DUOTONE', id, 'every layer is reduced — reads as a faded solid, not a two-tone icon');
+        // An all-muted drawing used to be an error, and for two-tone it still is:
+        // that style is defined by an outline standing over a plate. Duotone
+        // greys ONE element and leaves the rest full strength, which needs the
+        // drawing to separate into elements at all. Where it does not — x,
+        // percent, more-*, scan, sliders-* — the whole glyph goes muted, and
+        // that is the agreed fallback under the parity rule (every name owes
+        // every style), not a defect. 287 duotones sit here deliberately.
+        else if (full === 0) add(style === 'two-tone' ? 'error' : 'warn', 'DUOTONE', id,
+          style === 'two-tone' ? 'every layer is reduced — a two-tone needs its outline at full strength'
+            : 'every layer is reduced — the single-element fallback; check the drawing has no element to split');
         for (const op of opacities)
           if (Math.abs(op - SECONDARY_OPACITY) > 1e-9)
             add('error', 'DUOTONE', id, `secondary opacity ${op} — the set uses ${SECONDARY_OPACITY} (stale export?)`);
@@ -1035,7 +1053,7 @@ async function main() {
       if (offDot.size)
         add('warn', 'DOT', id,
           `dot ${[...offDot].sort().join(', ')} units across — the ladder is 2 (mark) or 3 (bead), ` +
-          'or 2.67 where a box caps the bead');
+          '2.67 where a box caps the bead, or 4 for the bare ellipsis');
 
       if (!set.has(key))
         set.set(key, { corners, name, styles: new Set(), fillable: null, dims: {}, solid: false });
@@ -1084,8 +1102,11 @@ async function main() {
     // against another, which is only meaningful when the glyph has separable
     // parts (double-check greys one tick). That is a drawing judgement, so a
     // duotone here is accepted rather than required.
-    if (!info.fillable && !CLOSED_BY_STROKE.has(name) && info.styles.has('fill') && !inheritedFill(set, key))
-      add('warn', 'COVERAGE', key, 'open-stroke glyph has a fill — nothing to fill; fills should come from a container');
+    // An open-stroke glyph has no interior to fill, and until 1.0.0 a fill on
+    // one was worth flagging. The parity rule settled it the other way: every
+    // name owes every style, "even at the cost of duplicating the same icon in
+    // the same color and same shape", so an open glyph's fill is a copy of its
+    // stroke by design and there is nothing here to report.
 
     // Every style of an icon must occupy the same visual bounds. A solid is the
     // outline filled to its stroke's OUTER edge, so it matches the outline exactly
@@ -1093,7 +1114,7 @@ async function main() {
     // which reads as a size change when a UI swaps styles.
     const ref = info.dims.stroke;
     if (ref) {
-      for (const s of ['duotone', 'fill']) {
+      for (const s of ['two-tone', 'duotone', 'fill']) {
         const d = info.dims[s];
         if (!d) continue;
         const dw = d[0] - ref[0], dh = d[1] - ref[1];
@@ -1111,7 +1132,7 @@ async function main() {
         const capSlack = info.corners === 'sharp' ? 2 * CAP_CORNER : 0;
         if (capSlack && dw <= SIZE_TOL && dh <= SIZE_TOL
             && Math.max(-dw, -dh) <= capSlack + SIZE_TOL) continue;
-        const duotoneGrew = s === 'duotone' && dw >= -SIZE_TOL && dh >= -SIZE_TOL;
+        const duotoneGrew = (s === 'duotone' || s === 'two-tone') && dw >= -SIZE_TOL && dh >= -SIZE_TOL;
         if (isLevel(name)) continue; // the solid shows the whole, the outline a part
         // An open container has to close before it can be filled, and closing
         // it adds area the outline never covered.

@@ -31,7 +31,7 @@ const NOT_CONTAINERS = new Set(
     await readFile(join(ROOT, "lib", "icon-not-containers.json"), "utf8")
   ).names
 )
-const STYLES = ["stroke", "duotone", "fill"]
+const STYLES = ["stroke", "two-tone", "duotone", "fill"]
 
 /**
  * The corner treatments, declared so a consumer can enumerate the axis rather

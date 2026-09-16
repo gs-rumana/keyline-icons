@@ -67,14 +67,14 @@ Keyline Icons
 ## Tagline
 
 ```
-928 icons, three styles, rounded or sharp corners. Searchable in Figma and FigJam.
+930 icons, four styles, rounded or sharp corners. Searchable in Figma and FigJam.
 ```
 
 Capped at 100 characters. The line above is 81, so there is still room. A
 shorter alternative if it ever needs one:
 
 ```
-928 icons in three styles, cut rounded or sharp.
+930 icons in four styles, cut rounded or sharp.
 ```
 
 ## Description
@@ -88,19 +88,20 @@ which only ever shows the newest entry. Someone deciding whether to install
 wants to see the set is maintained, and that is what a history says.
 
 ```
-Search 928 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
+Search 930 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
 
-Three styles
+Four styles
 
-* Stroke: 928 icons, 2px, round caps and joins
-* Duotone: 765 icons, a 40% plate under the line
-* Fill: 715 icons, solid where the glyph has a region to fill
+* Stroke: 930 icons, 2px, round caps and joins
+* Two-tone: 930 icons, a 40% plate under the line
+* Duotone: 930 icons, no outline, a grey body with the detail in black
+* Fill: 930 icons, solid where the glyph has a region to fill
 
-Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 4,816 SVGs in total.
+Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 7,440 SVGs in total.
 
 56 icons also come in a square- form and 61 in a circle- form, so a container is a search away rather than a second drawing.
 
-Search knows more than the file names. 811 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
+Search knows more than the file names. 813 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
 
 In a design file an insert arrives as a 24 × 24 frame, which is what makes a row of icons line up. In FigJam it arrives as a group, so FigJam's colour control reaches the drawing instead of painting a box around it. Double-click into one and every path takes its own colour, which is how a gift gets a red box and a yellow bow, and how duotone keeps both of its tones.
 
@@ -114,7 +115,7 @@ github.com/keyline-icons/keyline-icons
 Changelog
 
 1.0.0
-77 new drawings, taking the set to 928 names and 4,816 SVGs, and a new shelf.
+Four styles, with every name in all of them: two-tone is the outlined style that was called duotone, and duotone is new, a grey body with the part that matters in black and no outline. 79 new drawings, taking the set to 930 names and 7,440 SVGs, and a new shelf.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
@@ -124,9 +125,10 @@ Changelog
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * Time and Weather: a stopwatch and its reset, an alarm clock with check, plus and minus, a snowflake and wind
 * Layout and Files: a table and a zipped folder
+* Pointers: a hand closed and a hand open
 * People opened as a shelf of its own, taking categories from 37 to 38
 
-Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners, and the coins, on rounder faces with 2 units between every coin, so they read at the set's weight.
+Also redrawn: the pointing hand in four directions, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels with their grey under the frame's round corners, and the coins on rounder faces with 2 units between every coin.
 
 0.9.0 — 14 September 2026
 53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
@@ -231,7 +233,7 @@ expectation for an icon set. `free icons` overlaps `open source`, and page four
 marks the plugin Free natively.
 
 That leaves the five that actually distinguish it: FigJam support is rare among
-icon plugins, 765 duotone drawings are rare among icon sets, a set that ships
+icon plugins, 930 duotone drawings are rare among icon sets, a set that ships
 every drawing rounded *and* sharp is rarer still, and the rest name the audience
 rather than the artefact.
 
@@ -261,17 +263,22 @@ to be **pushed** before any of this is true for anyone but you.
 ### 1.0.0
 
 ```
-77 new drawings, taking the set to 928 names and 4,816 SVGs: a boy, a girl and
+Four styles now, with every name in all of them. Two-tone is the outlined style
+that was called duotone; duotone is new, a grey body with the part that matters
+in black and no outline.
+
+79 new drawings, taking the set to 930 names and 7,440 SVGs: a boy, a girl and
 four babies, the panel open, closed and dashed on every side, the phone's
 calls, a tablet with eight signs, a laptop, two banknotes with their signs, a
 rocket three ways, the big arrows, the heading with its six levels, a stopwatch
-and an alarm clock with their signs, a snowflake, wind, a table and a zipped
-folder.
+and an alarm clock with their signs, a snowflake, wind, a table, a zipped
+folder, and a hand closed and open.
 
 People opened as a shelf with them, taking categories from 37 to 38.
 
-The four dashed close panels were redrawn so their grey sits under the frame's
-round corners, and the coins on rounder faces with 2 units between every coin.
+Redrawn: the pointing hand in four directions, the three dots, play, the gallery
+frames, the grid and file fills, the chart axes in two-tone, the four dashed
+close panels and the coins.
 ```
 
 **A republish is required for the listing**, whose counts moved: the tagline,
@@ -582,13 +589,13 @@ Keyline Icons
 ### Description
 
 ```
-928 icons on a 24×24 grid, in three styles and two corner treatments: stroke, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
+930 icons on a 24×24 grid, in four styles and two corner treatments: stroke, two-tone, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
 
-811 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the three styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
+813 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the four styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
 
-Which styles an icon has is measured rather than chosen: duotone and fill need a fillable region, so an open glyph like bar-chart is stroke-only, and square-bar-chart has all three. That is why the three counts differ: stroke 928, duotone 765, fill 715.
+Every name comes in all four styles. Two-tone keeps the outline over a 40% plate, which is what duotone meant until 0.9.0; duotone now drops the outline and puts the part that matters in black. The four counts: stroke 930, two-tone 930, duotone 930, fill 930.
 
-Every drawing exists in both treatments, so sharp is a switch rather than a second library: 4,816 variants over the same 928 names.
+Every drawing exists in both treatments, so sharp is a switch rather than a second library: 7,440 variants over the same 930 names.
 
 The Catalog page files every icon under one of 38 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
@@ -598,7 +605,7 @@ keylineicons.com
 github.com/keyline-icons/keyline-icons
 
 v1.0.0
-77 new drawings, and a new shelf. The set is 928 names now, 811 component sets and 4,816 variants, up from 851 and 4,394. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
+Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone and fill in both corners: the outlined style that was called duotone is Style=two-tone, and Style=duotone is a new drawing with no outline, a grey body with the part that matters in black. 79 new drawings. The set is 930 names now, 813 component sets and 7,440 variants, up from 851 and 4,394. The rename happened in place, so instances already placed in your files keep their link and their look.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
@@ -608,9 +615,10 @@ v1.0.0
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
 * Time and Weather: a stopwatch and its reset, an alarm clock with check, plus and minus, a snowflake and wind
 * Layout and Files: a table and a zipped folder
+* Pointers: a hand closed and a hand open
 * Categories went from 37 to 38: People took the figures that had nowhere honest to sit
 
-Also redrawn: the four dashed close panels, whose grey now sits under the frame's round corners, and the coins, on rounder faces with 2 units between every coin, so they read at the set's weight.
+Also redrawn: the pointing hand in four directions, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels, and the coins on rounder faces.
 
 v0.9.0
 53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.
@@ -674,19 +682,6 @@ v0.5.0
 
 Also redrawn, in both treatments: 7 drawings. The pen family is the same drawing scaled 10/9 with its band moved from the nib to the cap, clock is now exactly clock-3 with both names kept, and the two sliders break their rails at the knob.
 
-v0.4.0
-44 new drawings, and every sharp end squared. The set is 629 names now, 520 component sets and 3,250 variants, up from 585 and 2,994. Nothing was renamed and no component was replaced, so instances already placed in your files keep their link.
-
-* Every sharp diagonal end is cut back onto its rounded twin's box. A butt cap on a diagonal reaches further than the round cap it replaces, so 329 icons painted up to 0.414 of a unit wide of where the rounded drawing ends
-* The rounded drawings are untouched: no rounded file was changed by the cut
-* Search: search and search-2, each with check, list, minus, plus and x
-* Cloud and package: both families take the five signs the app tiles carry, and package adds an arrow for each direction
-* App: check, dot, minus, plus and x
-* Weather: umbrella, umbrella-off and parasol
-* Others: briefcase, bug, crown, flag, flag-chequered, traffic-light, settings-dot, credit-card-2, move, maximize-2, replay and circle-progress-play
-
-Also redrawn, in both treatments: 12 drawings. The seven bells carry their plate offset into the fills, and circle-navigation, credit-card, database, git-merge and package are redrawn with them.
-
 Earlier releases, back to the first cut: keylineicons.com/changelog
 ```
 
@@ -699,8 +694,9 @@ changelogs" was answered with the header alone.
 **The field is capped at 10,000 characters**, here and in the plugin's
 Description, and the history is what grows into both: the 0.9.0 paste was
 refused at 10,896. So the oldest entries come off
-the bottom, v0.2.0 and the four 0.1.x releases on 14 Sep 2026 and v0.3.0 on
-15 Sep 2026, and a last line
+the bottom, v0.2.0 and the four 0.1.x releases on 14 Sep 2026, v0.3.0 on
+15 Sep 2026 and v0.4.0 on 16 Sep 2026 (9,823 with the four-style 1.0.0 entry),
+and a last line
 points at `keylineicons.com/changelog`, which keeps every release. Trim from
 the oldest end again whenever a new entry pushes it past about 9,500.
 

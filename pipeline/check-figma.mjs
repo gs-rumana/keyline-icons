@@ -88,7 +88,7 @@ const c = (n, s) => `\x1b[${n}m${s}\x1b[0m`;
  * silently into the wrong bucket.
  */
 const CONTAINERS = { regular: 'r', circle: 'c', square: 'q' };
-const STYLES = { stroke: 's', duotone: 'd', fill: 'f' };
+const STYLES = { stroke: 's', 'two-tone': 't', duotone: 'd', fill: 'f' };
 /* `h` for sharp: `s` is already the stroke style, and a tag whose letters mean
    different things in different columns is unreadable in a digest. */
 const CORNERS = { regular: 'r', sharp: 'h' };
@@ -207,7 +207,7 @@ const AFTER = "";
 const BUDGET = 16000;
 
 const CT = { regular: "r", circle: "c", square: "q" };
-const ST = { stroke: "s", duotone: "d", fill: "f" };
+const ST = { stroke: "s", "two-tone": "t", duotone: "d", fill: "f" };
 const KT = { regular: "r", sharp: "h" };
 ${POINTS_FN}
 const p = figma.root.children.find(x => x.name === "Components");

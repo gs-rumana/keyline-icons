@@ -115,7 +115,7 @@ export default async function Page() {
     }))
   )
   /*
-    What Iconify serves, summed from the same six counts rather than typed. It
+    What Iconify serves, summed from the same eight counts rather than typed. It
     is the one number the frameworks section states, and the repo has already
     shipped three stale counts on this page by typing them.
   */
@@ -303,13 +303,14 @@ import Icon from "@iconify/svelte"    // default
 
 <Icon icon="${ICONIFY_PREFIX}:bell" />
 <Icon icon="${ICONIFY_PREFIX}:bell-fill" width="16" />
-<Icon icon="${ICONIFY_PREFIX}:bell-sharp-duotone" />`}</Code>
+<Icon icon="${ICONIFY_PREFIX}:bell-sharp-two-tone" />`}</Code>
             <p>
               Names carry the style rather than the path doing it, which is
               Iconify&apos;s convention for a set with weights and not a choice
               made here: stroke is the bare name, and everything else is a
-              suffix on it. <code>-duotone</code>, <code>-fill</code>,{" "}
-              <code>-sharp</code>, <code>-sharp-duotone</code>,{" "}
+              suffix on it. <code>-two-tone</code>, <code>-duotone</code>,{" "}
+              <code>-fill</code>, <code>-sharp</code>,{" "}
+              <code>-sharp-two-tone</code>, <code>-sharp-duotone</code>,{" "}
               <code>-sharp-fill</code>.
             </p>
             <p>
@@ -443,12 +444,12 @@ npm i -D @iconify/tailwind4
             </p>
           </Section>
 
-          <Section id="styles" title="Three styles, one name">
+          <Section id="styles" title="Four styles, one name">
             <p>
-              Every icon has a stroke drawing. Where the shape encloses an area,
-              or comes in a square or circle container, it also has a duotone
-              and a fill. That is measured off the outline rather than decided
-              by hand, which is why coverage differs between glyphs.
+              Every icon comes in all four styles. Stroke is the drawing.
+              Two-tone keeps that outline over a 40% plate, which is what
+              duotone meant until 0.9.0. Duotone drops the outline: a grey body
+              with the detail in black. Fill is solid.
             </p>
             <div className="flex flex-wrap items-center gap-6 rounded-lg border p-4 text-foreground">
               {[
@@ -466,16 +467,16 @@ npm i -D @iconify/tailwind4
               ))}
             </div>
             <p>
-              Each style is its own entry point in the package, because they do
-              not cover the same icons and a single component taking a weight
-              would have to accept a combination that does not exist. The sharp
+              Each style is its own entry point in the package, so an app ships
+              only the styles it imports. Code that imported duotone before
+              1.0.0 and wants the outlined look changes the path to two-tone. The sharp
               corner treatment is one segment further along, and the export is
               called the same thing at either path:
             </p>
             <Code>{importSample}</Code>
             <p>
-              A name missing from one of them is a build error rather than a
-              blank glyph, which is the better time to find out. Every style is
+              A name that does not exist is a build error rather than a blank
+              glyph, which is the better time to find out. Every style is
               also on disk as plain SVG in the{" "}
               <a
                 href={SET_REPO_URL}

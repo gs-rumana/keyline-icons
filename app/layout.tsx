@@ -69,6 +69,7 @@ export const metadata: Metadata = {
     "shadcn/ui icons",
     "react icons",
     "stroke icons",
+    "two-tone icons",
     "duotone icons",
     "24px icon grid",
   ],

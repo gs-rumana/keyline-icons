@@ -32,8 +32,8 @@ export const CLI_PACKAGE = "@keyline-icons/cli"
  * version, publish and keep in step, for reach that already exists.
  *
  * **The prefix is the whole name on that side.** `keyline-icons:bell` is
- * stroke, and every other treatment is a suffix on it: `-duotone`, `-fill`,
- * `-sharp`, `-sharp-duotone`, `-sharp-fill`. That is Iconify's convention for a
+ * stroke, and every other treatment is a suffix on it: `-two-tone`, `-duotone`,
+ * `-fill`, `-sharp`, `-sharp-two-tone`, `-sharp-duotone`, `-sharp-fill`. That is Iconify's convention for a
  * set with weights rather than a decision made here, which is why it does not
  * go through `importPath` and must not be made to.
  */
