@@ -136,6 +136,21 @@ export type Redraw = {
   after: string | null
 }
 
+/**
+ * One sentence of a release and the drawings it is about.
+ *
+ * From `lib/icon-release-topics.json`, so an entry reads topic, its tiles, the
+ * next topic, its tiles, rather than every sentence first and every tile after.
+ * `text` is null only on the last group, which holds whatever no topic claimed.
+ */
+export type ReleaseTopic = {
+  /** The shelf, titled as the category rail titles it. Null on the last group. */
+  title: string | null
+  text: string | null
+  names: string[]
+  updatedNames: string[]
+}
+
 export type Release = {
   version: string
   date: string
@@ -164,6 +179,8 @@ export type Release = {
   files: number
   previousFiles: number
   names: string[]
+  /** The entry read topic by topic, or null where it has no topics. */
+  topics?: ReleaseTopic[] | null
   /**
    * Drawings that already existed and were redrawn in this release, in either
    * corner treatment. A name appears once however many of its six files moved;
@@ -200,6 +217,8 @@ export type Unreleased = {
   /** What the set holds now, which is what a reader of this is asking. */
   count: number
   names: string[]
+  /** The entry read topic by topic, or null where it has no topics. */
+  topics?: ReleaseTopic[] | null
   updatedNames: string[]
   updated: Redraw[]
 }

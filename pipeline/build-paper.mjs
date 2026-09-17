@@ -797,7 +797,11 @@ const drawn = (entry) => entry.current
 /** The counts sentence, ended as a lead-in where strips follow and closed where they do not. */
 const strip = (entry, sentence) =>
   drawn(entry) || entry.initial
-    ? sentence
+    ? /* Topics carry their own sentences before their strips, so the count
+         closes rather than leading into one. */
+      entry.topics && drawn(entry)
+      ? sentence.replace(/:$/, ".")
+      : sentence
     : sentence.replace(/:$/, ".") +
       ` Every drawing of this release is on ${SITE_LABEL}/changelog.`
 
@@ -970,6 +974,35 @@ function changelogSheet(icons, release) {
     )
   }
 
+  /*
+   * An entry read section by section, the way `/changelog` reads it: a shelf's
+   * title, its sentence, its tiles, its pairs, then the next shelf. Zafar,
+   * 17 Sep 2026: "topic > icons, topic > icons", then "categorize them, not
+   * just text > icons. titles, etc."
+   */
+  const topicBlocks = (entry) => {
+    const pairOf = new Map(redrawnIn(entry).map((r) => [r.name, r]))
+    /* Labelled only where a section holds both kinds, as on the page. */
+    const label = (text, n) =>
+      `<p style="margin:16px 0 0;font-size:12px;font-weight:500;color:${MUTED}">${text} &middot; ${n}</p>`
+    return entry.topics
+      .map((topic) => {
+        const pairs = topic.updatedNames.map((n) => pairOf.get(n)).filter(Boolean)
+        const both = topic.names.length && pairs.length
+        return (
+          (topic.title
+            ? `<h3 style="margin:32px 0 0;font-size:16px;font-weight:600;letter-spacing:-0.2px">${esc(topic.title)}</h3>`
+            : "") +
+          (topic.text
+            ? `<p style="margin:${topic.title ? 8 : 24}px 0 0;font-size:14px;line-height:1.7">${esc(topic.text)}</p>`
+            : "") +
+          (topic.names.length ? (both ? label("New", topic.names.length) : "") + tiles(topic.names) : "") +
+          (pairs.length ? (both ? label("Redrawn", pairs.length) : "") + redraws(pairs) : "")
+        )
+      })
+      .join("")
+  }
+
   return (
     `<section style="box-sizing:border-box;width:768px;background:${BG};color:${INK};` +
       `font-family:${FONT};border-radius:24px;overflow:hidden" data-surface="changelog">` +
@@ -1003,7 +1036,7 @@ function changelogSheet(icons, release) {
               `<p style="margin:8px 0 0;font-size:13px;color:${MUTED}">` +
                 `Drawn since ${release.unreleased.since} &middot; not in a release yet` +
               `</p>` +
-              (release.unreleased.note
+              (release.unreleased.note && !release.unreleased.topics
                 ? `<p style="margin:16px 0 0;font-size:14px;line-height:1.7">` +
                   `${esc(release.unreleased.note)}</p>`
                 : "") +
@@ -1021,12 +1054,15 @@ function changelogSheet(icons, release) {
                     : `${plural(redrawnIn(release.unreleased).length, "drawing")} redrawn since ` +
                       `${release.unreleased.since}`) +
                 `, in the repository and the design files but not on npm until ` +
-                `the next release. The set holds ${release.unreleased.count}:` +
+                `the next release. The set holds ${release.unreleased.count}` +
+                (release.unreleased.topics ? "." : ":") +
               `</p>` +
-              (release.unreleased.names.length ? tiles(release.unreleased.names) : "") +
-              (redrawnIn(release.unreleased).length
-                ? redraws(redrawnIn(release.unreleased))
-                : "")
+              (release.unreleased.topics
+                ? topicBlocks(release.unreleased)
+                : (release.unreleased.names.length ? tiles(release.unreleased.names) : "") +
+                  (redrawnIn(release.unreleased).length
+                    ? redraws(redrawnIn(release.unreleased))
+                    : ""))
             : "",
         ].concat(release.entries.map((entry) =>
           `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${entry.version}</h2>` +
@@ -1039,7 +1075,7 @@ function changelogSheet(icons, release) {
           /* The hand-written note leads where there is one, in full-strength
              ink, because it is the announcement and the counts under it are the
              detail. Same order as the page that owns the words. */
-          (entry.note
+          (entry.note && !(entry.topics && drawn(entry))
             ? `<p style="margin:16px 0 0;font-size:14px;line-height:1.7">${esc(entry.note)}</p>`
             : "") +
           /* Pinned to the release that introduced the treatment rather than to
@@ -1084,8 +1120,9 @@ function changelogSheet(icons, release) {
                   `${entry.previous}, bringing the set to ${entry.count}, and ` +
                   `${entry.updatedNames.length} redrawn:`) +
           `</p>` +
-          (entry.initial || !entry.names.length || !drawn(entry) ? "" : tiles(entry.names)) +
-          (entry.initial || !redrawnIn(entry).length || !drawn(entry)
+          (entry.topics && drawn(entry) && !entry.initial ? topicBlocks(entry) : "") +
+          (entry.initial || !entry.names.length || !drawn(entry) || entry.topics ? "" : tiles(entry.names)) +
+          (entry.initial || !redrawnIn(entry).length || !drawn(entry) || entry.topics
             ? ""
             : redraws(redrawnIn(entry)))
         ))

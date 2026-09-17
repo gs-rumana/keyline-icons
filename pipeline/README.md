@@ -932,6 +932,12 @@ pnpm icons:ci
 Then commit `lib/icon-history.json` and `previews/paper/`, run
 `pnpm paper:import` with the file open, and confirm with `pnpm paper:verify`.
 
+**Sections are keyed by version already.** `lib/icon-release-topics.json` splits
+an entry into titled shelves (title, sentence, drawings added, drawings redrawn)
+and every surface prints them in place of the note, section by section. It is
+keyed by the version the work ships as, like `lib/icon-release-order.json`, so it
+needs nothing at the tag. A name no section claims is appended and reported.
+
 **The note does not graduate on its own, and nothing fails when it doesn't.**
 `lib/icon-release-notes.json` is hand-written and keyed by version, with an
 `unreleased` key for work that has no version yet. Tagging does not move it, so

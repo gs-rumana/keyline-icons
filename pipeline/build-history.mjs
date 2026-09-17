@@ -523,6 +523,60 @@ const ORDER = JSON.parse(
   readFileSync(join(ROOT, "lib", "icon-release-order.json"), "utf8")
 ).releases
 
+/**
+ * A release read section by section, where `lib/icon-release-topics.json` gives them.
+ *
+ * Each section is a shelf with a title, a sentence, what it added and what it
+ * redrew; Zafar asked for the sections to be categorised and titled rather than
+ * sentences alone.
+ *
+ * The note used to lead and every tile follow it, so a sentence about the
+ * phone's calls sat forty tiles above the phones. Zafar, 17 Sep 2026: "topic >
+ * icons, topic > icons. not all topics first and then all icons after that".
+ * Each topic keeps its own drawings and redraws, in the order the file lists
+ * them, and only the ones this entry actually carries.
+ *
+ * Nothing is dropped by a stale list, the same promise `inFigmaOrder` makes:
+ * whatever no topic claims lands in a last group with no sentence, and is
+ * reported. Null where the version has no topics, and the surfaces fall back
+ * to the note and one strip.
+ */
+const TOPICS = JSON.parse(
+  readFileSync(join(ROOT, "lib", "icon-release-topics.json"), "utf8")
+).releases
+
+const topicsFor = (version, names, updatedNames) => {
+  const want = TOPICS[version]
+  if (!want) return null
+  const added = new Set(names)
+  const redrawn = new Set(updatedNames)
+  const claimed = new Set()
+  const topics = want.map((topic) => {
+    const own = (list, pool) =>
+      (list ?? []).filter((n) => pool.has(n) && !claimed.has(n) && claimed.add(n))
+    return {
+      title: topic.title ?? null,
+      text: fill(topic.text ?? null),
+      names: own(topic.names, added),
+      updatedNames: own(topic.redraws, redrawn),
+    }
+  })
+  const rest = {
+    title: null,
+    text: null,
+    names: names.filter((n) => !claimed.has(n)),
+    updatedNames: updatedNames.filter((n) => !claimed.has(n)),
+  }
+  if (rest.names.length || rest.updatedNames.length) {
+    console.log(
+      `  ${c(33, "!")} ${version}: ${[...rest.names, ...rest.updatedNames].join(", ")} ` +
+        `in no topic of lib/icon-release-topics.json, appended.`
+    )
+    topics.push(rest)
+  }
+  return topics
+}
+
 const inFigmaOrder = (version, names) => {
   const want = ORDER[version]
   if (!want) return names
@@ -796,6 +850,8 @@ const out =
             files: drawings(r.tag),
             previousFiles: before ? drawings(before.tag) : 0,
             names,
+            /* The entry read topic by topic, or null. See `topicsFor`. */
+            topics: topicsFor(r.version, names, updated.map((u) => u.name)),
             /* Kept beside `updated` because five surfaces already count off it
                and a name is all a count needs. */
             updatedNames: updated.map((u) => u.name),
@@ -860,6 +916,7 @@ const out =
           sinceLabel: since ? show(since.date) : null,
           count: Object.keys(icons).length,
           names,
+          topics: topicsFor(current, names, updated.map((u) => u.name)),
           updatedNames: updated.map((u) => u.name),
           updated,
         }

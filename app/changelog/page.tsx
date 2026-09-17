@@ -6,6 +6,7 @@ import {
   type Corners,
   type Icon,
   type Redraw,
+  type ReleaseTopic,
   type StyleArt,
 } from "@/lib/icons"
 import { CHANGELOG_SHARP_ICON_NAMES, SHARP_RELEASE } from "@/lib/changelog"
@@ -262,6 +263,75 @@ function Redrawn({ pairs }: { pairs: Pair[] }) {
 }
 
 /**
+ * A release read section by section: a shelf's title, its sentence, what it
+ * added, what it redrew, then the next shelf.
+ *
+ * Zafar, 17 Sep 2026: "topic > icons, topic > icons. not all topics first and
+ * then all icons after that", then "categorize them, not just text > icons.
+ * titles, etc." The note led and forty tiles followed it, so the sentence about
+ * the phone's calls sat a screen above the phones. A section with no drawings
+ * is an announcement on its own; the last group, if the generator had to make
+ * one, has no title and holds whatever no section claimed.
+ */
+function Topics({
+  topics,
+  byName,
+  redrawn,
+}: {
+  topics: ReleaseTopic[]
+  byName: Map<string, Icon>
+  redrawn: Pair[]
+}) {
+  const pairOf = new Map(redrawn.map((pair) => [pair.name, pair]))
+  /* A list says what it is only where a section holds both kinds: the pairs
+     already read as corrections, and a lone strip of tiles as additions. */
+  const label = (text: string, n: number) => (
+    <p className="text-xs font-medium text-muted-foreground">
+      {text}
+      <span aria-hidden="true"> · </span>
+      {n}
+    </p>
+  )
+  return (
+    <>
+      {topics.map((topic, i) => {
+        const icons = topic.names
+          .map((name) => byName.get(name))
+          .filter(Boolean) as Icon[]
+        const pairs = topic.updatedNames
+          .map((name) => pairOf.get(name))
+          .filter(Boolean) as Pair[]
+        const both = icons.length > 0 && pairs.length > 0
+        return (
+          /* More air between sections than inside one, so a title reads as the
+             head of the tiles under it rather than the tail of the ones above. */
+          <div key={topic.title ?? i} className="mt-4 flex flex-col gap-3">
+            {topic.title && (
+              <h3 className="text-base font-semibold tracking-tight text-foreground">
+                {topic.title}
+              </h3>
+            )}
+            {topic.text && <p className="text-foreground">{topic.text}</p>}
+            {icons.length > 0 && (
+              <div className="flex flex-col gap-2">
+                {both && label("New", icons.length)}
+                <Tiles icons={icons} />
+              </div>
+            )}
+            {pairs.length > 0 && (
+              <div className="flex flex-col gap-2">
+                {both && label("Redrawn", pairs.length)}
+                <Redrawn pairs={pairs} />
+              </div>
+            )}
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
+/**
  * The stored documents, parsed, with today's drawing as the fallback.
  *
  * A redraw that the generator could not find a visible change for carries no
@@ -332,6 +402,7 @@ async function release() {
       in it. `grip-vertical` was drawn twelve hours after v0.1.4 and the page
       announced it as part of v0.1.4, which npm would have contradicted.
     */
+    byName,
     unreleased: SET_UNRELEASED && {
       ...SET_UNRELEASED,
       icons: SET_UNRELEASED.names
@@ -379,7 +450,7 @@ export async function generateMetadata() {
 }
 
 export default async function Page() {
-  const { entries, unreleased, sharp } = await release()
+  const { entries, unreleased, sharp, byName } = await release()
 
   return (
     <>
@@ -442,7 +513,7 @@ export default async function Page() {
                 that added an axis without adding a name has nothing for them to
                 count, and the sentence is the whole announcement.
               */}
-              {unreleased.note && (
+              {unreleased.note && !unreleased.topics && (
                 <p className="text-foreground">{unreleased.note}</p>
               )}
               <p>
@@ -458,13 +529,24 @@ export default async function Page() {
                     ? `${plural(unreleased.icons.length, "drawing")} added since ${unreleased.since}`
                     : `${plural(unreleased.redrawn.length, "drawing")} redrawn since ${unreleased.since}`}
                 , in the repository and the design files but not on npm until
-                the next release. The set holds {unreleased.count}:
+                the next release. The set holds {unreleased.count}
+                {unreleased.topics ? "." : ":"}
               </p>
-              {unreleased.icons.length > 0 && (
-                <Tiles icons={unreleased.icons} />
-              )}
-              {unreleased.redrawn.length > 0 && (
-                <Redrawn pairs={unreleased.redrawn} />
+              {unreleased.topics ? (
+                <Topics
+                  topics={unreleased.topics}
+                  byName={byName}
+                  redrawn={unreleased.redrawn}
+                />
+              ) : (
+                <>
+                  {unreleased.icons.length > 0 && (
+                    <Tiles icons={unreleased.icons} />
+                  )}
+                  {unreleased.redrawn.length > 0 && (
+                    <Redrawn pairs={unreleased.redrawn} />
+                  )}
+                </>
               )}
             </div>
           </section>
@@ -507,7 +589,9 @@ export default async function Page() {
             </p>
 
             <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed text-muted-foreground">
-              {entry.note && <p className="text-foreground">{entry.note}</p>}
+              {entry.note && !entry.topics && (
+                <p className="text-foreground">{entry.note}</p>
+              )}
               {/*
                 A look at the treatment, under the sentence that announces it.
                 Pinned to the release that introduced it rather than to whatever
@@ -546,7 +630,8 @@ export default async function Page() {
                   {entry.redrawn.length > 0 && (
                     <>
                       {" "}
-                      {plural(entry.redrawn.length, "redrawn", "redrawn")}:
+                      {plural(entry.redrawn.length, "redrawn", "redrawn")}
+                      {entry.topics ? "." : ":"}
                     </>
                   )}
                 </p>
@@ -554,12 +639,14 @@ export default async function Page() {
                 <p>
                   No new drawings.{" "}
                   {plural(entry.redrawn.length, "redrawn", "redrawn")} since{" "}
-                  {entry.previous}, so the set still holds {entry.count}:
+                  {entry.previous}, so the set still holds {entry.count}
+                  {entry.topics ? "." : ":"}
                 </p>
               ) : entry.redrawn.length === 0 ? (
                 <p>
                   {plural(entry.icons.length, "drawing")} added since{" "}
-                  {entry.previous}, bringing the set to {entry.count}:
+                  {entry.previous}, bringing the set to {entry.count}
+                  {entry.topics ? "." : ":"}
                 </p>
               ) : (
                 /* A release that both adds and corrects used to announce
@@ -568,7 +655,8 @@ export default async function Page() {
                 <p>
                   {plural(entry.icons.length, "drawing")} added since{" "}
                   {entry.previous}, bringing the set to {entry.count}, and{" "}
-                  {plural(entry.redrawn.length, "redrawn", "redrawn")}:
+                  {plural(entry.redrawn.length, "redrawn", "redrawn")}
+                  {entry.topics ? "." : ":"}
                 </p>
               )}
               {/*
@@ -576,11 +664,21 @@ export default async function Page() {
                 identified rather than admired, and 24px is the size the set is
                 built at and the size they will be used at.
               */}
-              {!entry.initial && entry.icons.length > 0 && (
-                <Tiles icons={entry.icons} />
-              )}
-              {!entry.initial && entry.redrawn.length > 0 && (
-                <Redrawn pairs={entry.redrawn} />
+              {!entry.initial && entry.topics ? (
+                <Topics
+                  topics={entry.topics}
+                  byName={byName}
+                  redrawn={entry.redrawn}
+                />
+              ) : (
+                <>
+                  {!entry.initial && entry.icons.length > 0 && (
+                    <Tiles icons={entry.icons} />
+                  )}
+                  {!entry.initial && entry.redrawn.length > 0 && (
+                    <Redrawn pairs={entry.redrawn} />
+                  )}
+                </>
               )}
             </div>
           </section>
