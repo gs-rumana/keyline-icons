@@ -228,6 +228,10 @@ const SIZE_KNOWN = new Set([
   // so it paints 20 x 22 and reads as a circle. Reaching 22 wide means bells of
   // 33 degrees, back toward the ears he cut by half on 15 Sep 2026.
   'alarm-clock', 'alarm-clock-check', 'alarm-clock-plus', 'alarm-clock-minus',
+  // His own 3, 5 and 6 of 17 Sep 2026: the top bars and the 6's neck stop on 21
+  // over the bowl rather than running on to 22, so they paint 21 wide. The H is
+  // shared with 1, 2 and 4 and does not move to make up the unit.
+  'heading-3', 'heading-5', 'heading-6',
 ]);
 /**
  * Drawings of a real product, which keep the product's proportions and radii
@@ -340,6 +344,8 @@ const SKEW_KNOWN = new Set([
   'banknote-2-minus', 'banknote-minus',
   'bell-check', 'bell-dot', 'bell-minus', 'bell-plus', 'bell-x',
   'git-graph', 'git-pull-request-arrow',
+  // his heading numerals of 17 Sep 2026, one unit short on the right; see SIZE_KNOWN
+  'heading-3', 'heading-5', 'heading-6',
   'package-arrow-down', 'package-arrow-left', 'package-arrow-right', 'package-arrow-up',
   'package-check', 'package-minus', 'package-plus', 'package-x',
   'signal-high', 'signal-low', 'signal-medium', 'terminal-cursor',

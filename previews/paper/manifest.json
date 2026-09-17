@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 842,
-  "names": 959,
-  "variants": 7672,
+  "icons": 846,
+  "names": 963,
+  "variants": 7704,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -206,9 +206,9 @@
       "parts": 10,
       "into": "artboard",
       "width": 742,
-      "icons": 52,
-      "variants": 56,
-      "bytes": 42483
+      "icons": 56,
+      "variants": 48,
+      "bytes": 41457
     },
     {
       "file": "arrows-2.html",
@@ -220,7 +220,7 @@
       "width": 742,
       "icons": 0,
       "variants": 64,
-      "bytes": 36582
+      "bytes": 40886
     },
     {
       "file": "arrows-3.html",
@@ -232,7 +232,7 @@
       "width": 742,
       "icons": 0,
       "variants": 64,
-      "bytes": 38532
+      "bytes": 37360
     },
     {
       "file": "arrows-4.html",
@@ -244,7 +244,7 @@
       "width": 742,
       "icons": 0,
       "variants": 64,
-      "bytes": 37219
+      "bytes": 38647
     },
     {
       "file": "arrows-5.html",
@@ -255,8 +255,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 56,
-      "bytes": 36910
+      "variants": 64,
+      "bytes": 38409
     },
     {
       "file": "arrows-6.html",
@@ -267,8 +267,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 64,
-      "bytes": 40786
+      "variants": 56,
+      "bytes": 37879
     },
     {
       "file": "arrows-7.html",
@@ -280,7 +280,7 @@
       "width": 742,
       "icons": 0,
       "variants": 64,
-      "bytes": 36941
+      "bytes": 38312
     },
     {
       "file": "arrows-8.html",
@@ -292,7 +292,7 @@
       "width": 742,
       "icons": 0,
       "variants": 72,
-      "bytes": 39689
+      "bytes": 40306
     },
     {
       "file": "arrows-9.html",
@@ -303,8 +303,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 64,
-      "bytes": 39759
+      "variants": 72,
+      "bytes": 39626
     },
     {
       "file": "arrows-10.html",
@@ -315,8 +315,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 8,
-      "bytes": 5537
+      "variants": 40,
+      "bytes": 27895
     },
     {
       "file": "art.html",
@@ -1780,7 +1780,7 @@
       "width": 742,
       "icons": 0,
       "variants": 48,
-      "bytes": 35924
+      "bytes": 36004
     },
     {
       "file": "text-3.html",
@@ -2136,7 +2136,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 312520
+      "bytes": 317224
     }
   ]
 }

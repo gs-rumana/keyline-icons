@@ -107,28 +107,34 @@ function fillet(pts) { // closed polygon of {v, r}; each corner rounded by its o
   }
   return d + 'Z';
 }
-function arrowUp(sharp) {
+function arrowUp(sharp, { wingX = WING_X, base = BASE, shaft = SHAFT, foot = FOOT } = {}) {
+  const apexY = base - (12 - wingX);
   if (!sharp) {
     return fillet([
-      { v: [12, APEX_Y], r: R1 }, { v: [24 - WING_X, BASE], r: R1 }, { v: [SHAFT[1], BASE], r: R1 }, { v: [SHAFT[1], FOOT], r: R1 },
-      { v: [SHAFT[0], FOOT], r: R1 }, { v: [SHAFT[0], BASE], r: R1 }, { v: [WING_X, BASE], r: R1 },
+      { v: [12, apexY], r: R1 }, { v: [24 - wingX, base], r: R1 }, { v: [shaft[1], base], r: R1 }, { v: [shaft[1], foot], r: R1 },
+      { v: [shaft[0], foot], r: R1 }, { v: [shaft[0], base], r: R1 }, { v: [wingX, base], r: R1 },
     ]);
   }
   // sharp: true points at 45 degrees, placed so each round join paints on the rounded drawing's box (apex 2, wings 4),
   // which lifts the head's base to 10
-  const apex = [12, 2], wingL = [4, BASE - 1];
-  return `M${pt(apex)}L${pt([24 - wingL[0], wingL[1]])}L${SHAFT[1]} ${wingL[1]}L${SHAFT[1]} ${FOOT}L${SHAFT[0]} ${FOOT}L${SHAFT[0]} ${wingL[1]}L${pt(wingL)}Z`;
+  const apex = [12, apexY + SQ2 - 1], wingL = [wingX + SQ2 * R1, base - 1];
+  return `M${pt(apex)}L${pt([24 - wingL[0], wingL[1]])}L${shaft[1]} ${wingL[1]}L${shaft[1]} ${foot}L${shaft[0]} ${foot}L${shaft[0]} ${wingL[1]}L${pt(wingL)}Z`;
 }
+// arrow-big-*-short, 17 Sep 2026, on his reference (refs/, a short block arrow): the same square head and r=1, with the
+// shaft in the reference's proportions, measured off its centre lines: shaft 0.61 of the head's depth and a little
+// under half its width. At our stroke that paints 22 x 20: head 1..23 across (wing vertex 0.586), apex painted on 2,
+// base 14, shaft 7..17 run 7 long to a foot on 21. On the big arrow's 18-wide head the same shaft reads as a stub at 16px.
+const SHORT = { wingX: 1 - SQ2 * R1 + 1, base: 14, shaft: [7, 17], foot: 21 };
 const rot = (d, turns) => d.replace(/(-?\d*\.?\d+) (-?\d*\.?\d+)/g, (m, x, y) => {
   let p = [+x, +y];
   for (let i = 0; i < turns; i++) p = [24 - p[1], p[0]]; // 90 degrees clockwise about (12,12)
   return pt(p);
 });
-for (const [dir, turns] of [['up', 0], ['right', 1], ['down', 2], ['left', 3]]) {
+for (const [dir, turns] of [['up', 0], ['right', 1], ['down', 2], ['left', 3]]) for (const [suffix, spec] of [['', undefined], ['-short', SHORT]]) {
   const v = {};
   for (const c of ['regular', 'sharp']) {
     const sharp = c === 'sharp';
-    const d = rot(arrowUp(sharp), turns);
+    const d = rot(arrowUp(sharp, spec), turns);
     // a concave r=1 corner offsets to radius 0; drop the collapsed arc it leaves rather than ship a knot of cubics
     const plate = G.emit(G.offsetClosed(G.parse(d)[0].segs, true).filter((sg) => G.len(G.sub(G.p1(sg), G.p0(sg))) > 0.01), true);
     // four styles since 1.0.0: two-tone is the plate under the outline, and a one-shape duotone is the stroke drawing
@@ -137,7 +143,7 @@ for (const [dir, turns] of [['up', 0], ['right', 1], ['down', 2], ['left', 3]]) 
     v[`duotone.${c}`] = [{ d, attrs: STROKE(sharp) }];
     v[`fill.${c}`] = [{ d: plate, attrs: SOLID }];
   }
-  write(`arrow-big-${dir}`, v);
+  write(`arrow-big-${dir}${suffix}`, v);
 }
 
 /* ------------------------------------------------------------------ heading */
@@ -152,17 +158,19 @@ const H_FULL = 'M6 3V21M18 3V21M6 12H18';
 // on the reference set's condensed H, which stands on 4 and 12, and the headings scored 27 to 46%; on 11 they score
 // 12 to 15, and 25 for the 4, whose right stem is his and lands on 21 where theirs does.
 const H_NUM = 'M2 4V20M11 4V20M2 12H11';
-const Dg = await import('./digits.mjs');
 // his heading-1 of 14 Sep 2026 set the numeral box, x 15..21 by y 12..19, and his heading-2..5 (refs/) sat on x 16..20;
 // all of them are moved (+1, +1) here. His files split the H at its crossbar and the 4 at its bar; those are rejoined
 // into the same ink as single runs.
 const DIGITS = {
   1: 'M16.75 15.1L19 13V20M16 20H22',
   2: 'M17 15C17 13.8954 17.8954 13 19 13C20.1046 13 21 13.8954 21 15C21 15.6037 20.7273 16.1751 20.258 16.5548L17 20H22',
-  3: 'M17 13H22L18.8564 16C20.0403 16 21 16.8954 21 18C21 19.1046 20.0403 20 18.8564 20C18.0906 20 17.3829 19.6188 17 19',
+  // 17 Sep 2026, his heading-3, -5 and -6 (refs/), verbatim: the 3's and 5's top bars stop on 21 over the bowl's right
+  // edge rather than running on to 22, and the 6's neck is his one curve from the bowl's left to (21,13). They paint
+  // 1..22, a unit off centre, and sit in lint's SKEW_KNOWN: the H is shared with 1, 2 and 4 and does not move.
+  3: 'M17 13H21L18.8564 16C20.0403 16 21 16.8954 21 18C21 19.1046 20.0403 20 18.8564 20C18.0906 20 17.3829 19.6188 17 19',
   4: 'M17 13V17.5H22M21 13V20',
-  5: 'M22 13H17V16H19C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C18.2855 20 17.3573 19.6188 17 19',
-  6: Dg.six({ c: [19, 18], r: 2 }, [22, 13]),
+  5: 'M21 13H17V16H19C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C18.2855 20 17.3573 19.6188 17 19',
+  6: 'M17 18C17 16.8954 17.8954 16 19 16C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C17.8954 20 17 19.1046 17 18ZM17 18C17 15.5811 18.7178 13.4633 21 13',
 };
 const MUTED = (sharp) => STROKE(sharp).replace(' stroke-width', ' stroke-opacity="0.4" stroke-width');
 // four styles since 1.0.0: an open glyph's fill is its stroke drawing; the bare H is one element, so its two-tone and

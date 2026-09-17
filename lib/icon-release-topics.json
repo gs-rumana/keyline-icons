@@ -127,12 +127,16 @@
             },
             {
               "title": "Arrows",
-              "text": "The big arrows point four ways, and a clockwise turn takes a plus.",
+              "text": "The big arrows point four ways, long and short, and a clockwise turn takes a plus.",
               "names": [
                 "arrow-big-up",
                 "arrow-big-down",
                 "arrow-big-left",
                 "arrow-big-right",
+                "arrow-big-up-short",
+                "arrow-big-down-short",
+                "arrow-big-left-short",
+                "arrow-big-right-short",
                 "rotate-cw-plus"
               ]
             },
