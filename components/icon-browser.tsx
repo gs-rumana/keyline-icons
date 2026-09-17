@@ -4,7 +4,6 @@ import * as React from "react"
 
 import {
   ArrowRight,
-  ArrowUTurnLeft,
   BarChart,
   Bed,
   Bird,
@@ -39,6 +38,7 @@ import {
   Plane,
   Play,
   Plus,
+  RotateCcw,
   Settings,
   Shapes,
   ShoppingCart,
@@ -1443,7 +1443,7 @@ export function IconBrowser({
             />
           }
         >
-          <ArrowUTurnLeft className="size-4" />
+          <RotateCcw className="size-4" />
         </TooltipTrigger>
         <TooltipContent>Reset to defaults</TooltipContent>
       </Tooltip>
@@ -1664,7 +1664,7 @@ export function IconBrowser({
                   two different ones.
                 */}
                 <Button size="lg" variant="secondary" onClick={reset}>
-                  <ArrowUTurnLeft className="size-4" />
+                  <RotateCcw className="size-4" />
                   Clear filters
                 </Button>
 

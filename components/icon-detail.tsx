@@ -3,7 +3,7 @@
 import * as React from "react"
 import { toast } from "sonner"
 
-import { ArrowUTurnLeft, Check, Copy, Download } from "@/components/icons"
+import { Check, Copy, Download, RotateCcw } from "@/components/icons"
 import {
   artOf,
   CORNERS,
@@ -379,7 +379,7 @@ export function IconDetail({
                 />
               }
             >
-              <ArrowUTurnLeft className="size-4" />
+              <RotateCcw className="size-4" />
             </TooltipTrigger>
             <TooltipContent>Reset to defaults</TooltipContent>
           </Tooltip>
