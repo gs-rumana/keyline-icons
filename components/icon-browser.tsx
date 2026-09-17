@@ -1171,7 +1171,7 @@ export function IconBrowser({
               {c.label}
             </span>
             <span className="text-xs text-muted-foreground tabular-nums">
-              {c.count}
+              {c.count.toLocaleString("en-US")}
             </span>
           </button>
         </li>
@@ -1289,7 +1289,7 @@ export function IconBrowser({
               </span>
               All shapes
               <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                {matches.length}
+                {matches.length.toLocaleString("en-US")}
               </span>
             </DropdownMenuRadioItem>
             {SHAPES.map((s) => (
@@ -1309,7 +1309,7 @@ export function IconBrowser({
                   </span>
                 </span>
                 <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                  {perShape[s.value]}
+                  {perShape[s.value].toLocaleString("en-US")}
                 </span>
               </DropdownMenuRadioItem>
             ))}
@@ -1565,7 +1565,7 @@ export function IconBrowser({
             </div>
 
             <span className="ml-auto h-9 shrink-0 text-sm leading-9 whitespace-nowrap text-muted-foreground tabular-nums">
-              {shown.length} shown
+              {shown.length.toLocaleString("en-US")} shown
             </span>
           </div>
 

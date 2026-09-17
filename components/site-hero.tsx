@@ -43,7 +43,7 @@ export function SiteHero({
     // than as composed.
     <section className="pb-12 text-center lg:pb-16">
       <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-        Browse {total} free icons
+        Browse {total.toLocaleString("en-US")} free icons
       </h1>
 
       {/*

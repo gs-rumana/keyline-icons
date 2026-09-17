@@ -209,7 +209,7 @@ function Card({
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="font-medium capitalize">{style}</h3>
         <span className="text-sm text-muted-foreground tabular-nums">
-          {count} icons
+          {count.toLocaleString("en-US")} icons
         </span>
       </div>
 

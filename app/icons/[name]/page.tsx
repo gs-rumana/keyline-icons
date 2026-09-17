@@ -519,7 +519,7 @@ export default async function Page({
             className="inline-flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="size-4" />
-            Browse all {icons.length} icons
+            Browse all {icons.length.toLocaleString("en-US")} icons
           </Link>
         </div>
       </main>

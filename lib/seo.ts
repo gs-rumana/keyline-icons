@@ -108,7 +108,7 @@ export const SITE_DESCRIPTION =
  * absolute title and the card title are the same string by definition.
  */
 export const homeCardTitle = (icons: number) =>
-  `${SET_TITLE}: ${icons} free shadcn/ui icons, crafted with AI`
+  `${SET_TITLE}: ${icons.toLocaleString("en-US")} free shadcn/ui icons, crafted with AI`
 
 /**
  * The card's line under that title.
@@ -120,7 +120,7 @@ export const homeCardTitle = (icons: number) =>
  * here as in `SITE_DESCRIPTION` and in the hero.
  */
 export const homeCardDescription = (icons: number) =>
-  `${icons} free icons for shadcn/ui, in stroke, two-tone, duotone and fill, rounded or ` +
+  `${icons.toLocaleString("en-US")} free icons for shadcn/ui, in stroke, two-tone, duotone and fill, rounded or ` +
   `sharp. ${SET_LICENSE} licensed.`
 
 type PageMetadata = {

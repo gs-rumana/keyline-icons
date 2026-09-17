@@ -129,7 +129,7 @@ export default async function Image() {
           color: INK,
         }}
       >
-        <span>{`${total} free icons`}</span>
+        <span>{`${total.toLocaleString("en-US")} free icons`}</span>
         <span style={{ color: HAIRLINE }}>|</span>
         <span style={{ color: MUTED }}>{STYLES.join(" · ")}</span>
         <span style={{ color: HAIRLINE }}>|</span>

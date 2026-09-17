@@ -125,7 +125,7 @@ export default async function Page() {
   const importSample = lines
     .map(
       ({ label, code, count }) =>
-        `${code.padEnd(codeWidth + 2)}// ${`${label},`.padEnd(labelWidth + 1)} ${count}`
+        `${code.padEnd(codeWidth + 2)}// ${`${label},`.padEnd(labelWidth + 1)} ${count.toLocaleString("en-US")}`
     )
     .join("\n")
 

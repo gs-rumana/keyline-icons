@@ -324,7 +324,7 @@ export function DashboardShowcase({
                 "mt-4 w-full"
               )}
             >
-              Browse all {totalIcons} icons
+              Browse all {totalIcons.toLocaleString("en-US")} icons
               <ArrowRight data-icon="inline-end" className="size-3.5" />
             </Link>
           </aside>

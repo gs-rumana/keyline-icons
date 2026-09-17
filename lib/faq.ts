@@ -103,15 +103,15 @@ export function homeFaq({
     {
       question: `What is ${SET_TITLE}?`,
       answer:
-        `A free icon set: ${total} icons drawn on one 24×24 grid, each in four styles: ` +
+        `A free icon set: ${total.toLocaleString("en-US")} icons drawn on one 24×24 grid, each in four styles: ` +
         `stroke, two-tone, duotone and fill, with rounded or sharp corners. ${SET_TAGLINE}, released under ` +
         `the ${SET_LICENSE_NAME}, and crafted with AI.`,
     },
     {
       question: `How many icons are there, and what are the four styles?`,
       answer:
-        `${byStyle.map((entry) => `${entry.count} ${entry.style}`).join(", ")}, each cut with rounded ` +
-        `and with sharp corners, so ${files} SVGs in total. ` +
+        `${byStyle.map((entry) => `${entry.count.toLocaleString("en-US")} ${entry.style}`).join(", ")}, each cut with rounded ` +
+        `and with sharp corners, so ${files.toLocaleString("en-US")} SVGs in total. ` +
         `Stroke is the drawing the others start from. Two-tone keeps that outline over a 40% plate, which ` +
         `is what duotone meant until 0.9.0. Duotone drops the outline and puts the part that matters in ` +
         `black over a grey body. Fill is solid. Since 1.0.0 every name comes in all four.`,
@@ -143,7 +143,7 @@ export function homeFaq({
       question: `Why do some icons come in square and circle versions?`,
       answer:
         `Because a container is a different icon, not a style of one: ${containers.square} of the ` +
-        `${stroke} drawings come in a square- form and ${containers.circle} in a circle-, wrapping the base ` +
+        `${stroke.toLocaleString("en-US")} drawings come in a square- form and ${containers.circle} in a circle-, wrapping the base ` +
         `glyph rather than replacing it. The container also gives a glyph the enclosed area a duotone or a ` +
         `fill needs, which is why a boxed variant can show a glyph solid that the bare drawing only outlines.`,
     },
@@ -156,7 +156,7 @@ export function homeFaq({
       */
       question: `What is the difference between the rounded and sharp icons?`,
       answer:
-        `Only the corners and the stroke caps. All ${total} drawings are cut both ways, in every ` +
+        `Only the corners and the stroke caps. All ${total.toLocaleString("en-US")} drawings are cut both ways, in every ` +
         `weight they carry, so the two are one set with a switch on it rather than two sets: same ` +
         `names, same 24×24 grid, same coverage in stroke, two-tone, duotone and fill. Rounded takes a radius ` +
         `off one ladder at every corner and ends each stroke round; sharp takes every corner to a ` +

@@ -173,7 +173,9 @@ function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
         at one size. `?corners=sharp` lands the browser on the treatment it just
         showed you, which is the same seed `?style=` already offers.
       */}
-      <SeeAll href="/icons?corners=sharp">See all {total} in sharp</SeeAll>
+      <SeeAll href="/icons?corners=sharp">
+        See all {total.toLocaleString("en-US")} in sharp
+      </SeeAll>
     </div>
   )
 }
@@ -828,7 +830,7 @@ export async function generateMetadata() {
     // and nothing else.
     title: "Changelog",
     description:
-      `Every release of Keyline Icons and what went into it. ${count} ` +
+      `Every release of Keyline Icons and what went into it. ${count.toLocaleString("en-US")} ` +
       `drawings on one 24×24 grid, in stroke, two-tone, duotone and fill, free under ` +
       `the MIT licence.`,
     socialDescription:
@@ -845,19 +847,19 @@ export default async function Page() {
   */
   const counted = (entry: (typeof entries)[number]) =>
     entry.initial
-      ? `The first cut of the set: ${entry.count} drawings on one 24×24 grid, at a 2px keyline, built for shadcn/ui and free under the MIT licence, shipping as SVGs, JSX snippets and React components.`
+      ? `The first cut of the set: ${entry.count.toLocaleString("en-US")} drawings on one 24×24 grid, at a 2px keyline, built for shadcn/ui and free under the MIT licence, shipping as SVGs, JSX snippets and React components.`
       : entry.icons.length === 0 && entry.redrawn.length === 0
-        ? `No drawing changes since ${entry.previous}. The set still holds ${entry.count}.`
+        ? `No drawing changes since ${entry.previous}. The set still holds ${entry.count.toLocaleString("en-US")}.`
         : entry.icons.length === 0 && entry.files > entry.previousFiles
           ? `${plural(entry.files - entry.previousFiles, "drawing")} added since ${entry.previous} without a new name, taking the set from ${entry.previousFiles.toLocaleString("en-US")} drawings to ${entry.files.toLocaleString("en-US")}.` +
             (entry.redrawn.length > 0
               ? ` ${entry.redrawn.length} redrawn.`
               : "")
           : entry.icons.length === 0
-            ? `No new drawings. ${plural(entry.redrawn.length, "redrawn", "redrawn")} since ${entry.previous}, so the set still holds ${entry.count}.`
+            ? `No new drawings. ${plural(entry.redrawn.length, "redrawn", "redrawn")} since ${entry.previous}, so the set still holds ${entry.count.toLocaleString("en-US")}.`
             : entry.redrawn.length === 0
-              ? `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count}.`
-              : `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count}, and ${plural(entry.redrawn.length, "redrawn", "redrawn")}.`
+              ? `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count.toLocaleString("en-US")}.`
+              : `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count.toLocaleString("en-US")}, and ${plural(entry.redrawn.length, "redrawn", "redrawn")}.`
 
   /* The ticks, in page order, labelled the way each entry labels itself. */
   const ticks: ReleaseTick[] = [
@@ -955,7 +957,7 @@ export default async function Page() {
                     : unreleased.icons.length > 0
                       ? `${plural(unreleased.icons.length, "drawing")} added since ${unreleased.since}`
                       : `${plural(unreleased.redrawn.length, "drawing")} redrawn since ${unreleased.since}`}
-                  . The set holds {unreleased.count}.
+                  . The set holds {unreleased.count.toLocaleString("en-US")}.
                 </p>
               }
               notice="In the repository and the design files, and not on npm until the next release."

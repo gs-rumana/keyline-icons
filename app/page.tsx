@@ -102,7 +102,7 @@ export async function generateMetadata(): Promise<Metadata> {
       treatment reads as four of something.
     */
     description:
-      `${total} free ${SET_LICENSE}-licensed icons for shadcn/ui, drawn on ` +
+      `${total.toLocaleString("en-US")} free ${SET_LICENSE}-licensed icons for shadcn/ui, drawn on ` +
       `one 24×24 grid in stroke, two-tone, duotone and fill, rounded or sharp. Search ` +
       `the set, copy any icon as SVG or JSX, or import the React components.`,
     socialDescription: homeCardDescription(total),
@@ -455,7 +455,7 @@ export default async function Page() {
                   render={<Link href="/icons" />}
                   nativeButton={false}
                 >
-                  Browse all {total} icons
+                  Browse all {total.toLocaleString("en-US")} icons
                   <ArrowRight data-icon="inline-end" />
                 </Button>
                 <Button
@@ -627,7 +627,7 @@ export default async function Page() {
             // The counts are interpolated, not typed. An earlier draft of this
             // lead read "414" while the set was already 425, which is the whole
             // reason nothing on this page states a number it has not counted.
-            lead={`${contained} of the ${total} icons have one. The container wraps the base drawing rather than replacing it, so swapping forms changes the emphasis and nothing else.`}
+            lead={`${contained} of the ${total.toLocaleString("en-US")} icons have one. The container wraps the base drawing rather than replacing it, so swapping forms changes the emphasis and nothing else.`}
           />
 
           <div className="mt-10 lg:mt-12">
@@ -676,7 +676,7 @@ export default async function Page() {
               lead that lists the evidence for the sentence before it is a lead
               doing the section's job for it.
             */
-            lead={`All ${total} drawings are cut both ways, in every weight they carry, so this is a switch over the set rather than a second set beside it.`}
+            lead={`All ${total.toLocaleString("en-US")} drawings are cut both ways, in every weight they carry, so this is a switch over the set rather than a second set beside it.`}
           />
 
           <div className="mt-10 lg:mt-12">
