@@ -1124,6 +1124,15 @@ export function Bookmark(props: IconProps) {
   )
 }
 
+export function BotOff(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M19.5616 19.5616C19.017 20.4549 18.0463 21 17 21L7 21C5.3431 21 4 19.6569 4 18L4 11C4 9.3431 5.3431 8 7 8L8 8M22 14.5L20 14.5L20 11C20 9.3431 18.6569 8 17 8L12 8L12 3.5M2 14.5L4 14.5M9 17L13 17M2 2L22 22" />
+      <path d="M13.5 3.5C13.5 4.3284 12.8284 5 12 5C11.1716 5 10.5 4.3284 10.5 3.5C10.5 2.6716 11.1716 2 12 2C12.8284 2 13.5 2.6716 13.5 3.5ZM10 13C10 13.5523 9.5523 14 9 14C8.4477 14 8 13.5523 8 13C8 12.4477 8.4477 12 9 12C9.5523 12 10 12.4477 10 13Z" fill="currentColor" stroke="none" />
+    </Icon>
+  )
+}
+
 export function Bot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -5597,6 +5606,15 @@ export function PenOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M14.357 14.357L9.8567 18.8573L2 22L5.1427 14.1433L9.643 9.643M17.1854 11.5286L21.0237 7.6904C21.6488 7.0652 22 6.2174 22 5.3333C22 4.4493 21.6488 3.6014 21.0237 2.9763C20.3986 2.3512 19.5507 2 18.6667 2C17.7826 2 16.9348 2.3512 16.3096 2.9763L12.4714 6.8146M15.0638 4.2222L19.7778 8.9362M2 2L22 22" fill="none" />
+    </Icon>
+  )
+}
+
+export function PenSparkles(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362" fill="none" />
+      <path d="M5 2L5 8M2 5L8 5M19 17L19 21M17 19L21 19" />
     </Icon>
   )
 }

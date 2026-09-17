@@ -288,14 +288,22 @@
               ]
             },
             {
+              "title": "AI",
+              "text": "The bot takes a slash.",
+              "names": [
+                "bot-off"
+              ]
+            },
+            {
               "title": "Files",
-              "text": "A zipped folder, a folder tree, and a file takes a search and a type mark, whole or in its corner.",
+              "text": "A zipped folder, a folder tree, a file takes a search and a type mark, whole or in its corner, and a pen writes with sparkles.",
               "names": [
                 "folder-zip",
                 "file-search",
                 "folder-tree",
                 "file-type",
-                "file-type-corner"
+                "file-type-corner",
+                "pen-sparkles"
               ]
             }
           ]

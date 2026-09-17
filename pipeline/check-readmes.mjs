@@ -198,8 +198,13 @@ const CLAIMS = [
 
 /* The prose commas are part of the claim: "1,286 SVGs" reads as prose and
    "1286" reads as a serial number. Whichever the file already uses is what a
-   fix writes back, so this never reformats someone's sentence. */
-const format = (n, like) => (like.includes(',') ? n.toLocaleString('en-US') : String(n));
+   fix writes back, so this never reformats someone's sentence. A count under a
+   thousand shows neither, so one crossing to four digits takes the comma: the
+   names went 998 to 1000 on 17 Sep 2026 and every README printed it bare. */
+const format = (n, like) => {
+  const styled = like.replace(/,/g, '').length >= 4;
+  return (styled ? like.includes(',') : n >= 1000) ? n.toLocaleString('en-US') : String(n);
+};
 
 function main() {
   const want = counts();

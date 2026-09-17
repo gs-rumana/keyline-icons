@@ -148,7 +148,9 @@
       "file-type",
       "file-type-corner",
       "car",
-      "wallet-cards"
+      "wallet-cards",
+      "bot-off",
+      "pen-sparkles"
     ],
     "0.9.0": [
       "plane",

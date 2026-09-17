@@ -316,8 +316,8 @@ export const CATEGORIES = [
     // bare `brain` is an organ and goes to Health, which is why this is
     // anchored on the two names rather than on `brain`.
     label: "AI",
-    match: /^(bot$|brain-circuit)/,
-    blurb: "The bot and the brain wired to a circuit.",
+    match: /^(bot(-off)?$|brain-circuit)/,
+    blurb: "The bot, on and off, and the brain wired to a circuit.",
   },
   {
     label: "Science",
