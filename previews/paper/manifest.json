@@ -2230,9 +2230,32 @@
       "surface": "changelog",
       "part": 1,
       "parts": 1,
+      "width": 1224,
       "icons": 0,
       "variants": 0,
-      "bytes": 360558
+      "bytes": 1226
+    },
+    {
+      "file": "changelog-newest.html",
+      "artboard": "Newest release",
+      "surface": "changelog",
+      "part": 1,
+      "parts": 1,
+      "width": 744,
+      "icons": 0,
+      "variants": 0,
+      "bytes": 351063
+    },
+    {
+      "file": "changelog-earlier.html",
+      "artboard": "Earlier releases",
+      "surface": "changelog",
+      "part": 1,
+      "parts": 1,
+      "width": 744,
+      "icons": 0,
+      "variants": 0,
+      "bytes": 8656
     }
   ]
 }

@@ -772,8 +772,9 @@ function catalogSheet(icons, totals, release) {
  * The changelog, word for word from the page that owns the words.
  *
  * `app/changelog/page.tsx` is one heading and three sentences with every
- * countable thing counted, and this is the same sentences off the same data. It
- * is short enough for one write, so it is one file and one artboard.
+ * countable thing counted, and this is the same sentences off the same data.
+ * Three sheets and three artboards since 17 Sep 2026: the cover, the newest
+ * update's card and one card for every earlier release.
  */
 /* The notes are the one string on this board written by a person rather than
    derived, so they are the one that can carry an ampersand or an angle bracket
@@ -1206,7 +1207,7 @@ function changelogSheet(icons, release) {
             : u.names.length
               ? `${u.names.length.toLocaleString("en-US")} drawing${u.names.length === 1 ? "" : "s"} added since ${u.since}`
               : `${redrawn} drawing${redrawn === 1 ? "" : "s"} redrawn since ${u.since}`) +
-          `. The set holds ${u.count}.` +
+          `. The set holds ${u.count.toLocaleString("en-US")}.` +
         `</p>` +
         `<div style="display:flex;align-items:flex-start;gap:10px;margin:20px 0 0;padding:8px 12px;border-radius:10px;background:${FILL};` +
           `font-size:14px;line-height:20px;color:${MUTED_};width:fit-content">` +
@@ -1219,8 +1220,22 @@ function changelogSheet(icons, release) {
     )
   }
 
-  return (
-    `<section style="box-sizing:border-box;width:768px;background:${BG};color:${INK};` +
+  /* Three boards laid out the way the Catalog page is, since 17 Sep 2026: the
+     cover, then cards. Zafar asked for the Figma changelog in "catalog format"
+     because "one card holding everything is getting ridiculously long", settled
+     it there as "leave v1.0.0 alone and put all in one card", then "apply it to
+     paper". So the newest update is a card of its own and every earlier release
+     shares the second. The cover takes the Catalog surface's width, as the
+     Figma cover took Figma's. A card is 744 and not a category card's 742: the
+     column inside has to stay 688, where five tiles fit a row. */
+  const card = (inner) =>
+    `<section style="box-sizing:border-box;width:744px;padding:28px;background:${BG};color:${INK};` +
+      `font-family:${FONT};border-radius:14px" data-surface="changelog">` +
+      inner +
+    `</section>\n`
+
+  const cover =
+    `<section style="box-sizing:border-box;width:1224px;background:${BG};color:${INK};` +
       `font-family:${FONT};border-radius:24px;overflow:hidden" data-surface="changelog">` +
 
       /* The catalogue surface's head at this surface's width, so the two covers
@@ -1238,85 +1253,89 @@ function changelogSheet(icons, release) {
           meta("Site:", SITE_LABEL) +
         `</div>` +
       `</div>` +
-
-      `<div style="padding:40px">` +
-        /* One block per release, newest first, every release that has ever been
-           cut. Entries are never dropped and never relabelled: see the note on
-           `release.entries`. */
-        [
-          /* Work since the newest tag leads the board, headed by no version
-             because it has none: an install of the newest release does not
-             contain it. Null is the resting state and prints nothing. */
-          release.unreleased
-            ? latestBlock(release.unreleased)
-            : "",
-        ].concat(release.entries.map((entry) =>
-          `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${entry.version}</h2>` +
-          `<p style="margin:8px 0 0;font-size:13px;color:${MUTED}">` +
-            /* "Initial release" belongs to the oldest tag and to nothing else.
-               Printed over whichever entry came second, it announced each
-               release's predecessor as the first cut of the set. */
-            `${entry.initial ? "Initial release" : "Released"} &middot; ${entry.label}` +
-          `</p>` +
-          /* The hand-written note leads where there is one, in full-strength
-             ink, because it is the announcement and the counts under it are the
-             detail. Same order as the page that owns the words. */
-          (entry.note && !(entry.topics && drawn(entry))
-            ? `<p style="margin:16px 0 0;font-size:14px;line-height:1.7">${esc(entry.note)}</p>`
-            : "") +
-          /* Pinned to the release that introduced the treatment rather than to
-             whatever carries a note, and it stays there: a changelog only
-             grows, so that entry goes on showing what it announced. On this
-             board it is subject to the same cut as every other strip below:
-             see `drawn`. */
-          (entry.version === SHARP_RELEASE && entry.current ? sharpPreview() : "") +
-          `<p style="margin:16px 0 0;font-size:14px;line-height:1.7;color:${MUTED}">` +
-            strip(entry, entry.initial
-              ? `The first cut of the set: ${entry.count} drawings on one 24 × 24 grid, ` +
-                `at a 2px keyline, built for shadcn/ui and free under the MIT licence, ` +
-                `shipping as SVGs, JSX snippets and React components.`
-              /* A release is not always drawings added. One that is entirely
-                 corrections said "0 drawings added", which is true and tells a
-                 reader nothing about why they would upgrade. */
-              : entry.names.length === 0 && entry.updatedNames.length === 0
-                ? `No drawing changes since ${entry.previous}. The set still ` +
-                  `holds ${entry.count}.`
-                /* Drawings without names, which is what a new treatment is. The
-                 branch below reads "No new drawings", and it was the only one
-                 v0.3.0 matched: 1,497 drawings landed and the board announced
-                 nothing, directly under a note saying the file count doubled. */
-              : entry.names.length === 0 && entry.files > entry.previousFiles
-                ? `${plural(entry.files - entry.previousFiles, "drawing")} added ` +
-                  `since ${entry.previous} without a new name, taking the set from ` +
-                  `${entry.previousFiles.toLocaleString("en-US")} drawings to ` +
-                  `${entry.files.toLocaleString("en-US")}.` +
-                  (entry.updatedNames.length
-                    ? ` ${entry.updatedNames.length} redrawn:`
-                    : "")
-              : entry.names.length === 0
-                ? `No new drawings. ${entry.updatedNames.length} redrawn since ` +
-                  `${entry.previous}, so the set still holds ${entry.count}:`
-                : entry.updatedNames.length === 0
-                ? `${plural(entry.names.length, "drawing")} added since ` +
-                  `${entry.previous}, bringing the set to ${entry.count}:`
-                /* A release that both adds and corrects used to announce only
-                   the additions and draw only their tiles, so every redrawn
-                   icon in a release like that went out unmentioned. */
-                : `${plural(entry.names.length, "drawing")} added since ` +
-                  `${entry.previous}, bringing the set to ${entry.count}, and ` +
-                  `${entry.updatedNames.length} redrawn:`) +
-          `</p>` +
-          (entry.topics && drawn(entry) && !entry.initial ? topicBlocks(entry) : "") +
-          (entry.initial || !entry.names.length || !drawn(entry) || entry.topics ? "" : tiles(entry.names)) +
-          (entry.initial || !redrawnIn(entry).length || !drawn(entry) || entry.topics
-            ? ""
-            : redraws(redrawnIn(entry)))
-        ))
-          .filter(Boolean)
-          .join(`<div style="${DIVIDER};margin:32px 0"></div>`) +
-      `</div>` +
     `</section>\n`
-  )
+
+  /* One block per release, newest first, every release that has ever been
+     cut. Entries are never dropped and never relabelled: see the note on
+     `release.entries`. */
+  const blocks = [
+    /* Work since the newest tag leads the board, headed by no version
+       because it has none: an install of the newest release does not
+       contain it. Null is the resting state and prints nothing. */
+    release.unreleased
+      ? latestBlock(release.unreleased)
+      : "",
+  ].concat(release.entries.map((entry) =>
+    `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${entry.version}</h2>` +
+    `<p style="margin:8px 0 0;font-size:13px;color:${MUTED}">` +
+      /* "Initial release" belongs to the oldest tag and to nothing else.
+         Printed over whichever entry came second, it announced each
+         release's predecessor as the first cut of the set. */
+      `${entry.initial ? "Initial release" : "Released"} &middot; ${entry.label}` +
+    `</p>` +
+    /* The hand-written note leads where there is one, in full-strength
+       ink, because it is the announcement and the counts under it are the
+       detail. Same order as the page that owns the words. */
+    (entry.note && !(entry.topics && drawn(entry))
+      ? `<p style="margin:16px 0 0;font-size:14px;line-height:1.7">${esc(entry.note)}</p>`
+      : "") +
+    /* Pinned to the release that introduced the treatment rather than to
+       whatever carries a note, and it stays there: a changelog only
+       grows, so that entry goes on showing what it announced. On this
+       board it is subject to the same cut as every other strip below:
+       see `drawn`. */
+    (entry.version === SHARP_RELEASE && entry.current ? sharpPreview() : "") +
+    `<p style="margin:16px 0 0;font-size:14px;line-height:1.7;color:${MUTED}">` +
+      strip(entry, entry.initial
+        ? `The first cut of the set: ${entry.count} drawings on one 24 × 24 grid, ` +
+          `at a 2px keyline, built for shadcn/ui and free under the MIT licence, ` +
+          `shipping as SVGs, JSX snippets and React components.`
+        /* A release is not always drawings added. One that is entirely
+           corrections said "0 drawings added", which is true and tells a
+           reader nothing about why they would upgrade. */
+        : entry.names.length === 0 && entry.updatedNames.length === 0
+          ? `No drawing changes since ${entry.previous}. The set still ` +
+            `holds ${entry.count}.`
+          /* Drawings without names, which is what a new treatment is. The
+           branch below reads "No new drawings", and it was the only one
+           v0.3.0 matched: 1,497 drawings landed and the board announced
+           nothing, directly under a note saying the file count doubled. */
+        : entry.names.length === 0 && entry.files > entry.previousFiles
+          ? `${plural(entry.files - entry.previousFiles, "drawing")} added ` +
+            `since ${entry.previous} without a new name, taking the set from ` +
+            `${entry.previousFiles.toLocaleString("en-US")} drawings to ` +
+            `${entry.files.toLocaleString("en-US")}.` +
+            (entry.updatedNames.length
+              ? ` ${entry.updatedNames.length} redrawn:`
+              : "")
+        : entry.names.length === 0
+          ? `No new drawings. ${entry.updatedNames.length} redrawn since ` +
+            `${entry.previous}, so the set still holds ${entry.count}:`
+          : entry.updatedNames.length === 0
+          ? `${plural(entry.names.length, "drawing")} added since ` +
+            `${entry.previous}, bringing the set to ${entry.count}:`
+          /* A release that both adds and corrects used to announce only
+             the additions and draw only their tiles, so every redrawn
+             icon in a release like that went out unmentioned. */
+          : `${plural(entry.names.length, "drawing")} added since ` +
+            `${entry.previous}, bringing the set to ${entry.count}, and ` +
+            `${entry.updatedNames.length} redrawn:`) +
+    `</p>` +
+    (entry.topics && drawn(entry) && !entry.initial ? topicBlocks(entry) : "") +
+    (entry.initial || !entry.names.length || !drawn(entry) || entry.topics ? "" : tiles(entry.names)) +
+    (entry.initial || !redrawnIn(entry).length || !drawn(entry) || entry.topics
+      ? ""
+      : redraws(redrawnIn(entry)))
+  ))
+    .filter(Boolean)
+
+  return {
+    cover,
+    /* The newest update, whichever it is: the unreleased window while one is
+       open, the newest tag once it is cut. */
+    newest: card(blocks[0]),
+    earlier: card(blocks.slice(1).join(`<div style="${DIVIDER};margin:32px 0"></div>`)),
+  }
 }
 
 /**
@@ -1496,18 +1515,25 @@ const counted = {
 }
 
 {
-  const html = changelogSheet(byName, release)
-  files.set("changelog.html", html)
-  entries.push({
-    file: "changelog.html",
-    artboard: "Changelog",
-    surface: "changelog",
-    part: 1,
-    parts: 1,
-    icons: 0,
-    variants: 0,
-    bytes: html.length,
-  })
+  const sheets = changelogSheet(byName, release)
+  for (const [file, artboard, width, html] of [
+    ["changelog.html", "Changelog", 1224, sheets.cover],
+    ["changelog-newest.html", "Newest release", 744, sheets.newest],
+    ["changelog-earlier.html", "Earlier releases", 744, sheets.earlier],
+  ]) {
+    files.set(file, html)
+    entries.push({
+      file,
+      artboard,
+      surface: "changelog",
+      part: 1,
+      parts: 1,
+      width,
+      icons: 0,
+      variants: 0,
+      bytes: html.length,
+    })
+  }
 }
 
 const totals = {
