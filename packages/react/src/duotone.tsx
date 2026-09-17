@@ -59,8 +59,8 @@ export function Airpods(props: IconProps) {
 export function AlarmClockCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
-      <path d="M9.8787 13.4243L11.5285 15.1213L14.1213 10.8787M4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3M20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3M8.5 19.0622L7.3812 21M15.5 19.0622L16.6188 21" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M9.1716 13.5657L11.3713 15.8284L14.8284 10.1716M3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2M21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2M8 19.9282L6.8038 22M16 19.9282L17.1962 22" />
     </Icon>
   )
 }
@@ -68,8 +68,8 @@ export function AlarmClockCheck(props: IconProps) {
 export function AlarmClockMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
-      <path d="M9 13L15 13M4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3M20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3M8.5 19.0622L7.3812 21M15.5 19.0622L16.6188 21" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M8 13L16 13M3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2M21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2M8 19.9282L6.8038 22M16 19.9282L17.1962 22" />
     </Icon>
   )
 }
@@ -77,8 +77,8 @@ export function AlarmClockMinus(props: IconProps) {
 export function AlarmClockPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
-      <path d="M9 13L15 13M12 10L12 16M4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3M20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3M8.5 19.0622L7.3812 21M15.5 19.0622L16.6188 21" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M8 13L16 13M12 9L12 17M3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2M21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2M8 19.9282L6.8038 22M16 19.9282L17.1962 22" />
     </Icon>
   )
 }
@@ -86,8 +86,8 @@ export function AlarmClockPlus(props: IconProps) {
 export function AlarmClock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
-      <path d="M12 10L12 13L15 13M4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3M20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3M8.5 19.0622L7.3812 21M15.5 19.0622L16.6188 21" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M12 9L12 13L16 13M3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2M21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2M8 19.9282L6.8038 22M16 19.9282L17.1962 22" />
     </Icon>
   )
 }

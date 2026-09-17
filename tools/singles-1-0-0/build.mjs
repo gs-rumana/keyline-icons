@@ -254,9 +254,17 @@ SETS['timer-reset'].box = TIMER_BOX;
 
 /* ----------------------------------------------------------- alarm-clock */
 
-const AF = [12, 13], AR = 7, BELL = 11, ALARM_BOX = [3, 2, 21, 22];
-const AS = (Math.acos((AF[0] - 4) / BELL) * 180) / Math.PI;    // the cap on x=3
-const AE = (Math.asin((AF[1] - 3) / BELL) * 180) / Math.PI;    // the cap on y=2
+/*
+ * Grown on 17 Sep 2026, on his "need to be bigger": the face went from r=7 to
+ * r=8, the largest that keeps the bells the house 2 off it inside the canvas,
+ * and the clock paints 20 x 22 where it painted 18 x 20. The bells keep their
+ * construction, caps on whole numbers one unit outside the face's ink (x=3,
+ * y=2), which now spans 25 degrees against the 22 he approved at r=11; the
+ * legs stay radial at 60 degrees and end one unit below the face's ink.
+ */
+const AF = [12, 13], AR = 8, BELL = AR + 4, ALARM_BOX = [2, 1, 22, 23];
+const AS = (Math.acos((AF[0] - (ALARM_BOX[0] + 1)) / BELL) * 180) / Math.PI;    // the cap on x=3
+const AE = (Math.asin((AF[1] - (ALARM_BOX[1] + 1)) / BELL) * 180) / Math.PI;    // the cap on y=2
 const LEG = 60;
 function alarmParts(corners) {
   const sharp = corners === 'sharp';
@@ -269,45 +277,118 @@ function alarmParts(corners) {
     return `M${P(s0)}L${P(s)}` + arc(AF, BELL, a0, a1, { move: false }) + `L${P(e1)}`;
   });
   const legs = [180 - LEG, LEG].map((a) => {
-    const p = on(AF, AR, a), foot = on(AF, (21 - AF[1]) / Math.sin(rad(a)), a);
+    const p = on(AF, AR, a), foot = on(AF, (ALARM_BOX[3] - 1 - AF[1]) / Math.sin(rad(a)), a);
     return line(p, sharp ? pushLine(foot, p, ALARM_BOX) : foot);
   });
   return bells.join('') + legs.join('');
 }
-/** `search`'s layers for `sign`, moved from its glass on (10,10) onto the face on (12,13). */
-function searchSign(sign, style, corners) {
-  const paths = pathsOf(readRaw(`search-${sign}`, style, corners));
-  const isLens = (sp) => /^M17 10C/.test(sp) || /^M18 10C/.test(sp);
-  const isHandle = (sp) => /^M15 15L21 21$/.test(sp) || /^M14\.2929 14\.2929L21\.2929 21\.2929$/.test(sp);
-  if (style === 'fill') {
-    const body = paths.find((p) => !p.stroked);
-    const [lens, ...holes] = subpaths(body.d);
-    if (!isLens(lens) || !holes.length) throw new Error(`search-${sign} fill ${corners}: no lens or no knockout`);
-    return { disc: move(lens, 2, 3), holes: holes.map((h) => move(h, 2, 3)) };
-  }
-  const s = paths.find((p) => p.stroked);
-  const signs = subpaths(s.d).filter((sp) => !isLens(sp) && !isHandle(sp));
-  if (!signs.length) throw new Error(`search-${sign} ${style} ${corners}: no sign`);
-  return { strokes: signs.map((sp) => move(sp, 2, 3)).join('') };
+
+/*
+ * What sits inside the face. The face's inner ink is on 7, so the house 2
+ * leaves a sign 4 of path from the centre: the hands are 4 long, the plus and
+ * minus are `circle-plus`'s 8 across, and the check is `search-check`'s, READ
+ * from its file and grown by 4/3 about its glass so its far tip lands on 4 as
+ * it landed on 3. Sharp pushes each free end out by the cut rule.
+ */
+const SIGN_R = AR - 1 - 2 - 1;
+function searchCheck() {
+  const d = pathsOf(readRaw('search-check', 'stroke', 'regular')).find((p) => p.stroked).d;
+  const sp = subpaths(d).find((s) => /^M[\d.]+ [\d.]+L[\d.]+ [\d.]+L[\d.]+ [\d.]+$/.test(s));
+  if (!sp) throw new Error('search-check: no check');
+  const pts = parse(sp).map(([, n]) => n);
+  const k = SIGN_R / 3;
+  return pts.map(([x, y]) => [AF[0] + (x - 10) * k, AF[1] + (y - 10) * k]);
 }
-const ALARM_DISC = (corners) => searchSign('plus', 'fill', corners).disc;
+function signRuns(sign) {
+  const [cx, cy] = AF, r = SIGN_R;
+  if (sign === 'plus') return [[[cx - r, cy], [cx + r, cy]], [[cx, cy - r], [cx, cy + r]]];
+  if (sign === 'minus') return [[[cx - r, cy], [cx + r, cy]]];
+  if (sign === 'check') return [searchCheck()];
+  return [[[cx, cy - r], [cx, cy], [cx + r, cy]]];
+}
+/** A run with each free end pushed out by the cut rule, for sharp. */
+function sharpRun(pts) {
+  const out = pts.map((p) => [...p]);
+  const n = pts.length;
+  const d0 = unit([pts[0][0] - pts[1][0], pts[0][1] - pts[1][1]]);
+  const d1 = unit([pts[n - 1][0] - pts[n - 2][0], pts[n - 1][1] - pts[n - 2][1]]);
+  out[0] = add(pts[0], mul(d0, sharpEnd(d0)));
+  out[n - 1] = add(pts[n - 1], mul(d1, sharpEnd(d1)));
+  return out;
+}
+const wrap = (a) => { let x = ((a + 180) % 360 + 360) % 360 - 180; if (x === -180) x = 180; return x; };
+const deg = (v) => (Math.atan2(v[1], v[0]) * 180) / Math.PI;
+/**
+ * The outline of a stroked run of two or three points, half-width 1: a round
+ * join on the outside of the elbow, the two offset lines crossing on the
+ * inside, and round caps (butt in sharp, where the run was already pushed out).
+ */
+function runOutline(pts, sharp) {
+  const n = pts.length;
+  const dirs = pts.slice(1).map((p, i) => unit([p[0] - pts[i][0], p[1] - pts[i][1]]));
+  const nrms = dirs.map((u) => [-u[1], u[0]]);
+  // the outside of the elbow is the side the second run turns away from
+  const s = n === 3 && (dirs[0][0] * dirs[1][1] - dirs[0][1] * dirs[1][0]) > 0 ? -1 : 1;
+  const off = (p, v, k) => add(p, mul(v, k));
+  const A = pts[0], Z = pts[n - 1], nA = nrms[0], nZ = nrms[nrms.length - 1];
+  let d = `M${P(off(A, nA, s))}`;
+  if (n === 3) {
+    const B = pts[1];
+    d += `L${P(off(B, nA, s))}`;
+    const a0 = deg(mul(nA, s));
+    d += arc(B, 1, a0, a0 + wrap(deg(mul(nZ, s)) - a0), { move: false });
+  }
+  d += `L${P(off(Z, nZ, s))}`;
+  if (sharp) d += `L${P(off(Z, nZ, -s))}`;
+  else { const a0 = deg(mul(nZ, s)); d += arc(Z, 1, a0, a0 + 2 * wrap(deg(dirs[dirs.length - 1]) - a0), { move: false }); }
+  if (n === 3) {
+    const B = pts[1], m = add(nA, nZ), q = 1 + (nA[0] * nZ[0] + nA[1] * nZ[1]);
+    d += `L${P(add(B, mul(m, -s / q)))}`;
+  }
+  d += `L${P(off(A, nA, -s))}`;
+  if (sharp) d += 'Z';
+  else { const a0 = deg(mul(nA, -s)); d += arc(A, 1, a0, a0 + 2 * wrap(deg(mul(dirs[0], -1)) - a0), { move: false }) + 'Z'; }
+  return d;
+}
+/** The plus as one cross, so the knockout is a single ring. */
+function crossOutline(r, sharp) {
+  // arms walked up, right, down, left: each starts on the side of the arm
+  // before it, turns its cap through its own direction, and leaves on the side
+  // of the arm after it, where the two sides cross at the inner corner
+  const arms = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+  let d = '';
+  arms.forEach((u, i) => {
+    const prev = arms[(i + 3) % 4], next = arms[(i + 1) % 4];
+    const end = add(AF, mul(u, r));
+    d += `${i === 0 ? 'M' : 'L'}${P(add(end, prev))}`;
+    if (sharp) d += `L${P(add(end, next))}`;
+    else { const a0 = deg(prev); d += arc(end, 1, a0, a0 + 2 * wrap(deg(u) - a0), { move: false }); }
+    d += `L${P(add(add(AF, u), next))}`;
+  });
+  return d + 'Z';
+}
+function alarmSign(sign, corners) {
+  const sharp = corners === 'sharp';
+  const runs = signRuns(sign).map((r) => (sharp ? sharpRun(r) : r));
+  const strokes = runs.map((r) => line(...r)).join('');
+  const holes = sign === 'plus'
+    ? [crossOutline(SIGN_R + (sharp ? 1 : 0), sharp)]
+    : runs.map((r) => runOutline(r, sharp));
+  return { strokes, holes };
+}
+const ALARM_DISC = () => circle(AF, AR + 1);
 function alarm(sign) {
   const build = (style, corners) => {
     const face = circle(AF, AR), rest = alarmParts(corners);
-    const glyph = sign
-      ? searchSign(sign, 'stroke', corners).strokes
-      : corners === 'sharp' ? line([12, 9], [12, 13], [16, 13]) : line([12, 10], [12, 13], [15, 13]);
+    const { strokes: glyph, holes } = alarmSign(sign, corners);
+    const disc = ALARM_DISC();
     if (style === 'stroke') return [stroke(face + glyph + rest, corners)];
-    if (style === 'duotone') return [plate(ALARM_DISC(corners)), stroke(face + glyph + rest, corners)];
-    const disc = ALARM_DISC(corners);
-    const holes = sign
-      ? searchSign(sign, 'fill', corners).holes
-      : [corners === 'sharp'
-        ? 'M11 9L13 9L13 12L16 12L16 14L12 14C11.4477 14 11 13.5523 11 13Z'
-        : 'M11 10C11 9.4477 11.4477 9 12 9C12.5523 9 13 9.4477 13 10L13 12L15 12C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14L12 14C11.4477 14 11 13.5523 11 13Z'];
+    if (style === 'two-tone') return [plate(disc), stroke(face + glyph + rest, corners)];
+    if (style === 'duotone') return [plate(disc), stroke(glyph + rest, corners)];
     return [solid(disc + holes.map((h) => against(disc, h)).join('')), stroke(rest, corners)];
   };
   build.box = ALARM_BOX;
+  build.styles = ['stroke', 'two-tone', 'duotone', 'fill'];
   return build;
 }
 SETS['alarm-clock'] = alarm(null);
@@ -439,7 +520,7 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
     const dir = join(OUT, 'raw', name);
     mkdirSync(dir, { recursive: true });
     let n = 0;
-    for (const style of ['stroke', 'duotone', 'fill']) for (const corners of ['regular', 'sharp']) {
+    for (const style of build.styles || ['stroke', 'duotone', 'fill']) for (const corners of ['regular', 'sharp']) {
       const layers = build(style, corners);
       if (!layers) continue;
       const svg = [HEAD, ...layers, '</svg>', ''].join('\n');

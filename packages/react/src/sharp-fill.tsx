@@ -55,8 +55,8 @@ export function Airpods(props: IconProps) {
 export function AlarmClockCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13ZM8.8672 13.8185L10.8115 15.8184C10.9998 16.012 11.2584 16.1213 11.5285 16.1213C11.8769 16.1213 12.2001 15.94 12.3818 15.6428L15.2669 10.9216L13.5604 9.8787L11.3472 13.5002L10.3012 12.4243L8.8672 13.8185Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
-      <path d="M3.7273 5.7392L4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3L7.6158 2.9091M20.2727 5.7392L20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3L16.3842 2.9091M8.5 19.0622L7.0925 21.5M15.5 19.0622L16.9075 21.5" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4ZM8.1601 13.9599L10.6543 16.5255C10.8426 16.7191 11.1012 16.8284 11.3713 16.8284C11.7197 16.8284 12.0429 16.6471 12.2246 16.3499L15.9741 10.2145L14.2676 9.1716L11.1901 14.2073L9.5941 12.5657Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
+      <path d="M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -64,8 +64,8 @@ export function AlarmClockCheck(props: IconProps) {
 export function AlarmClockMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13ZM8 14L16 14L16 12L8 12L8 14Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
-      <path d="M3.7273 5.7392L4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3L7.6158 2.9091M20.2727 5.7392L20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3L16.3842 2.9091M8.5 19.0622L7.0925 21.5M15.5 19.0622L16.9075 21.5" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4ZM7 14L17 14L17 12L7 12Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
+      <path d="M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -73,8 +73,8 @@ export function AlarmClockMinus(props: IconProps) {
 export function AlarmClockPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13ZM13 12L13 9L11 9L11 12L8 12L8 14L11 14L11 17L13 17L13 14L16 14L16 12L13 12Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
-      <path d="M3.7273 5.7392L4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3L7.6158 2.9091M20.2727 5.7392L20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3L16.3842 2.9091M8.5 19.0622L7.0925 21.5M15.5 19.0622L16.9075 21.5" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4ZM11 8L11 12L7 12L7 14L11 14L11 18L13 18L13 14L17 14L17 12L13 12L13 8L11 8Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
+      <path d="M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -82,8 +82,8 @@ export function AlarmClockPlus(props: IconProps) {
 export function AlarmClock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5C16.4183 5 20 8.5817 20 13ZM11 9L11 13C11 13.5523 11.4477 14 12 14L16 14L16 12L13 12L13 9L11 9Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
-      <path d="M3.7273 5.7392L4 5.4502C4.971 4.4213 6.1313 3.5894 7.4174 3L7.6158 2.9091M20.2727 5.7392L20 5.4502C19.029 4.4213 17.8687 3.5894 16.5826 3L16.3842 2.9091M8.5 19.0622L7.0925 21.5M15.5 19.0622L16.9075 21.5" />
+      <path d="M12 4C16.9706 4 21 8.0294 21 13C21 17.9706 16.9706 22 12 22C7.0294 22 3 17.9706 3 13C3 8.0294 7.0294 4 12 4ZM11 8L11 13C11 13.5523 11.4477 14 12 14L17 14L17 12L13 12L13 8Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" stroke="none" />
+      <path d="M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }

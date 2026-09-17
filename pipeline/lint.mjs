@@ -223,6 +223,11 @@ const SIZE_KNOWN = new Set([
   // corners, so the sharp half classifies as a square where the rounded half
   // falls through. Same drawing, same box, same reason as `pen-off`.
   'message-square-off',
+  // The alarm clock's face is r=8, the largest that keeps its bells the house
+  // 2 off it, and its bells end one unit outside the face as he approved them,
+  // so it paints 20 x 22 and reads as a circle. Reaching 22 wide means bells of
+  // 33 degrees, back toward the ears he cut by half on 15 Sep 2026.
+  'alarm-clock', 'alarm-clock-check', 'alarm-clock-plus', 'alarm-clock-minus',
 ]);
 /**
  * Drawings of a real product, which keep the product's proportions and radii
