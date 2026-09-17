@@ -1,5 +1,5 @@
 {
-  "$comment": "SOURCE, NOT GENERATED. A release entry read section by section: a title, a sentence, the drawings it added, the drawings it redrew, then the next section, instead of the whole note first and every tile after it (Zafar, 17 Sep 2026: \"topic > icons, topic > icons. not all topics first and then all icons after that\", then \"categorize them, not just text > icons. titles, etc.\"). Sections follow the site's shelves, titled as the category rail titles them, with an announcement that has nothing to tile (the four styles) as a section of its own. Keyed by the version the work ships as, like lib/icon-release-order.json, so nothing needs re-keying when the tag is cut. `names` are drawings the release added and `redraws` are drawings it redrew; pipeline/build-history.mjs keeps only the ones the entry actually carries, and anything no section claims is appended in a last untitled group and reported, so a stale list can never drop a drawing. Numbers go in as {names} and {files}. Where a version has sections, every surface prints them in place of the note.",
+  "$comment": "SOURCE, NOT GENERATED. A release entry read section by section instead of one note above every tile. Zafar, 17 Sep 2026: \"topic > icons, topic > icons. not all topics first and then all icons after that\", then \"categorize them, not just text > icons. titles, etc.\", then \"redrawns deserve to be a separate topic, not within a topic and each subtitle must carry shareable link like the main titles\". So new drawings are filed under shelf sections (title, text, `names`), announcements with nothing to tile are sections of their own, and every redraw sits under one `Redrawn` section whose `sections` are shelves again (title, text, `redraws`). Titles are the shelves as the category rail names them. pipeline/build-history.mjs gives every section an `anchor` (v<version>-<title>, and v<version>-<parent>-<title> one level down) that the site prints as a link, keeps only the drawings the entry actually carries, and appends anything no section claims in a last untitled group, reported, so a stale list can never drop a drawing. Keyed by the version the work ships as, like lib/icon-release-order.json, so nothing needs re-keying at the tag. Numbers go in as {names} and {files}. Where a version has sections, every surface prints them in place of the note.",
   "releases": {
     "1.0.0": [
       {
@@ -13,38 +13,32 @@
       },
       {
         "title": "Layout",
-        "text": "The panels gain their close, open and dashed forms on every side, three split layouts and a table. The four dashed close panels sit their grey under the frame's round corners, and the grid fills keep 2 units clear of their edges.",
+        "text": "The panels gain their close, open and dashed forms on every side, three split layouts and a table.",
         "names": [
           "panel-left-open", "panel-left-close", "panel-left-dashed", "panel-left-open-dashed",
           "panel-right-open", "panel-right-close", "panel-right-dashed", "panel-right-open-dashed",
           "panel-top-open", "panel-top-close", "panel-top-dashed", "panel-top-open-dashed",
           "panel-bottom-open", "panel-bottom-close", "panel-bottom-dashed", "panel-bottom-open-dashed",
           "panels-left-bottom", "panels-right-bottom", "panels-top-left", "table"
-        ],
-        "redraws": [
-          "panel-left-close-dashed", "panel-right-close-dashed", "panel-top-close-dashed", "panel-bottom-close-dashed",
-          "grid-2x2", "grid-2x3", "grid-3x2", "grid-3x3"
         ]
       },
       {
         "title": "Devices",
-        "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone. In two-tone scan-eye greys its frame, and scan-search's handle starts on its ring.",
+        "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone.",
         "names": [
           "phone-call", "phone-incoming", "phone-outgoing", "phone-missed", "phone-forwarded",
           "tablet", "tablet-vertical", "tablet-arrow-down", "tablet-arrow-left", "tablet-arrow-in-up",
           "tablet-arrow-in-right", "tablet-check", "tablet-minus", "tablet-plus", "tablet-x",
           "laptop", "tablet-smartphone", "laptop-smartphone"
-        ],
-        "redraws": ["scan-eye", "scan-search"]
+        ]
       },
       {
         "title": "Finance",
-        "text": "Two banknotes carry a check, minus, plus and x, and the coins sit on rounder faces with 2 units between every coin.",
+        "text": "Two banknotes carry a check, minus, plus and x.",
         "names": [
           "banknote", "banknote-check", "banknote-minus", "banknote-plus", "banknote-x",
           "banknote-2", "banknote-2-check", "banknote-2-minus", "banknote-2-plus", "banknote-2-x"
-        ],
-        "redraws": ["coins"]
+        ]
       },
       {
         "title": "Time",
@@ -58,9 +52,8 @@
       },
       {
         "title": "Pointers",
-        "text": "A hand closes and opens, and the pointer is drawn again in all four directions.",
-        "names": ["hand-closed", "hand-open"],
-        "redraws": ["hand-pointer", "hand-pointer-down", "hand-pointer-left", "hand-pointer-right"]
+        "text": "A closed hand and an open hand join the pointer.",
+        "names": ["hand-closed", "hand-open"]
       },
       {
         "title": "Arrows",
@@ -79,44 +72,77 @@
       },
       {
         "title": "Files",
-        "text": "A zipped folder, and the file fills cut their folded corner clear of the edge.",
-        "names": ["folder-zip"],
-        "redraws": [
-          "file", "file-arrow-down", "file-arrow-left", "file-arrow-right", "file-arrow-up",
-          "file-check", "file-code", "file-image", "file-minus", "file-off", "file-plus",
-          "file-spreadsheet", "file-text", "file-x", "file-zip"
+        "text": "A zipped folder.",
+        "names": ["folder-zip"]
+      },
+      {
+        "title": "Redrawn",
+        "text": "Drawings that already shipped and were drawn again, each shown before and after.",
+        "sections": [
+          {
+            "title": "Layout",
+            "text": "The four dashed close panels sit their grey under the frame's round corners, and the grid fills keep 2 units clear of their edges.",
+            "redraws": [
+              "panel-left-close-dashed", "panel-right-close-dashed", "panel-top-close-dashed", "panel-bottom-close-dashed",
+              "grid-2x2", "grid-2x3", "grid-3x2", "grid-3x3"
+            ]
+          },
+          {
+            "title": "Devices",
+            "text": "In two-tone scan-eye greys its frame, and scan-search's handle starts on its ring.",
+            "redraws": ["scan-eye", "scan-search"]
+          },
+          {
+            "title": "Finance",
+            "text": "The coins sit on rounder faces with 2 units between every coin.",
+            "redraws": ["coins"]
+          },
+          {
+            "title": "Pointers",
+            "text": "The pointer is drawn again in all four directions.",
+            "redraws": ["hand-pointer", "hand-pointer-down", "hand-pointer-left", "hand-pointer-right"]
+          },
+          {
+            "title": "Files",
+            "text": "The file fills cut their folded corner clear of the edge.",
+            "redraws": [
+              "file", "file-arrow-down", "file-arrow-left", "file-arrow-right", "file-arrow-up",
+              "file-check", "file-code", "file-image", "file-minus", "file-off", "file-plus",
+              "file-spreadsheet", "file-text", "file-x", "file-zip"
+            ]
+          },
+          {
+            "title": "Charts",
+            "text": "In two-tone the charts grey their axes and keep the data in black.",
+            "redraws": [
+              "chart-area", "chart-bar-big", "chart-bar-stacked", "chart-candlestick",
+              "chart-column-big", "chart-column-stacked", "chart-network", "chart-scatter-bubble"
+            ]
+          },
+          {
+            "title": "Media",
+            "text": "The gallery frames take a tighter radius, and play is smaller.",
+            "redraws": [
+              "gallery-horizontal", "gallery-horizontal-end", "gallery-horizontal-start",
+              "gallery-vertical", "gallery-vertical-end", "gallery-vertical-start", "play"
+            ]
+          },
+          {
+            "title": "Actions",
+            "text": "The three dots are larger.",
+            "redraws": ["more-horizontal", "more-vertical"]
+          },
+          {
+            "title": "Shapes",
+            "text": "In two-tone circle-progress-play greys the part still to play.",
+            "redraws": ["circle-progress-play"]
+          },
+          {
+            "title": "Web",
+            "text": "In two-tone globe-off greys its far side.",
+            "redraws": ["globe-off"]
+          }
         ]
-      },
-      {
-        "title": "Charts",
-        "text": "In two-tone the charts grey their axes and keep the data in black.",
-        "redraws": [
-          "chart-area", "chart-bar-big", "chart-bar-stacked", "chart-candlestick",
-          "chart-column-big", "chart-column-stacked", "chart-network", "chart-scatter-bubble"
-        ]
-      },
-      {
-        "title": "Media",
-        "text": "The gallery frames take a tighter radius, and play is smaller.",
-        "redraws": [
-          "gallery-horizontal", "gallery-horizontal-end", "gallery-horizontal-start",
-          "gallery-vertical", "gallery-vertical-end", "gallery-vertical-start", "play"
-        ]
-      },
-      {
-        "title": "Actions",
-        "text": "The three dots are larger.",
-        "redraws": ["more-horizontal", "more-vertical"]
-      },
-      {
-        "title": "Shapes",
-        "text": "In two-tone circle-progress-play greys the part still to play.",
-        "redraws": ["circle-progress-play"]
-      },
-      {
-        "title": "Web",
-        "text": "In two-tone globe-off greys its far side.",
-        "redraws": ["globe-off"]
       }
     ]
   }

@@ -978,29 +978,29 @@ function changelogSheet(icons, release) {
    * An entry read section by section, the way `/changelog` reads it: a shelf's
    * title, its sentence, its tiles, its pairs, then the next shelf. Zafar,
    * 17 Sep 2026: "topic > icons, topic > icons", then "categorize them, not
-   * just text > icons. titles, etc."
+   * just text > icons. titles, etc.", then redraws as a section of their own
+   * with shelves inside it. The titles are links on the site only: this board,
+   * like the Figma page, carries no links on its release headings either.
    */
   const topicBlocks = (entry) => {
     const pairOf = new Map(redrawnIn(entry).map((r) => [r.name, r]))
-    /* Labelled only where a section holds both kinds, as on the page. */
-    const label = (text, n) =>
-      `<p style="margin:16px 0 0;font-size:12px;font-weight:500;color:${MUTED}">${text} &middot; ${n}</p>`
-    return entry.topics
-      .map((topic) => {
-        const pairs = topic.updatedNames.map((n) => pairOf.get(n)).filter(Boolean)
-        const both = topic.names.length && pairs.length
-        return (
-          (topic.title
+    const block = (topic, depth) => {
+      const pairs = topic.updatedNames.map((n) => pairOf.get(n)).filter(Boolean)
+      return (
+        (topic.title
+          ? depth === 0
             ? `<h3 style="margin:32px 0 0;font-size:16px;font-weight:600;letter-spacing:-0.2px">${esc(topic.title)}</h3>`
-            : "") +
-          (topic.text
-            ? `<p style="margin:${topic.title ? 8 : 24}px 0 0;font-size:14px;line-height:1.7">${esc(topic.text)}</p>`
-            : "") +
-          (topic.names.length ? (both ? label("New", topic.names.length) : "") + tiles(topic.names) : "") +
-          (pairs.length ? (both ? label("Redrawn", pairs.length) : "") + redraws(pairs) : "")
-        )
-      })
-      .join("")
+            : `<h4 style="margin:24px 0 0;font-size:14px;font-weight:600">${esc(topic.title)}</h4>`
+          : "") +
+        (topic.text
+          ? `<p style="margin:${topic.title ? 8 : 24}px 0 0;font-size:14px;line-height:1.7">${esc(topic.text)}</p>`
+          : "") +
+        (topic.names.length ? tiles(topic.names) : "") +
+        (pairs.length ? redraws(pairs) : "") +
+        (topic.sections ?? []).map((sub) => block(sub, depth + 1)).join("")
+      )
+    }
+    return entry.topics.map((topic) => block(topic, 0)).join("")
   }
 
   return (

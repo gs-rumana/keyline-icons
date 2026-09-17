@@ -272,26 +272,25 @@ function Redrawn({ pairs }: { pairs: Pair[] }) {
  * the phone's calls sat a screen above the phones. A section with no drawings
  * is an announcement on its own; the last group, if the generator had to make
  * one, has no title and holds whatever no section claimed.
+ *
+ * Then "redrawns deserve to be a separate topic, not within a topic and each
+ * subtitle must carry shareable link like the main titles": every redraw sits
+ * under one Redrawn section whose shelves are sections of their own, and every
+ * title is a link to itself.
  */
 function Topics({
   topics,
   byName,
   redrawn,
+  depth = 0,
 }: {
   topics: ReleaseTopic[]
   byName: Map<string, Icon>
   redrawn: Pair[]
+  depth?: number
 }) {
   const pairOf = new Map(redrawn.map((pair) => [pair.name, pair]))
-  /* A list says what it is only where a section holds both kinds: the pairs
-     already read as corrections, and a lone strip of tiles as additions. */
-  const label = (text: string, n: number) => (
-    <p className="text-xs font-medium text-muted-foreground">
-      {text}
-      <span aria-hidden="true"> · </span>
-      {n}
-    </p>
-  )
+  const Heading = depth === 0 ? "h3" : "h4"
   return (
     <>
       {topics.map((topic, i) => {
@@ -301,28 +300,44 @@ function Topics({
         const pairs = topic.updatedNames
           .map((name) => pairOf.get(name))
           .filter(Boolean) as Pair[]
-        const both = icons.length > 0 && pairs.length > 0
         return (
           /* More air between sections than inside one, so a title reads as the
              head of the tiles under it rather than the tail of the ones above. */
-          <div key={topic.title ?? i} className="mt-4 flex flex-col gap-3">
+          <div
+            key={topic.anchor ?? i}
+            className={`flex flex-col gap-3 ${depth === 0 ? "mt-4" : "mt-2"}`}
+          >
             {topic.title && (
-              <h3 className="text-base font-semibold tracking-tight text-foreground">
-                {topic.title}
-              </h3>
+              /*
+                Linked like the release headings, and for the same reason: the
+                way this page gets shared is one person sending another a
+                section. The fragment comes from the generator and is built off
+                the version, so a link sent before the tag still lands after.
+              */
+              <Heading
+                id={topic.anchor ?? undefined}
+                className={`scroll-mt-24 font-semibold tracking-tight text-foreground ${
+                  depth === 0 ? "text-base" : "text-sm"
+                }`}
+              >
+                <a
+                  href={`#${topic.anchor}`}
+                  className="underline-offset-4 hover:underline"
+                >
+                  {topic.title}
+                </a>
+              </Heading>
             )}
             {topic.text && <p className="text-foreground">{topic.text}</p>}
-            {icons.length > 0 && (
-              <div className="flex flex-col gap-2">
-                {both && label("New", icons.length)}
-                <Tiles icons={icons} />
-              </div>
-            )}
-            {pairs.length > 0 && (
-              <div className="flex flex-col gap-2">
-                {both && label("Redrawn", pairs.length)}
-                <Redrawn pairs={pairs} />
-              </div>
+            {icons.length > 0 && <Tiles icons={icons} />}
+            {pairs.length > 0 && <Redrawn pairs={pairs} />}
+            {topic.sections.length > 0 && (
+              <Topics
+                topics={topic.sections}
+                byName={byName}
+                redrawn={redrawn}
+                depth={depth + 1}
+              />
             )}
           </div>
         )

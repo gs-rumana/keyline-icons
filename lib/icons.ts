@@ -146,9 +146,13 @@ export type Redraw = {
 export type ReleaseTopic = {
   /** The shelf, titled as the category rail titles it. Null on the last group. */
   title: string | null
+  /** The link fragment, `v1.0.0-people` or `v1.0.0-redrawn-files`. Null untitled. */
+  anchor: string | null
   text: string | null
   names: string[]
   updatedNames: string[]
+  /** Sections inside this one: the `Redrawn` section's shelves. */
+  sections: ReleaseTopic[]
 }
 
 export type Release = {

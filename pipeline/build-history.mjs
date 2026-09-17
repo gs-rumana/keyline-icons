@@ -545,32 +545,54 @@ const TOPICS = JSON.parse(
   readFileSync(join(ROOT, "lib", "icon-release-topics.json"), "utf8")
 ).releases
 
+/**
+ * The fragment a section is linked by: `v1.0.0-people`, `v1.0.0-redrawn-files`.
+ *
+ * Built here so the site and anything else that prints a link agree on it, and
+ * from the version rather than from "unreleased", so a link shared before the
+ * tag still lands after it.
+ */
+const slug = (s) =>
+  s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+
 const topicsFor = (version, names, updatedNames) => {
   const want = TOPICS[version]
   if (!want) return null
   const added = new Set(names)
   const redrawn = new Set(updatedNames)
   const claimed = new Set()
-  const topics = want.map((topic) => {
-    const own = (list, pool) =>
-      (list ?? []).filter((n) => pool.has(n) && !claimed.has(n) && claimed.add(n))
+  const own = (list, pool) =>
+    (list ?? []).filter((n) => pool.has(n) && !claimed.has(n) && claimed.add(n))
+  /* One level of nesting is all a release needs: the `Redrawn` section holds
+     its shelves. Written recursively anyway, so a second level costs nothing. */
+  const section = (topic, parent) => {
+    const anchor = topic.title
+      ? `v${version}-${parent ? `${parent}-` : ""}${slug(topic.title)}`
+      : null
     return {
       title: topic.title ?? null,
+      anchor,
       text: fill(topic.text ?? null),
       names: own(topic.names, added),
       updatedNames: own(topic.redraws, redrawn),
+      sections: (topic.sections ?? []).map((sub) =>
+        section(sub, anchor?.replace(`v${version}-`, ""))
+      ),
     }
-  })
+  }
+  const topics = want.map((topic) => section(topic, null))
   const rest = {
     title: null,
+    anchor: null,
     text: null,
     names: names.filter((n) => !claimed.has(n)),
     updatedNames: updatedNames.filter((n) => !claimed.has(n)),
+    sections: [],
   }
   if (rest.names.length || rest.updatedNames.length) {
     console.log(
       `  ${c(33, "!")} ${version}: ${[...rest.names, ...rest.updatedNames].join(", ")} ` +
-        `in no topic of lib/icon-release-topics.json, appended.`
+        `in no section of lib/icon-release-topics.json, appended.`
     )
     topics.push(rest)
   }
