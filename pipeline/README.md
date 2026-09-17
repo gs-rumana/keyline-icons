@@ -260,9 +260,14 @@ drawings that are not dots at all.
 **`2.67` is not a third size, it is a bead at its ceiling.** A bead packed into a
 box is capped by its wall and neighbour gaps: for three in a row inside a
 20-unit body, `A >= 6 + d/2` and `A <= 10 - d` collapse to `1.5d <= 4`, so
-`d <= 8/3`. That is where the dice pips and the contained `more-*` dots sit. A
-box with different walls caps at a different number, and that case wants an
-exemption written down rather than a wider tolerance.
+`d <= 8/3`. That is where the contained `more-*` dots sit. A box with different
+walls caps at a different number, and that case wants an exemption written down
+rather than a wider tolerance.
+
+**The dice are that exemption.** They sat at `8/3` until 17 Sep 2026, when Zafar
+asked for full beads of 3 and took the cost as an exception: three pips of 3 in
+the 16 units inside the box leave four gaps of 1.75, so `PIP_GAP` holds the seven
+`dice-*` to 1.75 instead of 2 (`dice-6-horizontal` keeps 2 between its rows).
 
 Above 4 units a filled circle is a drawn object — `map-pin`'s knocked-out hole,
 `circle-user`'s head, a petal — and answers to its drawing, not to this ladder.
@@ -340,7 +345,9 @@ shaft as a box; the spread floor is what really governs them, and their hull of
 180-degree symmetric, so both pairs of corners agree and `hi - lo` falls under
 the test's 1.5; `refresh-cw` and `rotate-cw` are the same idea drawn as a real
 circle at the same 20 x 20 and escape only because an arrowhead fills one
-corner — so the family, `shuffle` included, is what sets the size), and four
+corner — so the family, `shuffle` included, is what sets the size), `mouse`
+(his capsule at 12 by 18 on the path, 14 by 20 painted, which he asked back for
+on 17 Sep 2026 after it had been run to 22 for this rule), and four
 answered objects — `credit-card` is honestly shallower
 than a square, `octagon-alert` covers ~360 units at 20 against a
 disc's ~380 at 22 and would be far too heavy at 22, `user` is pinned by

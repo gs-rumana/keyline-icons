@@ -142,7 +142,9 @@ const NARROW = new Set([
  *   paperclip is fixed by its wire: pitch 3.5 and bends of 1.75 / 3.5 / 5.25 are
  *   absolute, so filling 22 can only lengthen the straight runs, which stretches
  *   the clip rather than enlarging it. Both were tried at 22 and rejected on
- *   sight. Sizing follows the drawing here, not the other way round.
+ *   sight. Sizing follows the drawing here, not the other way round. The clip's
+ *   runs were lengthened a unit each way on 17 Sep 2026, his size: 16 by 18 on
+ *   the path, 18 by 20 painted.
  * - **`repeat` and `repeat-1`, sized against the loop family they belong to.**
  *   Both classify as `circle`, and the classification is an artefact of their
  *   own symmetry rather than a reading of the drawing: `repeat` is 180-degree
@@ -234,6 +236,10 @@ const SIZE_KNOWN = new Set([
   // over the bowl rather than running on to 22, so they paint 21 wide. The H is
   // shared with 1, 2 and 4 and does not move to make up the unit.
   'heading-3', 'heading-5', 'heading-6',
+  // His capsule, 12 by 18 on r=6, painting 14 by 20. It was run to 22 for this
+  // rule and he asked for his own 18 back on 17 Sep 2026: a mouse taller than
+  // that reads as a stretched pill.
+  'mouse',
 ]);
 /**
  * Drawings of a real product, which keep the product's proportions and radii
@@ -385,6 +391,17 @@ const RING_CLEARANCE = new Set([
   // short and are not drawn. 10 Sep 2026.
   'badge-dollar-sign',
 ]);
+/**
+ * The dice, whose pips are 3 across with 1.75 between pips and walls.
+ *
+ * At the house 2 a row of three beads in the box caps at 8/3 (see DOT_SIZES),
+ * and that is what shipped until 17 Sep 2026. Zafar asked for 3 knowing the
+ * cost and called it an exception: the 16 units inside the box take three pips
+ * of 3 and four equal gaps of 1.75. `dice-6-horizontal` keeps 2 between its two
+ * rows. Pips of one die are not separate objects to tell apart, they are one
+ * count, so the gap reads as rhythm rather than as crowding.
+ */
+const PIP_GAP = new Set(['dice-1', 'dice-2', 'dice-3', 'dice-4', 'dice-5', 'dice-6', 'dice-6-horizontal']);
 const COINCIDENT = 0.1;
 /** Slack for the spacing measurement itself. Distance is taken between chords
  *  standing in for curves, so an exact 2-unit gap measures a shade under it. */
@@ -424,8 +441,10 @@ const RADIUS_TOL = 0.05;
  *
  * The middle value is not a third size. A bead packed into a box is capped by its
  * wall and neighbour gaps: for three in a row inside a 20-unit body, A >= 6 + d/2
- * and A <= 10 - d collapse to 1.5d <= 4, so d <= 8/3. That is where the dice pips
- * and the contained `more-*` dots sit — a bead at its ceiling, not a free choice.
+ * and A <= 10 - d collapse to 1.5d <= 4, so d <= 8/3. That is where the contained
+ * `more-*` dots sit — a bead at its ceiling, not a free choice. The dice sat there
+ * too until 17 Sep 2026, when they took the full bead of 3 at gaps of 1.75 on
+ * Zafar's word (see PIP_GAP).
  *
  * 4 is the bare ellipsis: `more-horizontal` and `more-vertical` came back from
  * Zafar on 16 Sep 2026 with r=2 dots, three beads that are the whole glyph and
@@ -1006,7 +1025,7 @@ async function main() {
       };
 
       const overlap = closest(els, (g) => g < -EPS);
-      const wantGap = RING_CLEARANCE.has(name) ? 1 : MIN_ELEMENT_GAP;
+      const wantGap = RING_CLEARANCE.has(name) ? 1 : PIP_GAP.has(name) ? 1.75 : MIN_ELEMENT_GAP;
       const gap = closest(parts, (g) => g >= -EPS && g < wantGap - GAP_TOL);
       if (overlap !== null)
         add('warn', 'SPACING', id, `elements overlap by ${(-overlap).toFixed(2)} units`);

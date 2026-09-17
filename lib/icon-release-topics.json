@@ -53,7 +53,7 @@
             },
             {
               "title": "Devices",
-              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone. A watch, a hard drive, a cable and a headset visor join them, and a phone casts. An app window takes a plus, a minus, an x and a cursor beside its ruled form, a CCTV camera watches with and without a slash, a mouse scrolls both ways, and a shredder takes a page.",
+              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone. A watch, a hard drive, a cable and a headset visor join them, and a phone casts. An app window takes a plus, a minus, an x and a cursor beside its ruled form, a CCTV camera watches with and without a slash, a mouse arrives, and a shredder takes a page.",
               "names": [
                 "phone-call",
                 "phone-incoming",
@@ -87,8 +87,6 @@
                 "cctv",
                 "cctv-off",
                 "mouse",
-                "mouse-scroll-up",
-                "mouse-scroll-down",
                 "shredder"
               ]
             },
@@ -348,8 +346,9 @@
             },
             {
               "title": "Files",
-              "text": "The file fills cut their folded corner clear of the edge.",
+              "text": "The file fills cut their folded corner clear of the edge, and the paperclip runs longer.",
               "redraws": [
+                "paperclip",
                 "file",
                 "file-arrow-down",
                 "file-arrow-left",
@@ -404,8 +403,15 @@
             },
             {
               "title": "Shapes",
-              "text": "In two-tone circle-progress-play greys the part still to play.",
+              "text": "The dice take larger pips, and in two-tone circle-progress-play greys the part still to play.",
               "redraws": [
+                "dice-1",
+                "dice-2",
+                "dice-3",
+                "dice-4",
+                "dice-5",
+                "dice-6",
+                "dice-6-horizontal",
                 "circle-progress-play"
               ]
             },

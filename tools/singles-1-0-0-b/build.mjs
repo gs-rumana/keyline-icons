@@ -661,15 +661,15 @@ set('swatch-book', [2, 2, 22, 22], (sharp) => {
   if (g.mEnd[1] < 5 && !sharp) throw new Error('swatch: middle strip meets the front strip on its corner');
   const tb = along(g.bEnd, g.m.T, g.m.TL);
   if (tb > len(sub(g.m.TL, g.m.T)) - (sharp ? 0 : 2)) throw new Error(`swatch: back strip meets the middle strip past its straight (${tb})`);
-  const divider = run([[13, 10], [21, 10]]).d;
+  // the rule across the front strip and its groove were dropped on his word
+  // (17 Sep 2026): the strip is a plain swatch with the pivot
   const pivot = circlePath([17, 17], 1);
   const pl = plate(g.front.segs);
-  const groove = rect(14, 9, 20, 11);
   const styles = {
-    stroke: [S(g.front.d + divider + g.mid.d + g.back.d), DOT(pivot)],
-    'two-tone': [PL(pl), S(g.front.d + divider + g.mid.d + g.back.d), DOT(pivot)],
-    duotone: [M(g.mid.d + g.back.d), PL(groove), SO(pl + groove + pivot)],
-    fill: [S(g.mid.d + g.back.d), SO(pl + groove + pivot)],
+    stroke: [S(g.front.d + g.mid.d + g.back.d), DOT(pivot)],
+    'two-tone': [PL(pl), S(g.front.d + g.mid.d + g.back.d), DOT(pivot)],
+    duotone: [M(g.mid.d + g.back.d), SO(pl + pivot)],
+    fill: [S(g.mid.d + g.back.d), SO(pl + pivot)],
   };
   // flipped on his word (17 Sep 2026): the front strip stands on the left and
   // the deck fans out to the right, so the whole construction is mirrored about

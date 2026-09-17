@@ -567,8 +567,6 @@
     "more-horizontal": "Three dots in a row, the overflow menu for extra actions on a card or row.",
     "more-vertical": "Three dots in a column, the overflow menu for extra actions in a tight row.",
     "mouse": "A computer mouse with its wheel, for mouse input, clicking and a pointing device.",
-    "mouse-scroll-down": "A mouse with a caret below it, for scrolling down and reading further.",
-    "mouse-scroll-up": "A mouse with a caret above it, for scrolling up and going back to the top.",
     "move": "Four arrows from a centre, for dragging a node, repositioning and pan controls.",
     "music-note": "A single note, for songs, tracks, melodies and audio content.",
     "music-note-off": "A note struck through, for music off, muted playback and silence.",

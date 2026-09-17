@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 883,
-  "names": 1000,
-  "variants": 8000,
+  "icons": 881,
+  "names": 998,
+  "variants": 7984,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -340,7 +340,7 @@
       "width": 742,
       "icons": 0,
       "variants": 8,
-      "bytes": 7874
+      "bytes": 7572
     },
     {
       "file": "charts-1.html",
@@ -638,7 +638,7 @@
       "parts": 15,
       "into": "artboard",
       "width": 742,
-      "icons": 86,
+      "icons": 84,
       "variants": 48,
       "bytes": 37886
     },
@@ -700,7 +700,7 @@
       "width": 742,
       "icons": 0,
       "variants": 56,
-      "bytes": 37339
+      "bytes": 39961
     },
     {
       "file": "devices-7.html",
@@ -711,8 +711,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 40,
-      "bytes": 34628
+      "variants": 48,
+      "bytes": 40072
     },
     {
       "file": "devices-8.html",
@@ -724,7 +724,7 @@
       "width": 742,
       "icons": 0,
       "variants": 48,
-      "bytes": 39609
+      "bytes": 37056
     },
     {
       "file": "devices-9.html",
@@ -736,7 +736,7 @@
       "width": 742,
       "icons": 0,
       "variants": 48,
-      "bytes": 34229
+      "bytes": 36496
     },
     {
       "file": "devices-10.html",
@@ -747,8 +747,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 48,
-      "bytes": 35834
+      "variants": 56,
+      "bytes": 38872
     },
     {
       "file": "devices-11.html",
@@ -760,7 +760,7 @@
       "width": 742,
       "icons": 0,
       "variants": 56,
-      "bytes": 38870
+      "bytes": 37077
     },
     {
       "file": "devices-12.html",
@@ -771,8 +771,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 56,
-      "bytes": 38578
+      "variants": 48,
+      "bytes": 38444
     },
     {
       "file": "devices-13.html",
@@ -783,8 +783,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 48,
-      "bytes": 38850
+      "variants": 56,
+      "bytes": 40906
     },
     {
       "file": "devices-14.html",
@@ -795,8 +795,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 56,
-      "bytes": 36532
+      "variants": 48,
+      "bytes": 36690
     },
     {
       "file": "devices-15.html",
@@ -807,8 +807,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 32,
-      "bytes": 27581
+      "variants": 8,
+      "bytes": 6785
     },
     {
       "file": "diagrams.html",
@@ -940,7 +940,7 @@
       "width": 742,
       "icons": 0,
       "variants": 48,
-      "bytes": 38999
+      "bytes": 38991
     },
     {
       "file": "files-8.html",
@@ -1731,8 +1731,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 32,
-      "bytes": 30211
+      "variants": 40,
+      "bytes": 39853
     },
     {
       "file": "shapes-6.html",
@@ -1744,7 +1744,7 @@
       "width": 742,
       "icons": 0,
       "variants": 24,
-      "bytes": 35669
+      "bytes": 35287
     },
     {
       "file": "shapes-7.html",
@@ -1755,8 +1755,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 48,
-      "bytes": 40415
+      "variants": 56,
+      "bytes": 38379
     },
     {
       "file": "shapes-8.html",
@@ -1767,8 +1767,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 56,
-      "bytes": 36285
+      "variants": 40,
+      "bytes": 25781
     },
     {
       "file": "sport-1.html",
@@ -2222,7 +2222,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 18,
-      "bytes": 16579
+      "bytes": 16578
     },
     {
       "file": "changelog.html",
@@ -2244,7 +2244,7 @@
       "width": 744,
       "icons": 0,
       "variants": 0,
-      "bytes": 351063
+      "bytes": 372745
     },
     {
       "file": "changelog-earlier.html",
@@ -2255,7 +2255,7 @@
       "width": 744,
       "icons": 0,
       "variants": 0,
-      "bytes": 8656
+      "bytes": 8654
     }
   ]
 }

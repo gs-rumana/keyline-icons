@@ -12,15 +12,14 @@
  *               whose bar ends drop 2 on r=1 turns and whose stem has a foot.
  * file-type-corner  the same T in file-plus's bottom-right box, on its cut
  *               and notched plate.
- * mouse         his capsule (refs/mouse.svg): 12 wide on r=6, lengthened from 18
- *               to 20 so it paints the 22 a vertical icon owes; the wheel on
- *               whole units at 6..7, 2 clear of the body as he had it.
- * mouse-scroll-up, mouse-scroll-down  his layout (refs/): the mouse at 10 wide
- *               under a caret with an r=2 apex. His caret painted 0.83 past
- *               the top and stood 1 off the mouse, so the caret's angle is
- *               solved for the r=2 apex to paint 1 with its ends on 4, and the
- *               mouse moves down to keep 2 of daylight; the wheel keeps its 2
- *               from the body's top.
+ * mouse         his capsule (refs/mouse.svg): 12 by 18 on r=6, as he drew it
+ *               (it ran to 20 for OPTICAL until 17 Sep 2026, when he asked for
+ *               18 back, so the name is in SIZE_KNOWN); the wheel on whole
+ *               units at 7..8, 2 clear of the body.
+ * mouse-scroll-up, mouse-scroll-down  DROPPED 17 Sep 2026 on his word: a caret
+ *               above leaves the mouse at most 14 tall, 4 short of `mouse`, and
+ *               they read small beside it. Their block is in git history
+ *               (86f6b2ba); do not redraw them unasked.
  * shredder      "one line, not rounded shape": file's own top half standing
  *               on a single line, fold where file has it, strips below.
  * case-upper    "two AA, make the second smaller": case-sensitive's A beside a
@@ -149,12 +148,11 @@ set('file-type-corner', [3, 1, 21, 23], (sharp) => {
 /** A capsule of `w` by `h` centre lines from (x, y); its half rounds are shape, so sharp keeps them. */
 const capsule = (x, y, w, h) => polyContour([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], [w / 2, w / 2, w / 2, w / 2]);
 
-set('mouse', [5, 1, 19, 23], (sharp) => {
-  // his capsule, 12 wide on r=6, run to the 22 a vertical object is drawn at
-  // (his 18 painted 20, and OPTICAL wants 22); the wheel keeps his 2 of daylight
-  const box = [5, 1, 19, 23];
-  const body = capsule(6, 2, 12, 20);
-  const wheel = run([[12, 6], [12, 7]], [], { sharp, free: [true, true], box });
+set('mouse', [5, 2, 19, 22], (sharp) => {
+  // his capsule, 12 by 18 on r=6, painting 14 by 20; the wheel keeps his 2 of daylight
+  const box = [5, 2, 19, 22];
+  const body = capsule(6, 3, 12, 18);
+  const wheel = run([[12, 7], [12, 8]], [], { sharp, free: [true, true], box });
   const pl = plate(body.segs);
   return {
     stroke: [S(body.d + wheel.d)],
@@ -163,39 +161,6 @@ set('mouse', [5, 1, 19, 23], (sharp) => {
     fill: [SO(pl + inkUnion([wheel.segs], sharp))],
   };
 });
-
-// The caret: 6 wide, ends on y=4, apex r=2. At 45 degrees the arc paints
-// 0.17 past a whole unit whatever the vertex, so the angle is solved instead:
-// with ends on 4 and the arc's top on 1, sin(a) = 2/h and tan(a) = 3/h give
-// cos(a) = 2/3, a half-angle of 48.19 degrees and a vertex 2.683 above the ends.
-const COS = 2 / 3, SIN = Math.sqrt(5) / 3, RISE = 3 * COS / SIN;
-function caret(up, sharp, box) {
-  const ends = up ? 4 : 2, dir = up ? -1 : 1;
-  if (!sharp) return run([[9, ends], [12, ends + dir * RISE], [15, ends]], [0, 2, 0]);
-  // squared, the apex is a round join that paints a unit past its vertex, so
-  // the vertex takes the arc's extreme; the legs keep their angle and the cut
-  // rule pushes their butt ends, held to the caret's own 1..5 band so the up
-  // caret's low corner stops on 5 and keeps its 2 off the mouse
-  const apex = up ? 2 : 4;
-  const endY = up ? 4 : 2;
-  const dx = Math.abs(endY - apex) * (3 / RISE);
-  return run([[12 - dx, endY], [12, apex], [12 + dx, endY]], [], { sharp, free: [true, true], box: [box[0], 1, box[2], 5] });
-}
-for (const [name, up] of [['mouse-scroll-up', true], ['mouse-scroll-down', false]]) {
-  set(name, [6, 1, 18, 23], (sharp) => {
-    const box = [6, 1, 18, 23];
-    const body = capsule(7, 8, 10, 14);
-    const wheel = run([[12, 12], [12, 13]], [], { sharp, free: [true, true], box });
-    const c = caret(up, sharp, box);
-    const pl = plate(body.segs);
-    return {
-      stroke: [S(body.d + wheel.d + c.d)],
-      'two-tone': [PL(pl), S(body.d + wheel.d + c.d)],
-      duotone: [PL(pl), S(wheel.d + c.d)],
-      fill: [SO(pl + inkUnion([wheel.segs], sharp)), S(c.d)],
-    };
-  });
-}
 
 /* --------------------------------------------------------------- shredder */
 

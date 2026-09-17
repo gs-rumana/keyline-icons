@@ -67,14 +67,14 @@ Keyline Icons
 ## Tagline
 
 ```
-1,000 icons, four styles, rounded or sharp corners. Searchable in Figma and FigJam.
+998 icons, four styles, rounded or sharp corners. Searchable in Figma and FigJam.
 ```
 
 Capped at 100 characters. The line above is 81, so there is still room. A
 shorter alternative if it ever needs one:
 
 ```
-1,000 icons in four styles, cut rounded or sharp.
+998 icons in four styles, cut rounded or sharp.
 ```
 
 ## Description
@@ -88,20 +88,20 @@ which only ever shows the newest entry. Someone deciding whether to install
 wants to see the set is maintained, and that is what a history says.
 
 ```
-Search 1,000 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
+Search 998 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
 
 Four styles
 
-* Stroke: 1,000 icons, 2px, round caps and joins
-* Two-tone: 1,000 icons, a 40% plate under the line
-* Duotone: 1,000 icons, no outline, a grey body with the detail in black
-* Fill: 1,000 icons, solid where the glyph has a region to fill
+* Stroke: 998 icons, 2px, round caps and joins
+* Two-tone: 998 icons, a 40% plate under the line
+* Duotone: 998 icons, no outline, a grey body with the detail in black
+* Fill: 998 icons, solid where the glyph has a region to fill
 
-Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 8,000 SVGs in total.
+Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 7,984 SVGs in total.
 
 56 icons also come in a square- form and 61 in a circle- form, so a container is a search away rather than a second drawing.
 
-Search knows more than the file names. 883 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
+Search knows more than the file names. 881 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
 
 In a design file an insert arrives as a 24 × 24 frame, which is what makes a row of icons line up. In FigJam it arrives as a group, so FigJam's colour control reaches the drawing instead of painting a box around it. Double-click into one and every path takes its own colour, which is how a gift gets a red box and a yellow bow, and how duotone keeps both of its tones.
 
@@ -115,7 +115,7 @@ github.com/keyline-icons/keyline-icons
 Changelog
 
 1.0.0
-Four styles, with every name in all of them: two-tone is the outlined style that was called duotone, and duotone is new, a grey body with the part that matters in black and no outline. 149 new drawings, taking the set to 1,000 names and 8,000 SVGs, and a new shelf.
+Four styles, with every name in all of them: two-tone is the outlined style that was called duotone, and duotone is new, a grey body with the part that matters in black and no outline. 147 new drawings, taking the set to 998 names and 7,984 SVGs, and a new shelf.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
@@ -123,7 +123,7 @@ Four styles, with every name in all of them: two-tone is the outlined style that
 * Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
 * Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
 * Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
-* Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse scrolling both ways and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
+* Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
 * And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car and a wallet with its cards
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
@@ -133,7 +133,7 @@ Four styles, with every name in all of them: two-tone is the outlined style that
 * Pointers: a hand closed and a hand open
 * People opened as a shelf of its own, taking categories from 37 to 38
 
-Also redrawn: the pointing hand in four directions, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels with their grey under the frame's round corners, and the coins on rounder faces with 2 units between every coin.
+Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels with their grey under the frame's round corners, and the coins on rounder faces with 2 units between every coin.
 
 0.9.0 — 14 September 2026
 53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
@@ -223,7 +223,7 @@ expectation for an icon set. `free icons` overlaps `open source`, and page four
 marks the plugin Free natively.
 
 That leaves the five that actually distinguish it: FigJam support is rare among
-icon plugins, 1,000 duotone drawings are rare among icon sets, a set that ships
+icon plugins, 998 duotone drawings are rare among icon sets, a set that ships
 every drawing rounded *and* sharp is rarer still, and the rest name the audience
 rather than the artefact.
 
@@ -257,7 +257,7 @@ Four styles now, with every name in all of them. Two-tone is the outlined style
 that was called duotone; duotone is new, a grey body with the part that matters
 in black and no outline.
 
-149 new drawings, taking the set to 1,000 names and 8,000 SVGs: a boy, a girl and
+147 new drawings, taking the set to 998 names and 7,984 SVGs: a boy, a girl and
 four babies, the panel open, closed and dashed on every side, the phone's calls,
 a tablet with eight signs, a laptop, two banknotes with their signs, a rocket
 three ways, the big arrows long and short, the heading with its six levels, a
@@ -275,9 +275,9 @@ a wallet with its cards.
 
 People opened as a shelf with them, taking categories from 37 to 38.
 
-Redrawn: the pointing hand in four directions, the three dots, play, the gallery
-frames, the grid and file fills, the chart axes in two-tone, the four dashed
-close panels and the coins.
+Redrawn: the pointing hand in four directions, the paperclip, the dice, the
+three dots, play, the gallery frames, the grid and file fills, the chart axes in
+two-tone, the four dashed close panels and the coins.
 ```
 
 **A republish is required for the listing**, whose counts moved: the tagline,
@@ -588,13 +588,13 @@ Keyline Icons
 ### Description
 
 ```
-1,000 icons on a 24×24 grid, in four styles and two corner treatments: stroke, two-tone, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
+998 icons on a 24×24 grid, in four styles and two corner treatments: stroke, two-tone, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
 
-883 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the four styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
+881 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the four styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
 
-Every name comes in all four styles. Two-tone keeps the outline over a 40% plate, which is what duotone meant until 0.9.0; duotone now drops the outline and puts the part that matters in black. The four counts: stroke 1,000, two-tone 1,000, duotone 1,000, fill 1,000.
+Every name comes in all four styles. Two-tone keeps the outline over a 40% plate, which is what duotone meant until 0.9.0; duotone now drops the outline and puts the part that matters in black. The four counts: stroke 998, two-tone 998, duotone 998, fill 998.
 
-Every drawing exists in both treatments, so sharp is a switch rather than a second library: 8,000 variants over the same 1,000 names.
+Every drawing exists in both treatments, so sharp is a switch rather than a second library: 7,984 variants over the same 998 names.
 
 The Catalog page files every icon under one of 38 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
@@ -604,7 +604,7 @@ keylineicons.com
 github.com/keyline-icons/keyline-icons
 
 v1.0.0
-Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone and fill in both corners: the outlined style that was called duotone is Style=two-tone, and Style=duotone is a new drawing with no outline, a grey body with the part that matters in black. 149 new drawings. The set is 1,000 names now, 883 component sets and 8,000 variants, up from 851 and 4,394. The rename happened in place, so instances already placed in your files keep their link and their look.
+Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone and fill in both corners: the outlined style that was called duotone is Style=two-tone, and Style=duotone is a new drawing with no outline, a grey body with the part that matters in black. 147 new drawings. The set is 998 names now, 881 component sets and 7,984 variants, up from 851 and 4,394. The rename happened in place, so instances already placed in your files keep their link and their look.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
@@ -612,7 +612,7 @@ Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone an
 * Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
 * Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
 * Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
-* Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse scrolling both ways and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
+* Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
 * And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car and a wallet with its cards
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
@@ -622,7 +622,7 @@ Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone an
 * Pointers: a hand closed and a hand open
 * Categories went from 37 to 38: People took the figures that had nowhere honest to sit
 
-Also redrawn: the pointing hand in four directions, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels, and the coins on rounder faces.
+Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels, and the coins on rounder faces.
 
 v0.9.0
 53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.
