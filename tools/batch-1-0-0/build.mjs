@@ -76,14 +76,16 @@ for (const [kind, sign] of Object.entries(SIGNS)) {
 /* ---------------------------------------------------------------- arrow-big-* */
 // Rebuilt on his note, 14 Sep 2026, after the reference set's construction: a square head (edges at 45 degrees, the
 // apex a right angle), a shaft a third of the head's width, and one radius, r=1, on every corner. Solved so the
-// painted box is whole: 3..21 across, 2..22 along. With r=1 at both the 45 degree wings and the right-angled apex the
-// two paddings differ by exactly 1, which is what fixes them at 3 and 2.
+// painted box is whole: 3..21 across, 1..23 along. With r=1 at both the 45 degree wings and the right-angled apex the
+// two paddings differ by exactly 1, which is what fixes them at 3 and 2 before the shaft is counted.
+// 17 Sep 2026, on his "fix all" to a size check: they painted 2..22 along, 18 x 20, where a tall drawing is 22 long.
+// The head rises a unit and the foot drops one, so only the shaft grows and the head keeps its shape.
 const R1 = 1, SQ2 = Math.SQRT2, COT225 = 1 + SQ2;
 const WING_X = 3 - SQ2 * R1 + 1;         // painted left = vx + (cot 22.5 - 1) r - 1 = 3
-const BASE = 12, HALF = 12 - WING_X;      // the head is square, so its depth is half its width
-const APEX_Y = BASE - HALF;               // painted top = vy + (sqrt2 - 1) r - 1 = 2
+const BASE = 11, HALF = 12 - WING_X;      // the head is square, so its depth is half its width
+const APEX_Y = BASE - HALF;               // painted top = vy + (sqrt2 - 1) r - 1 = 1
 // shaft 8..16: at 9..15 the outline sat 56% on the reference set's; at 8 wide it is 36%, and still reads
-const SHAFT = [8, 16], FOOT = 21;
+const SHAFT = [8, 16], FOOT = 22;
 function fillet(pts) { // closed polygon of {v, r}; each corner rounded by its own r, tangent points solved per corner
   const n = pts.length;
   const tp = pts.map((q, i) => {
@@ -112,9 +114,9 @@ function arrowUp(sharp) {
       { v: [SHAFT[0], FOOT], r: R1 }, { v: [SHAFT[0], BASE], r: R1 }, { v: [WING_X, BASE], r: R1 },
     ]);
   }
-  // sharp: true points at 45 degrees, placed so each round join paints on the rounded drawing's box (apex 3, wings 4),
-  // which lifts the head's base to 11
-  const apex = [12, 3], wingL = [4, 11];
+  // sharp: true points at 45 degrees, placed so each round join paints on the rounded drawing's box (apex 2, wings 4),
+  // which lifts the head's base to 10
+  const apex = [12, 2], wingL = [4, BASE - 1];
   return `M${pt(apex)}L${pt([24 - wingL[0], wingL[1]])}L${SHAFT[1]} ${wingL[1]}L${SHAFT[1]} ${FOOT}L${SHAFT[0]} ${FOOT}L${SHAFT[0]} ${wingL[1]}L${pt(wingL)}Z`;
 }
 const rot = (d, turns) => d.replace(/(-?\d*\.?\d+) (-?\d*\.?\d+)/g, (m, x, y) => {
@@ -129,29 +131,51 @@ for (const [dir, turns] of [['up', 0], ['right', 1], ['down', 2], ['left', 3]]) 
     const d = rot(arrowUp(sharp), turns);
     // a concave r=1 corner offsets to radius 0; drop the collapsed arc it leaves rather than ship a knot of cubics
     const plate = G.emit(G.offsetClosed(G.parse(d)[0].segs, true).filter((sg) => G.len(G.sub(G.p1(sg), G.p0(sg))) > 0.01), true);
+    // four styles since 1.0.0: two-tone is the plate under the outline, and a one-shape duotone is the stroke drawing
     v[`stroke.${c}`] = [{ d, attrs: STROKE(sharp) }];
-    v[`duotone.${c}`] = [{ d: plate, attrs: PLATE }, { d, attrs: STROKE(sharp) }];
+    v[`two-tone.${c}`] = [{ d: plate, attrs: PLATE }, { d, attrs: STROKE(sharp) }];
+    v[`duotone.${c}`] = [{ d, attrs: STROKE(sharp) }];
     v[`fill.${c}`] = [{ d: plate, attrs: SOLID }];
   }
   write(`arrow-big-${dir}`, v);
 }
 
 /* ------------------------------------------------------------------ heading */
-// Letterforms, stroke only like bold and italic. The bare heading is a full-height H; the numbered six set a condensed
-// H beside a numeral of the same height, 2 apart.
+// Letterforms. The bare heading is a full-height H; the numbered six set a condensed H beside a numeral on its baseline.
 const H_FULL = 'M6 3V21M18 3V21M6 12H18';
-const H_NUM = 'M3 5V19M11 5V19M3 12H11';
-// his heading-1 of 14 Sep 2026 sets the numeral box: x 15..21, y 12..19 on the H's baseline
+// 17 Sep 2026, on his "fix all" to a size check: the numbered six painted 19 or 20 wide by 16, under the 22 a wide
+// drawing is held to, and 2, 3, 5 and 6 were a unit off centre because their ink stopped a unit short of the numeral
+// box. The H grows to stems 9 apart on 4..20, the numeral box moves to x 16..22 on the new baseline 20, and every
+// numeral reaches the box's right edge: the 2's foot, the 3's and 5's top bars and the 6's neck run on a unit, the
+// only free straight ends they have. Every drawing now paints 1..23 by 3..21, 22 x 18.
+// The right stem is on 11 and not 12, which would have kept the numeral 2 clear rather than 3: on 12 the H sat 49%
+// on the reference set's condensed H, which stands on 4 and 12, and the headings scored 27 to 46%; on 11 they score
+// 12 to 15, and 25 for the 4, whose right stem is his and lands on 21 where theirs does.
+const H_NUM = 'M2 4V20M11 4V20M2 12H11';
 const Dg = await import('./digits.mjs');
-// his heading-2..5 of 14 Sep 2026 (refs/), the numerals verbatim: x 16..20 on the same 12..19. His files split the H at
-// its crossbar and the 4 at its bar; those are rejoined here into the same ink as single runs.
-const HIS = {
-  2: 'M16 14C16 12.8954 16.8954 12 18 12C19.1046 12 20 12.8954 20 14C20 14.6037 19.7273 15.1751 19.258 15.5548L16 19H20',
-  3: 'M16 12H20L17.8564 15C19.0403 15 20 15.8954 20 17C20 18.1046 19.0403 19 17.8564 19C17.0906 19 16.3829 18.6188 16 18',
-  4: 'M16 12V16.5H21M20 12V19',
-  5: 'M20 12H16V15H18C19.1046 15 20 15.8954 20 17C20 18.1046 19.1046 19 18 19C17.2855 19 16.3573 18.6188 16 18',
+// his heading-1 of 14 Sep 2026 set the numeral box, x 15..21 by y 12..19, and his heading-2..5 (refs/) sat on x 16..20;
+// all of them are moved (+1, +1) here. His files split the H at its crossbar and the 4 at its bar; those are rejoined
+// into the same ink as single runs.
+const DIGITS = {
+  1: 'M16.75 15.1L19 13V20M16 20H22',
+  2: 'M17 15C17 13.8954 17.8954 13 19 13C20.1046 13 21 13.8954 21 15C21 15.6037 20.7273 16.1751 20.258 16.5548L17 20H22',
+  3: 'M17 13H22L18.8564 16C20.0403 16 21 16.8954 21 18C21 19.1046 20.0403 20 18.8564 20C18.0906 20 17.3829 19.6188 17 19',
+  4: 'M17 13V17.5H22M21 13V20',
+  5: 'M22 13H17V16H19C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C18.2855 20 17.3573 19.6188 17 19',
+  6: Dg.six({ c: [19, 18], r: 2 }, [22, 13]),
 };
-const DIGITS = { 1: Dg.ONE, 2: HIS[2], 3: HIS[3], 4: HIS[4], 5: HIS[5], 6: Dg.six() };
-const letter = (name, d) => write(name, { 'stroke.regular': [{ d, attrs: STROKE(false) }], 'stroke.sharp': [{ d: sharpRun(d), attrs: STROKE(true) }] });
-letter('heading', H_FULL);
-for (const [n, dg] of Object.entries(DIGITS)) letter(`heading-${n}`, H_NUM + dg);
+const MUTED = (sharp) => STROKE(sharp).replace(' stroke-width', ' stroke-opacity="0.4" stroke-width');
+// four styles since 1.0.0: an open glyph's fill is its stroke drawing; the bare H is one element, so its two-tone and
+// duotone are the stroke drawing too, and a numbered heading greys its H and keeps the numeral black
+const letter = (name, h, numeral = '') => {
+  const v = {};
+  for (const c of ['regular', 'sharp']) {
+    const sharp = c === 'sharp', H = sharp ? sharpRun(h) : h, N = numeral && (sharp ? sharpRun(numeral) : numeral);
+    const whole = [{ d: H + N, attrs: STROKE(sharp) }];
+    const split = numeral ? [{ d: H, attrs: MUTED(sharp) }, { d: N, attrs: STROKE(sharp) }] : whole;
+    Object.assign(v, { [`stroke.${c}`]: whole, [`two-tone.${c}`]: split, [`duotone.${c}`]: split, [`fill.${c}`]: whole });
+  }
+  write(name, v);
+};
+if (!process.env.ONLY || process.env.ONLY.split(',').includes('heading')) letter('heading', H_FULL);
+for (const [n, dg] of Object.entries(DIGITS)) letter(`heading-${n}`, H_NUM, dg);

@@ -429,16 +429,23 @@ SETS.snowflake.box = [1, 1, 23, 23];
  * staggered (3, 6, 3) where both sets start them flush, and the top two curl up
  * while the bottom one curls down. The top curl sits on x=12, a unit left of
  * the sheet he approved, because on 13 its turn came 1.82 from the middle
- * gust's tail. Paints 2..22 both ways. Open, so stroke only.
+ * gust's tail. Open, so every style is the stroke drawing.
+ *
+ * Grown on 17 Sep 2026, on his "fix all" to a size check: it painted 20 x 20
+ * beside sun, snowflake and umbrella at 22. The gusts move to y 6, 12 and 18
+ * and each x takes the nearest whole unit to 1.1 times its distance from the
+ * centre line (lines from 2, 6 and 2; curls on 12, 20 and 15), so the lines
+ * run 10, 14 and 13 where they ran 9, 13 and 12, the curls keep r=2, and the
+ * drawing paints 1..23 both ways. The top curl clears the middle tail by 4.03.
  */
 const GUSTS = [
-  { from: [3, 7], c: [12, 5], a0: 90, a1: -135 },
-  { from: [6, 12], c: [19, 10], a0: 90, a1: -135 },
-  { from: [3, 17], c: [15, 19], a0: -90, a1: 135 },
+  { from: [2, 6], c: [12, 4], a0: 90, a1: -135 },
+  { from: [6, 12], c: [20, 10], a0: 90, a1: -135 },
+  { from: [2, 18], c: [15, 20], a0: -90, a1: 135 },
 ];
+const WIND_BOX = [1, 1, 23, 23];
 SETS.wind = (style, corners) => {
-  if (style !== 'stroke') return null;
-  const box = [2, 2, 22, 22];
+  const box = WIND_BOX;
   let d = '';
   for (const g of GUSTS) {
     const start = on(g.c, 2, g.a0), end = on(g.c, 2, g.a1);
@@ -449,7 +456,8 @@ SETS.wind = (style, corners) => {
   }
   return [stroke(d, corners)];
 };
-SETS.wind.box = [2, 2, 22, 22];
+SETS.wind.box = WIND_BOX;
+SETS.wind.styles = ['stroke', 'two-tone', 'duotone', 'fill'];
 
 /* ----------------------------------------------------------------- table */
 

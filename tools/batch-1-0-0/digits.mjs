@@ -47,8 +47,8 @@ export function five() {
 }
 // 6: the full bowl and a neck leaving its leftmost point tangent, an arc centred on the bowl's horizontal, ending at
 // (19.75,12)
-export function six() {
-  const { c, r } = BOWL, left = on(c, r, 180), end = [20, 12]; // his 2..5 end their tops at x 20
+export function six(circle = BOWL, end = [20, 12]) { // his 2..5 end their tops at x 20
+  const { c, r } = circle, left = on(c, r, 180);
   const dx = end[0] - left[0], dy = left[1] - end[1], R = (dx * dx + dy * dy) / (2 * dx), nc = [left[0] + R, left[1]];
   const aEnd = Math.atan2(end[1] - nc[1], end[0] - nc[0]) * 180 / Math.PI;
   const neck = `M${pt(end)}${arcC(nc, R, aEnd, -180)}`;
