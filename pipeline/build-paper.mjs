@@ -391,9 +391,16 @@ async function sharpShowcase() {
      the board and the page have to agree about which release announced sharp. */
   const release = /SHARP_RELEASE\s*=\s*"([^"]+)"/.exec(src)?.[1]
   if (!release) throw new Error("lib/changelog.ts: no SHARP_RELEASE export")
-  return { names, release }
+  /* And the release whose cover draws a line per style, for the same reason. */
+  const styles = /FOUR_STYLES_RELEASE\s*=\s*"([^"]+)"/.exec(src)?.[1]
+  if (!styles) throw new Error("lib/changelog.ts: no FOUR_STYLES_RELEASE export")
+  return { names, release, styles }
 }
-const { names: SHARP_SHOWCASE, release: SHARP_RELEASE } = await sharpShowcase()
+const {
+  names: SHARP_SHOWCASE,
+  release: SHARP_RELEASE,
+  styles: FOUR_STYLES_RELEASE,
+} = await sharpShowcase()
 
 /**
  * Every rule written on the element it applies to, because a `<style>` block
@@ -792,7 +799,10 @@ const esc = (t) =>
  * on its own, because `current` is whichever entry is newest when the sheet is
  * built.
  */
-const drawn = (entry) => entry.current
+/* And while an unreleased window is open, it is the newest update and no
+   tagged entry draws: Zafar, 17 Sep 2026, "keep icons only for the last update
+   and drop from earlier ones", said of the Figma page and meant of both. */
+const drawn = (entry) => entry.current && !HISTORY.unreleased
 
 /** The counts sentence, ended as a lead-in where strips follow and closed where they do not. */
 const strip = (entry, sentence) =>
@@ -1003,6 +1013,212 @@ function changelogSheet(icons, release) {
     return entry.topics.map((topic) => block(topic, 0)).join("")
   }
 
+  /**
+   * The newest update, laid out as `/changelog` lays it out.
+   *
+   * Zafar, 17 Sep 2026, looking at the site's 1.0.0 entry: "you can follow this
+   * style/layout content now in v1.0.0". Only the newest entry takes it. The
+   * board around it keeps its own layout, the dark head, the 768 surface and
+   * the older entries as headings and copy, because a design file takes the
+   * site's content and not its chrome: the page's tick column never comes here.
+   *
+   * A line naming it, the title, the summary, the notice, a cover of its own
+   * drawings, then Preline's chips with their shelves and tiles. The column is
+   * the board's 688 rather than the page's 704, so the tiles are 131 and the
+   * pairs 166 (five and four to a row with 8 between) and the cover's sides are
+   * 36 rather than 40, which is what lets ten 36px drawings with 28 between sit
+   * on a line. The Figma page's block is the same block at the same widths.
+   *
+   * Written in the site's face and tokens: Geist, the ink, the muted ink, the
+   * muted fill and the keyline blue. Two things Paper does differently from a
+   * browser and the block is written around: a text node carries one style, so
+   * a bold lead and its sentence are two layers side by side; and text always
+   * wraps, so a long tile name takes a second line where the page cuts it off.
+   */
+  const latestBlock = (u) => {
+    const INK_ = "#0a0a0a"
+    const MUTED_ = "#737373"
+    const FILL = "#f5f5f5"
+    const NAME = "#454545"
+    const BLUE = "#006aa5"
+    const SANS = "Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    const MONO = "'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+    const CAPS = `font-size:11px;letter-spacing:1.1px;color:${MUTED_};white-space:nowrap`
+    const COLUMN = 688
+
+    /* Every drawing carries `data-icon`, `data-style` and `data-corners` in that
+       order, the arrows and the chip glyphs included: the importer renames each
+       drawing Paper makes off that list and refuses a write whose count
+       disagrees. A drawing shown below 24 scales its stroke with it, as an SVG
+       does, so only the cover's lighter 1.5 is written out. */
+    const svg = ({ name, style = "stroke", corners = "regular", art, size = SIZE, stroke, label }) =>
+      `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg" ` +
+      `role="img" aria-label="${layerName(name, style, corners)}${label ? ` ${label}` : ""}" ` +
+      `data-icon="${name}" data-style="${style}" data-corners="${corners}" ` +
+      `${stroke ? art.attrs.replace(/stroke-width="[^"]*"/, `stroke-width="${stroke}"`) : art.attrs}>${art.body}</svg>`
+    const glyph = (name, size) => {
+      const art = icons.get(name)?.art?.stroke
+      return art ? svg({ name, art, size }) : ""
+    }
+
+    const tile = (width, inner, name, caption = "") =>
+      `<div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:${width}px;` +
+        `padding:20px 8px 12px;box-sizing:border-box;border-radius:14px;background:${FILL}">` +
+        `<div style="display:flex;align-items:center;justify-content:center;gap:10px">${inner}</div>` +
+        `<span style="font-family:${MONO};font-size:11px;line-height:13px;letter-spacing:-0.3px;color:${NAME};` +
+          `text-align:center">${name}${caption}</span>` +
+      `</div>`
+    const grid = (cells) =>
+      `<div style="display:flex;flex-wrap:wrap;gap:8px;width:${COLUMN}px">${cells.join("")}</div>`
+
+    const drawings = (names) =>
+      grid(names.flatMap((name) => {
+        const art = icons.get(name)?.art?.stroke
+        return art ? [tile(131, svg({ name, art }), name)] : []
+      }))
+
+    /* Before and after, same size, same ink, same ground, the set's own arrow
+       between them. The words are said once, beside the chip. */
+    const pairs = (updated) =>
+      grid(updated.map((redraw) => {
+        const corners = redraw.corners ?? "regular"
+        const style = redraw.style ?? "stroke"
+        const before = redraw.before ? parse(redraw.before) : null
+        const after = redraw.after
+          ? parse(redraw.after)
+          : (corners === "sharp" ? icons.get(redraw.name)?.sharp?.stroke : icons.get(redraw.name)?.art?.stroke) ?? null
+        const face = (art, label) => (art ? svg({ name: redraw.name, style, corners, art, label }) : "")
+        return tile(
+          166,
+          face(before, "Before") + (before && after ? glyph("arrow-right", 14) : "") + face(after, "After"),
+          redraw.name,
+          corners === "sharp" ? `<span style="color:${MUTED_}"> &middot; sharp</span>` : ""
+        )
+      }))
+
+    /* The cover: ten drawings to a line, dealt one shelf at a time so the first
+       line samples the release rather than one family. The four-styles release
+       draws a line per style over the same ten. */
+    const shelfOf = (name) => {
+      const container = containerOf(name)
+      const base = container === "regular" ? name : name.slice(container.length + 1)
+      return CATEGORIES.find((x) => x.match.test(base))?.label ?? OTHER
+    }
+    const dealt = (() => {
+      const shelves = new Map()
+      for (const name of u.names) {
+        if (!icons.get(name)?.art?.stroke) continue
+        const label = shelfOf(name)
+        shelves.set(label, [...(shelves.get(label) ?? []), name])
+      }
+      const queues = [...shelves.values()]
+      const total = queues.reduce((n, q) => n + q.length, 0)
+      const out = []
+      for (let round = 0; out.length < total; round++) for (const q of queues) if (q[round]) out.push(q[round])
+      return out
+    })()
+    const line = (cells) => `<div style="display:flex;justify-content:center;gap:28px">${cells.join("")}</div>`
+    const coverLines =
+      release.version === FOUR_STYLES_RELEASE
+        ? STYLES.map((style) =>
+            dealt.slice(0, 10).flatMap((name) => {
+              const art = icons.get(name)?.art?.[style]
+              return art ? [svg({ name, style, art, size: 36, stroke: 1.5 })] : []
+            })
+          )
+        : (() => {
+            const field = dealt.slice(0, 30).map((name) => svg({ name, art: icons.get(name).art.stroke, size: 36, stroke: 1.5 }))
+            return Array.from({ length: Math.ceil(field.length / 10) }, (_, i) => field.slice(i * 10, i * 10 + 10))
+          })()
+    const cover = dealt.length >= 6
+      ? `<div style="display:flex;flex-direction:column;align-items:center;gap:28px;margin:32px 0 0;width:${COLUMN}px;` +
+          `box-sizing:border-box;padding:56px 36px;border-radius:18px;background:${FILL};color:${INK_}">` +
+          coverLines.map(line).join("") +
+        `</div>`
+      : ""
+
+    const countIn = (t) => t.names.length + t.updatedNames.length + (t.sections ?? []).reduce((n, x) => n + countIn(x), 0)
+    const redrawsIn = (t) => t.updatedNames.length > 0 || (t.sections ?? []).some(redrawsIn)
+    const pairOf = new Map((u.updated ?? []).map((r) => [r.name, r]))
+    const strips = (t) => {
+      const shown = t.updatedNames.map((n) => pairOf.get(n)).filter(Boolean)
+      return (t.names.length ? drawings(t.names) : "") + (shown.length ? pairs(shown) : "")
+    }
+    const topics = u.topics ?? [
+      { title: "New drawings", icon: "sparkles", names: u.names, updatedNames: [], sections: [], text: null },
+      { title: "Redrawn", icon: "pen", names: [], updatedNames: u.updatedNames ?? [], sections: [], text: null },
+    ].filter((c) => c.names.length || c.updatedNames.length)
+
+    const chips = topics
+      .map((t) => {
+        const count = countIn(t)
+        return (
+          `<div style="margin:56px 0 0">` +
+            `<div style="display:flex;align-items:center;gap:16px">` +
+              `<div style="display:flex;align-items:center;gap:10px;padding:4px 14px 4px 4px;border-radius:999px;background:${FILL};` +
+                `font-size:14px;font-weight:500;color:${INK_};white-space:nowrap">` +
+                `<div style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:#ffffff;color:${INK_}">` +
+                  (t.icon ? glyph(t.icon, 16) : "") +
+                `</div>` +
+                `<span>${esc(t.title)}</span>` +
+                (count ? `<span style="font-weight:400;color:${MUTED_}">${count.toLocaleString("en-US")}</span>` : "") +
+              `</div>` +
+              (redrawsIn(t)
+                ? `<div style="display:flex;align-items:center;gap:6px;${CAPS}">BEFORE${glyph("arrow-right", 12)}AFTER</div>`
+                : "") +
+            `</div>` +
+            `<div style="display:flex;flex-direction:column;gap:20px;margin:20px 0 0">` +
+              (t.text ? `<p style="margin:0;max-width:672px;font-size:15px;line-height:24px;color:${MUTED_}">${esc(t.text)}</p>` : "") +
+              strips(t) +
+              (t.sections ?? [])
+                .map((x, i) =>
+                  `<div style="display:flex;flex-direction:column;gap:16px;margin:${i === 0 && !t.text ? 0 : 16}px 0 0">` +
+                    `<div style="display:flex;gap:5px;max-width:672px;font-size:15px;line-height:24px">` +
+                      (x.title ? `<span style="font-weight:600;color:${INK_};white-space:nowrap;flex-shrink:0">${esc(x.title)}:</span>` : "") +
+                      `<span style="color:${MUTED_}">${esc(x.text ?? "")}</span>` +
+                    `</div>` +
+                    strips(x) +
+                  `</div>`
+                )
+                .join("") +
+            `</div>` +
+          `</div>`
+        )
+      })
+      .join("")
+
+    const redrawn = (u.updated ?? []).length
+    return (
+      `<div style="display:flex;flex-direction:column;font-family:${SANS};color:${INK_}">` +
+        `<div style="display:flex;align-items:center;gap:12px">` +
+          `<div style="display:flex;align-items:center;gap:6px;padding:2px 6px;border-radius:8px;background:${FILL};` +
+            `font-family:${MONO};font-size:12px;line-height:16px;letter-spacing:-0.3px;color:${INK_};white-space:nowrap">` +
+            `<div style="width:6px;height:6px;border-radius:999px;background:${BLUE}"></div><span>Unreleased</span>` +
+          `</div>` +
+          `<span style="${CAPS}">SINCE V${u.since}</span>` +
+          `<span style="font-size:11px;color:${MUTED_};white-space:nowrap">${u.count.toLocaleString("en-US")} names</span>` +
+        `</div>` +
+        `<h2 style="margin:16px 0 0;font-size:28px;line-height:35px;font-weight:600;letter-spacing:-0.7px;color:${INK_}">` +
+          `${esc(u.title ?? `Drawn since ${u.since}`)}</h2>` +
+        `<p style="margin:12px 0 0;max-width:672px;font-size:16px;line-height:26px;color:${MUTED_}">` +
+          (u.names.length && redrawn
+            ? `${u.names.length.toLocaleString("en-US")} drawing${u.names.length === 1 ? "" : "s"} added and ${redrawn} redrawn since ${u.since}`
+            : u.names.length
+              ? `${u.names.length.toLocaleString("en-US")} drawing${u.names.length === 1 ? "" : "s"} added since ${u.since}`
+              : `${redrawn} drawing${redrawn === 1 ? "" : "s"} redrawn since ${u.since}`) +
+          `. The set holds ${u.count}.` +
+        `</p>` +
+        `<div style="display:flex;align-items:flex-start;gap:10px;margin:20px 0 0;padding:8px 12px;border-radius:10px;background:${FILL};` +
+          `font-size:14px;line-height:20px;color:${MUTED_};width:fit-content">` +
+          `<div style="width:6px;height:6px;margin:7px 0 0;border-radius:999px;background:${BLUE};flex-shrink:0"></div>` +
+          `<span>In the repository and the design files, and not on npm until the next release.</span>` +
+        `</div>` +
+        cover +
+        chips +
+      `</div>`
+    )
+  }
+
   return (
     `<section style="box-sizing:border-box;width:768px;background:${BG};color:${INK};` +
       `font-family:${FONT};border-radius:24px;overflow:hidden" data-surface="changelog">` +
@@ -1032,37 +1248,7 @@ function changelogSheet(icons, release) {
              because it has none: an install of the newest release does not
              contain it. Null is the resting state and prints nothing. */
           release.unreleased
-            ? `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">Unreleased</h2>` +
-              `<p style="margin:8px 0 0;font-size:13px;color:${MUTED}">` +
-                `Drawn since ${release.unreleased.since} &middot; not in a release yet` +
-              `</p>` +
-              (release.unreleased.note && !release.unreleased.topics
-                ? `<p style="margin:16px 0 0;font-size:14px;line-height:1.7">` +
-                  `${esc(release.unreleased.note)}</p>`
-                : "") +
-              `<p style="margin:16px 0 0;font-size:14px;line-height:1.7;color:${MUTED}">` +
-                /* Both halves, always. The sentence used to name whichever
-                   list was non-empty and drop the other, so a stretch that
-                   added three drawings and corrected six announced three. */
-                (release.unreleased.names.length && redrawnIn(release.unreleased).length
-                  ? `${plural(release.unreleased.names.length, "drawing")} added and ` +
-                    `${redrawnIn(release.unreleased).length} redrawn since ` +
-                    `${release.unreleased.since}`
-                  : release.unreleased.names.length
-                    ? `${plural(release.unreleased.names.length, "drawing")} added since ` +
-                      `${release.unreleased.since}`
-                    : `${plural(redrawnIn(release.unreleased).length, "drawing")} redrawn since ` +
-                      `${release.unreleased.since}`) +
-                `, in the repository and the design files but not on npm until ` +
-                `the next release. The set holds ${release.unreleased.count}` +
-                (release.unreleased.topics ? "." : ":") +
-              `</p>` +
-              (release.unreleased.topics
-                ? topicBlocks(release.unreleased)
-                : (release.unreleased.names.length ? tiles(release.unreleased.names) : "") +
-                  (redrawnIn(release.unreleased).length
-                    ? redraws(redrawnIn(release.unreleased))
-                    : ""))
+            ? latestBlock(release.unreleased)
             : "",
         ].concat(release.entries.map((entry) =>
           `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${entry.version}</h2>` +

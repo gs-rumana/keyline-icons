@@ -555,8 +555,10 @@ const TOPICS = JSON.parse(
 const slug = (s) =>
   s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
 
+const titleFor = (version) => TOPICS[version]?.title ?? null
+
 const topicsFor = (version, names, updatedNames) => {
-  const want = TOPICS[version]
+  const want = TOPICS[version]?.sections
   if (!want) return null
   const added = new Set(names)
   const redrawn = new Set(updatedNames)
@@ -571,6 +573,7 @@ const topicsFor = (version, names, updatedNames) => {
       : null
     return {
       title: topic.title ?? null,
+      icon: topic.icon ?? null,
       anchor,
       text: fill(topic.text ?? null),
       names: own(topic.names, added),
@@ -583,6 +586,7 @@ const topicsFor = (version, names, updatedNames) => {
   const topics = want.map((topic) => section(topic, null))
   const rest = {
     title: null,
+    icon: null,
     anchor: null,
     text: null,
     names: names.filter((n) => !claimed.has(n)),
@@ -872,6 +876,8 @@ const out =
             files: drawings(r.tag),
             previousFiles: before ? drawings(before.tag) : 0,
             names,
+            /* The headline the page heads the entry by. See `titleFor`. */
+            title: titleFor(r.version),
             /* The entry read topic by topic, or null. See `topicsFor`. */
             topics: topicsFor(r.version, names, updated.map((u) => u.name)),
             /* Kept beside `updated` because five surfaces already count off it
@@ -938,6 +944,7 @@ const out =
           sinceLabel: since ? show(since.date) : null,
           count: Object.keys(icons).length,
           names,
+          title: titleFor(current),
           topics: topicsFor(current, names, updated.map((u) => u.name)),
           updatedNames: updated.map((u) => u.name),
           updated,

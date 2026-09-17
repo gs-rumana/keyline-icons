@@ -77,3 +77,15 @@ export const CHANGELOG_SHARP_ICON_NAMES = [
   "shield",
   "podium",
 ] as const
+
+/**
+ * The release that put every name in all four styles.
+ *
+ * Its cover cycles stroke, two-tone, duotone and fill across the drawings,
+ * because four styles is what that release announced. Every other cover is
+ * drawn in stroke: an older entry drawn in styles it did not ship in would be
+ * a picture of a release that never happened. Pinned by version for the same
+ * reason `SHARP_RELEASE` is: the unreleased block that carries it now becomes
+ * a tagged entry, and the cover has to stay with it.
+ */
+export const FOUR_STYLES_RELEASE = "1.0.0"

@@ -2,6 +2,7 @@ import {
   loadIcons,
   SET_RELEASES,
   SET_UNRELEASED,
+  SET_VERSION,
   toStyleArt,
   type Corners,
   type Icon,
@@ -9,11 +10,19 @@ import {
   type ReleaseTopic,
   type StyleArt,
 } from "@/lib/icons"
-import { CHANGELOG_SHARP_ICON_NAMES, SHARP_RELEASE } from "@/lib/changelog"
+import {
+  CHANGELOG_SHARP_ICON_NAMES,
+  FOUR_STYLES_RELEASE,
+  SHARP_RELEASE,
+} from "@/lib/changelog"
+import { iconHref } from "@/lib/icon-pages"
+import { categoryOf } from "@/lib/icon-taxonomy"
 import { pageMetadata } from "@/lib/seo"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
-import { artOf, Glyph } from "@/components/glyph"
+import { artOf, Glyph, STYLES } from "@/components/glyph"
+import { ArrowRight } from "@/components/icons"
+import { ReleaseTicks, type ReleaseTick } from "@/components/release-ticks"
 import Link from "next/link"
 
 /**
@@ -55,27 +64,71 @@ const plural = (n: number, one: string, many = one + "s") =>
   `${n.toLocaleString("en-US")} ${n === 1 ? one : many}`
 
 /**
- * The drawings themselves, at grid size.
+ * One drawing, named, and a link to its page.
  *
- * They are being identified rather than admired, and 24px is the size the set
- * is built at and used at. Shared by the released entries and the unreleased
- * one so the two cannot drift apart.
+ * At 24px, the size the set is built at and used at: here they are being
+ * identified rather than admired, which is the cover's job. The name is set in
+ * mono because it is an identifier, the string a reader types into an import,
+ * not a caption. It sits at three quarters of the ink rather than on
+ * `--muted-foreground`, which at 11px on `--muted` falls just short of AA.
+ *
+ * `prefetch={false}`, for the reason written out on the landing page: a release
+ * entry holds dozens of these, and Next would load every icon page a reader
+ * merely scrolled past, on a plan that meters requests.
  */
+function Tile({
+  name,
+  href,
+  children,
+  caption,
+}: {
+  name: string
+  href: string | null
+  children: React.ReactNode
+  caption?: React.ReactNode
+}) {
+  const body = (
+    <>
+      <span className="flex h-8 items-center justify-center gap-2.5 text-foreground">
+        {children}
+      </span>
+      <span className="w-full truncate text-center font-mono text-[11px] leading-tight tracking-tight text-foreground/75 transition-colors group-hover:text-foreground">
+        {name}
+        {caption}
+      </span>
+    </>
+  )
+  const tile =
+    "group flex flex-col items-center gap-2.5 rounded-xl bg-muted px-2 pt-4 pb-3"
+
+  return (
+    <li className="flex">
+      {href ? (
+        <Link
+          href={href}
+          prefetch={false}
+          className={`${tile} w-full transition-colors hover:bg-muted-hover`}
+        >
+          {body}
+        </Link>
+      ) : (
+        <span className={`${tile} w-full`}>{body}</span>
+      )}
+    </li>
+  )
+}
+
+/** Shared by the release tiles and the sharp preview so the two cannot drift. */
+const TILE_GRID =
+  "not-prose grid grid-cols-[repeat(auto-fill,minmax(7.5rem,1fr))] gap-2"
+
 function Tiles({ icons }: { icons: Icon[] }) {
   return (
-    <ul className="not-prose grid grid-cols-[repeat(auto-fill,minmax(104px,1fr))] gap-2">
+    <ul className={TILE_GRID}>
       {icons.map((icon) => (
-        <li
-          key={icon.name}
-          className="flex flex-col items-center gap-2 rounded-lg bg-muted p-3"
-        >
-          <span className="text-foreground">
-            <Glyph art={icon.art.stroke!} size={24} stroke={2} />
-          </span>
-          <span className="w-full truncate text-center text-[11px] leading-tight">
-            {icon.name}
-          </span>
-        </li>
+        <Tile key={icon.name} name={icon.name} href={iconHref(icon.name)}>
+          <Glyph art={icon.art.stroke!} size={24} stroke={2} />
+        </Tile>
       ))}
     </ul>
   )
@@ -97,15 +150,9 @@ function Tiles({ icons }: { icons: Icon[] }) {
  */
 function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
   return (
-    /*
-      A margin under it as well as the column's own gap. What follows is the
-      next announcement rather than more of this one, and at the bare `gap-4`
-      the redraws sat as close to the sharp preview as the preview sits to the
-      sentence that introduces it — the same distance doing two different jobs.
-    */
-    <div className="not-prose mb-4">
+    <div className="not-prose">
       <ul
-        className="grid grid-cols-[repeat(auto-fill,minmax(104px,1fr))] gap-2"
+        className={TILE_GRID}
         style={{
           maskImage: "linear-gradient(to bottom, #000 55%, transparent 100%)",
           WebkitMaskImage:
@@ -113,21 +160,9 @@ function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
         }}
       >
         {icons.map((icon) => (
-          <li
-            key={icon.name}
-            className="flex flex-col items-center gap-2 rounded-lg bg-muted p-3"
-          >
-            <span className="text-foreground">
-              <Glyph
-                art={artOf(icon, "stroke", "sharp")!}
-                size={24}
-                stroke={2}
-              />
-            </span>
-            <span className="w-full truncate text-center text-[11px] leading-tight">
-              {icon.name}
-            </span>
-          </li>
+          <Tile key={icon.name} name={icon.name} href={iconHref(icon.name)}>
+            <Glyph art={artOf(icon, "stroke", "sharp")!} size={24} stroke={2} />
+          </Tile>
         ))}
       </ul>
 
@@ -138,15 +173,31 @@ function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
         at one size. `?corners=sharp` lands the browser on the treatment it just
         showed you, which is the same seed `?style=` already offers.
       */}
-      <p className="mt-3 text-sm">
-        <Link
-          href="/icons?corners=sharp"
-          className="font-medium text-foreground underline underline-offset-4 hover:no-underline"
-        >
-          See all {total} in sharp
-        </Link>
-      </p>
+      <SeeAll href="/icons?corners=sharp">See all {total} in sharp</SeeAll>
     </div>
+  )
+}
+
+function SeeAll({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <p className="mt-4 text-sm">
+      <Link
+        href={href}
+        prefetch={false}
+        className="group inline-flex items-center gap-1.5 font-medium text-foreground"
+      >
+        <span className="underline underline-offset-4 group-hover:no-underline">
+          {children}
+        </span>
+        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+      </Link>
+    </p>
   )
 }
 
@@ -162,7 +213,21 @@ type Pair = {
   after: StyleArt | null
   /** The treatment both halves were drawn in. See `Redraw` in `lib/icons.ts`. */
   corners: Corners | null
+  /** Whether the name still has a page. A renamed drawing's old name does not. */
+  live: boolean
 }
+
+/**
+ * How many sharp corrections the list draws before it hands over to a link.
+ *
+ * The cut moves a diagonal end by 0.414 of a unit and these are drawn at 24px,
+ * so past the first few the reader is shown the same two thumbnails over and
+ * over: 303 pairs whose files genuinely differ and whose pictures do not. Six
+ * is a row of the grid at its narrowest, which reads as a sample rather than as
+ * a list that gave up. Rounded pairs are never capped — those are corrections a
+ * reader can actually see.
+ */
+const SHARP_SHOWN = 6
 
 /**
  * What was redrawn, shown as the change rather than as a claim.
@@ -178,6 +243,11 @@ type Pair = {
  * exists, which is the resting state for a drawing that was committed without
  * visibly moving.
  *
+ * "Before" and "After" are said once, beside the section's chip, rather than
+ * under every drawing: printed per tile they were ninety-eight labels saying
+ * the same two words, and the arrow already says which way the change runs.
+ * Each drawing still carries its word for a screen reader.
+ *
  * A sharp pair says so under the name. Two squared-off drawings shown with the
  * bare name read as the rounded drawing having been squared off, and a release
  * spent entirely in the sharp half — the diagonal end cut, 315 drawings, not
@@ -186,18 +256,6 @@ type Pair = {
  * otherwise, and marking both halves of a distinction is how a caption stops
  * being read at all.
  */
-/**
- * How many sharp corrections the list draws before it hands over to a link.
- *
- * The cut moves a diagonal end by 0.414 of a unit and these are drawn at 24px,
- * so past the first few the reader is shown the same two thumbnails over and
- * over: 303 pairs whose files genuinely differ and whose pictures do not. Six
- * is a row of the grid at its narrowest, which reads as a sample rather than as
- * a list that gave up. Rounded pairs are never capped — those are corrections a
- * reader can actually see.
- */
-const SHARP_SHOWN = 6
-
 function Redrawn({ pairs }: { pairs: Pair[] }) {
   const rounded = pairs.filter((pair) => pair.corners !== "sharp")
   const sharp = pairs.filter((pair) => pair.corners === "sharp")
@@ -205,40 +263,35 @@ function Redrawn({ pairs }: { pairs: Pair[] }) {
 
   const face = (art: StyleArt | null, label: string) =>
     art && (
-      <span className="flex flex-col items-center gap-1.5">
-        <span className="text-foreground">
-          <Glyph art={art} size={24} stroke={2} />
-        </span>
-        <span className="text-[10px] leading-none text-muted-foreground">
-          {label}
-        </span>
+      <span className="relative">
+        <Glyph art={art} size={24} stroke={2} />
+        <span className="sr-only">{label}</span>
       </span>
     )
 
   return (
     <div>
-      <ul className="not-prose grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-2">
+      <ul className="not-prose grid grid-cols-[repeat(auto-fill,minmax(9.5rem,1fr))] gap-2">
         {shown.map((pair) => (
-        <li
-          key={pair.name}
-          className="flex flex-col items-center gap-2 rounded-lg bg-muted p-3"
-        >
-          <span className="flex items-center gap-3">
+          <Tile
+            key={pair.name}
+            name={pair.name}
+            href={pair.live ? iconHref(pair.name) : null}
+            caption={
+              pair.corners === "sharp" && (
+                <span className="text-muted-foreground"> · sharp</span>
+              )
+            }
+          >
             {face(pair.before, "Before")}
             {pair.before && pair.after && (
-              <span aria-hidden="true" className="text-muted-foreground">
-                →
-              </span>
+              <ArrowRight
+                aria-hidden="true"
+                className="size-3.5 text-muted-foreground"
+              />
             )}
             {face(pair.after, "After")}
-          </span>
-          <span className="w-full truncate text-center text-[11px] leading-tight">
-            {pair.name}
-            {pair.corners === "sharp" && (
-              <span className="text-muted-foreground"> · sharp</span>
-            )}
-          </span>
-        </li>
+          </Tile>
         ))}
       </ul>
 
@@ -249,18 +302,166 @@ function Redrawn({ pairs }: { pairs: Pair[] }) {
         reasoning, and the same destination, as the sharp preview above.
       */}
       {sharp.length > SHARP_SHOWN && (
-        <p className="mt-3 text-sm">
-          <Link
-            href="/icons?corners=sharp"
-            className="font-medium text-foreground underline underline-offset-4 hover:no-underline"
-          >
-            See all {sharp.length} in sharp
-          </Link>
-        </p>
+        <SeeAll href="/icons?corners=sharp">
+          See all {sharp.length} in sharp
+        </SeeAll>
       )}
     </div>
   )
 }
+
+/**
+ * The cover's drawings, and the arithmetic that crops them.
+ *
+ * Same construction as the blog index's band, for the same reason: with a hard
+ * edge the crop has to land in the gap under a row rather than through one, so
+ * the height is derived from the glyph and the gap rather than picked. Change
+ * `size-9` or `gap-7` below and these change with them.
+ */
+const COVER_GLYPH = 36
+const COVER_GAP = 28
+const COVER_ROWS = 3
+const COVER_SHOWN = 60
+/**
+ * Below this a release goes without a cover. Two drawings centred in a band
+ * the width of the column read as a frame somebody forgot to fill, and a
+ * release that small shows every drawing a few lines further down anyway.
+ */
+const COVER_FEWEST = 6
+/** A line of the four-styles cover: more than the widest column holds. */
+const COVER_COLUMNS = 20
+const coverHeight = (rows: number) =>
+  rows * COVER_GLYPH + (rows - 1) * COVER_GAP
+
+type CoverItem = { key: string; art: StyleArt }
+
+/**
+ * The release's own drawings, as the picture at the top of its entry.
+ *
+ * This slot held the same card fourteen times: a dotted ground, the version in
+ * a blue pill and the wordmark under it. It said nothing a rail beside it was
+ * not already saying, and a changelog whose every cover is identical is a
+ * template with the releases poured into it. A release of an icon set has a
+ * picture of itself to hand, so that is what goes here, drawn from `icons/`
+ * at request time like every other drawing on the site.
+ *
+ * `lines` is one field that wraps, or several lines that each show one row.
+ * The second is the four-styles cover: the same drawings in every line, a
+ * style to a line, so a column is one drawing four ways. Cycling the styles
+ * across one field was tried first and read as noise, a fill landing beside a
+ * stroke at random. Every line holds the same drawings at the same size, so
+ * each one wraps at the same place and the columns line up without a grid.
+ *
+ * Centred rather than pinned left, because unlike the blog's band nothing
+ * shares an edge with it inside the frame, and a release of six drawings sits
+ * in the middle of its cover rather than in a corner of it. The frame takes its
+ * height from the rows it holds rather than a minimum: one row in a band sized
+ * for three is mostly grey. Whole rows only: see `coverHeight`.
+ *
+ * Decoration, so it is inert and `aria-hidden`: every drawing in it is listed
+ * by name below, under the shelf it belongs to.
+ */
+function Cover({ lines }: { lines: CoverItem[][] }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="flex flex-col items-center justify-center gap-7 rounded-2xl bg-muted px-6 py-12 sm:px-10 sm:py-14"
+    >
+      {lines.map((items, i) => (
+        <div
+          key={i}
+          className="flex w-full flex-wrap content-start justify-center gap-7 overflow-hidden text-foreground"
+          style={{ maxHeight: coverHeight(lines.length > 1 ? 1 : COVER_ROWS) }}
+        >
+          {items.map((item) => (
+            <Glyph
+              key={item.key}
+              art={item.art}
+              size={24}
+              stroke={1.5}
+              className="size-9 shrink-0"
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/**
+ * Deals the drawings out one shelf at a time.
+ *
+ * A release lists its names in the order git added them, which is families in a
+ * run: v0.9.0 opens with nine trucks, so its first two rows would have been
+ * a picture of a truck. Taking one from each shelf in turn puts the plane, the
+ * leaf, the flask and the lungs in the first row, which is what the release
+ * actually was.
+ */
+function byShelf(icons: Icon[]): Icon[] {
+  const shelves = new Map<string, Icon[]>()
+  for (const icon of icons) {
+    const label = categoryOf(icon.base)
+    shelves.set(label, [...(shelves.get(label) ?? []), icon])
+  }
+  const queues = [...shelves.values()]
+  const dealt: Icon[] = []
+  for (let round = 0; dealt.length < icons.length; round++) {
+    for (const queue of queues) if (queue[round]) dealt.push(queue[round])
+  }
+  return dealt
+}
+
+/**
+ * What a release's cover shows: what it added, then what it redrew.
+ *
+ * The four-styles release lays its drawings out a style to a line, and the
+ * sharp release shows the curated sharp sample, because those are what each of
+ * them announced. A release that changed no drawing, or too few to fill a row,
+ * gets no cover rather than a picture of something else.
+ */
+function coverOf({
+  version,
+  icons,
+  redrawn,
+  sharp,
+}: {
+  version: string
+  icons: Icon[]
+  redrawn: Pair[]
+  sharp: Icon[]
+}): CoverItem[][] {
+  if (version === SHARP_RELEASE)
+    return [
+      sharp.map((icon) => ({
+        key: icon.name,
+        art: artOf(icon, "stroke", "sharp")!,
+      })),
+    ]
+  const dealt = byShelf(icons)
+  if (version === FOUR_STYLES_RELEASE && dealt.length > 0)
+    return STYLES.map((style) =>
+      dealt.slice(0, COVER_COLUMNS).flatMap((icon) => {
+        const art = artOf(icon, style)
+        return art ? [{ key: icon.name, art }] : []
+      })
+    )
+  const field = [
+    ...dealt.map((icon) => ({ key: icon.name, art: icon.art.stroke! })),
+    ...redrawn
+      .filter((pair) => pair.after && pair.corners !== "sharp")
+      .map((pair) => ({ key: `redrawn-${pair.name}`, art: pair.after! })),
+  ].slice(0, COVER_SHOWN)
+  return field.length >= COVER_FEWEST ? [field] : []
+}
+
+/** Everything under a chip, shelves included, for the count beside it. */
+const drawingsIn = (topic: ReleaseTopic): number =>
+  topic.names.length +
+  topic.updatedNames.length +
+  topic.sections.reduce((n, section) => n + drawingsIn(section), 0)
+
+const redrawsIn = (topic: ReleaseTopic): boolean =>
+  topic.updatedNames.length > 0 || topic.sections.some(redrawsIn)
 
 /**
  * A release read section by section: a shelf's title, its sentence, what it
@@ -278,71 +479,238 @@ function Redrawn({ pairs }: { pairs: Pair[] }) {
  * under one Redrawn section whose shelves are sections of their own, and every
  * title is a link to itself.
  */
-function Topics({
+function Chips({
   topics,
   byName,
   redrawn,
-  depth = 0,
 }: {
   topics: ReleaseTopic[]
   byName: Map<string, Icon>
   redrawn: Pair[]
-  depth?: number
 }) {
   const pairOf = new Map(redrawn.map((pair) => [pair.name, pair]))
-  const Heading = depth === 0 ? "h3" : "h4"
+  const drawings = (topic: ReleaseTopic) => {
+    const icons = topic.names
+      .map((name) => byName.get(name))
+      .filter(Boolean) as Icon[]
+    const pairs = topic.updatedNames
+      .map((name) => pairOf.get(name))
+      .filter(Boolean) as Pair[]
+    return (
+      <>
+        {icons.length > 0 && <Tiles icons={icons} />}
+        {pairs.length > 0 && <Redrawn pairs={pairs} />}
+      </>
+    )
+  }
   return (
     <>
       {topics.map((topic, i) => {
-        const icons = topic.names
-          .map((name) => byName.get(name))
-          .filter(Boolean) as Icon[]
-        const pairs = topic.updatedNames
-          .map((name) => pairOf.get(name))
-          .filter(Boolean) as Pair[]
+        const glyph = topic.icon && byName.get(topic.icon)
+        const count = drawingsIn(topic)
         return (
-          /* More air between sections than inside one, so a title reads as the
-             head of the tiles under it rather than the tail of the ones above. */
           <div
             key={topic.anchor ?? i}
-            className={`flex flex-col gap-3 ${depth === 0 ? "mt-4" : "mt-2"}`}
+            id={topic.anchor ?? undefined}
+            className="mt-14 scroll-mt-24"
           >
+            {/*
+              The chip is Preline's: a drawing in a white disc and a label, on a
+              muted pill. It is a link here where Preline's is not, on Zafar's
+              word that every subtitle carries a shareable link like the
+              release titles do. The count beside the label is everything under
+              the chip, so a reader knows how long a section is before
+              scrolling into it.
+            */}
             {topic.title && (
-              /*
-                Linked like the release headings, and for the same reason: the
-                way this page gets shared is one person sending another a
-                section. The fragment comes from the generator and is built off
-                the version, so a link sent before the tag still lands after.
-              */
-              <Heading
-                id={topic.anchor ?? undefined}
-                className={`scroll-mt-24 font-semibold tracking-tight text-foreground ${
-                  depth === 0 ? "text-base" : "text-sm"
-                }`}
-              >
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <a
                   href={`#${topic.anchor}`}
-                  className="underline-offset-4 hover:underline"
+                  className="inline-flex items-center gap-x-2.5 rounded-full bg-muted py-1 ps-1 pe-3.5 text-sm font-medium text-foreground transition-colors hover:bg-muted-hover"
                 >
+                  <span className="inline-flex size-7 items-center justify-center rounded-full bg-background text-foreground shadow-xs">
+                    {glyph && (
+                      <Glyph art={glyph.art.stroke!} size={16} stroke={2} />
+                    )}
+                  </span>
                   {topic.title}
+                  {count > 0 && (
+                    <span className="font-normal text-muted-foreground tabular-nums">
+                      {count.toLocaleString("en-US")}
+                    </span>
+                  )}
                 </a>
-              </Heading>
+                {redrawsIn(topic) && (
+                  <span className="inline-flex items-center gap-1.5 text-[11px] tracking-widest text-muted-foreground uppercase">
+                    Before
+                    <ArrowRight aria-hidden="true" className="size-3" />
+                    After
+                  </span>
+                )}
+              </div>
             )}
-            {topic.text && <p className="text-foreground">{topic.text}</p>}
-            {icons.length > 0 && <Tiles icons={icons} />}
-            {pairs.length > 0 && <Redrawn pairs={pairs} />}
-            {topic.sections.length > 0 && (
-              <Topics
-                topics={topic.sections}
-                byName={byName}
-                redrawn={redrawn}
-                depth={depth + 1}
-              />
-            )}
+            <div className="mt-5 flex flex-col gap-5">
+              {topic.text && (
+                <p className="max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                  {topic.text}
+                </p>
+              )}
+              {drawings(topic)}
+              {topic.sections.map((item, j) => (
+                <div
+                  key={item.anchor ?? j}
+                  id={item.anchor ?? undefined}
+                  className="mt-4 flex scroll-mt-24 flex-col gap-4 first:mt-0"
+                >
+                  {/* Preline's bold lead ("Fixed:", "Docs:"), as a link, in
+                      the ink the sentence after it steps down from. */}
+                  <p className="max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                    {item.title && (
+                      <a
+                        href={`#${item.anchor}`}
+                        className="font-semibold text-foreground underline-offset-4 hover:underline"
+                      >
+                        {item.title}:
+                      </a>
+                    )}{" "}
+                    {item.text}
+                  </p>
+                  {drawings(item)}
+                </div>
+              ))}
+            </div>
           </div>
         )
       })}
     </>
+  )
+}
+
+/**
+ * The chips a release gets when nobody wrote it any: what git says it added and
+ * what it redrew, each under Preline's chip, so an old entry reads the same way
+ * a written one does.
+ */
+const defaultChips = (
+  anchor: string,
+  names: string[],
+  updatedNames: string[]
+): ReleaseTopic[] =>
+  [
+    {
+      title: "New drawings",
+      icon: "sparkles",
+      key: "new-drawings",
+      names,
+      updatedNames: [],
+    },
+    { title: "Redrawn", icon: "pen", key: "redrawn", names: [], updatedNames },
+  ]
+    .filter((c) => c.names.length || c.updatedNames.length)
+    .map(({ key, ...c }) => ({
+      ...c,
+      anchor: `${anchor}-${key}`,
+      text: null,
+      sections: [],
+    }))
+
+/**
+ * One release: a line naming it, the release's title as a link to itself, its
+ * summary, its cover and its chips.
+ *
+ * **The title leads and the cover follows it**, which is the other way round
+ * from Preline: the headline is what a reader scanning the page is reading
+ * for, and with the picture first it sat a cover's height below the top of
+ * the entry.
+ *
+ * The version, the date and what the set held at that tag sit on one line
+ * above the title. They lived in a sticky rail beside each entry until the
+ * rail gave way to `ReleaseTicks`, which marks where the reader is from one
+ * place in the margin; a release has to say what it is where it starts, so
+ * the facts moved into the entry. The version wears the blog's badge, and the
+ * newest entry's badge carries the site's blue dot, the one that marks what is
+ * new in the browser.
+ */
+function Release({
+  id,
+  badge,
+  date,
+  dateTime,
+  tag,
+  count,
+  current,
+  title,
+  summary,
+  notice,
+  cover,
+  children,
+}: {
+  id: string
+  badge: string
+  date: string
+  dateTime?: string
+  /** A word after the date: "Initial release". */
+  tag?: string
+  count: number
+  current: boolean
+  title: string
+  summary: React.ReactNode
+  notice?: string | null
+  cover: CoverItem[][]
+  children: React.ReactNode
+}) {
+  return (
+    <section id={id} className="min-w-0 scroll-mt-24 pb-20 sm:pb-28">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] tracking-widest text-muted-foreground uppercase">
+        <a
+          href={`#${id}`}
+          className="inline-flex items-center gap-1.5 rounded-md bg-muted px-1.5 py-0.5 font-mono text-xs tracking-tight text-foreground normal-case transition-colors hover:bg-muted-hover"
+        >
+          {current && (
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-primary"
+            />
+          )}
+          {badge}
+        </a>
+        {dateTime ? (
+          <time dateTime={dateTime}>{date}</time>
+        ) : (
+          <span>{date}</span>
+        )}
+        {tag && <span>{tag}</span>}
+        <span className="tracking-normal normal-case tabular-nums">
+          {plural(count, "name")}
+        </span>
+      </div>
+      <h2 className="mt-4 text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-[1.75rem]">
+        <a
+          href={`#${id}`}
+          className="text-foreground underline-offset-[6px] hover:underline"
+        >
+          {title}
+        </a>
+      </h2>
+      <div className="mt-3 flex max-w-2xl flex-col gap-3 text-base leading-relaxed text-muted-foreground">
+        {summary}
+      </div>
+      {notice && (
+        <p className="mt-5 inline-flex max-w-2xl items-start gap-2.5 rounded-lg bg-muted px-3 py-2 text-sm text-muted-foreground">
+          <span
+            aria-hidden="true"
+            className="mt-[7px] size-1.5 shrink-0 rounded-full bg-primary"
+          />
+          {notice}
+        </p>
+      )}
+      {cover.length > 0 && (
+        <div className="mt-8">
+          <Cover lines={cover} />
+        </div>
+      )}
+      {children}
+    </section>
   )
 }
 
@@ -362,10 +730,12 @@ const pairs = (redraws: Redraw[], byName: Map<string, Icon>): Pair[] =>
     return {
       name: redraw.name,
       corners: redraw.corners,
+      live: Boolean(icon),
       before: redraw.before ? toStyleArt(redraw.before) : null,
       after: redraw.after
         ? toStyleArt(redraw.after)
-        : ((icon && artOf(icon, "stroke", redraw.corners ?? "regular")) ?? null),
+        : ((icon && artOf(icon, "stroke", redraw.corners ?? "regular")) ??
+          null),
     }
   })
 
@@ -398,7 +768,9 @@ async function release() {
   const withSharp = icons.filter((icon) => artOf(icon, "stroke", "sharp"))
   const sharpSample = CHANGELOG_SHARP_ICON_NAMES.map((name) =>
     byName.get(name)
-  ).filter((icon): icon is Icon => Boolean(icon && artOf(icon, "stroke", "sharp")))
+  ).filter((icon): icon is Icon =>
+    Boolean(icon && artOf(icon, "stroke", "sharp"))
+  )
 
   return {
     count: dated.length,
@@ -467,237 +839,222 @@ export async function generateMetadata() {
 export default async function Page() {
   const { entries, unreleased, sharp, byName } = await release()
 
+  /*
+    The count sentence, closed rather than leading into a strip: every drawing
+    now sits under a chip, so nothing follows it directly.
+  */
+  const counted = (entry: (typeof entries)[number]) =>
+    entry.initial
+      ? `The first cut of the set: ${entry.count} drawings on one 24×24 grid, at a 2px keyline, built for shadcn/ui and free under the MIT licence, shipping as SVGs, JSX snippets and React components.`
+      : entry.icons.length === 0 && entry.redrawn.length === 0
+        ? `No drawing changes since ${entry.previous}. The set still holds ${entry.count}.`
+        : entry.icons.length === 0 && entry.files > entry.previousFiles
+          ? `${plural(entry.files - entry.previousFiles, "drawing")} added since ${entry.previous} without a new name, taking the set from ${entry.previousFiles.toLocaleString("en-US")} drawings to ${entry.files.toLocaleString("en-US")}.` +
+            (entry.redrawn.length > 0
+              ? ` ${entry.redrawn.length} redrawn.`
+              : "")
+          : entry.icons.length === 0
+            ? `No new drawings. ${plural(entry.redrawn.length, "redrawn", "redrawn")} since ${entry.previous}, so the set still holds ${entry.count}.`
+            : entry.redrawn.length === 0
+              ? `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count}.`
+              : `${plural(entry.icons.length, "drawing")} added since ${entry.previous}, bringing the set to ${entry.count}, and ${plural(entry.redrawn.length, "redrawn", "redrawn")}.`
+
+  /* The ticks, in page order, labelled the way each entry labels itself. */
+  const ticks: ReleaseTick[] = [
+    ...(unreleased
+      ? [
+          {
+            id: "unreleased",
+            version: "Unreleased",
+            date: `Since v${unreleased.since}`,
+            title: unreleased.title ?? null,
+          },
+        ]
+      : []),
+    ...entries.map((entry) => ({
+      id: `v${entry.version}`,
+      version: `v${entry.version}`,
+      date: entry.label,
+      title: entry.title ?? null,
+    })),
+  ]
+
   return (
     <>
       <SiteNav />
 
       {/*
-        The install page's prose measure. This page is a heading and three
-        sentences; the icon grid's full-width box would set them across
-        1,400px.
+        The prose measure `/blog` and `/install` keep, so the three pages that
+        read as writing about the set sit in one column (Zafar, 17 Sep 2026:
+        "keep the same container width as blog and install, but just place the
+        list on the left, leaving the right side empty"). The page's own box
+        was tried first, and the grids filled it at nine a row with the
+        sentences stranded at the left of a very wide page.
       */}
       <main className="mx-auto w-full max-w-3xl px-6 pb-16 lg:px-8">
-        <header className="pt-6 pb-12">
-          <h1 className="text-4xl font-semibold tracking-tight">Changelog</h1>
-          <p className="mt-3 text-base text-balance text-muted-foreground">
+        <header className="pt-6 pb-16 sm:pb-24">
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            Changelog
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-balance text-muted-foreground">
             Releases, new drawings and announcements, newest first.
           </p>
         </header>
 
-        {/*
-          A `section` per entry, newest first — every release, not the two the
-          old scalars could describe.
+        <div className="relative">
+          {/*
+            The ticks hang in the left margin, outside the column, so the column
+            stays centred where the blog's is and the right margin stays empty.
+            The aside is absolute and as tall as the releases, which is what
+            gives the sticky list inside it a whole page to stick for; its
+            right edge is the column's left edge, and its padding is the gap
+            between the labels and the text.
 
-          It names the drawings and stops there. An earlier version of this page
-          printed every icon in the set as a tile and became a second browser
-          filed by date; a list of what is new is the part that browser could
-          not give you, because `/icons` cannot show you what you have already
-          seen.
-        */}
-        {/*
-          Work since the newest tag. It leads the page because it is what a
-          returning reader is looking for, and it is headed "Unreleased"
-          rather than by a version, because it does not have one: an install of
-          the newest release does not contain it.
-        */}
-        {unreleased && (
-          <section id="unreleased" className="scroll-mt-24 border-t pt-10 pb-10">
-            {/*
-              Every entry is addressable, because the way this page gets used is
-              one person sending another a release. A static heading makes them
-              send the page and say "scroll down to 0.3.0".
-            */}
-            <h2 className="text-xl font-semibold tracking-tight">
-              <a
-                href="#unreleased"
-                className="underline-offset-4 hover:underline"
-              >
-                Unreleased
-              </a>
-            </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Drawn since {unreleased.since}
-              <span aria-hidden="true"> · </span>
-              not in a release yet
-            </p>
+            It starts at the first release rather than at the top of the page,
+            so the first tick stands level with the first entry it marks (a
+            line drawn under the header: "alignment issue"). `top-24` is the
+            entries' own `scroll-mt-24`, and the 5px is half a tick row against
+            half the version badge's 20px: a tick clicked lands its entry's
+            badge on the same line the tick stands on.
 
-            <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed text-muted-foreground">
-              {/*
-                The hand-written note leads, where there is one. A release that
-                added drawings describes itself out of the counts below; one
-                that added an axis without adding a name has nothing for them to
-                count, and the sentence is the whole announcement.
-              */}
-              {unreleased.note && !unreleased.topics && (
-                <p className="text-foreground">{unreleased.note}</p>
-              )}
-              <p>
-                {/*
+            From `xl`: the margin beside a 768px column is 256px of room only
+            from 1280 up, and a tick column without room for its labels is a
+            control nobody can read. Every entry names its own version above
+            its title either way.
+          */}
+          <aside className="absolute inset-y-0 end-full hidden w-64 pe-6 xl:block">
+            <div className="sticky top-24 pt-[5px]">
+              <ReleaseTicks releases={ticks} />
+            </div>
+          </aside>
+
+          {/*
+          Work since the newest tag leads the page because it is what a
+          returning reader is looking for, and it is badged "Unreleased" rather
+          than by a version, because it does not have one yet: an install of the
+          newest release does not contain it.
+        */}
+          {unreleased && (
+            <Release
+              id="unreleased"
+              badge="Unreleased"
+              date={`Since v${unreleased.since}`}
+              count={unreleased.count}
+              current
+              title={unreleased.title ?? `Drawn since ${unreleased.since}`}
+              summary={
+                <p>
+                  {/*
                   Both halves, always. The sentence used to name whichever list
                   was non-empty and drop the other, so a stretch that added
                   three drawings and corrected six announced the three.
                 */}
-                {unreleased.icons.length > 0 && unreleased.redrawn.length > 0
-                  ? `${plural(unreleased.icons.length, "drawing")} added and ` +
-                    `${unreleased.redrawn.length} redrawn since ${unreleased.since}`
-                  : unreleased.icons.length > 0
-                    ? `${plural(unreleased.icons.length, "drawing")} added since ${unreleased.since}`
-                    : `${plural(unreleased.redrawn.length, "drawing")} redrawn since ${unreleased.since}`}
-                , in the repository and the design files but not on npm until
-                the next release. The set holds {unreleased.count}
-                {unreleased.topics ? "." : ":"}
-              </p>
-              {unreleased.topics ? (
-                <Topics
-                  topics={unreleased.topics}
-                  byName={byName}
-                  redrawn={unreleased.redrawn}
-                />
-              ) : (
-                <>
-                  {unreleased.icons.length > 0 && (
-                    <Tiles icons={unreleased.icons} />
-                  )}
-                  {unreleased.redrawn.length > 0 && (
-                    <Redrawn pairs={unreleased.redrawn} />
-                  )}
-                </>
+                  {unreleased.icons.length > 0 && unreleased.redrawn.length > 0
+                    ? `${plural(unreleased.icons.length, "drawing")} added and ` +
+                      `${unreleased.redrawn.length} redrawn since ${unreleased.since}`
+                    : unreleased.icons.length > 0
+                      ? `${plural(unreleased.icons.length, "drawing")} added since ${unreleased.since}`
+                      : `${plural(unreleased.redrawn.length, "drawing")} redrawn since ${unreleased.since}`}
+                  . The set holds {unreleased.count}.
+                </p>
+              }
+              notice="In the repository and the design files, and not on npm until the next release."
+              cover={coverOf({
+                version: SET_VERSION,
+                icons: unreleased.icons,
+                redrawn: unreleased.redrawn,
+                sharp: sharp.sample,
+              })}
+            >
+              {!unreleased.topics && unreleased.note && (
+                <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                  {unreleased.note}
+                </p>
               )}
-            </div>
-          </section>
-        )}
+              <Chips
+                topics={
+                  unreleased.topics ??
+                  defaultChips(
+                    "unreleased",
+                    unreleased.names,
+                    unreleased.updatedNames
+                  )
+                }
+                byName={byName}
+                redrawn={unreleased.redrawn}
+              />
+            </Release>
+          )}
 
-        {entries.map((entry) => (
-          <section
-            key={entry.version}
-            id={`v${entry.version}`}
-            className="scroll-mt-24 border-t pt-10 pb-10"
-          >
-            {/*
-              Headed by the version it shipped as. "New drawings" named the
-              contents rather than the release, which is a heading a reader
-              cannot place against anything.
-            */}
-            <h2 className="text-xl font-semibold tracking-tight">
-              <a
-                href={`#v${entry.version}`}
-                className="underline-offset-4 hover:underline"
-              >
-                {entry.version}
-              </a>
-            </h2>
-
-            {/*
-              Name and date on one line under the heading, which is where a
-              changelog is read from. The machine-readable date is the ISO one;
-              the printed one is the label baked at build.
-
+          {entries.map((entry) => (
+            <Release
+              key={entry.version}
+              id={`v${entry.version}`}
+              badge={`v${entry.version}`}
+              date={entry.label}
+              dateTime={entry.date.slice(0, 10)}
+              /*
               "Initial release" belongs to the oldest tag and to nothing else.
               It used to be printed over whichever entry happened to be second
               on the page, which made every release after the second one
               announce its predecessor as the first cut of the set.
-            */}
-            <p className="mt-2 text-sm text-muted-foreground">
-              {entry.initial ? "Initial release" : "Released"}
-              <span aria-hidden="true"> · </span>
-              <time dateTime={entry.date.slice(0, 10)}>{entry.label}</time>
-            </p>
-
-            <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed text-muted-foreground">
-              {entry.note && !entry.topics && (
-                <p className="text-foreground">{entry.note}</p>
-              )}
-              {/*
-                A look at the treatment, under the sentence that announces it.
-                Pinned to the release that introduced it rather than to whatever
-                carries a note: every later release may have a note of its own,
-                and none of them is announcing sharp.
-              */}
-              {entry.version === SHARP_RELEASE && sharp.total > 0 && (
-                <SharpPreview icons={sharp.sample} total={sharp.total} />
-              )}
-              {entry.initial ? (
-                <p>
-                  The first cut of the set: {entry.count} drawings on one 24×24
-                  grid, at a 2px keyline, built for shadcn/ui and free under the
-                  MIT licence, shipping as SVGs, JSX snippets and React
-                  components.
-                </p>
-              ) : entry.icons.length === 0 && entry.redrawn.length === 0 ? (
-                <p>
-                  No drawing changes since {entry.previous}. The set still holds{" "}
-                  {entry.count}.
-                </p>
-              ) : entry.icons.length === 0 &&
-                entry.files > entry.previousFiles ? (
-                /*
-                  Drawings without names, which is what a new treatment is. The
-                  branch below reads "No new drawings" and was the only one this
-                  release matched, so the biggest thing the set has ever shipped
-                  announced itself as nothing — under a note saying the file
-                  count had doubled.
-                */
-                <p>
-                  {plural(entry.files - entry.previousFiles, "drawing")} added
-                  since {entry.previous} without a new name, taking the set from{" "}
-                  {entry.previousFiles.toLocaleString("en-US")} drawings to{" "}
-                  {entry.files.toLocaleString("en-US")}.
-                  {entry.redrawn.length > 0 && (
-                    <>
-                      {" "}
-                      {plural(entry.redrawn.length, "redrawn", "redrawn")}
-                      {entry.topics ? "." : ":"}
-                    </>
+            */
+              tag={entry.initial ? "Initial release" : undefined}
+              count={entry.count}
+              current={entry.current && !unreleased}
+              title={entry.title ?? `v${entry.version}`}
+              summary={
+                <>
+                  {entry.note && !entry.topics && (
+                    <p className="text-foreground">{entry.note}</p>
                   )}
-                </p>
-              ) : entry.icons.length === 0 ? (
-                <p>
-                  No new drawings.{" "}
-                  {plural(entry.redrawn.length, "redrawn", "redrawn")} since{" "}
-                  {entry.previous}, so the set still holds {entry.count}
-                  {entry.topics ? "." : ":"}
-                </p>
-              ) : entry.redrawn.length === 0 ? (
-                <p>
-                  {plural(entry.icons.length, "drawing")} added since{" "}
-                  {entry.previous}, bringing the set to {entry.count}
-                  {entry.topics ? "." : ":"}
-                </p>
-              ) : (
-                /* A release that both adds and corrects used to announce
-                     only the additions, and then draw only their tiles. Every
-                     redrawn icon in a release like that went out unmentioned. */
-                <p>
-                  {plural(entry.icons.length, "drawing")} added since{" "}
-                  {entry.previous}, bringing the set to {entry.count}, and{" "}
-                  {plural(entry.redrawn.length, "redrawn", "redrawn")}
-                  {entry.topics ? "." : ":"}
-                </p>
-              )}
+                  <p>{counted(entry)}</p>
+                </>
+              }
+              cover={
+                entry.initial
+                  ? coverOf({
+                      version: entry.version,
+                      icons: entry.icons,
+                      redrawn: [],
+                      sharp: [],
+                    })
+                  : coverOf({
+                      version: entry.version,
+                      icons: entry.icons,
+                      redrawn: entry.redrawn,
+                      sharp: sharp.sample,
+                    })
+              }
+            >
               {/*
-                Drawn at grid size, not at display size. These are being
-                identified rather than admired, and 24px is the size the set is
-                built at and the size they will be used at.
-              */}
-              {!entry.initial && entry.topics ? (
-                <Topics
-                  topics={entry.topics}
+              A look at the treatment, under the sentence that announces it.
+              Pinned to the release that introduced it rather than to whatever
+              carries a note: every later release may have a note of its own,
+              and none of them is announcing sharp.
+            */}
+              {entry.version === SHARP_RELEASE && sharp.total > 0 && (
+                <div className="mt-12">
+                  <SharpPreview icons={sharp.sample} total={sharp.total} />
+                </div>
+              )}
+              {!entry.initial && (
+                <Chips
+                  topics={
+                    entry.topics ??
+                    defaultChips(
+                      `v${entry.version}`,
+                      entry.names,
+                      entry.updatedNames
+                    )
+                  }
                   byName={byName}
                   redrawn={entry.redrawn}
                 />
-              ) : (
-                <>
-                  {!entry.initial && entry.icons.length > 0 && (
-                    <Tiles icons={entry.icons} />
-                  )}
-                  {!entry.initial && entry.redrawn.length > 0 && (
-                    <Redrawn pairs={entry.redrawn} />
-                  )}
-                </>
               )}
-            </div>
-          </section>
-        ))}
+            </Release>
+          ))}
+        </div>
       </main>
 
       <SiteFooter />

@@ -146,6 +146,8 @@ export type Redraw = {
 export type ReleaseTopic = {
   /** The shelf, titled as the category rail titles it. Null on the last group. */
   title: string | null
+  /** A drawing from the set, by name, for the chip. Chips only. */
+  icon: string | null
   /** The link fragment, `v1.0.0-people` or `v1.0.0-redrawn-files`. Null untitled. */
   anchor: string | null
   text: string | null
@@ -183,6 +185,8 @@ export type Release = {
   files: number
   previousFiles: number
   names: string[]
+  /** The release's headline, from `lib/icon-release-topics.json`. */
+  title?: string | null
   /** The entry read topic by topic, or null where it has no topics. */
   topics?: ReleaseTopic[] | null
   /**
@@ -221,6 +225,8 @@ export type Unreleased = {
   /** What the set holds now, which is what a reader of this is asking. */
   count: number
   names: string[]
+  /** The release's headline, from `lib/icon-release-topics.json`. */
+  title?: string | null
   /** The entry read topic by topic, or null where it has no topics. */
   topics?: ReleaseTopic[] | null
   updatedNames: string[]

@@ -1,149 +1,321 @@
 {
-  "$comment": "SOURCE, NOT GENERATED. A release entry read section by section instead of one note above every tile. Zafar, 17 Sep 2026: \"topic > icons, topic > icons. not all topics first and then all icons after that\", then \"categorize them, not just text > icons. titles, etc.\", then \"redrawns deserve to be a separate topic, not within a topic and each subtitle must carry shareable link like the main titles\". So new drawings are filed under shelf sections (title, text, `names`), announcements with nothing to tile are sections of their own, and every redraw sits under one `Redrawn` section whose `sections` are shelves again (title, text, `redraws`). Titles are the shelves as the category rail names them. pipeline/build-history.mjs gives every section an `anchor` (v<version>-<title>, and v<version>-<parent>-<title> one level down) that the site prints as a link, keeps only the drawings the entry actually carries, and appends anything no section claims in a last untitled group, reported, so a stale list can never drop a drawing. Keyed by the version the work ships as, like lib/icon-release-order.json, so nothing needs re-keying at the tag. Numbers go in as {names} and {files}. Where a version has sections, every surface prints them in place of the note.",
+  "$comment": "SOURCE, NOT GENERATED. How a release reads on the changelog, shaped after Preline's (Zafar, 17 Sep 2026, pointing at preline.co/docs/changelog.html): a title, then chips (an icon and a label, like Preline's \"New Components & Improvements\" and \"Fixes and Improvements\"), each followed by its items with a bold lead (\"People:\", \"Layout:\") and the drawings the item is about. His asks on the way: \"topic > icons, topic > icons. not all topics first and then all icons after that\", \"categorize them, not just text > icons. titles, etc.\", \"redrawns deserve to be a separate topic, not within a topic and each subtitle must carry shareable link like the main titles\". So redraws are always their own chip. Per version: `title` (the release's headline, which every version has, released ones included, because the page heads each entry by it) and optionally `sections`: chips with `title`, `icon` (a drawing from this set, by name), `text`, and items in `sections` with `title`, `text`, `names` (added) or `redraws`. A version with no `sections` is drawn with default chips, New drawings and Redrawn, straight off git. pipeline/build-history.mjs gives every chip and item an `anchor` (v<version>-<chip>, v<version>-<chip>-<item>) that the site links, keeps only the drawings the entry carries, and appends anything no item claims in a last untitled group, reported, so a stale list never drops a drawing. Keyed by the version the work ships as, so nothing is re-keyed at the tag. Numbers go in as {names} and {files}. Where a version has sections they replace the note.",
   "releases": {
-    "1.0.0": [
-      {
-        "title": "Four styles",
-        "text": "Every name now comes in stroke, two-tone, duotone and fill: {files} SVGs across {names} names. The outlined duotone is called two-tone from this release, so an import of duotone that wants the old look changes to two-tone. Duotone is a new style with no outline, a grey body with the part that matters in black, drawn icon by icon."
-      },
-      {
-        "title": "People",
-        "text": "A new shelf for the boy, the girl, a baby with a curl, one with a bow, and both babies again with a pacifier.",
-        "names": ["boy", "girl", "baby-boy", "baby-girl", "baby-2-boy", "baby-2-girl"]
-      },
-      {
-        "title": "Layout",
-        "text": "The panels gain their close, open and dashed forms on every side, three split layouts and a table.",
-        "names": [
-          "panel-left-open", "panel-left-close", "panel-left-dashed", "panel-left-open-dashed",
-          "panel-right-open", "panel-right-close", "panel-right-dashed", "panel-right-open-dashed",
-          "panel-top-open", "panel-top-close", "panel-top-dashed", "panel-top-open-dashed",
-          "panel-bottom-open", "panel-bottom-close", "panel-bottom-dashed", "panel-bottom-open-dashed",
-          "panels-left-bottom", "panels-right-bottom", "panels-top-left", "table"
-        ]
-      },
-      {
-        "title": "Devices",
-        "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone.",
-        "names": [
-          "phone-call", "phone-incoming", "phone-outgoing", "phone-missed", "phone-forwarded",
-          "tablet", "tablet-vertical", "tablet-arrow-down", "tablet-arrow-left", "tablet-arrow-in-up",
-          "tablet-arrow-in-right", "tablet-check", "tablet-minus", "tablet-plus", "tablet-x",
-          "laptop", "tablet-smartphone", "laptop-smartphone"
-        ]
-      },
-      {
-        "title": "Finance",
-        "text": "Two banknotes carry a check, minus, plus and x.",
-        "names": [
-          "banknote", "banknote-check", "banknote-minus", "banknote-plus", "banknote-x",
-          "banknote-2", "banknote-2-check", "banknote-2-minus", "banknote-2-plus", "banknote-2-x"
-        ]
-      },
-      {
-        "title": "Time",
-        "text": "The alarm clock takes a check, plus and minus, beside a stopwatch and its reset.",
-        "names": ["alarm-clock", "alarm-clock-check", "alarm-clock-plus", "alarm-clock-minus", "timer", "timer-reset"]
-      },
-      {
-        "title": "Transport",
-        "text": "A rocket climbs on its flame, trails speed lines and stands upright.",
-        "names": ["rocket", "rocket-2", "rocket-vertical"]
-      },
-      {
-        "title": "Pointers",
-        "text": "A closed hand and an open hand join the pointer.",
-        "names": ["hand-closed", "hand-open"]
-      },
-      {
-        "title": "Arrows",
-        "text": "The big arrows point four ways.",
-        "names": ["arrow-big-up", "arrow-big-down", "arrow-big-left", "arrow-big-right"]
-      },
-      {
-        "title": "Text",
-        "text": "The heading comes with its six levels.",
-        "names": ["heading", "heading-1", "heading-2", "heading-3", "heading-4", "heading-5", "heading-6"]
-      },
-      {
-        "title": "Weather",
-        "text": "A snowflake and wind.",
-        "names": ["snowflake", "wind"]
-      },
-      {
-        "title": "Files",
-        "text": "A zipped folder.",
-        "names": ["folder-zip"]
-      },
-      {
-        "title": "Redrawn",
-        "text": "Drawings that already shipped and were drawn again, each shown before and after.",
-        "sections": [
-          {
-            "title": "Layout",
-            "text": "The four dashed close panels sit their grey under the frame's round corners, and the grid fills keep 2 units clear of their edges.",
-            "redraws": [
-              "panel-left-close-dashed", "panel-right-close-dashed", "panel-top-close-dashed", "panel-bottom-close-dashed",
-              "grid-2x2", "grid-2x3", "grid-3x2", "grid-3x3"
-            ]
-          },
-          {
-            "title": "Devices",
-            "text": "In two-tone scan-eye greys its frame, and scan-search's handle starts on its ring.",
-            "redraws": ["scan-eye", "scan-search"]
-          },
-          {
-            "title": "Finance",
-            "text": "The coins sit on rounder faces with 2 units between every coin.",
-            "redraws": ["coins"]
-          },
-          {
-            "title": "Pointers",
-            "text": "The pointer is drawn again in all four directions.",
-            "redraws": ["hand-pointer", "hand-pointer-down", "hand-pointer-left", "hand-pointer-right"]
-          },
-          {
-            "title": "Files",
-            "text": "The file fills cut their folded corner clear of the edge.",
-            "redraws": [
-              "file", "file-arrow-down", "file-arrow-left", "file-arrow-right", "file-arrow-up",
-              "file-check", "file-code", "file-image", "file-minus", "file-off", "file-plus",
-              "file-spreadsheet", "file-text", "file-x", "file-zip"
-            ]
-          },
-          {
-            "title": "Charts",
-            "text": "In two-tone the charts grey their axes and keep the data in black.",
-            "redraws": [
-              "chart-area", "chart-bar-big", "chart-bar-stacked", "chart-candlestick",
-              "chart-column-big", "chart-column-stacked", "chart-network", "chart-scatter-bubble"
-            ]
-          },
-          {
-            "title": "Media",
-            "text": "The gallery frames take a tighter radius, and play is smaller.",
-            "redraws": [
-              "gallery-horizontal", "gallery-horizontal-end", "gallery-horizontal-start",
-              "gallery-vertical", "gallery-vertical-end", "gallery-vertical-start", "play"
-            ]
-          },
-          {
-            "title": "Actions",
-            "text": "The three dots are larger.",
-            "redraws": ["more-horizontal", "more-vertical"]
-          },
-          {
-            "title": "Shapes",
-            "text": "In two-tone circle-progress-play greys the part still to play.",
-            "redraws": ["circle-progress-play"]
-          },
-          {
-            "title": "Web",
-            "text": "In two-tone globe-off greys its far side.",
-            "redraws": ["globe-off"]
-          }
-        ]
-      }
-    ]
+    "1.0.0": {
+      "title": "Four styles, a People shelf and the panels on every side",
+      "sections": [
+        {
+          "title": "Four styles",
+          "icon": "shapes",
+          "text": "Every name now comes in stroke, two-tone, duotone and fill: {files} SVGs across {names} names. The outlined duotone is called two-tone from this release, so an import of duotone that wants the old look changes to two-tone. Duotone is a new style with no outline, a grey body with the part that matters in black, drawn icon by icon."
+        },
+        {
+          "title": "New drawings",
+          "icon": "sparkles",
+          "sections": [
+            {
+              "title": "People",
+              "text": "A new shelf for the boy, the girl, a baby with a curl, one with a bow, and both babies again with a pacifier.",
+              "names": [
+                "boy",
+                "girl",
+                "baby-boy",
+                "baby-girl",
+                "baby-2-boy",
+                "baby-2-girl"
+              ]
+            },
+            {
+              "title": "Layout",
+              "text": "The panels gain their close, open and dashed forms on every side, three split layouts and a table.",
+              "names": [
+                "panel-left-open",
+                "panel-left-close",
+                "panel-left-dashed",
+                "panel-left-open-dashed",
+                "panel-right-open",
+                "panel-right-close",
+                "panel-right-dashed",
+                "panel-right-open-dashed",
+                "panel-top-open",
+                "panel-top-close",
+                "panel-top-dashed",
+                "panel-top-open-dashed",
+                "panel-bottom-open",
+                "panel-bottom-close",
+                "panel-bottom-dashed",
+                "panel-bottom-open-dashed",
+                "panels-left-bottom",
+                "panels-right-bottom",
+                "panels-top-left",
+                "table"
+              ]
+            },
+            {
+              "title": "Devices",
+              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone.",
+              "names": [
+                "phone-call",
+                "phone-incoming",
+                "phone-outgoing",
+                "phone-missed",
+                "phone-forwarded",
+                "tablet",
+                "tablet-vertical",
+                "tablet-arrow-down",
+                "tablet-arrow-left",
+                "tablet-arrow-in-up",
+                "tablet-arrow-in-right",
+                "tablet-check",
+                "tablet-minus",
+                "tablet-plus",
+                "tablet-x",
+                "laptop",
+                "tablet-smartphone",
+                "laptop-smartphone"
+              ]
+            },
+            {
+              "title": "Finance",
+              "text": "Two banknotes carry a check, minus, plus and x.",
+              "names": [
+                "banknote",
+                "banknote-check",
+                "banknote-minus",
+                "banknote-plus",
+                "banknote-x",
+                "banknote-2",
+                "banknote-2-check",
+                "banknote-2-minus",
+                "banknote-2-plus",
+                "banknote-2-x"
+              ]
+            },
+            {
+              "title": "Time",
+              "text": "The alarm clock takes a check, plus and minus, beside a stopwatch and its reset.",
+              "names": [
+                "alarm-clock",
+                "alarm-clock-check",
+                "alarm-clock-plus",
+                "alarm-clock-minus",
+                "timer",
+                "timer-reset"
+              ]
+            },
+            {
+              "title": "Transport",
+              "text": "A rocket climbs on its flame, trails speed lines and stands upright.",
+              "names": [
+                "rocket",
+                "rocket-2",
+                "rocket-vertical"
+              ]
+            },
+            {
+              "title": "Pointers",
+              "text": "A closed hand and an open hand join the pointer.",
+              "names": [
+                "hand-closed",
+                "hand-open"
+              ]
+            },
+            {
+              "title": "Arrows",
+              "text": "The big arrows point four ways.",
+              "names": [
+                "arrow-big-up",
+                "arrow-big-down",
+                "arrow-big-left",
+                "arrow-big-right"
+              ]
+            },
+            {
+              "title": "Text",
+              "text": "The heading comes with its six levels.",
+              "names": [
+                "heading",
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6"
+              ]
+            },
+            {
+              "title": "Weather",
+              "text": "A snowflake and wind.",
+              "names": [
+                "snowflake",
+                "wind"
+              ]
+            },
+            {
+              "title": "Files",
+              "text": "A zipped folder.",
+              "names": [
+                "folder-zip"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Redrawn",
+          "icon": "pen",
+          "text": "Drawings that already shipped and were drawn again, each shown before and after.",
+          "sections": [
+            {
+              "title": "Layout",
+              "text": "The four dashed close panels sit their grey under the frame's round corners, and the grid fills keep 2 units clear of their edges.",
+              "redraws": [
+                "panel-left-close-dashed",
+                "panel-right-close-dashed",
+                "panel-top-close-dashed",
+                "panel-bottom-close-dashed",
+                "grid-2x2",
+                "grid-2x3",
+                "grid-3x2",
+                "grid-3x3"
+              ]
+            },
+            {
+              "title": "Devices",
+              "text": "In two-tone scan-eye greys its frame, and scan-search's handle starts on its ring.",
+              "redraws": [
+                "scan-eye",
+                "scan-search"
+              ]
+            },
+            {
+              "title": "Finance",
+              "text": "The coins sit on rounder faces with 2 units between every coin.",
+              "redraws": [
+                "coins"
+              ]
+            },
+            {
+              "title": "Pointers",
+              "text": "The pointer is drawn again in all four directions.",
+              "redraws": [
+                "hand-pointer",
+                "hand-pointer-down",
+                "hand-pointer-left",
+                "hand-pointer-right"
+              ]
+            },
+            {
+              "title": "Files",
+              "text": "The file fills cut their folded corner clear of the edge.",
+              "redraws": [
+                "file",
+                "file-arrow-down",
+                "file-arrow-left",
+                "file-arrow-right",
+                "file-arrow-up",
+                "file-check",
+                "file-code",
+                "file-image",
+                "file-minus",
+                "file-off",
+                "file-plus",
+                "file-spreadsheet",
+                "file-text",
+                "file-x",
+                "file-zip"
+              ]
+            },
+            {
+              "title": "Charts",
+              "text": "In two-tone the charts grey their axes and keep the data in black.",
+              "redraws": [
+                "chart-area",
+                "chart-bar-big",
+                "chart-bar-stacked",
+                "chart-candlestick",
+                "chart-column-big",
+                "chart-column-stacked",
+                "chart-network",
+                "chart-scatter-bubble"
+              ]
+            },
+            {
+              "title": "Media",
+              "text": "The gallery frames take a tighter radius, and play is smaller.",
+              "redraws": [
+                "gallery-horizontal",
+                "gallery-horizontal-end",
+                "gallery-horizontal-start",
+                "gallery-vertical",
+                "gallery-vertical-end",
+                "gallery-vertical-start",
+                "play"
+              ]
+            },
+            {
+              "title": "Actions",
+              "text": "The three dots are larger.",
+              "redraws": [
+                "more-horizontal",
+                "more-vertical"
+              ]
+            },
+            {
+              "title": "Shapes",
+              "text": "In two-tone circle-progress-play greys the part still to play.",
+              "redraws": [
+                "circle-progress-play"
+              ]
+            },
+            {
+              "title": "Web",
+              "text": "In two-tone globe-off greys its far side.",
+              "redraws": [
+                "globe-off"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "0.9.0": {
+      "title": "Transport, Nature, Animals, AI, Science and Health"
+    },
+    "0.8.0": {
+      "title": "A month of empty searches, drawn"
+    },
+    "0.7.0": {
+      "title": "Charts, diagrams, faces and square messages"
+    },
+    "0.6.0": {
+      "title": "Currency marks with circled halves"
+    },
+    "0.5.0": {
+      "title": "The chains renamed and a Text shelf"
+    },
+    "0.4.0": {
+      "title": "Every sharp end cut back"
+    },
+    "0.3.0": {
+      "title": "Sharp corners across the whole set"
+    },
+    "0.2.0": {
+      "title": "Shields, tools, grids and percent tags"
+    },
+    "0.1.4": {
+      "title": "No drawing changes"
+    },
+    "0.1.3": {
+      "title": "Queue and repeat-1 redrawn"
+    },
+    "0.1.2": {
+      "title": "Media controls and gallery layouts"
+    },
+    "0.1.1": {
+      "title": "Batteries, podiums and grids"
+    },
+    "0.1.0": {
+      "title": "The first cut of the set"
+    }
   }
 }
