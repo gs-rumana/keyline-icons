@@ -20,6 +20,7 @@ export type Format = (typeof FORMATS)[number]["value"]
 /** The published packages, named once. */
 export const REACT_PACKAGE = "@keyline-icons/react"
 export const CLI_PACKAGE = "@keyline-icons/cli"
+export const MCP_PACKAGE = "@keyline-icons/mcp"
 
 /**
  * The set on Iconify, and the two entry points that read it.

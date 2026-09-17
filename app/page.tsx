@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
-import { GitHubLogo } from "@/components/brand-logos"
+import { GitHubLogo, NpmLogo } from "@/components/brand-logos"
 import { ArrowRight } from "@/components/icons"
 import { Glyph } from "@/components/glyph"
 import { HomeSearch } from "@/components/home-search"
@@ -30,6 +30,7 @@ import {
   pickStyleSampleIcons,
 } from "@/lib/home"
 import { pickMobileIcons } from "@/lib/mobile-demo"
+import { npmDownloads } from "@/lib/npm"
 import { artOf } from "@/components/glyph"
 import { CORNERS, loadIcons, STYLES, type Icon } from "@/lib/icons"
 import { searchSuggestions } from "@/lib/search-suggestions"
@@ -43,6 +44,7 @@ import {
 import {
   SET_LICENSE,
   SET_LICENSE_NAME,
+  SET_NPM_URL,
   SET_SPONSOR_URL,
   SITE_LINKS,
 } from "@/lib/site-chrome"
@@ -178,7 +180,7 @@ function SectionHead({
 */
 
 export default async function Page() {
-  const icons = await loadIcons()
+  const [icons, npm] = await Promise.all([loadIcons(), npmDownloads()])
 
   const total = icons.length
   /*
@@ -397,6 +399,38 @@ export default async function Page() {
                 suggestions={searchSuggestions(icons)}
                 className="mx-auto mt-8 max-w-xl"
               />
+
+              {/*
+                The npm count, straight under the search field, where it is
+                still inside the first screen. The only figure on the page that
+                is not read off disk, so it renders only when npm answered: see
+                `npmDownloads`.
+
+                A link out rather than a statement, because a download count
+                is a claim a reader may want to check, and the scope's page is
+                where it can be checked. The weekly half drops below `sm`, where
+                the whole sentence would wrap the badge onto two lines.
+              */}
+              {npm && (
+                <a
+                  href={SET_NPM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-muted py-1 pr-3 pl-2.5 text-sm text-muted-foreground transition-colors outline-none hover:bg-muted-hover focus-visible:ring-3 focus-visible:ring-ring/50"
+                >
+                  <NpmLogo className="size-4" />
+                  <span>
+                    <span className="font-medium text-foreground">
+                      {npm.total.toLocaleString("en-US")} downloads
+                    </span>{" "}
+                    on npm
+                    <span className="hidden sm:inline">
+                      , {npm.lastWeek.toLocaleString("en-US")} in the last week
+                    </span>
+                  </span>
+                  <span className="sr-only">{" (opens in a new tab)"}</span>
+                </a>
+              )}
 
               {/*
                 This pair is where the site's prefetching now lives, and the

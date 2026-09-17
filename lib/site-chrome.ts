@@ -128,6 +128,9 @@ export const SET_REPO_SLUG = "keyline-icons/keyline-icons"
 
 export const SET_REPO_URL = `https://github.com/${SET_REPO_SLUG}`
 
+/** The npm scope's page, which lists the React, CLI and MCP packages together. */
+export const SET_NPM_URL = "https://www.npmjs.com/org/keyline-icons"
+
 /**
  * The repo's issue tracker, which is the whole of the site's contact address.
  *
