@@ -354,70 +354,13 @@ set('sticky-note-off', [1, 1, 23, 23], (sharp) => {
 
 /* ----------------------------------------------------------- scroll-text */
 
-set('scroll-text', [1, 1, 23, 23], (sharp) => {
-  // the roll top left about (4,4), the sheet 6..20 under it, the bottom rolled
-  // up at the left about (8,20) with its tab running out to 22 on the right;
-  // flipped from the first cut and widened on his word
-  const box = [1, 1, 23, 23];
-  // the tab's end answers the roll turned half round: the roll's outer corner
-  // is its r=2 arc and its inner one r=1, so the tab's bottom-right is r=2 and
-  // its top-right r=1
-  const r1 = sharp ? 0 : 1, r2 = sharp ? 0 : 2;
-  const body = new Path().M([10, 18]).corner([22, 18], [22, 22], r1).corner([22, 22], [8, 22], r2).L([8, 22])
-    .A([8, 20], 90, 180, 1).L([6, 4]).A([4, 4], 0, 180, -1).corner([2, 7], [6, 7], r1).L([6, 7]);
-  const edge = run([[4, 2], [20, 2], [20, 18]], [0, 3, 0], { sharp });
-  const curl = new Path().M([10, 18]).L([10, 20]).A([8, 20], 0, 90, 1);
-  const text = run([[10, 9], [16, 9]], [], { sharp, free: [true, true], box }).d + run([[10, 13], [14, 13]], [], { sharp, free: [true, true], box }).d;
-  const sheet = body.d + edge.d + curl.d;
-  // two-tone keeps the plate it gained on 17 Sep 2026; duotone and fill are
-  // back to their first versions on his word the same day
-  const sil = polyContour(
-    [[2, 2], [20, 2], [20, 18], [22, 18], [22, 22], [6, 22], [6, 7], [2, 7]],
-    sharp ? [2, 0, 0, 0, 0, 2, 0, 0] : [2, 3, 0, 1, 2, 2, 0, 1],
-  );
-  return {
-    stroke: [S(sheet + text)],
-    'two-tone': [PL(plate(sil.segs)), S(sheet + text)],
-    duotone: [M(sheet), S(text)],
-    fill: [S(sheet + text)],
-  };
-});
+// dropped on his word, 17 Sep 2026; the block is kept in session 4b774f10's
+// scratchpad `grad/dropped/scroll-text/build-block.mjs`
 
 /* ------------------------------------------------------------- newspaper */
 
-set('newspaper', [1, 1, 23, 23], (sharp) => {
-  // his drawing (refs/newspaper.svg, 17 Sep 2026), fitted: the page's left edge
-  // runs down to 19 and turns LEFT on an r=3 arc about (4,19) until it meets the
-  // roll's own r=3 corner about (5,19), where the two circles cross at x = 4.5;
-  // an outlined picture across the text width and two lines under it
-  const box = [1, 1, 23, 23];
-  const sil = closed([[22, 2], [22, 22], [2, 22], [2, 9], [7, 9], [7, 2]], [3, 3, 3, 1, 0, 3], sharp);
-  const meet = [4.5, 19 + Math.sqrt(9 - 0.25)];
-  const turn = (Math.atan2(meet[1] - 19, meet[0] - 4) * 180) / Math.PI;
-  const divider = sharp ? run([[7, 9], [7, 22]]) : new Path().M([7, 9]).L([7, 19]).A([4, 19], 0, turn, 1);
-  const pic = closed([[11, 6], [18, 6], [18, 10], [11, 10]], [1, 1, 1, 1], sharp);
-  const l1 = run([[11, 14], [18, 14]], [], { sharp, free: [true, true], box });
-  const l2 = run([[11, 18], [15, 18]], [], { sharp, free: [true, true], box });
-  const pl = plate(sil.segs);
-  // fill: the divider's ink below the roll's top rule and inside the outline's
-  // inner edge; round, that is its band turning left until it runs into the
-  // corner's inner edge (the two r=2 edges cross at x = 4.5)
-  const inner = [4.5, 19 + Math.sqrt(4 - 0.25)];
-  const band = sharp
-    ? rect(6, 10, 8, 21)
-    : new Path().M([8, 10]).L([8, 19]).A([4, 19], 0, 30, 1).L([5, 21])
-      .A([5, 19], 90, (Math.atan2(inner[1] - 19, inner[0] - 5) * 180) / Math.PI, 1)
-      .A([4, 19], (Math.atan2(inner[1] - 19, inner[0] - 4) * 180) / Math.PI, 0, -1).L([6, 10]).Z().d;
-  const ring = plate(pic.segs) + contourPath(offsetContour(pic.segs.map((q) => ({ ...q })), -1));
-  const art = sil.d + divider.d + pic.d + l1.d + l2.d;
-  return {
-    stroke: [S(art)],
-    'two-tone': [PL(pl), S(art)],
-    // anchored to the plate's bottom edge: sharp's butt end is carried onto it
-    duotone: [PL(pl), S((sharp ? run([[7, 9], [7, 23]]).d : divider.d) + pic.d + l1.d + l2.d)],
-    fill: [SO(pl + band + ring + capsule(l1.segs, sharp) + capsule(l2.segs, sharp))],
-  };
-});
+// dropped on his word, 17 Sep 2026; the block is kept in session 4b774f10's
+// scratchpad `grad/dropped/newspaper/build-block.mjs`
 
 /* ----------------------------------------------------------- folder-tree */
 
@@ -675,12 +618,18 @@ set('wallet-cards', [1, 3, 23, 21], (sharp) => {
   const edge = run([[2, 8], [22, 8]]);
   const pk = pocket(2, 22);
   const pl = plate(body.segs);
-  const inset = sharp ? run([[3, 8], [21, 8]]).d + pocket(3, 21).d : run([[4, 8], [20, 8]]).d + pocket(4, 20).d;
+  const mouth = sharp
+    ? new Path().M([3, 8]).L([21, 8]).L([21, 12]).L([10, 12]).L([10, 13]).A([8, 13], 0, 180, 1).L([6, 12]).L([3, 12]).Z().d
+    : new Path().M([3, 8]).L([21, 8]).L([21, 12]).L([11, 12]).A([11, 13], 270, 180, -1).A([8, 13], 0, 180, 1).A([5, 13], 0, -90, -1).L([3, 12]).Z().d;
   return {
     stroke: [S(body.d + edge.d + pk.d)],
     'two-tone': [PL(pl), S(body.d + edge.d + pk.d)],
-    duotone: [PL(pl), S(inset)],
-    fill: [SO(pl + rect(3, 7, 21, 9) + capsule(pocket(3, 21).segs, true))],
+    // HIS duotone and fill (17 Sep 2026, drawn in Figma): the cards' mouth, the
+    // region between the card edge (8) and the pocket line (12, its notch
+    // included) inside the body's inner edges (3..21), is cut out of the black
+    // body; grey under it in duotone, open in fill
+    duotone: [PL(mouth), SO(pl + mouth)],
+    fill: [SO(pl + mouth)],
   };
 });
 

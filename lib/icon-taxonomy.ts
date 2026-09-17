@@ -118,7 +118,7 @@ export const CATEGORIES = [
     match:
       /^(badge-)?(dollar-sign|euro|pound-sterling|japanese-yen|indian-rupee|swiss-franc|bitcoin|credit-card|wallet|coins|piggy-bank|banknote)/,
     blurb:
-      "The currency marks, the banknotes, the payment cards, the wallet and the money box.",
+      "The currency marks, the banknotes, the payment cards, the wallets and the money box.",
   },
   {
     // `percent` is here rather than with the marks in Actions: the batch that
@@ -423,8 +423,8 @@ export const CATEGORIES = [
     // 15 Sep 2026 with its speed-line and upright forms: it is a vehicle before it
     // is a launch.
     label: "Transport",
-    match: /^(plane|ship|train|bike|rocket)(-|$)/,
-    blurb: "The vehicles: plane and its two states, ship, train, bike and the rocket.",
+    match: /^(plane|ship|train|bike|rocket|car)(-|$)/,
+    blurb: "The vehicles: plane and its two states, ship, train, bike, car and the rocket.",
   },
   {
     // The living and falling half of the outdoors, and `wind-turbine` with it:

@@ -1526,6 +1526,15 @@ export function Captions(props: IconProps) {
   )
 }
 
+export function Car(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M1 16L1 13.6491C1 13.1117 1.0866 12.5778 1.2566 12.068L3.2621 6.0513C3.6705 4.8263 4.8169 4 6.1082 4L12.0975 4C12.9582 4 13.7775 4.3697 14.347 5.0151L18.5717 9.8031L20.9487 10.5955C22.1737 11.0038 23 12.1502 23 13.4415L23 16C23 17.1046 22.1046 18 21 18L3 18C1.8954 18 1 17.1046 1 16Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M8 17C8 18.1046 7.1046 19 6 19C4.8954 19 4 18.1046 4 17C4 15.8954 4.8954 15 6 15C7.1046 15 8 15.8954 8 17ZM19 17C19 18.1046 18.1046 19 17 19C15.8954 19 15 18.1046 15 17C15 15.8954 15.8954 15 17 15C18.1046 15 19 15.8954 19 17Z" />
+    </Icon>
+  )
+}
+
 export function CaretDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -3810,7 +3819,7 @@ export function Filter(props: IconProps) {
 export function FingerprintPattern(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M4.9079 5.459C6.6135 3.2759 9.2296 2 12 2C16.9706 2 21 6.0294 21 11C21 13.0205 20.7645 15.0341 20.2982 17M3 11C3 10.581 3.0293 10.1624 3.0876 9.7474" strokeOpacity={0.4} />
+      <path d="M4.9079 5.459C6.6135 3.2759 9.2296 2 12 2M16 2.9377C18.7417 4.298 20.6042 6.9584 20.9443 10M20.8263 14C20.7091 15.0095 20.5327 16.0112 20.2982 17M3 11C3 10.581 3.0293 10.1624 3.0876 9.7474" strokeOpacity={0.4} />
       <path d="M3.9443 19C5.9121 16.7999 7 13.9517 7 11C7 8.2386 9.2386 6 12 6C12.5833 6 13.162 6.1021 13.7101 6.3015M16.6359 9.127C16.8764 9.7222 17 10.3581 17 11C17 11.6677 16.9696 12.3351 16.9089 13M16.166 17C15.6706 18.7475 14.9607 20.427 14.0526 22M12 11C12 15.0294 10.5687 18.9278 7.9615 22" />
     </Icon>
   )
@@ -8916,6 +8925,15 @@ export function Volume(props: IconProps) {
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M1 10C1 8.895431 1.895431 8 3 8L5.477658 8L8.3585 3.861189C9.477163 2.254043 12 3.045621 12 5.003765L12 18.996235C12 20.954379 9.477163 21.745957 8.3585 20.138811L5.477658 16L3 16C1.895431 16 1 15.104569 1 14Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
       <path d="M15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909M18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 15.0279 20.7519 17.9218 18.5498 20" />
+    </Icon>
+  )
+}
+
+export function WalletCards(props: IconProps) {
+  return (
+    <Icon fill="none" {...props}>
+      <path d="M3 8L21 8L21 12L11 12C10.4477 12 10 12.4477 10 13C10 14.1046 9.1046 15 8 15C6.8954 15 6 14.1046 6 13C6 12.4477 5.5523 12 5 12L3 12Z" fill="currentColor" fillOpacity={0.4} />
+      <path d="M5 3L19 3C21.2091 3 23 4.7909 23 7L23 17C23 19.2091 21.2091 21 19 21L5 21C2.7909 21 1 19.2091 1 17L1 7C1 4.7909 2.7909 3 5 3ZM3 8L3 12L5 12C5.5523 12 6 12.4477 6 13C6 14.1046 6.8954 15 8 15C9.1046 15 10 14.1046 10 13C10 12.4477 10.4477 12 11 12L21 12L21 8L3 8Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd" />
     </Icon>
   )
 }

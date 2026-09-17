@@ -94,7 +94,7 @@
             },
             {
               "title": "Finance",
-              "text": "Two banknotes carry a check, minus, plus and x.",
+              "text": "Two banknotes carry a check, minus, plus and x, and a wallet holds its cards.",
               "names": [
                 "banknote",
                 "banknote-check",
@@ -105,7 +105,8 @@
                 "banknote-2-check",
                 "banknote-2-minus",
                 "banknote-2-plus",
-                "banknote-2-x"
+                "banknote-2-x",
+                "wallet-cards"
               ]
             },
             {
@@ -122,11 +123,12 @@
             },
             {
               "title": "Transport",
-              "text": "A rocket climbs on its flame, trails speed lines and stands upright.",
+              "text": "A rocket climbs on its flame, trails speed lines and stands upright, and a car drives past in profile.",
               "names": [
                 "rocket",
                 "rocket-2",
-                "rocket-vertical"
+                "rocket-vertical",
+                "car"
               ]
             },
             {

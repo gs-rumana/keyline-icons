@@ -14,9 +14,9 @@
     "The drawings to rename are the createdNodes with component === 'SVG'. Do not match on the name or on /svg/i — the nested paths come back as SVGVisualElement and a loose filter catches those too, which is 18 candidates on the catalogue sheet where there are 7 drawings.",
     "rename_nodes takes updates: [{ nodeId, name }] — nodeId singular here, unlike update_styles, which takes nodeIds as an array. The two are inconsistent and each rejects the other's shape."
   ],
-  "icons": 881,
-  "names": 998,
-  "variants": 7984,
+  "icons": 883,
+  "names": 1000,
+  "variants": 8000,
   "sheets": [
     {
       "file": "actions-1.html",
@@ -962,9 +962,9 @@
       "parts": 6,
       "into": "artboard",
       "width": 742,
-      "icons": 27,
+      "icons": 28,
       "variants": 40,
-      "bytes": 40938
+      "bytes": 40939
     },
     {
       "file": "finance-2.html",
@@ -1023,8 +1023,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 24,
-      "bytes": 14840
+      "variants": 32,
+      "bytes": 20390
     },
     {
       "file": "food-drink-1.html",
@@ -1970,9 +1970,9 @@
       "parts": 3,
       "into": "artboard",
       "width": 742,
-      "icons": 9,
+      "icons": 10,
       "variants": 32,
-      "bytes": 40730
+      "bytes": 39428
     },
     {
       "file": "transport-2.html",
@@ -1984,7 +1984,7 @@
       "width": 742,
       "icons": 0,
       "variants": 24,
-      "bytes": 33808
+      "bytes": 33381
     },
     {
       "file": "transport-3.html",
@@ -1995,8 +1995,8 @@
       "into": "rows",
       "width": 742,
       "icons": 0,
-      "variants": 16,
-      "bytes": 18286
+      "variants": 24,
+      "bytes": 28755
     },
     {
       "file": "users-1.html",
@@ -2008,7 +2008,7 @@
       "width": 742,
       "icons": 13,
       "variants": 48,
-      "bytes": 42703
+      "bytes": 43231
     },
     {
       "file": "users-2.html",
@@ -2222,7 +2222,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 18,
-      "bytes": 16578
+      "bytes": 16579
     },
     {
       "file": "changelog.html",
@@ -2232,7 +2232,7 @@
       "parts": 1,
       "icons": 0,
       "variants": 0,
-      "bytes": 358071
+      "bytes": 360558
     }
   ]
 }

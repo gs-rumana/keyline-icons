@@ -1385,6 +1385,14 @@ export function Captions(props: IconProps) {
   )
 }
 
+export function Car(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M4 17L2 17L2 13L4.6667 5L13 5L18 10.6667L22 12L22 17L19 17M8 17L15 17M3 10L16 10L18 10.6667M9 5L9 10M8 17C8 18.1046 7.1046 19 6 19C4.8954 19 4 18.1046 4 17C4 15.8954 4.8954 15 6 15C7.1046 15 8 15.8954 8 17ZM19 17C19 18.1046 18.1046 19 17 19C15.8954 19 15 18.1046 15 17C15 15.8954 15.8954 15 17 15C18.1046 15 19 15.8954 19 17Z" />
+    </Icon>
+  )
+}
+
 export function CaretDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
@@ -3493,7 +3501,7 @@ export function Filter(props: IconProps) {
 export function FingerprintPattern(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M4.2922 6.2471L4.9079 5.459C6.6135 3.2759 9.2296 2 12 2C16.9706 2 21 6.0294 21 11C21 13.0205 20.7645 15.0341 20.2982 17L20.0675 17.973M3 11.0002L3 11C3 10.581 3.0293 10.1624 3.0876 9.7474L3.2268 8.7572M3.2776 19.7454L3.9443 19C5.9121 16.7999 7 13.9517 7 11C7 8.2386 9.2386 6 12 6C12.5833 6 13.162 6.1021 13.7101 6.3015L14.6498 6.6436M16.2613 8.1998L16.6359 9.127C16.8764 9.7222 17 10.3581 17 11C17 11.6677 16.9696 12.3351 16.9089 13L16.818 13.9959M16.4387 16.0379L16.166 17C15.6706 18.7475 14.9607 20.427 14.0526 22L13.7639 22.5M12 10L12 11C12 15.0294 10.5687 18.9278 7.9615 22L7.662 22.3529" />
+      <path d="M4.2922 6.2471L4.9079 5.459C6.6135 3.2759 9.2296 2 12 2L13 2M15.1042 2.4933L16 2.9377C18.7417 4.298 20.6042 6.9584 20.9443 10L21.0062 10.5538M20.9417 13.0067L20.8263 14C20.7091 15.0095 20.5327 16.0112 20.2982 17L20.0675 17.973M3 11.0002L3 11C3 10.581 3.0293 10.1624 3.0876 9.7474L3.2268 8.7572M3.2776 19.7454L3.9443 19C5.9121 16.7999 7 13.9517 7 11C7 8.2386 9.2386 6 12 6C12.5833 6 13.162 6.1021 13.7101 6.3015L14.6498 6.6436M16.2613 8.1998L16.6359 9.127C16.8764 9.7222 17 10.3581 17 11C17 11.6677 16.9696 12.3351 16.9089 13L16.818 13.9959M16.4387 16.0379L16.166 17C15.6706 18.7475 14.9607 20.427 14.0526 22L13.7639 22.5M12 10L12 11C12 15.0294 10.5687 18.9278 7.9615 22L7.662 22.3529" />
     </Icon>
   )
 }
@@ -8142,6 +8150,14 @@ export function Volume(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
       <path d="M2 9L6 9L11 4L11 20L6 15L2 15L2 9ZM15.0772 6.2227L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909L15.0772 17.7773M18.2608 3.7273L18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 15.0279 20.7519 17.9218 18.5498 20L18.2608 20.2727" />
+    </Icon>
+  )
+}
+
+export function WalletCards(props: IconProps) {
+  return (
+    <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
+      <path d="M2 4L22 4L22 20L2 20L2 4ZM2 8L22 8M2 12L6 12L6 13C6 14.1046 6.8954 15 8 15C9.1046 15 10 14.1046 10 13L10 12L22 12" />
     </Icon>
   )
 }
