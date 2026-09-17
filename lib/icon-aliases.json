@@ -2696,6 +2696,12 @@
     "arrow-up-right": [
       "circle-arrow-out-up-right",
       "square-arrow-out-up-right"
+    ],
+    "cast": [
+      "screen-share"
+    ],
+    "broadcast": [
+      "radio-tower"
     ]
   },
   "$names": "Names other sets use for a drawing here, keyed by the drawing. Matched against the whole query, never split into words: these are names, not keywords, and folding `message-square` into a keyword list makes a search for `square` return every message icon."

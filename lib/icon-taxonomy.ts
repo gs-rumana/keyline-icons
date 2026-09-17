@@ -169,18 +169,18 @@ export const CATEGORIES = [
     // wherever the two disagree — the same call the taxonomy makes for `wifi`.
     label: "Media",
     match:
-      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|earbuds|airpods|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue|film)/,
+      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|earbuds|airpods|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue|film|airplay$|video$|broadcast$)/,
     // `earbuds` and `airpods` beside `headphones`, 13 Sep 2026: what you listen
     // through files where listening does, not with the phone they pair to.
     blurb:
-      "Playback, volume, capture, casting, the sound and image marks and what you listen through.",
+      "Playback, volume, capture, casting and AirPlay, video and broadcast, the sound and image marks and what you listen through.",
   },
   // `activity` is a pulse trace, not a transport control — it reads against the
   // bar charts and the signal bars, which is where the design file files it too.
   {
     label: "Charts",
-    match: /^(bar-chart|bars-progress|chart-|trending|signal|progress|loader|activity)/,
-    blurb: "Trends, bar and column charts, a pyramid, a treemap, signal strength, progress and activity markers.",
+    match: /^(bar-chart|bars-progress|chart-|trending|signal|progress|loader|activity|gauge$)/,
+    blurb: "Trends, bar and column charts, a pyramid, a treemap, signal strength, progress and activity markers and a gauge.",
   },
   // Boxes on wires. A diagram says how things relate, where a chart says how
   // much, so the four of them are their own shelf rather than the tail of
@@ -208,8 +208,8 @@ export const CATEGORIES = [
     // IS, and it is a desk device, not money. `usb` is a prefix, so `usb-drive`
     // and anything else on that port lands beside it.
     label: "Devices",
-    match: /^(smartphone|phone|tablet|laptop|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$))/,
-    blurb: "Phones, tablets, laptops, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code and the scan frame with what it reads.",
+    match: /^(smartphone|phone|tablet|laptop|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$)|watch$|hard-drive$|vision-pro$|cable$)/,
+    blurb: "Phones, tablets, laptops, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code, the scan frame with what it reads, a watch, a hard drive, a cable and a headset visor.",
   },
   {
     label: "Pointers",
@@ -245,8 +245,8 @@ export const CATEGORIES = [
   },
   {
     label: "Users",
-    match: /^(user|scan-face)/,
-    blurb: "People, accounts and the signs that badge them.",
+    match: /^(user|scan-face|contacts$|id-card$|accessibility$)/,
+    blurb: "People, accounts, contacts, the ID card, the accessibility figure and the signs that badge them.",
   },
   // Opened 14 Sep 2026 with the six faces of 1.0.0. NOT Users: `user` is an
   // account, a silhouette standing for whoever signs in, and these are drawn
@@ -286,8 +286,8 @@ export const CATEGORIES = [
     // own. It stays here rather than moving: it is still the mark you set on a
     // thing, and there is no hand shelf for it to join.
     match:
-      /^(check|double-check|plus|minus|x|more|lock|unlock|key(?:-round|-square)?$|shield|badge|download|upload|filter|eye|star|heart|hand-heart|alert|octagon|triangle-alert|info|question|lightbulb|zap|flame|sparkle|ban)/,
-    blurb: "Checks, crosses, pluses, the everyday verbs and the marks that guard a thing.",
+      /^(check|double-check|plus|minus|x|more|lock|unlock|key(?:-round|-square)?$|shield|badge|download|upload|filter|eye|star|heart|hand-heart|alert|octagon|triangle-alert|info|question|lightbulb|zap|flame|sparkle|ban|siren$|delete$)/,
+    blurb: "Checks, crosses, pluses, the everyday verbs, the siren and the marks that guard a thing.",
   },
   {
     // Next to Actions rather than inside it: those are marks you read, a check
@@ -411,8 +411,8 @@ export const CATEGORIES = [
     // `wind$` is anchored because Nature, evaluated after this, owns
     // `wind-turbine`: the turbine is a thing that stands in a field, the gust
     // is the weather that turns it.
-    match: /^(sun|moon|cloud|umbrella|parasol|temperature|thermometer-|snowflake$|wind$)/,
-    blurb: "Sun, moon, cloud, snow, wind, the temperatures and the states between them.",
+    match: /^(sun|moon|cloud|umbrella|parasol|temperature|thermometer-|snowflake$|wind$|humidity$)/,
+    blurb: "Sun, moon, clouds, snow, wind, humidity, the temperatures and the states between them.",
   },
   // Three shelves opened 12 Sep 2026 with the fifteen of batch D, all of which
   // had been filing under Other. Nothing existing took them: Maps is the pin

@@ -53,7 +53,7 @@
             },
             {
               "title": "Devices",
-              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone.",
+              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone. A watch, a hard drive, a cable and a headset visor join them, and a phone casts.",
               "names": [
                 "phone-call",
                 "phone-incoming",
@@ -72,7 +72,12 @@
                 "tablet-x",
                 "laptop",
                 "tablet-smartphone",
-                "laptop-smartphone"
+                "laptop-smartphone",
+                "watch",
+                "hard-drive",
+                "cable",
+                "vision-pro",
+                "smartphone-cast"
               ]
             },
             {
@@ -122,12 +127,13 @@
             },
             {
               "title": "Arrows",
-              "text": "The big arrows point four ways.",
+              "text": "The big arrows point four ways, and a clockwise turn takes a plus.",
               "names": [
                 "arrow-big-up",
                 "arrow-big-down",
                 "arrow-big-left",
-                "arrow-big-right"
+                "arrow-big-right",
+                "rotate-cw-plus"
               ]
             },
             {
@@ -144,18 +150,89 @@
               ]
             },
             {
+              "title": "Mail",
+              "text": "The round and the square bubble take a sparkle, and send takes a clock.",
+              "names": [
+                "message-sparkle",
+                "message-square-sparkle",
+                "send-clock"
+              ]
+            },
+            {
+              "title": "Media",
+              "text": "A screen takes AirPlay, a film camera rolls its reels, a mast broadcasts, and sound gets a search.",
+              "names": [
+                "airplay",
+                "video",
+                "broadcast",
+                "audio-lines-search"
+              ]
+            },
+            {
+              "title": "Users",
+              "text": "A person speaks, contacts and an ID card carry a portrait, and the accessibility figure stands in its ring.",
+              "names": [
+                "user-voice",
+                "contacts",
+                "id-card",
+                "accessibility"
+              ]
+            },
+            {
+              "title": "Actions",
+              "text": "A shield takes a key, a siren sounds, and delete clears a character.",
+              "names": [
+                "shield-key",
+                "siren",
+                "delete"
+              ]
+            },
+            {
+              "title": "Controls",
+              "text": "Two switches, one on and one off.",
+              "names": [
+                "toggles"
+              ]
+            },
+            {
+              "title": "Charts",
+              "text": "A gauge reads its dial.",
+              "names": [
+                "gauge"
+              ]
+            },
+            {
+              "title": "Maps",
+              "text": "A map pin carries a heart.",
+              "names": [
+                "map-pin-heart"
+              ]
+            },
+            {
+              "title": "Commerce",
+              "text": "A shopping basket.",
+              "names": [
+                "shopping-basket"
+              ]
+            },
+            {
               "title": "Weather",
-              "text": "A snowflake and wind.",
+              "text": "A snowflake, wind and humidity, two clouds, and a cloud over the sun and over the moon.",
               "names": [
                 "snowflake",
-                "wind"
+                "wind",
+                "humidity",
+                "clouds",
+                "cloud-sun",
+                "cloud-moon"
               ]
             },
             {
               "title": "Files",
-              "text": "A zipped folder.",
+              "text": "A zipped folder, and a file takes a search.",
               "names": [
-                "folder-zip"
+                "folder-zip",
+                "file-search"
               ]
             }
           ]

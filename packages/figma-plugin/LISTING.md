@@ -67,14 +67,14 @@ Keyline Icons
 ## Tagline
 
 ```
-930 icons, four styles, rounded or sharp corners. Searchable in Figma and FigJam.
+959 icons, four styles, rounded or sharp corners. Searchable in Figma and FigJam.
 ```
 
 Capped at 100 characters. The line above is 81, so there is still room. A
 shorter alternative if it ever needs one:
 
 ```
-930 icons in four styles, cut rounded or sharp.
+959 icons in four styles, cut rounded or sharp.
 ```
 
 ## Description
@@ -88,20 +88,20 @@ which only ever shows the newest entry. Someone deciding whether to install
 wants to see the set is maintained, and that is what a history says.
 
 ```
-Search 930 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
+Search 959 icons and drop one on the canvas. No library to publish, no file to duplicate, no plan requirement.
 
 Four styles
 
-* Stroke: 930 icons, 2px, round caps and joins
-* Two-tone: 930 icons, a 40% plate under the line
-* Duotone: 930 icons, no outline, a grey body with the detail in black
-* Fill: 930 icons, solid where the glyph has a region to fill
+* Stroke: 959 icons, 2px, round caps and joins
+* Two-tone: 959 icons, a 40% plate under the line
+* Duotone: 959 icons, no outline, a grey body with the detail in black
+* Fill: 959 icons, solid where the glyph has a region to fill
 
-Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 7,440 SVGs in total.
+Two corner treatments, and every drawing has both. Rounded is the keyline the set was drawn on; sharp takes every corner to a true point and ends each stroke square. Coverage is identical, so switching never costs you a drawing. 7,672 SVGs in total.
 
 56 icons also come in a square- form and 61 in a circle- form, so a container is a search away rather than a second drawing.
 
-Search knows more than the file names. 813 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
+Search knows more than the file names. 842 icons carry curated words, so "south" finds arrow-down, "hamburger" finds menu and "trash" finds bin. Paste a component name straight out of your code and it resolves: CheckCircle2 finds circle-check.
 
 In a design file an insert arrives as a 24 × 24 frame, which is what makes a row of icons line up. In FigJam it arrives as a group, so FigJam's colour control reaches the drawing instead of painting a box around it. Double-click into one and every path takes its own colour, which is how a gift gets a red box and a yellow bow, and how duotone keeps both of its tones.
 
@@ -115,11 +115,14 @@ github.com/keyline-icons/keyline-icons
 Changelog
 
 1.0.0
-Four styles, with every name in all of them: two-tone is the outlined style that was called duotone, and duotone is new, a grey body with the part that matters in black and no outline. 79 new drawings, taking the set to 930 names and 7,440 SVGs, and a new shelf.
+Four styles, with every name in all of them: two-tone is the outlined style that was called duotone, and duotone is new, a grey body with the part that matters in black and no outline. 108 new drawings, taking the set to 959 names and 7,672 SVGs, and a new shelf.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
-* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone; a watch, a hard drive, a cable and a headset visor
+* Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
+* Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
+* Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
@@ -233,7 +236,7 @@ expectation for an icon set. `free icons` overlaps `open source`, and page four
 marks the plugin Free natively.
 
 That leaves the five that actually distinguish it: FigJam support is rare among
-icon plugins, 930 duotone drawings are rare among icon sets, a set that ships
+icon plugins, 959 duotone drawings are rare among icon sets, a set that ships
 every drawing rounded *and* sharp is rarer still, and the rest name the audience
 rather than the artefact.
 
@@ -267,12 +270,17 @@ Four styles now, with every name in all of them. Two-tone is the outlined style
 that was called duotone; duotone is new, a grey body with the part that matters
 in black and no outline.
 
-79 new drawings, taking the set to 930 names and 7,440 SVGs: a boy, a girl and
+108 new drawings, taking the set to 959 names and 7,672 SVGs: a boy, a girl and
 four babies, the panel open, closed and dashed on every side, the phone's
 calls, a tablet with eight signs, a laptop, two banknotes with their signs, a
 rocket three ways, the big arrows, the heading with its six levels, a stopwatch
 and an alarm clock with their signs, a snowflake, wind, a table, a zipped
-folder, and a hand closed and open.
+folder, a hand closed and open, a watch, a hard drive, a cable, a headset
+visor, AirPlay, a phone casting, a film camera, a broadcast mast, a search over
+sound, both message bubbles with a sparkle, send on a clock, a voice, contacts,
+an ID card, the accessibility figure, a shield with a key, a siren, delete, a
+gauge, two toggles, a map pin with a heart, a shopping basket, a file search, a
+turn with a plus, humidity and three kinds of cloud.
 
 People opened as a shelf with them, taking categories from 37 to 38.
 
@@ -589,13 +597,13 @@ Keyline Icons
 ### Description
 
 ```
-930 icons on a 24×24 grid, in four styles and two corner treatments: stroke, two-tone, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
+959 icons on a 24×24 grid, in four styles and two corner treatments: stroke, two-tone, duotone and fill, cut rounded or sharp. MIT licensed, free for commercial work, no attribution required.
 
-813 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the four styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
+842 component sets, each with three variant properties, Container, Style and Corners, so you switch between regular, square and circle, between the four styles, and between rounded and sharp, without swapping components. 56 icons carry a square- form and 61 a circle-.
 
-Every name comes in all four styles. Two-tone keeps the outline over a 40% plate, which is what duotone meant until 0.9.0; duotone now drops the outline and puts the part that matters in black. The four counts: stroke 930, two-tone 930, duotone 930, fill 930.
+Every name comes in all four styles. Two-tone keeps the outline over a 40% plate, which is what duotone meant until 0.9.0; duotone now drops the outline and puts the part that matters in black. The four counts: stroke 959, two-tone 959, duotone 959, fill 959.
 
-Every drawing exists in both treatments, so sharp is a switch rather than a second library: 7,440 variants over the same 930 names.
+Every drawing exists in both treatments, so sharp is a switch rather than a second library: 7,672 variants over the same 959 names.
 
 The Catalog page files every icon under one of 38 categories, each card laid out as a matrix so a name's rounded and sharp forms sit side by side, and the Changelog page records what landed in each version, so the file says what is in it without anyone having to count.
 
@@ -605,11 +613,14 @@ keylineicons.com
 github.com/keyline-icons/keyline-icons
 
 v1.0.0
-Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone and fill in both corners: the outlined style that was called duotone is Style=two-tone, and Style=duotone is a new drawing with no outline, a grey body with the part that matters in black. 79 new drawings. The set is 930 names now, 813 component sets and 7,440 variants, up from 851 and 4,394. The rename happened in place, so instances already placed in your files keep their link and their look.
+Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone and fill in both corners: the outlined style that was called duotone is Style=two-tone, and Style=duotone is a new drawing with no outline, a grey body with the part that matters in black. 108 new drawings. The set is 959 names now, 842 component sets and 7,672 variants, up from 851 and 4,394. The rename happened in place, so instances already placed in your files keep their link and their look.
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
-* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone; a watch, a hard drive, a cable and a headset visor
+* Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
+* Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
+* Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, and the heading with its six levels
