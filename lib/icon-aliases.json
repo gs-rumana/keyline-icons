@@ -2702,6 +2702,15 @@
     ],
     "broadcast": [
       "radio-tower"
+    ],
+    "hat-glasses": [
+      "incognito"
+    ],
+    "cctv": [
+      "security-camera"
+    ],
+    "app-window": [
+      "browser"
     ]
   },
   "$names": "Names other sets use for a drawing here, keyed by the drawing. Matched against the whole query, never split into words: these are names, not keywords, and folding `message-square` into a keyword list makes a search for `square` return every message icon."

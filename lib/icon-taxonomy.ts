@@ -131,9 +131,9 @@ export const CATEGORIES = [
     // and one name does not earn a row.
     label: "Commerce",
     match:
-      /^(shopping-|handbag|briefcase|receipt|tag|package|truck|gift|coupon|(badge-)?percent|store)/,
+      /^(shopping-|handbag|briefcase|receipt|tag|package|truck|gift|coupon|(badge-)?percent|store|shirt$|paper-bag$)/,
     blurb:
-      "Carts, bags, receipts, shipping, the shopfront, the tags and the discount marks.",
+      "Carts, bags, a paper bag, receipts, shipping, the shopfront, a shirt, the tags and the discount marks.",
   },
   {
     // `flag` and `traffic-light` are both road furniture: a marker you plant
@@ -141,8 +141,8 @@ export const CATEGORIES = [
     label: "Maps",
     // `radar` joined on 13 Sep 2026 with batch B: a sweep over rings is the
     // screen that finds where things are, and it sits beside the compass.
-    match: /^(map|compass|building|route|radar|flag$|traffic-light)/,
-    blurb: "Pins, maps, compasses, routes, the radar, flags and the lights at the junction.",
+    match: /^(map|compass|building|route|radar|flag$|traffic-light|milestone$)/,
+    blurb: "Pins, maps, compasses, routes, the radar, flags, a milestone and the lights at the junction.",
   },
   // Opened 11 Sep 2026 with the seven of batch C, the first time the set has
   // drawn the inside of a building rather than its outline. The `home` icon
@@ -169,11 +169,11 @@ export const CATEGORIES = [
     // wherever the two disagree — the same call the taxonomy makes for `wifi`.
     label: "Media",
     match:
-      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|earbuds|airpods|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue|film|airplay$|video$|broadcast$)/,
+      /^(play|pause|stop|record|skip-|fast-forward|rewind|repeat|replay|volume|audio-lines|mic|megaphone|headphones|headset|earbuds|airpods|shuffle|music-note|list-music|list-video|camera|image|cast|subtitles|captions|picture-in-picture|gallery-|podcast|queue|film|airplay$|video$|broadcast$|radio$)/,
     // `earbuds` and `airpods` beside `headphones`, 13 Sep 2026: what you listen
     // through files where listening does, not with the phone they pair to.
     blurb:
-      "Playback, volume, capture, casting and AirPlay, video and broadcast, the sound and image marks and what you listen through.",
+      "Playback, volume, capture, casting and AirPlay, video, broadcast and the radio, the sound and image marks and what you listen through.",
   },
   // `activity` is a pulse trace, not a transport control — it reads against the
   // bar charts and the signal bars, which is where the design file files it too.
@@ -208,8 +208,8 @@ export const CATEGORIES = [
     // IS, and it is a desk device, not money. `usb` is a prefix, so `usb-drive`
     // and anything else on that port lands beside it.
     label: "Devices",
-    match: /^(smartphone|phone|tablet|laptop|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$)|watch$|hard-drive$|vision-pro$|cable$)/,
-    blurb: "Phones, tablets, laptops, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code, the scan frame with what it reads, a watch, a hard drive, a cable and a headset visor.",
+    match: /^(smartphone|phone|tablet|laptop|monitor|terminal|database|server|battery|bluetooth|code|plug|bug|cpu|printer|keyboard|usb|calculator|qr-code|scan(?!-face)|app(?=-|$)|watch$|hard-drive$|vision-pro$|cable$|cctv(-off)?$|mouse(-scroll-(up|down))?$|shredder$)/,
+    blurb: "Phones, tablets, laptops, handsets, printers, keyboards, servers, databases, terminals, code, processors, bugs, the app tiles, the QR code, the scan frame with what it reads, a watch, a hard drive, a cable, a headset visor, the app windows, a CCTV camera, a mouse and a shredder.",
   },
   {
     label: "Pointers",
@@ -230,8 +230,8 @@ export const CATEGORIES = [
     // is letterforms first and internationalisation second.
     label: "Text",
     match:
-      /^(bold|italic|underline|strikethrough|heading|pilcrow|indent|letter-|line-height|text-|type$|quote|language|slash$|align-(?:left|center|right|justify)$)/,
-    blurb: "The quotation marks, the formatting marks, the slash, the alignment stack and what sets a paragraph.",
+      /^(bold|italic|underline|strikethrough|heading|pilcrow|indent|letter-|line-height|text-|type$|quote|language|slash$|align-(?:left|center|right|justify)$|case-(sensitive|upper)$|type-outline$|whole-word$)/,
+    blurb: "The quotation marks, the formatting marks, the case marks, the slash, the alignment stack and what sets a paragraph.",
   },
   {
     label: "Layout",
@@ -245,8 +245,8 @@ export const CATEGORIES = [
   },
   {
     label: "Users",
-    match: /^(user|scan-face|contacts$|id-card$|accessibility$)/,
-    blurb: "People, accounts, contacts, the ID card, the accessibility figure and the signs that badge them.",
+    match: /^(user|scan-face|contacts$|id-card$|accessibility$|fingerprint-pattern$|hat-glasses$)/,
+    blurb: "People, accounts, contacts, the ID card, a fingerprint, the incognito hat, the accessibility figure and the signs that badge them.",
   },
   // Opened 14 Sep 2026 with the six faces of 1.0.0. NOT Users: `user` is an
   // account, a silhouette standing for whoever signs in, and these are drawn
@@ -354,8 +354,8 @@ export const CATEGORIES = [
     // roller comes with them rather than with the tools for the same reason a
     // gallery comes with the images — the thing, not the drawing.
     label: "Art",
-    match: /^(paint|palette|easel)/,
-    blurb: "The brush, the roller, the palette and the easel.",
+    match: /^(paint|palette|easel|swatch-book$)/,
+    blurb: "The brush, the roller, the palette, the swatch book and the easel.",
   },
   {
     // The shelf follows what the thing is, not what the drawing is made of: a
@@ -377,7 +377,7 @@ export const CATEGORIES = [
     // rather than one this row makes on its way in.
     label: "Stationery",
     match: /^(eraser|tape|stapler|notebook|sticky-note)/,
-    blurb: "The desk drawer: the eraser and the roll of tape.",
+    blurb: "The desk drawer: the eraser, the roll of tape and the sticky notes.",
   },
   {
     label: "Shapes",
@@ -398,8 +398,8 @@ export const CATEGORIES = [
     // `wifi-x` are. `cloud` and `cloud-rain` stay weather.
     label: "Web",
     match:
-      /^(globe|link|unlink|share|navigation|home|search|settings|bookmark|wifi|cloud-(?:check|x|plus|minus|alert|dot|off|arrow|backup|cog))/,
-    blurb: "Globes, links, connectivity, sync states and web-scoped actions.",
+      /^(globe|link|unlink|share|navigation|home|search|settings|bookmark|wifi|cloud-(?:check|x|plus|minus|alert|dot|off|arrow|backup|cog)|earth$)/,
+    blurb: "Globes and the earth, links, connectivity, sync states and web-scoped actions.",
   },
   {
     // Prefixes rather than exact names, so the compounds this family is being
@@ -431,8 +431,8 @@ export const CATEGORIES = [
     // it is the mark an eco set is read by, and it sits with leaf and droplet
     // rather than alone on a shelf of one.
     label: "Nature",
-    match: /^(tree|leaf|droplet|wind-turbine)(-|s$|$)/,
-    blurb: "Trees, leaves, water and the turbine, with the off and plural forms.",
+    match: /^(tree|leaf|droplet|wind-turbine|recycle)(-|s$|$)/,
+    blurb: "Trees, leaves, water, the turbine and the recycling arrows, with the off and plural forms.",
   },
   {
     // `pig` is anchored so it cannot reach `piggy-bank`, which is Finance's and

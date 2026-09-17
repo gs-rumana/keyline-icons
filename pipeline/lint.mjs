@@ -223,6 +223,8 @@ const SIZE_KNOWN = new Set([
   // corners, so the sharp half classifies as a square where the rounded half
   // falls through. Same drawing, same box, same reason as `pen-off`.
   'message-square-off',
+  // cctv is 20 x 20; its -off paints the slash's 1..23 like the two above
+  'cctv-off',
   // The alarm clock's face is r=8, the largest that keeps its bells the house
   // 2 off it, and its bells end one unit outside the face as he approved them,
   // so it paints 20 x 22 and reads as a circle. Reaching 22 wide means bells of
