@@ -11,7 +11,10 @@
  * with a tick below, again past the top and on the right (his drawing in refs/,
  * 17 Sep 2026: the breaks end on x 16, y 10 and y 14), the middle ridge at the
  * top and low on the right.
- * Two-tone and duotone grey the outer ridge; fill is the stroke.
+ * Two-tone and duotone alternate the pieces, as he drew them on 17 Sep 2026:
+ * grey the outer ridge's top-left arc and its short lower-right piece, the
+ * middle ridge's right-hand piece and the core; black the rest. Fill is the
+ * stroke.
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -103,14 +106,19 @@ set('fingerprint-pattern', [2, 1, 22, 23], (sharp) => {
   const P = (r, s0, s1) => w.piece(r, s0, s1, sharp, box);
   // every break on a ridge is a chord of at least 4: 2 of daylight between caps
   const past = 270 + Math.asin(4 / 9) / D, right = 360 - Math.asin(1 / 9) / D;
-  const outer = P(9, sA(9, 218), sA(9, 270)) + P(9, sA(9, past), sA(9, right)) + P(9, sY(9, 1, 14), sY(9, 1, 17)) + P(9, sA(9, 180), sA(9, 188));
-  const middle = P(5, sY(5, -1, 19), sA(5, 290)) + P(5, sA(5, 338), sY(5, 1, 13)) + P(5, sY(5, 1, 17), sY(5, 1, 22));
+  const outerTop = P(9, sA(9, 218), sA(9, 270)), outerRight = P(9, sA(9, past), sA(9, right));
+  const outerLow = P(9, sY(9, 1, 14), sY(9, 1, 17)), tick = P(9, sA(9, 180), sA(9, 188));
+  const middleLeft = P(5, sY(5, -1, 19), sA(5, 290)), middleRight = P(5, sA(5, 338), sY(5, 1, 13));
+  const middleLow = P(5, sY(5, 1, 17), sY(5, 1, 22));
   const core = P(0, sY(0, 1, 11), sY(0, 1, 22));
+  const all = outerTop + outerRight + outerLow + tick + middleLeft + middleRight + middleLow + core;
+  const grey = outerTop + outerLow + middleRight + core;
+  const black = outerRight + tick + middleLeft + middleLow;
   return {
-    stroke: [S(outer + middle + core)],
-    'two-tone': [M(outer), S(middle + core)],
-    duotone: [M(outer), S(middle + core)],
-    fill: [S(outer + middle + core)],
+    stroke: [S(all)],
+    'two-tone': [M(grey), S(black)],
+    duotone: [M(grey), S(black)],
+    fill: [S(all)],
   };
 });
 
