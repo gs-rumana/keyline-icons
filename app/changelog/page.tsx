@@ -18,6 +18,7 @@ import {
 import { iconHref } from "@/lib/icon-pages"
 import { categoryOf } from "@/lib/icon-taxonomy"
 import { pageMetadata } from "@/lib/seo"
+import { SET_TITLE } from "@/lib/site-chrome"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
 import { artOf, Glyph, STYLES } from "@/components/glyph"
@@ -617,6 +618,19 @@ const defaultChips = (
     }))
 
 /**
+ * A release's heading: the set's name and the version, then the title.
+ *
+ * Zafar, 18 Sep 2026: "titles in changelog should lead with Keyline Icons
+ * v*:". Built here rather than typed into `lib/icon-release-topics.json`, so
+ * every entry carries it and no title can carry a stale one. The unreleased
+ * entry takes the version its work is heading for, which is the version the
+ * history file keys its title by; a release without a title is the name and
+ * version alone.
+ */
+const headline = (version: string, title: string | null | undefined) =>
+  title ? `${SET_TITLE} v${version}: ${title}` : `${SET_TITLE} v${version}`
+
+/**
  * One release: a line naming it, the release's title as a link to itself, its
  * summary, its cover and its chips.
  *
@@ -943,7 +957,7 @@ export default async function Page() {
               date={`Since v${unreleased.since}`}
               count={unreleased.count}
               current
-              title={unreleased.title ?? `Drawn since ${unreleased.since}`}
+              title={headline(SET_VERSION, unreleased.title)}
               summary={
                 <p>
                   {/*
@@ -1004,7 +1018,7 @@ export default async function Page() {
               tag={entry.initial ? "Initial release" : undefined}
               count={entry.count}
               current={entry.current && !unreleased}
-              title={entry.title ?? `v${entry.version}`}
+              title={headline(entry.version, entry.title)}
               summary={
                 <>
                   {entry.note && !entry.topics && (

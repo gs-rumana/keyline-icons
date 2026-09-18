@@ -221,6 +221,11 @@ const HISTORY = JSON.parse(
   await readFile(join(ROOT, "lib", "icon-history.json"), "utf8")
 )
 
+/* A release's heading, as `/changelog` prints it: the set's name and the
+   version lead, then the title (Zafar, 18 Sep 2026). */
+const headline = (version, title) =>
+  title ? `Keyline Icons v${version}: ${title}` : `Keyline Icons v${version}`
+
 /*
  * Drawn after the tag, so in the tree but not in a release.
  *
@@ -1200,7 +1205,7 @@ function changelogSheet(icons, release) {
           `<span style="font-size:11px;color:${MUTED_};white-space:nowrap">${u.count.toLocaleString("en-US")} names</span>` +
         `</div>` +
         `<h2 style="margin:16px 0 0;font-size:28px;line-height:35px;font-weight:600;letter-spacing:-0.7px;color:${INK_}">` +
-          `${esc(u.title ?? `Drawn since ${u.since}`)}</h2>` +
+          `${esc(headline(HISTORY.version, u.title))}</h2>` +
         `<p style="margin:12px 0 0;max-width:672px;font-size:16px;line-height:26px;color:${MUTED_}">` +
           (u.names.length && redrawn
             ? `${u.names.length.toLocaleString("en-US")} drawing${u.names.length === 1 ? "" : "s"} added and ${redrawn} redrawn since ${u.since}`
@@ -1266,7 +1271,7 @@ function changelogSheet(icons, release) {
       ? latestBlock(release.unreleased)
       : "",
   ].concat(release.entries.map((entry) =>
-    `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${entry.version}</h2>` +
+    `<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-0.3px">${esc(headline(entry.version, entry.title))}</h2>` +
     `<p style="margin:8px 0 0;font-size:13px;color:${MUTED}">` +
       /* "Initial release" belongs to the oldest tag and to nothing else.
          Printed over whichever entry came second, it announced each
