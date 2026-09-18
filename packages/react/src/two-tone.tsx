@@ -654,8 +654,8 @@ export function AudioLinesSearch(props: IconProps) {
 export function AudioLines(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M8 6L8 18M12 3L12 21M16 7L16 17" strokeOpacity={0.4} />
-      <path d="M4 10L4 14M20 10L20 14" />
+      <path d="M8 6L8 18M16 7L16 17" strokeOpacity={0.4} />
+      <path d="M4 10L4 14M12 3L12 21M20 10L20 14" />
     </Icon>
   )
 }
