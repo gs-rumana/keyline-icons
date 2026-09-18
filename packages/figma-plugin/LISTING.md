@@ -713,6 +713,24 @@ regenerated together; re-upload whichever modal you are in.
 ### What changed, for the final details page
 
 ```
+Out of beta, a month after the first release: 1,000 icons, every one in four
+styles with rounded or sharp corners, 8,000 variants in all.
+
+Two-tone is the outlined style that used to be called duotone, under its new
+name. Duotone is new: a grey shape with the important part in black and no
+outline, drawn for every icon. Every icon now has every style, so switching a
+variant never leaves an empty frame.
+
+149 new icons, from a People category to panels on every side, phone calls,
+tablets, banknotes, rockets, big arrows and headings, and 59 redrawn. The file
+went from 734 component sets to 883 and from 4,394 variants to 8,000. Nothing
+that shipped in 0.9.0 was removed.
+```
+
+The 0.4.0 entry this replaced, kept because a listing's history is worth
+reading back:
+
+```
 44 new drawings, and every sharp end squared.
 
 The set is 629 names now, 520 component sets and 3,250 variants, up from 585
