@@ -1,3 +1,5 @@
+<img src="app/icon.svg" width="56" height="56" alt="Keyline Icons logo">
+
 # Keyline Icons
 
 [![CI](https://github.com/keyline-icons/keyline-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/keyline-icons/keyline-icons/actions/workflows/ci.yml)

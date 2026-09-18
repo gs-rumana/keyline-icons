@@ -199,37 +199,32 @@ const board = (inner, extraCss = "") =>
   `svg{display:block}` +
   `${extraCss}</style>${inner}`
 
-/* ── sheet 1: the three styles ─────────────────────────────────────────── */
+/* ── sheet 1: the four styles ──────────────────────────────────────────── */
 
-const STYLES = ["stroke", "duotone", "fill"]
+const STYLES = ["stroke", "two-tone", "duotone", "fill"]
 
-/** Chosen because all twenty-five exist in all three styles, which is the point. */
+/** Every name exists in all four styles; these are the ones where the four differ most. */
 const STYLE_ICONS = [
   "bell",
-  "bookmark",
   "calendar",
   "camera",
-  "cloud",
   "file",
-  "folder",
-  "heart",
   "lock",
   "mail",
-  "star",
   "tag",
-  "user",
-  "shopping-cart",
   "image",
+  "shopping-cart",
   "archive",
   "bin",
   "credit-card",
   "gift",
   "map-pin",
-  "message",
   "package",
   "pen",
-  "play",
   "sun",
+  "home",
+  "shield-check",
+  "wallet",
 ]
 
 async function sheetStyles() {
@@ -237,7 +232,7 @@ async function sheetStyles() {
   for (const style of STYLES) {
     let cells = ""
     for (const name of STYLE_ICONS) {
-      cells += `<div class="c">${await glyph(style, name, 78)}</div>`
+      cells += `<div class="c">${await glyph(style, name, 72)}</div>`
     }
     cols += `<section><div class="lab">${style}</div><div class="grid">${cells}</div></section>`
   }
@@ -250,19 +245,19 @@ async function sheetStyles() {
       `<style>
         body{padding:64px 72px 56px}
         .head{margin-bottom:36px}
-        .row{display:flex;gap:52px;flex:1;min-height:0}
+        .row{display:flex;gap:44px;flex:1;min-height:0}
         section{flex:1;display:flex;flex-direction:column;min-height:0}
         .lab{font-size:19px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
              opacity:.38;margin-bottom:18px}
-        .grid{display:grid;grid-template-columns:repeat(5,1fr);
+        .grid{display:grid;grid-template-columns:repeat(4,1fr);
               grid-template-rows:repeat(5,1fr);gap:6px;
               border-top:2px solid #e5e5e5;padding-top:20px;flex:1;min-height:0}
         .c{display:flex;align-items:center;justify-content:center}
         svg{display:block}
       </style>
       <div class="head">
-        <h1>Three styles, one drawing</h1>
-        <p>Stroke for all of them. Duotone and fill where the glyph has a region to fill.</p>
+        <h1>Four styles, one drawing</h1>
+        <p>Stroke, two-tone, duotone and fill, drawn for every icon in the set.</p>
       </div>
       <div class="row">${cols}</div>`
     ),
@@ -283,9 +278,11 @@ const CONTAINED = [
 const COMBOS = [
   ["regular", "stroke", ""],
   ["square", "stroke", "square-"],
+  ["square", "two-tone", "square-"],
   ["square", "duotone", "square-"],
   ["square", "fill", "square-"],
   ["circle", "stroke", "circle-"],
+  ["circle", "two-tone", "circle-"],
   ["circle", "duotone", "circle-"],
   ["circle", "fill", "circle-"],
 ]
@@ -299,7 +296,7 @@ async function sheetContainers() {
   let rows = ""
   for (const name of CONTAINED) {
     for (const [, style, prefix] of COMBOS) {
-      rows += `<div class="c">${await glyph(style, `${prefix}${name}`, 84)}</div>`
+      rows += `<div class="c">${await glyph(style, `${prefix}${name}`, 80)}</div>`
     }
   }
 
@@ -311,12 +308,12 @@ async function sheetContainers() {
       `<style>
         body{padding:64px 72px 56px}
         .head{margin-bottom:32px}
-        .cols{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;
+        .cols{display:grid;grid-template-columns:repeat(${COMBOS.length},1fr);gap:8px;
               padding-bottom:16px;border-bottom:2px solid #e5e5e5}
         .h{display:flex;flex-direction:column;gap:4px;align-items:center}
         .k{font-size:19px;font-weight:600}
         .s{font-size:15px;letter-spacing:.1em;text-transform:uppercase;opacity:.38}
-        .grid{display:grid;grid-template-columns:repeat(7,1fr);
+        .grid{display:grid;grid-template-columns:repeat(${COMBOS.length},1fr);
               grid-auto-rows:1fr;gap:8px;flex:1;min-height:0;padding-top:12px}
         .c{display:flex;align-items:center;justify-content:center}
         svg{display:block}
@@ -704,13 +701,18 @@ const SWATCH = [
   FJ.purple,
   FJ.pink,
 ]
+/*
+  Picked so the duotone row differs from the stroke row: a heart, a star, a
+  bookmark and a cloud keep their outline in duotone, because nothing in them
+  is the important part, and would repeat the stroke row four times.
+*/
 const SWATCH_ICONS = [
   "bell",
-  "heart",
-  "star",
-  "bookmark",
+  "mail",
+  "tag",
+  "home",
   "gift",
-  "cloud",
+  "shield-check",
   "sun",
   "package",
 ]
@@ -736,18 +738,19 @@ async function sheetColour() {
   const row = async (style) => {
     let out = ""
     for (const [i, n] of SWATCH_ICONS.entries()) {
-      out += `<div class="cell">${await inked(style, n, 70, SWATCH[i])}</div>`
+      out += `<div class="cell">${await inked(style, n, 60, SWATCH[i])}</div>`
     }
     return out
   }
 
   let twoTone = ""
   for (const [name, colours] of TWO_TONE) {
-    twoTone += `<div class="cell">${await perPath("fill", name, 70, colours)}</div>`
+    twoTone += `<div class="cell">${await perPath("fill", name, 60, colours)}</div>`
   }
 
   const sections = [
     ["stroke", await row("stroke")],
+    ["two-tone", await row("two-tone")],
     ["duotone", await row("duotone")],
     ["fill", await row("fill")],
     ["a colour per path", twoTone],
@@ -762,7 +765,7 @@ async function sheetColour() {
     sections
       .map(
         ([label, cells], i) =>
-          `<div style="margin-bottom:${i === sections.length - 1 ? 0 : 30}px">` +
+          `<div style="margin-bottom:${i === sections.length - 1 ? 0 : 22}px">` +
           `<div class="lab">${label}</div><div class="grid">${cells}</div></div>`
       )
       .join("") +
@@ -775,7 +778,7 @@ async function sheetColour() {
       `.lab{font-size:18px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;` +
         `opacity:.38;margin-bottom:12px}` +
         `.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}` +
-        `.cell{background:#fff;border-radius:14px;height:104px;display:flex;` +
+        `.cell{background:#fff;border-radius:14px;height:88px;display:flex;` +
         `align-items:center;justify-content:center;box-shadow:0 2px 0 rgba(0,0,0,.05)}`
     ),
   }
@@ -820,7 +823,7 @@ async function sheetTwoTone() {
 
   const inner =
     `<div class="abs" style="left:88px;top:74px">` +
-    `<h1>Two tones, one icon</h1>` +
+    `<h1>Two colours, one icon</h1>` +
     `<p class="sub">Every part of a drawing is its own path, so every part takes ` +
     `its own colour.</p></div>` +
     placed

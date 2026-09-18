@@ -1,3 +1,5 @@
+<img src="https://keylineicons.com/icon.svg" width="56" height="56" alt="Keyline Icons logo">
+
 # @keyline-icons/mcp
 
 An MCP server for [Keyline Icons](https://keylineicons.com). Lets an agent

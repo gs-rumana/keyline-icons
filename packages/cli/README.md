@@ -1,3 +1,5 @@
+<img src="https://keylineicons.com/icon.svg" width="56" height="56" alt="Keyline Icons logo">
+
 # @keyline-icons/cli
 
 Search [Keyline Icons](https://keylineicons.com) and copy them into your project

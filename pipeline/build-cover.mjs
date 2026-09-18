@@ -292,7 +292,7 @@ for (const name of COVER_BLOCK) {
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 
-const total = available.size
+const total = available.size.toLocaleString("en-US")
 const styles = ["stroke", "two-tone", "duotone", "fill"]
 
 /**
@@ -302,9 +302,15 @@ const styles = ["stroke", "two-tone", "duotone", "fill"]
  * distance from the top on both, so the two covers read as the same object. The
  * footer is measured from the bottom edge instead, which is what lets one
  * composition serve two heights without a second set of tuned numbers.
+ *
+ * Drawn on a 1920-wide canvas and sized to the raster, so the social preview's
+ * 1920×960 scales down into 1280×640. With the canvas size as the SVG's own
+ * size, Chrome drew it at 1920×960 in a 1280×640 window and screenshotted the
+ * top-left corner: GitHub showed the header and a row and a half of glyphs,
+ * with the rule running off the right edge and no footer at all.
  */
-const compose = (h, rows) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${h}" viewBox="0 0 ${W} ${h}">` +
+const compose = (h, rows, [rw, rh]) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="${rw}" height="${rh}" viewBox="0 0 ${W} ${h}">` +
   `<rect width="${W}" height="${h}" fill="${BG}"/>` +
   // The mark, 104 across: the height the old 40-unit tile stood at.
   markAt(PAD, 96, 104, PRIMARY) +
@@ -432,10 +438,10 @@ const pluginCoverSvg = (() => {
     `<text x="${PADX}" y="576" font-family="${FONT}" font-size="128" font-weight="600" ` +
     `letter-spacing="-5" fill="${COVER_INK}">Keyline Icons</text>` +
     `<text x="${PADX}" y="646" font-family="${FONT}" font-size="38" fill="${COVER_MUTED}">` +
-    `Search ${available.size} icons and drop one on the canvas.</text>` +
+    `Search ${total} icons and drop one on the canvas.</text>` +
     // The three facts that survive being shrunk, on one line.
     `<text x="${PADX}" y="900" font-family="${FONT}" font-size="30" font-weight="500" fill="${COVER_INK}">` +
-    `Stroke, duotone and fill` +
+    `Stroke, two-tone, duotone and fill` +
     `<tspan fill="${COVER_MUTED}">  ·  </tspan>Figma and FigJam` +
     `<tspan fill="${COVER_MUTED}">  ·  </tspan>MIT</text>` +
     `<text x="${PADX}" y="948" font-family="${FONT}" font-size="26" fill="${COVER_MUTED}">keylineicons.com</text>` +
@@ -444,7 +450,10 @@ const pluginCoverSvg = (() => {
 })()
 
 const built = [
-  ...COVERS.map((cover) => ({ ...cover, text: compose(cover.h, cover.rows) })),
+  ...COVERS.map((cover) => ({
+    ...cover,
+    text: compose(cover.h, cover.rows, cover.raster),
+  })),
   { ...PLUGIN_COVER, text: pluginCoverSvg },
 ]
 

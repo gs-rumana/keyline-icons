@@ -1,3 +1,5 @@
+<img src="https://keylineicons.com/icon.svg" width="56" height="56" alt="Keyline Icons logo">
+
 # @keyline-icons/react
 
 1,000 icons on one 24×24 grid, as React components. Built for shadcn/ui, free
