@@ -133,47 +133,75 @@ async function call(name, args) {
   return body
 }
 
-const LINE = /^(\s*)(\w+) "(.*?)" \(([^)]+)\) (\d+)×(\d+)(?: "(.*)")?$/
+/* One summary line, `SVG "play stroke" (DXV5-0) 24×24`, with a text node's
+   content quoted after the size. A size Paper has not measured prints as `?`,
+   so the size is anything but a space: a line the pattern missed was a
+   drawing left out of the count. */
+const LINE = /^(\s*)(\w+) "(.*?)" \(([^)]+)\) (\S+)×(\S+)(?: "(.*)")?$/
+/* What a summary prints in place of a node's children when `depth` runs out. */
+const HINT = /^\s*\.\.\. \d+ children$/
 
-/** What one artboard actually holds: its drawings' names, and its captions. */
-function read(summary) {
-  const drawings = []
-  const captions = []
-  let truncated = /\.\.\. \d+ (children|more)/.test(summary)
+/** A summary's nodes in document order, each marked `unread` if the summary stopped above its children. */
+function nodes(summary) {
+  const out = []
   for (const raw of summary.split("\n")) {
+    if (HINT.test(raw)) {
+      /* The hint follows the node it stands in for, directly. */
+      if (out.length) out[out.length - 1].unread = true
+      continue
+    }
     const m = LINE.exec(raw)
-    if (!m) continue
-    if (m[2] === "SVG") drawings.push(m[3])
-    if (m[2] === "Text" && m[7]) captions.push(m[7])
+    if (m) out.push({ component: m[2], name: m[3], id: m[4] })
   }
-  return { drawings, captions, truncated }
+  return out
 }
 
-/**
- * The same drawings, walked rather than summarised.
+/*
+ * Every read Paper cut short, and what became of it.
  *
- * `get_tree_summary` stops after a fixed number of lines and says nothing when
- * it does: no ellipsis, no marker, just a last line cut off mid-structure, so
- * the truncation `read` looks for never appears. Measured at 1000 lines on
- * 30 Aug 2026, the day the Changelog board crossed it, which is the first
- * release to record its redraws as before-and-after pairs. Read from the
- * summary alone, that board reports 162 of the 195 drawings it actually holds
- * and fails as STALE on every run, and a check that cannot pass is a check
- * nobody keeps running.
- *
- * One call per container rather than one per board, so this is the second
- * opinion and not the first: it is taken only where the summary and the sheets
- * already disagree and the run was going to fail anyway. `childCount` keeps it
- * off the leaves. Captions are not here because `get_children` carries names
- * and geometry, no text.
+ * Paper has capped its reads since its 18 Sep 2026 update and says so in the
+ * answer, `truncated: true` beside a `truncatedMessage`. A cut this check reads
+ * around is counted in `cut` and reported as one line. A cut it cannot read
+ * around goes in `capped` and becomes a CAPPED finding, because a count taken
+ * through it is a floor, and a floor compared with the sheets reads exactly
+ * like a board that never took its import.
  */
-async function walkDrawings(nodeId, id, into = []) {
-  const kids = parsed(await call("get_children", { nodeId, fileId: id })).children ?? []
-  for (const kid of kids) {
-    /* Stop at the drawing, as the summary does: descending collects its own
-       paths, which come back as SVGVisualElement. */
-    if (kid.component === "SVG") into.push(kid.name)
-    else if (kid.childCount) await walkDrawings(kid.id, id, into)
+const cut = new Map()
+const capped = []
+
+/**
+ * Every drawing under a node, by name, in document order.
+ *
+ * Off `get_tree_summary`, a node at a time wherever one read cannot hold the
+ * whole of it. Paper caps both of the readers that could do this, and at
+ * different places. The summary stops at 1000 nodes. Until 18 Sep 2026 it
+ * stopped there silently, which is how the Changelog board read 162 of its 195
+ * drawings on 30 Aug and failed as STALE on every run; a check that cannot
+ * pass is a check nobody keeps running. `get_children`, which this walked to
+ * get round that, has stopped at 100 children since the same update. The
+ * Newest release card holds 110 blocks, the walk never reached the last ten,
+ * and 38 drawings that were in the file reported as 229 of 267. The summary
+ * has no such cap on a node: the same card read at depth 1 lists all 110.
+ *
+ * So a summary that fits is read as it stands. One that does not is read again
+ * at depth 1, which lists the node's children, and each child with children of
+ * its own is read the same way, as is any node the summary stopped above
+ * because `depth` ran out. Not keyed to 1000 or to 100: those are Paper's
+ * numbers, and a check keyed to them goes quietly blind the day they change.
+ * `truncated` is what it reads.
+ */
+async function walkDrawings(nodeId, id, board, into = []) {
+  let answer = parsed(await call("get_tree_summary", { nodeId, depth: 8, fileId: id }))
+  if (answer.truncated) {
+    cut.set(answer.truncatedMessage, (cut.get(answer.truncatedMessage) ?? 0) + 1)
+    answer = parsed(await call("get_tree_summary", { nodeId, depth: 1, fileId: id }))
+    if (answer.truncated) capped.push({ board, node: nodeId, message: answer.truncatedMessage })
+  }
+  for (const node of nodes(answer.summary ?? "")) {
+    /* Stop at the drawing: below it are its own paths, which come back as
+       SVGVisualElement. */
+    if (node.component === "SVG") into.push(node.name)
+    else if (node.unread && node.id !== nodeId) await walkDrawings(node.id, id, board, into)
   }
   return into
 }
@@ -242,6 +270,15 @@ for (const file of files) {
        and every page read back as the one the file was left on. */
     await call("open_file", { fileId: file.id, pageId: page.id })
     const info = parsed(await call("get_basic_info", { fileId: file.id, pageId: page.id }))
+    /* A short artboard list would report every board it left off as MISSING. */
+    if (info.truncated) {
+      capped.push({
+        board: page.name,
+        node: page.id,
+        message: info.truncatedMessage,
+        page: names.get(file.id),
+      })
+    }
     for (const board of info.artboards) {
       const at = { ...board, page: page.name, file }
       /* Keyed by board *and* file: the same name in two files is the case this
@@ -288,17 +325,20 @@ for (const [name, sheets] of boards) {
 
   const id = board.file.id
   const want = await expected(sheets)
-  const summary = parsed(
-    await call("get_tree_summary", { nodeId: board.id, depth: 8, fileId: id })
-  ).summary
-  const got = read(summary)
+  /* One summary where the board fits in one, more only where it does not. */
+  const got = { drawings: await walkDrawings(board.id, id, name) }
 
-  /* A capped summary under-reports, and under-reporting looks exactly like a
-     board that never took its import. So a disagreement is read a second time,
-     the slow way, before it is believed. */
-  if (got.truncated || got.drawings.length !== want.drawings.length) {
-    got.drawings = await walkDrawings(board.id, id)
-    got.truncated = false
+  const short = capped.find((x) => x.board === name && !x.page)
+  if (short) {
+    findings.push({
+      board: name,
+      kind: "CAPPED",
+      detail:
+        `${got.drawings.length} drawings read of ${want.drawings.length} in the sheets, ` +
+        `but Paper cut the read of ${short.node} short ("${short.message}"), ` +
+        `so that count is a floor and not a finding`,
+    })
+    continue
   }
 
   if (got.drawings.length !== want.drawings.length) {
@@ -344,12 +384,24 @@ for (const board of found.values()) {
   })
 }
 
+for (const x of capped.filter((x) => x.page)) {
+  findings.push({
+    board: x.board,
+    kind: "CAPPED",
+    detail:
+      `the artboard list in ${x.page} stopped short ("${x.message}"), ` +
+      `so a board it left off reads as MISSING`,
+  })
+}
+
 if (json) {
   console.log(
     JSON.stringify(
       {
         files: files.map((f) => ({ id: f.id, name: names.get(f.id) ?? f.id })),
         boards: boards.size,
+        /* Reads Paper cut short that the walk read around, by Paper's message. */
+        cut: Object.fromEntries(cut),
         findings,
       },
       null,
@@ -367,6 +419,14 @@ if (json) {
   for (const file of files) {
     console.log(`  ${(names.get(file.id) ?? file.id).padEnd(24)} ${held(file)} boards`)
   }
+  /* Every cut is said out loud, read around or not, so a cap Paper moves or
+     adds shows up here by its own message before it shows up as a finding. */
+  for (const [message, n] of cut) {
+    console.log(
+      `  ${c(33, "!")} Paper cut ${n} read${n === 1 ? "" : "s"} short ("${message}");` +
+        ` each was read again a node at a time`
+    )
+  }
   for (const f of findings) {
     console.log(`  ${c(33, f.kind.padEnd(10))} ${f.board.padEnd(16)} ${f.detail}`)
   }
@@ -375,13 +435,21 @@ if (json) {
       c(32, `Paper matches previews/paper/ across ${boards.size} artboards`) +
         `\nComposition and names only: nothing here can see the drawings themselves.`
     )
-  } else {
+  }
+  if (findings.some((f) => f.kind !== "CAPPED")) {
     console.log(
       `\nRe-import the boards above. Do not delete them: write_html takes` +
         ` mode: "replace" against an artboard's child, which swaps the contents` +
         ` and leaves the artboard's id, name and canvas position alone.` +
         `\nThe position is the reason. Nothing here records it, so a board` +
         ` deleted and recreated comes back at the origin.`
+    )
+  }
+  if (findings.some((f) => f.kind === "CAPPED")) {
+    console.log(
+      `\nCAPPED is not a re-import. Paper cut a read short and the walk could not` +
+        ` read around it, so the board is unverified rather than stale. Read the node` +
+        ` it names some other way, or group the sheet so no container outgrows the cap.`
     )
   }
 }

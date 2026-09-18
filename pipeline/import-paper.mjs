@@ -338,8 +338,15 @@ if (!wanted.size) {
   process.exit(0)
 }
 
-const children = async (nodeId, id) =>
-  json(await call("get_children", { nodeId, fileId: id })).children ?? []
+/* Paper has stopped this list at 100 since its 18 Sep 2026 update. Both
+   callers need all of it: one counts the artboard's children and one appends
+   rows into the card's last, and a short list makes the second write into the
+   wrong node without a word. */
+const children = async (nodeId, id) => {
+  const out = json(await call("get_children", { nodeId, fileId: id }))
+  if (out.truncated) throw new Error(`${nodeId}: ${out.truncatedMessage}, and this needs every child`)
+  return out.children ?? []
+}
 
 /** Rename this write's drawings from the sheet, in document order. */
 async function renameDrawings(created, layers, board, id) {
