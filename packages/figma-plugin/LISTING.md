@@ -119,12 +119,12 @@ Four styles, with every name in all of them: two-tone is the outlined style that
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
-* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone; a watch, a hard drive, a cable and a headset visor
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the laptop beside a phone; a watch, a hard drive, a cable and a headset visor
 * Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
 * Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
 * Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
 * Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
-* And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car, a wallet with its cards, a slashed bot and a pen with sparkles
+* And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car, a wallet with its cards, a slashed bot, a brain with a cog and a pen with sparkles
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, long and short, and the heading with its six levels
@@ -271,7 +271,7 @@ turn with a plus, humidity and three kinds of cloud, an app window with its sign
 a sticky note with its signs, a folder tree, a typed file, the case marks, a CCTV
 camera, a mouse, a shredder, a radio, a fingerprint, an incognito hat, a shirt, a
 paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car, a
-wallet with its cards, a slashed bot and a pen with sparkles.
+wallet with its cards, a slashed bot, a brain with a cog and a pen with sparkles.
 
 People opened as a shelf with them, taking categories from 37 to 38.
 
@@ -608,12 +608,12 @@ Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone an
 
 * People: a boy and a girl, a baby with a curl and one with a bow, and both babies again with a pacifier
 * Layout: the panel on every side, open, closed, dashed and open and dashed, and three split layouts
-* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the tablet and the laptop each beside a phone; a watch, a hard drive, a cable and a headset visor
+* Devices: the phone calling, incoming, outgoing, missed and forwarded; the tablet, upright and with eight signs; a laptop, and the laptop beside a phone; a watch, a hard drive, a cable and a headset visor
 * Media and Mail: AirPlay, a phone casting, a film camera, a broadcast mast and a search over sound; a sparkle in both message bubbles, and send on a clock
 * Users and Actions: a voice, contacts, an ID card and the accessibility figure; a shield with a key, a siren and delete
 * Weather and more: humidity and three kinds of cloud, a gauge, two toggles, a map pin with a heart, a shopping basket, a file search and a turn with a plus
 * Devices, Stationery and Text: an app window with a plus, minus, x and cursor beside its ruled form, a CCTV camera with and without a slash, a mouse and a shredder; a sticky note with its signs and slash, and two stacked; the case marks, an outlined T and a whole word
-* And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car, a wallet with its cards, a slashed bot and a pen with sparkles
+* And more: a folder tree and a typed file, a radio, a fingerprint, an incognito hat, a shirt, a paper bag, a milestone, a swatch book, the earth, the recycling arrows, a car, a wallet with its cards, a slashed bot, a brain with a cog and a pen with sparkles
 * Finance: two banknotes, each with check, minus, plus and x
 * Transport: a rocket at 45 degrees on its flame, again with speed lines, and standing upright
 * Arrows and Text: the big arrow in four directions, long and short, and the heading with its six levels

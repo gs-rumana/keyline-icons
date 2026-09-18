@@ -5,7 +5,8 @@
  * Eleven names, 14 Sep 2026: `tablet`, `tablet-vertical`, and the four signs plus
  * the four straight arrows of the `smartphone-*` family, under the same names:
  * arrow-down, arrow-left, arrow-in-up, arrow-in-right, check, minus, plus, x;
- * `tablet-smartphone`, `laptop` and `laptop-smartphone` (below).
+ * `laptop` and `laptop-smartphone` (below). `tablet-smartphone` was retired on
+ * 17 Sep 2026 for `brain-cog`; its phone lives on in `laptop-smartphone`.
  *
  * The tablet is drawn LANDSCAPE with a camera dot at the top centre, on
  * Zafar's reference of 14 Sep 2026. The first cut stood upright with the
@@ -18,8 +19,7 @@
  * The dot is the bead of the dot ladder, a filled r=1.5 painting 3 (it was the
  * 2-unit mark of his reference until 17 Sep 2026, when he asked for 3). It sits
  * on (12,8.5): the top wall's inner ink is on 5, and the house gap puts the
- * dot's ink top on 7. `tablet-smartphone` keeps the 2-unit mark on his word: at
- * 3 it stands 1.14 off the sharp phone's corner, and the phone stays. It is its
+ * dot's ink top on 7. It is its
  * own filled path in stroke and duotone and a knockout in fill, as `lock`'s
  * keyhole is, and stays round in sharp.
  *
@@ -102,8 +102,6 @@ const DOT = [
   'M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z',
   'M13.5 8.5C13.5 7.6716 12.8284 7 12 7C11.1716 7 10.5 7.6716 10.5 8.5C10.5 9.3284 11.1716 10 12 10C12.8284 10 13.5 9.3284 13.5 8.5Z',
 ];
-/** `tablet-smartphone`'s dot, the 2-unit mark on (12,8) before its move up. */
-const DOT_MARK = 'M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z';
 const BASE = {
   regular: {
     body: 'M22 17V7C22 5.34315 20.6569 4 19 4H5C3.34315 4 2 5.34315 2 7V17C2 18.6569 3.34315 20 5 20H19C20.6569 20 22 18.6569 22 17Z',
@@ -238,12 +236,6 @@ const PAIR = {
     plate: box1(12, PT - 1, 23, 23),
     hole: `M16 ${SY + 1}L19 ${SY + 1}L19 ${SY - 1}L16 ${SY - 1}L16 ${SY + 1}Z`,
   },
-};
-SETS['tablet-smartphone'] = (style, corners) => {
-  const o = PAIR[corners], d = move(DOT_MARK, 0, -2);
-  if (style === 'stroke') return [stroke(o.tablet + o.phone, corners), dot(d)];
-  if (style === 'duotone') return [plate(o.plate), stroke(o.tablet + o.phone, corners), dot(d)];
-  return [solid(o.plate, [o.hole, reverse(o.hole)]), stroke(o.tablet, corners), dot(d)];
 };
 
 /**

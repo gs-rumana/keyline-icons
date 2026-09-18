@@ -58,7 +58,6 @@
       "tablet-plus",
       "tablet-x",
       "laptop",
-      "tablet-smartphone",
       "laptop-smartphone",
       "banknote",
       "banknote-check",
@@ -150,6 +149,7 @@
       "car",
       "wallet-cards",
       "bot-off",
+      "brain-cog",
       "pen-sparkles"
     ],
     "0.9.0": [

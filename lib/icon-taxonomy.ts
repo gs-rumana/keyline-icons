@@ -312,12 +312,13 @@ export const CATEGORIES = [
   // Three shelves opened 13 Sep 2026 with the twenty-nine of batch B, whose
   // names had been filing under Other. Each files by what the drawing IS.
   {
-    // The machine that thinks: the bot and the brain wired to a circuit. The
+    // The machine that thinks: the bot, the brain wired to a circuit and the
+    // brain turning a cog. The
     // bare `brain` is an organ and goes to Health, which is why this is
     // anchored on the two names rather than on `brain`.
     label: "AI",
-    match: /^(bot(-off)?$|brain-circuit)/,
-    blurb: "The bot, on and off, and the brain wired to a circuit.",
+    match: /^(bot(-off)?$|brain-circuit|brain-cog)/,
+    blurb: "The bot, on and off, the brain wired to a circuit and the brain turning a cog.",
   },
   {
     label: "Science",

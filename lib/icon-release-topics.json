@@ -53,7 +53,7 @@
             },
             {
               "title": "Devices",
-              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives, and the tablet and the laptop each sit beside a phone. A watch, a hard drive, a cable and a headset visor join them, and a phone casts. An app window takes a plus, a minus, an x and a cursor beside its ruled form, a CCTV camera watches with and without a slash, a mouse arrives, and a shredder takes a page.",
+              "text": "The phone takes call, incoming, outgoing, missed and forwarded. The tablet takes its upright form and the phone's eight signs, a laptop arrives and sits beside a phone. A watch, a hard drive, a cable and a headset visor join them, and a phone casts. An app window takes a plus, a minus, an x and a cursor beside its ruled form, a CCTV camera watches with and without a slash, a mouse arrives, and a shredder takes a page.",
               "names": [
                 "phone-call",
                 "phone-incoming",
@@ -71,7 +71,6 @@
                 "tablet-plus",
                 "tablet-x",
                 "laptop",
-                "tablet-smartphone",
                 "laptop-smartphone",
                 "watch",
                 "hard-drive",
@@ -289,9 +288,10 @@
             },
             {
               "title": "AI",
-              "text": "The bot takes a slash.",
+              "text": "The bot takes a slash, and a brain turns a cog.",
               "names": [
-                "bot-off"
+                "bot-off",
+                "brain-cog"
               ]
             },
             {
