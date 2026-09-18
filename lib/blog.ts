@@ -81,6 +81,16 @@ export type BlogFigure =
    */
   | { kind: "grid"; names: readonly string[]; caption: string }
   /**
+   * The same drawings in every style, one row per style: stroke, two-tone,
+   * duotone, fill.
+   *
+   * Written for 1.0.0, whose story is the styles rather than the drawings: a
+   * grid can only show stroke, and the point of a duotone is how it differs
+   * from the two-tone above it, which only a row against a row can show.
+   * Keep it to about eight names, or a phone has to scroll it sideways.
+   */
+  | { kind: "styles"; names: readonly string[]; caption: string }
+  /**
    * A redrawn icon as the change itself, before beside after.
    *
    * The two documents come out of git, via `lib/icon-history.json`, which is
@@ -2070,7 +2080,7 @@ const BATCH_0_6_0: BlogPost = {
     "Free SVG icons for shadcn/ui, drawn on one 24\u00d724 grid.",
   date: "2026-09-09",
   updated: "2026-09-09",
-  readingMinutes: 6,
+  readingMinutes: 7,
   thumbnail: BLOG_V060_THUMBNAIL_ICON_NAMES,
   keywords: [
     "icon set update",
@@ -2919,7 +2929,678 @@ const BATCH_0_9_0: BlogPost = {
   ],
 }
 
+/* 1.0.0: the drawings every figure in the post names, each list resolved
+   against icons/ by pipeline/check-demos.mjs. */
+
+/** The opening figure: eight of the new drawings, one from each big family. */
+export const BLOG_V100_HERO_ICON_NAMES = [
+  "boy",
+  "phone-call",
+  "arrow-big-up",
+  "banknote",
+  "alarm-clock",
+  "rocket",
+  "brain-cog",
+  "sticky-note-check",
+] as const
+
+/** The pairs whose mismatch in the old duotone gave the split away. */
+export const BLOG_V100_ACCIDENT_ICON_NAMES = [
+  "circle",
+  "circle-x",
+  "badge",
+  "badge-check",
+  "shield-plus",
+  "square-plus",
+] as const
+
+/** Details and surfaces: the rules beyond one-drawing-per-rule. */
+export const BLOG_V100_DETAIL_ICON_NAMES = [
+  "download",
+  "lock",
+  "bed",
+  "tape",
+] as const
+
+/** One drawing per duotone rule, in the order the list gives the rules. */
+export const BLOG_V100_DUOTONE_ICON_NAMES = [
+  "file-check",
+  "bell-off",
+  "chart-column-big",
+  "sliders-2-horizontal",
+  "hammer",
+  "heart",
+] as const
+
+export const BLOG_V100_PEOPLE_ICON_NAMES = [
+  "boy",
+  "girl",
+  "baby-boy",
+  "baby-girl",
+  "baby-2-boy",
+  "baby-2-girl",
+] as const
+
+/** Left and bottom stand for all four sides; right and top mirror them. */
+export const BLOG_V100_PANEL_ICON_NAMES = [
+  "panel-left-open",
+  "panel-left-close",
+  "panel-left-dashed",
+  "panel-left-open-dashed",
+  "panel-bottom-open",
+  "panel-bottom-close",
+  "panel-bottom-dashed",
+  "panel-bottom-open-dashed",
+  "panels-left-bottom",
+  "panels-right-bottom",
+  "panels-top-left",
+  "table",
+] as const
+
+export const BLOG_V100_DEVICE_ICON_NAMES = [
+  "phone-call",
+  "phone-incoming",
+  "phone-outgoing",
+  "phone-missed",
+  "phone-forwarded",
+  "tablet",
+  "tablet-vertical",
+  "tablet-check",
+  "laptop",
+  "laptop-smartphone",
+  "watch",
+  "hard-drive",
+  "vision-pro",
+  "cctv",
+  "mouse",
+  "shredder",
+] as const
+
+export const BLOG_V100_FAMILY_ICON_NAMES = [
+  "banknote",
+  "banknote-2-check",
+  "wallet-cards",
+  "alarm-clock-plus",
+  "timer",
+  "rocket",
+  "rocket-2",
+  "rocket-vertical",
+  "car",
+  "arrow-big-up",
+  "arrow-big-right-short",
+  "heading-1",
+  "heading-6",
+  "case-sensitive",
+] as const
+
+export const BLOG_V100_SINGLES_ICON_NAMES = [
+  "snowflake",
+  "wind",
+  "humidity",
+  "cloud-sun",
+  "earth",
+  "recycle",
+  "bot-off",
+  "brain-cog",
+  "sticky-notes",
+  "swatch-book",
+  "shield-key",
+  "siren",
+  "gauge",
+  "milestone",
+  "shirt",
+  "paper-bag",
+] as const
+
+/** Redraws whose change shows in the stroke, which is what a pair draws. */
+export const BLOG_V100_REDRAWN_ICON_NAMES = [
+  "hand-pointer",
+  "paperclip",
+  "dice-5",
+  "more-horizontal",
+  "play",
+  "gallery-horizontal",
+  "monitor-off",
+  "scan-search",
+] as const
+
+export const BLOG_V100_THUMBNAIL_ICON_NAMES = [
+  "boy",
+  "phone-call",
+  "rocket",
+  "banknote",
+  "alarm-clock",
+  "brain-cog",
+  "girl",
+  "panel-left-close",
+  "arrow-big-up",
+  "heading-1",
+  "tablet",
+  "laptop",
+  "watch",
+  "mouse",
+  "cctv",
+  "shredder",
+  "wallet-cards",
+  "timer",
+  "car",
+  "rocket-2",
+  "hand-closed",
+  "hand-open",
+  "toggles",
+  "gauge",
+  "milestone",
+  "shirt",
+  "paper-bag",
+  "sticky-notes",
+  "swatch-book",
+  "earth",
+  "recycle",
+  "bot-off",
+  "clouds",
+  "cloud-sun",
+  "snowflake",
+  "siren",
+  "shield-key",
+  "accessibility",
+  "fingerprint-pattern",
+  "radio",
+] as const
+
+const RELEASE_1_0_0: BlogPost = {
+  /* A search types the count, "free", "shadcn/ui" and the styles, so the
+     title and slug carry those; the duotone story is an h2 inside. The 8,000
+     leads on his word (18 Sep 2026): four styles in two corner shapes is the
+     size of this release, and a title without it undersold it. */
+  slug: "1000-free-shadcn-ui-icons-in-four-styles",
+  version: "1.0.0",
+  title:
+    "1,000 free shadcn/ui icons for React, Figma and Paper, in four styles and two corners",
+  description:
+    "1,000 free, MIT-licensed SVG icons for React, shadcn/ui, Figma and " +
+    "Paper, each in stroke, two-tone, duotone and fill, rounded and sharp: " +
+    "8,000 SVGs.",
+  standfirst:
+    "A month, fourteen releases and one style nobody planned. Version " +
+    "1.0.0 takes the set out of beta, with a new colour, a new logo and " +
+    "free SVG icons for shadcn/ui, React, Figma and Paper.",
+  date: "2026-09-18",
+  updated: "2026-09-18",
+  readingMinutes: 9,
+  thumbnail: BLOG_V100_THUMBNAIL_ICON_NAMES,
+  keywords: [
+    "icon set update",
+    "free svg icons",
+    "shadcn/ui icons",
+    "react icons",
+    "figma icons",
+    "duotone icons",
+    "two-tone icons",
+    "fill icons",
+    "people icons",
+    "panel icons",
+    "phone icons",
+    "tablet icons",
+    "banknote icons",
+    "rocket icon",
+    "heading icons",
+  ],
+  body: [
+    {
+      kind: "p",
+      text:
+        "The first release went out on 20 August. A month later, 1.0.0 has " +
+        "1,000 icons, and every one of them comes in four styles: stroke, " +
+        "two-tone, duotone and fill. " +
+        "Each style comes with rounded corners or sharp ones. A thousand " +
+        "icons, times four styles, times two kinds of corner: 8,000 in all, " +
+        "with nothing missing.",
+    },
+    {
+      kind: "p",
+      text:
+        "Stroke is the outline. Fill is solid. Two-tone is the outline with " +
+        "a light grey inside. Duotone drops the outline: a grey shape with " +
+        "the important part in black.",
+    },
+    {
+      kind: "p",
+      text:
+        "149 of the icons are new, from a new People category to panels on " +
+        "every side, and 59 older ones were redrawn. Two-tone came out of a " +
+        "mistake spotted by accident, and this release was rebuilt around " +
+        "it.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "styles",
+        names: BLOG_V100_HERO_ICON_NAMES,
+        caption:
+          "Eight of the new icons, one style to a row, in that same order.",
+      },
+    },
+
+    { kind: "h2", text: "One month, out of beta", id: "one-month" },
+    {
+      kind: "p",
+      text:
+        "The beta started on a plain black and white site, with rounded " +
+        "corners only. Here is where things stand on 18 September.",
+    },
+    {
+      kind: "list",
+      items: [
+        "1,000 icons, up from 503.",
+        "8,000 SVG files, up from 1,286.",
+        "Four styles, up from three, and every one with rounded or sharp " +
+          "corners.",
+        "14 releases in a month, this one included.",
+        "6,676 downloads on npm, 2,092 of them in the last week alone.",
+        "86 stars on GitHub.",
+        "38 categories, from Actions to Web.",
+      ],
+    },
+    {
+      kind: "p",
+      text:
+        "The one breaking change of the month, the duotone rename further " +
+        "down, was saved for this release on purpose, so it lands once, " +
+        "with the move out of beta.",
+    },
+
+    { kind: "h2", text: "A colour and a logo", id: "look" },
+    {
+      kind: "p",
+      text:
+        "Out of beta, the site dropped its plain black and white for a " +
+        "colour of its own: Keyline blue, deep in light mode and a softer " +
+        "sky blue in dark mode. It is the only accent on an otherwise " +
+        "neutral site: the buttons, the selected controls, the logo and " +
+        "the little dots that mark new icons.",
+    },
+    {
+      kind: "p",
+      text:
+        "The blue takes its hue from non-photo blue, the pale pencil " +
+        "designers used for guide lines, because the cameras that made " +
+        "printing plates couldn't see it. A keyline comes from the same " +
+        "world: the outline that shows where something goes on the page.",
+    },
+    {
+      kind: "p",
+      text:
+        "The logo is made from the set itself: four shapes, one in each " +
+        "style. A sharp diamond in stroke, a triangle in duotone, a circle " +
+        "in two-tone and a square in fill. It's a small picture of what the " +
+        "set is.",
+    },
+
+    { kind: "h2", text: "Two-tone was an accident", id: "two-tone" },
+    {
+      kind: "p",
+      text:
+        "It started with something that looked off in the design file. In " +
+        "the duotone style, `circle` had " +
+        "an outline, but `circle-x`, right next to it, didn't. The same went " +
+        "for `badge` and `badge-check`, and for `shield-plus` and " +
+        "`square-plus`.",
+    },
+    {
+      kind: "p",
+      text:
+        "So every duotone icon got checked, all 765 of them. 633 had an " +
+        "outline filled with light grey. The other 132, every icon drawn " +
+        "inside a square, a circle or a badge shape, had no outline at all: " +
+        "just a grey shape with a black symbol on top. Two different styles " +
+        "had been sharing one name.",
+    },
+    {
+      kind: "p",
+      text:
+        "It wasn't a recent slip. It went all the way back to the first " +
+        "release, and new icons kept copying whichever look sat next to " +
+        "them. The automatic checks didn't catch it either, because both " +
+        "looks used two shades, and that was all the checks asked for.",
+    },
+    {
+      kind: "p",
+      text:
+        "The quick fix was to add an outline to those 132 and move on. But " +
+        "that would only have turned them into the other style, and both " +
+        "looks were good.",
+    },
+    {
+      kind: "note",
+      text:
+        "Neither look was wrong. The problem was two good styles sharing one " +
+        "name. So both stayed, each got its own name, and each was drawn for " +
+        "every icon in the set.",
+    },
+    {
+      kind: "p",
+      text:
+        "The outlined look is now called two-tone. Those icons haven't " +
+        "changed, only their name. If you use the React package and want " +
+        "that look, change `@keyline-icons/react/duotone` to " +
+        "`@keyline-icons/react/two-tone`.",
+    },
+    {
+      kind: "p",
+      text:
+        "Duotone keeps its name for the look without an outline. It went " +
+        "from 132 icons to all 1,000 in this one release.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "styles",
+        names: BLOG_V100_ACCIDENT_ICON_NAMES,
+        caption:
+          "The icons that gave it away, as they are now. In two-tone they all " +
+          "have an outline. In duotone, the ones with a check, an x or a plus " +
+          "on them drop it, and the plain shapes keep theirs, for a reason " +
+          "explained below.",
+      },
+    },
+
+    { kind: "h2", text: "What goes black in a duotone", id: "duotone" },
+    {
+      kind: "list",
+      items: [
+        "A small symbol is black, and whatever it sits on is grey: the check " +
+          "on `file-check`, the plus on a calendar.",
+        "On an icon with a slash through it, like `bell-off`, only the slash " +
+          "is black.",
+        "Background parts stay grey. A chart's axes are grey and its bars " +
+          "are black. A slider's track is grey and its knob is black.",
+        "On a tool, the working end is black and the handle is grey, like " +
+          "the head of `hammer`.",
+        "Small details on a black shape show through in grey, like the " +
+          "keyhole on `lock` or the pillows on `bed`.",
+        "Two grey parts never overlap. Grey on top of grey makes a darker " +
+          "grey, which looks like a mistake.",
+        "No big empty holes in the middle of a shape. They read as a third " +
+          "colour, and a duotone only has two.",
+      ],
+    },
+    {
+      kind: "note",
+      text:
+        "And every duotone has something black in it. An icon that is all " +
+        "grey looks disabled, like a button you can't press. So a simple " +
+        "shape, a heart, a star or a circle, keeps a black outline instead.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "styles",
+        names: BLOG_V100_DUOTONE_ICON_NAMES,
+        caption:
+          "One icon for each rule. Two-tone, the second row, keeps the " +
+          "outline and fills the shape with grey. Duotone, the third row, " +
+          "drops the outline and keeps only the important part black.",
+      },
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "styles",
+        names: BLOG_V100_DETAIL_ICON_NAMES,
+        caption:
+          "A few more: a black arrow over a grey tray, a grey keyhole on a " +
+          "black lock, grey pillows on a black bed, and the tape, kept to " +
+          "just two shades.",
+      },
+    },
+
+    { kind: "h2", text: "No gaps, in any style", id: "every-style" },
+    {
+      kind: "p",
+      text:
+        "Before this release, an icon only came in a style if that style " +
+        "added something. An exclamation mark has nothing inside to fill, so " +
+        "`alert` had no fill version, and an app that switched to fill icons " +
+        "was left with a hole where it should have been.",
+    },
+    {
+      kind: "p",
+      text:
+        "Now every icon comes in every style. When a style has nothing to " +
+        "add, it simply uses the same drawing: the fill version of `x` is " +
+        "its outline, because a cross has no inside. Even the first plan for " +
+        "this release would have left 84 icons without a duotone, and it was " +
+        "dropped the next morning.",
+    },
+
+    { kind: "h2", text: "149 new icons", id: "new" },
+    {
+      kind: "p",
+      text:
+        "There were no people in the set until now. This release adds a boy " +
+        "and a girl, a baby with a curl and one with a bow, and both babies " +
+        "again with a pacifier. They get a category of their own, the set's " +
+        "thirty-eighth.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V100_PEOPLE_ICON_NAMES,
+        caption: "The new People category.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "Panels now open, close and come dashed on all four sides, and there " +
+        "are three split layouts and a table to go with them.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V100_PANEL_ICON_NAMES,
+        caption:
+          "Left and bottom shown here, right and top are mirror images. Then " +
+          "the split layouts and the table.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "Devices got the most. The phone now has calls: a call, and " +
+        "incoming, outgoing, missed and forwarded ones. The tablet comes " +
+        "upright and sideways, with the same eight small symbols as the " +
+        "phone, a check, a plus, a minus, an x and four arrows. There's a " +
+        "laptop on its own and next to a phone, a watch, a hard drive, a " +
+        "cable, a VR headset, a CCTV camera, a mouse and a shredder.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V100_DEVICE_ICON_NAMES,
+        caption: "Sixteen of the thirty-two new device icons.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "The rest came as families. Two banknotes with a check, a minus, a " +
+        "plus and an x, and a wallet holding cards. An alarm clock with a " +
+        "check, a plus and a minus, and a stopwatch. Three rockets and a car. " +
+        "Big block arrows in four directions, long and short. And a heading " +
+        "icon with all six levels.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V100_FAMILY_ICON_NAMES,
+        caption: "A few from each family.",
+      },
+    },
+    {
+      kind: "p",
+      text:
+        "Plus a handful of one-offs: snow, wind, humidity, a cloud over the " +
+        "sun, the earth, a recycle sign, a bot with a slash, a brain with a " +
+        "cog, sticky notes, a swatch book, a shield with a key, a siren, a " +
+        "gauge, a milestone, a shirt and a paper bag.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "grid",
+        names: BLOG_V100_SINGLES_ICON_NAMES,
+        caption: "The one-offs.",
+      },
+    },
+
+    { kind: "h2", text: "Redrawn icons", id: "redrawn" },
+    {
+      kind: "p",
+      text:
+        "59 icons that were already out got redrawn. Most of them are one " +
+        "change made across a whole family.",
+    },
+    {
+      kind: "list",
+      items: [
+        "The pointing hand is new, in all four directions, with a closed " +
+          "hand and an open hand to go with it.",
+        "The dots on the dice are bigger, and so are the three dots of the " +
+          "more menu.",
+        "The paperclip is longer, and the play button is smaller.",
+        "The gallery frames have tighter corners.",
+        "In the fill style, the file icons' folded corners and the grid " +
+          "icons' lines no longer run into the edge.",
+        "In two-tone, charts keep their axes grey and the data black.",
+      ],
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "pairs",
+        names: BLOG_V100_REDRAWN_ICON_NAMES,
+        caption:
+          "A few of them, old on the left and new on the right. The file, " +
+          "grid and chart changes only show in the fill and two-tone styles, " +
+          "so they aren't pictured here.",
+      },
+    },
+
+    { kind: "h2", text: "Coins that looked too heavy", id: "coins" },
+    {
+      kind: "p",
+      text:
+        "The coins icon was drawn with the same line as everything else, but " +
+        "it looked heavier. The coins were squashed flat, so the gap inside " +
+        "each one was tiny. They were stacked so close together that there " +
+        "was hardly any white between them. And the flat ends of each coin " +
+        "pinched into little blobs.",
+    },
+    {
+      kind: "p",
+      text:
+        "At small sizes a thin gap fills in, and the lines on either side of " +
+        "it look like one thick line. The coins are taller now and spaced " +
+        "further apart, so every gap matches the gaps in the rest of the set.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "diagnostic",
+        panels: [
+          {
+            title: "`coins`, old and new, laid on top of each other",
+            a: { name: "coins", take: "before" },
+            b: { name: "coins", take: "after" },
+            verdict: { text: "Even gaps now", tone: "good" },
+          },
+        ],
+        caption:
+          "Where the colours split, the coins moved: the new ones are taller " +
+          "and further apart.",
+        legend: {
+          a: "only the old coins",
+          b: "only the new ones",
+          both: "both",
+        },
+      },
+    },
+
+    { kind: "h2", text: "A sparkle a sliver too small", id: "sparkle" },
+    {
+      kind: "p",
+      text:
+        "Every icon in the set leaves the same small margin around its " +
+        "edges. The sparkle was meant to reach that margin exactly, and ever " +
+        "since it was first drawn it had fallen short by a sliver: less than " +
+        "a thirtieth of a pixel at normal size.",
+    },
+    {
+      kind: "p",
+      text:
+        "Nobody could have seen it. It's fixed anyway, because a rule that " +
+        "holds for 999 icons should hold for all 1,000.",
+    },
+    {
+      kind: "figure",
+      figure: {
+        kind: "diagnostic",
+        panels: [
+          {
+            title: "`sparkle`, old over new",
+            a: { name: "sparkle", take: "before" },
+            b: { name: "sparkle", take: "after" },
+          },
+          {
+            title: "The top point, zoomed in",
+            a: { name: "sparkle", take: "before" },
+            b: { name: "sparkle", take: "after" },
+            viewBox: "11 1.5 2 2",
+            verdict: { text: "A sliver short", tone: "bad" },
+          },
+        ],
+        caption:
+          "Green is the sliver the new sparkle adds at its point. At normal " +
+          "size there's nothing to see.",
+        legend: {
+          a: "only the old sparkle",
+          b: "only the new one",
+          both: "both",
+        },
+      },
+    },
+
+    { kind: "h2", text: "Getting it", id: "getting-it" },
+    {
+      kind: "link",
+      href: "/icons",
+      label: "Browse the set",
+      text: "All 1,000 icons, in every style and both kinds of corner.",
+    },
+    {
+      kind: "link",
+      href: "/install",
+      label: "Install",
+      text:
+        "The React package, the command-line tool, the shadcn registry, the " +
+        "MCP server and the Figma plugin.",
+    },
+    {
+      kind: "link",
+      href: "/changelog",
+      label: "Changelog",
+      text: "Every release, with each redrawn icon shown before and after.",
+    },
+  ],
+}
+
 export const BLOG_POSTS: readonly BlogPost[] = [
+  RELEASE_1_0_0,
   BATCH_0_9_0,
   BATCH_0_8_0,
   BATCH_0_7_0,

@@ -145,11 +145,15 @@ export default async function Image({
             `post.title` rather than `postHeadline`: the version has its own
             place on the row below, and a card is 1200px of one message. The
             page's `<title>` and `og:title` still carry the prefix, which is
-            where a version actually helps someone decide whether to click. */}
+            where a version actually helps someone decide whether to click.
+
+            A title past 70 characters steps down to 54: at 62, 1.0.0's 85
+            fill three rows with nothing left between the last one and the
+            tiles. */}
       <div
         style={{
           display: "flex",
-          fontSize: 62,
+          fontSize: post.title.length > 70 ? 54 : 62,
           color: INK,
           letterSpacing: -2,
           lineHeight: 1.15,

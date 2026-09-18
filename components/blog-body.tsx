@@ -7,6 +7,7 @@ import {
   loadIcons,
   SET_RELEASES,
   SET_UNRELEASED,
+  STYLES,
   toStyleArt,
   type Icon,
   type Redraw,
@@ -74,9 +75,10 @@ function redrawnPairs(): Map<string, Redraw> {
  * scales to something heavier than the prose around it; 1.5 sits with the
  * text.
  *
- * One constant behind all three call sites — the grids, the before-and-after
- * pairs and both layers of a diagnostic panel — because a figure drawn at a
- * different weight from the one above it reads as a different set.
+ * One constant behind every call site (the grids, the style rows, the
+ * before-and-after pairs and both layers of a diagnostic panel), because a
+ * figure drawn at a different weight from the one above it reads as a
+ * different set.
  *
  * **The diagnostic panels take it too, and that was checked rather than
  * assumed.** The worry was that a narrower stroke would uncover plate the
@@ -207,6 +209,57 @@ function GridFigure({ icons, caption }: { icons: Icon[]; caption: string }) {
           <Tile key={icon.name} icon={icon} />
         ))}
       </ul>
+      <Caption>{prose(caption)}</Caption>
+    </figure>
+  )
+}
+
+/**
+ * The same drawings in every style, a row per style, on one muted panel.
+ *
+ * The rows are the comparison, so they share one grid and every column lines
+ * up: the eye runs down a column to see one drawing change style, and across
+ * the duotone row to see the rule it follows. A style a name does not have
+ * falls back to its stroke, which since 1.0.0 is also what the file holds.
+ *
+ * On a phone the drawings sit at the 24px they ship at, which is what lets
+ * eight columns and the labels fit 375px without the panel scrolling.
+ */
+function StylesFigure({ icons, caption }: { icons: Icon[]; caption: string }) {
+  return (
+    <figure className="my-8">
+      <div className="overflow-x-auto rounded-lg bg-muted px-3 py-5 sm:px-4">
+        <table className="mx-auto border-separate border-spacing-x-1.5 border-spacing-y-3 sm:border-spacing-x-3">
+          <tbody>
+            {STYLES.map((style) => (
+              <tr key={style}>
+                <th
+                  scope="row"
+                  className="pr-0.5 text-left align-middle text-[11px] font-normal whitespace-nowrap text-muted-foreground sm:pr-2"
+                >
+                  {style}
+                </th>
+                {icons.map((icon) => (
+                  <td key={icon.name} className="align-middle">
+                    <Link
+                      href={iconHref(icon.name)}
+                      aria-label={`${icon.name}, ${style}`}
+                      className="block text-foreground"
+                    >
+                      <Glyph
+                        art={(icon.art[style] ?? icon.art.stroke)!}
+                        size={24}
+                        stroke={FIGURE_STROKE}
+                        className="size-6 sm:size-9"
+                      />
+                    </Link>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <Caption>{prose(caption)}</Caption>
     </figure>
   )
@@ -524,6 +577,14 @@ export async function BlogBody({ post }: { post: BlogPost }) {
       case "grid":
         return (
           <GridFigure
+            key={key}
+            icons={resolve(spec.names)}
+            caption={spec.caption}
+          />
+        )
+      case "styles":
+        return (
+          <StylesFigure
             key={key}
             icons={resolve(spec.names)}
             caption={spec.caption}
