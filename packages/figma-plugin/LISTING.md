@@ -133,7 +133,7 @@ Four styles, with every name in all of them: two-tone is the outlined style that
 * Pointers: a hand closed and a hand open
 * People opened as a shelf of its own, taking categories from 37 to 38
 
-Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels with their grey under the frame's round corners, and the coins on rounder faces with 2 units between every coin.
+Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, the sparkle out to the 2-unit margin, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels with their grey under the frame's round corners, and the coins on rounder faces with 2 units between every coin.
 
 0.9.0 — 14 September 2026
 53 new drawings, taking the set to 851 names and 4,394 SVGs, and six new shelves.
@@ -276,7 +276,7 @@ wallet with its cards, a slashed bot, a brain with a cog and a pen with sparkles
 People opened as a shelf with them, taking categories from 37 to 38.
 
 Redrawn: the pointing hand in four directions, the paperclip, the dice, the
-three dots, play, the gallery frames, the grid and file fills, the chart axes in
+three dots, the sparkle, play, the gallery frames, the grid and file fills, the chart axes in
 two-tone, the four dashed close panels and the coins.
 ```
 
@@ -622,7 +622,7 @@ Four styles, and a new shelf. Every set now carries stroke, two-tone, duotone an
 * Pointers: a hand closed and a hand open
 * Categories went from 37 to 38: People took the figures that had nowhere honest to sit
 
-Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels, and the coins on rounder faces.
+Also redrawn: the pointing hand in four directions, the paperclip longer, the dice pips larger, the three dots larger, the sparkle out to the 2-unit margin, play smaller, the gallery frames on a tighter radius, the grid and file fills clear of their edges, the chart axes grey in two-tone, the four dashed close panels, and the coins on rounder faces.
 
 v0.9.0
 53 new drawings, and six new shelves. The set is 851 names now, 734 component sets and 4,394 variants, up from 798 and 4,094. One set was renamed, heart-hand to hand-heart, in place, so instances already placed in your files keep their link.

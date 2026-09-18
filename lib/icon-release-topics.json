@@ -404,10 +404,11 @@
             },
             {
               "title": "Actions",
-              "text": "The three dots are larger.",
+              "text": "The three dots are larger, and the sparkle's tips reach the same 2-unit margin as everything else.",
               "redraws": [
                 "more-horizontal",
-                "more-vertical"
+                "more-vertical",
+                "sparkle"
               ]
             },
             {

@@ -891,8 +891,13 @@ export function link2Path({ r = 3.625, cap1 = [5.625, 15.875], cap2 = [10.75, 10
  * pulls the painted extreme in by r(1/sin t − 1), so the tips take the
  * smallest ladder radius and the waist, which is obtuse and sets no extreme,
  * takes 1.5. R is then solved so the painted tip lands on 2, not the vertex.
+ *
+ * 9.8628 is that solve (the fillet apex on 9, so the ink stops on 2). It
+ * shipped from v0.5.0 to 1.0.0 at 9.836, which put the apex on 8.9732 and the
+ * padding on 2.027; the Figma file had meanwhile been nudged to 2 by hand with
+ * fatter arms, and neither was the construction (18 Sep 2026).
  */
-export function sparkleStar({ c = [12, 12], R = 9.836, w = null, rTip = 0.5, rWaist = 1.5, sharp = false } = {}) {
+export function sparkleStar({ c = [12, 12], R = 9.8628, w = null, rTip = 0.5, rWaist = 1.5, sharp = false } = {}) {
   const ww = w ?? R * 0.4;
   // Each tip is on an axis and symmetric about it, so the pull is along that
   // axis and the sharp tip radius falls straight out of it. The waist is

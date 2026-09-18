@@ -349,6 +349,8 @@ const SETS = {
 
   // The star is a closed contour, so it carries the full three: the plate is
   // the contour offset a unit and checked, and the pair gets one plate each.
+  // Written in the four styles since the 1.0.0 split: two-tone is the old
+  // plate-and-outline duotone, and duotone is the outline alone, as shipped.
   sparkle: () => {
     const out = {};
     for (const sharp of [false, true]) {
@@ -358,7 +360,8 @@ const SETS = {
       verify(segs, off, 1);
       const d = contourPath(segs), pl = contourPath(off);
       out[`stroke.${key}`] = [S(d)];
-      out[`duotone.${key}`] = [P(pl), S(d)];
+      out[`two-tone.${key}`] = [P(pl), S(d)];
+      out[`duotone.${key}`] = [S(d)];
       out[`fill.${key}`] = [F(pl)];
     }
     return out;

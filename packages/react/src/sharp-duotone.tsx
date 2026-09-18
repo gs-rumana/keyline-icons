@@ -7407,7 +7407,7 @@ export function Soup(props: IconProps) {
 export function Sparkle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M12 3.0268L14.782 9.218L20.9732 12L14.782 14.782L12 20.9732L9.218 14.782L3.0268 12L9.218 9.218L12 3.0268Z" fill="none" />
+      <path d="M12 3L14.7896 9.2104L21 12L14.7896 14.7896L12 21L9.2104 14.7896L3 12L9.2104 9.2104L12 3Z" fill="none" />
     </Icon>
   )
 }
