@@ -60,6 +60,7 @@ import { XLogo } from "@/components/brand-logos"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
@@ -220,18 +221,27 @@ const BELOW_SIDEBAR = "(max-width: 1023px)"
 
 /**
  * The page numbers to draw: always the first and last, always the neighbours of
- * the current one, and a gap for whatever is skipped.
+ * the current one, and a gap for whatever is skipped. A gap is the list of pages
+ * it stands for, because the ellipsis opens a menu of them: a skipped page
+ * reachable only by stepping Next through its neighbours is not reachable.
+ *
+ * A gap of one is drawn as its number. The ellipsis takes the same room, so
+ * hiding a single page saves nothing and costs the reader a click.
  */
-function pageNumbers(current: number, total: number): (number | "gap")[] {
+function pageNumbers(current: number, total: number): (number | number[])[] {
   const wanted = new Set([1, total, current - 1, current, current + 1])
-  const out: (number | "gap")[] = []
+  const out: (number | number[])[] = []
 
   for (let n = 1; n <= total; n++) {
+    const last = out.at(-1)
     if (wanted.has(n)) out.push(n)
-    else if (out.at(-1) !== "gap") out.push("gap")
+    else if (Array.isArray(last)) last.push(n)
+    else out.push([n])
   }
 
-  return out
+  return out.flatMap((entry) =>
+    Array.isArray(entry) && entry.length === 1 ? entry : [entry]
+  )
 }
 
 /**
@@ -892,6 +902,18 @@ export function IconBrowser({
     () => ordered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
     [ordered, currentPage]
   )
+
+  /**
+   * Where a page falls in the alphabet, from its first drawing to its last. The
+   * grid is in name order, so this is what tells a reader which hidden page
+   * holds the icon they are after. Bases, because that is what the sort reads:
+   * a page that opens on `circle-dollar-sign` opens at D.
+   */
+  const pageSpan = (n: number) => {
+    const first = ordered[(n - 1) * PAGE_SIZE]
+    const last = ordered[Math.min(n * PAGE_SIZE, ordered.length) - 1]
+    return `${first.base} to ${last.base}`
+  }
 
   /** Set by the pager so only a page turn scrolls, not every re-render. */
   const scrollPending = React.useRef(false)
@@ -1898,15 +1920,45 @@ export function IconBrowser({
                 Previous
               </button>
 
-              {pageNumbers(currentPage, pageCount).map((entry, i) =>
-                entry === "gap" ? (
-                  <span
-                    key={`gap-${i}`}
-                    aria-hidden="true"
-                    className="px-1 text-sm text-muted-foreground"
-                  >
-                    …
-                  </span>
+              {pageNumbers(currentPage, pageCount).map((entry) =>
+                Array.isArray(entry) ? (
+                  <DropdownMenu key={`gap-${entry[0]}`}>
+                    {/* Opens on hover as well as on click; the click is what a
+                    touch screen and a keyboard still have. */}
+                    <DropdownMenuTrigger
+                      openOnHover
+                      closeDelay={150}
+                      aria-label={`Pages ${entry[0]} to ${entry.at(-1)}`}
+                      className={cn(
+                        buttonVariants({ variant: "ghost" }),
+                        "h-9 w-9 text-muted-foreground"
+                      )}
+                    >
+                      …
+                    </DropdownMenuTrigger>
+                    {/* Upward: the pager is the foot of the grid, with the
+                    dock under it. */}
+                    <DropdownMenuContent
+                      side="top"
+                      align="center"
+                      className="w-auto max-w-80"
+                    >
+                      {entry.map((n) => (
+                        <DropdownMenuItem
+                          key={n}
+                          onClick={() => goToPage(n)}
+                          className="gap-3 py-1.5"
+                        >
+                          <span className="w-5 text-right font-medium tabular-nums">
+                            {n}
+                          </span>
+                          <span className="truncate text-muted-foreground">
+                            {pageSpan(n)}
+                          </span>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 ) : (
                   <button
                     key={entry}
