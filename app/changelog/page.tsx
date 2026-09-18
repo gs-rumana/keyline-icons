@@ -12,6 +12,7 @@ import {
 } from "@/lib/icons"
 import {
   CHANGELOG_SHARP_ICON_NAMES,
+  CHANGELOG_STYLES_ICON_NAMES,
   FOUR_STYLES_RELEASE,
   SHARP_RELEASE,
 } from "@/lib/changelog"
@@ -136,9 +137,10 @@ function Tiles({ icons }: { icons: Icon[] }) {
 }
 
 /**
- * A taste of the sharp half, faded out at the bottom.
+ * A taste of a treatment or a style, faded out at the bottom, with a link to
+ * all of it.
  *
- * The tiles are the ones above with the other treatment in them, deliberately:
+ * The tiles are the release tiles with another drawing in them, deliberately:
  * a second tile component is how one surface starts disagreeing with another
  * about what an icon looks like, and the only thing that differs here is which
  * drawing goes in.
@@ -148,8 +150,23 @@ function Tiles({ icons }: { icons: Icon[] }) {
  * white rectangle on a dark page unless someone remembers to theme it; a mask
  * takes the tiles out of the paint and lets whatever is behind them through,
  * which is right in both themes and needs no token.
+ *
+ * The count under it is the whole set rather than what the fade hides, and
+ * that is the point of writing it this way: how many are cut off depends on
+ * how wide the window is, so a remainder would be a number that is only true
+ * at one size.
  */
-function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
+function FadedPreview({
+  icons,
+  draw,
+  href,
+  children,
+}: {
+  icons: Icon[]
+  draw: (icon: Icon) => StyleArt | undefined
+  href: string
+  children: React.ReactNode
+}) {
   return (
     <div className="not-prose">
       <ul
@@ -162,21 +179,53 @@ function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
       >
         {icons.map((icon) => (
           <Tile key={icon.name} name={icon.name} href={iconHref(icon.name)}>
-            <Glyph art={artOf(icon, "stroke", "sharp")!} size={24} stroke={2} />
+            <Glyph art={draw(icon)!} size={24} stroke={2} />
           </Tile>
         ))}
       </ul>
+      <SeeAll href={href}>{children}</SeeAll>
+    </div>
+  )
+}
 
-      {/*
-        The count is the whole set rather than what the fade hides, and that is
-        the point of writing it this way: how many are cut off depends on how
-        wide the window is, so a remainder would be a number that is only true
-        at one size. `?corners=sharp` lands the browser on the treatment it just
-        showed you, which is the same seed `?style=` already offers.
-      */}
-      <SeeAll href="/icons?corners=sharp">
-        See all {total.toLocaleString("en-US")} in sharp
-      </SeeAll>
+/** The sharp half, under v0.3.0. `?corners=sharp` lands the browser on it. */
+function SharpPreview({ icons, total }: { icons: Icon[]; total: number }) {
+  return (
+    <FadedPreview
+      icons={icons}
+      draw={(icon) => artOf(icon, "stroke", "sharp")}
+      href="/icons?corners=sharp"
+    >
+      See all {total.toLocaleString("en-US")} in sharp
+    </FadedPreview>
+  )
+}
+
+/**
+ * Two-tone, then duotone, under 1.0.0's Four styles: the style that got its
+ * name in that release and the one that was drawn for everything in it.
+ * `?style=` seeds the browser's style filter, so each link arrives on the
+ * style it just showed.
+ */
+function StylesPreview({
+  icons,
+  totals,
+}: {
+  icons: Icon[]
+  totals: Record<"two-tone" | "duotone", number>
+}) {
+  return (
+    <div className="flex flex-col gap-10">
+      {(["two-tone", "duotone"] as const).map((style) => (
+        <FadedPreview
+          key={style}
+          icons={icons}
+          draw={(icon) => icon.art[style]}
+          href={`/icons?style=${style}`}
+        >
+          See all {totals[style].toLocaleString("en-US")} in {style}
+        </FadedPreview>
+      ))}
     </div>
   )
 }
@@ -486,10 +535,13 @@ function Chips({
   topics,
   byName,
   redrawn,
+  extra,
 }: {
   topics: ReleaseTopic[]
   byName: Map<string, Icon>
   redrawn: Pair[]
+  /** Something drawn under one section's sentence, found by its anchor. */
+  extra?: { anchor: string; node: React.ReactNode }
 }) {
   const pairOf = new Map(redrawn.map((pair) => [pair.name, pair]))
   const drawings = (topic: ReleaseTopic) => {
@@ -558,6 +610,7 @@ function Chips({
                   {topic.text}
                 </p>
               )}
+              {extra && topic.anchor === extra.anchor && extra.node}
               {drawings(topic)}
               {topic.sections.map((item, j) => (
                 <div
@@ -788,9 +841,22 @@ async function release() {
     Boolean(icon && artOf(icon, "stroke", "sharp"))
   )
 
+  const stylesSample = CHANGELOG_STYLES_ICON_NAMES.map((name) =>
+    byName.get(name)
+  ).filter((icon): icon is Icon =>
+    Boolean(icon?.art["two-tone"] && icon.art.duotone)
+  )
+
   return {
     count: dated.length,
     sharp: { sample: sharpSample, total: withSharp.length },
+    styles: {
+      sample: stylesSample,
+      totals: {
+        "two-tone": icons.filter((icon) => icon.art["two-tone"]).length,
+        duotone: icons.filter((icon) => icon.art.duotone).length,
+      },
+    },
     /*
       One entry per release, newest first, straight off the generated list.
       Counts and membership are as of each tag rather than as of today: the
@@ -853,7 +919,20 @@ export async function generateMetadata() {
 }
 
 export default async function Page() {
-  const { entries, unreleased, sharp, byName } = await release()
+  const { entries, unreleased, sharp, styles, byName } = await release()
+
+  /*
+    Two-tone and duotone under the sentence that announces them, in the
+    release that split them, whether that release is still unreleased or
+    tagged. Pinned by version for the reason the sharp preview is.
+  */
+  const stylesExtra = (version: string) =>
+    version === FOUR_STYLES_RELEASE && styles.sample.length > 0
+      ? {
+          anchor: `v${FOUR_STYLES_RELEASE}-four-styles`,
+          node: <StylesPreview icons={styles.sample} totals={styles.totals} />,
+        }
+      : undefined
 
   /*
     The count sentence, closed rather than leading into a strip: every drawing
@@ -998,6 +1077,7 @@ export default async function Page() {
                 }
                 byName={byName}
                 redrawn={unreleased.redrawn}
+                extra={stylesExtra(SET_VERSION)}
               />
             </Release>
           )}
@@ -1066,6 +1146,7 @@ export default async function Page() {
                   }
                   byName={byName}
                   redrawn={entry.redrawn}
+                  extra={stylesExtra(entry.version)}
                 />
               )}
             </Release>

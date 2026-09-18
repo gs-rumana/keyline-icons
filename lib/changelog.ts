@@ -89,3 +89,47 @@ export const CHANGELOG_SHARP_ICON_NAMES = [
  * a tagged entry, and the cover has to stay with it.
  */
 export const FOUR_STYLES_RELEASE = "1.0.0"
+
+/**
+ * A taste of two-tone and duotone under the release that split them, the way
+ * `CHANGELOG_SHARP_ICON_NAMES` shows sharp under v0.3.0 (Zafar, 18 Sep 2026:
+ * "cover the new two-tone icons properly with some icons and a view more
+ * button how we did with sharps").
+ *
+ * Drawings with a body to grey and a part to keep black, so the two styles
+ * read as two styles; a plain shape is the same outline in both and says
+ * nothing. The same thirty fill both grids, so a column compares one drawing
+ * across them.
+ */
+export const CHANGELOG_STYLES_ICON_NAMES = [
+  "bell",
+  "calendar-check",
+  "camera",
+  "message",
+  "mail",
+  "folder-open",
+  "file-check",
+  "image",
+  "credit-card",
+  "wallet",
+  "shopping-bag",
+  "package",
+  "truck",
+  "gift",
+  "home",
+  "building",
+  "map-pin",
+  "globe-check",
+  "cloud-sun",
+  "lightbulb",
+  "lock",
+  "key",
+  "shield-check",
+  "user",
+  "users",
+  "bot",
+  "brain-cog",
+  "rocket",
+  "trophy",
+  "toolbox",
+] as const
