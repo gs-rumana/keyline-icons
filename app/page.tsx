@@ -354,7 +354,7 @@ export default async function Page() {
                   one. `text-muted-foreground` on a heading is the same device
                   the hero's tagline uses, one level up.
                 */}
-                <span className="text-muted-foreground">crafted with AI</span>
+                <span className="text-muted-foreground">four styles, two corners</span>
               </h1>
 
               {/*

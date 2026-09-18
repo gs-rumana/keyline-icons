@@ -315,7 +315,7 @@ const compose = (h, rows, [rw, rh]) =>
   // The mark, 104 across: the height the old 40-unit tile stood at.
   markAt(PAD, 96, 104, PRIMARY) +
   `<text x="${PAD}" y="322" font-family="${FONT}" font-size="96" font-weight="600" letter-spacing="-3" fill="${INK}">Keyline Icons</text>` +
-  `<text x="${PAD}" y="378" font-family="${FONT}" font-size="34" fill="${MUTED}">Built for shadcn/ui · An icon set crafted with AI</text>` +
+  `<text x="${PAD}" y="378" font-family="${FONT}" font-size="34" fill="${MUTED}">Built for shadcn/ui · React, Figma and Paper</text>` +
   `<line x1="${PAD}" y1="430" x2="${W - PAD}" y2="430" stroke="${HAIRLINE}" stroke-width="2"/>` +
   `<g fill="none" stroke="${INK}">${glyphs.slice(0, COLS * rows).join("")}</g>` +
   `<line x1="${PAD}" y1="${h - 114}" x2="${W - PAD}" y2="${h - 114}" stroke="${HAIRLINE}" stroke-width="2"/>` +

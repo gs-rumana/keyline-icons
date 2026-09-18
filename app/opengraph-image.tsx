@@ -54,7 +54,7 @@ import { SET_LICENSE, SET_TITLE } from "@/lib/site-chrome"
  * so it wraps either way, and the only choice is whether the break lands at the
  * comma or somewhere inside "shadcn/ui". Two rows put it at the comma.
  */
-export const alt = `${SET_TITLE}: free icons for shadcn/ui, crafted with AI`
+export const alt = `${SET_TITLE}: free icons for shadcn/ui, four styles, two corners`
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -102,17 +102,15 @@ export default async function Image() {
             strength, the smaller half of it in muted. Two rows rather than one
             wrapping line, for the reason the note at the top of this file gives.
 
-            `SET_TAGLINE` and `SET_CREDIT` used to sit under the name here and are
-            gone from the card. "Built for shadcn/ui" is the headline's first
-            clause in other words, and the credit is a line for a footer rather
-            than for a feed. Both are still in `lib/site-chrome.ts` and still on
-            the site. */}
+            `SET_TAGLINE` used to sit under the name here and is gone from the
+            card: "Built for shadcn/ui" is the headline's first clause in other
+            words. */}
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ fontSize: 76, color: INK, letterSpacing: -2 }}>
           Free icons for shadcn/ui,
         </div>
         <div style={{ fontSize: 76, color: MUTED, letterSpacing: -2 }}>
-          crafted with AI
+          four styles, two corners
         </div>
       </div>
 

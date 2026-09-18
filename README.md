@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 
 **1,000 icons, drawn on one 24×24 grid, in four styles and two corner
-treatments.** Built for shadcn/ui, crafted with AI, free under MIT.
+treatments.** Built for shadcn/ui, free under MIT.
 
 [**keylineicons.com**](https://keylineicons.com) to browse and copy.
 

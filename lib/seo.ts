@@ -108,7 +108,7 @@ export const SITE_DESCRIPTION =
  * absolute title and the card title are the same string by definition.
  */
 export const homeCardTitle = (icons: number) =>
-  `${SET_TITLE}: ${icons.toLocaleString("en-US")} free shadcn/ui icons, crafted with AI`
+  `${SET_TITLE}: ${icons.toLocaleString("en-US")} free shadcn/ui icons in four styles and two corners`
 
 /**
  * The card's line under that title.

@@ -105,7 +105,7 @@ export function homeFaq({
       answer:
         `A free icon set: ${total.toLocaleString("en-US")} icons drawn on one 24×24 grid, each in four styles: ` +
         `stroke, two-tone, duotone and fill, with rounded or sharp corners. ${SET_TAGLINE}, released under ` +
-        `the ${SET_LICENSE_NAME}, and crafted with AI.`,
+        `the ${SET_LICENSE_NAME}.`,
     },
     {
       question: `How many icons are there, and what are the four styles?`,
