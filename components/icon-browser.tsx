@@ -1924,9 +1924,13 @@ export function IconBrowser({
                 Array.isArray(entry) ? (
                   <DropdownMenu key={`gap-${entry[0]}`}>
                     {/* Opens on hover as well as on click; the click is what a
-                    touch screen and a keyboard still have. */}
+                    touch screen and a keyboard still have. `delay` is zero
+                    because Base UI's is a rest timer, restarted by every mouse
+                    move, so its default 100 waits for the pointer to stop and
+                    reads as half a second. */}
                     <DropdownMenuTrigger
                       openOnHover
+                      delay={0}
                       closeDelay={150}
                       aria-label={`Pages ${entry[0]} to ${entry.at(-1)}`}
                       className={cn(
