@@ -329,10 +329,11 @@
             },
             {
               "title": "Devices",
-              "text": "In two-tone scan-eye greys its frame, and scan-search's handle starts on its ring.",
+              "text": "In two-tone scan-eye greys its frame, scan-search's handle starts on its ring, and monitor-off's far side stands off the slash as far as every other -off does.",
               "redraws": [
                 "scan-eye",
-                "scan-search"
+                "scan-search",
+                "monitor-off"
               ]
             },
             {
@@ -344,7 +345,7 @@
             },
             {
               "title": "Pointers",
-              "text": "The pointer is drawn again in all four directions.",
+              "text": "The pointer is drawn again in all four directions, and its fill carries the finger lines.",
               "redraws": [
                 "hand-pointer",
                 "hand-pointer-down",

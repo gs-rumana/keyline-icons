@@ -5660,7 +5660,7 @@ export function MonitorOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
       <path d="M17 17H13V19H17V21H7V19H11V17H2C1.4477 17 1 16.5523 1 16V4C1 3.4477 1.4477 3 2 3H3L17 17Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
-      <path d="M22 3C22.5523 3 23 3.4477 23 4V16C23 16.364 22.8054 16.6825 22.5146 16.8574L8.65723 3H22Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M6.6569 3L22 3C22.5523 3 23 3.4477 23 4L23 16C23 16.5523 22.5523 17 22 17L20.6569 17Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
       <path d="M1.70715 1.70703L22.293 22.2928" />
     </Icon>
   )

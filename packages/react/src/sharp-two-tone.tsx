@@ -5731,7 +5731,7 @@ export function Minus(props: IconProps) {
 export function MonitorOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <path d="M17 17H2C1.4477 17 1 16.5523 1 16V4C1 3.4477 1.4477 3 2 3H3L17 17ZM8.657 3L22 3C22.5523 3 23 3.4477 23 4L23 16C23 16.3641 22.8054 16.6828 22.5145 16.8577Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
+      <path d="M17 17H2C1.4477 17 1 16.5523 1 16V4C1 3.4477 1.4477 3 2 3H3L17 17ZM6.6569 3L22 3C22.5523 3 23 3.4477 23 4L23 16C23 16.5523 22.5523 17 22 17L20.6569 17Z" fill="currentColor" fillOpacity={0.4} stroke="none" />
       <path d="M16 16H2V4H4M12 16V20M7 20H17M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )

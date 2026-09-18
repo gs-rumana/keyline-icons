@@ -712,7 +712,7 @@
       "width": 742,
       "icons": 0,
       "variants": 56,
-      "bytes": 39961
+      "bytes": 40372
     },
     {
       "file": "devices-7.html",
@@ -1648,7 +1648,7 @@
       "width": 742,
       "icons": 0,
       "variants": 24,
-      "bytes": 34193
+      "bytes": 37313
     },
     {
       "file": "pointers-4.html",
@@ -1660,7 +1660,7 @@
       "width": 742,
       "icons": 0,
       "variants": 24,
-      "bytes": 34109
+      "bytes": 37036
     },
     {
       "file": "science.html",
@@ -2244,7 +2244,7 @@
       "width": 744,
       "icons": 0,
       "variants": 0,
-      "bytes": 377097
+      "bytes": 379028
     },
     {
       "file": "changelog-earlier.html",
