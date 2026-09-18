@@ -38,6 +38,7 @@ import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { boardFiles, paperFiles } from "./lib/paper-files.mjs"
+import { paperJson } from "./lib/paper-json.mjs"
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url))
 const SHEETS = join(ROOT, "previews", "paper")
@@ -210,7 +211,7 @@ for (const sheet of manifest.sheets) {
    then the JSON; see the same helper in import-paper.mjs. */
 const parsed = (body) => {
   const start = body.search(/[{[]/)
-  return JSON.parse(start >= 0 ? body.slice(start) : body)
+  return paperJson(start >= 0 ? body.slice(start) : body)
 }
 
 const files = await filesToCheck()
@@ -236,8 +237,11 @@ for (const file of files) {
   names.set(file.id, opened.fileName ?? file.id)
   const pages = parsed(await call("get_basic_info", { fileId: file.id })).pages ?? []
   for (const page of pages) {
+    /* The page goes to the read itself as well: since Paper's 18 Sep 2026
+       update, a page opened by one call is not the active page for the next,
+       and every page read back as the one the file was left on. */
     await call("open_file", { fileId: file.id, pageId: page.id })
-    const info = parsed(await call("get_basic_info", { fileId: file.id }))
+    const info = parsed(await call("get_basic_info", { fileId: file.id, pageId: page.id }))
     for (const board of info.artboards) {
       const at = { ...board, page: page.name, file }
       /* Keyed by board *and* file: the same name in two files is the case this

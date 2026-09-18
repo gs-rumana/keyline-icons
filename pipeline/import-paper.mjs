@@ -44,6 +44,7 @@ import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { boardFiles, paperFiles } from "./lib/paper-files.mjs"
+import { paperJson } from "./lib/paper-json.mjs"
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url))
 const SHEETS = join(ROOT, "previews", "paper")
@@ -148,7 +149,7 @@ const json = (body) => {
     console.error(`  ${body.slice(0, start).trim()}`)
   }
   try {
-    return JSON.parse(start >= 0 ? body.slice(start) : body)
+    return paperJson(start >= 0 ? body.slice(start) : body)
   } catch {
     throw new Error(`expected JSON, got: ${body.slice(0, 200)}`)
   }
@@ -315,8 +316,11 @@ for (const file of files) {
   const pages = json(await call("get_basic_info", { fileId: file.id })).pages ?? []
   pagesOf.set(file.id, pages)
   for (const page of pages) {
+    /* The page goes to the read itself as well: since Paper's 18 Sep 2026
+       update, a page opened by one call is not the active page for the next,
+       and every page read back as the one the file was left on. */
     await call("open_file", { fileId: file.id, pageId: page.id })
-    const info = json(await call("get_basic_info", { fileId: file.id }))
+    const info = json(await call("get_basic_info", { fileId: file.id, pageId: page.id }))
     for (const board of info.artboards) {
       found.set(`${file.id}/${board.name}`, { ...board, page, file })
     }
