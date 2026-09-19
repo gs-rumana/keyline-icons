@@ -86,6 +86,7 @@ import {
   type Style,
 } from "@/components/glyph"
 import { IconPreview, useIconPreview } from "@/components/icon-preview"
+import { iconHref } from "@/lib/icon-pages"
 import {
   aliasesFor,
   CATEGORIES,
@@ -1785,14 +1786,41 @@ export function IconBrowser({
                 }
               >
                 {paged.map((icon) => (
-                  <button
+                  /*
+                    A link to the icon's page that a plain click keeps in the
+                    dock. As a `<button>` the tile gave a crawler nothing to
+                    follow: `/icons` linked to none of the icon pages, and the
+                    dock's "Open page" only exists after a click. Search
+                    Console had 150 icon pages discovered and not indexed on
+                    14 Sep 2026, with 363 of 1,000 linked from no page but the
+                    sitemap. A modified or middle click opens the page, which
+                    is what a link under the pointer promises anyway.
+                  */
+                  <a
                     key={icon.name}
-                    type="button"
+                    href={iconHref(icon.name)}
                     data-icon-name={icon.name}
                     /* Opens the dock. Copying moved in there with it: the panel
                        offers four formats, and a click that silently put one of
                        them on the clipboard was a guess about which. */
-                    onClick={() => preview.select(icon.name)}
+                    onClick={(event) => {
+                      if (
+                        event.button !== 0 ||
+                        event.metaKey ||
+                        event.ctrlKey ||
+                        event.shiftKey ||
+                        event.altKey
+                      )
+                        return
+                      event.preventDefault()
+                      preview.select(icon.name)
+                    }}
+                    // Space pressed a button; on a link it scrolls the page.
+                    onKeyDown={(event) => {
+                      if (event.key !== " ") return
+                      event.preventDefault()
+                      preview.select(icon.name)
+                    }}
                     aria-label={icon.name}
                     aria-haspopup="dialog"
                     className={cn(
@@ -1849,7 +1877,7 @@ export function IconBrowser({
                         className="pointer-events-none absolute top-1.5 right-1.5 size-1.5 rounded-full bg-primary"
                       />
                     )}
-                  </button>
+                  </a>
                 ))}
               </div>
 

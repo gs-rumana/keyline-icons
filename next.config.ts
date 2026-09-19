@@ -46,8 +46,26 @@ const nextConfig: NextConfig = {
     rendering the grid at both addresses, which is the duplication the route
     policy exists to prevent, and neither page does.
   */
+  /*
+    Renamed icons, for the same reason as `/shadcn`. An icon page is an
+    address Google has already crawled, so a rename without an entry here is a
+    404 in Search Console: two of these three were listed there on 14 Sep 2026.
+    A rename adds its old name here; a drawing that was removed outright does
+    not, since a 404 is the true answer for it.
+  */
   async redirects() {
-    return [{ source: "/shadcn", destination: "/install", permanent: true }]
+    return [
+      { source: "/shadcn", destination: "/install", permanent: true },
+      ...[
+        ["heart-hand", "hand-heart"],
+        ["link-off", "link-2-off"],
+        ["tag-horizontal", "tag-horizontal-start"],
+      ].map(([from, to]) => ({
+        source: `/icons/${from}`,
+        destination: `/icons/${to}`,
+        permanent: true,
+      })),
+    ]
   },
 }
 
