@@ -5,12 +5,24 @@ import { parseSettings, SETTINGS_COOKIE } from "@/lib/browser-settings"
 import { CONTAINERS } from "@/components/glyph"
 import { isNewSince, loadIcons, STYLES } from "@/lib/icons"
 import { CORNERS } from "@/components/glyph"
+import { gridPageCount } from "@/lib/icon-pages"
 import { pageMetadata } from "@/lib/seo"
 import { IconLibrary } from "@/components/icon-library"
 import { SET_LICENSE, SET_TAGLINE } from "@/lib/site-chrome"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
 import { Toaster } from "@/components/ui/sonner"
+
+/**
+ * `?page=` as a page of the unfiltered grid, or `undefined` for page 1 and
+ * for anything that is not a page. A lone string of digits from 2 up to the
+ * last page; `?page=1` is the bare address and has no second spelling.
+ */
+function pageOf(value: string | string[] | undefined, total: number) {
+  if (typeof value !== "string" || !/^\d{1,3}$/.test(value)) return undefined
+  const page = Number(value)
+  return page >= 2 && page <= gridPageCount(total) ? page : undefined
+}
 
 /**
  * Generated rather than declared, for one word in it: the count.
@@ -23,8 +35,33 @@ import { Toaster } from "@/components/ui/sonner"
  * `loadIcons` memoises for the life of the process, so calling it here and
  * again in the page body costs one read of the icon directories, not two.
  */
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string | string[] }>
+}): Promise<Metadata> {
   const total = (await loadIcons()).length
+  const page = pageOf((await searchParams).page, total)
+
+  /*
+    Pages 2 and on are their own pages, with their own canonical, and not
+    copies of `/icons`: each shows a different 120 drawings. Google's own
+    advice for a paged list is exactly this, and pointing them all at page 1
+    is the thing it warns against, because the drawings past page 1 are then
+    on no page it keeps. Every other query form still canonicals to `/icons`;
+    `?page=` is the one that changes what is listed rather than how.
+  */
+  if (page) {
+    const pages = gridPageCount(total)
+    return pageMetadata({
+      path: `/icons?page=${page}`,
+      title: `Browse ${total.toLocaleString("en-US")} free icons, page ${page} of ${pages}`,
+      description:
+        `Page ${page} of ${pages} of ${total.toLocaleString("en-US")} free ${SET_LICENSE}-licensed icons, ` +
+        `in stroke, two-tone, duotone and fill, rounded or sharp. Copy any icon as SVG or JSX.`,
+      socialDescription: `${SET_TAGLINE}. ${total.toLocaleString("en-US")} free icons in stroke, two-tone, duotone and fill, rounded or sharp.`,
+    })
+  }
 
   return pageMetadata({
     // The browser's own address, self-referencing as every canonical here is.
@@ -88,6 +125,7 @@ export default async function Page({
     style?: string | string[]
     shape?: string | string[]
     corners?: string | string[]
+    page?: string | string[]
   }>
 }) {
   /*
@@ -148,7 +186,7 @@ export default async function Page({
    * looking untouched.
    */
   const params = await searchParams
-  const { icon, search, style, shape, corners } = params
+  const { icon, search, style, shape, corners, page } = params
   const named = typeof icon === "string" ? icon.trim().slice(0, 64) : ""
   const initialIcon = icons.some((known) => known.name === named)
     ? named
@@ -228,6 +266,7 @@ export default async function Page({
           initialIcon={initialIcon}
           initialIconStyle={initialIconStyle}
           initialIconCorners={initialIconCorners}
+          initialPage={pageOf(page, icons.length)}
         />
 
         {/*

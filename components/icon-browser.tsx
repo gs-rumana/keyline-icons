@@ -86,7 +86,7 @@ import {
   type Style,
 } from "@/components/glyph"
 import { IconPreview, useIconPreview } from "@/components/icon-preview"
-import { iconHref } from "@/lib/icon-pages"
+import { GRID_PAGE_SIZE, ICONS_SEGMENT, iconHref } from "@/lib/icon-pages"
 import {
   aliasesFor,
   CATEGORIES,
@@ -211,9 +211,6 @@ const CATEGORY_ICONS: Record<
 /** The row that is not a category: everything. */
 const ALL_ICON = Menu
 
-/** Icons per page. */
-const PAGE_SIZE = 120
-
 /**
  * Below this the category rail is gone, so the drawer has to carry it. Keep it
  * in step with the `lg:` on the `<aside>` — they are two halves of one switch.
@@ -244,6 +241,43 @@ function pageNumbers(current: number, total: number): (number | number[])[] {
     Array.isArray(entry) && entry.length === 1 ? entry : [entry]
   )
 }
+
+/**
+ * A left click with no modifier held: the one a link here keeps for itself.
+ * Anything else, cmd, ctrl, shift or a middle click, is left to the browser,
+ * which opens the address the way a link under the pointer promises.
+ */
+const plainClick = (event: React.MouseEvent) =>
+  event.button === 0 &&
+  !event.metaKey &&
+  !event.ctrlKey &&
+  !event.shiftKey &&
+  !event.altKey
+
+/**
+ * Sets `key` on the address, or drops it when the value is at its neutral:
+ * the whole set in stroke, rounded, on page 1 is `/icons` and nothing else.
+ */
+const carry = (
+  params: URLSearchParams,
+  key: string,
+  value: string | null,
+  neutral: string
+) => {
+  if (value && value !== neutral) params.set(key, value)
+  else params.delete(key)
+}
+
+/**
+ * What the grid is narrowed by, as one string. A page number only means
+ * something against the same narrowing, so the page resets when this changes.
+ */
+const signatureOf = (
+  query: string,
+  style: Style,
+  shape: ShapeFilter,
+  category: string
+) => `${query}|${style}|${shape}|${category}`
 
 /**
  * Grid order: by base name, then by container.
@@ -394,6 +428,46 @@ const terms = (query: string) => {
     .filter((w) => w && !(identifier && /^\d+$/.test(w)))
 }
 
+/**
+ * Previous or Next: a link to the neighbouring page, or a disabled button at
+ * either end of the grid, where there is no neighbour to link to.
+ */
+function PagerStep({
+  href,
+  onTurn,
+  children,
+}: {
+  href: string | null
+  onTurn: () => void
+  children: React.ReactNode
+}) {
+  const className = cn(
+    buttonVariants({ variant: "ghost" }),
+    "h-9 disabled:pointer-events-none disabled:opacity-40"
+  )
+
+  if (href === null)
+    return (
+      <button type="button" disabled className={className}>
+        {children}
+      </button>
+    )
+
+  return (
+    <a
+      href={href}
+      onClick={(event) => {
+        if (!plainClick(event)) return
+        event.preventDefault()
+        onTurn()
+      }}
+      className={className}
+    >
+      {children}
+    </a>
+  )
+}
+
 export function IconBrowser({
   icons,
   initialSettings,
@@ -402,6 +476,7 @@ export function IconBrowser({
   initialIcon,
   initialIconStyle,
   initialIconCorners,
+  initialPage = 1,
   query,
   onQueryChange,
 }: {
@@ -435,6 +510,14 @@ export function IconBrowser({
    */
   initialIconStyle?: Style
   initialIconCorners?: Corners
+  /**
+   * Seeded from `?page=`, and written back like `?icon=`. Each page of the
+   * grid is an address a crawler can reach, which is how the icon pages past
+   * the first 120 get a link from here at all. Validated on the server against
+   * the unfiltered set; a seeded search can still make it too high, and the
+   * clamp below takes it back to the last page there is.
+   */
+  initialPage?: number
   /** Owned by `IconLibrary` — the field that drives it lives in the hero. */
   query: string
   onQueryChange: (next: string) => void
@@ -461,8 +544,12 @@ export function IconBrowser({
   const [style, setStyle] = React.useState<Style>(initialStyle)
   const [shape, setShape] = React.useState<ShapeFilter>(initialShape)
   const [browseOpen, setBrowseOpen] = React.useState(false)
-  const [page, setPage] = React.useState(1)
-  const [lastSignature, setLastSignature] = React.useState("")
+  const [page, setPage] = React.useState(initialPage)
+  // Starts on the seeded narrowing, or the first render would read it as a
+  // change and put `?page=` back to 1 before anything had changed.
+  const [lastSignature, setLastSignature] = React.useState(() =>
+    signatureOf(query, initialStyle, initialShape, "all")
+  )
   const gridRef = React.useRef<HTMLDivElement>(null)
   /** The whole browser: rail, filter row and grid, for the category scroll. */
   const sectionRef = React.useRef<HTMLDivElement>(null)
@@ -842,7 +929,7 @@ export function IconBrowser({
    * searches that differ in any of these four are two searches. Kept as one
    * const so those two can never disagree about what "the same search" means.
    */
-  const searchSignature = `${query}|${style}|${shape}|${category}`
+  const searchSignature = signatureOf(query, style, shape, category)
 
   const emptySearch =
     shown.length === 0 && query.trim().length >= SEARCH_MIN_LENGTH
@@ -883,7 +970,7 @@ export function IconBrowser({
    */
   const ordered = React.useMemo(() => [...shown].sort(byName), [shown])
 
-  const pageCount = Math.max(1, Math.ceil(ordered.length / PAGE_SIZE))
+  const pageCount = Math.max(1, Math.ceil(ordered.length / GRID_PAGE_SIZE))
 
   /*
     Filtering changes what a page number means, so the page resets when the
@@ -900,7 +987,11 @@ export function IconBrowser({
   )
 
   const paged = React.useMemo(
-    () => ordered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    () =>
+      ordered.slice(
+        (currentPage - 1) * GRID_PAGE_SIZE,
+        currentPage * GRID_PAGE_SIZE
+      ),
     [ordered, currentPage]
   )
 
@@ -911,8 +1002,8 @@ export function IconBrowser({
    * a page that opens on `circle-dollar-sign` opens at D.
    */
   const pageSpan = (n: number) => {
-    const first = ordered[(n - 1) * PAGE_SIZE]
-    const last = ordered[Math.min(n * PAGE_SIZE, ordered.length) - 1]
+    const first = ordered[(n - 1) * GRID_PAGE_SIZE]
+    const last = ordered[Math.min(n * GRID_PAGE_SIZE, ordered.length) - 1]
     return `${first.base} to ${last.base}`
   }
 
@@ -1044,7 +1135,7 @@ export function IconBrowser({
 
   /**
    * The address follows what is on screen: the query, the drawing the dock is
-   * showing, and the three axes the filter row sets.
+   * showing, the three axes the filter row sets and the page of the grid.
    *
    * Every one of these was already a seed a link could carry *in*. This is the
    * other direction, and it is the whole point: what you narrowed to and what
@@ -1083,20 +1174,37 @@ export function IconBrowser({
    * fifth of a second is an address that can be copied wrong.
    */
   const openIcon = preview.closing ? null : preview.name
+
+  /*
+    The grid's half of the address: what it is narrowed by and which page of it
+    is on screen. The effect below writes it to the address bar and the pager
+    builds its links from it, so a page link carries the narrowing the screen
+    does, and a cmd-click on page 3 of a search opens page 3 of that search.
+  */
+  const carryView = React.useCallback(
+    (params: URLSearchParams, pageNumber: number) => {
+      carry(params, "search", query, "")
+      carry(params, "style", style, "stroke")
+      carry(params, "shape", shape, "all")
+      carry(params, "corners", corners, SETTINGS_DEFAULTS.corners)
+      carry(params, "page", String(pageNumber), "1")
+      return params
+    },
+    [query, style, shape, corners]
+  )
+
+  const pageHref = (pageNumber: number) => {
+    const search = carryView(new URLSearchParams(), pageNumber).toString()
+    return `${ICONS_SEGMENT}${search ? `?${search}` : ""}`
+  }
+
   React.useEffect(() => {
     const timer = window.setTimeout(() => {
-      const params = new URLSearchParams(window.location.search)
-
-      const carry = (key: string, value: string | null, neutral: string) => {
-        if (value && value !== neutral) params.set(key, value)
-        else params.delete(key)
-      }
-
-      carry("search", query, "")
-      carry("icon", openIcon, "")
-      carry("style", style, "stroke")
-      carry("shape", shape, "all")
-      carry("corners", corners, SETTINGS_DEFAULTS.corners)
+      const params = carryView(
+        new URLSearchParams(window.location.search),
+        currentPage
+      )
+      carry(params, "icon", openIcon, "")
 
       /*
         The dock's own two picks, and only where they say something the grid
@@ -1104,8 +1212,13 @@ export function IconBrowser({
         because a freshly opened panel starts on the grid anyway. They go
         nowhere while the dock is closed, there being no panel to describe.
       */
-      carry("icon-style", openIcon ? preview.picked : null, style)
-      carry("icon-corners", openIcon ? preview.pickedCorners : null, corners)
+      carry(params, "icon-style", openIcon ? preview.picked : null, style)
+      carry(
+        params,
+        "icon-corners",
+        openIcon ? preview.pickedCorners : null,
+        corners
+      )
 
       const search = params.toString()
       window.history.replaceState(
@@ -1115,14 +1228,23 @@ export function IconBrowser({
         // here, and dropping it would jump the page back to the top.
         `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`
       )
+
+      // The server titles pages 2 and on "…, page 3 of 9 · Keyline Icons".
+      // A page turned in place never reaches the server, so the tab would go
+      // on naming the page the visit arrived on.
+      document.title = document.title.replace(
+        /(, page \d+ of \d+)? · /,
+        currentPage > 1 ? `, page ${currentPage} of ${pageCount} · ` : " · "
+      )
     }, 250)
 
     return () => window.clearTimeout(timer)
   }, [
-    query,
+    carryView,
+    currentPage,
+    pageCount,
     openIcon,
     style,
-    shape,
     corners,
     preview.picked,
     preview.pickedCorners,
@@ -1804,14 +1926,7 @@ export function IconBrowser({
                        offers four formats, and a click that silently put one of
                        them on the clipboard was a guess about which. */
                     onClick={(event) => {
-                      if (
-                        event.button !== 0 ||
-                        event.metaKey ||
-                        event.ctrlKey ||
-                        event.shiftKey ||
-                        event.altKey
-                      )
-                        return
+                      if (!plainClick(event)) return
                       event.preventDefault()
                       preview.select(icon.name)
                     }}
@@ -1935,18 +2050,21 @@ export function IconBrowser({
               aria-label="Pages"
               className="flex flex-wrap items-center justify-center gap-1 pt-2 pb-6"
             >
-              <button
-                type="button"
-                onClick={() => goToPage(currentPage - 1)}
-                disabled={currentPage === 1}
-                className={cn(
-                  buttonVariants({ variant: "ghost" }),
-                  "h-9 disabled:pointer-events-none disabled:opacity-40"
-                )}
+              {/*
+                Links, not buttons, for the reason the tiles are: a crawler
+                follows an `href` and never presses anything. Only the first
+                120 tiles are in the HTML of `/icons`, so these are how the
+                icon pages on pages 2 to 9 get a link from the grid at all. A
+                plain click still turns the page in place. Previous and Next
+                stay buttons at the ends, since a disabled link is not a thing.
+              */}
+              <PagerStep
+                href={currentPage > 1 ? pageHref(currentPage - 1) : null}
+                onTurn={() => goToPage(currentPage - 1)}
               >
                 <ChevronLeft data-icon="inline-start" className="size-4" />
                 Previous
-              </button>
+              </PagerStep>
 
               {pageNumbers(currentPage, pageCount).map((entry) =>
                 Array.isArray(entry) ? (
@@ -1992,10 +2110,14 @@ export function IconBrowser({
                     </DropdownMenuContent>
                   </DropdownMenu>
                 ) : (
-                  <button
+                  <a
                     key={entry}
-                    type="button"
-                    onClick={() => goToPage(entry)}
+                    href={pageHref(entry)}
+                    onClick={(event) => {
+                      if (!plainClick(event)) return
+                      event.preventDefault()
+                      goToPage(entry)
+                    }}
                     aria-current={entry === currentPage ? "page" : undefined}
                     className={cn(
                       buttonVariants({
@@ -2005,22 +2127,19 @@ export function IconBrowser({
                     )}
                   >
                     {entry}
-                  </button>
+                  </a>
                 )
               )}
 
-              <button
-                type="button"
-                onClick={() => goToPage(currentPage + 1)}
-                disabled={currentPage === pageCount}
-                className={cn(
-                  buttonVariants({ variant: "ghost" }),
-                  "h-9 disabled:pointer-events-none disabled:opacity-40"
-                )}
+              <PagerStep
+                href={
+                  currentPage < pageCount ? pageHref(currentPage + 1) : null
+                }
+                onTurn={() => goToPage(currentPage + 1)}
               >
                 Next
                 <ChevronRight data-icon="inline-end" className="size-4" />
-              </button>
+              </PagerStep>
             </nav>
           )}
 

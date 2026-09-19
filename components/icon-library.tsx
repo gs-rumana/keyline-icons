@@ -24,6 +24,7 @@ export function IconLibrary({
   initialIcon,
   initialIconStyle,
   initialIconCorners,
+  initialPage,
 }: {
   icons: BrowserIcon[]
   initialSettings: BrowserSettings
@@ -38,6 +39,8 @@ export function IconLibrary({
   /** Seeded from `?icon-style=` / `?icon-corners=`: how the dock shows it. */
   initialIconStyle?: Style
   initialIconCorners?: Corners
+  /** Seeded from `?page=`, so each page of the grid has its own address. */
+  initialPage?: number
 }) {
   /**
    * Deliberately not persisted: a search that survives a reload greets you with
@@ -95,6 +98,7 @@ export function IconLibrary({
           initialIcon={initialIcon}
           initialIconStyle={initialIconStyle}
           initialIconCorners={initialIconCorners}
+          initialPage={initialPage}
           query={query}
           onQueryChange={setQuery}
         />

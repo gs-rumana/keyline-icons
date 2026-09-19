@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 import { BLOG_POSTS, postHref } from "@/lib/blog"
-import { iconHref } from "@/lib/icon-pages"
+import { gridPageCount, gridPageHref, iconHref } from "@/lib/icon-pages"
 import { loadIcons } from "@/lib/icons"
 import { absoluteUrl } from "@/lib/seo"
 import { SITE_LINKS } from "@/lib/site-chrome"
@@ -87,5 +87,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
-  return [...pages, ...posts, ...icons]
+  /*
+    Pages 2 and on of the grid, which canonical to themselves (see
+    `app/icons/page.tsx`). They are what links the icon pages past the first
+    120 from the grid, so they are listed with the grid's own cadence. Page 1
+    is `/icons`, already in `SITE_LINKS`.
+  */
+  const gridPages = Array.from(
+    { length: gridPageCount(icons.length) - 1 },
+    (_, i) => ({
+      url: absoluteUrl(gridPageHref(i + 2)),
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    })
+  )
+
+  return [...pages, ...gridPages, ...posts, ...icons]
 }

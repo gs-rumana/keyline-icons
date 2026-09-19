@@ -24,6 +24,24 @@ export const ICONS_SEGMENT = "/icons"
 
 export const iconHref = (name: string) => `${ICONS_SEGMENT}/${name}`
 
+/**
+ * Tiles per page of the grid at `/icons`. Here rather than in the browser
+ * because the server reads `?page=` against it and the sitemap lists the pages
+ * it makes, and neither can import a client component.
+ */
+export const GRID_PAGE_SIZE = 120
+
+/** How many pages the unfiltered grid has, for a set of `total` icons. */
+export const gridPageCount = (total: number) =>
+  Math.max(1, Math.ceil(total / GRID_PAGE_SIZE))
+
+/**
+ * The address of one page of the unfiltered grid. Page 1 is the bare
+ * `/icons`, never `?page=1`, so the first page has one address and not two.
+ */
+export const gridPageHref = (page: number) =>
+  page > 1 ? `${ICONS_SEGMENT}?page=${page}` : ICONS_SEGMENT
+
 /** The styles this drawing actually has, in weight order. */
 export const stylesOf = (icon: Pick<BrowserIcon, "art">): Style[] =>
   STYLES.filter((style) => icon.art[style])
