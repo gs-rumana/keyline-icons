@@ -2,7 +2,16 @@
 // Source: icons/sharp/stroke/*.svg. Regenerate with `pnpm icons:react-native`.
 
 import type { ReactNode } from "react"
-import Svg, { Path, Circle, Rect, Line, Polyline, Polygon, Ellipse, type SvgProps } from "react-native-svg"
+import Svg, {
+  Path as SvgPath,
+  Circle as SvgCircle,
+  Rect as SvgRect,
+  Line as SvgLine,
+  Polyline as SvgPolyline,
+  Polygon as SvgPolygon,
+  Ellipse as SvgEllipse,
+  type SvgProps,
+} from "react-native-svg"
 
 export type IconProps = Omit<SvgProps, "children"> & {
   size?: number | string
@@ -21,8 +30,8 @@ function Icon({ size = 24, color, strokeWidth, children, ...props }: IconProps &
 export function Accessibility(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7 11L17 11M12 11L12 13M9.7236 17.5528L12 13L14.2764 17.5528" />
-      <Path d="M13.5 6.5C13.5 7.3284 12.8284 8 12 8C11.1716 8 10.5 7.3284 10.5 6.5C10.5 5.6716 11.1716 5 12 5C12.8284 5 13.5 5.6716 13.5 6.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7 11L17 11M12 11L12 13M9.7236 17.5528L12 13L14.2764 17.5528" />
+      <SvgPath d="M13.5 6.5C13.5 7.3284 12.8284 8 12 8C11.1716 8 10.5 7.3284 10.5 6.5C10.5 5.6716 11.1716 5 12 5C12.8284 5 13.5 5.6716 13.5 6.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -30,7 +39,7 @@ export function Accessibility(props: IconProps) {
 export function Activity(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 12L5 12L8 4L16 20L19 12L23 12" fill="none" />
+      <SvgPath d="M1 12L5 12L8 4L16 20L19 12L23 12" fill="none" />
     </Icon>
   )
 }
@@ -38,7 +47,7 @@ export function Activity(props: IconProps) {
 export function Airplay(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.1043 16L2 16L2 3L22 3L22 16L19.8957 16L18.8957 16M12 13L18 21L6 21L12 13Z" />
+      <SvgPath d="M5.1043 16L2 16L2 3L22 3L22 16L19.8957 16L18.8957 16M12 13L18 21L6 21L12 13Z" />
     </Icon>
   )
 }
@@ -46,8 +55,8 @@ export function Airplay(props: IconProps) {
 export function AirpodsOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L22 9L22 21L2 21L2 9ZM3 9L3 3L21 3L21 9M8 9L8 10L16 10L16 9" fill="none" />
-      <Path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 9L22 9L22 21L2 21L2 9ZM3 9L3 3L21 3L21 9M8 9L8 10L16 10L16 9" fill="none" />
+      <SvgPath d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -55,8 +64,8 @@ export function AirpodsOpen(props: IconProps) {
 export function Airpods(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3L22 21L2 21L2 3ZM2 9L22 9M8 8L16 8L16 10L8 10L8 8Z" fill="none" />
-      <Path d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 3L22 3L22 21L2 21L2 3ZM2 9L22 9M8 8L16 8L16 10L8 10L8 8Z" fill="none" />
+      <SvgPath d="M13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -64,7 +73,7 @@ export function Airpods(props: IconProps) {
 export function AlarmClockCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM8.8771 13.2628L11.3713 15.8284L15.1208 9.6931M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
+      <SvgPath d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM8.8771 13.2628L11.3713 15.8284L15.1208 9.6931M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -72,7 +81,7 @@ export function AlarmClockCheck(props: IconProps) {
 export function AlarmClockMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM7 13L17 13M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
+      <SvgPath d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM7 13L17 13M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -80,7 +89,7 @@ export function AlarmClockMinus(props: IconProps) {
 export function AlarmClockPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM7 13L17 13M12 8L12 18M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
+      <SvgPath d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM7 13L17 13M12 8L12 18M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -88,7 +97,7 @@ export function AlarmClockPlus(props: IconProps) {
 export function AlarmClock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM12 8L12 13L17 13M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
+      <SvgPath d="M12 5C16.4183 5 20 8.5817 20 13C20 17.4183 16.4183 21 12 21C7.5817 21 4 17.4183 4 13C4 8.5817 7.5817 5 12 5ZM12 8L12 13L17 13M2.75 5.3462L3 5.0627C4.1606 3.7467 5.5957 2.7013 7.2042 2L7.3953 1.9167M21.25 5.3462L21 5.0627C19.8394 3.7467 18.4043 2.7013 16.7958 2L16.6047 1.9167M8 19.9282L6.5152 22.5M16 19.9282L17.4848 22.5" />
     </Icon>
   )
 }
@@ -96,8 +105,8 @@ export function AlarmClock(props: IconProps) {
 export function Alert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 4L12 16" />
-      <Path d="M13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 4L12 16" />
+      <SvgPath d="M13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -105,7 +114,7 @@ export function Alert(props: IconProps) {
 export function AlignCenter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3M5 9L19 9M2 15L22 15M5 21L19 21" fill="none" />
+      <SvgPath d="M2 3L22 3M5 9L19 9M2 15L22 15M5 21L19 21" fill="none" />
     </Icon>
   )
 }
@@ -113,7 +122,7 @@ export function AlignCenter(props: IconProps) {
 export function AlignJustify(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3M2 9L22 9M2 15L22 15M2 21L22 21" fill="none" />
+      <SvgPath d="M2 3L22 3M2 9L22 9M2 15L22 15M2 21L22 21" fill="none" />
     </Icon>
   )
 }
@@ -121,7 +130,7 @@ export function AlignJustify(props: IconProps) {
 export function AlignLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3M2 9L16 9M2 15L22 15M2 21L16 21" fill="none" />
+      <SvgPath d="M2 3L22 3M2 9L16 9M2 15L22 15M2 21L16 21" fill="none" />
     </Icon>
   )
 }
@@ -129,7 +138,7 @@ export function AlignLeft(props: IconProps) {
 export function AlignOffsetBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 4L23 4M3 12L23 12M1 20L15 20" />
+      <SvgPath d="M15 4L23 4M3 12L23 12M1 20L15 20" />
     </Icon>
   )
 }
@@ -137,7 +146,7 @@ export function AlignOffsetBottom(props: IconProps) {
 export function AlignOffsetLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 1L4 9M12 1L12 21M20 9L20 23" />
+      <SvgPath d="M4 1L4 9M12 1L12 21M20 9L20 23" />
     </Icon>
   )
 }
@@ -145,7 +154,7 @@ export function AlignOffsetLeft(props: IconProps) {
 export function AlignOffsetRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 15L4 23M12 3L12 23M20 1L20 15" />
+      <SvgPath d="M4 15L4 23M12 3L12 23M20 1L20 15" />
     </Icon>
   )
 }
@@ -153,7 +162,7 @@ export function AlignOffsetRight(props: IconProps) {
 export function AlignOffsetTop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L15 4M3 12L23 12M15 20L23 20" />
+      <SvgPath d="M1 4L15 4M3 12L23 12M15 20L23 20" />
     </Icon>
   )
 }
@@ -161,7 +170,7 @@ export function AlignOffsetTop(props: IconProps) {
 export function AlignRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3M8 9L22 9M2 15L22 15M8 21L22 21" fill="none" />
+      <SvgPath d="M2 3L22 3M8 9L22 9M2 15L22 15M8 21L22 21" fill="none" />
     </Icon>
   )
 }
@@ -169,7 +178,7 @@ export function AlignRight(props: IconProps) {
 export function AppCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M14.7071 17.7071L17 20L21.2929 15.7071" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M14.7071 17.7071L17 20L21.2929 15.7071" />
     </Icon>
   )
 }
@@ -177,7 +186,7 @@ export function AppCheck(props: IconProps) {
 export function AppDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 3L3 3L3 21L21 21L21 13M18 3C19.6568 3 21 4.3432 21 6C21 7.6569 19.6568 9 18 9C16.3432 9 15 7.6569 15 6C15 4.3432 16.3432 3 18 3Z" />
+      <SvgPath d="M11 3L3 3L3 21L21 21L21 13M18 3C19.6568 3 21 4.3432 21 6C21 7.6569 19.6568 9 18 9C16.3432 9 15 7.6569 15 6C15 4.3432 16.3432 3 18 3Z" />
     </Icon>
   )
 }
@@ -185,7 +194,7 @@ export function AppDot(props: IconProps) {
 export function AppMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M14 18L22 18" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M14 18L22 18" />
     </Icon>
   )
 }
@@ -193,7 +202,7 @@ export function AppMinus(props: IconProps) {
 export function AppPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M18 14L18 22M14 18L22 18" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M18 14L18 22M14 18L22 18" />
     </Icon>
   )
 }
@@ -201,8 +210,8 @@ export function AppPlus(props: IconProps) {
 export function AppWindow2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 11L21 11" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 11L21 11" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -210,8 +219,8 @@ export function AppWindow2(props: IconProps) {
 export function AppWindowCursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M16.9543 21L14.8719 14.8669L21 17.0514L18.4086 18.3063L16.9543 21Z" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M16.9543 21L14.8719 14.8669L21 17.0514L18.4086 18.3063L16.9543 21Z" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -219,8 +228,8 @@ export function AppWindowCursor(props: IconProps) {
 export function AppWindowMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M14 18L22 18" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M14 18L22 18" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -228,8 +237,8 @@ export function AppWindowMinus(props: IconProps) {
 export function AppWindowPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M18 14L18 22M14 18L22 18" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M18 14L18 22M14 18L22 18" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -237,8 +246,8 @@ export function AppWindowPlus(props: IconProps) {
 export function AppWindowX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -246,8 +255,8 @@ export function AppWindowX(props: IconProps) {
 export function AppWindow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 7C8 7.5523 7.5523 8 7 8C6.4477 8 6 7.5523 6 7C6 6.4477 6.4477 6 7 6C7.5523 6 8 6.4477 8 7ZM12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7ZM16 7C16 7.5523 15.5523 8 15 8C14.4477 8 14 7.5523 14 7C14 6.4477 14.4477 6 15 6C15.5523 6 16 6.4477 16 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -255,7 +264,7 @@ export function AppWindow(props: IconProps) {
 export function AppX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 3L21 3L21 12M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
+      <SvgPath d="M12 21L3 21L3 3L21 3L21 12M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
     </Icon>
   )
 }
@@ -263,7 +272,7 @@ export function AppX(props: IconProps) {
 export function Archive(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 9L2 9L2 4ZM4 9L4 20L20 20L20 9M9 13L15 13" />
+      <SvgPath d="M2 4L22 4L22 9L2 9L2 4ZM4 9L4 20L20 20L20 9M9 13L15 13" />
     </Icon>
   )
 }
@@ -271,7 +280,7 @@ export function Archive(props: IconProps) {
 export function ArrowBigDownShort(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L2 11L7 11L7 3L17 3L17 11L22 11Z" />
+      <SvgPath d="M12 21L2 11L7 11L7 3L17 3L17 11L22 11Z" />
     </Icon>
   )
 }
@@ -279,7 +288,7 @@ export function ArrowBigDownShort(props: IconProps) {
 export function ArrowBigDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 22L4 14L8 14L8 2L16 2L16 14L20 14Z" />
+      <SvgPath d="M12 22L4 14L8 14L8 2L16 2L16 14L20 14Z" />
     </Icon>
   )
 }
@@ -287,7 +296,7 @@ export function ArrowBigDown(props: IconProps) {
 export function ArrowBigLeftShort(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 12L13 2L13 7L21 7L21 17L13 17L13 22Z" />
+      <SvgPath d="M3 12L13 2L13 7L21 7L21 17L13 17L13 22Z" />
     </Icon>
   )
 }
@@ -295,7 +304,7 @@ export function ArrowBigLeftShort(props: IconProps) {
 export function ArrowBigLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12L10 4L10 8L22 8L22 16L10 16L10 20Z" />
+      <SvgPath d="M2 12L10 4L10 8L22 8L22 16L10 16L10 20Z" />
     </Icon>
   )
 }
@@ -303,7 +312,7 @@ export function ArrowBigLeft(props: IconProps) {
 export function ArrowBigRightShort(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 12L11 22L11 17L3 17L3 7L11 7L11 2Z" />
+      <SvgPath d="M21 12L11 22L11 17L3 17L3 7L11 7L11 2Z" />
     </Icon>
   )
 }
@@ -311,7 +320,7 @@ export function ArrowBigRightShort(props: IconProps) {
 export function ArrowBigRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12L14 20L14 16L2 16L2 8L14 8L14 4Z" />
+      <SvgPath d="M22 12L14 20L14 16L2 16L2 8L14 8L14 4Z" />
     </Icon>
   )
 }
@@ -319,7 +328,7 @@ export function ArrowBigRight(props: IconProps) {
 export function ArrowBigUpShort(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L22 13L17 13L17 21L7 21L7 13L2 13Z" />
+      <SvgPath d="M12 3L22 13L17 13L17 21L7 21L7 13L2 13Z" />
     </Icon>
   )
 }
@@ -327,7 +336,7 @@ export function ArrowBigUpShort(props: IconProps) {
 export function ArrowBigUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2L20 10L16 10L16 22L8 22L8 10L4 10Z" />
+      <SvgPath d="M12 2L20 10L16 10L16 22L8 22L8 10L4 10Z" />
     </Icon>
   )
 }
@@ -335,7 +344,7 @@ export function ArrowBigUp(props: IconProps) {
 export function ArrowDownDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M15.5 20.6757L15.5 9M9.7028 14.6757L15.5 21L21.2628 14.7132" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M15.5 20.6757L15.5 9M9.7028 14.6757L15.5 21L21.2628 14.7132" />
     </Icon>
   )
 }
@@ -343,7 +352,7 @@ export function ArrowDownDashedPanel(props: IconProps) {
 export function ArrowDownLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 10.5L3 21L13.5 21M3.1464 20.8536L12.7929 11.2071M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17" />
+      <SvgPath d="M3 10.5L3 21L13.5 21M3.1464 20.8536L12.7929 11.2071M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17" />
     </Icon>
   )
 }
@@ -351,7 +360,7 @@ export function ArrowDownLeftDashedPanel(props: IconProps) {
 export function ArrowDownLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 5L6 18L19 18M6.4929 17.5071L18.2929 5.7071" />
+      <SvgPath d="M6 5L6 18L19 18M6.4929 17.5071L18.2929 5.7071" />
     </Icon>
   )
 }
@@ -359,7 +368,7 @@ export function ArrowDownLeft(props: IconProps) {
 export function ArrowDownNarrowWide(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 5L6 18M1.7071 13.7071L6 18L10.2929 13.7071M13 6L17 6M13 10L19 10M13 14L21 14M13 18L23 18" />
+      <SvgPath d="M6 5L6 18M1.7071 13.7071L6 18L10.2929 13.7071M13 6L17 6M13 10L19 10M13 14L21 14M13 18L23 18" />
     </Icon>
   )
 }
@@ -367,7 +376,7 @@ export function ArrowDownNarrowWide(props: IconProps) {
 export function ArrowDownRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M10.5 21L21 21L21 10.5M11.2071 11.2071L20.8536 20.8536" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M10.5 21L21 21L21 10.5M11.2071 11.2071L20.8536 20.8536" />
     </Icon>
   )
 }
@@ -375,7 +384,7 @@ export function ArrowDownRightDashedPanel(props: IconProps) {
 export function ArrowDownRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 18L18 18L18 5M5.7071 5.7071L17.5071 17.5071" />
+      <SvgPath d="M5 18L18 18L18 5M5.7071 5.7071L17.5071 17.5071" />
     </Icon>
   )
 }
@@ -383,7 +392,7 @@ export function ArrowDownRight(props: IconProps) {
 export function ArrowDownWideNarrow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 5L6 18M1.7071 13.7071L6 18L10.2929 13.7071M13 6L23 6M13 10L21 10M13 14L19 14M13 18L17 18" />
+      <SvgPath d="M6 5L6 18M1.7071 13.7071L6 18L10.2929 13.7071M13 6L23 6M13 10L21 10M13 14L19 14M13 18L17 18" />
     </Icon>
   )
 }
@@ -391,7 +400,7 @@ export function ArrowDownWideNarrow(props: IconProps) {
 export function ArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7008 11.8289L12 19L19.2992 11.8289M12 4L12 18.7302" />
+      <SvgPath d="M4.7008 11.8289L12 19L19.2992 11.8289M12 4L12 18.7302" />
     </Icon>
   )
 }
@@ -399,7 +408,7 @@ export function ArrowDown(props: IconProps) {
 export function ArrowInDownDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M15.5 13.6757L15.5 2M9.7028 7.6757L15.5 14L21.2628 7.7132" />
+      <SvgPath d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M15.5 13.6757L15.5 2M9.7028 7.6757L15.5 14L21.2628 7.7132" />
     </Icon>
   )
 }
@@ -407,7 +416,7 @@ export function ArrowInDownDashedPanel(props: IconProps) {
 export function ArrowInDownLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.5 2L11.5 12.5L22 12.5M11.6464 12.3536L21.2929 2.7071M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21" />
+      <SvgPath d="M11.5 2L11.5 12.5L22 12.5M11.6464 12.3536L21.2929 2.7071M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21" />
     </Icon>
   )
 }
@@ -415,7 +424,7 @@ export function ArrowInDownLeftDashedPanel(props: IconProps) {
 export function ArrowInDownRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12.5L12.5 12.5L12.5 2M2.7071 2.7071L12.3536 12.3536M9.5 21L14.5 21M21 14.5L21 9.5M3 16L3 21L7 21M17 21L21 21L21 17M16 3L21 3L21 7" />
+      <SvgPath d="M2 12.5L12.5 12.5L12.5 2M2.7071 2.7071L12.3536 12.3536M9.5 21L14.5 21M21 14.5L21 9.5M3 16L3 21L7 21M17 21L21 21L21 17M16 3L21 3L21 7" />
     </Icon>
   )
 }
@@ -423,7 +432,7 @@ export function ArrowInDownRightDashedPanel(props: IconProps) {
 export function ArrowInLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M22 15.5L10.3243 15.5M16.3243 9.7028L10 15.5L16.2868 21.2628" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M22 15.5L10.3243 15.5M16.3243 9.7028L10 15.5L16.2868 21.2628" />
     </Icon>
   )
 }
@@ -431,7 +440,7 @@ export function ArrowInLeftDashedPanel(props: IconProps) {
 export function ArrowInRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17M2 15.5L13.6757 15.5M7.6757 9.7028L14 15.5L7.7132 21.2628" />
+      <SvgPath d="M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17M2 15.5L13.6757 15.5M7.6757 9.7028L14 15.5L7.7132 21.2628" />
     </Icon>
   )
 }
@@ -439,7 +448,7 @@ export function ArrowInRightDashedPanel(props: IconProps) {
 export function ArrowInUpDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M15.5 10.3243L15.5 22M9.7028 16.3243L15.5 10L21.2628 16.2868" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M15.5 10.3243L15.5 22M9.7028 16.3243L15.5 10L21.2628 16.2868" />
     </Icon>
   )
 }
@@ -447,7 +456,7 @@ export function ArrowInUpDashedPanel(props: IconProps) {
 export function ArrowInUpLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.2929 21.2929L11.6464 11.6464M11.5 22L11.5 11.5L22 11.5M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5" />
+      <SvgPath d="M21.2929 21.2929L11.6464 11.6464M11.5 22L11.5 11.5L22 11.5M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5" />
     </Icon>
   )
 }
@@ -455,7 +464,7 @@ export function ArrowInUpLeftDashedPanel(props: IconProps) {
 export function ArrowInUpRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 11.5L12.5 11.5L12.5 22M2.7071 21.2929L12.3536 11.6464M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17" />
+      <SvgPath d="M2 11.5L12.5 11.5L12.5 22M2.7071 21.2929L12.3536 11.6464M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17" />
     </Icon>
   )
 }
@@ -463,7 +472,7 @@ export function ArrowInUpRightDashedPanel(props: IconProps) {
 export function ArrowLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17M3.3243 15.5L15 15.5M9.3243 9.7028L3 15.5L9.2868 21.2628" />
+      <SvgPath d="M9.5 3L14.5 3M21 9.5L21 14.5M3 8L3 3L7 3M17 3L21 3L21 7M16 21L21.0001 21L21 17M3.3243 15.5L15 15.5M9.3243 9.7028L3 15.5L9.2868 21.2628" />
     </Icon>
   )
 }
@@ -471,7 +480,7 @@ export function ArrowLeftDashedPanel(props: IconProps) {
 export function ArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 12L5.2698 12M12.1711 4.7008L5 12L12.1711 19.2992" />
+      <SvgPath d="M20 12L5.2698 12M12.1711 4.7008L5 12L12.1711 19.2992" />
     </Icon>
   )
 }
@@ -479,7 +488,7 @@ export function ArrowLeft(props: IconProps) {
 export function ArrowRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M9 15.5L20.6757 15.5M14.6757 9.7028L21 15.5L14.7132 21.2628" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M21 8L21 3.0001L17 3M8 21L3 21L3 17M3 9.5L3 14.5M9 15.5L20.6757 15.5M14.6757 9.7028L21 15.5L14.7132 21.2628" />
     </Icon>
   )
 }
@@ -487,7 +496,7 @@ export function ArrowRightDashedPanel(props: IconProps) {
 export function ArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 12L18.7302 12M11.8289 4.7008L19 12L11.8289 19.2992" />
+      <SvgPath d="M4 12L18.7302 12M11.8289 4.7008L19 12L11.8289 19.2992" />
     </Icon>
   )
 }
@@ -495,7 +504,7 @@ export function ArrowRight(props: IconProps) {
 export function ArrowUTurnLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 19L14 19C16.7614 19 19 16.7614 19 14C19 11.2386 16.7614 9 14 9L5.3753 9M10.2739 4.7809L5 9L10.3753 13.3002" />
+      <SvgPath d="M11 19L14 19C16.7614 19 19 16.7614 19 14C19 11.2386 16.7614 9 14 9L5.3753 9M10.2739 4.7809L5 9L10.3753 13.3002" />
     </Icon>
   )
 }
@@ -503,7 +512,7 @@ export function ArrowUTurnLeft(props: IconProps) {
 export function ArrowUTurnRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 19L10 19C7.2386 19 5 16.7614 5 14C5 11.2386 7.2386 9 10 9L18.6246 9M13.726 4.7809L18.9999 9L13.6247 13.3002" />
+      <SvgPath d="M13 19L10 19C7.2386 19 5 16.7614 5 14C5 11.2386 7.2386 9 10 9L18.6246 9M13.726 4.7809L18.9999 9L13.6247 13.3002" />
     </Icon>
   )
 }
@@ -511,7 +520,7 @@ export function ArrowUTurnRight(props: IconProps) {
 export function ArrowUpDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M15.5 3.3243L15.5 15M9.7028 9.3243L15.5 3L21.2628 9.2868" />
+      <SvgPath d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M15.5 3.3243L15.5 15M9.7028 9.3243L15.5 3L21.2628 9.2868" />
     </Icon>
   )
 }
@@ -519,7 +528,7 @@ export function ArrowUpDashedPanel(props: IconProps) {
 export function ArrowUpLeftDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 21L14.5 21M21 14.5L21 9.5M3 16L3 21L7 21M17 21L21 21L21 17M16 3L21 3L21 7M12.7929 12.7929L3.1464 3.1464M3 13.5L3 3L13.5 3" />
+      <SvgPath d="M9.5 21L14.5 21M21 14.5L21 9.5M3 16L3 21L7 21M17 21L21 21L21 17M16 3L21 3L21 7M12.7929 12.7929L3.1464 3.1464M3 13.5L3 3L13.5 3" />
     </Icon>
   )
 }
@@ -527,7 +536,7 @@ export function ArrowUpLeftDashedPanel(props: IconProps) {
 export function ArrowUpLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.2929 18.2929L6.4929 6.4929M6 19L6 6L19 6" />
+      <SvgPath d="M18.2929 18.2929L6.4929 6.4929M6 19L6 6L19 6" />
     </Icon>
   )
 }
@@ -535,7 +544,7 @@ export function ArrowUpLeft(props: IconProps) {
 export function ArrowUpNarrowWide(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L6 6M1.7071 10.2929L6 6L10.2929 10.2929M13 6L17 6M13 10L19 10M13 14L21 14M13 18L23 18" />
+      <SvgPath d="M6 19L6 6M1.7071 10.2929L6 6L10.2929 10.2929M13 6L17 6M13 10L19 10M13 14L21 14M13 18L23 18" />
     </Icon>
   )
 }
@@ -543,7 +552,7 @@ export function ArrowUpNarrowWide(props: IconProps) {
 export function ArrowUpRightDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M10.5 3L21 3L21 13.5M11.2071 12.7929L20.8536 3.1464" />
+      <SvgPath d="M9.5 21L14.5 21M3 14.5L3 9.5M8 3L3 3L3 7M3 17L3 21L7 21M21 16L21 21.0001L17 21M10.5 3L21 3L21 13.5M11.2071 12.7929L20.8536 3.1464" />
     </Icon>
   )
 }
@@ -551,7 +560,7 @@ export function ArrowUpRightDashedPanel(props: IconProps) {
 export function ArrowUpRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 6L18 6L18 19M6.9071 17.0929L17.8243 6.1757" />
+      <SvgPath d="M5 6L18 6L18 19M6.9071 17.0929L17.8243 6.1757" />
     </Icon>
   )
 }
@@ -559,7 +568,7 @@ export function ArrowUpRight(props: IconProps) {
 export function ArrowUpWideNarrow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L6 6M1.7071 10.2929L6 6L10.2929 10.2929M13 6L23 6M13 10L21 10M13 14L19 14M13 18L17 18" />
+      <SvgPath d="M6 19L6 6M1.7071 10.2929L6 6L10.2929 10.2929M13 6L23 6M13 10L21 10M13 14L19 14M13 18L17 18" />
     </Icon>
   )
 }
@@ -567,7 +576,7 @@ export function ArrowUpWideNarrow(props: IconProps) {
 export function ArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7008 12.1711L12 5L19.2992 12.1711M12 20L12 5.2698" />
+      <SvgPath d="M4.7008 12.1711L12 5L19.2992 12.1711M12 20L12 5.2698" />
     </Icon>
   )
 }
@@ -575,7 +584,7 @@ export function ArrowUp(props: IconProps) {
 export function At(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12ZM16 7L16 13C16 14.6569 17.3431 16 19 16C20.6569 16 22 14.6569 22 13L22 12C22 6.4772 17.5228 2 12 2C6.4772 2 2 6.4772 2 12C2 17.5228 6.4772 22 12 22C13.7554 22 15.4798 21.5379 17 20.6603L17.866 20.1603" />
+      <SvgPath d="M16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12ZM16 7L16 13C16 14.6569 17.3431 16 19 16C20.6569 16 22 14.6569 22 13L22 12C22 6.4772 17.5228 2 12 2C6.4772 2 2 6.4772 2 12C2 17.5228 6.4772 22 12 22C13.7554 22 15.4798 21.5379 17 20.6603L17.866 20.1603" />
     </Icon>
   )
 }
@@ -583,7 +592,7 @@ export function At(props: IconProps) {
 export function AudioLinesSearch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 9L4 14L4 15M8 5L8 18L8 19M12 2L12 12.8097L12 13.8097M16 6L16 11.0192L16 12.0192M20 9L20 12.0225L20 13.0225M19 17.5C19 18.8807 17.8807 20 16.5 20C15.1193 20 14 18.8807 14 17.5C14 16.1193 15.1193 15 16.5 15C17.8807 15 19 16.1193 19 17.5ZM18.2678 19.2678L20.2929 21.2929" />
+      <SvgPath d="M4 9L4 14L4 15M8 5L8 18L8 19M12 2L12 12.8097L12 13.8097M16 6L16 11.0192L16 12.0192M20 9L20 12.0225L20 13.0225M19 17.5C19 18.8807 17.8807 20 16.5 20C15.1193 20 14 18.8807 14 17.5C14 16.1193 15.1193 15 16.5 15C17.8807 15 19 16.1193 19 17.5ZM18.2678 19.2678L20.2929 21.2929" />
     </Icon>
   )
 }
@@ -591,7 +600,7 @@ export function AudioLinesSearch(props: IconProps) {
 export function AudioLines(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 9L4 15M8 5L8 19M12 2L12 22M16 6L16 18M20 9L20 15" />
+      <SvgPath d="M4 9L4 15M8 5L8 19M12 2L12 22M16 6L16 18M20 9L20 15" />
     </Icon>
   )
 }
@@ -599,7 +608,7 @@ export function AudioLines(props: IconProps) {
 export function Award(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 9C19 12.866 15.866 16 12 16C8.134 16 5 12.866 5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9ZM16.1787 14.6159L19 22L12 19.2077L5 22L7.8213 14.6159" />
+      <SvgPath d="M19 9C19 12.866 15.866 16 12 16C8.134 16 5 12.866 5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9ZM16.1787 14.6159L19 22L12 19.2077L5 22L7.8213 14.6159" />
     </Icon>
   )
 }
@@ -607,7 +616,7 @@ export function Award(props: IconProps) {
 export function Baby2Boy(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10.5C4 5.8 7.6 2 12 2C16.4 2 20 5.8 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5ZM12 2C10.8 2.3 9.1 3.2742 9.1 5.5C9.1 7.2121 10.4879 8.6 12.2 8.6C13.1163 8.6 13.9857 8.1946 14.5747 7.4926L14.8744 7.1354M9 11.6L9 14.6M15 11.6L15 14.6M14 19C14 17.8954 13.1046 17 12 17C10.8954 17 10 17.8954 10 19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19Z" fill="none" />
+      <SvgPath d="M4 10.5C4 5.8 7.6 2 12 2C16.4 2 20 5.8 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5ZM12 2C10.8 2.3 9.1 3.2742 9.1 5.5C9.1 7.2121 10.4879 8.6 12.2 8.6C13.1163 8.6 13.9857 8.1946 14.5747 7.4926L14.8744 7.1354M9 11.6L9 14.6M15 11.6L15 14.6M14 19C14 17.8954 13.1046 17 12 17C10.8954 17 10 17.8954 10 19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19Z" fill="none" />
     </Icon>
   )
 }
@@ -615,7 +624,7 @@ export function Baby2Boy(props: IconProps) {
 export function Baby2Girl(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.8 4.2C18 4.2 20 6.7 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C4 6.7 6 4.2 8.2 4.2M12 4.2L8.2 2L8.2 6.4ZM12 4.2L15.8 2L15.8 6.4ZM9 11.6L9 14.6M15 11.6L15 14.6M14 19C14 17.8954 13.1046 17 12 17C10.8954 17 10 17.8954 10 19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19Z" fill="none" />
+      <SvgPath d="M15.8 4.2C18 4.2 20 6.7 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C4 6.7 6 4.2 8.2 4.2M12 4.2L8.2 2L8.2 6.4ZM12 4.2L15.8 2L15.8 6.4ZM9 11.6L9 14.6M15 11.6L15 14.6M14 19C14 17.8954 13.1046 17 12 17C10.8954 17 10 17.8954 10 19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19Z" fill="none" />
     </Icon>
   )
 }
@@ -623,7 +632,7 @@ export function Baby2Girl(props: IconProps) {
 export function BabyBoy(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10.5C4 5.8 7.6 2 12 2C16.4 2 20 5.8 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5ZM12 2C10.8 2.3 9.1 3.2742 9.1 5.5C9.1 7.2121 10.4879 8.6 12.2 8.6C13.1163 8.6 13.9857 8.1946 14.5747 7.4926L14.8744 7.1354M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
+      <SvgPath d="M4 10.5C4 5.8 7.6 2 12 2C16.4 2 20 5.8 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5ZM12 2C10.8 2.3 9.1 3.2742 9.1 5.5C9.1 7.2121 10.4879 8.6 12.2 8.6C13.1163 8.6 13.9857 8.1946 14.5747 7.4926L14.8744 7.1354M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
     </Icon>
   )
 }
@@ -631,7 +640,7 @@ export function BabyBoy(props: IconProps) {
 export function BabyGirl(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.8 4.2C18 4.2 20 6.7 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C4 6.7 6 4.2 8.2 4.2M12 4.2L8.2 2L8.2 6.4ZM12 4.2L15.8 2L15.8 6.4ZM9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
+      <SvgPath d="M15.8 4.2C18 4.2 20 6.7 20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C4 6.7 6 4.2 8.2 4.2M12 4.2L8.2 2L8.2 6.4ZM12 4.2L15.8 2L15.8 6.4ZM9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
     </Icon>
   )
 }
@@ -639,9 +648,9 @@ export function BabyGirl(props: IconProps) {
 export function BadgeAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M12 6L12 14" fill="none" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M12 6L12 14" fill="none" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -649,8 +658,8 @@ export function BadgeAlert(props: IconProps) {
 export function BadgeCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" fill="none" />
     </Icon>
   )
 }
@@ -658,8 +667,8 @@ export function BadgeCheck(props: IconProps) {
 export function BadgeDollarSign(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M12 5L12 6L12 18L12 19M15.5 7L14.5 7L10.5 7C9.1193 7 8 8.1193 8 9.5C8 10.8807 9.1193 12 10.5 12L13.5 12C14.8807 12 16 13.1193 16 14.5C16 15.8807 14.8807 17 13.5 17L9.5 17L8.5 17" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M12 5L12 6L12 18L12 19M15.5 7L14.5 7L10.5 7C9.1193 7 8 8.1193 8 9.5C8 10.8807 9.1193 12 10.5 12L13.5 12C14.8807 12 16 13.1193 16 14.5C16 15.8807 14.8807 17 13.5 17L9.5 17L8.5 17" fill="none" />
     </Icon>
   )
 }
@@ -667,9 +676,9 @@ export function BadgeDollarSign(props: IconProps) {
 export function BadgeInfo(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M12 18L12 10" fill="none" />
-      <Path d="M13 7C13 6.4477 12.5523 6 12 6C11.4477 6 11 6.4477 11 7C11 7.5523 11.4477 8 12 8C12.5523 8 13 7.5523 13 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M12 18L12 10" fill="none" />
+      <SvgPath d="M13 7C13 6.4477 12.5523 6 12 6C11.4477 6 11 6.4477 11 7C11 7.5523 11.4477 8 12 8C12.5523 8 13 7.5523 13 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -677,8 +686,8 @@ export function BadgeInfo(props: IconProps) {
 export function BadgeMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M7 12L17 12" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M7 12L17 12" fill="none" />
     </Icon>
   )
 }
@@ -686,9 +695,9 @@ export function BadgeMinus(props: IconProps) {
 export function BadgePercent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
-      <Path d="M7.7071 16.2929L16.2929 7.7071" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7.7071 16.2929L16.2929 7.7071" fill="none" />
     </Icon>
   )
 }
@@ -696,8 +705,8 @@ export function BadgePercent(props: IconProps) {
 export function BadgePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M7 12L17 12M11.995 17.005L11.995 7.005" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M7 12L17 12M11.995 17.005L11.995 7.005" fill="none" />
     </Icon>
   )
 }
@@ -705,9 +714,9 @@ export function BadgePlus(props: IconProps) {
 export function BadgeQuestion(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" fill="none" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" fill="none" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -715,8 +724,8 @@ export function BadgeQuestion(props: IconProps) {
 export function BadgeX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
-      <Path d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" fill="none" />
     </Icon>
   )
 }
@@ -724,7 +733,7 @@ export function BadgeX(props: IconProps) {
 export function Badge(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
+      <SvgPath d="M20.3692 8.5334C21.4021 9.3883 22 10.6592 22 12C22 13.3408 21.4021 14.6117 20.3692 15.4666C20.3825 15.6071 20.3891 15.748 20.3891 15.8891C20.3891 18.3744 18.3744 20.3891 15.8891 20.3891C15.748 20.3891 15.6071 20.3825 15.4666 20.3692C14.6117 21.4021 13.3408 22 12 22C10.6592 22 9.3883 21.4021 8.5334 20.3692C8.3929 20.3825 8.252 20.3891 8.1109 20.3891C5.6256 20.3891 3.6109 18.3744 3.6109 15.8891C3.6109 15.748 3.6175 15.6071 3.6308 15.4666C2.5979 14.6117 2 13.3408 2 12C2 10.6592 2.5979 9.3883 3.6308 8.5334C3.6175 8.3929 3.6109 8.252 3.6109 8.1109C3.6109 5.6256 5.6256 3.6109 8.1109 3.6109C8.252 3.6109 8.3929 3.6175 8.5334 3.6308C9.3883 2.5979 10.6592 2 12 2C13.3408 2 14.6117 2.5979 15.4666 3.6308C15.6071 3.6175 15.748 3.6109 15.8891 3.6109C18.3744 3.6109 20.3891 5.6256 20.3891 8.1109C20.3891 8.252 20.3825 8.3929 20.3692 8.5334Z" fill="none" />
     </Icon>
   )
 }
@@ -732,7 +741,7 @@ export function Badge(props: IconProps) {
 export function Ban(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM5.636 5.636L18.364 18.364" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM5.636 5.636L18.364 18.364" />
     </Icon>
   )
 }
@@ -740,7 +749,7 @@ export function Ban(props: IconProps) {
 export function Banknote2Check(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M15.7055 19.2971L18.3333 22L22.1467 15.76" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M15.7055 19.2971L18.3333 22L22.1467 15.76" />
     </Icon>
   )
 }
@@ -748,7 +757,7 @@ export function Banknote2Check(props: IconProps) {
 export function Banknote2Minus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M23 19L15 19" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M23 19L15 19" />
     </Icon>
   )
 }
@@ -756,7 +765,7 @@ export function Banknote2Minus(props: IconProps) {
 export function Banknote2Plus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M19 15L19 23M23 19L15 19" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M19 15L19 23M23 19L15 19" />
     </Icon>
   )
 }
@@ -764,7 +773,7 @@ export function Banknote2Plus(props: IconProps) {
 export function Banknote2X(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM18 2C18 3.3333 18.8 6 22 6M6 16C6 14.6667 5.2 12 2 12M6 2C6 3.3333 5.2 6 2 6M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -772,7 +781,7 @@ export function Banknote2X(props: IconProps) {
 export function Banknote2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM18 5C18 6.33333 18.8 9 22 9M18 19C18 17.6667 18.8 15 22 15M6 19C6 17.6667 5.2 15 2 15M6 5C6 6.33333 5.2 9 2 9" />
+      <SvgPath d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM18 5C18 6.33333 18.8 9 22 9M18 19C18 17.6667 18.8 15 22 15M6 19C6 17.6667 5.2 15 2 15M6 5C6 6.33333 5.2 9 2 9" />
     </Icon>
   )
 }
@@ -780,7 +789,7 @@ export function Banknote2(props: IconProps) {
 export function BanknoteCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M15.7055 19.2971L18.3333 22L22.1467 15.76" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M15.7055 19.2971L18.3333 22L22.1467 15.76" />
     </Icon>
   )
 }
@@ -788,7 +797,7 @@ export function BanknoteCheck(props: IconProps) {
 export function BanknoteMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M23 19L15 19" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M23 19L15 19" />
     </Icon>
   )
 }
@@ -796,7 +805,7 @@ export function BanknoteMinus(props: IconProps) {
 export function BanknotePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M19 15L19 23M23 19L15 19" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M19 15L19 23M23 19L15 19" />
     </Icon>
   )
 }
@@ -804,7 +813,7 @@ export function BanknotePlus(props: IconProps) {
 export function BanknoteX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
+      <SvgPath d="M22 13L22 2L2 2L2 16L13 16M14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7C13.1046 7 14 7.8954 14 9ZM16 6L19 6M8 12L5 12M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -812,7 +821,7 @@ export function BanknoteX(props: IconProps) {
 export function Banknote(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM16 9L19 9M8 15L5 15" />
+      <SvgPath d="M22 19L22 5L2 5L2 19L22 19ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM16 9L19 9M8 15L5 15" />
     </Icon>
   )
 }
@@ -820,7 +829,7 @@ export function Banknote(props: IconProps) {
 export function BarChart2Down(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 1L4 9M12 1L12 16M20 1L20 23" />
+      <SvgPath d="M4 1L4 9M12 1L12 16M20 1L20 23" />
     </Icon>
   )
 }
@@ -828,7 +837,7 @@ export function BarChart2Down(props: IconProps) {
 export function BarChart2HorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L23 4M8 12L23 12M15 20L23 20" />
+      <SvgPath d="M1 4L23 4M8 12L23 12M15 20L23 20" />
     </Icon>
   )
 }
@@ -836,7 +845,7 @@ export function BarChart2HorizontalEnd(props: IconProps) {
 export function BarChart2HorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L23 4M1 12L16 12M1 20L9 20" />
+      <SvgPath d="M1 4L23 4M1 12L16 12M1 20L9 20" />
     </Icon>
   )
 }
@@ -844,7 +853,7 @@ export function BarChart2HorizontalStart(props: IconProps) {
 export function BarChart2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 15L4 23M12 8L12 23M20 1L20 23" />
+      <SvgPath d="M4 15L4 23M12 8L12 23M20 1L20 23" />
     </Icon>
   )
 }
@@ -852,7 +861,7 @@ export function BarChart2(props: IconProps) {
 export function BarChartDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 1L4 16M12 1L12 23M20 1L20 9" />
+      <SvgPath d="M4 1L4 16M12 1L12 23M20 1L20 9" />
     </Icon>
   )
 }
@@ -860,7 +869,7 @@ export function BarChartDown(props: IconProps) {
 export function BarChartHorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 4L23 4M1 12L23 12M8 20L23 20" />
+      <SvgPath d="M15 4L23 4M1 12L23 12M8 20L23 20" />
     </Icon>
   )
 }
@@ -868,7 +877,7 @@ export function BarChartHorizontalEnd(props: IconProps) {
 export function BarChartHorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L9 4M1 12L23 12M1 20L16 20" />
+      <SvgPath d="M1 4L9 4M1 12L23 12M1 20L16 20" />
     </Icon>
   )
 }
@@ -876,7 +885,7 @@ export function BarChartHorizontalStart(props: IconProps) {
 export function BarChart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 8L4 23M12 1L12 23M20 15L20 23" />
+      <SvgPath d="M4 8L4 23M12 1L12 23M20 15L20 23" />
     </Icon>
   )
 }
@@ -884,7 +893,7 @@ export function BarChart(props: IconProps) {
 export function BarsProgress(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 9L3 9L3 3ZM3 15L21 15L21 21L3 21L3 15ZM15 3L15 9M10 15L10 21" fill="none" />
+      <SvgPath d="M3 3L21 3L21 9L3 9L3 3ZM3 15L21 15L21 21L3 21L3 15ZM15 3L15 9M10 15L10 21" fill="none" />
     </Icon>
   )
 }
@@ -892,7 +901,7 @@ export function BarsProgress(props: IconProps) {
 export function BatteryFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15M10 9L10 15M14 9L14 15" />
+      <SvgPath d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15M10 9L10 15M14 9L14 15" />
     </Icon>
   )
 }
@@ -900,7 +909,7 @@ export function BatteryFull(props: IconProps) {
 export function BatteryLow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15" />
+      <SvgPath d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15" />
     </Icon>
   )
 }
@@ -908,7 +917,7 @@ export function BatteryLow(props: IconProps) {
 export function BatteryMedium(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15M10 9L10 15" />
+      <SvgPath d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5M6 9L6 15M10 9L10 15" />
     </Icon>
   )
 }
@@ -916,7 +925,7 @@ export function BatteryMedium(props: IconProps) {
 export function Battery(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5" />
+      <SvgPath d="M2 6L18 6L18 18L2 18L2 6ZM22 8.5L22 15.5" />
     </Icon>
   )
 }
@@ -924,7 +933,7 @@ export function Battery(props: IconProps) {
 export function BedDouble(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 11L22 11L22 20L2 20L2 11ZM5 11L5 4L19 4L19 11M2 15L22 15M12 11L12 15" fill="none" />
+      <SvgPath d="M2 11L22 11L22 20L2 20L2 11ZM5 11L5 4L19 4L19 11M2 15L22 15M12 11L12 15" fill="none" />
     </Icon>
   )
 }
@@ -932,7 +941,7 @@ export function BedDouble(props: IconProps) {
 export function BedSingle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 11L20 11L20 20L4 20L4 11ZM7 11L7 4L17 4L17 11M4 15L20 15" fill="none" />
+      <SvgPath d="M4 11L20 11L20 20L4 20L4 11ZM7 11L7 4L17 4L17 11M4 15L20 15" fill="none" />
     </Icon>
   )
 }
@@ -940,7 +949,7 @@ export function BedSingle(props: IconProps) {
 export function Bed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M2 10L22 10L22 16L2 16ZM6 10L6 5L12 5L12 10M22 16L22 21" fill="none" />
+      <SvgPath d="M2 3L2 21M2 10L22 10L22 16L2 16ZM6 10L6 5L12 5L12 10M22 16L22 21" fill="none" />
     </Icon>
   )
 }
@@ -948,7 +957,7 @@ export function Bed(props: IconProps) {
 export function BellCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15.7071 4.7071L18 7L22.2929 2.7071" />
+      <SvgPath d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15.7071 4.7071L18 7L22.2929 2.7071" />
     </Icon>
   )
 }
@@ -956,7 +965,7 @@ export function BellCheck(props: IconProps) {
 export function BellDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M19 2C20.6568 2 22 3.3432 22 5C22 6.6569 20.6568 8 19 8C17.3432 8 16 6.6569 16 5C16 3.3432 17.3432 2 19 2Z" />
+      <SvgPath d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M19 2C20.6568 2 22 3.3432 22 5C22 6.6569 20.6568 8 19 8C17.3432 8 16 6.6569 16 5C16 3.3432 17.3432 2 19 2Z" />
     </Icon>
   )
 }
@@ -964,7 +973,7 @@ export function BellDot(props: IconProps) {
 export function BellMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15 5L23 5" />
+      <SvgPath d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15 5L23 5" />
     </Icon>
   )
 }
@@ -972,7 +981,7 @@ export function BellMinus(props: IconProps) {
 export function BellOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.3678 4.3608L9.3908 3.7339C10.1504 3.2684 11.0438 3 12 3C14.7614 3 17 5.2386 17 8C17 9.7086 17.2336 10.9501 17.8536 12.8341M16 16L5 16L5 15C5 14 7 13 7 8C7 7.687 7.0288 7.3808 7.0838 7.0838M9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M8.3678 4.3608L9.3908 3.7339C10.1504 3.2684 11.0438 3 12 3C14.7614 3 17 5.2386 17 8C17 9.7086 17.2336 10.9501 17.8536 12.8341M16 16L5 16L5 15C5 14 7 13 7 8C7 7.687 7.0288 7.3808 7.0838 7.0838M9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -980,7 +989,7 @@ export function BellOff(props: IconProps) {
 export function BellPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M19 1L19 9M15 5L23 5" />
+      <SvgPath d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M19 1L19 9M15 5L23 5" />
     </Icon>
   )
 }
@@ -988,7 +997,7 @@ export function BellPlus(props: IconProps) {
 export function BellRing(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 16L5 16L5 15C5 14 7 13 7 8C7 5.2386 9.2386 3 12 3C14.7614 3 17 5.2386 17 8C17 13 19 14 19 15L19 16ZM9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134M21 8.0117L21 8C21 6.22 20.4722 4.48 19.4833 3L19.1864 2.5556M3 8.0117L3 8C3 6.22 3.5278 4.48 4.5167 3L4.8136 2.5556" fill="none" />
+      <SvgPath d="M19 16L5 16L5 15C5 14 7 13 7 8C7 5.2386 9.2386 3 12 3C14.7614 3 17 5.2386 17 8C17 13 19 14 19 15L19 16ZM9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134M21 8.0117L21 8C21 6.22 20.4722 4.48 19.4833 3L19.1864 2.5556M3 8.0117L3 8C3 6.22 3.5278 4.48 4.5167 3L4.8136 2.5556" fill="none" />
     </Icon>
   )
 }
@@ -996,7 +1005,7 @@ export function BellRing(props: IconProps) {
 export function BellX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15.7071 1.7071L22.2929 8.2929M22.2929 1.7071L15.7071 8.2929" />
+      <SvgPath d="M15.254 11.0546C16.1706 13.7121 17 14.356 17 15L17 16L3 16L3 15C3 14 5 13 5 8C5 5.2386 7.2386 3 10 3C10.7111 3 11.3875 3.1484 12.9164 3.8164M7.7679 19.134C8.6252 20.6188 9.2855 21 10 21C10.7145 21 11.3748 20.6188 12.2321 19.134M15.7071 1.7071L22.2929 8.2929M22.2929 1.7071L15.7071 8.2929" />
     </Icon>
   )
 }
@@ -1004,7 +1013,7 @@ export function BellX(props: IconProps) {
 export function Bell(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 16L5 16L5 15C5 14 7 13 7 8C7 5.2386 9.2386 3 12 3C14.7614 3 17 5.2386 17 8C17 13 19 14 19 15L19 16ZM9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134" />
+      <SvgPath d="M19 16L5 16L5 15C5 14 7 13 7 8C7 5.2386 9.2386 3 12 3C14.7614 3 17 5.2386 17 8C17 13 19 14 19 15L19 16ZM9.7679 19.134C10.6252 20.6188 11.2855 21 12 21C12.7145 21 13.3748 20.6188 14.2321 19.134" />
     </Icon>
   )
 }
@@ -1012,7 +1021,7 @@ export function Bell(props: IconProps) {
 export function Bike(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.5 21C20.433 21 22 19.433 22 17.5C22 15.567 20.433 14 18.5 14C16.567 14 15 15.567 15 17.5C15 19.433 16.567 21 18.5 21ZM5.5 21C7.433 21 9 19.433 9 17.5C9 15.567 7.433 14 5.5 14C3.567 14 2 15.567 2 17.5C2 19.433 3.567 21 5.5 21ZM17 5C17.5523 5 18 4.5523 18 4C18 3.4477 17.5523 3 17 3C16.4477 3 16 3.4477 16 4C16 4.5523 16.4477 5 17 5ZM11.8277 17.7858L12.8624 13.0671L9.0351 10.9545L14.4065 7.2897L16.0617 10.9109L19.4635 11.0352" fill="none" />
+      <SvgPath d="M18.5 21C20.433 21 22 19.433 22 17.5C22 15.567 20.433 14 18.5 14C16.567 14 15 15.567 15 17.5C15 19.433 16.567 21 18.5 21ZM5.5 21C7.433 21 9 19.433 9 17.5C9 15.567 7.433 14 5.5 14C3.567 14 2 15.567 2 17.5C2 19.433 3.567 21 5.5 21ZM17 5C17.5523 5 18 4.5523 18 4C18 3.4477 17.5523 3 17 3C16.4477 3 16 3.4477 16 4C16 4.5523 16.4477 5 17 5ZM11.8277 17.7858L12.8624 13.0671L9.0351 10.9545L14.4065 7.2897L16.0617 10.9109L19.4635 11.0352" fill="none" />
     </Icon>
   )
 }
@@ -1020,7 +1029,7 @@ export function Bike(props: IconProps) {
 export function Bin(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 2L15 2M3 7L21 7M6 7L18 7L18 22L6 22L6 7Z" />
+      <SvgPath d="M9 2L15 2M3 7L21 7M6 7L18 7L18 22L6 22L6 7Z" />
     </Icon>
   )
 }
@@ -1028,8 +1037,8 @@ export function Bin(props: IconProps) {
 export function Bird(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10.8703 7.0963L2 19.3162C4.3886 18.9914 6.7693 18.5988 8.1714 17.8575C19.009 18.1077 21.551 8.4795 19.2462 5.3327C16.6431 1.63 13.9428 3.1503 12.918 4.3733L10.8703 7.0963ZM8.1714 17.8575C13.4666 15.0578 12.4764 9.9085 10.8703 7.0963M20.0269 7.2419L22 9.0783L20.0269 10.1M10 17.9861L10 22M13.5 17.4L13.5 20.9714" fill="none" />
-      <Path d="M17 8C17 8.5523 16.5523 9 16 9C15.4477 9 15 8.5523 15 8C15 7.4477 15.4477 7 16 7C16.5523 7 17 7.4477 17 8Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M10.8703 7.0963L2 19.3162C4.3886 18.9914 6.7693 18.5988 8.1714 17.8575C19.009 18.1077 21.551 8.4795 19.2462 5.3327C16.6431 1.63 13.9428 3.1503 12.918 4.3733L10.8703 7.0963ZM8.1714 17.8575C13.4666 15.0578 12.4764 9.9085 10.8703 7.0963M20.0269 7.2419L22 9.0783L20.0269 10.1M10 17.9861L10 22M13.5 17.4L13.5 20.9714" fill="none" />
+      <SvgPath d="M17 8C17 8.5523 16.5523 9 16 9C15.4477 9 15 8.5523 15 8C15 7.4477 15.4477 7 16 7C16.5523 7 17 7.4477 17 8Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1037,7 +1046,7 @@ export function Bird(props: IconProps) {
 export function Bitcoin(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 20L5 19L5 5L15.5 5C17.433 5 19 6.567 19 8.5C19 10.433 17.433 12 15.5 12L5 12L4 12M4 12L5 12L15.5 12C17.433 12 19 13.567 19 15.5C19 17.433 17.433 19 15.5 19L5 19L4 19M10 1L10 2L10 5L10 6M15.5 1L15.5 2L15.5 5L15.5 6M10 18L10 19L10 22L10 23M15.5 18L15.5 19L15.5 22L15.5 23" fill="none" />
+      <SvgPath d="M5 20L5 19L5 5L15.5 5C17.433 5 19 6.567 19 8.5C19 10.433 17.433 12 15.5 12L5 12L4 12M4 12L5 12L15.5 12C17.433 12 19 13.567 19 15.5C19 17.433 17.433 19 15.5 19L5 19L4 19M10 1L10 2L10 5L10 6M15.5 1L15.5 2L15.5 5L15.5 6M10 18L10 19L10 22L10 23M15.5 18L15.5 19L15.5 22L15.5 23" fill="none" />
     </Icon>
   )
 }
@@ -1045,7 +1054,7 @@ export function Bitcoin(props: IconProps) {
 export function Bluetooth(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.7071 6.7071L17 17L12 22L12 2L17 7L6.7071 17.2929" />
+      <SvgPath d="M6.7071 6.7071L17 17L12 22L12 2L17 7L6.7071 17.2929" />
     </Icon>
   )
 }
@@ -1053,7 +1062,7 @@ export function Bluetooth(props: IconProps) {
 export function Bold(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 21V3H13C15.2091 3 17 4.7909 17 7C17 9.2091 15.2091 11 13 11M5 11H14C16.7614 11 19 13.2386 19 16C19 18.7614 16.7614 21 14 21H5" fill="none" />
+      <SvgPath d="M5 21V3H13C15.2091 3 17 4.7909 17 7C17 9.2091 15.2091 11 13 11M5 11H14C16.7614 11 19 13.2386 19 16C19 18.7614 16.7614 21 14 21H5" fill="none" />
     </Icon>
   )
 }
@@ -1061,7 +1070,7 @@ export function Bold(props: IconProps) {
 export function BookCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13.7071 18.7071L16 21L20.2929 16.7071" fill="none" />
+      <SvgPath d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13.7071 18.7071L16 21L20.2929 16.7071" fill="none" />
     </Icon>
   )
 }
@@ -1069,7 +1078,7 @@ export function BookCheck(props: IconProps) {
 export function BookMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13 19L21 19" fill="none" />
+      <SvgPath d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13 19L21 19" fill="none" />
     </Icon>
   )
 }
@@ -1077,7 +1086,7 @@ export function BookMinus(props: IconProps) {
 export function BookOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L8 4C10.2091 4 12 5.7909 12 8C12 5.7909 13.7909 4 16 4L22 4L22 17L15 17C13.3431 17 12 18.3431 12 20C12 18.3431 10.6569 17 9 17L2 17L2 4ZM12 8L12 20" fill="none" />
+      <SvgPath d="M2 4L8 4C10.2091 4 12 5.7909 12 8C12 5.7909 13.7909 4 16 4L22 4L22 17L15 17C13.3431 17 12 18.3431 12 20C12 18.3431 10.6569 17 9 17L2 17L2 4ZM12 8L12 20" fill="none" />
     </Icon>
   )
 }
@@ -1085,7 +1094,7 @@ export function BookOpen(props: IconProps) {
 export function BookPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M17 15L17 23M13 19L21 19" fill="none" />
+      <SvgPath d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M17 15L17 23M13 19L21 19" fill="none" />
     </Icon>
   )
 }
@@ -1093,7 +1102,7 @@ export function BookPlus(props: IconProps) {
 export function BookX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13.7071 15.7071L20.2929 22.2929M20.2929 15.7071L13.7071 22.2929" fill="none" />
+      <SvgPath d="M20 13L20 2L4 2L4 22M11 22L4 22L4 18L11 18M8 6L8 14M13.7071 15.7071L20.2929 22.2929M20.2929 15.7071L13.7071 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -1101,7 +1110,7 @@ export function BookX(props: IconProps) {
 export function Book(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 18L4 2L20 2L20 18C20 18.2164 19.9298 18.4269 19.8 18.6C19.6053 18.8596 19.5 19.1754 19.5 19.5C19.5 19.8246 19.6053 20.1404 19.8 20.4C19.9298 20.5731 20 20.7836 20 21L20 22L4 22L4 18L20 18M8 6L8 14" fill="none" />
+      <SvgPath d="M4 18L4 2L20 2L20 18C20 18.2164 19.9298 18.4269 19.8 18.6C19.6053 18.8596 19.5 19.1754 19.5 19.5C19.5 19.8246 19.6053 20.1404 19.8 20.4C19.9298 20.5731 20 20.7836 20 21L20 22L4 22L4 18L20 18M8 6L8 14" fill="none" />
     </Icon>
   )
 }
@@ -1109,7 +1118,7 @@ export function Book(props: IconProps) {
 export function Bookmark(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 2L20 2L20 22L12 18.4223L4 22L4 2Z" />
+      <SvgPath d="M4 2L20 2L20 22L12 18.4223L4 22L4 2Z" />
     </Icon>
   )
 }
@@ -1117,8 +1126,8 @@ export function Bookmark(props: IconProps) {
 export function BotOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 20L20 21L4 21L4 8L8 8M23 14.5L20 14.5L20 8L12 8L12 3.5M1 14.5L4 14.5M9 12.5858L9 14M8 17L13.4142 17M1.7071 1.7071L22.2929 22.2929" />
-      <Path d="M13.5 3.5C13.5 4.3284 12.8284 5 12 5C11.1716 5 10.5 4.3284 10.5 3.5C10.5 2.6716 11.1716 2 12 2C12.8284 2 13.5 2.6716 13.5 3.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M20 20L20 21L4 21L4 8L8 8M23 14.5L20 14.5L20 8L12 8L12 3.5M1 14.5L4 14.5M9 12.5858L9 14M8 17L13.4142 17M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M13.5 3.5C13.5 4.3284 12.8284 5 12 5C11.1716 5 10.5 4.3284 10.5 3.5C10.5 2.6716 11.1716 2 12 2C12.8284 2 13.5 2.6716 13.5 3.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1126,8 +1135,8 @@ export function BotOff(props: IconProps) {
 export function Bot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 8L20 8L20 21L4 21L4 8ZM12 8L12 3.5M1 14.5L4 14.5M23 14.5L20 14.5M9 11L9 14M15 11L15 14M8 17L16 17" fill="none" />
-      <Path d="M13.5 3.5C13.5 4.3284 12.8284 5 12 5C11.1716 5 10.5 4.3284 10.5 3.5C10.5 2.6716 11.1716 2 12 2C12.8284 2 13.5 2.6716 13.5 3.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4 8L20 8L20 21L4 21L4 8ZM12 8L12 3.5M1 14.5L4 14.5M23 14.5L20 14.5M9 11L9 14M15 11L15 14M8 17L16 17" fill="none" />
+      <SvgPath d="M13.5 3.5C13.5 4.3284 12.8284 5 12 5C11.1716 5 10.5 4.3284 10.5 3.5C10.5 2.6716 11.1716 2 12 2C12.8284 2 13.5 2.6716 13.5 3.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1135,7 +1144,7 @@ export function Bot(props: IconProps) {
 export function Bottle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 3C9.5 4 9.769 5.308 8.5 7C7 9 7 11 7 12.5L7 19C7 19.7993 7.552 21.4572 9.7149 21.9443C9.9029 21.9867 10.0969 22 10.2897 22L13.7103 22C13.9031 22 14.0971 21.9867 14.2851 21.9443C16.448 21.4572 17 19.7993 17 19L17 12.5C17 11 17 9 15.5 7C14.231 5.308 14.5 4 14.5 3ZM9.5 3L8.5 3L8.5 2L15.5 2L15.5 3L14.5 3M7 14.2764C7.48139 14.2764 7.94988 14.4033 8.33498 14.6382C8.72008 14.8731 9.18857 15 9.66997 15C10.1514 15 10.6199 14.8731 11.0049 14.6382C11.39 14.4033 11.8585 14.2764 12.3399 14.2764C12.8213 14.2764 13.2898 14.4033 13.6749 14.6382C14.06 14.8731 14.5285 15 15.0099 15C15.8526 15 16.6231 14.6129 17 14" fill="none" />
+      <SvgPath d="M9.5 3C9.5 4 9.769 5.308 8.5 7C7 9 7 11 7 12.5L7 19C7 19.7993 7.552 21.4572 9.7149 21.9443C9.9029 21.9867 10.0969 22 10.2897 22L13.7103 22C13.9031 22 14.0971 21.9867 14.2851 21.9443C16.448 21.4572 17 19.7993 17 19L17 12.5C17 11 17 9 15.5 7C14.231 5.308 14.5 4 14.5 3ZM9.5 3L8.5 3L8.5 2L15.5 2L15.5 3L14.5 3M7 14.2764C7.48139 14.2764 7.94988 14.4033 8.33498 14.6382C8.72008 14.8731 9.18857 15 9.66997 15C10.1514 15 10.6199 14.8731 11.0049 14.6382C11.39 14.4033 11.8585 14.2764 12.3399 14.2764C12.8213 14.2764 13.2898 14.4033 13.6749 14.6382C14.06 14.8731 14.5285 15 15.0099 15C15.8526 15 16.6231 14.6129 17 14" fill="none" />
     </Icon>
   )
 }
@@ -1143,7 +1152,7 @@ export function Bottle(props: IconProps) {
 export function Boy(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C6 10.5 6.6 9 7.6 7.6C8.9 8.6 11.2 9.2 13 8.7C15 8.35 16.2 7.4 17.4 6.6C17.9 8 18.5 10 20 10.5ZM4 10.5L4 7.5C4 4 6.8 2 11.5 2C14.4 2 16.5 3.5 19.4 2C20 3.6 20 5.5 20 7.5L20 10.5M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
+      <SvgPath d="M20 10.5C21.1046 10.5 22 11.6193 22 13C22 14.3807 21.1046 15.5 20 15.5L20 15.738C20 17.3 19 18.9 17.45 20.1C15.9 21.3 13.94 22 12 22C10.06 22 8.1 21.3 6.55 20.1C5 18.9 4 17.3 4 15.738L4 15.5C2.8954 15.5 2 14.3807 2 13C2 11.6193 2.8954 10.5 4 10.5C6 10.5 6.6 9 7.6 7.6C8.9 8.6 11.2 9.2 13 8.7C15 8.35 16.2 7.4 17.4 6.6C17.9 8 18.5 10 20 10.5ZM4 10.5L4 7.5C4 4 6.8 2 11.5 2C14.4 2 16.5 3.5 19.4 2C20 3.6 20 5.5 20 7.5L20 10.5M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
     </Icon>
   )
 }
@@ -1151,7 +1160,7 @@ export function Boy(props: IconProps) {
 export function BracketArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 12.1093L4 2L20 2L20 12.1093M12 21.7586L12 10.1093M6.204 15.8562L12 22L17.796 15.8562" />
+      <SvgPath d="M4 12.1093L4 2L20 2L20 12.1093M12 21.7586L12 10.1093M6.204 15.8562L12 22L17.796 15.8562" />
     </Icon>
   )
 }
@@ -1159,7 +1168,7 @@ export function BracketArrowDown(props: IconProps) {
 export function BracketArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.8907 4L22 4L22 20L11.8907 20M2.2414 12L13.8907 12M8.1438 6.204L2 12L8.1438 17.796" />
+      <SvgPath d="M11.8907 4L22 4L22 20L11.8907 20M2.2414 12L13.8907 12M8.1438 6.204L2 12L8.1438 17.796" />
     </Icon>
   )
 }
@@ -1167,7 +1176,7 @@ export function BracketArrowLeft(props: IconProps) {
 export function BracketArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.1093 4L2 4L2 20L12.1093 20M21.7586 12L10.1093 12M15.8562 6.204L22 12L15.8562 17.796" />
+      <SvgPath d="M12.1093 4L2 4L2 20L12.1093 20M21.7586 12L10.1093 12M15.8562 6.204L22 12L15.8562 17.796" />
     </Icon>
   )
 }
@@ -1175,7 +1184,7 @@ export function BracketArrowRight(props: IconProps) {
 export function BracketArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 11.8907L20 22L4 22L4 11.8907M12 2.2414L12 13.8907M17.796 8.1438L12 2L6.204 8.1438" />
+      <SvgPath d="M20 11.8907L20 22L4 22L4 11.8907M12 2.2414L12 13.8907M17.796 8.1438L12 2L6.204 8.1438" />
     </Icon>
   )
 }
@@ -1183,8 +1192,8 @@ export function BracketArrowUp(props: IconProps) {
 export function BrainCircuit(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5L12 4.75ZM9.3615 6.1856L9.2158 5.3593C9.0262 4.284 8.0919 3.5 7 3.5C6.9318 3.5 6.8637 3.5031 6.7958 3.5093M8.0704 9.945L7.9905 9.0321C7.8775 7.7408 6.7963 6.75 5.5 6.75C5.3352 6.75 5.1709 6.7663 5.0093 6.7986M2.5315 13.125C3.0494 13.8321 3.8735 14.25 4.75 14.25C4.9903 14.25 5.2296 14.2185 5.4618 14.1563L6.2029 13.9577M8.7896 12.5413L8.75 13.5C8.6958 14.8111 8.162 16.0566 7.25 17L6.9552 17.3049M12 7.5L21.5 7.5M12 12L18.5 12M12 16.5L21.5 16.5" fill="none" />
-      <Path d="M23 7.5C23 8.3284 22.3284 9 21.5 9C20.6716 9 20 8.3284 20 7.5C20 6.6716 20.6716 6 21.5 6C22.3284 6 23 6.6716 23 7.5ZM20 12C20 12.8284 19.3284 13.5 18.5 13.5C17.6716 13.5 17 12.8284 17 12C17 11.1716 17.6716 10.5 18.5 10.5C19.3284 10.5 20 11.1716 20 12ZM23 16.5C23 17.3284 22.3284 18 21.5 18C20.6716 18 20 17.3284 20 16.5C20 15.6716 20.6716 15 21.5 15C22.3284 15 23 15.6716 23 16.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5L12 4.75ZM9.3615 6.1856L9.2158 5.3593C9.0262 4.284 8.0919 3.5 7 3.5C6.9318 3.5 6.8637 3.5031 6.7958 3.5093M8.0704 9.945L7.9905 9.0321C7.8775 7.7408 6.7963 6.75 5.5 6.75C5.3352 6.75 5.1709 6.7663 5.0093 6.7986M2.5315 13.125C3.0494 13.8321 3.8735 14.25 4.75 14.25C4.9903 14.25 5.2296 14.2185 5.4618 14.1563L6.2029 13.9577M8.7896 12.5413L8.75 13.5C8.6958 14.8111 8.162 16.0566 7.25 17L6.9552 17.3049M12 7.5L21.5 7.5M12 12L18.5 12M12 16.5L21.5 16.5" fill="none" />
+      <SvgPath d="M23 7.5C23 8.3284 22.3284 9 21.5 9C20.6716 9 20 8.3284 20 7.5C20 6.6716 20.6716 6 21.5 6C22.3284 6 23 6.6716 23 7.5ZM20 12C20 12.8284 19.3284 13.5 18.5 13.5C17.6716 13.5 17 12.8284 17 12C17 11.1716 17.6716 10.5 18.5 10.5C19.3284 10.5 20 11.1716 20 12ZM23 16.5C23 17.3284 22.3284 18 21.5 18C20.6716 18 20 17.3284 20 16.5C20 15.6716 20.6716 15 21.5 15C22.3284 15 23 15.6716 23 16.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1192,7 +1201,7 @@ export function BrainCircuit(props: IconProps) {
 export function BrainCog(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5C12 20.433 13.567 22 15.5 22C16.735 22 17.8787 21.3491 18.5093 20.2872C19.4154 19.8874 20 18.9904 20 18C20 17.8028 19.9767 17.6062 19.9305 17.4145C21.1481 17.1035 22 16.0067 22 14.75C22 14.1656 21.8138 13.5964 21.4685 13.125C21.8138 12.6536 22 12.0844 22 11.5C22 10.6776 21.632 9.8984 20.9968 9.3761C20.9989 9.3341 21 9.292 21 9.25C21 8.0585 20.1591 7.0325 18.9907 6.7986C19.161 6.4753 19.25 6.1154 19.25 5.75C19.25 4.5865 18.3629 3.6149 17.2042 3.5093C16.7362 2.5836 15.7872 2 14.75 2C13.2312 2 12 3.2312 12 4.75ZM6.7958 3.5093C6.8637 3.5031 6.9318 3.5 7 3.5C7.7175 3.5 8.3919 3.8422 8.8156 4.4211L9.1153 4.8305M5.0093 6.7986C5.1709 6.7663 5.3352 6.75 5.5 6.75C5.7209 6.75 5.9409 6.7793 6.1541 6.8371L6.8925 7.0373M2.5315 13.125C3.0139 13.7836 3.764 14.1938 4.5788 14.2447L5.5165 14.3032M17.2042 3.5093C17.1363 3.5031 17.0682 3.5 17 3.5C16.2825 3.5 15.6081 3.8422 15.1844 4.4211L14.8847 4.8305M18.9907 6.7986C18.8291 6.7663 18.6648 6.75 18.5 6.75C18.2791 6.75 18.0591 6.7793 17.8459 6.8371L17.1075 7.0373M21.4685 13.125C20.9861 13.7836 20.236 14.1938 19.4212 14.2447L18.4835 14.3032M14.875 11.625C14.875 13.2128 13.5878 14.5 12 14.5C10.4122 14.5 9.125 13.2128 9.125 11.625C9.125 10.0372 10.4122 8.75 12 8.75C13.5878 8.75 14.875 10.0372 14.875 11.625ZM15.4645 13.0601L16.1973 13.3636M13.4351 15.0895L13.7386 15.8223M10.5649 15.0895L10.2614 15.8223M8.5355 13.0601L7.8027 13.3636M8.5355 10.1899L7.8027 9.8864M10.5649 8.1605L10.2614 7.4277M13.4351 8.1605L13.7386 7.4277M15.4645 10.1899L16.1973 9.8864" />
+      <SvgPath d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5C12 20.433 13.567 22 15.5 22C16.735 22 17.8787 21.3491 18.5093 20.2872C19.4154 19.8874 20 18.9904 20 18C20 17.8028 19.9767 17.6062 19.9305 17.4145C21.1481 17.1035 22 16.0067 22 14.75C22 14.1656 21.8138 13.5964 21.4685 13.125C21.8138 12.6536 22 12.0844 22 11.5C22 10.6776 21.632 9.8984 20.9968 9.3761C20.9989 9.3341 21 9.292 21 9.25C21 8.0585 20.1591 7.0325 18.9907 6.7986C19.161 6.4753 19.25 6.1154 19.25 5.75C19.25 4.5865 18.3629 3.6149 17.2042 3.5093C16.7362 2.5836 15.7872 2 14.75 2C13.2312 2 12 3.2312 12 4.75ZM6.7958 3.5093C6.8637 3.5031 6.9318 3.5 7 3.5C7.7175 3.5 8.3919 3.8422 8.8156 4.4211L9.1153 4.8305M5.0093 6.7986C5.1709 6.7663 5.3352 6.75 5.5 6.75C5.7209 6.75 5.9409 6.7793 6.1541 6.8371L6.8925 7.0373M2.5315 13.125C3.0139 13.7836 3.764 14.1938 4.5788 14.2447L5.5165 14.3032M17.2042 3.5093C17.1363 3.5031 17.0682 3.5 17 3.5C16.2825 3.5 15.6081 3.8422 15.1844 4.4211L14.8847 4.8305M18.9907 6.7986C18.8291 6.7663 18.6648 6.75 18.5 6.75C18.2791 6.75 18.0591 6.7793 17.8459 6.8371L17.1075 7.0373M21.4685 13.125C20.9861 13.7836 20.236 14.1938 19.4212 14.2447L18.4835 14.3032M14.875 11.625C14.875 13.2128 13.5878 14.5 12 14.5C10.4122 14.5 9.125 13.2128 9.125 11.625C9.125 10.0372 10.4122 8.75 12 8.75C13.5878 8.75 14.875 10.0372 14.875 11.625ZM15.4645 13.0601L16.1973 13.3636M13.4351 15.0895L13.7386 15.8223M10.5649 15.0895L10.2614 15.8223M8.5355 13.0601L7.8027 13.3636M8.5355 10.1899L7.8027 9.8864M10.5649 8.1605L10.2614 7.4277M13.4351 8.1605L13.7386 7.4277M15.4645 10.1899L16.1973 9.8864" />
     </Icon>
   )
 }
@@ -1200,7 +1209,7 @@ export function BrainCog(props: IconProps) {
 export function Brain(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5C12 20.433 13.567 22 15.5 22C16.735 22 17.8787 21.3491 18.5093 20.2872C19.4154 19.8874 20 18.9904 20 18C20 17.8028 19.9767 17.6062 19.9305 17.4145C21.1481 17.1035 22 16.0067 22 14.75C22 14.1656 21.8138 13.5964 21.4685 13.125C21.8138 12.6536 22 12.0844 22 11.5C22 10.6776 21.632 9.8984 20.9968 9.3761C20.9989 9.3341 21 9.292 21 9.25C21 8.0585 20.1591 7.0325 18.9907 6.7986C19.161 6.4753 19.25 6.1154 19.25 5.75C19.25 4.5865 18.3629 3.6149 17.2042 3.5093C16.7362 2.5836 15.7872 2 14.75 2C13.2312 2 12 3.2312 12 4.75ZM12 18.5L12 4.75M9.3615 6.1856L9.2158 5.3593C9.0262 4.284 8.0919 3.5 7 3.5C6.9318 3.5 6.8637 3.5031 6.7958 3.5093M8.0704 9.945L7.9905 9.0321C7.8775 7.7408 6.7963 6.75 5.5 6.75C5.3352 6.75 5.1709 6.7663 5.0093 6.7986M2.5315 13.125C3.0494 13.8321 3.8735 14.25 4.75 14.25C4.9903 14.25 5.2296 14.2185 5.4618 14.1563L6.2029 13.9577M8.7896 12.5413L8.75 13.5C8.6958 14.8111 8.162 16.0566 7.25 17L6.9552 17.3049M14.6385 6.1856L14.7842 5.3593C14.9738 4.284 15.9081 3.5 17 3.5C17.0682 3.5 17.1363 3.5031 17.2042 3.5093M15.9296 9.945L16.0095 9.0321C16.1225 7.7408 17.2037 6.75 18.5 6.75C18.6648 6.75 18.8291 6.7663 18.9907 6.7986M21.4685 13.125C20.9506 13.8321 20.1265 14.25 19.25 14.25C19.0097 14.25 18.7704 14.2185 18.5382 14.1563L17.7971 13.9577M15.2104 12.5413L15.25 13.5C15.3042 14.8111 15.838 16.0566 16.75 17L17.0448 17.3049" fill="none" />
+      <SvgPath d="M12 4.75C12 3.2312 10.7688 2 9.25 2C8.2128 2 7.2638 2.5836 6.7958 3.5093C5.6371 3.6149 4.75 4.5865 4.75 5.75C4.75 6.1154 4.839 6.4753 5.0093 6.7986C3.8409 7.0325 3 8.0585 3 9.25C3 9.292 3.0011 9.3341 3.0032 9.3761C2.368 9.8984 2 10.6776 2 11.5C2 12.0844 2.1862 12.6536 2.5315 13.125C2.1862 13.5964 2 14.1656 2 14.75C2 16.0067 2.8519 17.1035 4.0695 17.4145C4.0233 17.6062 4 17.8028 4 18C4 18.9904 4.5846 19.8874 5.4907 20.2872C6.1213 21.3491 7.265 22 8.5 22C10.433 22 12 20.433 12 18.5C12 20.433 13.567 22 15.5 22C16.735 22 17.8787 21.3491 18.5093 20.2872C19.4154 19.8874 20 18.9904 20 18C20 17.8028 19.9767 17.6062 19.9305 17.4145C21.1481 17.1035 22 16.0067 22 14.75C22 14.1656 21.8138 13.5964 21.4685 13.125C21.8138 12.6536 22 12.0844 22 11.5C22 10.6776 21.632 9.8984 20.9968 9.3761C20.9989 9.3341 21 9.292 21 9.25C21 8.0585 20.1591 7.0325 18.9907 6.7986C19.161 6.4753 19.25 6.1154 19.25 5.75C19.25 4.5865 18.3629 3.6149 17.2042 3.5093C16.7362 2.5836 15.7872 2 14.75 2C13.2312 2 12 3.2312 12 4.75ZM12 18.5L12 4.75M9.3615 6.1856L9.2158 5.3593C9.0262 4.284 8.0919 3.5 7 3.5C6.9318 3.5 6.8637 3.5031 6.7958 3.5093M8.0704 9.945L7.9905 9.0321C7.8775 7.7408 6.7963 6.75 5.5 6.75C5.3352 6.75 5.1709 6.7663 5.0093 6.7986M2.5315 13.125C3.0494 13.8321 3.8735 14.25 4.75 14.25C4.9903 14.25 5.2296 14.2185 5.4618 14.1563L6.2029 13.9577M8.7896 12.5413L8.75 13.5C8.6958 14.8111 8.162 16.0566 7.25 17L6.9552 17.3049M14.6385 6.1856L14.7842 5.3593C14.9738 4.284 15.9081 3.5 17 3.5C17.0682 3.5 17.1363 3.5031 17.2042 3.5093M15.9296 9.945L16.0095 9.0321C16.1225 7.7408 17.2037 6.75 18.5 6.75C18.6648 6.75 18.8291 6.7663 18.9907 6.7986M21.4685 13.125C20.9506 13.8321 20.1265 14.25 19.25 14.25C19.0097 14.25 18.7704 14.2185 18.5382 14.1563L17.7971 13.9577M15.2104 12.5413L15.25 13.5C15.3042 14.8111 15.838 16.0566 16.75 17L17.0448 17.3049" fill="none" />
     </Icon>
   )
 }
@@ -1208,7 +1217,7 @@ export function Brain(props: IconProps) {
 export function BrickWall(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M3 15L21 15M12 3L12 9M7 9L7 15M17 9L17 15M12 15L12 21" fill="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M3 15L21 15M12 3L12 9M7 9L7 15M17 9L17 15M12 15L12 21" fill="none" />
     </Icon>
   )
 }
@@ -1216,7 +1225,7 @@ export function BrickWall(props: IconProps) {
 export function Briefcase(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.25 6.5L8.25 3L15.75 3L15.75 6.5M2 10.5C6 12.75 18 12.75 22 10.5M9.5 12.1132L9.5 15.5L14.5 15.5L14.5 12.1132M2 6.5L22 6.5L22 21L2 21L2 6.5Z" />
+      <SvgPath d="M8.25 6.5L8.25 3L15.75 3L15.75 6.5M2 10.5C6 12.75 18 12.75 22 10.5M9.5 12.1132L9.5 15.5L14.5 15.5L14.5 12.1132M2 6.5L22 6.5L22 21L2 21L2 6.5Z" />
     </Icon>
   )
 }
@@ -1224,8 +1233,8 @@ export function Briefcase(props: IconProps) {
 export function Broadcast(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.297 12.1135L8.7234 11.2943C8.2526 10.6219 8 9.8209 8 9C8 8.1791 8.2526 7.3781 8.7234 6.7057L9.297 5.8865M14.703 5.8865L15.2766 6.7057C15.7474 7.3781 16 8.1791 16 9C16 9.8209 15.7474 10.6219 15.2766 11.2943L14.703 12.1135M7.4585 15.6614L6.7085 15C4.9865 13.4813 4 11.296 4 9C4 6.704 4.9865 4.5187 6.7085 3L6.992 2.75M17.008 2.75L17.2915 3C19.0135 4.5187 20 6.704 20 9C20 11.296 19.0135 13.4813 17.2915 15L16.5415 15.6614M12 13L12 22" />
-      <Path d="M13 9C13 9.5523 12.5523 10 12 10C11.4477 10 11 9.5523 11 9C11 8.4477 11.4477 8 12 8C12.5523 8 13 8.4477 13 9Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M9.297 12.1135L8.7234 11.2943C8.2526 10.6219 8 9.8209 8 9C8 8.1791 8.2526 7.3781 8.7234 6.7057L9.297 5.8865M14.703 5.8865L15.2766 6.7057C15.7474 7.3781 16 8.1791 16 9C16 9.8209 15.7474 10.6219 15.2766 11.2943L14.703 12.1135M7.4585 15.6614L6.7085 15C4.9865 13.4813 4 11.296 4 9C4 6.704 4.9865 4.5187 6.7085 3L6.992 2.75M17.008 2.75L17.2915 3C19.0135 4.5187 20 6.704 20 9C20 11.296 19.0135 13.4813 17.2915 15L16.5415 15.6614M12 13L12 22" />
+      <SvgPath d="M13 9C13 9.5523 12.5523 10 12 10C11.4477 10 11 9.5523 11 9C11 8.4477 11.4477 8 12 8C12.5523 8 13 8.4477 13 9Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1233,7 +1242,7 @@ export function Broadcast(props: IconProps) {
 export function Broom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.5304 13.5362C10.1768 14.466 6.5597 16.1295 2.9198 15.3456C5.7967 18.8355 12.1346 24.7603 14.4719 20.5399C15.086 19.4704 16.2577 17.1141 16.0316 16.2453ZM11.5304 13.5362C11.9756 12.2895 13.4622 10.069 15.8469 11.1603M16.0316 16.2453C16.8369 15.0561 17.9275 12.3742 15.8469 11.1603M15.8469 11.1603L21.2053 1.4845" fill="none" />
+      <SvgPath d="M11.5304 13.5362C10.1768 14.466 6.5597 16.1295 2.9198 15.3456C5.7967 18.8355 12.1346 24.7603 14.4719 20.5399C15.086 19.4704 16.2577 17.1141 16.0316 16.2453ZM11.5304 13.5362C11.9756 12.2895 13.4622 10.069 15.8469 11.1603M16.0316 16.2453C16.8369 15.0561 17.9275 12.3742 15.8469 11.1603M15.8469 11.1603L21.2053 1.4845" fill="none" />
     </Icon>
   )
 }
@@ -1241,7 +1250,7 @@ export function Broom(props: IconProps) {
 export function Bug(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.8 9.4C6.59 9.925 6.5 10.45 6.5 10.9L6.5 14.6C6.5 17.68 8.975 20.2 12 20.2C15.025 20.2 17.5 17.68 17.5 14.6L17.5 10.9C17.5 10.45 17.41 9.925 17.2 9.4C15.902 7.877 14.001 7 12 7C9.999 7 8.098 7.877 6.8 9.4ZM15 7.694L15 5.695C15 4.972 14.683 4.316 14.168 3.832C13.622 3.319 12.852 3 12 3C11.148 3 10.378 3.319 9.832 3.832C9.317 4.316 9 4.972 9 5.695L9 7.694M7.7071 1.7071L9.832 3.832M16.2929 1.7071L14.168 3.832M20 3.6L20 5.57C20 7.485 18.796 9.055 17.2 9.4M4 3.6L4 5.57C4 7.485 5.204 9.055 6.8 9.4M22 13.4L17.5 13.4M2 13.4L6.5 13.4M20.5 23L20.5 21.03C20.5 19.215 18.931 17.727 16.85 17.4M3.5 23L3.5 21.03C3.5 19.215 5.07 17.727 7.15 17.4M12 16.6L12 11" />
+      <SvgPath d="M6.8 9.4C6.59 9.925 6.5 10.45 6.5 10.9L6.5 14.6C6.5 17.68 8.975 20.2 12 20.2C15.025 20.2 17.5 17.68 17.5 14.6L17.5 10.9C17.5 10.45 17.41 9.925 17.2 9.4C15.902 7.877 14.001 7 12 7C9.999 7 8.098 7.877 6.8 9.4ZM15 7.694L15 5.695C15 4.972 14.683 4.316 14.168 3.832C13.622 3.319 12.852 3 12 3C11.148 3 10.378 3.319 9.832 3.832C9.317 4.316 9 4.972 9 5.695L9 7.694M7.7071 1.7071L9.832 3.832M16.2929 1.7071L14.168 3.832M20 3.6L20 5.57C20 7.485 18.796 9.055 17.2 9.4M4 3.6L4 5.57C4 7.485 5.204 9.055 6.8 9.4M22 13.4L17.5 13.4M2 13.4L6.5 13.4M20.5 23L20.5 21.03C20.5 19.215 18.931 17.727 16.85 17.4M3.5 23L3.5 21.03C3.5 19.215 5.07 17.727 7.15 17.4M12 16.6L12 11" />
     </Icon>
   )
 }
@@ -1249,7 +1258,7 @@ export function Bug(props: IconProps) {
 export function Building(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 2L20 2L20 22L4 22L4 2ZM10 22L10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20L14 22M9 5L9 9M15 5L15 9M9 11L9 15M15 11L15 15" />
+      <SvgPath d="M4 2L20 2L20 22L4 22L4 2ZM10 22L10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20L14 22M9 5L9 9M15 5L15 9M9 11L9 15M15 11L15 15" />
     </Icon>
   )
 }
@@ -1257,7 +1266,7 @@ export function Building(props: IconProps) {
 export function Buildings(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 2L22 2L22 22L10 22L10 2ZM10 22L2 22L2 6L10 6M14 5L14 9M14 11L14 15M18 5L18 9M18 11L18 15M6 9L6 13M6 15L6 19M14 22L14 18L18 18L18 22" fill="none" />
+      <SvgPath d="M10 2L22 2L22 22L10 22L10 2ZM10 22L2 22L2 6L10 6M14 5L14 9M14 11L14 15M18 5L18 9M18 11L18 15M6 9L6 13M6 15L6 19M14 22L14 18L18 18L18 22" fill="none" />
     </Icon>
   )
 }
@@ -1265,7 +1274,7 @@ export function Buildings(props: IconProps) {
 export function Cable(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 4L6 4C3.7909 4 2 5.7909 2 8C2 10.2091 3.7909 12 6 12L18 12C20.2091 12 22 13.7909 22 16C22 18.2091 20.2091 20 18 20L10 20M14 2L20 2L20 6L14 6L14 2ZM4 18L10 18L10 22L4 22L4 18ZM20 4L23 4M4 20L1 20" />
+      <SvgPath d="M14 4L6 4C3.7909 4 2 5.7909 2 8C2 10.2091 3.7909 12 6 12L18 12C20.2091 12 22 13.7909 22 16C22 18.2091 20.2091 20 18 20L10 20M14 2L20 2L20 6L14 6L14 2ZM4 18L10 18L10 22L4 22L4 18ZM20 4L23 4M4 20L1 20" />
     </Icon>
   )
 }
@@ -1273,8 +1282,8 @@ export function Cable(props: IconProps) {
 export function Cake(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 11L19 11L19 20L5 20L5 11ZM5 14V14.6256C5 15.3847 6.04468 16 7.33333 16C7.96044 16 8.56113 15.8513 8.99999 15.5875C9.17555 15.482 9.41579 15.4225 9.66667 15.4225C9.91755 15.4225 10.1578 15.482 10.3333 15.5875C10.7722 15.8513 11.3729 16 12 16C12.6271 16 13.2278 15.8513 13.6667 15.5875C13.8422 15.482 14.0825 15.4225 14.3333 15.4225C14.5842 15.4225 14.8245 15.482 15 15.5875C15.4389 15.8513 16.0396 16 16.6667 16C17.2938 16 17.8945 15.8513 18.3333 15.5875C18.5089 15.482 18.7491 15.4225 19 15.4225V14M9.6667 15.4225L9.6667 13M14.3333 15.4225L14.3333 13M9 11L9 7M15 11L15 7M1 20L23 20" fill="none" />
-      <Path d="M8.5 3L9.5 3C9.7761 3 10 3.2239 10 3.5L10 4.5C10 4.7761 9.7761 5 9.5 5L8.5 5C8.2239 5 8 4.7761 8 4.5L8 3.5C8 3.2239 8.2239 3 8.5 3ZM14.5 3L15.5 3C15.7761 3 16 3.2239 16 3.5L16 4.5C16 4.7761 15.7761 5 15.5 5L14.5 5C14.2239 5 14 4.7761 14 4.5L14 3.5C14 3.2239 14.2239 3 14.5 3Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M5 11L19 11L19 20L5 20L5 11ZM5 14V14.6256C5 15.3847 6.04468 16 7.33333 16C7.96044 16 8.56113 15.8513 8.99999 15.5875C9.17555 15.482 9.41579 15.4225 9.66667 15.4225C9.91755 15.4225 10.1578 15.482 10.3333 15.5875C10.7722 15.8513 11.3729 16 12 16C12.6271 16 13.2278 15.8513 13.6667 15.5875C13.8422 15.482 14.0825 15.4225 14.3333 15.4225C14.5842 15.4225 14.8245 15.482 15 15.5875C15.4389 15.8513 16.0396 16 16.6667 16C17.2938 16 17.8945 15.8513 18.3333 15.5875C18.5089 15.482 18.7491 15.4225 19 15.4225V14M9.6667 15.4225L9.6667 13M14.3333 15.4225L14.3333 13M9 11L9 7M15 11L15 7M1 20L23 20" fill="none" />
+      <SvgPath d="M8.5 3L9.5 3C9.7761 3 10 3.2239 10 3.5L10 4.5C10 4.7761 9.7761 5 9.5 5L8.5 5C8.2239 5 8 4.7761 8 4.5L8 3.5C8 3.2239 8.2239 3 8.5 3ZM14.5 3L15.5 3C15.7761 3 16 3.2239 16 3.5L16 4.5C16 4.7761 15.7761 5 15.5 5L14.5 5C14.2239 5 14 4.7761 14 4.5L14 3.5C14 3.2239 14.2239 3 14.5 3Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1282,8 +1291,8 @@ export function Cake(props: IconProps) {
 export function Calculator(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 2L20 2L20 22L4 22L4 2ZM4 6L20 6M11 18L17 18" fill="none" />
-      <Path d="M9 10C9 10.5523 8.5523 11 8 11C7.4477 11 7 10.5523 7 10C7 9.4477 7.4477 9 8 9C8.5523 9 9 9.4477 9 10ZM13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10C11 9.4477 11.4477 9 12 9C12.5523 9 13 9.4477 13 10ZM17 10C17 10.5523 16.5523 11 16 11C15.4477 11 15 10.5523 15 10C15 9.4477 15.4477 9 16 9C16.5523 9 17 9.4477 17 10ZM9 14C9 14.5523 8.5523 15 8 15C7.4477 15 7 14.5523 7 14C7 13.4477 7.4477 13 8 13C8.5523 13 9 13.4477 9 14ZM13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14ZM17 14C17 14.5523 16.5523 15 16 15C15.4477 15 15 14.5523 15 14C15 13.4477 15.4477 13 16 13C16.5523 13 17 13.4477 17 14ZM9 18C9 18.5523 8.5523 19 8 19C7.4477 19 7 18.5523 7 18C7 17.4477 7.4477 17 8 17C8.5523 17 9 17.4477 9 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4 2L20 2L20 22L4 22L4 2ZM4 6L20 6M11 18L17 18" fill="none" />
+      <SvgPath d="M9 10C9 10.5523 8.5523 11 8 11C7.4477 11 7 10.5523 7 10C7 9.4477 7.4477 9 8 9C8.5523 9 9 9.4477 9 10ZM13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10C11 9.4477 11.4477 9 12 9C12.5523 9 13 9.4477 13 10ZM17 10C17 10.5523 16.5523 11 16 11C15.4477 11 15 10.5523 15 10C15 9.4477 15.4477 9 16 9C16.5523 9 17 9.4477 17 10ZM9 14C9 14.5523 8.5523 15 8 15C7.4477 15 7 14.5523 7 14C7 13.4477 7.4477 13 8 13C8.5523 13 9 13.4477 9 14ZM13 14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14C11 13.4477 11.4477 13 12 13C12.5523 13 13 13.4477 13 14ZM17 14C17 14.5523 16.5523 15 16 15C15.4477 15 15 14.5523 15 14C15 13.4477 15.4477 13 16 13C16.5523 13 17 13.4477 17 14ZM9 18C9 18.5523 8.5523 19 8 19C7.4477 19 7 18.5523 7 18C7 17.4477 7.4477 17 8 17C8.5523 17 9 17.4477 9 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1291,7 +1300,7 @@ export function Calculator(props: IconProps) {
 export function CalendarArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 14L18 21M14.7071 17.7071L18 21L21.2929 17.7071" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 14L18 21M14.7071 17.7071L18 21L21.2929 17.7071" />
     </Icon>
   )
 }
@@ -1299,7 +1308,7 @@ export function CalendarArrowDown(props: IconProps) {
 export function CalendarArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M22 18L15 18M18.2929 14.7071L15 18L18.2929 21.2929" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M22 18L15 18M18.2929 14.7071L15 18L18.2929 21.2929" />
     </Icon>
   )
 }
@@ -1307,7 +1316,7 @@ export function CalendarArrowLeft(props: IconProps) {
 export function CalendarArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14 18L21 18M17.7071 14.7071L21 18L17.7071 21.2929" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14 18L21 18M17.7071 14.7071L21 18L17.7071 21.2929" />
     </Icon>
   )
 }
@@ -1315,7 +1324,7 @@ export function CalendarArrowRight(props: IconProps) {
 export function CalendarArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 22L18 15M14.7071 18.2929L18 15L21.2929 18.2929" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 22L18 15M14.7071 18.2929L18 15L21.2929 18.2929" />
     </Icon>
   )
 }
@@ -1323,7 +1332,7 @@ export function CalendarArrowUp(props: IconProps) {
 export function CalendarCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14.7071 17.7071L17 20L21.2929 15.7071" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14.7071 17.7071L17 20L21.2929 15.7071" />
     </Icon>
   )
 }
@@ -1331,7 +1340,7 @@ export function CalendarCheck(props: IconProps) {
 export function CalendarMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14 18L22 18" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14 18L22 18" />
     </Icon>
   )
 }
@@ -1339,7 +1348,7 @@ export function CalendarMinus(props: IconProps) {
 export function CalendarOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.6569 5L21 5L21 16.3431M21 21L3 21L3 5L5 5M6 11L11 11M16 2L16 8M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M9.6569 5L21 5L21 16.3431M21 21L3 21L3 5L5 5M6 11L11 11M16 2L16 8M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -1347,7 +1356,7 @@ export function CalendarOff(props: IconProps) {
 export function CalendarPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 14L18 22M14 18L22 18" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M18 14L18 22M14 18L22 18" />
     </Icon>
   )
 }
@@ -1355,7 +1364,7 @@ export function CalendarPlus(props: IconProps) {
 export function CalendarX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
+      <SvgPath d="M12 21L3 21L3 5L21 5L21 12M6 11L18 11M8 2L8 8M16 2L16 8M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
     </Icon>
   )
 }
@@ -1363,7 +1372,7 @@ export function CalendarX(props: IconProps) {
 export function Calendar(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 5L21 5L21 21L3 21L3 5ZM6 11L18 11M8 2L8 8M16 2L16 8" />
+      <SvgPath d="M3 5L21 5L21 21L3 21L3 5ZM6 11L18 11M8 2L8 8M16 2L16 8" />
     </Icon>
   )
 }
@@ -1371,7 +1380,7 @@ export function Calendar(props: IconProps) {
 export function CameraOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 20L2 20L2 6L6 6M8.6569 4L14.9999 4L16.5 6L22 6L22 17.3431M14.5619 14.5619C14.035 15.4244 13.0847 16 12 16C10.3431 16 9 14.6569 9 13C9 11.9153 9.5756 10.965 10.4381 10.4381M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M20 20L2 20L2 6L6 6M8.6569 4L14.9999 4L16.5 6L22 6L22 17.3431M14.5619 14.5619C14.035 15.4244 13.0847 16 12 16C10.3431 16 9 14.6569 9 13C9 11.9153 9.5756 10.965 10.4381 10.4381M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -1379,7 +1388,7 @@ export function CameraOff(props: IconProps) {
 export function Camera(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L7.5 6L9.0001 4L14.9999 4L16.5 6L22 6L22 20L2 20L2 6ZM15 13C15 14.6569 13.6569 16 12 16C10.3431 16 9 14.6569 9 13C9 11.3431 10.3431 10 12 10C13.6569 10 15 11.3431 15 13Z" />
+      <SvgPath d="M2 6L7.5 6L9.0001 4L14.9999 4L16.5 6L22 6L22 20L2 20L2 6ZM15 13C15 14.6569 13.6569 16 12 16C10.3431 16 9 14.6569 9 13C9 11.3431 10.3431 10 12 10C13.6569 10 15 11.3431 15 13Z" />
     </Icon>
   )
 }
@@ -1387,7 +1396,7 @@ export function Camera(props: IconProps) {
 export function Captions(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM10.8 10.6L10 10C9.5673 9.6754 9.0409 9.5 8.5 9.5C7.1193 9.5 6 10.6193 6 12C6 13.3807 7.1193 14.5 8.5 14.5C9.0409 14.5 9.5673 14.3246 10 14L10.8 13.4M18.8 10.6L18 10C17.5673 9.6754 17.0409 9.5 16.5 9.5C15.1193 9.5 14 10.6193 14 12C14 13.3807 15.1193 14.5 16.5 14.5C17.0409 14.5 17.5673 14.3246 18 14L18.8 13.4" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM10.8 10.6L10 10C9.5673 9.6754 9.0409 9.5 8.5 9.5C7.1193 9.5 6 10.6193 6 12C6 13.3807 7.1193 14.5 8.5 14.5C9.0409 14.5 9.5673 14.3246 10 14L10.8 13.4M18.8 10.6L18 10C17.5673 9.6754 17.0409 9.5 16.5 9.5C15.1193 9.5 14 10.6193 14 12C14 13.3807 15.1193 14.5 16.5 14.5C17.0409 14.5 17.5673 14.3246 18 14L18.8 13.4" />
     </Icon>
   )
 }
@@ -1395,7 +1404,7 @@ export function Captions(props: IconProps) {
 export function Car(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 17L2 17L2 13L4.6667 5L13 5L18 10.6667L22 12L22 17L19 17M8 17L15 17M3 10L16 10L18 10.6667M9 5L9 10M8 17C8 18.1046 7.1046 19 6 19C4.8954 19 4 18.1046 4 17C4 15.8954 4.8954 15 6 15C7.1046 15 8 15.8954 8 17ZM19 17C19 18.1046 18.1046 19 17 19C15.8954 19 15 18.1046 15 17C15 15.8954 15.8954 15 17 15C18.1046 15 19 15.8954 19 17Z" />
+      <SvgPath d="M4 17L2 17L2 13L4.6667 5L13 5L18 10.6667L22 12L22 17L19 17M8 17L15 17M3 10L16 10L18 10.6667M9 5L9 10M8 17C8 18.1046 7.1046 19 6 19C4.8954 19 4 18.1046 4 17C4 15.8954 4.8954 15 6 15C7.1046 15 8 15.8954 8 17ZM19 17C19 18.1046 18.1046 19 17 19C15.8954 19 15 18.1046 15 17C15 15.8954 15.8954 15 17 15C18.1046 15 19 15.8954 19 17Z" />
     </Icon>
   )
 }
@@ -1403,7 +1412,7 @@ export function Car(props: IconProps) {
 export function CaretDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 18L5 6L19 6L12 18Z" />
+      <SvgPath d="M12 18L5 6L19 6L12 18Z" />
     </Icon>
   )
 }
@@ -1411,7 +1420,7 @@ export function CaretDown(props: IconProps) {
 export function CaretLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 12L18 19L18 5L6 12Z" />
+      <SvgPath d="M6 12L18 19L18 5L6 12Z" />
     </Icon>
   )
 }
@@ -1419,7 +1428,7 @@ export function CaretLeft(props: IconProps) {
 export function CaretRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18 12L6 19L6 5L18 12Z" />
+      <SvgPath d="M18 12L6 19L6 5L18 12Z" />
     </Icon>
   )
 }
@@ -1427,7 +1436,7 @@ export function CaretRight(props: IconProps) {
 export function CaretUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 6L5 18L19 18L12 6Z" />
+      <SvgPath d="M12 6L5 18L19 18L12 6Z" />
     </Icon>
   )
 }
@@ -1435,7 +1444,7 @@ export function CaretUp(props: IconProps) {
 export function CaseSensitive(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.9417 19.1631L7 5L12.0583 19.1631M3.7857 14L10.2143 14M22 16C22 17.6569 20.6569 19 19 19C17.3431 19 16 17.6569 16 16C16 14.3431 17.3431 13 19 13C20.6569 13 22 14.3431 22 16ZM22 11L22 20" />
+      <SvgPath d="M1.9417 19.1631L7 5L12.0583 19.1631M3.7857 14L10.2143 14M22 16C22 17.6569 20.6569 19 19 19C17.3431 19 16 17.6569 16 16C16 14.3431 17.3431 13 19 13C20.6569 13 22 14.3431 22 16ZM22 11L22 20" />
     </Icon>
   )
 }
@@ -1443,7 +1452,7 @@ export function CaseSensitive(props: IconProps) {
 export function CaseUpper(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.9417 19.6637L7.1788 5L12.4158 19.6637M3.9645 14L10.3931 14M15.6146 19.7127L18.8284 9L22.0422 19.7127M16.7284 16L20.9284 16" />
+      <SvgPath d="M1.9417 19.6637L7.1788 5L12.4158 19.6637M3.9645 14L10.3931 14M15.6146 19.7127L18.8284 9L22.0422 19.7127M16.7284 16L20.9284 16" />
     </Icon>
   )
 }
@@ -1451,8 +1460,8 @@ export function CaseUpper(props: IconProps) {
 export function Cast(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L2 4L22 4L22 20L13 20M1 16L2 16C4.2091 16 6 17.7909 6 20L6 21M1 12L2 12C6.4183 12 10 15.5817 10 20L10 21" />
-      <Path d="M3 20C3 20.5523 2.5523 21 2 21C1.4477 21 1 20.5523 1 20C1 19.4477 1.4477 19 2 19C2.5523 19 3 19.4477 3 20Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 9L2 4L22 4L22 20L13 20M1 16L2 16C4.2091 16 6 17.7909 6 20L6 21M1 12L2 12C6.4183 12 10 15.5817 10 20L10 21" />
+      <SvgPath d="M3 20C3 20.5523 2.5523 21 2 21C1.4477 21 1 20.5523 1 20C1 19.4477 1.4477 19 2 19C2.5523 19 3 19.4477 3 20Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1460,7 +1469,7 @@ export function Cast(props: IconProps) {
 export function CctvOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.8937 12.8937L4.47 9.4903L5.9147 5.9147M8.7904 3.6861L17.2913 7.1207L15.6178 11.2628M16.5421 8.9751L21.0001 8.6191L18.6905 14.3355M6.788 10.4269L6.788 17L3 17M3 12L3 22M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M12.8937 12.8937L4.47 9.4903L5.9147 5.9147M8.7904 3.6861L17.2913 7.1207L15.6178 11.2628M16.5421 8.9751L21.0001 8.6191L18.6905 14.3355M6.788 10.4269L6.788 17L3 17M3 12L3 22M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -1468,7 +1477,7 @@ export function CctvOff(props: IconProps) {
 export function Cctv(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.0923 3L17.2913 7.1207L14.6691 13.611L4.47 9.4903L7.0923 3ZM16.5421 8.9751L21.0001 8.6191L18.3778 15.1094L15.4183 11.7566M6.788 10.4269L6.788 17L3 17M3 12L3 22" />
+      <SvgPath d="M7.0923 3L17.2913 7.1207L14.6691 13.611L4.47 9.4903L7.0923 3ZM16.5421 8.9751L21.0001 8.6191L18.3778 15.1094L15.4183 11.7566M6.788 10.4269L6.788 17L3 17M3 12L3 22" />
     </Icon>
   )
 }
@@ -1476,7 +1485,7 @@ export function Cctv(props: IconProps) {
 export function ChartArea(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 15L13 9L16 12L21 7L21 17L7 17L7 15Z" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 15L13 9L16 12L21 7L21 17L7 17L7 15Z" fill="none" />
     </Icon>
   )
 }
@@ -1484,7 +1493,7 @@ export function ChartArea(props: IconProps) {
 export function ChartBarBig(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 5L16 5L16 9L7 9L7 5ZM7 13L19 13L19 17L7 17L7 13Z" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 5L16 5L16 9L7 9L7 5ZM7 13L19 13L19 17L7 17L7 13Z" fill="none" />
     </Icon>
   )
 }
@@ -1492,7 +1501,7 @@ export function ChartBarBig(props: IconProps) {
 export function ChartBarStacked(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 5L16 5L16 9L7 9L7 5ZM7 13L19 13L19 17L7 17L7 13ZM12 5L12 9M14 13L14 17" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 5L16 5L16 9L7 9L7 5ZM7 13L19 13L19 17L7 17L7 13ZM12 5L12 9M14 13L14 17" fill="none" />
     </Icon>
   )
 }
@@ -1500,7 +1509,7 @@ export function ChartBarStacked(props: IconProps) {
 export function ChartBar(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M6 7L17 7M6 12L14 12M6 17L20 17" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M6 7L17 7M6 12L14 12M6 17L20 17" fill="none" />
     </Icon>
   )
 }
@@ -1508,7 +1517,7 @@ export function ChartBar(props: IconProps) {
 export function ChartCandlestick(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 5L11 5L11 10L7 10L7 5ZM15 9L19 9L19 15L15 15L15 9ZM9 2L9 5M9 10L9 14M17 5L17 9M17 15L17 18" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 5L11 5L11 10L7 10L7 5ZM15 9L19 9L19 15L15 15L15 9ZM9 2L9 5M9 10L9 14M17 5L17 9M17 15L17 18" fill="none" />
     </Icon>
   )
 }
@@ -1516,7 +1525,7 @@ export function ChartCandlestick(props: IconProps) {
 export function ChartColumnBig(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M8 8L12 8L12 17L8 17L8 8ZM16 5L20 5L20 17L16 17L16 5Z" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M8 8L12 8L12 17L8 17L8 8ZM16 5L20 5L20 17L16 17L16 5Z" fill="none" />
     </Icon>
   )
 }
@@ -1524,7 +1533,7 @@ export function ChartColumnBig(props: IconProps) {
 export function ChartColumnStacked(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M8 8L12 8L12 17L8 17L8 8ZM16 5L20 5L20 17L16 17L16 5ZM8 12L12 12M16 10L20 10" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M8 8L12 8L12 17L8 17L8 8ZM16 5L20 5L20 17L16 17L16 5ZM8 12L12 12M16 10L20 10" fill="none" />
     </Icon>
   )
 }
@@ -1532,7 +1541,7 @@ export function ChartColumnStacked(props: IconProps) {
 export function ChartColumn(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M8 18L8 7M13 18L13 10M18 18L18 4" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M8 18L8 7M13 18L13 10M18 18L18 4" fill="none" />
     </Icon>
   )
 }
@@ -1540,7 +1549,7 @@ export function ChartColumn(props: IconProps) {
 export function ChartDiagram(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 8L3 8L3 3ZM3 16L10 16L10 21L3 21L3 16ZM14 16L21 16L21 21L14 21L14 16ZM12 8L12 12M6.5 16L6.5 12L17.5 12L17.5 16" fill="none" />
+      <SvgPath d="M3 3L21 3L21 8L3 8L3 3ZM3 16L10 16L10 21L3 21L3 16ZM14 16L21 16L21 21L14 21L14 16ZM12 8L12 12M6.5 16L6.5 12L17.5 12L17.5 16" fill="none" />
     </Icon>
   )
 }
@@ -1548,7 +1557,7 @@ export function ChartDiagram(props: IconProps) {
 export function ChartGantt(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M6 7L14 7M9 12L17 12M12 17L20 17" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M6 7L14 7M9 12L17 12M12 17L20 17" fill="none" />
     </Icon>
   )
 }
@@ -1556,7 +1565,7 @@ export function ChartGantt(props: IconProps) {
 export function ChartLineDecreasing(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 7C8.09091 9.8125 12.0182 15.55 19 16" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 7C8.09091 9.8125 12.0182 15.55 19 16" fill="none" />
     </Icon>
   )
 }
@@ -1564,7 +1573,7 @@ export function ChartLineDecreasing(props: IconProps) {
 export function ChartLineDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M6.7017 7.6644L11 12.5L15 9.5L20.2628 14.3243M15.5 15L21 15L21 9.5" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M6.7017 7.6644L11 12.5L15 9.5L20.2628 14.3243M15.5 15L21 15L21 9.5" fill="none" />
     </Icon>
   )
 }
@@ -1572,7 +1581,7 @@ export function ChartLineDown(props: IconProps) {
 export function ChartLineIncreasing(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M19 7C17.9091 9.8125 13.9818 15.55 7 16" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M19 7C17.9091 9.8125 13.9818 15.55 7 16" fill="none" />
     </Icon>
   )
 }
@@ -1580,7 +1589,7 @@ export function ChartLineIncreasing(props: IconProps) {
 export function ChartLineUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M6.7017 15.3356L11 10.5L15 13.5L20.2628 8.6757M15.5 8L21 8L21 13.5" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M6.7017 15.3356L11 10.5L15 13.5L20.2628 8.6757M15.5 8L21 8L21 13.5" fill="none" />
     </Icon>
   )
 }
@@ -1588,7 +1597,7 @@ export function ChartLineUp(props: IconProps) {
 export function ChartLine(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M6.7486 17.6286L9 12L19 11L21.0513 4.846" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M6.7486 17.6286L9 12L19 11L21.0513 4.846" fill="none" />
     </Icon>
   )
 }
@@ -1596,7 +1605,7 @@ export function ChartLine(props: IconProps) {
 export function ChartNetwork(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M11 7C11 8.1046 10.1046 9 9 9C7.8954 9 7 8.1046 7 7C7 5.8954 7.8954 5 9 5C10.1046 5 11 5.8954 11 7ZM13 15C13 16.1046 12.1046 17 11 17C9.8954 17 9 16.1046 9 15C9 13.8954 9.8954 13 11 13C12.1046 13 13 13.8954 13 15ZM21 13C21 14.1046 20.1046 15 19 15C17.8954 15 17 14.1046 17 13C17 11.8954 17.8954 11 19 11C20.1046 11 21 11.8954 21 13ZM9.4851 8.9403L10.5149 13.0597M12.9403 14.5149L17.0597 13.4851" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M11 7C11 8.1046 10.1046 9 9 9C7.8954 9 7 8.1046 7 7C7 5.8954 7.8954 5 9 5C10.1046 5 11 5.8954 11 7ZM13 15C13 16.1046 12.1046 17 11 17C9.8954 17 9 16.1046 9 15C9 13.8954 9.8954 13 11 13C12.1046 13 13 13.8954 13 15ZM21 13C21 14.1046 20.1046 15 19 15C17.8954 15 17 14.1046 17 13C17 11.8954 17.8954 11 19 11C20.1046 11 21 11.8954 21 13ZM9.4851 8.9403L10.5149 13.0597M12.9403 14.5149L17.0597 13.4851" fill="none" />
     </Icon>
   )
 }
@@ -1604,7 +1613,7 @@ export function ChartNetwork(props: IconProps) {
 export function ChartNoAxesCombined(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22.2781 2.7682L13 10.5L7.5 6.5L1.7071 12.2929M4 22L4 16M8 22L8 11M12 22L12 14M16 22L16 12.5M20 22L20 9" fill="none" />
+      <SvgPath d="M22.2781 2.7682L13 10.5L7.5 6.5L1.7071 12.2929M4 22L4 16M8 22L8 11M12 22L12 14M16 22L16 12.5M20 22L20 9" fill="none" />
     </Icon>
   )
 }
@@ -1612,7 +1621,7 @@ export function ChartNoAxesCombined(props: IconProps) {
 export function ChartPie(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13.268 10.4689L13.268 3.4689C17.1339 3.4689 20.268 6.6029 20.268 10.4689L13.268 10.4689ZM14.7321 14.4689L21.7321 14.4689C21.7321 16.9698 20.3979 19.2806 18.2321 20.5311L14.7321 14.4689ZM9.268 13.0048L12.768 19.067C11.7038 19.6814 10.4967 20.0048 9.268 20.0048C5.402 20.0048 2.268 16.8708 2.268 13.0048C2.268 9.1388 5.402 6.0048 9.2679 6.0048L9.268 13.0048Z" fill="none" />
+      <SvgPath d="M13.268 10.4689L13.268 3.4689C17.1339 3.4689 20.268 6.6029 20.268 10.4689L13.268 10.4689ZM14.7321 14.4689L21.7321 14.4689C21.7321 16.9698 20.3979 19.2806 18.2321 20.5311L14.7321 14.4689ZM9.268 13.0048L12.768 19.067C11.7038 19.6814 10.4967 20.0048 9.268 20.0048C5.402 20.0048 2.268 16.8708 2.268 13.0048C2.268 9.1388 5.402 6.0048 9.2679 6.0048L9.268 13.0048Z" fill="none" />
     </Icon>
   )
 }
@@ -1620,7 +1629,7 @@ export function ChartPie(props: IconProps) {
 export function ChartPyramid(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L2 21L22 21L12 3ZM8.6667 9L15.3333 9M5.3333 15L18.6667 15" fill="none" />
+      <SvgPath d="M12 3L2 21L22 21L12 3ZM8.6667 9L15.3333 9M5.3333 15L18.6667 15" fill="none" />
     </Icon>
   )
 }
@@ -1628,8 +1637,8 @@ export function ChartPyramid(props: IconProps) {
 export function ChartScatter3d(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 2L8 16L22 16M8 16L2.7071 21.2929" fill="none" />
-      <Path d="M14.5 5C14.5 5.8284 13.8284 6.5 13 6.5C12.1716 6.5 11.5 5.8284 11.5 5C11.5 4.1716 12.1716 3.5 13 3.5C13.8284 3.5 14.5 4.1716 14.5 5ZM20.5 8C20.5 8.8284 19.8284 9.5 19 9.5C18.1716 9.5 17.5 8.8284 17.5 8C17.5 7.1716 18.1716 6.5 19 6.5C19.8284 6.5 20.5 7.1716 20.5 8ZM15.5 11C15.5 11.8284 14.8284 12.5 14 12.5C13.1716 12.5 12.5 11.8284 12.5 11C12.5 10.1716 13.1716 9.5 14 9.5C14.8284 9.5 15.5 10.1716 15.5 11Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 2L8 16L22 16M8 16L2.7071 21.2929" fill="none" />
+      <SvgPath d="M14.5 5C14.5 5.8284 13.8284 6.5 13 6.5C12.1716 6.5 11.5 5.8284 11.5 5C11.5 4.1716 12.1716 3.5 13 3.5C13.8284 3.5 14.5 4.1716 14.5 5ZM20.5 8C20.5 8.8284 19.8284 9.5 19 9.5C18.1716 9.5 17.5 8.8284 17.5 8C17.5 7.1716 18.1716 6.5 19 6.5C19.8284 6.5 20.5 7.1716 20.5 8ZM15.5 11C15.5 11.8284 14.8284 12.5 14 12.5C13.1716 12.5 12.5 11.8284 12.5 11C12.5 10.1716 13.1716 9.5 14 9.5C14.8284 9.5 15.5 10.1716 15.5 11Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1637,7 +1646,7 @@ export function ChartScatter3d(props: IconProps) {
 export function ChartScatterBubble(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M20 6C20 7.6569 18.6569 9 17 9C15.3431 9 14 7.6569 14 6C14 4.3431 15.3431 3 17 3C18.6569 3 20 4.3431 20 6ZM11 14C11 15.1046 10.1046 16 9 16C7.8954 16 7 15.1046 7 14C7 12.8954 7.8954 12 9 12C10.1046 12 11 12.8954 11 14ZM19.5 15C19.5 15.8284 18.8284 16.5 18 16.5C17.1716 16.5 16.5 15.8284 16.5 15C16.5 14.1716 17.1716 13.5 18 13.5C18.8284 13.5 19.5 14.1716 19.5 15Z" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M20 6C20 7.6569 18.6569 9 17 9C15.3431 9 14 7.6569 14 6C14 4.3431 15.3431 3 17 3C18.6569 3 20 4.3431 20 6ZM11 14C11 15.1046 10.1046 16 9 16C7.8954 16 7 15.1046 7 14C7 12.8954 7.8954 12 9 12C10.1046 12 11 12.8954 11 14ZM19.5 15C19.5 15.8284 18.8284 16.5 18 16.5C17.1716 16.5 16.5 15.8284 16.5 15C16.5 14.1716 17.1716 13.5 18 13.5C18.8284 13.5 19.5 14.1716 19.5 15Z" fill="none" />
     </Icon>
   )
 }
@@ -1645,8 +1654,8 @@ export function ChartScatterBubble(props: IconProps) {
 export function ChartScatter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21" fill="none" />
-      <Path d="M9.5 16C9.5 16.8284 8.8284 17.5 8 17.5C7.1716 17.5 6.5 16.8284 6.5 16C6.5 15.1716 7.1716 14.5 8 14.5C8.8284 14.5 9.5 15.1716 9.5 16ZM14.5 12C14.5 12.8284 13.8284 13.5 13 13.5C12.1716 13.5 11.5 12.8284 11.5 12C11.5 11.1716 12.1716 10.5 13 10.5C13.8284 10.5 14.5 11.1716 14.5 12ZM12.5 7C12.5 7.8284 11.8284 8.5 11 8.5C10.1716 8.5 9.5 7.8284 9.5 7C9.5 6.1716 10.1716 5.5 11 5.5C11.8284 5.5 12.5 6.1716 12.5 7ZM19.5 13C19.5 13.8284 18.8284 14.5 18 14.5C17.1716 14.5 16.5 13.8284 16.5 13C16.5 12.1716 17.1716 11.5 18 11.5C18.8284 11.5 19.5 12.1716 19.5 13ZM20.5 7C20.5 7.8284 19.8284 8.5 19 8.5C18.1716 8.5 17.5 7.8284 17.5 7C17.5 6.1716 18.1716 5.5 19 5.5C19.8284 5.5 20.5 6.1716 20.5 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 2L3 21L22 21" fill="none" />
+      <SvgPath d="M9.5 16C9.5 16.8284 8.8284 17.5 8 17.5C7.1716 17.5 6.5 16.8284 6.5 16C6.5 15.1716 7.1716 14.5 8 14.5C8.8284 14.5 9.5 15.1716 9.5 16ZM14.5 12C14.5 12.8284 13.8284 13.5 13 13.5C12.1716 13.5 11.5 12.8284 11.5 12C11.5 11.1716 12.1716 10.5 13 10.5C13.8284 10.5 14.5 11.1716 14.5 12ZM12.5 7C12.5 7.8284 11.8284 8.5 11 8.5C10.1716 8.5 9.5 7.8284 9.5 7C9.5 6.1716 10.1716 5.5 11 5.5C11.8284 5.5 12.5 6.1716 12.5 7ZM19.5 13C19.5 13.8284 18.8284 14.5 18 14.5C17.1716 14.5 16.5 13.8284 16.5 13C16.5 12.1716 17.1716 11.5 18 11.5C18.8284 11.5 19.5 12.1716 19.5 13ZM20.5 7C20.5 7.8284 19.8284 8.5 19 8.5C18.1716 8.5 17.5 7.8284 17.5 7C17.5 6.1716 18.1716 5.5 19 5.5C19.8284 5.5 20.5 6.1716 20.5 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1654,7 +1663,7 @@ export function ChartScatter(props: IconProps) {
 export function ChartSpline(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 17C10.2098 16.3367 12.8536 14.0706 14 11C15.1464 7.9294 17.7902 5.6633 21 5" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 17C10.2098 16.3367 12.8536 14.0706 14 11C15.1464 7.9294 17.7902 5.6633 21 5" fill="none" />
     </Icon>
   )
 }
@@ -1662,7 +1671,7 @@ export function ChartSpline(props: IconProps) {
 export function ChartTreeMap(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM11 3L11 21M11 11L21 11M16 11L16 21" fill="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM11 3L11 21M11 11L21 11M16 11L16 21" fill="none" />
     </Icon>
   )
 }
@@ -1670,7 +1679,7 @@ export function ChartTreeMap(props: IconProps) {
 export function ChartWaterfall(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 21L22 21M7 18L7 10M11 12L11 4M15 4L15 10M19 18L19 8" fill="none" />
+      <SvgPath d="M3 2L3 21L22 21M7 18L7 10M11 12L11 4M15 4L15 10M19 18L19 8" fill="none" />
     </Icon>
   )
 }
@@ -1678,7 +1687,7 @@ export function ChartWaterfall(props: IconProps) {
 export function Check(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7311 11.7118L9.6667 17L19.2689 6.7118" />
+      <SvgPath d="M4.7311 11.7118L9.6667 17L19.2689 6.7118" />
     </Icon>
   )
 }
@@ -1686,7 +1695,7 @@ export function Check(props: IconProps) {
 export function ChevronDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.7071 8.7071L12 15L18.2929 8.7071" />
+      <SvgPath d="M5.7071 8.7071L12 15L18.2929 8.7071" />
     </Icon>
   )
 }
@@ -1694,7 +1703,7 @@ export function ChevronDown(props: IconProps) {
 export function ChevronLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.2929 5.7071L9 12L15.2929 18.2929" />
+      <SvgPath d="M15.2929 5.7071L9 12L15.2929 18.2929" />
     </Icon>
   )
 }
@@ -1702,7 +1711,7 @@ export function ChevronLeft(props: IconProps) {
 export function ChevronRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.7071 5.7071L15 12L8.7071 18.2929" />
+      <SvgPath d="M8.7071 5.7071L15 12L8.7071 18.2929" />
     </Icon>
   )
 }
@@ -1710,7 +1719,7 @@ export function ChevronRight(props: IconProps) {
 export function ChevronUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.7071 15.2929L12 9L18.2929 15.2929" />
+      <SvgPath d="M5.7071 15.2929L12 9L18.2929 15.2929" />
     </Icon>
   )
 }
@@ -1718,7 +1727,7 @@ export function ChevronUp(props: IconProps) {
 export function ChevronsDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.7071 5.7071L12 11L17.2929 5.7071M6.7071 12.7071L12 18L17.2929 12.7071" />
+      <SvgPath d="M6.7071 5.7071L12 11L17.2929 5.7071M6.7071 12.7071L12 18L17.2929 12.7071" />
     </Icon>
   )
 }
@@ -1726,7 +1735,7 @@ export function ChevronsDown(props: IconProps) {
 export function ChevronsLeftRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.2929 6.7071L4 12L9.2929 17.2929M14.7071 6.7071L20 12L14.7071 17.2929" />
+      <SvgPath d="M9.2929 6.7071L4 12L9.2929 17.2929M14.7071 6.7071L20 12L14.7071 17.2929" />
     </Icon>
   )
 }
@@ -1734,7 +1743,7 @@ export function ChevronsLeftRight(props: IconProps) {
 export function ChevronsLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2929 17.2929L6 12L11.2929 6.7071M18.2929 17.2929L13 12L18.2929 6.7071" />
+      <SvgPath d="M11.2929 17.2929L6 12L11.2929 6.7071M18.2929 17.2929L13 12L18.2929 6.7071" />
     </Icon>
   )
 }
@@ -1742,7 +1751,7 @@ export function ChevronsLeft(props: IconProps) {
 export function ChevronsRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.7071 17.2929L11 12L5.7071 6.7071M12.7071 17.2929L18 12L12.7071 6.7071" />
+      <SvgPath d="M5.7071 17.2929L11 12L5.7071 6.7071M12.7071 17.2929L18 12L12.7071 6.7071" />
     </Icon>
   )
 }
@@ -1750,7 +1759,7 @@ export function ChevronsRight(props: IconProps) {
 export function ChevronsUpDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.7071 9.2929L12 4L17.2929 9.2929M6.7071 14.7071L12 20L17.2929 14.7071" />
+      <SvgPath d="M6.7071 9.2929L12 4L17.2929 9.2929M6.7071 14.7071L12 20L17.2929 14.7071" />
     </Icon>
   )
 }
@@ -1758,7 +1767,7 @@ export function ChevronsUpDown(props: IconProps) {
 export function ChevronsUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.7071 11.2929L12 6L17.2929 11.2929M6.7071 18.2929L12 13L17.2929 18.2929" />
+      <SvgPath d="M6.7071 11.2929L12 6L17.2929 11.2929M6.7071 18.2929L12 13L17.2929 18.2929" />
     </Icon>
   )
 }
@@ -1766,8 +1775,8 @@ export function ChevronsUp(props: IconProps) {
 export function CircleActivity(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M6 12L8.5 12L10 8L14 16L15.5 12L18 12" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M6 12L8.5 12L10 8L14 16L15.5 12L18 12" />
     </Icon>
   )
 }
@@ -1775,9 +1784,9 @@ export function CircleActivity(props: IconProps) {
 export function CircleAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
-      <Path d="M12 6L12 14" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
+      <SvgPath d="M12 6L12 14" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -1785,8 +1794,8 @@ export function CircleAlert(props: IconProps) {
 export function CircleAlignOffsetBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
-      <Path d="M7 16L14 16M8 12L17 12M13 8L17 8" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
+      <SvgPath d="M7 16L14 16M8 12L17 12M13 8L17 8" />
     </Icon>
   )
 }
@@ -1794,8 +1803,8 @@ export function CircleAlignOffsetBottom(props: IconProps) {
 export function CircleAlignOffsetLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
-      <Path d="M16 10L16 17M8 7L8 11M12 16L12 7" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
+      <SvgPath d="M16 10L16 17M8 7L8 11M12 16L12 7" />
     </Icon>
   )
 }
@@ -1803,8 +1812,8 @@ export function CircleAlignOffsetLeft(props: IconProps) {
 export function CircleAlignOffsetRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
-      <Path d="M16 7L16 14M8 13L8 17M12 17L12 8" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
+      <SvgPath d="M16 7L16 14M8 13L8 17M12 17L12 8" />
     </Icon>
   )
 }
@@ -1812,8 +1821,8 @@ export function CircleAlignOffsetRight(props: IconProps) {
 export function CircleAlignOffsetTop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
-      <Path d="M7 8L14 8M8 12L17 12M13 16L17 16" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12Z" />
+      <SvgPath d="M7 8L14 8M8 12L17 12M13 16L17 16" />
     </Icon>
   )
 }
@@ -1821,8 +1830,8 @@ export function CircleAlignOffsetTop(props: IconProps) {
 export function CircleArrowDownLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M9 8L9 15L16 15M9.1464 14.8536L15.2929 8.7071" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M9 8L9 15L16 15M9.1464 14.8536L15.2929 8.7071" />
     </Icon>
   )
 }
@@ -1830,8 +1839,8 @@ export function CircleArrowDownLeft(props: IconProps) {
 export function CircleArrowDownRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 15L15 15L15 8M8.7071 8.7071L14.8536 14.8536" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 15L15 15L15 8M8.7071 8.7071L14.8536 14.8536" />
     </Icon>
   )
 }
@@ -1839,8 +1848,8 @@ export function CircleArrowDownRight(props: IconProps) {
 export function CircleArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.6975 11.8119L12 16L16.3025 11.8119M12 7L12 15.9148" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.6975 11.8119L12 16L16.3025 11.8119M12 7L12 15.9148" />
     </Icon>
   )
 }
@@ -1848,8 +1857,8 @@ export function CircleArrowDown(props: IconProps) {
 export function CircleArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M17 12L8.0852 12M12.1881 7.6975L8 12L12.1881 16.3025" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M17 12L8.0852 12M12.1881 7.6975L8 12L12.1881 16.3025" />
     </Icon>
   )
 }
@@ -1857,8 +1866,8 @@ export function CircleArrowLeft(props: IconProps) {
 export function CircleArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 12L15.9148 12M11.8119 7.6975L16 12L11.8119 16.3025" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 12L15.9148 12M11.8119 7.6975L16 12L11.8119 16.3025" />
     </Icon>
   )
 }
@@ -1866,8 +1875,8 @@ export function CircleArrowRight(props: IconProps) {
 export function CircleArrowUTurnLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M10.8937 16.5L12.9203 16.5C14.6212 16.5 16 15.1569 16 13.5C16 11.8431 14.6212 10.5 12.9203 10.5L8.0833 10.5M11.1625 7.1909L8 10.5L11.1625 13.8091" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M10.8937 16.5L12.9203 16.5C14.6212 16.5 16 15.1569 16 13.5C16 11.8431 14.6212 10.5 12.9203 10.5L8.0833 10.5M11.1625 7.1909L8 10.5L11.1625 13.8091" />
     </Icon>
   )
 }
@@ -1875,8 +1884,8 @@ export function CircleArrowUTurnLeft(props: IconProps) {
 export function CircleArrowUTurnRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M15.9167 10.5L11.0797 10.5C9.3788 10.5 8 11.8431 8 13.5C8 15.1569 9.3788 16.5 11.0797 16.5L13.1063 16.5M12.8375 7.1909L16 10.5L12.8375 13.8091" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M15.9167 10.5L11.0797 10.5C9.3788 10.5 8 11.8431 8 13.5C8 15.1569 9.3788 16.5 11.0797 16.5L13.1063 16.5M12.8375 7.1909L16 10.5L12.8375 13.8091" />
     </Icon>
   )
 }
@@ -1884,8 +1893,8 @@ export function CircleArrowUTurnRight(props: IconProps) {
 export function CircleArrowUpLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M15.2929 15.2929L9.1464 9.1464M9 16L9 9L16 9" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M15.2929 15.2929L9.1464 9.1464M9 16L9 9L16 9" />
     </Icon>
   )
 }
@@ -1893,8 +1902,8 @@ export function CircleArrowUpLeft(props: IconProps) {
 export function CircleArrowUpRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 9L15 9L15 16M8.7071 15.2929L14.8536 9.1464" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 9L15 9L15 16M8.7071 15.2929L14.8536 9.1464" />
     </Icon>
   )
 }
@@ -1902,8 +1911,8 @@ export function CircleArrowUpRight(props: IconProps) {
 export function CircleArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.6975 12.1881L12 8L16.3025 12.1881M12 17L12 8.0852" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.6975 12.1881L12 8L16.3025 12.1881M12 17L12 8.0852" />
     </Icon>
   )
 }
@@ -1911,8 +1920,8 @@ export function CircleArrowUp(props: IconProps) {
 export function CircleBarChart2Down(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 7L8 11.6667M12 7L12 14.3333M16 7L16 17" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 7L8 11.6667M12 7L12 14.3333M16 7L16 17" />
     </Icon>
   )
 }
@@ -1920,8 +1929,8 @@ export function CircleBarChart2Down(props: IconProps) {
 export function CircleBarChart2HorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 8L17 8M9.6667 12L17 12M12.3333 16L17 16" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 8L17 8M9.6667 12L17 12M12.3333 16L17 16" />
     </Icon>
   )
 }
@@ -1929,8 +1938,8 @@ export function CircleBarChart2HorizontalEnd(props: IconProps) {
 export function CircleBarChart2HorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 8L17 8M7 12L14.3333 12M7 16L11.6667 16" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 8L17 8M7 12L14.3333 12M7 16L11.6667 16" />
     </Icon>
   )
 }
@@ -1938,8 +1947,8 @@ export function CircleBarChart2HorizontalStart(props: IconProps) {
 export function CircleBarChart2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 12.3333L8 17M12 9.6667L12 17M16 7L16 17" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 12.3333L8 17M12 9.6667L12 17M16 7L16 17" />
     </Icon>
   )
 }
@@ -1947,8 +1956,8 @@ export function CircleBarChart2(props: IconProps) {
 export function CircleBarChartDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 7L8 14.3333M12 7L12 17M16 7L16 11.6667" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 7L8 14.3333M12 7L12 17M16 7L16 11.6667" />
     </Icon>
   )
 }
@@ -1956,8 +1965,8 @@ export function CircleBarChartDown(props: IconProps) {
 export function CircleBarChartHorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12.3333 8L17 8M7 12L17 12M9.6667 16L17 16" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12.3333 8L17 8M7 12L17 12M9.6667 16L17 16" />
     </Icon>
   )
 }
@@ -1965,8 +1974,8 @@ export function CircleBarChartHorizontalEnd(props: IconProps) {
 export function CircleBarChartHorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 8L11.6667 8M7 12L17 12M7 16L14.3333 16" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 8L11.6667 8M7 12L17 12M7 16L14.3333 16" />
     </Icon>
   )
 }
@@ -1974,8 +1983,8 @@ export function CircleBarChartHorizontalStart(props: IconProps) {
 export function CircleBarChart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8 9.6667L8 17M12 7L12 17M16 12.3333L16 17" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8 9.6667L8 17M12 7L12 17M16 12.3333L16 17" />
     </Icon>
   )
 }
@@ -1983,8 +1992,8 @@ export function CircleBarChart(props: IconProps) {
 export function CircleCaretDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 17L7 8L17 8L12 17Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 17L7 8L17 8L12 17Z" />
     </Icon>
   )
 }
@@ -1992,8 +2001,8 @@ export function CircleCaretDown(props: IconProps) {
 export function CircleCaretLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 12L16 17L16 7L7 12Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 12L16 17L16 7L7 12Z" />
     </Icon>
   )
 }
@@ -2001,8 +2010,8 @@ export function CircleCaretLeft(props: IconProps) {
 export function CircleCaretRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M17 12L8 17L8 7L17 12Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M17 12L8 17L8 7L17 12Z" />
     </Icon>
   )
 }
@@ -2010,8 +2019,8 @@ export function CircleCaretRight(props: IconProps) {
 export function CircleCaretUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 7L7 16L17 16L12 7Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 7L7 16L17 16L12 7Z" />
     </Icon>
   )
 }
@@ -2019,8 +2028,8 @@ export function CircleCaretUp(props: IconProps) {
 export function CircleCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
     </Icon>
   )
 }
@@ -2028,8 +2037,8 @@ export function CircleCheck(props: IconProps) {
 export function CircleChevronDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.7071 9.7071L12 14L16.2929 9.7071" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.7071 9.7071L12 14L16.2929 9.7071" />
     </Icon>
   )
 }
@@ -2037,8 +2046,8 @@ export function CircleChevronDown(props: IconProps) {
 export function CircleChevronLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M14.2929 7.7071L10 12L14.2929 16.2929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M14.2929 7.7071L10 12L14.2929 16.2929" />
     </Icon>
   )
 }
@@ -2046,8 +2055,8 @@ export function CircleChevronLeft(props: IconProps) {
 export function CircleChevronRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M9.7071 7.7071L14 12L9.7071 16.2929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M9.7071 7.7071L14 12L9.7071 16.2929" />
     </Icon>
   )
 }
@@ -2055,8 +2064,8 @@ export function CircleChevronRight(props: IconProps) {
 export function CircleChevronUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.7071 14.2929L12 10L16.2929 14.2929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.7071 14.2929L12 10L16.2929 14.2929" />
     </Icon>
   )
 }
@@ -2064,8 +2073,8 @@ export function CircleChevronUp(props: IconProps) {
 export function CircleChevronsDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8.2071 6.9571L12 10.75L15.7929 6.9571M8.2071 12.9571L12 16.75L15.7929 12.9571" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8.2071 6.9571L12 10.75L15.7929 6.9571M8.2071 12.9571L12 16.75L15.7929 12.9571" />
     </Icon>
   )
 }
@@ -2073,8 +2082,8 @@ export function CircleChevronsDown(props: IconProps) {
 export function CircleChevronsLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M11.0429 8.2071L7.25 12L11.0429 15.7929M17.0429 8.2071L13.25 12L17.0429 15.7929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M11.0429 8.2071L7.25 12L11.0429 15.7929M17.0429 8.2071L13.25 12L17.0429 15.7929" />
     </Icon>
   )
 }
@@ -2082,8 +2091,8 @@ export function CircleChevronsLeft(props: IconProps) {
 export function CircleChevronsRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M6.9571 8.2071L10.75 12L6.9571 15.7929M12.9571 8.2071L16.75 12L12.9571 15.7929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M6.9571 8.2071L10.75 12L6.9571 15.7929M12.9571 8.2071L16.75 12L12.9571 15.7929" />
     </Icon>
   )
 }
@@ -2091,8 +2100,8 @@ export function CircleChevronsRight(props: IconProps) {
 export function CircleChevronsUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8.2071 11.0429L12 7.25L15.7929 11.0429M8.2071 17.0429L12 13.25L15.7929 17.0429" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8.2071 11.0429L12 7.25L15.7929 11.0429M8.2071 17.0429L12 13.25L15.7929 17.0429" />
     </Icon>
   )
 }
@@ -2100,8 +2109,8 @@ export function CircleChevronsUp(props: IconProps) {
 export function CircleCursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M10.7828 17.5L7.5 7.5L17.5 10.9431L13.2702 13.0871L10.7828 17.5Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M10.7828 17.5L7.5 7.5L17.5 10.9431L13.2702 13.0871L10.7828 17.5Z" />
     </Icon>
   )
 }
@@ -2109,7 +2118,7 @@ export function CircleCursor(props: IconProps) {
 export function CircleDashedCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
     </Icon>
   )
 }
@@ -2117,8 +2126,8 @@ export function CircleDashedCheck(props: IconProps) {
 export function CircleDashedFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
-      <Path d="M12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12C6 8.6862 8.6862 6 12 6Z" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
+      <SvgPath d="M12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12C6 8.6862 8.6862 6 12 6Z" />
     </Icon>
   )
 }
@@ -2126,8 +2135,8 @@ export function CircleDashedFull(props: IconProps) {
 export function CircleDashedHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
-      <Path d="M12 18L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18Z" strokeLinejoin="miter" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
+      <SvgPath d="M12 18L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2135,8 +2144,8 @@ export function CircleDashedHalf(props: IconProps) {
 export function CircleDashedQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
-      <Path d="M18 12L12 12L12 6C15.3138 6 18 8.6862 18 12Z" strokeLinejoin="miter" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
+      <SvgPath d="M18 12L12 12L12 6C15.3138 6 18 8.6862 18 12Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2144,8 +2153,8 @@ export function CircleDashedQuarter(props: IconProps) {
 export function CircleDashedThreeQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
-      <Path d="M6 12L12 12L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12Z" strokeLinejoin="miter" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
+      <SvgPath d="M6 12L12 12L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2153,7 +2162,7 @@ export function CircleDashedThreeQuarter(props: IconProps) {
 export function CircleDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
+      <SvgPath d="M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M14.552 21.7205L13.5643 21.8769C12.5279 22.041 11.4721 22.041 10.4357 21.8769L9.448 21.7205M6.9312 20.678L6.1222 20.0902C5.2732 19.4734 4.5266 18.7268 3.9098 17.8778L3.3221 17.0688M2.2796 14.552L2.1231 13.5643C1.959 12.5279 1.959 11.4721 2.1231 10.4357L2.2796 9.448M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312" />
     </Icon>
   )
 }
@@ -2161,8 +2170,8 @@ export function CircleDashed(props: IconProps) {
 export function CircleDollarSign(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M12 5L12 6L12 18L12 19M15.5 7L14.5 7L10.5 7C9.1193 7 8 8.1193 8 9.5C8 10.8807 9.1193 12 10.5 12L13.5 12C14.8807 12 16 13.1193 16 14.5C16 15.8807 14.8807 17 13.5 17L9.5 17L8.5 17" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M12 5L12 6L12 18L12 19M15.5 7L14.5 7L10.5 7C9.1193 7 8 8.1193 8 9.5C8 10.8807 9.1193 12 10.5 12L13.5 12C14.8807 12 16 13.1193 16 14.5C16 15.8807 14.8807 17 13.5 17L9.5 17L8.5 17" fill="none" />
     </Icon>
   )
 }
@@ -2170,8 +2179,8 @@ export function CircleDollarSign(props: IconProps) {
 export function CircleEuro(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M16.2 16.5L15.8 16.8C14.7614 17.5789 13.4982 18 12.2 18C8.8863 18 6.2 15.3137 6.2 12C6.2 8.6863 8.8863 6 12.2 6C13.4982 6 14.7614 6.4211 15.8 7.2L16.2 7.5M5 10L6 10L14.2 10L15.2 10M5 14L6 14L14.2 14L15.2 14" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M16.2 16.5L15.8 16.8C14.7614 17.5789 13.4982 18 12.2 18C8.8863 18 6.2 15.3137 6.2 12C6.2 8.6863 8.8863 6 12.2 6C13.4982 6 14.7614 6.4211 15.8 7.2L16.2 7.5M5 10L6 10L14.2 10L15.2 10M5 14L6 14L14.2 14L15.2 14" fill="none" />
     </Icon>
   )
 }
@@ -2179,8 +2188,8 @@ export function CircleEuro(props: IconProps) {
 export function CircleFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12C6 8.6862 8.6862 6 12 6Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12C6 8.6862 8.6862 6 12 6Z" />
     </Icon>
   )
 }
@@ -2188,8 +2197,8 @@ export function CircleFull(props: IconProps) {
 export function CircleHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 18L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18Z" strokeLinejoin="miter" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 18L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2197,8 +2206,8 @@ export function CircleHalf(props: IconProps) {
 export function CircleIndianRupee(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M7 6L8 6L15 6L16 6M7 9L8 9L15 9L16 9M13.25 5L13.25 6C13.25 8.3326 11.8793 10.4475 9.75 11.4L8 11.4L13.8333 18L14.1318 18.3378" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M7 6L8 6L15 6L16 6M7 9L8 9L15 9L16 9M13.25 5L13.25 6C13.25 8.3326 11.8793 10.4475 9.75 11.4L8 11.4L13.8333 18L14.1318 18.3378" fill="none" />
     </Icon>
   )
 }
@@ -2206,8 +2215,8 @@ export function CircleIndianRupee(props: IconProps) {
 export function CircleJapaneseYen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M8.2526 5.7172L8.5 6L12 10L15.5 6L15.7474 5.7172M12 9L12 10L12 18L12 19M7.5 13L8.5 13L15.5 13L16.5 13M7.5 16L8.5 16L15.5 16L16.5 16" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M8.2526 5.7172L8.5 6L12 10L15.5 6L15.7474 5.7172M12 9L12 10L12 18L12 19M7.5 13L8.5 13L15.5 13L16.5 13M7.5 16L8.5 16L15.5 16L16.5 16" fill="none" />
     </Icon>
   )
 }
@@ -2215,8 +2224,8 @@ export function CircleJapaneseYen(props: IconProps) {
 export function CircleMenu(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 8L17 8M7 12L17 12M7 16L17 16" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 8L17 8M7 12L17 12M7 16L17 16" />
     </Icon>
   )
 }
@@ -2224,8 +2233,8 @@ export function CircleMenu(props: IconProps) {
 export function CircleMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 12L17 12" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 12L17 12" />
     </Icon>
   )
 }
@@ -2233,8 +2242,8 @@ export function CircleMinus(props: IconProps) {
 export function CircleMoreHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7.3333 10.6667C8.0697 10.6667 8.6666 11.2636 8.6666 12C8.6666 12.7364 8.0697 13.3333 7.3333 13.3333C6.5969 13.3333 6 12.7364 6 12C6 11.2636 6.5969 10.6667 7.3333 10.6667ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM16.6667 10.6667C17.4031 10.6667 18 11.2636 18 12C18 12.7364 17.4031 13.3333 16.6667 13.3333C15.9303 13.3333 15.3334 12.7364 15.3334 12C15.3334 11.2636 15.9303 10.6667 16.6667 10.6667Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7.3333 10.6667C8.0697 10.6667 8.6666 11.2636 8.6666 12C8.6666 12.7364 8.0697 13.3333 7.3333 13.3333C6.5969 13.3333 6 12.7364 6 12C6 11.2636 6.5969 10.6667 7.3333 10.6667ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM16.6667 10.6667C17.4031 10.6667 18 11.2636 18 12C18 12.7364 17.4031 13.3333 16.6667 13.3333C15.9303 13.3333 15.3334 12.7364 15.3334 12C15.3334 11.2636 15.9303 10.6667 16.6667 10.6667Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -2242,8 +2251,8 @@ export function CircleMoreHorizontal(props: IconProps) {
 export function CircleMoreVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 6C12.7364 6 13.3333 6.5969 13.3333 7.3333C13.3333 8.0697 12.7364 8.6666 12 8.6666C11.2636 8.6666 10.6667 8.0697 10.6667 7.3333C10.6667 6.5969 11.2636 6 12 6ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM12 15.3334C12.7364 15.3334 13.3333 15.9303 13.3333 16.6667C13.3333 17.4031 12.7364 18 12 18C11.2636 18 10.6667 17.4031 10.6667 16.6667C10.6667 15.9303 11.2636 15.3334 12 15.3334Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 6C12.7364 6 13.3333 6.5969 13.3333 7.3333C13.3333 8.0697 12.7364 8.6666 12 8.6666C11.2636 8.6666 10.6667 8.0697 10.6667 7.3333C10.6667 6.5969 11.2636 6 12 6ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM12 15.3334C12.7364 15.3334 13.3333 15.9303 13.3333 16.6667C13.3333 17.4031 12.7364 18 12 18C11.2636 18 10.6667 17.4031 10.6667 16.6667C10.6667 15.9303 11.2636 15.3334 12 15.3334Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -2251,7 +2260,7 @@ export function CircleMoreVertical(props: IconProps) {
 export function CircleNavigation(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19.4 19.8L20 19C21.2982 17.269 22 15.1637 22 13C22 7.4771 17.5229 3 12 3C6.4771 3 2 7.4771 2 13C2 15.1637 2.7018 17.269 4 19L4.6 19.8M6.9168 21L12 11.8355L17.0832 21L12 20.0794L6.9168 21Z" />
+      <SvgPath d="M19.4 19.8L20 19C21.2982 17.269 22 15.1637 22 13C22 7.4771 17.5229 3 12 3C6.4771 3 2 7.4771 2 13C2 15.1637 2.7018 17.269 4 19L4.6 19.8M6.9168 21L12 11.8355L17.0832 21L12 20.0794L6.9168 21Z" />
     </Icon>
   )
 }
@@ -2259,7 +2268,7 @@ export function CircleNavigation(props: IconProps) {
 export function CircleOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.4148 3.0544L8.3456 2.6888C9.4776 2.2442 10.7103 2 12 2C17.5228 2 22 6.4772 22 12C22 13.2897 21.7558 14.5224 21.3112 15.6544L20.9456 16.5852M19.0711 19.0711C17.2614 20.8807 14.7614 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2386 3.1193 6.7386 4.9289 4.9289M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M7.4148 3.0544L8.3456 2.6888C9.4776 2.2442 10.7103 2 12 2C17.5228 2 22 6.4772 22 12C22 13.2897 21.7558 14.5224 21.3112 15.6544L20.9456 16.5852M19.0711 19.0711C17.2614 20.8807 14.7614 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2386 3.1193 6.7386 4.9289 4.9289M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -2267,7 +2276,7 @@ export function CircleOff(props: IconProps) {
 export function CirclePause(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 7L9 17M15 7L15 17" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 7L9 17M15 7L15 17" />
     </Icon>
   )
 }
@@ -2275,7 +2284,7 @@ export function CirclePause(props: IconProps) {
 export function CirclePen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 2L12 2C6.4771 2 2 6.4771 2 12C2 17.5228 6.4771 22 12 22C17.5228 22 22 17.5228 22 12L22 11M10.5 13.5L14.6248 11.8501L20.4874 5.9874C21.1709 5.304 21.1709 4.196 20.4874 3.5126C19.804 2.8291 18.696 2.8291 18.0126 3.5126L12.1499 9.3752L10.5 13.5Z" />
+      <SvgPath d="M13 2L12 2C6.4771 2 2 6.4771 2 12C2 17.5228 6.4771 22 12 22C17.5228 22 22 17.5228 22 12L22 11M10.5 13.5L14.6248 11.8501L20.4874 5.9874C21.1709 5.304 21.1709 4.196 20.4874 3.5126C19.804 2.8291 18.696 2.8291 18.0126 3.5126L12.1499 9.3752L10.5 13.5Z" />
     </Icon>
   )
 }
@@ -2283,9 +2292,9 @@ export function CirclePen(props: IconProps) {
 export function CirclePercent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" />
-      <Path d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
-      <Path d="M7.7071 16.2929L16.2929 7.7071" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" />
+      <SvgPath d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7.7071 16.2929L16.2929 7.7071" />
     </Icon>
   )
 }
@@ -2293,7 +2302,7 @@ export function CirclePercent(props: IconProps) {
 export function CirclePlay(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
     </Icon>
   )
 }
@@ -2301,8 +2310,8 @@ export function CirclePlay(props: IconProps) {
 export function CirclePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M7 12L17 12M11.995 17.005L11.995 7.005" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M7 12L17 12M11.995 17.005L11.995 7.005" />
     </Icon>
   )
 }
@@ -2310,8 +2319,8 @@ export function CirclePlus(props: IconProps) {
 export function CirclePoundSterling(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M10 19L10 18L10 8C10 6.8954 10.8954 6 12 6C13.1046 6 14 6.8954 14 8C14 8.3511 13.9076 8.696 13.7321 9L13.4434 9.5M7.5 14L8.5 14L14 14L15 14M7.5 18L8.5 18L15.5 18L16.5 18" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M10 19L10 18L10 8C10 6.8954 10.8954 6 12 6C13.1046 6 14 6.8954 14 8C14 8.3511 13.9076 8.696 13.7321 9L13.4434 9.5M7.5 14L8.5 14L14 14L15 14M7.5 18L8.5 18L15.5 18L16.5 18" fill="none" />
     </Icon>
   )
 }
@@ -2319,7 +2328,7 @@ export function CirclePoundSterling(props: IconProps) {
 export function CircleProgressCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
     </Icon>
   )
 }
@@ -2327,7 +2336,7 @@ export function CircleProgressCheck(props: IconProps) {
 export function CircleProgressHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
     </Icon>
   )
 }
@@ -2335,7 +2344,7 @@ export function CircleProgressHalf(props: IconProps) {
 export function CircleProgressPlay(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
     </Icon>
   )
 }
@@ -2343,7 +2352,7 @@ export function CircleProgressPlay(props: IconProps) {
 export function CircleProgressQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12L2 11M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12L2 11M3.322 6.9312L3.9098 6.1222C4.5266 5.2732 5.2732 4.5266 6.1222 3.9098L6.9312 3.322M9.448 2.2796L10.4357 2.1231C11.4721 1.959 12.5279 1.959 13.5643 2.1231L14.552 2.2796M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
     </Icon>
   )
 }
@@ -2351,7 +2360,7 @@ export function CircleProgressQuarter(props: IconProps) {
 export function CircleProgressThreeQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678" />
     </Icon>
   )
 }
@@ -2359,7 +2368,7 @@ export function CircleProgressThreeQuarter(props: IconProps) {
 export function CircleProgressX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5229 2 12C2 6.4771 6.4771 2 12 2L13 2M17.0688 3.3221L17.8778 3.9098C18.7268 4.5266 19.4734 5.2732 20.0902 6.1222L20.678 6.9312M21.7205 9.448L21.8769 10.4357C22.041 11.4721 22.041 12.5279 21.8769 13.5643L21.7205 14.552M20.678 17.0688L20.0902 17.8778C19.4734 18.7268 18.7268 19.4734 17.8778 20.0902L17.0688 20.678M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
     </Icon>
   )
 }
@@ -2367,8 +2376,8 @@ export function CircleProgressX(props: IconProps) {
 export function CircleQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M18 12L12 12L12 6C15.3138 6 18 8.6862 18 12Z" strokeLinejoin="miter" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M18 12L12 12L12 6C15.3138 6 18 8.6862 18 12Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2376,9 +2385,9 @@ export function CircleQuarter(props: IconProps) {
 export function CircleQuestion(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -2386,7 +2395,7 @@ export function CircleQuestion(props: IconProps) {
 export function CircleRecord(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12Z" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12Z" />
     </Icon>
   )
 }
@@ -2394,7 +2403,7 @@ export function CircleRecord(props: IconProps) {
 export function CircleSlash(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2ZM15.2929 8.7071L8.7071 15.2929" fill="none" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2ZM15.2929 8.7071L8.7071 15.2929" fill="none" />
     </Icon>
   )
 }
@@ -2402,7 +2411,7 @@ export function CircleSlash(props: IconProps) {
 export function CircleSquareDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 9L22 9L22 12M22 14L22 17M22 19L22 22L19 22M17 22L14 22M12 22L9 22L9 19M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9Z" />
+      <SvgPath d="M19 9L22 9L22 12M22 14L22 17M22 19L22 22L19 22M17 22L14 22M12 22L9 22L9 19M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9Z" />
     </Icon>
   )
 }
@@ -2410,7 +2419,7 @@ export function CircleSquareDashed(props: IconProps) {
 export function CircleSquare(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9ZM9 9L22 9L22 22L9 22L9 9Z" />
+      <SvgPath d="M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9ZM9 9L22 9L22 22L9 22L9 9Z" />
     </Icon>
   )
 }
@@ -2418,7 +2427,7 @@ export function CircleSquare(props: IconProps) {
 export function CircleStop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L15 9L15 15L9 15L9 9Z" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L15 9L15 15L9 15L9 9Z" />
     </Icon>
   )
 }
@@ -2426,8 +2435,8 @@ export function CircleStop(props: IconProps) {
 export function CircleSwissFranc(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
-      <Path d="M16.5 6L15.5 6L9.5 6L9.5 18L9.5 19M8.5 10L9.5 10L15 10L16 10M7.5 14L8.5 14L14 14L15 14" fill="none" />
+      <SvgPath d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="none" />
+      <SvgPath d="M16.5 6L15.5 6L9.5 6L9.5 18L9.5 19M8.5 10L9.5 10L15 10L16 10M7.5 14L8.5 14L14 14L15 14" fill="none" />
     </Icon>
   )
 }
@@ -2435,8 +2444,8 @@ export function CircleSwissFranc(props: IconProps) {
 export function CircleThreeQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M6 12L12 12L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12Z" strokeLinejoin="miter" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M6 12L12 12L12 6C15.3138 6 18 8.6862 18 12C18 15.3138 15.3138 18 12 18C8.6862 18 6 15.3138 6 12Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -2444,8 +2453,8 @@ export function CircleThreeQuarter(props: IconProps) {
 export function CircleTrendingDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M6.7071 9.2071L10.2 12.7L12.7 10.2L16.8828 14.3828M13 14.5L17 14.5L17 10.5" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M6.7071 9.2071L10.2 12.7L12.7 10.2L16.8828 14.3828M13 14.5L17 14.5L17 10.5" />
     </Icon>
   )
 }
@@ -2453,8 +2462,8 @@ export function CircleTrendingDown(props: IconProps) {
 export function CircleTrendingUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M6.7071 14.7929L10.2 11.3L12.7 13.8L16.8828 9.6172M13 9.5L17 9.5L17 13.5" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M6.7071 14.7929L10.2 11.3L12.7 13.8L16.8828 9.6172M13 9.5L17 9.5L17 13.5" />
     </Icon>
   )
 }
@@ -2462,8 +2471,8 @@ export function CircleTrendingUp(props: IconProps) {
 export function CircleUser(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 7C13.1046 7 14 7.8954 14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7ZM17 20.6603L17 19C17 16.7909 15.2091 15 13 15L11 15C8.7909 15 7 16.7909 7 19L7 20.6603" />
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 7C13.1046 7 14 7.8954 14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.8954 10.8954 7 12 7ZM17 20.6603L17 19C17 16.7909 15.2091 15 13 15L11 15C8.7909 15 7 16.7909 7 19L7 20.6603" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2471,8 +2480,8 @@ export function CircleUser(props: IconProps) {
 export function CircleX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
     </Icon>
   )
 }
@@ -2480,7 +2489,7 @@ export function CircleX(props: IconProps) {
 export function Circle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2488,7 +2497,7 @@ export function Circle(props: IconProps) {
 export function CirclesDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7576 14.6566L4.0503 13.9497C3.8804 13.7799 3.7193 13.6013 3.5678 13.4149L2.9371 12.6389M2.14 10.7141L2.0371 9.7194C1.9876 9.2411 1.9876 8.7589 2.0371 8.2806L2.14 7.2859M2.937 5.3611L3.5678 4.5851C3.8711 4.212 4.212 3.8711 4.5851 3.5678L5.3611 2.937M7.2859 2.14L8.2806 2.0371C8.7589 1.9876 9.2411 1.9876 9.7194 2.0371L10.7141 2.14M12.6389 2.9371L13.4149 3.5678C13.6013 3.7193 13.7799 3.8804 13.9497 4.0503L14.6566 4.7576M22 15C22 11.1339 18.8661 8 15 8C11.1339 8 8 11.1339 8 15C8 18.8661 11.1339 22 15 22C18.8661 22 22 18.8661 22 15Z" />
+      <SvgPath d="M4.7576 14.6566L4.0503 13.9497C3.8804 13.7799 3.7193 13.6013 3.5678 13.4149L2.9371 12.6389M2.14 10.7141L2.0371 9.7194C1.9876 9.2411 1.9876 8.7589 2.0371 8.2806L2.14 7.2859M2.937 5.3611L3.5678 4.5851C3.8711 4.212 4.212 3.8711 4.5851 3.5678L5.3611 2.937M7.2859 2.14L8.2806 2.0371C8.7589 1.9876 9.2411 1.9876 9.7194 2.0371L10.7141 2.14M12.6389 2.9371L13.4149 3.5678C13.6013 3.7193 13.7799 3.8804 13.9497 4.0503L14.6566 4.7576M22 15C22 11.1339 18.8661 8 15 8C11.1339 8 8 11.1339 8 15C8 18.8661 11.1339 22 15 22C18.8661 22 22 18.8661 22 15Z" />
     </Icon>
   )
 }
@@ -2496,7 +2505,7 @@ export function CirclesDashed(props: IconProps) {
 export function Circles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9ZM22 15C22 11.1339 18.8661 8 15 8C11.1339 8 8 11.1339 8 15C8 18.8661 11.1339 22 15 22C18.8661 22 22 18.8661 22 15Z" />
+      <SvgPath d="M16 9C16 5.1339 12.8661 2 9 2C5.1339 2 2 5.1339 2 9C2 12.8661 5.1339 16 9 16C12.8661 16 16 12.8661 16 9ZM22 15C22 11.1339 18.8661 8 15 8C11.1339 8 8 11.1339 8 15C8 18.8661 11.1339 22 15 22C18.8661 22 22 18.8661 22 15Z" />
     </Icon>
   )
 }
@@ -2504,7 +2513,7 @@ export function Circles(props: IconProps) {
 export function Clock1(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L14.7887 7.1699M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L14.7887 7.1699M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2512,7 +2521,7 @@ export function Clock1(props: IconProps) {
 export function Clock10(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L7.1699 9.2113M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L7.1699 9.2113M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2520,7 +2529,7 @@ export function Clock10(props: IconProps) {
 export function Clock11(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L9.2113 7.1699M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L9.2113 7.1699M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2528,7 +2537,7 @@ export function Clock11(props: IconProps) {
 export function Clock12(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 13M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 13M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2536,7 +2545,7 @@ export function Clock12(props: IconProps) {
 export function Clock2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L16.8301 9.2113M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L16.8301 9.2113M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2544,7 +2553,7 @@ export function Clock2(props: IconProps) {
 export function Clock3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L18 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L18 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2552,7 +2561,7 @@ export function Clock3(props: IconProps) {
 export function Clock4(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L16.8301 14.7887M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L16.8301 14.7887M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2560,7 +2569,7 @@ export function Clock4(props: IconProps) {
 export function Clock5(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L14.7887 16.8301M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L14.7887 16.8301M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2568,7 +2577,7 @@ export function Clock5(props: IconProps) {
 export function Clock6(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 18M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 18M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2576,7 +2585,7 @@ export function Clock6(props: IconProps) {
 export function Clock7(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L9.2113 16.8301M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L9.2113 16.8301M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2584,7 +2593,7 @@ export function Clock7(props: IconProps) {
 export function Clock8(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L7.1699 14.7887M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L7.1699 14.7887M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2592,7 +2601,7 @@ export function Clock8(props: IconProps) {
 export function Clock9(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L6 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L6 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2600,7 +2609,7 @@ export function Clock9(props: IconProps) {
 export function ClockArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 15L19 22M22.2929 18.7071L19 22L15.7071 18.7071" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 15L19 22M22.2929 18.7071L19 22L15.7071 18.7071" />
     </Icon>
   )
 }
@@ -2608,7 +2617,7 @@ export function ClockArrowDown(props: IconProps) {
 export function ClockArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M23 19L16 19M19.2929 22.2929L16 19L19.2929 15.7071" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M23 19L16 19M19.2929 22.2929L16 19L19.2929 15.7071" />
     </Icon>
   )
 }
@@ -2616,7 +2625,7 @@ export function ClockArrowLeft(props: IconProps) {
 export function ClockArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15 19L22 19M18.7071 22.2929L22 19L18.7071 15.7071" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15 19L22 19M18.7071 22.2929L22 19L18.7071 15.7071" />
     </Icon>
   )
 }
@@ -2624,7 +2633,7 @@ export function ClockArrowRight(props: IconProps) {
 export function ClockArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 23L19 16M22.2929 19.2929L19 16L15.7071 19.2929" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 23L19 16M22.2929 19.2929L19 16L15.7071 19.2929" />
     </Icon>
   )
 }
@@ -2632,7 +2641,7 @@ export function ClockArrowUp(props: IconProps) {
 export function ClockCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15.7071 18.7071L18 21L22.2929 16.7071" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15.7071 18.7071L18 21L22.2929 16.7071" />
     </Icon>
   )
 }
@@ -2640,7 +2649,7 @@ export function ClockCheck(props: IconProps) {
 export function ClockMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15 19L23 19" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15 19L23 19" />
     </Icon>
   )
 }
@@ -2648,7 +2657,7 @@ export function ClockMinus(props: IconProps) {
 export function ClockPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 15L19 23M15 19L23 19" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M19 15L19 23M15 19L23 19" />
     </Icon>
   )
 }
@@ -2656,7 +2665,7 @@ export function ClockPlus(props: IconProps) {
 export function ClockX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15.7071 15.7071L22.2929 22.2929M22.2929 15.7071L15.7071 22.2929" />
+      <SvgPath d="M13 22L12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12L22 13M12 5L12 12L18 12M15.7071 15.7071L22.2929 22.2929M22.2929 15.7071L15.7071 22.2929" />
     </Icon>
   )
 }
@@ -2664,7 +2673,7 @@ export function ClockX(props: IconProps) {
 export function Clock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L12 12L18 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 5L12 12L18 12M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
     </Icon>
   )
 }
@@ -2672,8 +2681,8 @@ export function Clock(props: IconProps) {
 export function CloudAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM12 8L12 12" />
-      <Path d="M13 15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM12 8L12 12" />
+      <SvgPath d="M13 15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -2681,7 +2690,7 @@ export function CloudAlert(props: IconProps) {
 export function CloudCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM9.8055 12.5771L11.5778 14.4L14.1924 10.1214" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM9.8055 12.5771L11.5778 14.4L14.1924 10.1214" />
     </Icon>
   )
 }
@@ -2689,7 +2698,7 @@ export function CloudCheck(props: IconProps) {
 export function CloudMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM8.75 12.5L15.25 12.5" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM8.75 12.5L15.25 12.5" />
     </Icon>
   )
 }
@@ -2697,7 +2706,7 @@ export function CloudMinus(props: IconProps) {
 export function CloudMoon(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 22L19 22C20.6569 22 22 20.6569 22 19C22 17.3431 20.6569 16 19 16C19 13.5147 16.9853 11.5 14.5 11.5C12.0147 11.5 10 13.5147 10 16C8.3431 16 7 17.3431 7 19C7 20.6569 8.3431 22 10 22ZM5.9258 14.5517L5.0758 14.0249C3.1634 12.8397 2 10.7498 2 8.5C2 4.9101 4.9101 2 8.5 2C7.844 2.82 7.4866 3.8388 7.4866 4.8889C7.4866 6.5491 8.3766 8.0819 9.8184 8.905L10.6868 9.4008" />
+      <SvgPath d="M10 22L19 22C20.6569 22 22 20.6569 22 19C22 17.3431 20.6569 16 19 16C19 13.5147 16.9853 11.5 14.5 11.5C12.0147 11.5 10 13.5147 10 16C8.3431 16 7 17.3431 7 19C7 20.6569 8.3431 22 10 22ZM5.9258 14.5517L5.0758 14.0249C3.1634 12.8397 2 10.7498 2 8.5C2 4.9101 4.9101 2 8.5 2C7.844 2.82 7.4866 3.8388 7.4866 4.8889C7.4866 6.5491 8.3766 8.0819 9.8184 8.905L10.6868 9.4008" />
     </Icon>
   )
 }
@@ -2705,7 +2714,7 @@ export function CloudMoon(props: IconProps) {
 export function CloudOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.2868 7.2868C6.4809 8.3082 6 9.5979 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19L19 19M21.5344 17.1259L21.8263 16.1695C21.9392 15.7996 22 15.4069 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C11.5823 5 11.1745 5.0427 10.7808 5.124L9.8015 5.3262M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M7.2868 7.2868C6.4809 8.3082 6 9.5979 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19L19 19M21.5344 17.1259L21.8263 16.1695C21.9392 15.7996 22 15.4069 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C11.5823 5 11.1745 5.0427 10.7808 5.124L9.8015 5.3262M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -2713,7 +2722,7 @@ export function CloudOff(props: IconProps) {
 export function CloudPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM8.75 12.5L15.25 12.5M12 9.25L12 15.75" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM8.75 12.5L15.25 12.5M12 9.25L12 15.75" />
     </Icon>
   )
 }
@@ -2721,7 +2730,7 @@ export function CloudPlus(props: IconProps) {
 export function CloudRain(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 16L18 16C20.2091 16 22 14.2091 22 12C22 9.7909 20.2091 8 18 8C18 4.6863 15.3137 2 12 2C8.6863 2 6 4.6863 6 8C3.7909 8 2 9.7909 2 12C2 14.2091 3.7909 16 6 16ZM8 19L8 23M12 19L12 23M16 19L16 23" fill="none" />
+      <SvgPath d="M6 16L18 16C20.2091 16 22 14.2091 22 12C22 9.7909 20.2091 8 18 8C18 4.6863 15.3137 2 12 2C8.6863 2 6 4.6863 6 8C3.7909 8 2 9.7909 2 12C2 14.2091 3.7909 16 6 16ZM8 19L8 23M12 19L12 23M16 19L16 23" fill="none" />
     </Icon>
   )
 }
@@ -2729,7 +2738,7 @@ export function CloudRain(props: IconProps) {
 export function CloudSun(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 22L19 22C20.6569 22 22 20.6569 22 19C22 17.3431 20.6569 16 19 16C19 13.5147 16.9853 11.5 14.5 11.5C12.0147 11.5 10 13.5147 10 16C8.3431 16 7 17.3431 7 19C7 20.6569 8.3431 22 10 22ZM8.0499 11.8567L7.6787 10.9281C7.5606 10.6329 7.5 10.3179 7.5 10C7.5 8.6193 8.6193 7.5 10 7.5C10.5583 7.5 11.1004 7.6868 11.5402 8.0308L12.3279 8.6468M4.5 10L1 10M5.6967 5.6967L4.0503 4.0503M10 4.5L10 1M14.3033 5.6967L15.9497 4.0503" />
+      <SvgPath d="M10 22L19 22C20.6569 22 22 20.6569 22 19C22 17.3431 20.6569 16 19 16C19 13.5147 16.9853 11.5 14.5 11.5C12.0147 11.5 10 13.5147 10 16C8.3431 16 7 17.3431 7 19C7 20.6569 8.3431 22 10 22ZM8.0499 11.8567L7.6787 10.9281C7.5606 10.6329 7.5 10.3179 7.5 10C7.5 8.6193 8.6193 7.5 10 7.5C10.5583 7.5 11.1004 7.6868 11.5402 8.0308L12.3279 8.6468M4.5 10L1 10M5.6967 5.6967L4.0503 4.0503M10 4.5L10 1M14.3033 5.6967L15.9497 4.0503" />
     </Icon>
   )
 }
@@ -2737,7 +2746,7 @@ export function CloudSun(props: IconProps) {
 export function CloudX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM9.7626 10.2626L14.2374 14.7374M14.2374 10.2626L9.7626 14.7374" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19ZM9.7626 10.2626L14.2374 14.7374M14.2374 10.2626L9.7626 14.7374" />
     </Icon>
   )
 }
@@ -2745,7 +2754,7 @@ export function CloudX(props: IconProps) {
 export function Cloud(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19Z" fill="none" />
+      <SvgPath d="M6 19L18 19C20.2091 19 22 17.2091 22 15C22 12.7909 20.2091 11 18 11C18 7.6863 15.3137 5 12 5C8.6863 5 6 7.6863 6 11C3.7909 11 2 12.7909 2 15C2 17.2091 3.7909 19 6 19Z" fill="none" />
     </Icon>
   )
 }
@@ -2753,7 +2762,7 @@ export function Cloud(props: IconProps) {
 export function Clouds(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 20L14 20C15.6569 20 17 18.6569 17 17C17 15.3431 15.6569 14 14 14C14 11.5147 11.9853 9.5 9.5 9.5C7.0147 9.5 5 11.5147 5 14C3.3431 14 2 15.3431 2 17C2 18.6569 3.3431 20 5 20ZM17.8989 12L19.5 12C20.8807 12 22 10.8807 22 9.5C22 8.1193 20.8807 7 19.5 7C19.5 5.3431 18.1569 4 16.5 4C15.0285 4 13.7742 5.0673 13.5387 6.5198L13.3786 7.5069" />
+      <SvgPath d="M5 20L14 20C15.6569 20 17 18.6569 17 17C17 15.3431 15.6569 14 14 14C14 11.5147 11.9853 9.5 9.5 9.5C7.0147 9.5 5 11.5147 5 14C3.3431 14 2 15.3431 2 17C2 18.6569 3.3431 20 5 20ZM17.8989 12L19.5 12C20.8807 12 22 10.8807 22 9.5C22 8.1193 20.8807 7 19.5 7C19.5 5.3431 18.1569 4 16.5 4C15.0285 4 13.7742 5.0673 13.5387 6.5198L13.3786 7.5069" />
     </Icon>
   )
 }
@@ -2761,7 +2770,7 @@ export function Clouds(props: IconProps) {
 export function CodeXml(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.3002 6.6247L2 12L6.3002 17.3753M17.6998 6.6247L22 12L17.6998 17.3753M9.7928 19.7253L14.2072 4.2747" />
+      <SvgPath d="M6.3002 6.6247L2 12L6.3002 17.3753M17.6998 6.6247L22 12L17.6998 17.3753M9.7928 19.7253L14.2072 4.2747" />
     </Icon>
   )
 }
@@ -2769,7 +2778,7 @@ export function CodeXml(props: IconProps) {
 export function Code(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.2993 4.6508L2 12L8.2993 19.3492M15.7007 4.6508L22 12L15.7007 19.3492" />
+      <SvgPath d="M8.2993 4.6508L2 12L8.2993 19.3492M15.7007 4.6508L22 12L15.7007 19.3492" />
     </Icon>
   )
 }
@@ -2777,7 +2786,7 @@ export function Code(props: IconProps) {
 export function Coffee(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 11L16 11L16 22L4 22L4 11ZM16 13L17 13C18.6569 13 20 14.3431 20 16C20 17.6569 18.6569 19 17 19L16 19M8.5 7L8.5 6C8.5 5.2131 8.8705 4.4721 9.5 4C10.1295 3.5279 10.5 2.7869 10.5 2L10.5 1M13.5 7L13.5 6C13.5 5.2131 13.8705 4.4721 14.5 4C15.1295 3.5279 15.5 2.7869 15.5 2L15.5 1" fill="none" />
+      <SvgPath d="M4 11L16 11L16 22L4 22L4 11ZM16 13L17 13C18.6569 13 20 14.3431 20 16C20 17.6569 18.6569 19 17 19L16 19M8.5 7L8.5 6C8.5 5.2131 8.8705 4.4721 9.5 4C10.1295 3.5279 10.5 2.7869 10.5 2L10.5 1M13.5 7L13.5 6C13.5 5.2131 13.8705 4.4721 14.5 4C15.1295 3.5279 15.5 2.7869 15.5 2L15.5 1" fill="none" />
     </Icon>
   )
 }
@@ -2785,7 +2794,7 @@ export function Coffee(props: IconProps) {
 export function Coins(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11.5C22 12.8807 19.7614 14 17 14C14.2386 14 12 12.8807 12 11.5C12 10.1193 14.2386 9 17 9C19.7614 9 22 10.1193 22 11.5ZM12 11.5L12 19.5C12 20.8807 14.2386 22 17 22C19.7614 22 22 20.8807 22 19.5L22 11.5M12 15.5C12 16.8807 14.2386 18 17 18C19.7614 18 22 16.8807 22 15.5M12 4.5C12 5.8807 9.7614 7 7 7C4.2386 7 2 5.8807 2 4.5C2 3.1193 4.2386 2 7 2C9.7614 2 12 3.1193 12 4.5ZM2 4.5L2 12.5C2 13.2504 2.6742 13.9612 3.8365 14.436C4.9987 14.9108 6.5261 15.0994 7.9968 14.9498L8.8956 14.8584M2 8.5C2 9.2523 2.6776 9.9647 3.8449 10.4394C5.0122 10.9142 6.545 11.1008 8.0182 10.9476L8.9148 10.8544" fill="none" />
+      <SvgPath d="M22 11.5C22 12.8807 19.7614 14 17 14C14.2386 14 12 12.8807 12 11.5C12 10.1193 14.2386 9 17 9C19.7614 9 22 10.1193 22 11.5ZM12 11.5L12 19.5C12 20.8807 14.2386 22 17 22C19.7614 22 22 20.8807 22 19.5L22 11.5M12 15.5C12 16.8807 14.2386 18 17 18C19.7614 18 22 16.8807 22 15.5M12 4.5C12 5.8807 9.7614 7 7 7C4.2386 7 2 5.8807 2 4.5C2 3.1193 4.2386 2 7 2C9.7614 2 12 3.1193 12 4.5ZM2 4.5L2 12.5C2 13.2504 2.6742 13.9612 3.8365 14.436C4.9987 14.9108 6.5261 15.0994 7.9968 14.9498L8.8956 14.8584M2 8.5C2 9.2523 2.6776 9.9647 3.8449 10.4394C5.0122 10.9142 6.545 11.1008 8.0182 10.9476L8.9148 10.8544" fill="none" />
     </Icon>
   )
 }
@@ -2793,7 +2802,7 @@ export function Coins(props: IconProps) {
 export function Compass(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM17 7L14.5 14.5L7 17L9.5 9.5L17 7Z" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM17 7L14.5 14.5L7 17L9.5 9.5L17 7Z" />
     </Icon>
   )
 }
@@ -2801,7 +2810,7 @@ export function Compass(props: IconProps) {
 export function Contacts(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L21 7L21 21L3 21L3 7ZM4 3L20 3M14 13C14 14.1046 13.1046 15 12 15C10.8954 15 10 14.1046 10 13C10 11.8954 10.8954 11 12 11C13.1046 11 14 11.8954 14 13ZM8 21L8 19L16 19L16 21" />
+      <SvgPath d="M3 7L21 7L21 21L3 21L3 7ZM4 3L20 3M14 13C14 14.1046 13.1046 15 12 15C10.8954 15 10 14.1046 10 13C10 11.8954 10.8954 11 12 11C13.1046 11 14 11.8954 14 13ZM8 21L8 19L16 19L16 21" />
     </Icon>
   )
 }
@@ -2809,7 +2818,7 @@ export function Contacts(props: IconProps) {
 export function CopyPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L22 8L22 22L8 22L8 8ZM15 11L15 19M11 15L19 15" />
+      <SvgPath d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L22 8L22 22L8 22L8 8ZM15 11L15 19M11 15L19 15" />
     </Icon>
   )
 }
@@ -2817,7 +2826,7 @@ export function CopyPlus(props: IconProps) {
 export function Copy(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L22 8L22 22L8 22L8 8Z" />
+      <SvgPath d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L22 8L22 22L8 22L8 8Z" />
     </Icon>
   )
 }
@@ -2825,8 +2834,8 @@ export function Copy(props: IconProps) {
 export function Coupon(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 9C20.3432 9 19 10.3431 19 12C19 13.6569 20.3432 15 22 15L22 20L2 20L2 15C3.6568 15 5 13.6569 5 12C5 10.3431 3.6568 9 2 9L2 4ZM8.7071 15.2929L15.2929 8.7071" />
-      <Path d="M10.5 8.5C10.5 9.3284 9.8284 10 9 10C8.1716 10 7.5 9.3284 7.5 8.5C7.5 7.6716 8.1716 7 9 7C9.8284 7 10.5 7.6716 10.5 8.5ZM16.5 15.5C16.5 16.3284 15.8284 17 15 17C14.1716 17 13.5 16.3284 13.5 15.5C13.5 14.6716 14.1716 14 15 14C15.8284 14 16.5 14.6716 16.5 15.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 4L22 4L22 9C20.3432 9 19 10.3431 19 12C19 13.6569 20.3432 15 22 15L22 20L2 20L2 15C3.6568 15 5 13.6569 5 12C5 10.3431 3.6568 9 2 9L2 4ZM8.7071 15.2929L15.2929 8.7071" />
+      <SvgPath d="M10.5 8.5C10.5 9.3284 9.8284 10 9 10C8.1716 10 7.5 9.3284 7.5 8.5C7.5 7.6716 8.1716 7 9 7C9.8284 7 10.5 7.6716 10.5 8.5ZM16.5 15.5C16.5 16.3284 15.8284 17 15 17C14.1716 17 13.5 16.3284 13.5 15.5C13.5 14.6716 14.1716 14 15 14C15.8284 14 16.5 14.6716 16.5 15.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -2834,7 +2843,7 @@ export function Coupon(props: IconProps) {
 export function Cpu(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 4L20 4L20 20L4 20L4 4ZM8 8L16 8L16 16L8 16L8 8ZM9 4L9 1M9 20L9 23M4 9L1 9M20 9L23 9M15 4L15 1M15 20L15 23M4 15L1 15M20 15L23 15" fill="none" />
+      <SvgPath d="M4 4L20 4L20 20L4 20L4 4ZM8 8L16 8L16 16L8 16L8 8ZM9 4L9 1M9 20L9 23M4 9L1 9M20 9L23 9M15 4L15 1M15 20L15 23M4 15L1 15M20 15L23 15" fill="none" />
     </Icon>
   )
 }
@@ -2842,7 +2851,7 @@ export function Cpu(props: IconProps) {
 export function CreditCard2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 15L22 15M13 9.5L18 9.5M2 4L22 4L22 20L2 20L2 4Z" />
+      <SvgPath d="M2 15L22 15M13 9.5L18 9.5M2 4L22 4L22 20L2 20L2 4Z" />
     </Icon>
   )
 }
@@ -2850,7 +2859,7 @@ export function CreditCard2(props: IconProps) {
 export function CreditCardCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 17L18 19L22 15" fill="none" />
+      <SvgPath d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 17L18 19L22 15" fill="none" />
     </Icon>
   )
 }
@@ -2858,7 +2867,7 @@ export function CreditCardCheck(props: IconProps) {
 export function CreditCardMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 17H22" fill="none" />
+      <SvgPath d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 17H22" fill="none" />
     </Icon>
   )
 }
@@ -2866,7 +2875,7 @@ export function CreditCardMinus(props: IconProps) {
 export function CreditCardPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M19 14V20M16 17H22" fill="none" />
+      <SvgPath d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M19 14V20M16 17H22" fill="none" />
     </Icon>
   )
 }
@@ -2874,7 +2883,7 @@ export function CreditCardPlus(props: IconProps) {
 export function CreditCardX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 14L22 20M22 14L16 20" fill="none" />
+      <SvgPath d="M22 10L22 9L22 4L2 4L2 20L12 20L13 20M1 9L2 9L22 9L23 9M16 14L22 20M22 14L16 20" fill="none" />
     </Icon>
   )
 }
@@ -2882,7 +2891,7 @@ export function CreditCardX(props: IconProps) {
 export function CreditCard(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L22 9M2 4L22 4L22 20L2 20L2 4Z" />
+      <SvgPath d="M2 9L22 9M2 4L22 4L22 20L2 20L2 4Z" />
     </Icon>
   )
 }
@@ -2890,7 +2899,7 @@ export function CreditCard(props: IconProps) {
 export function Crown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.5 20L2 6L7.5 11L12 4L16.5 11L22 6L20.5 20L3.5 20ZM2.9643 15L21.0357 15" />
+      <SvgPath d="M3.5 20L2 6L7.5 11L12 4L16.5 11L22 6L20.5 20L3.5 20ZM2.9643 15L21.0357 15" />
     </Icon>
   )
 }
@@ -2898,7 +2907,7 @@ export function Crown(props: IconProps) {
 export function CursorClick(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.4668 6.4688L14.6629 3.281M8.1994 5.6447L6.7529 1.317M5.6529 8.1826L1.3155 6.7405M6.4806 11.4418L3.2845 14.6296M8.9737 8.9553L13.4001 22L16.4918 16.2705L22 13.6016L8.9737 8.9553Z" />
+      <SvgPath d="M11.4668 6.4688L14.6629 3.281M8.1994 5.6447L6.7529 1.317M5.6529 8.1826L1.3155 6.7405M6.4806 11.4418L3.2845 14.6296M8.9737 8.9553L13.4001 22L16.4918 16.2705L22 13.6016L8.9737 8.9553Z" />
     </Icon>
   )
 }
@@ -2906,7 +2915,7 @@ export function CursorClick(props: IconProps) {
 export function CursorDashedPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9 3L14 3M20 8L20 3L16 3M8 20L3 20L3 16M3 9L3 14M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
+      <SvgPath d="M3 7L3 3L7 3M9 3L14 3M20 8L20 3L16 3M8 20L3 20L3 16M3 9L3 14M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
     </Icon>
   )
 }
@@ -2914,7 +2923,7 @@ export function CursorDashedPanel(props: IconProps) {
 export function CursorOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.2925 7.2925L2 9.1543L10.7742 12.919L15.1372 22L16.8479 16.8479L7.2925 7.2925ZM17.9107 13.5099L18.214 12.5572L21.3839 2.601L11.5364 5.8795L10.5877 6.1957M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M7.2925 7.2925L2 9.1543L10.7742 12.919L15.1372 22L16.8479 16.8479L7.2925 7.2925ZM17.9107 13.5099L18.214 12.5572L21.3839 2.601L11.5364 5.8795L10.5877 6.1957M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -2922,7 +2931,7 @@ export function CursorOff(props: IconProps) {
 export function CursorPanel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 20L3 20L3 3L20 3L20 10M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
+      <SvgPath d="M10 20L3 20L3 3L20 3L20 10M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
     </Icon>
   )
 }
@@ -2930,7 +2939,7 @@ export function CursorPanel(props: IconProps) {
 export function CursorSignal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10.0158 9.9989L14.088 22L16.9324 16.7288L22 14.2735L10.0158 9.9989ZM6 11L6 10C6 7.7909 7.7909 6 10 6L11 6M2 11L2 10C2 5.5817 5.5817 2 10 2L11 2" />
+      <SvgPath d="M10.0158 9.9989L14.088 22L16.9324 16.7288L22 14.2735L10.0158 9.9989ZM6 11L6 10C6 7.7909 7.7909 6 10 6L11 6M2 11L2 10C2 5.5817 5.5817 2 10 2L11 2" />
     </Icon>
   )
 }
@@ -2938,7 +2947,7 @@ export function CursorSignal(props: IconProps) {
 export function CursorText(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3.5L13.9583 3.5M2 8.1006L6.9875 8.1006M2 12.7011L6.9875 12.7011M9.9707 9.1229L13.7632 20.5L16.4121 15.5744L21 13.2205L9.9707 9.1229Z" />
+      <SvgPath d="M2 3.5L13.9583 3.5M2 8.1006L6.9875 8.1006M2 12.7011L6.9875 12.7011M9.9707 9.1229L13.7632 20.5L16.4121 15.5744L21 13.2205L9.9707 9.1229Z" />
     </Icon>
   )
 }
@@ -2946,7 +2955,7 @@ export function CursorText(props: IconProps) {
 export function CursorWindow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 20L3 20L3 3L20 3L20 10M6 7L10 7M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
+      <SvgPath d="M10 20L3 20L3 3L20 3L20 10M6 7L10 7M10.5489 10.528L14.1426 21L16.6527 16.4663L21 14.3L10.5489 10.528Z" />
     </Icon>
   )
 }
@@ -2954,7 +2963,7 @@ export function CursorWindow(props: IconProps) {
 export function Cursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.8628 21L3 3L21 9.1543L13.2258 12.919L8.8628 21Z" />
+      <SvgPath d="M8.8628 21L3 3L21 9.1543L13.2258 12.919L8.8628 21Z" />
     </Icon>
   )
 }
@@ -2962,7 +2971,7 @@ export function Cursor(props: IconProps) {
 export function Database(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 4C20 5.1046 16.4184 6 12 6C7.5816 6 4 5.1046 4 4C4 2.8954 7.5816 2 12 2C16.4184 2 20 2.8954 20 4ZM4 4L4 20C4 21.1046 7.5816 22 12 22C16.4184 22 20 21.1046 20 20L20 4M4 12C4 13.1046 7.5816 14 12 14C16.4184 14 20 13.1046 20 12" />
+      <SvgPath d="M20 4C20 5.1046 16.4184 6 12 6C7.5816 6 4 5.1046 4 4C4 2.8954 7.5816 2 12 2C16.4184 2 20 2.8954 20 4ZM4 4L4 20C4 21.1046 7.5816 22 12 22C16.4184 22 20 21.1046 20 20L20 4M4 12C4 13.1046 7.5816 14 12 14C16.4184 14 20 13.1046 20 12" />
     </Icon>
   )
 }
@@ -2970,7 +2979,7 @@ export function Database(props: IconProps) {
 export function Delete(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.0001 12L9 4L22 4L22 20L9 20L2.0001 12ZM10.7071 8.7071L17.2929 15.2929M17.2929 8.7071L10.7071 15.2929" />
+      <SvgPath d="M2.0001 12L9 4L22 4L22 20L9 20L2.0001 12ZM10.7071 8.7071L17.2929 15.2929M17.2929 8.7071L10.7071 15.2929" />
     </Icon>
   )
 }
@@ -2978,7 +2987,7 @@ export function Delete(props: IconProps) {
 export function DiagramPredecessor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 16L12 16L12 21L3 21L3 16ZM3 3L21 3L21 8L3 8L3 3ZM12 18.5L18 18.5L18 12M15.7071 14.2929L18 12L20.2929 14.2929" fill="none" />
+      <SvgPath d="M3 16L12 16L12 21L3 21L3 16ZM3 3L21 3L21 8L3 8L3 3ZM12 18.5L18 18.5L18 12M15.7071 14.2929L18 12L20.2929 14.2929" fill="none" />
     </Icon>
   )
 }
@@ -2986,7 +2995,7 @@ export function DiagramPredecessor(props: IconProps) {
 export function DiagramProject(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L10 3L10 8L3 8L3 3ZM14 3L21 3L21 8L14 8L14 3ZM8.5 16L15.5 16L15.5 21L8.5 21L8.5 16ZM10 5.5L14 5.5M6.5 8L6.5 12L12 12L12 16" fill="none" />
+      <SvgPath d="M3 3L10 3L10 8L3 8L3 3ZM14 3L21 3L21 8L14 8L14 3ZM8.5 16L15.5 16L15.5 21L8.5 21L8.5 16ZM10 5.5L14 5.5M6.5 8L6.5 12L12 12L12 16" fill="none" />
     </Icon>
   )
 }
@@ -2994,7 +3003,7 @@ export function DiagramProject(props: IconProps) {
 export function DiagramSubtask(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L14 3L14 8L3 8L3 3ZM10 16L21 16L21 21L10 21L10 16ZM6 8L6 18.5L10 18.5" fill="none" />
+      <SvgPath d="M3 3L14 3L14 8L3 8L3 3ZM10 16L21 16L21 21L10 21L10 16ZM6 8L6 18.5L10 18.5" fill="none" />
     </Icon>
   )
 }
@@ -3002,7 +3011,7 @@ export function DiagramSubtask(props: IconProps) {
 export function DiagramSuccessor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L12 3L12 8L3 8L3 3ZM3 16L21 16L21 21L3 21L3 16ZM12 5.5L18 5.5L18 12M20.2929 9.7071L18 12L15.7071 9.7071" fill="none" />
+      <SvgPath d="M3 3L12 3L12 8L3 8L3 3ZM3 16L21 16L21 21L3 21L3 16ZM12 5.5L18 5.5L18 12M20.2929 9.7071L18 12L15.7071 9.7071" fill="none" />
     </Icon>
   )
 }
@@ -3010,8 +3019,8 @@ export function DiagramSuccessor(props: IconProps) {
 export function Dice1(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3019,8 +3028,8 @@ export function Dice1(props: IconProps) {
 export function Dice2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3028,8 +3037,8 @@ export function Dice2(props: IconProps) {
 export function Dice3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3037,8 +3046,8 @@ export function Dice3(props: IconProps) {
 export function Dice4(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3046,8 +3055,8 @@ export function Dice4(props: IconProps) {
 export function Dice5(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3055,8 +3064,8 @@ export function Dice5(props: IconProps) {
 export function Dice6Horizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 8C8.0784 8 8.75 8.6716 8.75 9.5C8.75 10.3284 8.0784 11 7.25 11C6.4216 11 5.75 10.3284 5.75 9.5C5.75 8.6716 6.4216 8 7.25 8ZM12 8C12.8284 8 13.5 8.6716 13.5 9.5C13.5 10.3284 12.8284 11 12 11C11.1716 11 10.5 10.3284 10.5 9.5C10.5 8.6716 11.1716 8 12 8ZM16.75 8C17.5784 8 18.25 8.6716 18.25 9.5C18.25 10.3284 17.5784 11 16.75 11C15.9216 11 15.25 10.3284 15.25 9.5C15.25 8.6716 15.9216 8 16.75 8ZM7.25 13C8.0784 13 8.75 13.6716 8.75 14.5C8.75 15.3284 8.0784 16 7.25 16C6.4216 16 5.75 15.3284 5.75 14.5C5.75 13.6716 6.4216 13 7.25 13ZM12 13C12.8284 13 13.5 13.6716 13.5 14.5C13.5 15.3284 12.8284 16 12 16C11.1716 16 10.5 15.3284 10.5 14.5C10.5 13.6716 11.1716 13 12 13ZM16.75 13C17.5784 13 18.25 13.6716 18.25 14.5C18.25 15.3284 17.5784 16 16.75 16C15.9216 16 15.25 15.3284 15.25 14.5C15.25 13.6716 15.9216 13 16.75 13Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 8C8.0784 8 8.75 8.6716 8.75 9.5C8.75 10.3284 8.0784 11 7.25 11C6.4216 11 5.75 10.3284 5.75 9.5C5.75 8.6716 6.4216 8 7.25 8ZM12 8C12.8284 8 13.5 8.6716 13.5 9.5C13.5 10.3284 12.8284 11 12 11C11.1716 11 10.5 10.3284 10.5 9.5C10.5 8.6716 11.1716 8 12 8ZM16.75 8C17.5784 8 18.25 8.6716 18.25 9.5C18.25 10.3284 17.5784 11 16.75 11C15.9216 11 15.25 10.3284 15.25 9.5C15.25 8.6716 15.9216 8 16.75 8ZM7.25 13C8.0784 13 8.75 13.6716 8.75 14.5C8.75 15.3284 8.0784 16 7.25 16C6.4216 16 5.75 15.3284 5.75 14.5C5.75 13.6716 6.4216 13 7.25 13ZM12 13C12.8284 13 13.5 13.6716 13.5 14.5C13.5 15.3284 12.8284 16 12 16C11.1716 16 10.5 15.3284 10.5 14.5C10.5 13.6716 11.1716 13 12 13ZM16.75 13C17.5784 13 18.25 13.6716 18.25 14.5C18.25 15.3284 17.5784 16 16.75 16C15.9216 16 15.25 15.3284 15.25 14.5C15.25 13.6716 15.9216 13 16.75 13Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3064,8 +3073,8 @@ export function Dice6Horizontal(props: IconProps) {
 export function Dice6(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM7.25 10.5C8.0784 10.5 8.75 11.1716 8.75 12C8.75 12.8284 8.0784 13.5 7.25 13.5C6.4216 13.5 5.75 12.8284 5.75 12C5.75 11.1716 6.4216 10.5 7.25 10.5ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM16.75 10.5C17.5784 10.5 18.25 11.1716 18.25 12C18.25 12.8284 17.5784 13.5 16.75 13.5C15.9216 13.5 15.25 12.8284 15.25 12C15.25 11.1716 15.9216 10.5 16.75 10.5ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.25 5.75C8.0784 5.75 8.75 6.4216 8.75 7.25C8.75 8.0784 8.0784 8.75 7.25 8.75C6.4216 8.75 5.75 8.0784 5.75 7.25C5.75 6.4216 6.4216 5.75 7.25 5.75ZM7.25 10.5C8.0784 10.5 8.75 11.1716 8.75 12C8.75 12.8284 8.0784 13.5 7.25 13.5C6.4216 13.5 5.75 12.8284 5.75 12C5.75 11.1716 6.4216 10.5 7.25 10.5ZM7.25 15.25C8.0784 15.25 8.75 15.9216 8.75 16.75C8.75 17.5784 8.0784 18.25 7.25 18.25C6.4216 18.25 5.75 17.5784 5.75 16.75C5.75 15.9216 6.4216 15.25 7.25 15.25ZM16.75 5.75C17.5784 5.75 18.25 6.4216 18.25 7.25C18.25 8.0784 17.5784 8.75 16.75 8.75C15.9216 8.75 15.25 8.0784 15.25 7.25C15.25 6.4216 15.9216 5.75 16.75 5.75ZM16.75 10.5C17.5784 10.5 18.25 11.1716 18.25 12C18.25 12.8284 17.5784 13.5 16.75 13.5C15.9216 13.5 15.25 12.8284 15.25 12C15.25 11.1716 15.9216 10.5 16.75 10.5ZM16.75 15.25C17.5784 15.25 18.25 15.9216 18.25 16.75C18.25 17.5784 17.5784 18.25 16.75 18.25C15.9216 18.25 15.25 17.5784 15.25 16.75C15.25 15.9216 15.9216 15.25 16.75 15.25Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3073,7 +3082,7 @@ export function Dice6(props: IconProps) {
 export function DollarSign(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 1L12 2L12 22L12 23M17 4L16 4L10 4C7.7909 4 6 5.7909 6 8C6 10.2091 7.7909 12 10 12L14 12C16.2091 12 18 13.7909 18 16C18 18.2091 16.2091 20 14 20L8 20L7 20" fill="none" />
+      <SvgPath d="M12 1L12 2L12 22L12 23M17 4L16 4L10 4C7.7909 4 6 5.7909 6 8C6 10.2091 7.7909 12 10 12L14 12C16.2091 12 18 13.7909 18 16C18 18.2091 16.2091 20 14 20L8 20L7 20" fill="none" />
     </Icon>
   )
 }
@@ -3081,7 +3090,7 @@ export function DollarSign(props: IconProps) {
 export function DoorOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 4L14 2L14 22L6 19.68L6 4ZM18 21L18 3L14 3M1 21L10.5517 21M14 21L23 21M11 10L11 14" fill="none" />
+      <SvgPath d="M6 4L14 2L14 22L6 19.68L6 4ZM18 21L18 3L14 3M1 21L10.5517 21M14 21L23 21M11 10L11 14" fill="none" />
     </Icon>
   )
 }
@@ -3089,7 +3098,7 @@ export function DoorOpen(props: IconProps) {
 export function Door(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 21L6 3L18 3L18 21L6 21ZM1 21L23 21M14 10L14 14" fill="none" />
+      <SvgPath d="M6 21L6 3L18 3L18 21L6 21ZM1 21L23 21M14 10L14 14" fill="none" />
     </Icon>
   )
 }
@@ -3097,7 +3106,7 @@ export function Door(props: IconProps) {
 export function DoubleCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.2311 10.7118L7.1667 16L16.7964 5.6823M21.7407 10.7191L15.5 18L13.2071 15.7071" />
+      <SvgPath d="M2.2311 10.7118L7.1667 16L16.7964 5.6823M21.7407 10.7191L15.5 18L13.2071 15.7071" />
     </Icon>
   )
 }
@@ -3105,7 +3114,7 @@ export function DoubleCheck(props: IconProps) {
 export function Download(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2L12 14M7.7071 9.7071L12 14L16.2929 9.7071M4 17L4 21L20 21L20 17" />
+      <SvgPath d="M12 2L12 14M7.7071 9.7071L12 14L16.2929 9.7071M4 17L4 21L20 21L20 17" />
     </Icon>
   )
 }
@@ -3113,8 +3122,8 @@ export function Download(props: IconProps) {
 export function DropletOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10.6576 5.0008L12 3.5L17.2175 9.3333C18.207 10.4396 18.8193 11.8319 18.9658 13.309" fill="none" strokeLinejoin="miter" />
-      <Path d="M17.8477 17.8477C16.553 19.8154 14.3555 21 12 21C8.134 21 5 17.866 5 14C5 12.2782 5.6346 10.6167 6.7825 9.3333L7.9868 7.9868M1.7071 1.7071L22.2929 22.2929" fill="none" />
+      <SvgPath d="M10.6576 5.0008L12 3.5L17.2175 9.3333C18.207 10.4396 18.8193 11.8319 18.9658 13.309" fill="none" strokeLinejoin="miter" />
+      <SvgPath d="M17.8477 17.8477C16.553 19.8154 14.3555 21 12 21C8.134 21 5 17.866 5 14C5 12.2782 5.6346 10.6167 6.7825 9.3333L7.9868 7.9868M1.7071 1.7071L22.2929 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -3122,7 +3131,7 @@ export function DropletOff(props: IconProps) {
 export function Droplet(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17.2175 9.3333C18.3654 10.6167 19 12.2782 19 14C19 17.866 15.866 21 12 21C8.134 21 5 17.866 5 14C5 12.2782 5.6346 10.6167 6.7825 9.3333L12 3.5L17.2175 9.3333Z" fill="none" strokeLinejoin="miter" />
+      <SvgPath d="M17.2175 9.3333C18.3654 10.6167 19 12.2782 19 14C19 17.866 15.866 21 12 21C8.134 21 5 17.866 5 14C5 12.2782 5.6346 10.6167 6.7825 9.3333L12 3.5L17.2175 9.3333Z" fill="none" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -3130,7 +3139,7 @@ export function Droplet(props: IconProps) {
 export function Droplets(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L13.7568 3.3943L18.9775 8.7966C20.2748 10.1391 21 11.9331 21 13.8C21 17.7765 17.7765 21 13.8 21C11.7344 21 9.7682 20.1128 8.4014 18.564L7.9434 18.0449M10.2092 7.3963C11.0163 8.1922 11.4706 9.2783 11.4706 10.4118C11.4706 12.7509 9.5744 14.6471 7.2353 14.6471C4.8962 14.6471 3 12.7509 3 10.4118C3 9.2783 3.4543 8.1922 4.2614 7.3963L7.2353 4.4633L10.2092 7.3963Z" fill="none" strokeLinejoin="miter" />
+      <SvgPath d="M12 5L13.7568 3.3943L18.9775 8.7966C20.2748 10.1391 21 11.9331 21 13.8C21 17.7765 17.7765 21 13.8 21C11.7344 21 9.7682 20.1128 8.4014 18.564L7.9434 18.0449M10.2092 7.3963C11.0163 8.1922 11.4706 9.2783 11.4706 10.4118C11.4706 12.7509 9.5744 14.6471 7.2353 14.6471C4.8962 14.6471 3 12.7509 3 10.4118C3 9.2783 3.4543 8.1922 4.2614 7.3963L7.2353 4.4633L10.2092 7.3963Z" fill="none" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -3138,7 +3147,7 @@ export function Droplets(props: IconProps) {
 export function EarListen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 10L5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9C19 13.4936 15.4839 12.0806 14 19.5C13.5 22 11.821 22 11 22C9.7285 22 8.5952 21.1985 8.1715 19.9997L7.9358 19.333M14.5 10L14.5 9C14.5 7.6193 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.6193 9.5 9L9.5 11L9.5 12M1.8944 16.2889L2 16.5L3 18.5L3.2764 19.0528M4.7236 12.9472L5 13.5L6.5 16.5L6.7764 17.0528M19.5281 1.6667L19.8262 2C20.8096 3.0994 21.5503 4.3937 22 5.7984L22.0476 5.9472" fill="none" />
+      <SvgPath d="M5 10L5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9C19 13.4936 15.4839 12.0806 14 19.5C13.5 22 11.821 22 11 22C9.7285 22 8.5952 21.1985 8.1715 19.9997L7.9358 19.333M14.5 10L14.5 9C14.5 7.6193 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.6193 9.5 9L9.5 11L9.5 12M1.8944 16.2889L2 16.5L3 18.5L3.2764 19.0528M4.7236 12.9472L5 13.5L6.5 16.5L6.7764 17.0528M19.5281 1.6667L19.8262 2C20.8096 3.0994 21.5503 4.3937 22 5.7984L22.0476 5.9472" fill="none" />
     </Icon>
   )
 }
@@ -3146,7 +3155,7 @@ export function EarListen(props: IconProps) {
 export function EarWaveform(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10L4 9C4 5.134 7.134 2 11 2C14.866 2 18 5.134 18 9L18 10M11 22L10 22C8.3431 22 7 20.6569 7 19L7 18M13.5 10L13.5 9C13.5 7.6193 12.3807 6.5 11 6.5C9.6193 6.5 8.5 7.6193 8.5 9L8.5 11L8.5 12M12 14L12 15L12 18L12 19M16 12L16 13L16 20L16 21M20 14L20 15L20 18L20 19" fill="none" />
+      <SvgPath d="M4 10L4 9C4 5.134 7.134 2 11 2C14.866 2 18 5.134 18 9L18 10M11 22L10 22C8.3431 22 7 20.6569 7 19L7 18M13.5 10L13.5 9C13.5 7.6193 12.3807 6.5 11 6.5C9.6193 6.5 8.5 7.6193 8.5 9L8.5 11L8.5 12M12 14L12 15L12 18L12 19M16 12L16 13L16 20L16 21M20 14L20 15L20 18L20 19" fill="none" />
     </Icon>
   )
 }
@@ -3154,7 +3163,7 @@ export function EarWaveform(props: IconProps) {
 export function Ear(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 10L5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9C19 13.4936 15.4839 12.0806 14 19.5C13.5 22 11.821 22 11 22C9.3431 22 8 20.6569 8 19L8 18M14.5 10L14.5 9C14.5 7.6193 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.6193 9.5 9L9.5 11L9.5 12" fill="none" />
+      <SvgPath d="M5 10L5 9C5 5.134 8.134 2 12 2C15.866 2 19 5.134 19 9C19 13.4936 15.4839 12.0806 14 19.5C13.5 22 11.821 22 11 22C9.3431 22 8 20.6569 8 19L8 18M14.5 10L14.5 9C14.5 7.6193 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.6193 9.5 9L9.5 11L9.5 12" fill="none" />
     </Icon>
   )
 }
@@ -3162,8 +3171,8 @@ export function Ear(props: IconProps) {
 export function Earbuds(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 19L10 7C10 4.7909 8.2091 3 6 3C3.7909 3 2 4.7909 2 7C2 9.2091 3.7909 11 6 11L6 19C6 20.1046 6.8954 21 8 21C9.1046 21 10 20.1046 10 19ZM14 19C14 20.1046 14.8954 21 16 21C17.1046 21 18 20.1046 18 19L18 11C20.2091 11 22 9.2091 22 7C22 4.7909 20.2091 3 18 3C15.7909 3 14 4.7909 14 7L14 19ZM6 17L10 17M14 17L18 17" fill="none" />
-      <Path d="M7 7C7 7.5523 6.5523 8 6 8C5.4477 8 5 7.5523 5 7C5 6.4477 5.4477 6 6 6C6.5523 6 7 6.4477 7 7ZM19 7C19 7.5523 18.5523 8 18 8C17.4477 8 17 7.5523 17 7C17 6.4477 17.4477 6 18 6C18.5523 6 19 6.4477 19 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M10 19L10 7C10 4.7909 8.2091 3 6 3C3.7909 3 2 4.7909 2 7C2 9.2091 3.7909 11 6 11L6 19C6 20.1046 6.8954 21 8 21C9.1046 21 10 20.1046 10 19ZM14 19C14 20.1046 14.8954 21 16 21C17.1046 21 18 20.1046 18 19L18 11C20.2091 11 22 9.2091 22 7C22 4.7909 20.2091 3 18 3C15.7909 3 14 4.7909 14 7L14 19ZM6 17L10 17M14 17L18 17" fill="none" />
+      <SvgPath d="M7 7C7 7.5523 6.5523 8 6 8C5.4477 8 5 7.5523 5 7C5 6.4477 5.4477 6 6 6C6.5523 6 7 6.4477 7 7ZM19 7C19 7.5523 18.5523 8 18 8C17.4477 8 17 7.5523 17 7C17 6.4477 17.4477 6 18 6C18.5523 6 19 6.4477 19 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3171,7 +3180,7 @@ export function Earbuds(props: IconProps) {
 export function Earth(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM15.4202 2.6031L15.5 6.5L16.3 10L15.5 12.5L14 15.2L12.8 12L11 11.3L8.5 16.5L6.3 12.3L4.8 11.5L2.0244 12.6976M21.9452 13.0453L18.2 16L16.8 18.8L15.0902 21.5106" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM15.4202 2.6031L15.5 6.5L16.3 10L15.5 12.5L14 15.2L12.8 12L11 11.3L8.5 16.5L6.3 12.3L4.8 11.5L2.0244 12.6976M21.9452 13.0453L18.2 16L16.8 18.8L15.0902 21.5106" />
     </Icon>
   )
 }
@@ -3179,7 +3188,7 @@ export function Earth(props: IconProps) {
 export function Easel(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 3L20 3L20 16L4 16L4 3ZM1 16L23 16M8 16L6.2862 21.7127M16 16L17.7138 21.7127M12 16L12 20" fill="none" />
+      <SvgPath d="M4 3L20 3L20 16L4 16L4 3ZM1 16L23 16M8 16L6.2862 21.7127M16 16L17.7138 21.7127M12 16L12 20" fill="none" />
     </Icon>
   )
 }
@@ -3187,7 +3196,7 @@ export function Easel(props: IconProps) {
 export function Eraser(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.929 3L22 10.071L11.0711 21L7.071 21L2 15.929L14.929 3ZM8 9.9289L15.0711 17M9.071 21L23 21" fill="none" />
+      <SvgPath d="M14.929 3L22 10.071L11.0711 21L7.071 21L2 15.929L14.929 3ZM8 9.9289L15.0711 17M9.071 21L23 21" fill="none" />
     </Icon>
   )
 }
@@ -3195,7 +3204,7 @@ export function Eraser(props: IconProps) {
 export function Euro(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.4 19.7L21 20C19.269 21.2982 17.1637 22 15 22C9.4772 22 5 17.5228 5 12C5 6.4772 9.4772 2 15 2C17.1637 2 19.269 2.7018 21 4L21.4 4.3M2 10L3 10L17 10L18 10M2 14L3 14L17 14L18 14" fill="none" />
+      <SvgPath d="M21.4 19.7L21 20C19.269 21.2982 17.1637 22 15 22C9.4772 22 5 17.5228 5 12C5 6.4772 9.4772 2 15 2C17.1637 2 19.269 2.7018 21 4L21.4 4.3M2 10L3 10L17 10L18 10M2 14L3 14L17 14L18 14" fill="none" />
     </Icon>
   )
 }
@@ -3203,7 +3212,7 @@ export function Euro(props: IconProps) {
 export function ExpandDashedDownLeftBox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18 10L18 21M14.7071 17.7071L18 21L21.2929 17.7071M14 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M9 21L5 21M3 19L3 15M5 13L9 13M11 19L11 15" />
+      <SvgPath d="M18 10L18 21M14.7071 17.7071L18 21L21.2929 17.7071M14 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M9 21L5 21M3 19L3 15M5 13L9 13M11 19L11 15" />
     </Icon>
   )
 }
@@ -3211,7 +3220,7 @@ export function ExpandDashedDownLeftBox(props: IconProps) {
 export function ExpandDashedDownLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M18 10L18 21M14.7071 17.7071L18 21L21.2929 17.7071M12 21L8.6667 21M6.6667 21L3 21L3 17.3333M3 15.3333L3 12" />
+      <SvgPath d="M14 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M18 10L18 21M14.7071 17.7071L18 21L21.2929 17.7071M12 21L8.6667 21M6.6667 21L3 21L3 17.3333M3 15.3333L3 12" />
     </Icon>
   )
 }
@@ -3219,7 +3228,7 @@ export function ExpandDashedDownLeft(props: IconProps) {
 export function ExpandDashedDownRightBox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 6L21 6M17.7071 9.2929L21 6L17.7071 2.7071M6 10L6 21M2.7071 17.7071L6 21L9.2929 17.7071M21 15L21 19M19 21L15 21M13 19L13 15M19 13L15 13" />
+      <SvgPath d="M10 6L21 6M17.7071 9.2929L21 6L17.7071 2.7071M6 10L6 21M2.7071 17.7071L6 21L9.2929 17.7071M21 15L21 19M19 21L15 21M13 19L13 15M19 13L15 13" />
     </Icon>
   )
 }
@@ -3227,7 +3236,7 @@ export function ExpandDashedDownRightBox(props: IconProps) {
 export function ExpandDashedDownRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 10L6 21M2.7071 17.7071L6 21L9.2929 17.7071M10 6L21 6M17.7071 9.2929L21 6L17.7071 2.7071M21 12L21 15.3333M21 17.3333L21 21L17.3333 21M15.3333 21L12 21" />
+      <SvgPath d="M6 10L6 21M2.7071 17.7071L6 21L9.2929 17.7071M10 6L21 6M17.7071 9.2929L21 6L17.7071 2.7071M21 12L21 15.3333M21 17.3333L21 21L17.3333 21M15.3333 21L12 21" />
     </Icon>
   )
 }
@@ -3235,7 +3244,7 @@ export function ExpandDashedDownRight(props: IconProps) {
 export function ExpandDashedUpLeftBox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L3 18M6.2929 14.7071L3 18L6.2929 21.2929M18 14L18 3M21.2929 6.2929L18 3L14.7071 6.2929M3 9L3 5M5 3L9 3M11 5L11 9M5 11L9 11" />
+      <SvgPath d="M14 18L3 18M6.2929 14.7071L3 18L6.2929 21.2929M18 14L18 3M21.2929 6.2929L18 3L14.7071 6.2929M3 9L3 5M5 3L9 3M11 5L11 9M5 11L9 11" />
     </Icon>
   )
 }
@@ -3243,7 +3252,7 @@ export function ExpandDashedUpLeftBox(props: IconProps) {
 export function ExpandDashedUpLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18 14L18 3M21.2929 6.2929L18 3L14.7071 6.2929M14 18L3 18M6.2929 14.7071L3 18L6.2929 21.2929M3 12L3 8.6667M3 6.6667L3 3L6.6667 3M8.6667 3L12 3" />
+      <SvgPath d="M18 14L18 3M21.2929 6.2929L18 3L14.7071 6.2929M14 18L3 18M6.2929 14.7071L3 18L6.2929 21.2929M3 12L3 8.6667M3 6.6667L3 3L6.6667 3M8.6667 3L12 3" />
     </Icon>
   )
 }
@@ -3251,7 +3260,7 @@ export function ExpandDashedUpLeft(props: IconProps) {
 export function ExpandDashedUpRightBox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 14L6 3M9.2929 6.2929L6 3L2.7071 6.2929M10 18L21 18M17.7071 21.2929L21 18L17.7071 14.7071M15 3L19 3M21 5L21 9M19 11L15 11M13 5L13 9" />
+      <SvgPath d="M6 14L6 3M9.2929 6.2929L6 3L2.7071 6.2929M10 18L21 18M17.7071 21.2929L21 18L17.7071 14.7071M15 3L19 3M21 5L21 9M19 11L15 11M13 5L13 9" />
     </Icon>
   )
 }
@@ -3259,7 +3268,7 @@ export function ExpandDashedUpRightBox(props: IconProps) {
 export function ExpandDashedUpRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 18L21 18M17.7071 21.2929L21 18L17.7071 14.7071M6 14L6 3M9.2929 6.2929L6 3L2.7071 6.2929M12 3L15.3333 3M17.3333 3L21 3L21 6.6667M21 8.6667L21 12" />
+      <SvgPath d="M10 18L21 18M17.7071 21.2929L21 18L17.7071 14.7071M6 14L6 3M9.2929 6.2929L6 3L2.7071 6.2929M12 3L15.3333 3M17.3333 3L21 3L21 6.6667M21 8.6667L21 12" />
     </Icon>
   )
 }
@@ -3267,7 +3276,7 @@ export function ExpandDashedUpRight(props: IconProps) {
 export function EyeOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.035 18.035C16.3283 19.2786 14.2337 20 12 20C7.206 20 3.0523 16.6771 2 12C2.562 9.5021 4.0086 7.3904 5.965 5.965M8.8995 4.4277L9.8779 4.2211C10.565 4.076 11.2752 4 12 4C16.794 4 20.9477 7.3229 22 12C21.7487 13.1169 21.3206 14.1566 20.7491 15.0922L20.0706 16.2029M14.1213 14.1213C13.5785 14.6642 12.8285 15 12 15C10.3431 15 9 13.6569 9 12C9 11.1716 9.3358 10.4216 9.8787 9.8787M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M18.035 18.035C16.3283 19.2786 14.2337 20 12 20C7.206 20 3.0523 16.6771 2 12C2.562 9.5021 4.0086 7.3904 5.965 5.965M8.8995 4.4277L9.8779 4.2211C10.565 4.076 11.2752 4 12 4C16.794 4 20.9477 7.3229 22 12C21.7487 13.1169 21.3206 14.1566 20.7491 15.0922L20.0706 16.2029M14.1213 14.1213C13.5785 14.6642 12.8285 15 12 15C10.3431 15 9 13.6569 9 12C9 11.1716 9.3358 10.4216 9.8787 9.8787M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -3275,7 +3284,7 @@ export function EyeOff(props: IconProps) {
 export function Eye(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12C3.0523 7.3229 7.206 4 12 4C16.794 4 20.9477 7.3229 22 12C20.9477 16.6771 16.794 20 12 20C7.206 20 3.0523 16.6771 2 12ZM15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" />
+      <SvgPath d="M2 12C3.0523 7.3229 7.206 4 12 4C16.794 4 20.9477 7.3229 22 12C20.9477 16.6771 16.794 20 12 20C7.206 20 3.0523 16.6771 2 12ZM15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" />
     </Icon>
   )
 }
@@ -3283,7 +3292,7 @@ export function Eye(props: IconProps) {
 export function FaceAngry(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7.7071 8.7071L10.2929 11.2929M16.2929 8.7071L13.7071 11.2929M8.7071 17.2929L9 17C10 16 11 15.5 12 15.5C13 15.5 14 16 15 17L15.2929 17.2929" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7.7071 8.7071L10.2929 11.2929M16.2929 8.7071L13.7071 11.2929M8.7071 17.2929L9 17C10 16 11 15.5 12 15.5C13 15.5 14 16 15 17L15.2929 17.2929" fill="none" />
     </Icon>
   )
 }
@@ -3291,7 +3300,7 @@ export function FaceAngry(props: IconProps) {
 export function FaceExpressionless(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7 10.5L11 10.5M13 10.5L17 10.5M8 16L16 16" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM7 10.5L11 10.5M13 10.5L17 10.5M8 16L16 16" fill="none" />
     </Icon>
   )
 }
@@ -3299,7 +3308,7 @@ export function FaceExpressionless(props: IconProps) {
 export function FaceFrown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8.7071 17.2929L9 17C10 16 11 15.5 12 15.5C13 15.5 14 16 15 17L15.2929 17.2929" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8.7071 17.2929L9 17C10 16 11 15.5 12 15.5C13 15.5 14 16 15 17L15.2929 17.2929" fill="none" />
     </Icon>
   )
 }
@@ -3307,7 +3316,7 @@ export function FaceFrown(props: IconProps) {
 export function FaceLaugh(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 7L9 10M15 7L15 10M7 13L17 13C17 15.7614 14.7614 18 12 18C9.2386 18 7 15.7614 7 13Z" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 7L9 10M15 7L15 10M7 13L17 13C17 15.7614 14.7614 18 12 18C9.2386 18 7 15.7614 7 13Z" fill="none" />
     </Icon>
   )
 }
@@ -3315,7 +3324,7 @@ export function FaceLaugh(props: IconProps) {
 export function FaceNeutral(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8 16L16 16" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8 16L16 16" fill="none" />
     </Icon>
   )
 }
@@ -3323,7 +3332,7 @@ export function FaceNeutral(props: IconProps) {
 export function FaceSmilePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2L13 2M9 9L9 12M15 9L15 12M8.7071 14.7071L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.2929 14.7071M19 1L19 9M15 5L23 5" fill="none" />
+      <SvgPath d="M22 11L22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2L13 2M9 9L9 12M15 9L15 12M8.7071 14.7071L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.2929 14.7071M19 1L19 9M15 5L23 5" fill="none" />
     </Icon>
   )
 }
@@ -3331,7 +3340,7 @@ export function FaceSmilePlus(props: IconProps) {
 export function FaceSmile(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8.7071 14.7071L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.2929 14.7071" fill="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM9 9L9 12M15 9L15 12M8.7071 14.7071L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.2929 14.7071" fill="none" />
     </Icon>
   )
 }
@@ -3339,7 +3348,7 @@ export function FaceSmile(props: IconProps) {
 export function FastForward(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.002L10.4583 12L2 17.998L2 6.002ZM14 6.002L22 12L14 17.998L14 6.002Z" />
+      <SvgPath d="M2 6.002L10.4583 12L2 17.998L2 6.002ZM14 6.002L22 12L14 17.998L14 6.002Z" />
     </Icon>
   )
 }
@@ -3347,7 +3356,7 @@ export function FastForward(props: IconProps) {
 export function FileArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 15L17 22M13.7071 18.7071L17 22L20.2929 18.7071" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 15L17 22M13.7071 18.7071L17 22L20.2929 18.7071" />
     </Icon>
   )
 }
@@ -3355,7 +3364,7 @@ export function FileArrowDown(props: IconProps) {
 export function FileArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M21 19L14 19M17.2929 15.7071L14 19L17.2929 22.2929" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M21 19L14 19M17.2929 15.7071L14 19L17.2929 22.2929" />
     </Icon>
   )
 }
@@ -3363,7 +3372,7 @@ export function FileArrowLeft(props: IconProps) {
 export function FileArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13 19L20 19M16.7071 15.7071L20 19L16.7071 22.2929" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13 19L20 19M16.7071 15.7071L20 19L16.7071 22.2929" />
     </Icon>
   )
 }
@@ -3371,7 +3380,7 @@ export function FileArrowRight(props: IconProps) {
 export function FileArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 23L17 16M13.7071 19.2929L17 16L20.2929 19.2929" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 23L17 16M13.7071 19.2929L17 16L20.2929 19.2929" />
     </Icon>
   )
 }
@@ -3379,7 +3388,7 @@ export function FileArrowUp(props: IconProps) {
 export function FileCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13.7071 18.7071L16 21L20.2929 16.7071" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13.7071 18.7071L16 21L20.2929 16.7071" />
     </Icon>
   )
 }
@@ -3387,7 +3396,7 @@ export function FileCheck(props: IconProps) {
 export function FileCode(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M10.2969 11.5547L8 15L10.2969 18.4453M13.7031 11.5547L16 15L13.7031 18.4453" fill="none" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M10.2969 11.5547L8 15L10.2969 18.4453M13.7031 11.5547L16 15L13.7031 18.4453" fill="none" />
     </Icon>
   )
 }
@@ -3395,8 +3404,8 @@ export function FileCode(props: IconProps) {
 export function FileImage(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M4 18L9.9999 12.0001L20 17" />
-      <Path d="M10.5 7C10.5 7.8284 9.8284 8.5 9 8.5C8.1716 8.5 7.5 7.8284 7.5 7C7.5 6.1716 8.1716 5.5 9 5.5C9.8284 5.5 10.5 6.1716 10.5 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M4 18L9.9999 12.0001L20 17" />
+      <SvgPath d="M10.5 7C10.5 7.8284 9.8284 8.5 9 8.5C8.1716 8.5 7.5 7.8284 7.5 7C7.5 6.1716 8.1716 5.5 9 5.5C9.8284 5.5 10.5 6.1716 10.5 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3404,7 +3413,7 @@ export function FileImage(props: IconProps) {
 export function FileMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13 19L21 19" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13 19L21 19" />
     </Icon>
   )
 }
@@ -3412,7 +3421,7 @@ export function FileMinus(props: IconProps) {
 export function FileOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5 2L14 2L20 8L20 15.3431M14 2L14 8L20 8M4 4L4 22L20 22L20 20M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M6.5 2L14 2L20 8L20 15.3431M14 2L14 8L20 8M4 4L4 22L20 22L20 20M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -3420,7 +3429,7 @@ export function FileOff(props: IconProps) {
 export function FilePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 15L17 23M13 19L21 19" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M17 15L17 23M13 19L21 19" />
     </Icon>
   )
 }
@@ -3428,7 +3437,7 @@ export function FilePlus(props: IconProps) {
 export function FileSearch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M19 18.5C19 19.8807 17.8807 21 16.5 21C15.1193 21 14 19.8807 14 18.5C14 17.1193 15.1193 16 16.5 16C17.8807 16 19 17.1193 19 18.5ZM18.2678 20.2678L20.2929 22.2929" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M19 18.5C19 19.8807 17.8807 21 16.5 21C15.1193 21 14 19.8807 14 18.5C14 17.1193 15.1193 16 16.5 16C17.8807 16 19 17.1193 19 18.5ZM18.2678 20.2678L20.2929 22.2929" />
     </Icon>
   )
 }
@@ -3436,7 +3445,7 @@ export function FileSearch(props: IconProps) {
 export function FileSpreadsheet(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M7 12L11 12M13 12L17 12M7 16L11 16M13 16L17 16" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M7 12L11 12M13 12L17 12M7 16L11 16M13 16L17 16" />
     </Icon>
   )
 }
@@ -3444,7 +3453,7 @@ export function FileSpreadsheet(props: IconProps) {
 export function FileText(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M7 13L13 13M7 17L17 17" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M7 13L13 13M7 17L17 17" />
     </Icon>
   )
 }
@@ -3452,7 +3461,7 @@ export function FileText(props: IconProps) {
 export function FileTypeCorner(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M14 18L14 16L20 16L20 18M17 16L17 22M15 22L19 22" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M14 18L14 16L20 16L20 18M17 16L17 22M15 22L19 22" />
     </Icon>
   )
 }
@@ -3460,7 +3469,7 @@ export function FileTypeCorner(props: IconProps) {
 export function FileType(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M8 15L8 12L16 12L16 15M12 12L12 18M9 18L15 18" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M8 15L8 12L16 12L16 15M12 12L12 18M9 18L15 18" />
     </Icon>
   )
 }
@@ -3468,7 +3477,7 @@ export function FileType(props: IconProps) {
 export function FileX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13.7071 15.7071L20.2929 22.2929M20.2929 15.7071L13.7071 22.2929" />
+      <SvgPath d="M14 2L4 2L4 22L11 22M14 2L20 8L20 13M14 2L14 8L20 8M13.7071 15.7071L20.2929 22.2929M20.2929 15.7071L13.7071 22.2929" />
     </Icon>
   )
 }
@@ -3476,7 +3485,7 @@ export function FileX(props: IconProps) {
 export function FileZip(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M10 2L10 7M10 9L10 14M12 16C12 17.1046 11.1046 18 10 18C8.8954 18 8 17.1046 8 16C8 14.8954 8.8954 14 10 14C11.1046 14 12 14.8954 12 16Z" fill="none" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8M10 2L10 7M10 9L10 14M12 16C12 17.1046 11.1046 18 10 18C8.8954 18 8 17.1046 8 16C8 14.8954 8.8954 14 10 14C11.1046 14 12 14.8954 12 16Z" fill="none" />
     </Icon>
   )
 }
@@ -3484,7 +3493,7 @@ export function FileZip(props: IconProps) {
 export function File(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8" />
+      <SvgPath d="M14 2L4 2L4 22L20 22L20 8L14 2ZM14 2L14 8L20 8" />
     </Icon>
   )
 }
@@ -3492,7 +3501,7 @@ export function File(props: IconProps) {
 export function Film(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM8 3L8 21M16 3L16 21M3 12L21 12M3 7.5L8 7.5M16 7.5L21 7.5M3 16.5L8 16.5M16 16.5L21 16.5" fill="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM8 3L8 21M16 3L16 21M3 12L21 12M3 7.5L8 7.5M16 7.5L21 7.5M3 16.5L8 16.5M16 16.5L21 16.5" fill="none" />
     </Icon>
   )
 }
@@ -3500,7 +3509,7 @@ export function Film(props: IconProps) {
 export function Filter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L14 11.5001L14 19L10 21L10 11.5001L3 3Z" fill="none" />
+      <SvgPath d="M3 3L21 3L14 11.5001L14 19L10 21L10 11.5001L3 3Z" fill="none" />
     </Icon>
   )
 }
@@ -3508,7 +3517,7 @@ export function Filter(props: IconProps) {
 export function FingerprintPattern(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.2922 6.2471L4.9079 5.459C6.6135 3.2759 9.2296 2 12 2L13 2M15.1042 2.4933L16 2.9377C18.7417 4.298 20.6042 6.9584 20.9443 10L21.0062 10.5538M20.9417 13.0067L20.8263 14C20.7091 15.0095 20.5327 16.0112 20.2982 17L20.0675 17.973M3 11.0002L3 11C3 10.581 3.0293 10.1624 3.0876 9.7474L3.2268 8.7572M3.2776 19.7454L3.9443 19C5.9121 16.7999 7 13.9517 7 11C7 8.2386 9.2386 6 12 6C12.5833 6 13.162 6.1021 13.7101 6.3015L14.6498 6.6436M16.2613 8.1998L16.6359 9.127C16.8764 9.7222 17 10.3581 17 11C17 11.6677 16.9696 12.3351 16.9089 13L16.818 13.9959M16.4387 16.0379L16.166 17C15.6706 18.7475 14.9607 20.427 14.0526 22L13.7639 22.5M12 10L12 11C12 15.0294 10.5687 18.9278 7.9615 22L7.662 22.3529" />
+      <SvgPath d="M4.2922 6.2471L4.9079 5.459C6.6135 3.2759 9.2296 2 12 2L13 2M15.1042 2.4933L16 2.9377C18.7417 4.298 20.6042 6.9584 20.9443 10L21.0062 10.5538M20.9417 13.0067L20.8263 14C20.7091 15.0095 20.5327 16.0112 20.2982 17L20.0675 17.973M3 11.0002L3 11C3 10.581 3.0293 10.1624 3.0876 9.7474L3.2268 8.7572M3.2776 19.7454L3.9443 19C5.9121 16.7999 7 13.9517 7 11C7 8.2386 9.2386 6 12 6C12.5833 6 13.162 6.1021 13.7101 6.3015L14.6498 6.6436M16.2613 8.1998L16.6359 9.127C16.8764 9.7222 17 10.3581 17 11C17 11.6677 16.9696 12.3351 16.9089 13L16.818 13.9959M16.4387 16.0379L16.166 17C15.6706 18.7475 14.9607 20.427 14.0526 22L13.7639 22.5M12 10L12 11C12 15.0294 10.5687 18.9278 7.9615 22L7.662 22.3529" />
     </Icon>
   )
 }
@@ -3516,7 +3525,7 @@ export function FingerprintPattern(props: IconProps) {
 export function FlagChequered(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 14C5.2311 14.6566 6.6048 15 8 15C9.3952 15 10.7689 14.6566 12 14C13.2311 13.3434 14.6048 13 16 13C17.3952 13 18.7689 13.3434 20 14L20 3C18.7689 2.3434 17.3952 2 16 2C14.6048 2 13.2311 2.3434 12 3C10.7689 3.6566 9.3952 4 8 4C6.6048 4 5.2311 3.6566 4 3L4 23M9.3333 3.8948L9.3333 14.8948M14.6667 2.1052L14.6667 13.1052M4 8.5C5.2311 9.1566 6.6048 9.5 8 9.5C9.3952 9.5 10.7689 9.1566 12 8.5C13.2311 7.8434 14.6048 7.5 16 7.5C17.3952 7.5 18.7689 7.8434 20 8.5" />
+      <SvgPath d="M4 14C5.2311 14.6566 6.6048 15 8 15C9.3952 15 10.7689 14.6566 12 14C13.2311 13.3434 14.6048 13 16 13C17.3952 13 18.7689 13.3434 20 14L20 3C18.7689 2.3434 17.3952 2 16 2C14.6048 2 13.2311 2.3434 12 3C10.7689 3.6566 9.3952 4 8 4C6.6048 4 5.2311 3.6566 4 3L4 23M9.3333 3.8948L9.3333 14.8948M14.6667 2.1052L14.6667 13.1052M4 8.5C5.2311 9.1566 6.6048 9.5 8 9.5C9.3952 9.5 10.7689 9.1566 12 8.5C13.2311 7.8434 14.6048 7.5 16 7.5C17.3952 7.5 18.7689 7.8434 20 8.5" />
     </Icon>
   )
 }
@@ -3524,7 +3533,7 @@ export function FlagChequered(props: IconProps) {
 export function Flag(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 14C5.2311 14.6566 6.6048 15 8 15C9.3952 15 10.7689 14.6566 12 14C13.2311 13.3434 14.6048 13 16 13C17.3952 13 18.7689 13.3434 20 14L20 3C18.7689 2.3434 17.3952 2 16 2C14.6048 2 13.2311 2.3434 12 3C10.7689 3.6566 9.3952 4 8 4C6.6048 4 5.2311 3.6566 4 3L4 23" />
+      <SvgPath d="M4 14C5.2311 14.6566 6.6048 15 8 15C9.3952 15 10.7689 14.6566 12 14C13.2311 13.3434 14.6048 13 16 13C17.3952 13 18.7689 13.3434 20 14L20 3C18.7689 2.3434 17.3952 2 16 2C14.6048 2 13.2311 2.3434 12 3C10.7689 3.6566 9.3952 4 8 4C6.6048 4 5.2311 3.6566 4 3L4 23" />
     </Icon>
   )
 }
@@ -3532,7 +3541,7 @@ export function Flag(props: IconProps) {
 export function Flame(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 2C16 4.1637 16.7018 6.269 18 8C19.2982 9.731 20 11.8363 20 14C20 18.4183 16.4183 22 12 22C7.5817 22 4 18.4183 4 14C4 12.8318 4.2558 11.6778 4.7495 10.6191C4.9138 10.2668 5.2672 10.0417 5.6558 10.0417C6.2081 10.0417 6.6558 10.4894 6.6558 11.0417C6.6558 11.2172 6.6096 11.3897 6.5219 11.5417C6.3463 11.8457 6.2539 12.1906 6.2539 12.5417C6.2539 13.6462 7.1494 14.5417 8.2539 14.5417C9.3585 14.5417 10.2539 13.6462 10.2539 12.5417C10.2539 8.2798 12.4181 4.3095 16 2Z" fill="none" />
+      <SvgPath d="M16 2C16 4.1637 16.7018 6.269 18 8C19.2982 9.731 20 11.8363 20 14C20 18.4183 16.4183 22 12 22C7.5817 22 4 18.4183 4 14C4 12.8318 4.2558 11.6778 4.7495 10.6191C4.9138 10.2668 5.2672 10.0417 5.6558 10.0417C6.2081 10.0417 6.6558 10.4894 6.6558 11.0417C6.6558 11.2172 6.6096 11.3897 6.5219 11.5417C6.3463 11.8457 6.2539 12.1906 6.2539 12.5417C6.2539 13.6462 7.1494 14.5417 8.2539 14.5417C9.3585 14.5417 10.2539 13.6462 10.2539 12.5417C10.2539 8.2798 12.4181 4.3095 16 2Z" fill="none" />
     </Icon>
   )
 }
@@ -3540,7 +3549,7 @@ export function Flame(props: IconProps) {
 export function FlaskConicalOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.7058 18.7058L19.9999 22L4.0001 22L9.0769 9.0769M5.5715 18L18 18M9.5 4.8431L9.5 3.8431L9.5 2L14.5 2L14.5 8L15.0456 9.3887L15.5008 10.5475M7 2L17 2M1.7071 1.7071L22.2929 22.2929" fill="none" />
+      <SvgPath d="M18.7058 18.7058L19.9999 22L4.0001 22L9.0769 9.0769M5.5715 18L18 18M9.5 4.8431L9.5 3.8431L9.5 2L14.5 2L14.5 8L15.0456 9.3887L15.5008 10.5475M7 2L17 2M1.7071 1.7071L22.2929 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -3548,7 +3557,7 @@ export function FlaskConicalOff(props: IconProps) {
 export function FlaskConical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 2L14.5 2L14.5 8L19.9999 22L4.0001 22L9.5 8L9.5 2ZM7 2L17 2M5.5715 18L18.4285 18" fill="none" />
+      <SvgPath d="M9.5 2L14.5 2L14.5 8L19.9999 22L4.0001 22L9.5 8L9.5 2ZM7 2L17 2M5.5715 18L18.4285 18" fill="none" />
     </Icon>
   )
 }
@@ -3556,7 +3565,7 @@ export function FlaskConical(props: IconProps) {
 export function FlaskRound(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 2L14.5 2L14.5 8.4617C17.2101 9.4979 19 12.0986 19 15C19 18.866 15.866 22 12 22C8.134 22 5 18.866 5 15C5 12.0986 6.7899 9.4979 9.5 8.4617L9.5 2ZM7 2L17 2M5.0718 16L18.9282 16" fill="none" />
+      <SvgPath d="M9.5 2L14.5 2L14.5 8.4617C17.2101 9.4979 19 12.0986 19 15C19 18.866 15.866 22 12 22C8.134 22 5 18.866 5 15C5 12.0986 6.7899 9.4979 9.5 8.4617L9.5 2ZM7 2L17 2M5.0718 16L18.9282 16" fill="none" />
     </Icon>
   )
 }
@@ -3564,7 +3573,7 @@ export function FlaskRound(props: IconProps) {
 export function Flower(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.6 5.2162C9.6 3.8907 10.6745 2.8162 12 2.8162C13.3255 2.8162 14.4 3.8907 14.4 5.2162C14.4 6.5417 13.3255 7.6162 12 7.6162C10.6745 7.6162 9.6 6.5417 9.6 5.2162ZM16.7329 10.3986C16.7329 9.0731 17.8074 7.9986 19.1329 7.9986C20.4584 7.9986 21.5329 9.0731 21.5329 10.3986C21.5329 11.7241 20.4584 12.7986 19.1329 12.7986C17.8074 12.7986 16.7329 11.7241 16.7329 10.3986ZM14.0084 18.7838C14.0084 17.4583 15.0829 16.3838 16.4084 16.3838C17.7339 16.3838 18.8084 17.4583 18.8084 18.7838C18.8084 20.1093 17.7339 21.1838 16.4084 21.1838C15.0829 21.1838 14.0084 20.1093 14.0084 18.7838ZM5.1916 18.7838C5.1916 17.4583 6.2661 16.3838 7.5916 16.3838C8.9171 16.3838 9.9916 17.4583 9.9916 18.7838C9.9916 20.1093 8.9171 21.1838 7.5916 21.1838C6.2661 21.1838 5.1916 20.1093 5.1916 18.7838ZM2.4671 10.3986C2.4671 9.0731 3.5416 7.9986 4.8671 7.9986C6.1926 7.9986 7.2671 9.0731 7.2671 10.3986C7.2671 11.7241 6.1926 12.7986 4.8671 12.7986C3.5416 12.7986 2.4671 11.7241 2.4671 10.3986Z" />
+      <SvgPath d="M9.6 5.2162C9.6 3.8907 10.6745 2.8162 12 2.8162C13.3255 2.8162 14.4 3.8907 14.4 5.2162C14.4 6.5417 13.3255 7.6162 12 7.6162C10.6745 7.6162 9.6 6.5417 9.6 5.2162ZM16.7329 10.3986C16.7329 9.0731 17.8074 7.9986 19.1329 7.9986C20.4584 7.9986 21.5329 9.0731 21.5329 10.3986C21.5329 11.7241 20.4584 12.7986 19.1329 12.7986C17.8074 12.7986 16.7329 11.7241 16.7329 10.3986ZM14.0084 18.7838C14.0084 17.4583 15.0829 16.3838 16.4084 16.3838C17.7339 16.3838 18.8084 17.4583 18.8084 18.7838C18.8084 20.1093 17.7339 21.1838 16.4084 21.1838C15.0829 21.1838 14.0084 20.1093 14.0084 18.7838ZM5.1916 18.7838C5.1916 17.4583 6.2661 16.3838 7.5916 16.3838C8.9171 16.3838 9.9916 17.4583 9.9916 18.7838C9.9916 20.1093 8.9171 21.1838 7.5916 21.1838C6.2661 21.1838 5.1916 20.1093 5.1916 18.7838ZM2.4671 10.3986C2.4671 9.0731 3.5416 7.9986 4.8671 7.9986C6.1926 7.9986 7.2671 9.0731 7.2671 10.3986C7.2671 11.7241 6.1926 12.7986 4.8671 12.7986C3.5416 12.7986 2.4671 11.7241 2.4671 10.3986Z" />
     </Icon>
   )
 }
@@ -3572,7 +3581,7 @@ export function Flower(props: IconProps) {
 export function FolderArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 13L18 20M14.7071 16.7071L18 20L21.2929 16.7071" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 13L18 20M14.7071 16.7071L18 20L21.2929 16.7071" />
     </Icon>
   )
 }
@@ -3580,7 +3589,7 @@ export function FolderArrowDown(props: IconProps) {
 export function FolderArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M22 17L15 17M18.2929 13.7071L15 17L18.2929 20.2929" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M22 17L15 17M18.2929 13.7071L15 17L18.2929 20.2929" />
     </Icon>
   )
 }
@@ -3588,7 +3597,7 @@ export function FolderArrowLeft(props: IconProps) {
 export function FolderArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14 17L21 17M17.7071 13.7071L21 17L17.7071 20.2929" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14 17L21 17M17.7071 13.7071L21 17L17.7071 20.2929" />
     </Icon>
   )
 }
@@ -3596,7 +3605,7 @@ export function FolderArrowRight(props: IconProps) {
 export function FolderArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 21L18 14M14.7071 17.2929L18 14L21.2929 17.2929" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 21L18 14M14.7071 17.2929L18 14L21.2929 17.2929" />
     </Icon>
   )
 }
@@ -3604,7 +3613,7 @@ export function FolderArrowUp(props: IconProps) {
 export function FolderCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14.7071 16.7071L17 19L21.2929 14.7071" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14.7071 16.7071L17 19L21.2929 14.7071" />
     </Icon>
   )
 }
@@ -3612,7 +3621,7 @@ export function FolderCheck(props: IconProps) {
 export function FolderMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14 17L22 17" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14 17L22 17" />
     </Icon>
   )
 }
@@ -3620,7 +3629,7 @@ export function FolderMinus(props: IconProps) {
 export function FolderOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.7236 15.5528L8 11L22 11L19.0753 20L2 20L2 4L8 4L10 6L19 6L19 12" />
+      <SvgPath d="M5.7236 15.5528L8 11L22 11L19.0753 20L2 20L2 4L8 4L10 6L19 6L19 12" />
     </Icon>
   )
 }
@@ -3628,7 +3637,7 @@ export function FolderOpen(props: IconProps) {
 export function FolderPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 13L18 21M14 17L22 17" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M18 13L18 21M14 17L22 17" />
     </Icon>
   )
 }
@@ -3636,7 +3645,7 @@ export function FolderPlus(props: IconProps) {
 export function FolderSearch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M20 16.5C20 17.8807 18.8807 19 17.5 19C16.1193 19 15 17.8807 15 16.5C15 15.1193 16.1193 14 17.5 14C18.8807 14 20 15.1193 20 16.5ZM19.2678 18.2678L21.2929 20.2929" fill="none" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M20 16.5C20 17.8807 18.8807 19 17.5 19C16.1193 19 15 17.8807 15 16.5C15 15.1193 16.1193 14 17.5 14C18.8807 14 20 15.1193 20 16.5ZM19.2678 18.2678L21.2929 20.2929" fill="none" />
     </Icon>
   )
 }
@@ -3644,7 +3653,7 @@ export function FolderSearch(props: IconProps) {
 export function FolderTree(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L3 19L10 19M3 5L3 8L10 8M13 3L16 3L17 5L21 5L21 10L13 10L13 3ZM13 14L16 14L17 16L21 16L21 21L13 21L13 14Z" />
+      <SvgPath d="M3 2L3 19L10 19M3 5L3 8L10 8M13 3L16 3L17 5L21 5L21 10L13 10L13 3ZM13 14L16 14L17 16L21 16L21 21L13 21L13 14Z" />
     </Icon>
   )
 }
@@ -3652,7 +3661,7 @@ export function FolderTree(props: IconProps) {
 export function FolderX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14.7071 13.7071L21.2929 20.2929M21.2929 13.7071L14.7071 20.2929" />
+      <SvgPath d="M11 20L3 20L3 4L9.5 4L12 6.5L21 6.5L21 11M14.7071 13.7071L21.2929 20.2929M21.2929 13.7071L14.7071 20.2929" />
     </Icon>
   )
 }
@@ -3660,7 +3669,7 @@ export function FolderX(props: IconProps) {
 export function FolderZip(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 4L9.5 4L12 6.5L21 6.5L21 20L3 20L3 4ZM9 4L9 7M9 9L9 12M9 12C10.1046 12 11 12.8954 11 14C11 15.1046 10.1046 16 9 16C7.8954 16 7 15.1046 7 14C7 12.8954 7.8954 12 9 12Z" />
+      <SvgPath d="M3 4L9.5 4L12 6.5L21 6.5L21 20L3 20L3 4ZM9 4L9 7M9 9L9 12M9 12C10.1046 12 11 12.8954 11 14C11 15.1046 10.1046 16 9 16C7.8954 16 7 15.1046 7 14C7 12.8954 7.8954 12 9 12Z" />
     </Icon>
   )
 }
@@ -3668,7 +3677,7 @@ export function FolderZip(props: IconProps) {
 export function Folder(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 4L9.5 4L12 6.5L21 6.5L21 20L3 20L3 4Z" />
+      <SvgPath d="M3 4L9.5 4L12 6.5L21 6.5L21 20L3 20L3 4Z" />
     </Icon>
   )
 }
@@ -3676,7 +3685,7 @@ export function Folder(props: IconProps) {
 export function Folders(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 9L3 9L3 21L16 21L16 19M8 3L12 3L14 5L21 5L21 16L8 16L8 3Z" />
+      <SvgPath d="M5 9L3 9L3 21L16 21L16 19M8 3L12 3L14 5L21 5L21 16L8 16L8 3Z" />
     </Icon>
   )
 }
@@ -3684,7 +3693,7 @@ export function Folders(props: IconProps) {
 export function Forward(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.7071 3.7071L22 10L15.7071 16.2929M22 10L2 10L2 21" />
+      <SvgPath d="M15.7071 3.7071L22 10L15.7071 16.2929M22 10L2 10L2 21" />
     </Icon>
   )
 }
@@ -3692,7 +3701,7 @@ export function Forward(props: IconProps) {
 export function Fullscreen2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 3L21 3L21 11M11 21L3 21L3 13" fill="none" />
+      <SvgPath d="M13 3L21 3L21 11M11 21L3 21L3 13" fill="none" />
     </Icon>
   )
 }
@@ -3700,7 +3709,7 @@ export function Fullscreen2(props: IconProps) {
 export function FullscreenExit2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L14 10L14 2M2 14L10 14L10 22" fill="none" />
+      <SvgPath d="M22 10L14 10L14 2M2 14L10 14L10 22" fill="none" />
     </Icon>
   )
 }
@@ -3708,7 +3717,7 @@ export function FullscreenExit2(props: IconProps) {
 export function FullscreenExit(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 10L14 10L14 2M14.1757 9.8243L21.2929 2.7071M2 14L10 14L10 22M9.8243 14.1757L2.7071 21.2929" />
+      <SvgPath d="M22 10L14 10L14 2M14.1757 9.8243L21.2929 2.7071M2 14L10 14L10 22M9.8243 14.1757L2.7071 21.2929" />
     </Icon>
   )
 }
@@ -3716,7 +3725,7 @@ export function FullscreenExit(props: IconProps) {
 export function Fullscreen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 3L21 3L21 11M13.7071 10.2929L20.8243 3.1757M11 21L3 21L3 13M10.2929 13.7071L3.1757 20.8243" />
+      <SvgPath d="M13 3L21 3L21 11M13.7071 10.2929L20.8243 3.1757M11 21L3 21L3 13M10.2929 13.7071L3.1757 20.8243" />
     </Icon>
   )
 }
@@ -3724,7 +3733,7 @@ export function Fullscreen(props: IconProps) {
 export function GalleryHorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 3L21 3L21 21L11 21L11 3ZM7 4L7 20M3 6L3 18" />
+      <SvgPath d="M11 3L21 3L21 21L11 21L11 3ZM7 4L7 20M3 6L3 18" />
     </Icon>
   )
 }
@@ -3732,7 +3741,7 @@ export function GalleryHorizontalEnd(props: IconProps) {
 export function GalleryHorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L13 3L13 21L3 21L3 3ZM17 4L17 20M21 6L21 18" />
+      <SvgPath d="M3 3L13 3L13 21L3 21L3 3ZM17 4L17 20M21 6L21 18" />
     </Icon>
   )
 }
@@ -3740,7 +3749,7 @@ export function GalleryHorizontalStart(props: IconProps) {
 export function GalleryHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 3L17 3L17 21L7 21L7 3ZM3 2L3 22M21 2L21 22" />
+      <SvgPath d="M7 3L17 3L17 21L7 21L7 3ZM3 2L3 22M21 2L21 22" />
     </Icon>
   )
 }
@@ -3748,7 +3757,7 @@ export function GalleryHorizontal(props: IconProps) {
 export function GalleryVerticalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 11L21 11L21 21L3 21L3 11ZM4 7L20 7M6 3L18 3" />
+      <SvgPath d="M3 11L21 11L21 21L3 21L3 11ZM4 7L20 7M6 3L18 3" />
     </Icon>
   )
 }
@@ -3756,7 +3765,7 @@ export function GalleryVerticalEnd(props: IconProps) {
 export function GalleryVerticalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 13L3 13L3 3ZM4 17L20 17M6 21L18 21" />
+      <SvgPath d="M3 3L21 3L21 13L3 13L3 3ZM4 17L20 17M6 21L18 21" />
     </Icon>
   )
 }
@@ -3764,7 +3773,7 @@ export function GalleryVerticalStart(props: IconProps) {
 export function GalleryVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L21 7L21 17L3 17L3 7ZM2 3L22 3M2 21L22 21" />
+      <SvgPath d="M3 7L21 7L21 17L3 17L3 7ZM2 3L22 3M2 21L22 21" />
     </Icon>
   )
 }
@@ -3772,8 +3781,8 @@ export function GalleryVertical(props: IconProps) {
 export function Gauge(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM12 12L12 6" />
-      <Path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM7 12C7 12.5523 6.5523 13 6 13C5.4477 13 5 12.5523 5 12C5 11.4477 5.4477 11 6 11C6.5523 11 7 11.4477 7 12ZM8.7574 7.7574C8.7574 8.3096 8.3096 8.7574 7.7574 8.7574C7.2051 8.7574 6.7574 8.3096 6.7574 7.7574C6.7574 7.2051 7.2051 6.7574 7.7574 6.7574C8.3096 6.7574 8.7574 7.2051 8.7574 7.7574ZM17.2426 7.7574C17.2426 8.3096 16.7949 8.7574 16.2426 8.7574C15.6904 8.7574 15.2426 8.3096 15.2426 7.7574C15.2426 7.2051 15.6904 6.7574 16.2426 6.7574C16.7949 6.7574 17.2426 7.2051 17.2426 7.7574ZM19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12ZM12 12L12 6" />
+      <SvgPath d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM7 12C7 12.5523 6.5523 13 6 13C5.4477 13 5 12.5523 5 12C5 11.4477 5.4477 11 6 11C6.5523 11 7 11.4477 7 12ZM8.7574 7.7574C8.7574 8.3096 8.3096 8.7574 7.7574 8.7574C7.2051 8.7574 6.7574 8.3096 6.7574 7.7574C6.7574 7.2051 7.2051 6.7574 7.7574 6.7574C8.3096 6.7574 8.7574 7.2051 8.7574 7.7574ZM17.2426 7.7574C17.2426 8.3096 16.7949 8.7574 16.2426 8.7574C15.6904 8.7574 15.2426 8.3096 15.2426 7.7574C15.2426 7.2051 15.6904 6.7574 16.2426 6.7574C16.7949 6.7574 17.2426 7.2051 17.2426 7.7574ZM19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3781,7 +3790,7 @@ export function Gauge(props: IconProps) {
 export function Gift(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 7L2 7L2 11L22 11L22 7ZM12 7C9 7 7 6 7 4.5C7 3.1193 8.1193 2 9.5 2C11.5 2 12 5 12 7ZM12 7C15 7 17 6 17 4.5C17 3.1193 15.8807 2 14.5 2C12.5 2 12 5 12 7ZM4 11L4 22L20 22L20 11L4 11Z" />
+      <SvgPath d="M22 7L2 7L2 11L22 11L22 7ZM12 7C9 7 7 6 7 4.5C7 3.1193 8.1193 2 9.5 2C11.5 2 12 5 12 7ZM12 7C15 7 17 6 17 4.5C17 3.1193 15.8807 2 14.5 2C12.5 2 12 5 12 7ZM4 11L4 22L20 22L20 11L4 11Z" />
     </Icon>
   )
 }
@@ -3789,7 +3798,7 @@ export function Gift(props: IconProps) {
 export function Girl(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.5 15.5C4.1 17.6 4.4 19.2 3.2 20.4C2.4 19.4 2 18 2 16.4C2 14.4 2.6 12.4 4 11C4 6 7.6 2 12 2C16.4 2 20 6 20 11C21.4 12.4 22 14.4 22 16.4C22 18 21.6 19.4 20.8 20.4C19.6 19.2 19.9 17.6 19.5 15.5C19.5 19.6 15.6 22 12 22C8.4 22 4.5 19.6 4.5 15.5ZM4.0957 9.6C9 9.6 11 5.8 12 3.5C13 5.8 15 9.6 19.9043 9.6M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
+      <SvgPath d="M4.5 15.5C4.1 17.6 4.4 19.2 3.2 20.4C2.4 19.4 2 18 2 16.4C2 14.4 2.6 12.4 4 11C4 6 7.6 2 12 2C16.4 2 20 6 20 11C21.4 12.4 22 14.4 22 16.4C22 18 21.6 19.4 20.8 20.4C19.6 19.2 19.9 17.6 19.5 15.5C19.5 19.6 15.6 22 12 22C8.4 22 4.5 19.6 4.5 15.5ZM4.0957 9.6C9 9.6 11 5.8 12 3.5C13 5.8 15 9.6 19.9043 9.6M9 11.6L9 14.6M15 11.6L15 14.6M10.0735 17.1514L10.5 17.45C11 17.8 11.5 17.95 12 17.95C12.5 17.95 13 17.8 13.5 17.45L13.9265 17.1514" fill="none" />
     </Icon>
   )
 }
@@ -3797,7 +3806,7 @@ export function Girl(props: IconProps) {
 export function GitArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.909 15.1675L21 17.5L18.909 19.8325M6 22L6 9M18 12.5L18 6L12 6M20.7446 17.5L13 17.5L13 22M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M18.909 15.1675L21 17.5L18.909 19.8325M6 22L6 9M18 12.5L18 6L12 6M20.7446 17.5L13 17.5L13 22M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3805,7 +3814,7 @@ export function GitArrowRight(props: IconProps) {
 export function GitBranchMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9C6.1667 12 8.2 18 15 18M14 6L22 6M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
+      <SvgPath d="M6 22L6 9C6.1667 12 8.2 18 15 18M14 6L22 6M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
     </Icon>
   )
 }
@@ -3813,7 +3822,7 @@ export function GitBranchMinus(props: IconProps) {
 export function GitBranchPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9C6.1667 12 8.2 18 15 18M18 10L18 2M14 6L22 6M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
+      <SvgPath d="M6 22L6 9C6.1667 12 8.2 18 15 18M18 10L18 2M14 6L22 6M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
     </Icon>
   )
 }
@@ -3821,7 +3830,7 @@ export function GitBranchPlus(props: IconProps) {
 export function GitBranch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9C6.1667 12 8.2 18 15 18M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
+      <SvgPath d="M6 22L6 9C6.1667 12 8.2 18 15 18M6 9C7.6569 9 9 7.6569 9 6C9 4.3431 7.6569 3 6 3C4.3431 3 3 4.3431 3 6C3 7.6569 4.3431 9 6 9ZM18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" />
     </Icon>
   )
 }
@@ -3829,7 +3838,7 @@ export function GitBranch(props: IconProps) {
 export function GitCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 14L18 6L12 6M15.7071 18.7071L18 21L21.1425 15.7625M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 22L6 9M18 14L18 6L12 6M15.7071 18.7071L18 21L21.1425 15.7625M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3837,7 +3846,7 @@ export function GitCheck(props: IconProps) {
 export function GitCommitHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12L9 12M15 12L22 12M12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9Z" />
+      <SvgPath d="M2 12L9 12M15 12L22 12M12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9Z" />
     </Icon>
   )
 }
@@ -3845,7 +3854,7 @@ export function GitCommitHorizontal(props: IconProps) {
 export function GitCommitVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 9L12 2M12 22L12 15M12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9Z" />
+      <SvgPath d="M12 9L12 2M12 22L12 15M12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9Z" />
     </Icon>
   )
 }
@@ -3853,7 +3862,7 @@ export function GitCommitVertical(props: IconProps) {
 export function GitCompareArrows(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9L6 18L10.8535 18M13.1465 6L18 6L18 15M15.0858 3.7071L12.7929 6L15.0858 8.2929M8.9142 15.7071L11.2071 18L8.9142 20.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M6 9L6 18L10.8535 18M13.1465 6L18 6L18 15M15.0858 3.7071L12.7929 6L15.0858 8.2929M8.9142 15.7071L11.2071 18L8.9142 20.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3861,7 +3870,7 @@ export function GitCompareArrows(props: IconProps) {
 export function GitCompare(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9L6 18L12 18M12 6L18 6L18 15M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M6 9L6 18L12 18M12 6L18 6L18 15M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3869,7 +3878,7 @@ export function GitCompare(props: IconProps) {
 export function GitConnection(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9L6 18L12 18M12 6L18 6L18 15M18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15ZM3 3L9 3L9 9L3 9L3 3Z" />
+      <SvgPath d="M6 9L6 18L12 18M12 6L18 6L18 15M18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15ZM3 3L9 3L9 9L3 9L3 3Z" />
     </Icon>
   )
 }
@@ -3877,7 +3886,7 @@ export function GitConnection(props: IconProps) {
 export function GitFork(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9L6 15L6 12L18 12L18 9M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 3C19.6569 3 21 4.3431 21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3ZM6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15Z" />
+      <SvgPath d="M6 9L6 15L6 12L18 12L18 9M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 3C19.6569 3 21 4.3431 21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3ZM6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15Z" />
     </Icon>
   )
 }
@@ -3885,7 +3894,7 @@ export function GitFork(props: IconProps) {
 export function GitGraph(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 15.5L5 8M12 22L12 2M19 8C19 10 18.8 12.4 16 14L15.1318 14.4961M5 2C6.6569 2 8 3.3432 8 5C8 6.6569 6.6569 8 5 8C3.3432 8 2 6.6569 2 5C2 3.3432 3.3432 2 5 2ZM19 2C20.6569 2 22 3.3432 22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3432 17.3431 2 19 2ZM5 15.5C6.6569 15.5 8 16.8431 8 18.5C8 20.1569 6.6569 21.5 5 21.5C3.3432 21.5 2 20.1569 2 18.5C2 16.8431 3.3432 15.5 5 15.5Z" />
+      <SvgPath d="M5 15.5L5 8M12 22L12 2M19 8C19 10 18.8 12.4 16 14L15.1318 14.4961M5 2C6.6569 2 8 3.3432 8 5C8 6.6569 6.6569 8 5 8C3.3432 8 2 6.6569 2 5C2 3.3432 3.3432 2 5 2ZM19 2C20.6569 2 22 3.3432 22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3432 17.3431 2 19 2ZM5 15.5C6.6569 15.5 8 16.8431 8 18.5C8 20.1569 6.6569 21.5 5 21.5C3.3432 21.5 2 20.1569 2 18.5C2 16.8431 3.3432 15.5 5 15.5Z" />
     </Icon>
   )
 }
@@ -3893,7 +3902,7 @@ export function GitGraph(props: IconProps) {
 export function GitJoin(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 16L12 11M5 8L5 11L19 11L19 8M5 2C6.6569 2 8 3.3432 8 5C8 6.6569 6.6569 8 5 8C3.3432 8 2 6.6569 2 5C2 3.3432 3.3432 2 5 2ZM19 2C20.6569 2 22 3.3432 22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3432 17.3431 2 19 2ZM12 16C13.6569 16 15 17.3431 15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19C9 17.3431 10.3431 16 12 16Z" />
+      <SvgPath d="M12 16L12 11M5 8L5 11L19 11L19 8M5 2C6.6569 2 8 3.3432 8 5C8 6.6569 6.6569 8 5 8C3.3432 8 2 6.6569 2 5C2 3.3432 3.3432 2 5 2ZM19 2C20.6569 2 22 3.3432 22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3432 17.3431 2 19 2ZM12 16C13.6569 16 15 17.3431 15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19C9 17.3431 10.3431 16 12 16Z" />
     </Icon>
   )
 }
@@ -3901,7 +3910,7 @@ export function GitJoin(props: IconProps) {
 export function GitMergeConflict(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.5 22L5.5 11M18 15L18 6L11 6M2.7071 2.7071L8.2929 8.2929M8.2929 2.7071L2.7071 8.2929M18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M5.5 22L5.5 11M18 15L18 6L11 6M2.7071 2.7071L8.2929 8.2929M8.2929 2.7071L2.7071 8.2929M18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3909,7 +3918,7 @@ export function GitMergeConflict(props: IconProps) {
 export function GitMerge(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 2L6 15C6.1667 12 8.2 6 15 6M6 21C7.6569 21 9 19.6569 9 18C9 16.3431 7.6569 15 6 15C4.3431 15 3 16.3431 3 18C3 19.6569 4.3431 21 6 21ZM18 9C19.6569 9 21 7.6569 21 6C21 4.3431 19.6569 3 18 3C16.3431 3 15 4.3431 15 6C15 7.6569 16.3431 9 18 9Z" />
+      <SvgPath d="M6 2L6 15C6.1667 12 8.2 6 15 6M6 21C7.6569 21 9 19.6569 9 18C9 16.3431 7.6569 15 6 15C4.3431 15 3 16.3431 3 18C3 19.6569 4.3431 21 6 21ZM18 9C19.6569 9 21 7.6569 21 6C21 4.3431 19.6569 3 18 3C16.3431 3 15 4.3431 15 6C15 7.6569 16.3431 9 18 9Z" />
     </Icon>
   )
 }
@@ -3917,7 +3926,7 @@ export function GitMerge(props: IconProps) {
 export function GitPullRequestArrow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9L6 15L6 12L18 12L18 3.8536M15.7071 6.0858L18 3.7929L20.2929 6.0858M6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15ZM6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 9L6 15L6 12L18 12L18 3.8536M15.7071 6.0858L18 3.7929L20.2929 6.0858M6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15ZM6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3925,7 +3934,7 @@ export function GitPullRequestArrow(props: IconProps) {
 export function GitPullRequestClosed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 10.5L18 15M15.2071 2.7071L20.7929 8.2929M20.7929 2.7071L15.2071 8.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M6 22L6 9M18 10.5L18 15M15.2071 2.7071L20.7929 8.2929M20.7929 2.7071L15.2071 8.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3933,7 +3942,7 @@ export function GitPullRequestClosed(props: IconProps) {
 export function GitPullRequestCreateArrow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M13.1465 6L18 6L18 13M15.0858 3.7071L12.7929 6L15.0858 8.2929M18.5 15L18.5 22M15 18.5L22 18.5M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 22L6 9M13.1465 6L18 6L18 13M15.0858 3.7071L12.7929 6L15.0858 8.2929M18.5 15L18.5 22M15 18.5L22 18.5M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3941,7 +3950,7 @@ export function GitPullRequestCreateArrow(props: IconProps) {
 export function GitPullRequestCreate(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 13L18 6L12 6M18.5 15L18.5 22M15 18.5L22 18.5M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 22L6 9M18 13L18 6L12 6M18.5 15L18.5 22M15 18.5L22 18.5M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3949,8 +3958,8 @@ export function GitPullRequestCreate(props: IconProps) {
 export function GitPullRequestDraft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
-      <Path d="M19.5 10C19.5 9.1716 18.8284 8.5 18 8.5C17.1716 8.5 16.5 9.1716 16.5 10C16.5 10.8284 17.1716 11.5 18 11.5C18.8284 11.5 19.5 10.8284 19.5 10ZM19.5 4.5C19.5 3.6716 18.8284 3 18 3C17.1716 3 16.5 3.6716 16.5 4.5C16.5 5.3284 17.1716 6 18 6C18.8284 6 19.5 5.3284 19.5 4.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M6 22L6 9M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M19.5 10C19.5 9.1716 18.8284 8.5 18 8.5C17.1716 8.5 16.5 9.1716 16.5 10C16.5 10.8284 17.1716 11.5 18 11.5C18.8284 11.5 19.5 10.8284 19.5 10ZM19.5 4.5C19.5 3.6716 18.8284 3 18 3C17.1716 3 16.5 3.6716 16.5 4.5C16.5 5.3284 17.1716 6 18 6C18.8284 6 19.5 5.3284 19.5 4.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -3958,7 +3967,7 @@ export function GitPullRequestDraft(props: IconProps) {
 export function GitPullRequestPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 15L6 2M18 14L18 22M14 18L22 18M18 12L18 9M9 18L12 18M6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15ZM18 3C19.6569 3 21 4.3431 21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3Z" />
+      <SvgPath d="M6 15L6 2M18 14L18 22M14 18L22 18M18 12L18 9M9 18L12 18M6 15C7.6569 15 9 16.3431 9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15ZM18 3C19.6569 3 21 4.3431 21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3Z" />
     </Icon>
   )
 }
@@ -3966,7 +3975,7 @@ export function GitPullRequestPlus(props: IconProps) {
 export function GitPullRequest(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 15L18 6L12 6M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M6 22L6 9M18 15L18 6L12 6M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3974,7 +3983,7 @@ export function GitPullRequest(props: IconProps) {
 export function GitRefresh(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 14L18 6L12 6M12.7929 17.5L21 17.5L21 22M14.7929 15.2071L12.5 17.5L14.7929 19.7929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 22L6 9M18 14L18 6L12 6M12.7929 17.5L21 17.5L21 22M14.7929 15.2071L12.5 17.5L14.7929 19.7929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3982,7 +3991,7 @@ export function GitRefresh(props: IconProps) {
 export function GitReturn(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M13.1465 6L18 6L18 12M15.0858 3.7071L12.7929 6L15.0858 8.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
+      <SvgPath d="M6 22L6 9M13.1465 6L18 6L18 12M15.0858 3.7071L12.7929 6L15.0858 8.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15Z" />
     </Icon>
   )
 }
@@ -3990,7 +3999,7 @@ export function GitReturn(props: IconProps) {
 export function GitX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 22L6 9M18 13.5L18 6L12 6M15.7071 15.7071L21.2929 21.2929M21.2929 15.7071L15.7071 21.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
+      <SvgPath d="M6 22L6 9M18 13.5L18 6L12 6M15.7071 15.7071L21.2929 21.2929M21.2929 15.7071L15.7071 21.2929M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3Z" />
     </Icon>
   )
 }
@@ -3998,7 +4007,7 @@ export function GitX(props: IconProps) {
 export function GlobeCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M15.7055 19.2971L18.3333 22L22.1467 15.76" />
+      <SvgPath d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M15.7055 19.2971L18.3333 22L22.1467 15.76" />
     </Icon>
   )
 }
@@ -4006,7 +4015,7 @@ export function GlobeCheck(props: IconProps) {
 export function GlobeCursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M17.9543 22L15.8719 15.8669L22 18.0514L19.4086 19.3063L17.9543 22Z" />
+      <SvgPath d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M17.9543 22L15.8719 15.8669L22 18.0514L19.4086 19.3063L17.9543 22Z" />
     </Icon>
   )
 }
@@ -4014,7 +4023,7 @@ export function GlobeCursor(props: IconProps) {
 export function GlobeOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.6903 2.9763C9.0361 2.3336 10.5086 2 12 2C17.5228 2 22 6.4772 22 12C22 13.4914 21.6664 14.9639 21.0237 16.3097M19.0711 19.0711C17.2614 20.8807 14.7614 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2386 3.1193 6.7386 4.9289 4.9289M2 12L12 12M17.2426 12L22 12M9.7439 5.1719C10.7526 3.5279 11.3348 2.7483 12 2C14.0823 4.3426 15.3516 6.99 15.9142 10.5269M15.5403 15.5403C14.9427 17.8157 13.7626 20.0171 12 22C9.3333 19 8 15.5 8 12C8 10.8134 8.1532 9.6268 8.4597 8.4597M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M7.6903 2.9763C9.0361 2.3336 10.5086 2 12 2C17.5228 2 22 6.4772 22 12C22 13.4914 21.6664 14.9639 21.0237 16.3097M19.0711 19.0711C17.2614 20.8807 14.7614 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2386 3.1193 6.7386 4.9289 4.9289M2 12L12 12M17.2426 12L22 12M9.7439 5.1719C10.7526 3.5279 11.3348 2.7483 12 2C14.0823 4.3426 15.3516 6.99 15.9142 10.5269M15.5403 15.5403C14.9427 17.8157 13.7626 20.0171 12 22C9.3333 19 8 15.5 8 12C8 10.8134 8.1532 9.6268 8.4597 8.4597M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4022,7 +4031,7 @@ export function GlobeOff(props: IconProps) {
 export function GlobePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M19 15L19 23M23 19L15 19" />
+      <SvgPath d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M19 15L19 23M23 19L15 19" />
     </Icon>
   )
 }
@@ -4030,7 +4039,7 @@ export function GlobePlus(props: IconProps) {
 export function GlobeX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
+      <SvgPath d="M12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12M2 12L22 12M12 2C14.6667 5 16 8.5 16 12M12 2C9.3333 5 8 8.5 8 12C8 15.5 9.3333 19 12 22M22.2929 15.7071L15.7071 22.2929M15.7071 15.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4038,7 +4047,7 @@ export function GlobeX(props: IconProps) {
 export function Globe(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12ZM2 12L22 12M12 2C14.6667 5 16 8.5 16 12C16 15.5 14.6667 19 12 22C9.3333 19 8 15.5 8 12C8 8.5 9.3333 5 12 2Z" />
+      <SvgPath d="M22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2C17.5228 2 22 6.4771 22 12ZM2 12L22 12M12 2C14.6667 5 16 8.5 16 12C16 15.5 14.6667 19 12 22C9.3333 19 8 15.5 8 12C8 8.5 9.3333 5 12 2Z" />
     </Icon>
   )
 }
@@ -4046,7 +4055,7 @@ export function Globe(props: IconProps) {
 export function GraduationCap(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 5L22 9L12 13L2 9L12 5ZM6 10.6L6 16.7901C7.6737 18.2165 9.8009 19 12 19C14.1991 19 16.3263 18.2165 18 16.7901L18 10.6M2 9L2 16" fill="none" />
+      <SvgPath d="M12 5L22 9L12 13L2 9L12 5ZM6 10.6L6 16.7901C7.6737 18.2165 9.8009 19 12 19C14.1991 19 16.3263 18.2165 18 16.7901L18 10.6M2 9L2 16" fill="none" />
     </Icon>
   )
 }
@@ -4054,7 +4063,7 @@ export function GraduationCap(props: IconProps) {
 export function Grid2x2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM12 3L12 21M3 12L21 12" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM12 3L12 21M3 12L21 12" />
     </Icon>
   )
 }
@@ -4062,7 +4071,7 @@ export function Grid2x2(props: IconProps) {
 export function Grid2x3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM12 3L12 21M3 9L21 9M3 15L21 15" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM12 3L12 21M3 9L21 9M3 15L21 15" />
     </Icon>
   )
 }
@@ -4070,7 +4079,7 @@ export function Grid2x3(props: IconProps) {
 export function Grid3x2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M15 3L15 21M3 12L21 12" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M15 3L15 21M3 12L21 12" />
     </Icon>
   )
 }
@@ -4078,7 +4087,7 @@ export function Grid3x2(props: IconProps) {
 export function Grid3x3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M15 3L15 21M3 9L21 9M3 15L21 15" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M15 3L15 21M3 9L21 9M3 15L21 15" />
     </Icon>
   )
 }
@@ -4086,7 +4095,7 @@ export function Grid3x3(props: IconProps) {
 export function GridCirclesCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10ZM13.7035 17.1823L16.3333 20L21.2689 14.7118" />
+      <SvgPath d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10ZM13.7035 17.1823L16.3333 20L21.2689 14.7118" />
     </Icon>
   )
 }
@@ -4094,7 +4103,7 @@ export function GridCirclesCheck(props: IconProps) {
 export function GridCirclesX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10ZM14.7071 14.7071L20.2929 20.2929M20.2929 14.7071L14.7071 20.2929" />
+      <SvgPath d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10ZM14.7071 14.7071L20.2929 20.2929M20.2929 14.7071L14.7071 20.2929" />
     </Icon>
   )
 }
@@ -4102,7 +4111,7 @@ export function GridCirclesX(props: IconProps) {
 export function GridCircles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 21C19.433 21 21 19.433 21 17.5C21 15.567 19.433 14 17.5 14C15.567 14 14 15.567 14 17.5C14 19.433 15.567 21 17.5 21ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10Z" />
+      <SvgPath d="M6.5 21C8.433 21 10 19.433 10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21ZM6.5 10C8.433 10 10 8.433 10 6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5C3 8.433 4.567 10 6.5 10ZM17.5 21C19.433 21 21 19.433 21 17.5C21 15.567 19.433 14 17.5 14C15.567 14 14 15.567 14 17.5C14 19.433 15.567 21 17.5 21ZM17.5 10C19.433 10 21 8.433 21 6.5C21 4.567 19.433 3 17.5 3C15.567 3 14 4.567 14 6.5C14 8.433 15.567 10 17.5 10Z" />
     </Icon>
   )
 }
@@ -4110,7 +4119,7 @@ export function GridCircles(props: IconProps) {
 export function GridSquaresCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 3L21 3L21 10L14 10L14 3ZM13.7035 17.1823L16.3333 20L21.2689 14.7118" />
+      <SvgPath d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 3L21 3L21 10L14 10L14 3ZM13.7035 17.1823L16.3333 20L21.2689 14.7118" />
     </Icon>
   )
 }
@@ -4118,7 +4127,7 @@ export function GridSquaresCheck(props: IconProps) {
 export function GridSquaresX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 3L21 3L21 10L14 10L14 3ZM14.7071 14.7071L20.2929 20.2929M20.2929 14.7071L14.7071 20.2929" />
+      <SvgPath d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 3L21 3L21 10L14 10L14 3ZM14.7071 14.7071L20.2929 20.2929M20.2929 14.7071L14.7071 20.2929" />
     </Icon>
   )
 }
@@ -4126,7 +4135,7 @@ export function GridSquaresX(props: IconProps) {
 export function GridSquares(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 14L21 14L21 21L14 21L14 14ZM14 3L21 3L21 10L14 10L14 3Z" />
+      <SvgPath d="M3 14L10 14L10 21L3 21L3 14ZM3 3L10 3L10 10L3 10L3 3ZM14 14L21 14L21 21L14 21L14 14ZM14 3L21 3L21 10L14 10L14 3Z" />
     </Icon>
   )
 }
@@ -4134,7 +4143,7 @@ export function GridSquares(props: IconProps) {
 export function GripHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9C6 9.5523 5.5523 10 5 10C4.4477 10 4 9.5523 4 9C4 8.4477 4.4477 8 5 8C5.5523 8 6 8.4477 6 9ZM6 15C6 15.5523 5.5523 16 5 16C4.4477 16 4 15.5523 4 15C4 14.4477 4.4477 14 5 14C5.5523 14 6 14.4477 6 15ZM13 9C13 9.5523 12.5523 10 12 10C11.4477 10 11 9.5523 11 9C11 8.4477 11.4477 8 12 8C12.5523 8 13 8.4477 13 9ZM13 15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15ZM20 9C20 9.5523 19.5523 10 19 10C18.4477 10 18 9.5523 18 9C18 8.4477 18.4477 8 19 8C19.5523 8 20 8.4477 20 9ZM20 15C20 15.5523 19.5523 16 19 16C18.4477 16 18 15.5523 18 15C18 14.4477 18.4477 14 19 14C19.5523 14 20 14.4477 20 15Z" />
+      <SvgPath d="M6 9C6 9.5523 5.5523 10 5 10C4.4477 10 4 9.5523 4 9C4 8.4477 4.4477 8 5 8C5.5523 8 6 8.4477 6 9ZM6 15C6 15.5523 5.5523 16 5 16C4.4477 16 4 15.5523 4 15C4 14.4477 4.4477 14 5 14C5.5523 14 6 14.4477 6 15ZM13 9C13 9.5523 12.5523 10 12 10C11.4477 10 11 9.5523 11 9C11 8.4477 11.4477 8 12 8C12.5523 8 13 8.4477 13 9ZM13 15C13 15.5523 12.5523 16 12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15ZM20 9C20 9.5523 19.5523 10 19 10C18.4477 10 18 9.5523 18 9C18 8.4477 18.4477 8 19 8C19.5523 8 20 8.4477 20 9ZM20 15C20 15.5523 19.5523 16 19 16C18.4477 16 18 15.5523 18 15C18 14.4477 18.4477 14 19 14C19.5523 14 20 14.4477 20 15Z" />
     </Icon>
   )
 }
@@ -4142,7 +4151,7 @@ export function GripHorizontal(props: IconProps) {
 export function GripVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 5C10 5.5523 9.5523 6 9 6C8.4477 6 8 5.5523 8 5C8 4.4477 8.4477 4 9 4C9.5523 4 10 4.4477 10 5ZM10 12C10 12.5523 9.5523 13 9 13C8.4477 13 8 12.5523 8 12C8 11.4477 8.4477 11 9 11C9.5523 11 10 11.4477 10 12ZM10 19C10 19.5523 9.5523 20 9 20C8.4477 20 8 19.5523 8 19C8 18.4477 8.4477 18 9 18C9.5523 18 10 18.4477 10 19ZM16 5C16 5.5523 15.5523 6 15 6C14.4477 6 14 5.5523 14 5C14 4.4477 14.4477 4 15 4C15.5523 4 16 4.4477 16 5ZM16 12C16 12.5523 15.5523 13 15 13C14.4477 13 14 12.5523 14 12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12ZM16 19C16 19.5523 15.5523 20 15 20C14.4477 20 14 19.5523 14 19C14 18.4477 14.4477 18 15 18C15.5523 18 16 18.4477 16 19Z" />
+      <SvgPath d="M10 5C10 5.5523 9.5523 6 9 6C8.4477 6 8 5.5523 8 5C8 4.4477 8.4477 4 9 4C9.5523 4 10 4.4477 10 5ZM10 12C10 12.5523 9.5523 13 9 13C8.4477 13 8 12.5523 8 12C8 11.4477 8.4477 11 9 11C9.5523 11 10 11.4477 10 12ZM10 19C10 19.5523 9.5523 20 9 20C8.4477 20 8 19.5523 8 19C8 18.4477 8.4477 18 9 18C9.5523 18 10 18.4477 10 19ZM16 5C16 5.5523 15.5523 6 15 6C14.4477 6 14 5.5523 14 5C14 4.4477 14.4477 4 15 4C15.5523 4 16 4.4477 16 5ZM16 12C16 12.5523 15.5523 13 15 13C14.4477 13 14 12.5523 14 12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12ZM16 19C16 19.5523 15.5523 20 15 20C14.4477 20 14 19.5523 14 19C14 18.4477 14.4477 18 15 18C15.5523 18 16 18.4477 16 19Z" />
     </Icon>
   )
 }
@@ -4150,7 +4159,7 @@ export function GripVertical(props: IconProps) {
 export function Hammer(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.4488 11.8101L6.0736 21.3662C5.8765 21.5671 5.6426 21.7265 5.3851 21.8352C5.1277 21.944 4.8517 22 4.573 22C4.0102 22.0001 3.4704 21.7723 3.0723 21.3667C2.6743 20.9611 2.4506 20.4109 2.4505 19.8372C2.4504 19.2635 2.6739 18.7133 3.0718 18.3076L12.4481 8.7515M19.45 8.7519L21.5495 11.3003L18.9497 14.3589L16.4494 11.8103L14.4486 11.8101L12.4481 9.771L12.4481 8.2264C12.448 6.8447 10.2709 4.4992 7.771 3.5192C7.3359 3.3486 7.2546 2.7208 7.693 2.5587C11.1831 1.2684 15.9827 2.1168 18.8636 6.115L19.4498 6.9285L19.45 8.7519Z" />
+      <SvgPath d="M15.4488 11.8101L6.0736 21.3662C5.8765 21.5671 5.6426 21.7265 5.3851 21.8352C5.1277 21.944 4.8517 22 4.573 22C4.0102 22.0001 3.4704 21.7723 3.0723 21.3667C2.6743 20.9611 2.4506 20.4109 2.4505 19.8372C2.4504 19.2635 2.6739 18.7133 3.0718 18.3076L12.4481 8.7515M19.45 8.7519L21.5495 11.3003L18.9497 14.3589L16.4494 11.8103L14.4486 11.8101L12.4481 9.771L12.4481 8.2264C12.448 6.8447 10.2709 4.4992 7.771 3.5192C7.3359 3.3486 7.2546 2.7208 7.693 2.5587C11.1831 1.2684 15.9827 2.1168 18.8636 6.115L19.4498 6.9285L19.45 8.7519Z" />
     </Icon>
   )
 }
@@ -4158,7 +4167,7 @@ export function Hammer(props: IconProps) {
 export function HandClosed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.8958 8.4634L9.8958 5.7317C9.8958 4.7753 10.6647 4 11.6131 4C12.5615 4 13.3303 4.7753 13.3303 5.7317L13.3303 8.4634M13.3303 8.4634L13.3303 6.6762C13.3303 5.7199 14.0991 4.9445 15.0475 4.9445C15.9959 4.9445 16.7648 5.7199 16.7648 6.6762L16.7648 9.093M7.1798 12.8668L6.6116 6.8501C6.5285 5.9704 7.1661 5.1883 8.0381 5.1004C8.8978 5.0137 9.6691 5.6342 9.7763 6.4988L9.8958 8.4634M16.7648 7.4633C16.9409 7.0193 17.5343 6.3348 18.6207 6.5925C19.052 6.6948 19.3651 7.0557 19.497 7.4823C20.277 10.005 20.5255 15.0056 17.3892 18.1682C15.1118 20.4648 6.7736 21.9464 4.2758 14.0752C4.0677 13.3405 3.7763 11.6194 4.2758 10.6118C4.9003 9.3524 6.1492 9.6673 6.7736 10.297" fill="none" />
+      <SvgPath d="M9.8958 8.4634L9.8958 5.7317C9.8958 4.7753 10.6647 4 11.6131 4C12.5615 4 13.3303 4.7753 13.3303 5.7317L13.3303 8.4634M13.3303 8.4634L13.3303 6.6762C13.3303 5.7199 14.0991 4.9445 15.0475 4.9445C15.9959 4.9445 16.7648 5.7199 16.7648 6.6762L16.7648 9.093M7.1798 12.8668L6.6116 6.8501C6.5285 5.9704 7.1661 5.1883 8.0381 5.1004C8.8978 5.0137 9.6691 5.6342 9.7763 6.4988L9.8958 8.4634M16.7648 7.4633C16.9409 7.0193 17.5343 6.3348 18.6207 6.5925C19.052 6.6948 19.3651 7.0557 19.497 7.4823C20.277 10.005 20.5255 15.0056 17.3892 18.1682C15.1118 20.4648 6.7736 21.9464 4.2758 14.0752C4.0677 13.3405 3.7763 11.6194 4.2758 10.6118C4.9003 9.3524 6.1492 9.6673 6.7736 10.297" fill="none" />
     </Icon>
   )
 }
@@ -4166,7 +4175,7 @@ export function HandClosed(props: IconProps) {
 export function HandHeart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.9168 13.0295C6.7265 11.1171 5 9.12 5 6.6C5 4.0594 7.149 2 9.8 2C11 2 12.0741 2.4367 13 3.2C13.9259 2.4367 15 2 16.2 2C18.851 2 21 4.0594 21 6.6C21 8.94 19.5113 10.8292 17.5449 12.6183M3 13L3 23M11 15.5L11 13L6.3 13L3 16.3M3 21L5 19L12 19L17 14C17.7811 13.2189 17.7811 11.9511 17 11.17C16.2189 10.3889 14.9511 10.3889 14.17 11.17L11.0498 14.2902" />
+      <SvgPath d="M8.9168 13.0295C6.7265 11.1171 5 9.12 5 6.6C5 4.0594 7.149 2 9.8 2C11 2 12.0741 2.4367 13 3.2C13.9259 2.4367 15 2 16.2 2C18.851 2 21 4.0594 21 6.6C21 8.94 19.5113 10.8292 17.5449 12.6183M3 13L3 23M11 15.5L11 13L6.3 13L3 16.3M3 21L5 19L12 19L17 14C17.7811 13.2189 17.7811 11.9511 17 11.17C16.2189 10.3889 14.9511 10.3889 14.17 11.17L11.0498 14.2902" />
     </Icon>
   )
 }
@@ -4174,7 +4183,7 @@ export function HandHeart(props: IconProps) {
 export function HandOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.0991 8.384L10.6566 4.586C10.485 3.7192 9.6065 3.1464 8.6906 3.3042C7.771 3.4625 7.1611 4.2971 7.3283 5.1682L8.434 13.6532C8.469 13.9211 8.1257 14.0793 7.924 13.8883L5.4898 11.5822C4.9857 11.1046 4.1909 11.0423 3.6108 11.4349C2.987 11.8571 2.8147 12.6647 3.2165 13.2832L4.9181 15.9026C8.5408 22.1944 12.7674 22.1944 15.1826 21.9082C19.6629 21.1366 20.9836 16.7211 20.998 13.49C21.001 13.3014 21.0001 9.7027 20.9988 7.027C20.9984 6.2092 20.2972 5.5474 19.4323 5.5474C18.5672 5.5474 17.8658 6.2106 17.8658 7.0287L17.8658 7.7302M11.0991 8.384L11.3339 11.4658M11.0991 8.384L10.8717 3.6524C10.8311 2.8082 11.5 2.0831 12.3901 2.0066C13.3264 1.9261 14.1488 2.5916 14.2093 3.4789L14.3364 5.3415M18.0397 11.9361L17.8658 7.7302L17.7633 5.1763C17.7274 4.2835 16.9351 3.5861 15.9908 3.6162C15.0234 3.6471 14.2746 4.4281 14.3364 5.3415M14.3364 5.3415L14.7668 11.6511" fill="none" />
+      <SvgPath d="M11.0991 8.384L10.6566 4.586C10.485 3.7192 9.6065 3.1464 8.6906 3.3042C7.771 3.4625 7.1611 4.2971 7.3283 5.1682L8.434 13.6532C8.469 13.9211 8.1257 14.0793 7.924 13.8883L5.4898 11.5822C4.9857 11.1046 4.1909 11.0423 3.6108 11.4349C2.987 11.8571 2.8147 12.6647 3.2165 13.2832L4.9181 15.9026C8.5408 22.1944 12.7674 22.1944 15.1826 21.9082C19.6629 21.1366 20.9836 16.7211 20.998 13.49C21.001 13.3014 21.0001 9.7027 20.9988 7.027C20.9984 6.2092 20.2972 5.5474 19.4323 5.5474C18.5672 5.5474 17.8658 6.2106 17.8658 7.0287L17.8658 7.7302M11.0991 8.384L11.3339 11.4658M11.0991 8.384L10.8717 3.6524C10.8311 2.8082 11.5 2.0831 12.3901 2.0066C13.3264 1.9261 14.1488 2.5916 14.2093 3.4789L14.3364 5.3415M18.0397 11.9361L17.8658 7.7302L17.7633 5.1763C17.7274 4.2835 16.9351 3.5861 15.9908 3.6162C15.0234 3.6471 14.2746 4.4281 14.3364 5.3415M14.3364 5.3415L14.7668 11.6511" fill="none" />
     </Icon>
   )
 }
@@ -4182,7 +4191,7 @@ export function HandOpen(props: IconProps) {
 export function HandPointerDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.5179 12.3077L10.0066 20.7192C9.8541 21.568 9.0731 22.1289 8.2588 21.9744C7.4413 21.8193 6.8991 21.0021 7.0478 20.149L8.6441 10.9876C8.7288 10.5011 8.1321 10.1993 7.7905 10.5558L6.2134 12.2015C5.7652 12.6692 5.0587 12.7302 4.543 12.3458C3.9884 11.9324 3.8353 11.1416 4.1924 10.5359L5.7051 7.9709C8.9257 1.8096 12.6831 1.8096 14.8301 2.0898C20.7345 3.2101 20.4661 12.1717 19.3926 13.572C18.3191 14.9722 17.1966 13.547 17.1966 12.9871M10.8379 16.0924L12.2681 16.2313C13.1075 16.311 13.8637 15.7017 14.0023 14.8341L14.4512 12.0244M17.4338 11.7497L16.9103 14.4812C16.7908 15.1047 16.2925 15.5718 15.6857 15.6294C14.7425 15.7189 13.9351 14.7755 14.1648 13.8166" fill="none" />
+      <SvgPath d="M11.5179 12.3077L10.0066 20.7192C9.8541 21.568 9.0731 22.1289 8.2588 21.9744C7.4413 21.8193 6.8991 21.0021 7.0478 20.149L8.6441 10.9876C8.7288 10.5011 8.1321 10.1993 7.7905 10.5558L6.2134 12.2015C5.7652 12.6692 5.0587 12.7302 4.543 12.3458C3.9884 11.9324 3.8353 11.1416 4.1924 10.5359L5.7051 7.9709C8.9257 1.8096 12.6831 1.8096 14.8301 2.0898C20.7345 3.2101 20.4661 12.1717 19.3926 13.572C18.3191 14.9722 17.1966 13.547 17.1966 12.9871M10.8379 16.0924L12.2681 16.2313C13.1075 16.311 13.8637 15.7017 14.0023 14.8341L14.4512 12.0244M17.4338 11.7497L16.9103 14.4812C16.7908 15.1047 16.2925 15.5718 15.6857 15.6294C14.7425 15.7189 13.9351 14.7755 14.1648 13.8166" fill="none" />
     </Icon>
   )
 }
@@ -4190,7 +4199,7 @@ export function HandPointerDown(props: IconProps) {
 export function HandPointerLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.6923 11.5179L3.2808 10.0066C2.432 9.8541 1.8711 9.0731 2.0256 8.2588C2.1807 7.4413 2.9979 6.8991 3.851 7.0478L13.0124 8.6441C13.4989 8.7288 13.8007 8.1321 13.4442 7.7905L11.7985 6.2134C11.3308 5.7652 11.2698 5.0587 11.6542 4.543C12.0676 3.9884 12.8584 3.8353 13.4641 4.1924L16.0291 5.7051C22.1904 8.9257 22.1904 12.6831 21.9102 14.8301C20.7899 20.7345 11.8283 20.4661 10.428 19.3926C9.0278 18.3191 10.453 17.1966 11.0129 17.1966M7.9076 10.8379L7.7687 12.2681C7.689 13.1075 8.2983 13.8637 9.1659 14.0023L11.9756 14.4512M12.2503 17.4338L9.5188 16.9103C8.8953 16.7908 8.4282 16.2925 8.3706 15.6857C8.2811 14.7425 9.2245 13.9351 10.1834 14.1648" fill="none" />
+      <SvgPath d="M11.6923 11.5179L3.2808 10.0066C2.432 9.8541 1.8711 9.0731 2.0256 8.2588C2.1807 7.4413 2.9979 6.8991 3.851 7.0478L13.0124 8.6441C13.4989 8.7288 13.8007 8.1321 13.4442 7.7905L11.7985 6.2134C11.3308 5.7652 11.2698 5.0587 11.6542 4.543C12.0676 3.9884 12.8584 3.8353 13.4641 4.1924L16.0291 5.7051C22.1904 8.9257 22.1904 12.6831 21.9102 14.8301C20.7899 20.7345 11.8283 20.4661 10.428 19.3926C9.0278 18.3191 10.453 17.1966 11.0129 17.1966M7.9076 10.8379L7.7687 12.2681C7.689 13.1075 8.2983 13.8637 9.1659 14.0023L11.9756 14.4512M12.2503 17.4338L9.5188 16.9103C8.8953 16.7908 8.4282 16.2925 8.3706 15.6857C8.2811 14.7425 9.2245 13.9351 10.1834 14.1648" fill="none" />
     </Icon>
   )
 }
@@ -4198,7 +4207,7 @@ export function HandPointerLeft(props: IconProps) {
 export function HandPointerRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.3077 11.5179L20.7192 10.0066C21.568 9.8541 22.1289 9.0731 21.9744 8.2588C21.8193 7.4413 21.0021 6.8991 20.149 7.0478L10.9876 8.6441C10.5011 8.7288 10.1993 8.1321 10.5558 7.7905L12.2015 6.2134C12.6692 5.7652 12.7302 5.0587 12.3458 4.543C11.9324 3.9884 11.1416 3.8353 10.5359 4.1924L7.9709 5.7051C1.8096 8.9257 1.8096 12.6831 2.0898 14.8301C3.2101 20.7345 12.1717 20.4661 13.572 19.3926C14.9722 18.3191 13.547 17.1966 12.9871 17.1966M16.0924 10.8379L16.2313 12.2681C16.311 13.1075 15.7017 13.8637 14.8341 14.0023L12.0244 14.4512M11.7497 17.4338L14.4812 16.9103C15.1047 16.7908 15.5718 16.2925 15.6294 15.6857C15.7189 14.7425 14.7755 13.9351 13.8166 14.1648" fill="none" />
+      <SvgPath d="M12.3077 11.5179L20.7192 10.0066C21.568 9.8541 22.1289 9.0731 21.9744 8.2588C21.8193 7.4413 21.0021 6.8991 20.149 7.0478L10.9876 8.6441C10.5011 8.7288 10.1993 8.1321 10.5558 7.7905L12.2015 6.2134C12.6692 5.7652 12.7302 5.0587 12.3458 4.543C11.9324 3.9884 11.1416 3.8353 10.5359 4.1924L7.9709 5.7051C1.8096 8.9257 1.8096 12.6831 2.0898 14.8301C3.2101 20.7345 12.1717 20.4661 13.572 19.3926C14.9722 18.3191 13.547 17.1966 12.9871 17.1966M16.0924 10.8379L16.2313 12.2681C16.311 13.1075 15.7017 13.8637 14.8341 14.0023L12.0244 14.4512M11.7497 17.4338L14.4812 16.9103C15.1047 16.7908 15.5718 16.2925 15.6294 15.6857C15.7189 14.7425 14.7755 13.9351 13.8166 14.1648" fill="none" />
     </Icon>
   )
 }
@@ -4206,7 +4215,7 @@ export function HandPointerRight(props: IconProps) {
 export function HandPointer(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.5179 11.6923L10.0066 3.2808C9.8541 2.432 9.0731 1.8711 8.2588 2.0256C7.4413 2.1807 6.8991 2.9979 7.0478 3.851L8.6441 13.0124C8.7288 13.4989 8.1321 13.8007 7.7905 13.4442L6.2134 11.7985C5.7652 11.3308 5.0587 11.2698 4.543 11.6542C3.9884 12.0676 3.8353 12.8584 4.1924 13.4641L5.7051 16.0291C8.9257 22.1904 12.6831 22.1904 14.8301 21.9102C20.7345 20.7899 20.4661 11.8283 19.3926 10.428C18.3191 9.0278 17.1966 10.453 17.1966 11.0129M10.8379 7.9076L12.2681 7.7687C13.1075 7.689 13.8637 8.2983 14.0023 9.1659L14.4512 11.9756M17.4338 12.2503L16.9103 9.5188C16.7908 8.8953 16.2925 8.4282 15.6857 8.3706C14.7425 8.2811 13.9351 9.2245 14.1648 10.1834" fill="none" />
+      <SvgPath d="M11.5179 11.6923L10.0066 3.2808C9.8541 2.432 9.0731 1.8711 8.2588 2.0256C7.4413 2.1807 6.8991 2.9979 7.0478 3.851L8.6441 13.0124C8.7288 13.4989 8.1321 13.8007 7.7905 13.4442L6.2134 11.7985C5.7652 11.3308 5.0587 11.2698 4.543 11.6542C3.9884 12.0676 3.8353 12.8584 4.1924 13.4641L5.7051 16.0291C8.9257 22.1904 12.6831 22.1904 14.8301 21.9102C20.7345 20.7899 20.4661 11.8283 19.3926 10.428C18.3191 9.0278 17.1966 10.453 17.1966 11.0129M10.8379 7.9076L12.2681 7.7687C13.1075 7.689 13.8637 8.2983 14.0023 9.1659L14.4512 11.9756M17.4338 12.2503L16.9103 9.5188C16.7908 8.8953 16.2925 8.4282 15.6857 8.3706C14.7425 8.2811 13.9351 9.2245 14.1648 10.1834" fill="none" />
     </Icon>
   )
 }
@@ -4214,7 +4223,7 @@ export function HandPointer(props: IconProps) {
 export function Handbag(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 7C8 4.7909 9.7909 3 12 3C14.2091 3 16 4.7909 16 7M4 7L20 7L20 21L4 21L4 7Z" />
+      <SvgPath d="M8 7C8 4.7909 9.7909 3 12 3C14.2091 3 16 4.7909 16 7M4 7L20 7L20 21L4 21L4 7Z" />
     </Icon>
   )
 }
@@ -4222,8 +4231,8 @@ export function Handbag(props: IconProps) {
 export function HardDrive(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 11L5 4L19 4L22 11L22 20L2 20L2 11ZM2 11L22 11" />
-      <Path d="M19 15.5C19 16.3284 18.3284 17 17.5 17C16.6716 17 16 16.3284 16 15.5C16 14.6716 16.6716 14 17.5 14C18.3284 14 19 14.6716 19 15.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 11L5 4L19 4L22 11L22 20L2 20L2 11ZM2 11L22 11" />
+      <SvgPath d="M19 15.5C19 16.3284 18.3284 17 17.5 17C16.6716 17 16 16.3284 16 15.5C16 14.6716 16.6716 14 17.5 14C18.3284 14 19 14.6716 19 15.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4231,7 +4240,7 @@ export function HardDrive(props: IconProps) {
 export function HatGlasses(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 10L7 4L10 4L12 5.5L14 4L17 4L19 10M1 10L23 10M10 17C10 18.6569 8.6569 20 7 20C5.3431 20 4 18.6569 4 17C4 15.3431 5.3431 14 7 14C8.6569 14 10 15.3431 10 17ZM20 17C20 18.6569 18.6569 20 17 20C15.3431 20 14 18.6569 14 17C14 15.3431 15.3431 14 17 14C18.6569 14 20 15.3431 20 17ZM10 17C10 15.8954 10.8954 15 12 15C13.1046 15 14 15.8954 14 17" />
+      <SvgPath d="M5 10L7 4L10 4L12 5.5L14 4L17 4L19 10M1 10L23 10M10 17C10 18.6569 8.6569 20 7 20C5.3431 20 4 18.6569 4 17C4 15.3431 5.3431 14 7 14C8.6569 14 10 15.3431 10 17ZM20 17C20 18.6569 18.6569 20 17 20C15.3431 20 14 18.6569 14 17C14 15.3431 15.3431 14 17 14C18.6569 14 20 15.3431 20 17ZM10 17C10 15.8954 10.8954 15 12 15C13.1046 15 14 15.8954 14 17" />
     </Icon>
   )
 }
@@ -4239,7 +4248,7 @@ export function HatGlasses(props: IconProps) {
 export function Heading1(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M16.4323 15.3965L19 13L19 20M15 20L23 20" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M16.4323 15.3965L19 13L19 20M15 20L23 20" />
     </Icon>
   )
 }
@@ -4247,7 +4256,7 @@ export function Heading1(props: IconProps) {
 export function Heading2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M17 16L17 15C17 13.8954 17.8954 13 19 13C20.1046 13 21 13.8954 21 15C21 15.6037 20.7273 16.1751 20.258 16.5548L17 20L23 20" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M17 16L17 15C17 13.8954 17.8954 13 19 13C20.1046 13 21 13.8954 21 15C21 15.6037 20.7273 16.1751 20.258 16.5548L17 20L23 20" />
     </Icon>
   )
 }
@@ -4255,7 +4264,7 @@ export function Heading2(props: IconProps) {
 export function Heading3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M16 13L21 13L18.8564 16C20.0403 16 21 16.8954 21 18C21 19.1046 20.0403 20 18.8564 20C18.0906 20 17.3829 19.6188 17 19L16.7068 18.5262" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M16 13L21 13L18.8564 16C20.0403 16 21 16.8954 21 18C21 19.1046 20.0403 20 18.8564 20C18.0906 20 17.3829 19.6188 17 19L16.7068 18.5262" />
     </Icon>
   )
 }
@@ -4263,7 +4272,7 @@ export function Heading3(props: IconProps) {
 export function Heading4(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M17 12L17 17.5L23 17.5M21 12L21 21" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M17 12L17 17.5L23 17.5M21 12L21 21" />
     </Icon>
   )
 }
@@ -4271,7 +4280,7 @@ export function Heading4(props: IconProps) {
 export function Heading5(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M22 13L17 13L17 16L19 16C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C18.2855 20 17.3573 19.6188 17 19L16.7113 18.5" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M22 13L17 13L17 16L19 16C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C18.2855 20 17.3573 19.6188 17 19L16.7113 18.5" />
     </Icon>
   )
 }
@@ -4279,7 +4288,7 @@ export function Heading5(props: IconProps) {
 export function Heading6(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L2 21M11 3L11 21M2 12L11 12M17 18C17 16.8954 17.8954 16 19 16C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C17.8954 20 17 19.1046 17 18ZM17 18C17 15.5811 18.7178 13.4633 21 13L21.8011 12.8374" />
+      <SvgPath d="M2 3L2 21M11 3L11 21M2 12L11 12M17 18C17 16.8954 17.8954 16 19 16C20.1046 16 21 16.8954 21 18C21 19.1046 20.1046 20 19 20C17.8954 20 17 19.1046 17 18ZM17 18C17 15.5811 18.7178 13.4633 21 13L21.8011 12.8374" />
     </Icon>
   )
 }
@@ -4287,7 +4296,7 @@ export function Heading6(props: IconProps) {
 export function Heading(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 2L6 22M18 2L18 22M6 12L18 12" />
+      <SvgPath d="M6 2L6 22M18 2L18 22M6 12L18 12" />
     </Icon>
   )
 }
@@ -4295,7 +4304,7 @@ export function Heading(props: IconProps) {
 export function HeadphonesOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 12C3 10.8954 3.8954 10 5 10L7 10L7 21L5 21C3.8954 21 3 20.1046 3 19L3 12ZM17 12.3431L17 10L19 10C20.1046 10 21 10.8954 21 12L21 16.3431M20.4142 20.4142C20.0523 20.7761 19.5523 21 19 21L17 21L17 17M3 12C3 9.5147 4.0074 7.2647 5.636 5.636M8.1779 3.788L9.1256 3.4688C10.0282 3.1648 10.9949 3 12 3C16.9706 3 21 7.0294 21 12M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M3 12C3 10.8954 3.8954 10 5 10L7 10L7 21L5 21C3.8954 21 3 20.1046 3 19L3 12ZM17 12.3431L17 10L19 10C20.1046 10 21 10.8954 21 12L21 16.3431M20.4142 20.4142C20.0523 20.7761 19.5523 21 19 21L17 21L17 17M3 12C3 9.5147 4.0074 7.2647 5.636 5.636M8.1779 3.788L9.1256 3.4688C10.0282 3.1648 10.9949 3 12 3C16.9706 3 21 7.0294 21 12M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4303,7 +4312,7 @@ export function HeadphonesOff(props: IconProps) {
 export function Headphones(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 12C3 10.8954 3.8954 10 5 10L7 10L7 21L5 21C3.8954 21 3 20.1046 3 19L3 12ZM21 12C21 10.8954 20.1046 10 19 10L17 10L17 21L19 21C20.1046 21 21 20.1046 21 19L21 12ZM3 12C3 7.0294 7.0294 3 12 3C16.9706 3 21 7.0294 21 12" />
+      <SvgPath d="M3 12C3 10.8954 3.8954 10 5 10L7 10L7 21L5 21C3.8954 21 3 20.1046 3 19L3 12ZM21 12C21 10.8954 20.1046 10 19 10L17 10L17 21L19 21C20.1046 21 21 20.1046 21 19L21 12ZM3 12C3 7.0294 7.0294 3 12 3C16.9706 3 21 7.0294 21 12" />
     </Icon>
   )
 }
@@ -4311,7 +4320,7 @@ export function Headphones(props: IconProps) {
 export function Headset2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 17L6 17C4.8954 17 4 16.1046 4 15L4 10ZM20 10C20 8.8954 19.1046 8 18 8L16 8L16 17L18 17C19.1046 17 20 16.1046 20 15L20 10ZM10 21C10 20.4477 10.4477 20 11 20L13 20C13.5523 20 14 20.4477 14 21C14 21.5523 13.5523 22 13 22L11 22C10.4477 22 10 21.5523 10 21ZM4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10M18 17L18 21L14 21" />
+      <SvgPath d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 17L6 17C4.8954 17 4 16.1046 4 15L4 10ZM20 10C20 8.8954 19.1046 8 18 8L16 8L16 17L18 17C19.1046 17 20 16.1046 20 15L20 10ZM10 21C10 20.4477 10.4477 20 11 20L13 20C13.5523 20 14 20.4477 14 21C14 21.5523 13.5523 22 13 22L11 22C10.4477 22 10 21.5523 10 21ZM4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10M18 17L18 21L14 21" />
     </Icon>
   )
 }
@@ -4319,7 +4328,7 @@ export function Headset2(props: IconProps) {
 export function HeadsetOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 18L6 18C4.8954 18 4 17.1046 4 16L4 10ZM16 11.3431L16 8L18 8C19.1046 8 20 8.8954 20 10L20 15.3431M18 18L16 18L16 16M4 10C4 8.3017 4.5292 6.7269 5.4317 5.4317M7.3576 3.3661L8.4739 2.817C9.5376 2.2938 10.7345 2 12 2C16.4183 2 20 5.5817 20 10M18 18L18 22L11 22M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 18L6 18C4.8954 18 4 17.1046 4 16L4 10ZM16 11.3431L16 8L18 8C19.1046 8 20 8.8954 20 10L20 15.3431M18 18L16 18L16 16M4 10C4 8.3017 4.5292 6.7269 5.4317 5.4317M7.3576 3.3661L8.4739 2.817C9.5376 2.2938 10.7345 2 12 2C16.4183 2 20 5.5817 20 10M18 18L18 22L11 22M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4327,7 +4336,7 @@ export function HeadsetOff(props: IconProps) {
 export function Headset(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 18L6 18C4.8954 18 4 17.1046 4 16L4 10ZM20 10C20 8.8954 19.1046 8 18 8L16 8L16 18L18 18C19.1046 18 20 17.1046 20 16L20 10ZM4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10M18 18L18 22L11 22" />
+      <SvgPath d="M4 10C4 8.8954 4.8954 8 6 8L8 8L8 18L6 18C4.8954 18 4 17.1046 4 16L4 10ZM20 10C20 8.8954 19.1046 8 18 8L16 8L16 18L18 18C19.1046 18 20 17.1046 20 16L20 10ZM4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10M18 18L18 22L11 22" />
     </Icon>
   )
 }
@@ -4335,7 +4344,7 @@ export function Headset(props: IconProps) {
 export function HeartOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.9343 16.9343C15.3695 18.2867 13.629 19.6087 12 21C7.4376 17.1033 2 13.75 2 8.75C2 6.9313 2.881 5.3099 4.2563 4.2563M7.7036 2.9246L8.6969 3.0401C9.9183 3.1821 11.0249 3.6962 12 4.5C13.1574 3.5459 14.5 3 16 3C19.3138 3 22 5.5743 22 8.75C22 10.7584 21.1226 12.5012 19.777 14.1202L18.8731 15.2077M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M16.9343 16.9343C15.3695 18.2867 13.629 19.6087 12 21C7.4376 17.1033 2 13.75 2 8.75C2 6.9313 2.881 5.3099 4.2563 4.2563M7.7036 2.9246L8.6969 3.0401C9.9183 3.1821 11.0249 3.6962 12 4.5C13.1574 3.5459 14.5 3 16 3C19.3138 3 22 5.5743 22 8.75C22 10.7584 21.1226 12.5012 19.777 14.1202L18.8731 15.2077M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4343,7 +4352,7 @@ export function HeartOff(props: IconProps) {
 export function Heart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 21C7.4376 17.1033 2 13.75 2 8.75C2 5.5743 4.6862 3 8 3C9.5 3 10.8426 3.5459 12 4.5C13.1574 3.5459 14.5 3 16 3C19.3138 3 22 5.5743 22 8.75C22 13.75 16.5624 17.1033 12 21Z" fill="none" />
+      <SvgPath d="M12 21C7.4376 17.1033 2 13.75 2 8.75C2 5.5743 4.6862 3 8 3C9.5 3 10.8426 3.5459 12 4.5C13.1574 3.5459 14.5 3 16 3C19.3138 3 22 5.5743 22 8.75C22 13.75 16.5624 17.1033 12 21Z" fill="none" />
     </Icon>
   )
 }
@@ -4351,7 +4360,7 @@ export function Heart(props: IconProps) {
 export function Home(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 10L12 2.9963L3 10L3 21L21 21L21 10ZM9 21L9 14L15 14L15 21" />
+      <SvgPath d="M21 10L12 2.9963L3 10L3 21L21 21L21 10ZM9 21L9 14L15 14L15 21" />
     </Icon>
   )
 }
@@ -4359,7 +4368,7 @@ export function Home(props: IconProps) {
 export function Hourglass(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L21 2M3 22L21 22M6 2L6 7L12 12L18 7L18 2L6 2ZM6 22L6 17L12 12L18 17L18 22L6 22Z" fill="none" />
+      <SvgPath d="M3 2L21 2M3 22L21 22M6 2L6 7L12 12L18 7L18 2L6 2ZM6 22L6 17L12 12L18 17L18 22L6 22Z" fill="none" />
     </Icon>
   )
 }
@@ -4367,7 +4376,7 @@ export function Hourglass(props: IconProps) {
 export function Humidity(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.0186 13.3333L18 10L20.9814 13.3333C21.6374 14.0667 22 15.0161 22 16C22 18.2091 20.2091 20 18 20C15.7909 20 14 18.2091 14 16C14 15.0161 14.3626 14.0667 15.0186 13.3333ZM1.6 5.3L2 5C2.8655 4.3509 3.9181 4 5 4C6.0819 4 7.1345 4.3509 8 5C8.8655 5.6491 9.9181 6 11 6C12.0819 6 13.1345 5.6491 14 5C14.8655 4.3509 15.9181 4 17 4C18.0819 4 19.1345 4.3509 20 5L20.8 5.6M1.6 10.3L2 10C2.8655 9.3509 3.9181 9 5 9C6.0819 9 7.1345 9.3509 8 10C8.8655 10.6491 9.9181 11 11 11C11.2673 11 11.5342 10.9786 11.7981 10.9359L12.7853 10.7763M1.6 15.3L2 15C2.8655 14.3509 3.9181 14 5 14C6.0819 14 7.1345 14.3509 8 15C8.5921 15.4441 9.2754 15.7512 10.0006 15.8991L10.9805 16.099" />
+      <SvgPath d="M15.0186 13.3333L18 10L20.9814 13.3333C21.6374 14.0667 22 15.0161 22 16C22 18.2091 20.2091 20 18 20C15.7909 20 14 18.2091 14 16C14 15.0161 14.3626 14.0667 15.0186 13.3333ZM1.6 5.3L2 5C2.8655 4.3509 3.9181 4 5 4C6.0819 4 7.1345 4.3509 8 5C8.8655 5.6491 9.9181 6 11 6C12.0819 6 13.1345 5.6491 14 5C14.8655 4.3509 15.9181 4 17 4C18.0819 4 19.1345 4.3509 20 5L20.8 5.6M1.6 10.3L2 10C2.8655 9.3509 3.9181 9 5 9C6.0819 9 7.1345 9.3509 8 10C8.8655 10.6491 9.9181 11 11 11C11.2673 11 11.5342 10.9786 11.7981 10.9359L12.7853 10.7763M1.6 15.3L2 15C2.8655 14.3509 3.9181 14 5 14C6.0819 14 7.1345 14.3509 8 15C8.5921 15.4441 9.2754 15.7512 10.0006 15.8991L10.9805 16.099" />
     </Icon>
   )
 }
@@ -4375,7 +4384,7 @@ export function Humidity(props: IconProps) {
 export function IdCard(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM11 10C11 11.1046 10.1046 12 9 12C7.8954 12 7 11.1046 7 10C7 8.8954 7.8954 8 9 8C10.1046 8 11 8.8954 11 10ZM5 20C5 17.7909 6.7909 16 9 16C11.2091 16 13 17.7909 13 20M14 10L19 10M14 14L19 14" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM11 10C11 11.1046 10.1046 12 9 12C7.8954 12 7 11.1046 7 10C7 8.8954 7.8954 8 9 8C10.1046 8 11 8.8954 11 10ZM5 20C5 17.7909 6.7909 16 9 16C11.2091 16 13 17.7909 13 20M14 10L19 10M14 14L19 14" />
     </Icon>
   )
 }
@@ -4383,8 +4392,8 @@ export function IdCard(props: IconProps) {
 export function ImageArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 2L18 9M14.7071 5.7071L18 9L21.2929 5.7071" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 2L18 9M14.7071 5.7071L18 9L21.2929 5.7071" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4392,8 +4401,8 @@ export function ImageArrowDown(props: IconProps) {
 export function ImageArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M22 6L15 6M18.2929 2.7071L15 6L18.2929 9.2929" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M22 6L15 6M18.2929 2.7071L15 6L18.2929 9.2929" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4401,8 +4410,8 @@ export function ImageArrowLeft(props: IconProps) {
 export function ImageArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4410,8 +4419,8 @@ export function ImageArrowRight(props: IconProps) {
 export function ImageArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 10L18 3M14.7071 6.2929L18 3L21.2929 6.2929" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 10L18 3M14.7071 6.2929L18 3L21.2929 6.2929" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4419,8 +4428,8 @@ export function ImageArrowUp(props: IconProps) {
 export function ImageCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14.7071 5.7071L17 8L21.2929 3.7071" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14.7071 5.7071L17 8L21.2929 3.7071" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4428,8 +4437,8 @@ export function ImageCheck(props: IconProps) {
 export function ImageMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14 6L22 6" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14 6L22 6" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4437,8 +4446,8 @@ export function ImageMinus(props: IconProps) {
 export function ImagePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 2L18 10M14 6L22 6" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M18 2L18 10M14 6L22 6" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4446,8 +4455,8 @@ export function ImagePlus(props: IconProps) {
 export function ImageX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14.7071 2.7071L21.2929 9.2929M21.2929 2.7071L14.7071 9.2929" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L3 3L3 21L21 21L21 12M3 18L9 12L13 16L17 13L21 17M14.7071 2.7071L21.2929 9.2929M21.2929 2.7071L14.7071 9.2929" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4455,8 +4464,8 @@ export function ImageX(props: IconProps) {
 export function Image(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 18L9 12L13 16L17 13L21 17" />
-      <Path d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 18L9 12L13 16L17 13L21 17" />
+      <SvgPath d="M9.5 7.5C9.5 8.3284 8.8284 9 8 9C7.1716 9 6.5 8.3284 6.5 7.5C6.5 6.6716 7.1716 6 8 6C8.8284 6 9.5 6.6716 9.5 7.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4464,8 +4473,8 @@ export function Image(props: IconProps) {
 export function Images(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 21L17 21M7 3L21 3L21 17L7 17L7 3ZM7 14L15 10.0001L21 13" />
-      <Path d="M12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 7L3 21L17 21M7 3L21 3L21 17L7 17L7 3ZM7 14L15 10.0001L21 13" />
+      <SvgPath d="M12 7C12 7.5523 11.5523 8 11 8C10.4477 8 10 7.5523 10 7C10 6.4477 10.4477 6 11 6C11.5523 6 12 6.4477 12 7Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4473,7 +4482,7 @@ export function Images(props: IconProps) {
 export function Inbox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 4L17 4L22 12.1534L22 20L2 20L2 12.1534L7 4ZM2 13L8 13L10 16L14 16L16 13L22 13" />
+      <SvgPath d="M7 4L17 4L22 12.1534L22 20L2 20L2 12.1534L7 4ZM2 13L8 13L10 16L14 16L16 13L22 13" />
     </Icon>
   )
 }
@@ -4481,7 +4490,7 @@ export function Inbox(props: IconProps) {
 export function IndianRupee(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 2L6 2L18 2L19 2M5 7L6 7L18 7L19 7M15 1L15 2C15 5.9361 12.6333 9.4861 9 11L6 11L16 22L16.2976 22.3273" fill="none" />
+      <SvgPath d="M5 2L6 2L18 2L19 2M5 7L6 7L18 7L19 7M15 1L15 2C15 5.9361 12.6333 9.4861 9 11L6 11L16 22L16.2976 22.3273" fill="none" />
     </Icon>
   )
 }
@@ -4489,9 +4498,9 @@ export function IndianRupee(props: IconProps) {
 export function Info(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
-      <Path d="M12 11L12 17" />
-      <Path d="M13 8C13 8.5523 12.5523 9 12 9C11.4477 9 11 8.5523 11 8C11 7.4477 11.4477 7 12 7C12.5523 7 13 7.4477 13 8Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 2C17.5228 2 22 6.4771 22 12C22 17.5228 17.5228 22 12 22C6.4771 22 2 17.5228 2 12C2 6.4771 6.4771 2 12 2Z" />
+      <SvgPath d="M12 11L12 17" />
+      <SvgPath d="M13 8C13 8.5523 12.5523 9 12 9C11.4477 9 11 8.5523 11 8C11 7.4477 11.4477 7 12 7C12.5523 7 13 7.4477 13 8Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4499,7 +4508,7 @@ export function Info(props: IconProps) {
 export function Italic(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 3L22 3M2 21L15 21M16 3L9 21" fill="none" />
+      <SvgPath d="M9 3L22 3M2 21L15 21M16 3L9 21" fill="none" />
     </Icon>
   )
 }
@@ -4507,7 +4516,7 @@ export function Italic(props: IconProps) {
 export function JapaneseYen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7526 1.7172L5 2L12 10L19 2L19.2474 1.7172M12 9L12 10L12 22L12 23M5 14L6 14L18 14L19 14M5 18L6 18L18 18L19 18" fill="none" />
+      <SvgPath d="M4.7526 1.7172L5 2L12 10L19 2L19.2474 1.7172M12 9L12 10L12 22L12 23M5 14L6 14L18 14L19 14M5 18L6 18L18 18L19 18" fill="none" />
     </Icon>
   )
 }
@@ -4515,7 +4524,7 @@ export function JapaneseYen(props: IconProps) {
 export function KeyRound(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 14.5L2 18.5L2 22L5.5 22L7 20.5L9.5 20.5L9.5 18L12 18L12 15.5L13.8851 13.6149C14.5611 13.8695 15.2776 14 16 14C19.3137 14 22 11.3137 22 8C22 4.6863 19.3137 2 16 2C12.6863 2 10 4.6863 10 8C10 8.7224 10.1305 9.4389 10.3851 10.1149ZM14.7071 9.2929L17.2929 6.7071" fill="none" />
+      <SvgPath d="M6 14.5L2 18.5L2 22L5.5 22L7 20.5L9.5 20.5L9.5 18L12 18L12 15.5L13.8851 13.6149C14.5611 13.8695 15.2776 14 16 14C19.3137 14 22 11.3137 22 8C22 4.6863 19.3137 2 16 2C12.6863 2 10 4.6863 10 8C10 8.7224 10.1305 9.4389 10.3851 10.1149ZM14.7071 9.2929L17.2929 6.7071" fill="none" />
     </Icon>
   )
 }
@@ -4523,7 +4532,7 @@ export function KeyRound(props: IconProps) {
 export function KeySquare(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 14.5L2 18.5L2 22L5.5 22L7 20.5L9.5 20.5L9.5 18L12 18L12 15.5L13.5 14L22 14L22 2L10 2L10 10.5ZM14.7071 9.2929L17.2929 6.7071" fill="none" />
+      <SvgPath d="M6 14.5L2 18.5L2 22L5.5 22L7 20.5L9.5 20.5L9.5 18L12 18L12 15.5L13.5 14L22 14L22 2L10 2L10 10.5ZM14.7071 9.2929L17.2929 6.7071" fill="none" />
     </Icon>
   )
 }
@@ -4531,7 +4540,7 @@ export function KeySquare(props: IconProps) {
 export function Key(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 12C10 14.2091 8.2091 16 6 16C3.7909 16 2 14.2091 2 12C2 9.7909 3.7909 8 6 8C8.2091 8 10 9.7909 10 12ZM10 12L23 12M17 12L17 17M21 12L21 17" fill="none" />
+      <SvgPath d="M10 12C10 14.2091 8.2091 16 6 16C3.7909 16 2 14.2091 2 12C2 9.7909 3.7909 8 6 8C8.2091 8 10 9.7909 10 12ZM10 12L23 12M17 12L17 17M21 12L21 17" fill="none" />
     </Icon>
   )
 }
@@ -4539,8 +4548,8 @@ export function Key(props: IconProps) {
 export function Keyboard(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM7 16L17 16" fill="none" />
-      <Path d="M5 7L7 7L7 9L5 9L5 7ZM9 7L11 7L11 9L9 9L9 7ZM13 7L15 7L15 9L13 9L13 7ZM17 7L19 7L19 9L17 9L17 7ZM5 11L7 11L7 13L5 13L5 11ZM9 11L11 11L11 13L9 13L9 11ZM13 11L15 11L15 13L13 13L13 11ZM17 11L19 11L19 13L17 13L17 11Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM7 16L17 16" fill="none" />
+      <SvgPath d="M5 7L7 7L7 9L5 9L5 7ZM9 7L11 7L11 9L9 9L9 7ZM13 7L15 7L15 9L13 9L13 7ZM17 7L19 7L19 9L17 9L17 7ZM5 11L7 11L7 13L5 13L5 11ZM9 11L11 11L11 13L9 13L9 11ZM13 11L15 11L15 13L13 13L13 11ZM17 11L19 11L19 13L17 13L17 11Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4548,7 +4557,7 @@ export function Keyboard(props: IconProps) {
 export function Language(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.9138 11.1939L6 2L10.0862 11.1939M3.3333 8L8.6667 8M15 11L19 11M11 15L23 15M14 15C14.4767 16.1439 15.5203 18.0076 17 19.543C18.1074 20.6922 19.459 21.6576 21 22L21.1071 22.0238M20 15C19.5234 16.1439 18.4797 18.0076 17 19.543C15.8926 20.6922 14.541 21.6576 13 22L12.8929 22.0238" fill="none" />
+      <SvgPath d="M1.9138 11.1939L6 2L10.0862 11.1939M3.3333 8L8.6667 8M15 11L19 11M11 15L23 15M14 15C14.4767 16.1439 15.5203 18.0076 17 19.543C18.1074 20.6922 19.459 21.6576 21 22L21.1071 22.0238M20 15C19.5234 16.1439 18.4797 18.0076 17 19.543C15.8926 20.6922 14.541 21.6576 13 22L12.8929 22.0238" fill="none" />
     </Icon>
   )
 }
@@ -4556,7 +4565,7 @@ export function Language(props: IconProps) {
 export function LaptopSmartphone(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 14L4 2L20 2L20 5M10 18L2 18L2 14L10 14M22 22L22 10L13 10L13 22L22 22ZM16 14L19 14" />
+      <SvgPath d="M4 14L4 2L20 2L20 5M10 18L2 18L2 14L10 14M22 22L22 10L13 10L13 22L22 22ZM16 14L19 14" />
     </Icon>
   )
 }
@@ -4564,7 +4573,7 @@ export function LaptopSmartphone(props: IconProps) {
 export function Laptop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 16L4 4L20 4L20 16M2 16L22 16L22 20L2 20L2 16Z" />
+      <SvgPath d="M4 16L4 4L20 4L20 16M2 16L22 16L22 20L2 20L2 16Z" />
     </Icon>
   )
 }
@@ -4572,7 +4581,7 @@ export function Laptop(props: IconProps) {
 export function Layers(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2L22 7.5L12 13L2 7.5L12 2ZM1.4819 11.7151L12 17.5L22.5181 12.2849M1.4819 16.2151L12 22L22.5181 16.7849" fill="none" />
+      <SvgPath d="M12 2L22 7.5L12 13L2 7.5L12 2ZM1.4819 11.7151L12 17.5L22.5181 12.2849M1.4819 16.2151L12 22L22.5181 16.7849" fill="none" />
     </Icon>
   )
 }
@@ -4580,7 +4589,7 @@ export function Layers(props: IconProps) {
 export function LayoutDashboard(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L10 3L10 12L3 12L3 3ZM3 16L10 16L10 21L3 21L3 16ZM14 3L21 3L21 8L14 8L14 3ZM14 12L21 12L21 21L14 21L14 12Z" />
+      <SvgPath d="M3 3L10 3L10 12L3 12L3 3ZM3 16L10 16L10 21L3 21L3 16ZM14 3L21 3L21 8L14 8L14 3ZM14 12L21 12L21 21L14 21L14 12Z" />
     </Icon>
   )
 }
@@ -4588,7 +4597,7 @@ export function LayoutDashboard(props: IconProps) {
 export function Leaf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.2784 17.9298C6.0328 15.8736 4.6092 11.144 8.88 8.6765C12.6338 6.5076 15.5004 8.0067 18.9941 3.1908C19.2226 2.8757 19.7335 2.969 19.8579 3.3373C21.2259 7.3899 21.9545 13.7344 18.5503 17.5014C14.2791 22.228 8.5181 20.0005 7.2784 17.9298ZM12.5003 14.0037C10.5004 18.5012 6.2492 17.7512 3.0003 21L2.7075 21.2923" fill="none" />
+      <SvgPath d="M7.2784 17.9298C6.0328 15.8736 4.6092 11.144 8.88 8.6765C12.6338 6.5076 15.5004 8.0067 18.9941 3.1908C19.2226 2.8757 19.7335 2.969 19.8579 3.3373C21.2259 7.3899 21.9545 13.7344 18.5503 17.5014C14.2791 22.228 8.5181 20.0005 7.2784 17.9298ZM12.5003 14.0037C10.5004 18.5012 6.2492 17.7512 3.0003 21L2.7075 21.2923" fill="none" />
     </Icon>
   )
 }
@@ -4596,7 +4605,7 @@ export function Leaf(props: IconProps) {
 export function LightbulbOn(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.0129 14.0886L7.9689 14C7.6605 13.3784 7.5 12.6939 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12C16.5 12.6939 16.3395 13.3784 16.0311 14L15.9871 14.0886M9 18L15 18M10 22L14 22M19.5 12L23 12M4.5 12L1 12M12 4.5L12 1M6.6967 6.6967L4.2218 4.2218M17.3033 6.6967L19.7782 4.2218" />
+      <SvgPath d="M8.0129 14.0886L7.9689 14C7.6605 13.3784 7.5 12.6939 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12C16.5 12.6939 16.3395 13.3784 16.0311 14L15.9871 14.0886M9 18L15 18M10 22L14 22M19.5 12L23 12M4.5 12L1 12M12 4.5L12 1M6.6967 6.6967L4.2218 4.2218M17.3033 6.6967L19.7782 4.2218" />
     </Icon>
   )
 }
@@ -4604,7 +4613,7 @@ export function LightbulbOn(props: IconProps) {
 export function Lightbulb(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.1721 14.1737L5.0718 14C4.3697 12.7838 4 11.4043 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.4043 19.6303 12.7838 18.9282 14L18.8279 14.1737M8 18L16 18M10 22L14 22" />
+      <SvgPath d="M5.1721 14.1737L5.0718 14C4.3697 12.7838 4 11.4043 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.4043 19.6303 12.7838 18.9282 14L18.8279 14.1737M8 18L16 18M10 22L14 22" />
     </Icon>
   )
 }
@@ -4612,7 +4621,7 @@ export function Lightbulb(props: IconProps) {
 export function Link2Off(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7M14 7L17 7C19.7614 7 22 9.2386 22 12C22 13.2135 21.5677 14.326 20.8488 15.1919L20.21 15.9613M17 17L14 17M7 12L12 12M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M10 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7M14 7L17 7C19.7614 7 22 9.2386 22 12C22 13.2135 21.5677 14.326 20.8488 15.1919L20.21 15.9613M17 17L14 17M7 12L12 12M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4620,7 +4629,7 @@ export function Link2Off(props: IconProps) {
 export function Link2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7L10 7M14 7L17 7C19.7614 7 22 9.2386 22 12C22 14.7614 19.7614 17 17 17L14 17M7 12L17 12" />
+      <SvgPath d="M10 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7L10 7M14 7L17 7C19.7614 7 22 9.2386 22 12C22 14.7614 19.7614 17 17 17L14 17M7 12L17 12" />
     </Icon>
   )
 }
@@ -4628,7 +4637,7 @@ export function Link2(props: IconProps) {
 export function Link(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.4812 18.1454L8.1883 18.4383C7.5084 19.1181 6.5864 19.5 5.625 19.5C4.6636 19.5 3.7416 19.1181 3.0617 18.4383C2.3819 17.7584 2 16.8364 2 15.875C2 14.9136 2.3819 13.9916 3.0617 13.3117L8.1867 8.1867C8.8666 7.5069 9.7886 7.125 10.75 7.125C11.7114 7.125 12.6334 7.5069 13.3133 8.1867C13.9931 8.8666 14.375 9.7886 14.375 10.75C14.375 11.7114 13.9931 12.6334 13.3133 13.3133L13.0204 13.6062M15.5188 5.8546L15.8117 5.5617C16.4916 4.8819 17.4136 4.5 18.375 4.5C19.3364 4.5 20.2584 4.8819 20.9383 5.5617C21.6181 6.2416 22 7.1636 22 8.125C22 9.0864 21.6181 10.0084 20.9383 10.6883L15.8133 15.8133C15.1334 16.4931 14.2114 16.875 13.25 16.875C12.2886 16.875 11.3666 16.4931 10.6867 15.8133C10.0069 15.1334 9.625 14.2114 9.625 13.25C9.625 12.2886 10.0069 11.3666 10.6867 10.6867L10.9796 10.3938" fill="none" />
+      <SvgPath d="M8.4812 18.1454L8.1883 18.4383C7.5084 19.1181 6.5864 19.5 5.625 19.5C4.6636 19.5 3.7416 19.1181 3.0617 18.4383C2.3819 17.7584 2 16.8364 2 15.875C2 14.9136 2.3819 13.9916 3.0617 13.3117L8.1867 8.1867C8.8666 7.5069 9.7886 7.125 10.75 7.125C11.7114 7.125 12.6334 7.5069 13.3133 8.1867C13.9931 8.8666 14.375 9.7886 14.375 10.75C14.375 11.7114 13.9931 12.6334 13.3133 13.3133L13.0204 13.6062M15.5188 5.8546L15.8117 5.5617C16.4916 4.8819 17.4136 4.5 18.375 4.5C19.3364 4.5 20.2584 4.8819 20.9383 5.5617C21.6181 6.2416 22 7.1636 22 8.125C22 9.0864 21.6181 10.0084 20.9383 10.6883L15.8133 15.8133C15.1334 16.4931 14.2114 16.875 13.25 16.875C12.2886 16.875 11.3666 16.4931 10.6867 15.8133C10.0069 15.1334 9.625 14.2114 9.625 13.25C9.625 12.2886 10.0069 11.3666 10.6867 10.6867L10.9796 10.3938" fill="none" />
     </Icon>
   )
 }
@@ -4636,7 +4645,7 @@ export function Link(props: IconProps) {
 export function ListCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M17.7071 17.7071L20 20L22.1056 15.7889" />
+      <SvgPath d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M17.7071 17.7071L20 20L22.1056 15.7889" />
     </Icon>
   )
 }
@@ -4644,7 +4653,7 @@ export function ListCheck(props: IconProps) {
 export function ListCollapseHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L10 6M6.7071 2.7071L10 6L6.7071 9.2929M22 6L14 6M17.2929 2.7071L14 6L17.2929 9.2929M6 12L6 22M12 12L12 22M18 12L18 22" />
+      <SvgPath d="M2 6L10 6M6.7071 2.7071L10 6L6.7071 9.2929M22 6L14 6M17.2929 2.7071L14 6L17.2929 9.2929M6 12L6 22M12 12L12 22M18 12L18 22" />
     </Icon>
   )
 }
@@ -4652,7 +4661,7 @@ export function ListCollapseHorizontal(props: IconProps) {
 export function ListCollapse(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 2L6 10M2.7071 6.7071L6 10L9.2929 6.7071M6 22L6 14M2.7071 17.2929L6 14L9.2929 17.2929M12 6L22 6M12 12L22 12M12 18L22 18" />
+      <SvgPath d="M6 2L6 10M2.7071 6.7071L6 10L9.2929 6.7071M6 22L6 14M2.7071 17.2929L6 14L9.2929 17.2929M12 6L22 6M12 12L22 12M12 18L22 18" />
     </Icon>
   )
 }
@@ -4660,7 +4669,7 @@ export function ListCollapse(props: IconProps) {
 export function ListMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 6L23 6M1 12L23 12M1 18L7 18M9 18L15 18M17 18L23 18" />
+      <SvgPath d="M1 6L23 6M1 12L23 12M1 18L7 18M9 18L15 18M17 18L23 18" />
     </Icon>
   )
 }
@@ -4668,7 +4677,7 @@ export function ListMinus(props: IconProps) {
 export function ListMusic(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 15C22 16.6569 20.6569 18 19 18C17.3431 18 16 16.6569 16 15C16 13.3431 17.3431 12 19 12C20.6569 12 22 13.3431 22 15ZM1 6L17 6M1 12L11 12M1 18L11 18M22 15L22 5" />
+      <SvgPath d="M22 15C22 16.6569 20.6569 18 19 18C17.3431 18 16 16.6569 16 15C16 13.3431 17.3431 12 19 12C20.6569 12 22 13.3431 22 15ZM1 6L17 6M1 12L11 12M1 18L11 18M22 15L22 5" />
     </Icon>
   )
 }
@@ -4676,7 +4685,7 @@ export function ListMusic(props: IconProps) {
 export function ListOrdered(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.5 4.5L5 3L5 8M2 8L8 8M3 16.3C3 15.5 3.84 15 4.89 15C6.05 15 7 15.7 7 16.7C7 18.6 3 19.9 3 21L8 21M10 5L22 5M10 12L22 12M10 19L22 19" fill="none" />
+      <SvgPath d="M3.5 4.5L5 3L5 8M2 8L8 8M3 16.3C3 15.5 3.84 15 4.89 15C6.05 15 7 15.7 7 16.7C7 18.6 3 19.9 3 21L8 21M10 5L22 5M10 12L22 12M10 19L22 19" fill="none" />
     </Icon>
   )
 }
@@ -4684,7 +4693,7 @@ export function ListOrdered(props: IconProps) {
 export function ListPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M20 15L20 21M17 18L23 18" />
+      <SvgPath d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M20 15L20 21M17 18L23 18" />
     </Icon>
   )
 }
@@ -4692,7 +4701,7 @@ export function ListPlus(props: IconProps) {
 export function ListSortHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M13 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M6 12L6 22M12 12L12 22M18 12L18 22" />
+      <SvgPath d="M11 6L3 6M6.2929 2.7071L3 6L6.2929 9.2929M13 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M6 12L6 22M12 12L12 22M18 12L18 22" />
     </Icon>
   )
 }
@@ -4700,7 +4709,7 @@ export function ListSortHorizontal(props: IconProps) {
 export function ListSort(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 11L6 3M2.7071 6.2929L6 3L9.2929 6.2929M6 13L6 21M2.7071 17.7071L6 21L9.2929 17.7071M12 6L22 6M12 12L22 12M12 18L22 18" />
+      <SvgPath d="M6 11L6 3M2.7071 6.2929L6 3L9.2929 6.2929M6 13L6 21M2.7071 17.7071L6 21L9.2929 17.7071M12 6L22 6M12 12L22 12M12 18L22 18" />
     </Icon>
   )
 }
@@ -4708,7 +4717,7 @@ export function ListSort(props: IconProps) {
 export function ListVideo(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 6L17 6M1 12L13 12M1 18L13 18M16 9.0026L22 14L16 18L16 9.0026Z" />
+      <SvgPath d="M1 6L17 6M1 12L13 12M1 18L13 18M16 9.0026L22 14L16 18L16 9.0026Z" />
     </Icon>
   )
 }
@@ -4716,7 +4725,7 @@ export function ListVideo(props: IconProps) {
 export function ListX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M17.7071 15.7071L22.2929 20.2929M22.2929 15.7071L17.7071 20.2929" />
+      <SvgPath d="M1 4L23 4M1 11L23 11M1 18L7 18M9 18L15 18M17.7071 15.7071L22.2929 20.2929M22.2929 15.7071L17.7071 20.2929" />
     </Icon>
   )
 }
@@ -4724,8 +4733,8 @@ export function ListX(props: IconProps) {
 export function List(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 5C5 5.8284 4.3284 6.5 3.5 6.5C2.6716 6.5 2 5.8284 2 5C2 4.1716 2.6716 3.5 3.5 3.5C4.3284 3.5 5 4.1716 5 5ZM5 12C5 12.8284 4.3284 13.5 3.5 13.5C2.6716 13.5 2 12.8284 2 12C2 11.1716 2.6716 10.5 3.5 10.5C4.3284 10.5 5 11.1716 5 12ZM5 19C5 19.8284 4.3284 20.5 3.5 20.5C2.6716 20.5 2 19.8284 2 19C2 18.1716 2.6716 17.5 3.5 17.5C4.3284 17.5 5 18.1716 5 19Z" fill="currentColor" stroke="none" />
-      <Path d="M7 5L22 5M7 12L22 12M7 19L22 19" fill="none" />
+      <SvgPath d="M5 5C5 5.8284 4.3284 6.5 3.5 6.5C2.6716 6.5 2 5.8284 2 5C2 4.1716 2.6716 3.5 3.5 3.5C4.3284 3.5 5 4.1716 5 5ZM5 12C5 12.8284 4.3284 13.5 3.5 13.5C2.6716 13.5 2 12.8284 2 12C2 11.1716 2.6716 10.5 3.5 10.5C4.3284 10.5 5 11.1716 5 12ZM5 19C5 19.8284 4.3284 20.5 3.5 20.5C2.6716 20.5 2 19.8284 2 19C2 18.1716 2.6716 17.5 3.5 17.5C4.3284 17.5 5 18.1716 5 19Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 5L22 5M7 12L22 12M7 19L22 19" fill="none" />
     </Icon>
   )
 }
@@ -4733,7 +4742,7 @@ export function List(props: IconProps) {
 export function Loader(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 1L12 7M15.5355 8.4645L19.7782 4.2218M17 12L23 12M15.5355 15.5355L19.7782 19.7782M12 17L12 23M8.4645 15.5355L4.2218 19.7782M1 12L7 12M8.4645 8.4645L4.2218 4.2218" />
+      <SvgPath d="M12 1L12 7M15.5355 8.4645L19.7782 4.2218M17 12L23 12M15.5355 15.5355L19.7782 19.7782M12 17L12 23M8.4645 15.5355L4.2218 19.7782M1 12L7 12M8.4645 8.4645L4.2218 4.2218" />
     </Icon>
   )
 }
@@ -4741,8 +4750,8 @@ export function Loader(props: IconProps) {
 export function Lock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.5 10L7.5 6.5C7.5 4.0147 9.5147 2 12 2C14.4853 2 16.5 4.0147 16.5 6.5L16.5 10M4 10L4 22L20 22L20 10L4 10Z" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7.5 10L7.5 6.5C7.5 4.0147 9.5147 2 12 2C14.4853 2 16.5 4.0147 16.5 6.5L16.5 10M4 10L4 22L20 22L20 10L4 10Z" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -4750,7 +4759,7 @@ export function Lock(props: IconProps) {
 export function Lungs(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.9755 12.2209L9.0572 20.4855L2.999 22C2.3431 20.7688 2 19.3951 2 18C2 14.5742 4.0547 11.4826 7.2132 10.156C7.4584 10.053 7.7217 10 7.9877 10C9.0923 10 9.9877 10.8954 9.9877 12C9.9877 12.0738 9.9836 12.1475 9.9755 12.2209ZM14.0245 12.2209C14.0164 12.1475 14.0123 12.0738 14.0123 12C14.0123 10.8954 14.9077 10 16.0123 10C16.2783 10 16.5416 10.053 16.7868 10.156C19.9453 11.4826 22 14.5742 22 18C22 19.3951 21.6569 20.7688 21.001 22L14.9428 20.4855L14.0245 12.2209ZM12 1L12 2L12 6M12 6L9.0995 10.3375M12 6L14.9005 10.3375M9.7778 14C8.7315 14.1548 7.7785 14.6886 7.1 15.5L6.8002 15.8585M14.2222 14C15.2685 14.1548 16.2215 14.6886 16.9 15.5L17.1998 15.8585" fill="none" />
+      <SvgPath d="M9.9755 12.2209L9.0572 20.4855L2.999 22C2.3431 20.7688 2 19.3951 2 18C2 14.5742 4.0547 11.4826 7.2132 10.156C7.4584 10.053 7.7217 10 7.9877 10C9.0923 10 9.9877 10.8954 9.9877 12C9.9877 12.0738 9.9836 12.1475 9.9755 12.2209ZM14.0245 12.2209C14.0164 12.1475 14.0123 12.0738 14.0123 12C14.0123 10.8954 14.9077 10 16.0123 10C16.2783 10 16.5416 10.053 16.7868 10.156C19.9453 11.4826 22 14.5742 22 18C22 19.3951 21.6569 20.7688 21.001 22L14.9428 20.4855L14.0245 12.2209ZM12 1L12 2L12 6M12 6L9.0995 10.3375M12 6L14.9005 10.3375M9.7778 14C8.7315 14.1548 7.7785 14.6886 7.1 15.5L6.8002 15.8585M14.2222 14C15.2685 14.1548 16.2215 14.6886 16.9 15.5L17.1998 15.8585" fill="none" />
     </Icon>
   )
 }
@@ -4758,7 +4767,7 @@ export function Lungs(props: IconProps) {
 export function MailCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15.7071 16.7071L18 19L22.2929 14.7071" />
+      <SvgPath d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15.7071 16.7071L18 19L22.2929 14.7071" />
     </Icon>
   )
 }
@@ -4766,7 +4775,7 @@ export function MailCheck(props: IconProps) {
 export function MailDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M19 14C20.6568 14 22 15.3431 22 17C22 18.6568 20.6568 20 19 20C17.3432 20 16 18.6568 16 17C16 15.3431 17.3432 14 19 14Z" />
+      <SvgPath d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M19 14C20.6568 14 22 15.3431 22 17C22 18.6568 20.6568 20 19 20C17.3432 20 16 18.6568 16 17C16 15.3431 17.3432 14 19 14Z" />
     </Icon>
   )
 }
@@ -4774,7 +4783,7 @@ export function MailDot(props: IconProps) {
 export function MailMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15 17L23 17" />
+      <SvgPath d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15 17L23 17" />
     </Icon>
   )
 }
@@ -4782,7 +4791,7 @@ export function MailMinus(props: IconProps) {
 export function MailOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2L2 8.4561L2 22L22 22L22 8.4561L12 2ZM2 10L12 17.1428L22 10" />
+      <SvgPath d="M12 2L2 8.4561L2 22L22 22L22 8.4561L12 2ZM2 10L12 17.1428L22 10" />
     </Icon>
   )
 }
@@ -4790,7 +4799,7 @@ export function MailOpen(props: IconProps) {
 export function MailPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M19 13L19 21M15 17L23 17" />
+      <SvgPath d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M19 13L19 21M15 17L23 17" />
     </Icon>
   )
 }
@@ -4798,7 +4807,7 @@ export function MailPlus(props: IconProps) {
 export function MailX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15.7071 13.7071L22.2929 20.2929M22.2929 13.7071L15.7071 20.2929" />
+      <SvgPath d="M13 20L2 20L2 4L22 4L22 11M2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7M15.7071 13.7071L22.2929 20.2929M22.2929 13.7071L15.7071 20.2929" />
     </Icon>
   )
 }
@@ -4806,7 +4815,7 @@ export function MailX(props: IconProps) {
 export function Mail(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM2 7L11.2929 11C11.7154 11.2817 12.2846 11.2817 12.7071 11L22 7" />
     </Icon>
   )
 }
@@ -4814,7 +4823,7 @@ export function Mail(props: IconProps) {
 export function MapPinCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14.7071 18.7071L17 21L21.2929 16.7071" />
+      <SvgPath d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14.7071 18.7071L17 21L21.2929 16.7071" />
     </Icon>
   )
 }
@@ -4822,7 +4831,7 @@ export function MapPinCheck(props: IconProps) {
 export function MapPinHeart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17.9628 15.3333L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.9678 19.2747 13.8666 17.9628 15.3333ZM12 14.841C10.1796 13.2862 8.01 11.9483 8.01 9.9533C8.01 8.6861 9.0818 7.659 10.404 7.659C11.0025 7.659 11.5382 7.8768 12 8.2575C12.4618 7.8768 12.9975 7.659 13.596 7.659C14.9182 7.659 15.99 8.6861 15.99 9.9533C15.99 11.9483 13.8204 13.2862 12 14.841Z" />
+      <SvgPath d="M17.9628 15.3333L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.9678 19.2747 13.8666 17.9628 15.3333ZM12 14.841C10.1796 13.2862 8.01 11.9483 8.01 9.9533C8.01 8.6861 9.0818 7.659 10.404 7.659C11.0025 7.659 11.5382 7.8768 12 8.2575C12.4618 7.8768 12.9975 7.659 13.596 7.659C14.9182 7.659 15.99 8.6861 15.99 9.9533C15.99 11.9483 13.8204 13.2862 12 14.841Z" />
     </Icon>
   )
 }
@@ -4830,7 +4839,7 @@ export function MapPinHeart(props: IconProps) {
 export function MapPinMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14 19L22 19" />
+      <SvgPath d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14 19L22 19" />
     </Icon>
   )
 }
@@ -4838,7 +4847,7 @@ export function MapPinMinus(props: IconProps) {
 export function MapPinOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.7214 16.7214L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 8.3017 4.5292 6.7269 5.4317 5.4317M7.5766 3.2584L8.4739 2.817C9.5376 2.2938 10.7345 2 12 2C16.4183 2 20 5.5817 20 10C20 11.2316 19.7159 12.4362 19.1816 13.5248L18.741 14.4225M12.8715 12.8715C12.5957 12.9551 12.3031 13 12 13C10.3431 13 9 11.6569 9 10C9 9.6969 9.0449 9.4043 9.1285 9.1285M11.7835 6.8452L12.7518 7.095C13.8046 7.3666 14.6334 8.1954 14.905 9.2482L15.1548 10.2165M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M16.7214 16.7214L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 8.3017 4.5292 6.7269 5.4317 5.4317M7.5766 3.2584L8.4739 2.817C9.5376 2.2938 10.7345 2 12 2C16.4183 2 20 5.5817 20 10C20 11.2316 19.7159 12.4362 19.1816 13.5248L18.741 14.4225M12.8715 12.8715C12.5957 12.9551 12.3031 13 12 13C10.3431 13 9 11.6569 9 10C9 9.6969 9.0449 9.4043 9.1285 9.1285M11.7835 6.8452L12.7518 7.095C13.8046 7.3666 14.6334 8.1954 14.905 9.2482L15.1548 10.2165M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4846,7 +4855,7 @@ export function MapPinOff(props: IconProps) {
 export function MapPinPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM18 15L18 23M14 19L22 19" />
+      <SvgPath d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM18 15L18 23M14 19L22 19" />
     </Icon>
   )
 }
@@ -4854,7 +4863,7 @@ export function MapPinPlus(props: IconProps) {
 export function MapPinSearch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM20 18.5C20 19.8807 18.8807 21 17.5 21C16.1193 21 15 19.8807 15 18.5C15 17.1193 16.1193 16 17.5 16C18.8807 16 20 17.1193 20 18.5ZM19.2678 20.2678L21.2929 22.2929" />
+      <SvgPath d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM20 18.5C20 19.8807 18.8807 21 17.5 21C16.1193 21 15 19.8807 15 18.5C15 17.1193 16.1193 16 17.5 16C18.8807 16 20 17.1193 20 18.5ZM19.2678 20.2678L21.2929 22.2929" />
     </Icon>
   )
 }
@@ -4862,7 +4871,7 @@ export function MapPinSearch(props: IconProps) {
 export function MapPinX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14.7071 15.7071L21.2929 22.2929M21.2929 15.7071L14.7071 22.2929" />
+      <SvgPath d="M11.2546 22.2847L5.0372 15.3333C3.7253 13.8666 3 11.9678 3 10C3 5.5817 6.5817 2 11 2C15.4183 2 19 5.5817 19 10C19 10.6747 18.9146 11.3467 18.746 12L18.496 12.9683M14 10C14 11.6569 12.6569 13 11 13C9.3431 13 8 11.6569 8 10C8 8.3431 9.3431 7 11 7C12.6569 7 14 8.3431 14 10ZM14.7071 15.7071L21.2929 22.2929M21.2929 15.7071L14.7071 22.2929" />
     </Icon>
   )
 }
@@ -4870,7 +4879,7 @@ export function MapPinX(props: IconProps) {
 export function MapPin(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17.9628 15.3333L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.9678 19.2747 13.8666 17.9628 15.3333ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.3431 10.3431 7 12 7C13.6569 7 15 8.3431 15 10Z" />
+      <SvgPath d="M17.9628 15.3333L12 22L6.0372 15.3333C4.7253 13.8666 4 11.9678 4 10C4 5.5817 7.5817 2 12 2C16.4183 2 20 5.5817 20 10C20 11.9678 19.2747 13.8666 17.9628 15.3333ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.3431 10.3431 7 12 7C13.6569 7 15 8.3431 15 10Z" />
     </Icon>
   )
 }
@@ -4878,7 +4887,7 @@ export function MapPin(props: IconProps) {
 export function Map(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 6L9 3L15 6L21 3L21 18L15 21L9 18L3 21L3 6ZM9 3L9 18.4871M15 5.5129L15 21" />
+      <SvgPath d="M3 6L9 3L15 6L21 3L21 18L15 21L9 18L3 21L3 6ZM9 3L9 18.4871M15 5.5129L15 21" />
     </Icon>
   )
 }
@@ -4886,7 +4895,7 @@ export function Map(props: IconProps) {
 export function Mars(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 15C15 18.3137 12.3137 21 9 21C5.6863 21 3 18.3137 3 15C3 11.6863 5.6863 9 9 9C12.3137 9 15 11.6863 15 15ZM14.5 3L21 3L21 9.5M13.2426 10.7574L20.8243 3.1757" fill="none" />
+      <SvgPath d="M15 15C15 18.3137 12.3137 21 9 21C5.6863 21 3 18.3137 3 15C3 11.6863 5.6863 9 9 9C12.3137 9 15 11.6863 15 15ZM14.5 3L21 3L21 9.5M13.2426 10.7574L20.8243 3.1757" fill="none" />
     </Icon>
   )
 }
@@ -4894,7 +4903,7 @@ export function Mars(props: IconProps) {
 export function Maximize2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 10L3 3L10 3M9.2929 9.2929L3.1757 3.1757M21 10L21 3L14 3M14.7071 9.2929L20.8243 3.1757M21 14L21 21L14 21M14.7071 14.7071L20.8243 20.8243M3 14L3 21L10 21M9.2929 14.7071L3.1757 20.8243" />
+      <SvgPath d="M3 10L3 3L10 3M9.2929 9.2929L3.1757 3.1757M21 10L21 3L14 3M14.7071 9.2929L20.8243 3.1757M21 14L21 21L14 21M14.7071 14.7071L20.8243 20.8243M3 14L3 21L10 21M9.2929 14.7071L3.1757 20.8243" />
     </Icon>
   )
 }
@@ -4902,7 +4911,7 @@ export function Maximize2(props: IconProps) {
 export function Maximize(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 3L3 3L3 10M14 3L21 3L21 10M21 14L21 21L14 21M3 14L3 21L10 21" />
+      <SvgPath d="M10 3L3 3L3 10M14 3L21 3L21 10M21 14L21 21L14 21M3 14L3 21L10 21" />
     </Icon>
   )
 }
@@ -4910,7 +4919,7 @@ export function Maximize(props: IconProps) {
 export function Megaphone(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 4.071L22 17.429C22 17.628 21.935 17.823 21.813 17.992C21.691 18.161 21.517 18.298 21.309 18.387C21.101 18.476 20.869 18.516 20.638 18.496C20.407 18.478 20.186 18.405 20 18.286C18.788 17.48 17.42 16.614 16 16L13.6873 15L2 15L2 6.5L13.6873 6.5L16 5.5C17.42 4.886 18.788 4.02 20 3.214C20.186 3.095 20.407 3.022 20.638 3.004C20.869 2.986 21.101 3.024 21.309 3.113C21.517 3.202 21.691 3.339 21.813 3.508C21.935 3.677 22 3.872 22 4.071ZM10 15L10 21L8 21C6.2 21 5.5 18.5 5.5 15M16 5.5L16 16" />
+      <SvgPath d="M22 4.071L22 17.429C22 17.628 21.935 17.823 21.813 17.992C21.691 18.161 21.517 18.298 21.309 18.387C21.101 18.476 20.869 18.516 20.638 18.496C20.407 18.478 20.186 18.405 20 18.286C18.788 17.48 17.42 16.614 16 16L13.6873 15L2 15L2 6.5L13.6873 6.5L16 5.5C17.42 4.886 18.788 4.02 20 3.214C20.186 3.095 20.407 3.022 20.638 3.004C20.869 2.986 21.101 3.024 21.309 3.113C21.517 3.202 21.691 3.339 21.813 3.508C21.935 3.677 22 3.872 22 4.071ZM10 15L10 21L8 21C6.2 21 5.5 18.5 5.5 15M16 5.5L16 16" />
     </Icon>
   )
 }
@@ -4918,7 +4927,7 @@ export function Megaphone(props: IconProps) {
 export function Menu(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 6L21 6M3 12L21 12M3 18L21 18" />
+      <SvgPath d="M3 6L21 6M3 12L21 12M3 18L21 18" />
     </Icon>
   )
 }
@@ -4926,7 +4935,7 @@ export function Menu(props: IconProps) {
 export function MessageCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8.7071 10.7071L11 13L15.2929 8.7071" fill="none" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8.7071 10.7071L11 13L15.2929 8.7071" fill="none" />
     </Icon>
   )
 }
@@ -4934,7 +4943,7 @@ export function MessageCheck(props: IconProps) {
 export function MessageDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 3C20.6569 3 22 4.3431 22 6C22 7.6569 20.6569 9 19 9C17.3431 9 16 7.6569 16 6C16 4.3431 17.3431 3 19 3ZM13.3766 3.0559C12.4078 3.005 12.2039 3 12 3C6.4772 3 2 6.5817 2 11C2 12.9769 2.915 14.8839 4.5686 16.353L5 21L9.5808 18.7624C10.3721 18.9202 11.1845 19 12 19C16.674 19 20.6988 16.4142 21.9354 11.9329" fill="none" />
+      <SvgPath d="M19 3C20.6569 3 22 4.3431 22 6C22 7.6569 20.6569 9 19 9C17.3431 9 16 7.6569 16 6C16 4.3431 17.3431 3 19 3ZM13.3766 3.0559C12.4078 3.005 12.2039 3 12 3C6.4772 3 2 6.5817 2 11C2 12.9769 2.915 14.8839 4.5686 16.353L5 21L9.5808 18.7624C10.3721 18.9202 11.1845 19 12 19C16.674 19 20.6988 16.4142 21.9354 11.9329" fill="none" />
     </Icon>
   )
 }
@@ -4942,7 +4951,7 @@ export function MessageDot(props: IconProps) {
 export function MessageLines(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624L5 21L4.5686 16.353ZM7 9L17 9M7 13L14 13" fill="none" />
+      <SvgPath d="M4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624L5 21L4.5686 16.353ZM7 9L17 9M7 13L14 13" fill="none" />
     </Icon>
   )
 }
@@ -4950,7 +4959,7 @@ export function MessageLines(props: IconProps) {
 export function MessageMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8 11L16 11" fill="none" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8 11L16 11" fill="none" />
     </Icon>
   )
 }
@@ -4958,7 +4967,7 @@ export function MessageMinus(props: IconProps) {
 export function MessageOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17.6187 17.6187C16.0173 18.4905 14.083 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 8.6974 3.216 6.622 5.1624 5.1624M8.0483 3.6037L9.0185 3.3616C9.9601 3.1266 10.9616 3 12 3C17.5228 3 22 6.5817 22 11C22 12.4584 21.5122 13.8257 20.6599 15.0031L19.863 16.1038M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M17.6187 17.6187C16.0173 18.4905 14.083 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 8.6974 3.216 6.622 5.1624 5.1624M8.0483 3.6037L9.0185 3.3616C9.9601 3.1266 10.9616 3 12 3C17.5228 3 22 6.5817 22 11C22 12.4584 21.5122 13.8257 20.6599 15.0031L19.863 16.1038M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -4966,7 +4975,7 @@ export function MessageOff(props: IconProps) {
 export function MessagePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM12 7L12 15M8 11L16 11" fill="none" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM12 7L12 15M8 11L16 11" fill="none" />
     </Icon>
   )
 }
@@ -4974,7 +4983,7 @@ export function MessagePlus(props: IconProps) {
 export function MessageSparkle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM12 7.0093L13.428 9.572L15.9907 11L13.428 12.428L12 14.9907L10.572 12.428L8.0093 11L10.572 9.572L12 7.0093Z" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM12 7.0093L13.428 9.572L15.9907 11L13.428 12.428L12 14.9907L10.572 12.428L8.0093 11L10.572 9.572L12 7.0093Z" />
     </Icon>
   )
 }
@@ -4982,7 +4991,7 @@ export function MessageSparkle(props: IconProps) {
 export function MessageSquareCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8.7071 9.7071L11 12L15.2929 7.7071" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8.7071 9.7071L11 12L15.2929 7.7071" fill="none" />
     </Icon>
   )
 }
@@ -4990,7 +4999,7 @@ export function MessageSquareCheck(props: IconProps) {
 export function MessageSquareDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3C19.6569 3 21 4.3431 21 6ZM12.3431 3L3 3L3 21L7 17L21 17L21 11.6569" fill="none" />
+      <SvgPath d="M21 6C21 7.6569 19.6569 9 18 9C16.3431 9 15 7.6569 15 6C15 4.3431 16.3431 3 18 3C19.6569 3 21 4.3431 21 6ZM12.3431 3L3 3L3 21L7 17L21 17L21 11.6569" fill="none" />
     </Icon>
   )
 }
@@ -4998,7 +5007,7 @@ export function MessageSquareDot(props: IconProps) {
 export function MessageSquareLines(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM7 8L17 8M7 12L14 12" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM7 8L17 8M7 12L14 12" fill="none" />
     </Icon>
   )
 }
@@ -5006,7 +5015,7 @@ export function MessageSquareLines(props: IconProps) {
 export function MessageSquareMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8 10L16 10" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8 10L16 10" fill="none" />
     </Icon>
   )
 }
@@ -5014,7 +5023,7 @@ export function MessageSquareMinus(props: IconProps) {
 export function MessageSquareOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 17L7 17L3 21L3 3M7.6569 3L21 3L21 16.3431M1.7071 1.7071L22.2929 22.2929" fill="none" />
+      <SvgPath d="M17 17L7 17L3 21L3 3M7.6569 3L21 3L21 16.3431M1.7071 1.7071L22.2929 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -5022,7 +5031,7 @@ export function MessageSquareOff(props: IconProps) {
 export function MessageSquarePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM12 6L12 14M8 10L16 10" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM12 6L12 14M8 10L16 10" fill="none" />
     </Icon>
   )
 }
@@ -5030,7 +5039,7 @@ export function MessageSquarePlus(props: IconProps) {
 export function MessageSquareSparkle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM12 7.0093L13.128 8.872L14.9907 10L13.128 11.128L12 12.9907L10.872 11.128L9.0093 10L10.872 8.872L12 7.0093Z" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM12 7.0093L13.128 8.872L14.9907 10L13.128 11.128L12 12.9907L10.872 11.128L9.0093 10L10.872 8.872L12 7.0093Z" />
     </Icon>
   )
 }
@@ -5038,7 +5047,7 @@ export function MessageSquareSparkle(props: IconProps) {
 export function MessageSquareX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8.7071 6.7071L15.2929 13.2929M15.2929 6.7071L8.7071 13.2929" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3ZM8.7071 6.7071L15.2929 13.2929M15.2929 6.7071L8.7071 13.2929" fill="none" />
     </Icon>
   )
 }
@@ -5046,7 +5055,7 @@ export function MessageSquareX(props: IconProps) {
 export function MessageSquare(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 17L7 17L3 21L3 3Z" fill="none" />
+      <SvgPath d="M3 3L21 3L21 17L7 17L3 21L3 3Z" fill="none" />
     </Icon>
   )
 }
@@ -5054,7 +5063,7 @@ export function MessageSquare(props: IconProps) {
 export function MessageX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8.7071 7.7071L15.2929 14.2929M15.2929 7.7071L8.7071 14.2929" fill="none" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624ZM8.7071 7.7071L15.2929 14.2929M15.2929 7.7071L8.7071 14.2929" fill="none" />
     </Icon>
   )
 }
@@ -5062,7 +5071,7 @@ export function MessageX(props: IconProps) {
 export function Message(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624Z" fill="none" />
+      <SvgPath d="M9.5808 18.7624L5 21L4.5686 16.353C2.915 14.8839 2 12.9769 2 11C2 6.5817 6.4772 3 12 3C17.5228 3 22 6.5817 22 11C22 15.4183 17.5228 19 12 19C11.1845 19 10.3721 18.9202 9.5808 18.7624Z" fill="none" />
     </Icon>
   )
 }
@@ -5070,7 +5079,7 @@ export function Message(props: IconProps) {
 export function MessagesSquare(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 10L21 10L21 21L18 18L12 18L12 10ZM6.2929 12.7071L3 16L3 3L17 3" fill="none" />
+      <SvgPath d="M12 10L21 10L21 21L18 18L12 18L12 10ZM6.2929 12.7071L3 16L3 3L17 3" fill="none" />
     </Icon>
   )
 }
@@ -5078,7 +5087,7 @@ export function MessagesSquare(props: IconProps) {
 export function Messages(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.2096 18.8812L20.5 20L20.7157 17.6765C21.5425 16.9419 22 15.9885 22 15C22 12.7909 19.7614 11 17 11C14.2386 11 12 12.7909 12 15C12 17.2091 14.2386 19 17 19C17.4078 19 17.814 18.9601 18.2096 18.8812ZM9.0587 14.0507L8.0633 13.955C7.8086 13.9305 7.5559 13.8959 7.3065 13.8515L4.1 15.25L3.798 12.3457C2.6405 11.4274 2 10.2356 2 9C2 6.2386 5.134 4 9 4C11.8401 4 14.3988 5.2258 15.4765 7.1027L15.9744 7.9699" fill="none" />
+      <SvgPath d="M18.2096 18.8812L20.5 20L20.7157 17.6765C21.5425 16.9419 22 15.9885 22 15C22 12.7909 19.7614 11 17 11C14.2386 11 12 12.7909 12 15C12 17.2091 14.2386 19 17 19C17.4078 19 17.814 18.9601 18.2096 18.8812ZM9.0587 14.0507L8.0633 13.955C7.8086 13.9305 7.5559 13.8959 7.3065 13.8515L4.1 15.25L3.798 12.3457C2.6405 11.4274 2 10.2356 2 9C2 6.2386 5.134 4 9 4C11.8401 4 14.3988 5.2258 15.4765 7.1027L15.9744 7.9699" fill="none" />
     </Icon>
   )
 }
@@ -5086,7 +5095,7 @@ export function Messages(props: IconProps) {
 export function MicOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.8681 4.5531L9.3157 3.6589C9.8081 2.6753 10.8252 2 12 2C13.6569 2 15 3.3431 15 5L15 10.3431M13.5619 13.5619C13.1069 13.8398 12.5722 14 12 14C10.3431 14 9 12.6569 9 11L9 9M16.4246 16.4246C15.2187 17.4094 13.6783 18 12 18C8.134 18 5 14.866 5 11L5 10M12 18L12 22M7 22L17 22M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M8.8681 4.5531L9.3157 3.6589C9.8081 2.6753 10.8252 2 12 2C13.6569 2 15 3.3431 15 5L15 10.3431M13.5619 13.5619C13.1069 13.8398 12.5722 14 12 14C10.3431 14 9 12.6569 9 11L9 9M16.4246 16.4246C15.2187 17.4094 13.6783 18 12 18C8.134 18 5 14.866 5 11L5 10M12 18L12 22M7 22L17 22M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -5094,7 +5103,7 @@ export function MicOff(props: IconProps) {
 export function Mic(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 5C9 3.3431 10.3431 2 12 2C13.6569 2 15 3.3431 15 5L15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11L9 5ZM19 10L19 11C19 14.866 15.866 18 12 18C8.134 18 5 14.866 5 11L5 10M12 18L12 22M7 22L17 22" />
+      <SvgPath d="M9 5C9 3.3431 10.3431 2 12 2C13.6569 2 15 3.3431 15 5L15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11L9 5ZM19 10L19 11C19 14.866 15.866 18 12 18C8.134 18 5 14.866 5 11L5 10M12 18L12 22M7 22L17 22" />
     </Icon>
   )
 }
@@ -5102,7 +5111,7 @@ export function Mic(props: IconProps) {
 export function Milestone(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 5L17 5L21.0001 8L17 11L3 11L3 5ZM12 1L12 5M12 11L12 22M7 22L17 22" />
+      <SvgPath d="M3 5L17 5L21.0001 8L17 11L3 11L3 5ZM12 1L12 5M12 11L12 22M7 22L17 22" />
     </Icon>
   )
 }
@@ -5110,7 +5119,7 @@ export function Milestone(props: IconProps) {
 export function Minimize(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 2L9 9L2 9M15 2L15 9L22 9M22 15L15 15L15 22M2 15L9 15L9 22" />
+      <SvgPath d="M9 2L9 9L2 9M15 2L15 9L22 9M22 15L15 15L15 22M2 15L9 15L9 22" />
     </Icon>
   )
 }
@@ -5118,7 +5127,7 @@ export function Minimize(props: IconProps) {
 export function Minus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 12L20 12" />
+      <SvgPath d="M4 12L20 12" />
     </Icon>
   )
 }
@@ -5126,7 +5135,7 @@ export function Minus(props: IconProps) {
 export function MonitorOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 16L2 16L2 4L4 4M8.6569 4L22 4L22 16L20.6569 16M12 16L12 20M7 20L17 20M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M16 16L2 16L2 4L4 4M8.6569 4L22 4L22 16L20.6569 16M12 16L12 20M7 20L17 20M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -5134,7 +5143,7 @@ export function MonitorOff(props: IconProps) {
 export function Monitor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 16L2 16L2 4ZM12 16L12 20M7 20L17 20" />
+      <SvgPath d="M2 4L22 4L22 16L2 16L2 4ZM12 16L12 20M7 20L17 20" />
     </Icon>
   )
 }
@@ -5142,7 +5151,7 @@ export function Monitor(props: IconProps) {
 export function MoonStar(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 13C20 17.9706 15.9706 22 11 22C6.0294 22 2 17.9706 2 13C2 8.0294 6.0294 4 11 4C8.9618 6.5477 9.1652 10.2206 11.4723 12.5277C13.7794 14.8348 17.4523 15.0382 20 13ZM18.9689 1.4226L18.9689 9.5774M15.4378 3.4613L22.5 7.5387M22.5 3.4613L15.4378 7.5387" fill="none" />
+      <SvgPath d="M20 13C20 17.9706 15.9706 22 11 22C6.0294 22 2 17.9706 2 13C2 8.0294 6.0294 4 11 4C8.9618 6.5477 9.1652 10.2206 11.4723 12.5277C13.7794 14.8348 17.4523 15.0382 20 13ZM18.9689 1.4226L18.9689 9.5774M15.4378 3.4613L22.5 7.5387M22.5 3.4613L15.4378 7.5387" fill="none" />
     </Icon>
   )
 }
@@ -5150,7 +5159,7 @@ export function MoonStar(props: IconProps) {
 export function Moon(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C9.9618 5.5477 10.1652 9.2206 12.4723 11.5277C14.7794 13.8348 18.4523 14.0382 21 12Z" fill="none" />
+      <SvgPath d="M21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C9.9618 5.5477 10.1652 9.2206 12.4723 11.5277C14.7794 13.8348 18.4523 14.0382 21 12Z" fill="none" />
     </Icon>
   )
 }
@@ -5158,7 +5167,7 @@ export function Moon(props: IconProps) {
 export function MoreHorizontal(props: IconProps) {
   return (
     <Icon fill="none" {...props}>
-      <Path d="M7 12C7 13.1045 6.1045 14 5 14C3.8955 14 3 13.1045 3 12C3 10.8955 3.8955 10 5 10C6.1045 10 7 10.8955 7 12ZM14 12C14 13.1045 13.1045 14 12 14C10.8955 14 10 13.1045 10 12C10 10.8955 10.8955 10 12 10C13.1045 10 14 10.8955 14 12ZM21 12C21 13.1045 20.1045 14 19 14C17.8955 14 17 13.1045 17 12C17 10.8955 17.8955 10 19 10C20.1045 10 21 10.8955 21 12Z" fill="currentColor" />
+      <SvgPath d="M7 12C7 13.1045 6.1045 14 5 14C3.8955 14 3 13.1045 3 12C3 10.8955 3.8955 10 5 10C6.1045 10 7 10.8955 7 12ZM14 12C14 13.1045 13.1045 14 12 14C10.8955 14 10 13.1045 10 12C10 10.8955 10.8955 10 12 10C13.1045 10 14 10.8955 14 12ZM21 12C21 13.1045 20.1045 14 19 14C17.8955 14 17 13.1045 17 12C17 10.8955 17.8955 10 19 10C20.1045 10 21 10.8955 21 12Z" fill="currentColor" />
     </Icon>
   )
 }
@@ -5166,7 +5175,7 @@ export function MoreHorizontal(props: IconProps) {
 export function MoreVertical(props: IconProps) {
   return (
     <Icon fill="none" {...props}>
-      <Path d="M14 5C14 6.1045 13.1045 7 12 7C10.8955 7 10 6.1045 10 5C10 3.8955 10.8955 3 12 3C13.1045 3 14 3.8955 14 5ZM14 12C14 13.1045 13.1045 14 12 14C10.8955 14 10 13.1045 10 12C10 10.8955 10.8955 10 12 10C13.1045 10 14 10.8955 14 12ZM14 19C14 20.1045 13.1045 21 12 21C10.8955 21 10 20.1045 10 19C10 17.8955 10.8955 17 12 17C13.1045 17 14 17.8955 14 19Z" fill="currentColor" />
+      <SvgPath d="M14 5C14 6.1045 13.1045 7 12 7C10.8955 7 10 6.1045 10 5C10 3.8955 10.8955 3 12 3C13.1045 3 14 3.8955 14 5ZM14 12C14 13.1045 13.1045 14 12 14C10.8955 14 10 13.1045 10 12C10 10.8955 10.8955 10 12 10C13.1045 10 14 10.8955 14 12ZM14 19C14 20.1045 13.1045 21 12 21C10.8955 21 10 20.1045 10 19C10 17.8955 10.8955 17 12 17C13.1045 17 14 17.8955 14 19Z" fill="currentColor" />
     </Icon>
   )
 }
@@ -5174,7 +5183,7 @@ export function MoreVertical(props: IconProps) {
 export function Mouse(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3C15.3137 3 18 5.6863 18 9L18 15C18 18.3137 15.3137 21 12 21C8.6863 21 6 18.3137 6 15L6 9C6 5.6863 8.6863 3 12 3ZM12 6L12 9" />
+      <SvgPath d="M12 3C15.3137 3 18 5.6863 18 9L18 15C18 18.3137 15.3137 21 12 21C8.6863 21 6 18.3137 6 15L6 9C6 5.6863 8.6863 3 12 3ZM12 6L12 9" />
     </Icon>
   )
 }
@@ -5182,7 +5191,7 @@ export function Mouse(props: IconProps) {
 export function Move(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 12L2 12M5.2929 15.2929L2 12L5.2929 8.7071M14 12L22 12M18.7071 8.7071L22 12L18.7071 15.2929M12 10L12 2M8.7071 5.2929L12 2L15.2929 5.2929M12 14L12 22M15.2929 18.7071L12 22L8.7071 18.7071" />
+      <SvgPath d="M10 12L2 12M5.2929 15.2929L2 12L5.2929 8.7071M14 12L22 12M18.7071 8.7071L22 12L18.7071 15.2929M12 10L12 2M8.7071 5.2929L12 2L15.2929 5.2929M12 14L12 22M15.2929 18.7071L12 22L8.7071 18.7071" />
     </Icon>
   )
 }
@@ -5190,7 +5199,7 @@ export function Move(props: IconProps) {
 export function MusicNoteOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM18.8715 18.8715C18.5957 18.9551 18.3031 19 18 19C16.3431 19 15 17.6569 15 16C15 15.6969 15.0449 15.4043 15.1285 15.1285M17.7835 12.8452L18.7518 13.095C20.0754 13.4383 21 14.6326 21 16M9 18L9 9M9.4338 4.9277L21 3L21 16.3431M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM18.8715 18.8715C18.5957 18.9551 18.3031 19 18 19C16.3431 19 15 17.6569 15 16C15 15.6969 15.0449 15.4043 15.1285 15.1285M17.7835 12.8452L18.7518 13.095C20.0754 13.4383 21 14.6326 21 16M9 18L9 9M9.4338 4.9277L21 3L21 16.3431M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -5198,7 +5207,7 @@ export function MusicNoteOff(props: IconProps) {
 export function MusicNote(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16ZM9 18L9 5L21 3L21 16" />
+      <SvgPath d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16ZM9 18L9 5L21 3L21 16" />
     </Icon>
   )
 }
@@ -5206,7 +5215,7 @@ export function MusicNote(props: IconProps) {
 export function Navigation(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 19L12 5L19 19L12 16.8739L5 19Z" />
+      <SvgPath d="M5 19L12 5L19 19L12 16.8739L5 19Z" />
     </Icon>
   )
 }
@@ -5214,9 +5223,9 @@ export function Navigation(props: IconProps) {
 export function OctagonAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 15.6L3 8.4L8.4 3L15.6 3L21 8.4L21 15.6L15.6 21L8.4 21L3 15.6Z" />
-      <Path d="M12 7L12 13" />
-      <Path d="M13 16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16C11 15.4477 11.4477 15 12 15C12.5523 15 13 15.4477 13 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 15.6L3 8.4L8.4 3L15.6 3L21 8.4L21 15.6L15.6 21L8.4 21L3 15.6Z" />
+      <SvgPath d="M12 7L12 13" />
+      <SvgPath d="M13 16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16C11 15.4477 11.4477 15 12 15C12.5523 15 13 15.4477 13 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5224,8 +5233,8 @@ export function OctagonAlert(props: IconProps) {
 export function OctagonX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 15.6L3 8.4L8.4 3L15.6 3L21 8.4L21 15.6L15.6 21L8.4 21L3 15.6Z" />
-      <Path d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
+      <SvgPath d="M3 15.6L3 8.4L8.4 3L15.6 3L21 8.4L21 15.6L15.6 21L8.4 21L3 15.6Z" />
+      <SvgPath d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
     </Icon>
   )
 }
@@ -5233,8 +5242,8 @@ export function OctagonX(props: IconProps) {
 export function PackageAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 19" />
-      <Path d="M20 22C20 22.5523 19.5523 23 19 23C18.4477 23 18 22.5523 18 22C18 21.4477 18.4477 21 19 21C19.5523 21 20 21.4477 20 22Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 19" />
+      <SvgPath d="M20 22C20 22.5523 19.5523 23 19 23C18.4477 23 18 22.5523 18 22C18 21.4477 18.4477 21 19 21C19.5523 21 20 21.4477 20 22Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5242,7 +5251,7 @@ export function PackageAlert(props: IconProps) {
 export function PackageArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 22M15.7071 18.7071L19 22L22.2929 18.7071" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 22M15.7071 18.7071L19 22L22.2929 18.7071" />
     </Icon>
   )
 }
@@ -5250,7 +5259,7 @@ export function PackageArrowDown(props: IconProps) {
 export function PackageArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M23 19L16 19M19.2929 15.7071L16 19L19.2929 22.2929" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M23 19L16 19M19.2929 15.7071L16 19L19.2929 22.2929" />
     </Icon>
   )
 }
@@ -5258,7 +5267,7 @@ export function PackageArrowLeft(props: IconProps) {
 export function PackageArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15 19L22 19M18.7071 15.7071L22 19L18.7071 22.2929" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15 19L22 19M18.7071 15.7071L22 19L18.7071 22.2929" />
     </Icon>
   )
 }
@@ -5266,7 +5275,7 @@ export function PackageArrowRight(props: IconProps) {
 export function PackageArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 23L19 16M15.7071 19.2929L19 16L22.2929 19.2929" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 23L19 16M15.7071 19.2929L19 16L22.2929 19.2929" />
     </Icon>
   )
 }
@@ -5274,7 +5283,7 @@ export function PackageArrowUp(props: IconProps) {
 export function PackageCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15.7071 18.7071L18 21L22.2929 16.7071" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15.7071 18.7071L18 21L22.2929 16.7071" />
     </Icon>
   )
 }
@@ -5282,7 +5291,7 @@ export function PackageCheck(props: IconProps) {
 export function PackageMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15 19L23 19" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15 19L23 19" />
     </Icon>
   )
 }
@@ -5290,7 +5299,7 @@ export function PackageMinus(props: IconProps) {
 export function PackagePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 23M15 19L23 19" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M19 15L19 23M15 19L23 19" />
     </Icon>
   )
 }
@@ -5298,7 +5307,7 @@ export function PackagePlus(props: IconProps) {
 export function PackageX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15.7071 15.7071L22.2929 22.2929M22.2929 15.7071L15.7071 22.2929" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M7 4.4239L17 9.4239M12 12L12 22L2 17.1523L2 6.8477L12 2L22 6.8477L22 13M15.7071 15.7071L22.2929 22.2929M22.2929 15.7071L15.7071 22.2929" />
     </Icon>
   )
 }
@@ -5306,7 +5315,7 @@ export function PackageX(props: IconProps) {
 export function Package(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6.8477L12 12M12 12L22 6.8477M12 12L12 22M7 4.4239L17 9.4239M12 2L22 6.8477L22 17.1523L12 22L2 17.1523L2 6.8477L12 2Z" />
+      <SvgPath d="M2 6.8477L12 12M12 12L22 6.8477M12 12L12 22M7 4.4239L17 9.4239M12 2L22 6.8477L22 17.1523L12 22L2 17.1523L2 6.8477L12 2Z" />
     </Icon>
   )
 }
@@ -5314,7 +5323,7 @@ export function Package(props: IconProps) {
 export function PaintRoller(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 2L18 2L18 9L2 9L2 2ZM11 16L15 16L15 22L11 22L11 16ZM18 5.5L22 5.5L22 13L13 13L13 16" fill="none" />
+      <SvgPath d="M2 2L18 2L18 9L2 9L2 2ZM11 16L15 16L15 22L11 22L11 16ZM18 5.5L22 5.5L22 13L13 13L13 16" fill="none" />
     </Icon>
   )
 }
@@ -5322,7 +5331,7 @@ export function PaintRoller(props: IconProps) {
 export function Paintbrush(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 2L18 2L18 12L19 12L19 16L13.8 16L15 22L9 22L9.5 19.5L10.2 16L5 16L5 12L6 12L6 2ZM6 12L18 12M10 2L10 7M14 2L14 9" fill="none" />
+      <SvgPath d="M12 2L18 2L18 12L19 12L19 16L13.8 16L15 22L9 22L9.5 19.5L10.2 16L5 16L5 12L6 12L6 2ZM6 12L18 12M10 2L10 7M14 2L14 9" fill="none" />
     </Icon>
   )
 }
@@ -5330,8 +5339,8 @@ export function Paintbrush(props: IconProps) {
 export function Palette(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.8176 20.7631C15.3415 21.5745 13.6844 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12C22 13.7005 20.6215 15.079 18.921 15.079C18.7666 15.079 18.6124 15.0674 18.4598 15.0443C18.3111 15.0217 18.1608 15.0104 18.0104 15.0104C16.3536 15.0104 15.0104 16.3536 15.0104 18.0104C15.0104 19.2061 15.7204 20.2876 16.8176 20.7631Z" fill="none" />
-      <Path d="M11.6189 17.1683C11.6189 17.9967 10.9473 18.6683 10.1189 18.6683C9.2905 18.6683 8.6189 17.9967 8.6189 17.1683C8.6189 16.3399 9.2905 15.6683 10.1189 15.6683C10.9473 15.6683 11.6189 16.3399 11.6189 17.1683ZM8.1304 13.1904C8.1304 14.0188 7.4588 14.6904 6.6304 14.6904C5.8019 14.6904 5.1304 14.0188 5.1304 13.1904C5.1304 12.362 5.8019 11.6904 6.6304 11.6904C7.4588 11.6904 8.1304 12.362 8.1304 13.1904ZM9.6109 8.1109C9.6109 8.9393 8.9393 9.6109 8.1109 9.6109C7.2825 9.6109 6.6109 8.9393 6.6109 8.1109C6.6109 7.2825 7.2825 6.6109 8.1109 6.6109C8.9393 6.6109 9.6109 7.2825 9.6109 8.1109ZM14.6904 6.6304C14.6904 7.4588 14.0188 8.1304 13.1904 8.1304C12.362 8.1304 11.6904 7.4588 11.6904 6.6304C11.6904 5.8019 12.362 5.1304 13.1904 5.1304C14.0188 5.1304 14.6904 5.8019 14.6904 6.6304ZM18.6683 10.1189C18.6683 10.9473 17.9967 11.6189 17.1683 11.6189C16.3399 11.6189 15.6683 10.9473 15.6683 10.1189C15.6683 9.2905 16.3399 8.6189 17.1683 8.6189C17.9967 8.6189 18.6683 9.2905 18.6683 10.1189Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M16.8176 20.7631C15.3415 21.5745 13.6844 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12C22 13.7005 20.6215 15.079 18.921 15.079C18.7666 15.079 18.6124 15.0674 18.4598 15.0443C18.3111 15.0217 18.1608 15.0104 18.0104 15.0104C16.3536 15.0104 15.0104 16.3536 15.0104 18.0104C15.0104 19.2061 15.7204 20.2876 16.8176 20.7631Z" fill="none" />
+      <SvgPath d="M11.6189 17.1683C11.6189 17.9967 10.9473 18.6683 10.1189 18.6683C9.2905 18.6683 8.6189 17.9967 8.6189 17.1683C8.6189 16.3399 9.2905 15.6683 10.1189 15.6683C10.9473 15.6683 11.6189 16.3399 11.6189 17.1683ZM8.1304 13.1904C8.1304 14.0188 7.4588 14.6904 6.6304 14.6904C5.8019 14.6904 5.1304 14.0188 5.1304 13.1904C5.1304 12.362 5.8019 11.6904 6.6304 11.6904C7.4588 11.6904 8.1304 12.362 8.1304 13.1904ZM9.6109 8.1109C9.6109 8.9393 8.9393 9.6109 8.1109 9.6109C7.2825 9.6109 6.6109 8.9393 6.6109 8.1109C6.6109 7.2825 7.2825 6.6109 8.1109 6.6109C8.9393 6.6109 9.6109 7.2825 9.6109 8.1109ZM14.6904 6.6304C14.6904 7.4588 14.0188 8.1304 13.1904 8.1304C12.362 8.1304 11.6904 7.4588 11.6904 6.6304C11.6904 5.8019 12.362 5.1304 13.1904 5.1304C14.0188 5.1304 14.6904 5.8019 14.6904 6.6304ZM18.6683 10.1189C18.6683 10.9473 17.9967 11.6189 17.1683 11.6189C16.3399 11.6189 15.6683 10.9473 15.6683 10.1189C15.6683 9.2905 16.3399 8.6189 17.1683 8.6189C17.9967 8.6189 18.6683 9.2905 18.6683 10.1189Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5339,8 +5348,8 @@ export function Palette(props: IconProps) {
 export function PanelBottomCloseDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
-      <Path d="M8.7071 7.7071L12 11L15.2929 7.7071" />
+      <SvgPath d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
+      <SvgPath d="M8.7071 7.7071L12 11L15.2929 7.7071" />
     </Icon>
   )
 }
@@ -5348,7 +5357,7 @@ export function PanelBottomCloseDashed(props: IconProps) {
 export function PanelBottomClose(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15M8.7071 7.7071L12 11L15.2929 7.7071" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15M8.7071 7.7071L12 11L15.2929 7.7071" />
     </Icon>
   )
 }
@@ -5356,7 +5365,7 @@ export function PanelBottomClose(props: IconProps) {
 export function PanelBottomDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
+      <SvgPath d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
     </Icon>
   )
 }
@@ -5364,8 +5373,8 @@ export function PanelBottomDashed(props: IconProps) {
 export function PanelBottomOpenDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
-      <Path d="M8.7071 11.2929L12 8L15.2929 11.2929" />
+      <SvgPath d="M3 15L3 21L21 21L21 15L3 15ZM7 3L3 3L3 7M21 7L21 3L17 3M3 9L3 12M21 9L21 12M9.5 3L14.5 3" />
+      <SvgPath d="M8.7071 11.2929L12 8L15.2929 11.2929" />
     </Icon>
   )
 }
@@ -5373,7 +5382,7 @@ export function PanelBottomOpenDashed(props: IconProps) {
 export function PanelBottomOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15M8.7071 11.2929L12 8L15.2929 11.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15M8.7071 11.2929L12 8L15.2929 11.2929" />
     </Icon>
   )
 }
@@ -5381,7 +5390,7 @@ export function PanelBottomOpen(props: IconProps) {
 export function PanelBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 15L21 15" />
     </Icon>
   )
 }
@@ -5389,8 +5398,8 @@ export function PanelBottom(props: IconProps) {
 export function PanelLeftCloseDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
-      <Path d="M16.2929 8.7071L13 12L16.2929 15.2929" />
+      <SvgPath d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
+      <SvgPath d="M16.2929 8.7071L13 12L16.2929 15.2929" />
     </Icon>
   )
 }
@@ -5398,7 +5407,7 @@ export function PanelLeftCloseDashed(props: IconProps) {
 export function PanelLeftClose(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M16.2929 8.7071L13 12L16.2929 15.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M16.2929 8.7071L13 12L16.2929 15.2929" />
     </Icon>
   )
 }
@@ -5406,7 +5415,7 @@ export function PanelLeftClose(props: IconProps) {
 export function PanelLeftDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
+      <SvgPath d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
     </Icon>
   )
 }
@@ -5414,8 +5423,8 @@ export function PanelLeftDashed(props: IconProps) {
 export function PanelLeftOpenDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
-      <Path d="M12.7071 8.7071L16 12L12.7071 15.2929" />
+      <SvgPath d="M9 3L3 3L3 21L9 21L9 3ZM17 3L21 3L21 7M21 17L21 21L17 21M12 3L15 3M12 21L15 21M21 9.5L21 14.5" />
+      <SvgPath d="M12.7071 8.7071L16 12L12.7071 15.2929" />
     </Icon>
   )
 }
@@ -5423,7 +5432,7 @@ export function PanelLeftOpenDashed(props: IconProps) {
 export function PanelLeftOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M12.7071 8.7071L16 12L12.7071 15.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M12.7071 8.7071L16 12L12.7071 15.2929" />
     </Icon>
   )
 }
@@ -5431,7 +5440,7 @@ export function PanelLeftOpen(props: IconProps) {
 export function PanelLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21" />
     </Icon>
   )
 }
@@ -5439,8 +5448,8 @@ export function PanelLeft(props: IconProps) {
 export function PanelRightCloseDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
-      <Path d="M7.7071 8.7071L11 12L7.7071 15.2929" />
+      <SvgPath d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
+      <SvgPath d="M7.7071 8.7071L11 12L7.7071 15.2929" />
     </Icon>
   )
 }
@@ -5448,7 +5457,7 @@ export function PanelRightCloseDashed(props: IconProps) {
 export function PanelRightClose(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M7.7071 8.7071L11 12L7.7071 15.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M7.7071 8.7071L11 12L7.7071 15.2929" />
     </Icon>
   )
 }
@@ -5456,7 +5465,7 @@ export function PanelRightClose(props: IconProps) {
 export function PanelRightDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
+      <SvgPath d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
     </Icon>
   )
 }
@@ -5464,8 +5473,8 @@ export function PanelRightDashed(props: IconProps) {
 export function PanelRightOpenDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
-      <Path d="M11.2929 8.7071L8 12L11.2929 15.2929" />
+      <SvgPath d="M15 3L21 3L21 21L15 21L15 3ZM7 3L3 3L3 7M3 17L3 21L7 21M9 3L12 3M9 21L12 21M3 9.5L3 14.5" />
+      <SvgPath d="M11.2929 8.7071L8 12L11.2929 15.2929" />
     </Icon>
   )
 }
@@ -5473,7 +5482,7 @@ export function PanelRightOpenDashed(props: IconProps) {
 export function PanelRightOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M11.2929 8.7071L8 12L11.2929 15.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M11.2929 8.7071L8 12L11.2929 15.2929" />
     </Icon>
   )
 }
@@ -5481,7 +5490,7 @@ export function PanelRightOpen(props: IconProps) {
 export function PanelRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21" />
     </Icon>
   )
 }
@@ -5489,8 +5498,8 @@ export function PanelRight(props: IconProps) {
 export function PanelTopCloseDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
-      <Path d="M8.7071 16.2929L12 13L15.2929 16.2929" />
+      <SvgPath d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
+      <SvgPath d="M8.7071 16.2929L12 13L15.2929 16.2929" />
     </Icon>
   )
 }
@@ -5498,7 +5507,7 @@ export function PanelTopCloseDashed(props: IconProps) {
 export function PanelTopClose(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M8.7071 16.2929L12 13L15.2929 16.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M8.7071 16.2929L12 13L15.2929 16.2929" />
     </Icon>
   )
 }
@@ -5506,7 +5515,7 @@ export function PanelTopClose(props: IconProps) {
 export function PanelTopDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
+      <SvgPath d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
     </Icon>
   )
 }
@@ -5514,8 +5523,8 @@ export function PanelTopDashed(props: IconProps) {
 export function PanelTopOpenDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
-      <Path d="M8.7071 12.7071L12 16L15.2929 12.7071" />
+      <SvgPath d="M3 9L3 3L21 3L21 9L3 9ZM3 17L3 21L7 21M17 21L21 21L21 17M3 12L3 15M21 12L21 15M9.5 21L14.5 21" />
+      <SvgPath d="M8.7071 12.7071L12 16L15.2929 12.7071" />
     </Icon>
   )
 }
@@ -5523,7 +5532,7 @@ export function PanelTopOpenDashed(props: IconProps) {
 export function PanelTopOpen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M8.7071 12.7071L12 16L15.2929 12.7071" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M8.7071 12.7071L12 16L15.2929 12.7071" />
     </Icon>
   )
 }
@@ -5531,7 +5540,7 @@ export function PanelTopOpen(props: IconProps) {
 export function PanelTop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9" />
     </Icon>
   )
 }
@@ -5539,7 +5548,7 @@ export function PanelTop(props: IconProps) {
 export function PanelsLeftBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M9 15L21 15" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 3L9 21M9 15L21 15" />
     </Icon>
   )
 }
@@ -5547,7 +5556,7 @@ export function PanelsLeftBottom(props: IconProps) {
 export function PanelsRightBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M15 15L3 15" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM15 3L15 21M15 15L3 15" />
     </Icon>
   )
 }
@@ -5555,7 +5564,7 @@ export function PanelsRightBottom(props: IconProps) {
 export function PanelsTopLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M9 9L9 21" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M9 9L9 21" />
     </Icon>
   )
 }
@@ -5563,7 +5572,7 @@ export function PanelsTopLeft(props: IconProps) {
 export function PaperBag(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 21L3 3L4 3C4.5409 3 5.0673 3.1754 5.5 3.5C5.9327 3.8246 6.4591 4 7 4C7.5409 4 8.0673 3.8246 8.5 3.5C8.9327 3.1754 9.4591 3 10 3C10.5409 3 11.0673 3.1754 11.5 3.5C11.9327 3.8246 12.4591 4 13 4C13.5409 4 14.0673 3.8246 14.5 3.5C14.9327 3.1754 15.4591 3 16 3L17 3L21 21L3 21ZM17 3L17 21M7 8L13 8" />
+      <SvgPath d="M3 21L3 3L4 3C4.5409 3 5.0673 3.1754 5.5 3.5C5.9327 3.8246 6.4591 4 7 4C7.5409 4 8.0673 3.8246 8.5 3.5C8.9327 3.1754 9.4591 3 10 3C10.5409 3 11.0673 3.1754 11.5 3.5C11.9327 3.8246 12.4591 4 13 4C13.5409 4 14.0673 3.8246 14.5 3.5C14.9327 3.1754 15.4591 3 16 3L17 3L21 21L3 21ZM17 3L17 21M7 8L13 8" />
     </Icon>
   )
 }
@@ -5571,7 +5580,7 @@ export function PaperBag(props: IconProps) {
 export function Paperclip(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.9645 6.5607L8.0126 14.5125C7.3292 15.1959 7.3292 16.304 8.0126 16.9874C8.696 17.6708 9.8041 17.6708 10.4875 16.9874L18.5 8.9749C19.8668 7.608 19.8668 5.392 18.5 4.0251C17.1332 2.6583 14.9171 2.6583 13.5503 4.0251L5.5377 12.0377C3.4875 14.0879 3.4874 17.4119 5.5377 19.4623C7.5881 21.5126 10.9121 21.5125 12.9623 19.4623L20.2929 12.1317" />
+      <SvgPath d="M15.9645 6.5607L8.0126 14.5125C7.3292 15.1959 7.3292 16.304 8.0126 16.9874C8.696 17.6708 9.8041 17.6708 10.4875 16.9874L18.5 8.9749C19.8668 7.608 19.8668 5.392 18.5 4.0251C17.1332 2.6583 14.9171 2.6583 13.5503 4.0251L5.5377 12.0377C3.4875 14.0879 3.4874 17.4119 5.5377 19.4623C7.5881 21.5126 10.9121 21.5125 12.9623 19.4623L20.2929 12.1317" />
     </Icon>
   )
 }
@@ -5579,7 +5588,7 @@ export function Paperclip(props: IconProps) {
 export function Parasol(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 14C2 11.5 3.75 9.25 5.875 7.25C8 5.25 10.5 3.5 12 2C13.5 3.5 16 5.25 18.125 7.25C20.25 9.25 22 11.5 22 14C20.75 12 18.25 12 17 14C15.75 12 13.25 12 12 14C10.75 12 8.25 12 7 14C5.75 12 3.25 12 2 14ZM12 14L12 23" />
+      <SvgPath d="M2 14C2 11.5 3.75 9.25 5.875 7.25C8 5.25 10.5 3.5 12 2C13.5 3.5 16 5.25 18.125 7.25C20.25 9.25 22 11.5 22 14C20.75 12 18.25 12 17 14C15.75 12 13.25 12 12 14C10.75 12 8.25 12 7 14C5.75 12 3.25 12 2 14ZM12 14L12 23" />
     </Icon>
   )
 }
@@ -5587,7 +5596,7 @@ export function Parasol(props: IconProps) {
 export function Pause(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 4L9 4L9 20L5 20L5 4ZM15 4L19 4L19 20L15 20L15 4Z" />
+      <SvgPath d="M5 4L9 4L9 20L5 20L5 4ZM15 4L19 4L19 20L15 20L15 4Z" />
     </Icon>
   )
 }
@@ -5595,7 +5604,7 @@ export function Pause(props: IconProps) {
 export function PenLine(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362M12.1111 22L23 22" fill="none" />
+      <SvgPath d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362M12.1111 22L23 22" fill="none" />
     </Icon>
   )
 }
@@ -5603,7 +5612,7 @@ export function PenLine(props: IconProps) {
 export function PenOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.357 14.357L9.8567 18.8573L2 22L5.1427 14.1433L9.643 9.643M16.1248 12.5893L21.0237 7.6904C21.6488 7.0652 22 6.2174 22 5.3333C22 4.4493 21.6488 3.6014 21.0237 2.9763C20.3986 2.3512 19.5507 2 18.6667 2C17.7826 2 16.9348 2.3512 16.3096 2.9763L11.4107 7.8752M15.0638 4.2222L19.7778 8.9362M1.7071 1.7071L22.2929 22.2929" fill="none" />
+      <SvgPath d="M14.357 14.357L9.8567 18.8573L2 22L5.1427 14.1433L9.643 9.643M16.1248 12.5893L21.0237 7.6904C21.6488 7.0652 22 6.2174 22 5.3333C22 4.4493 21.6488 3.6014 21.0237 2.9763C20.3986 2.3512 19.5507 2 18.6667 2C17.7826 2 16.9348 2.3512 16.3096 2.9763L11.4107 7.8752M15.0638 4.2222L19.7778 8.9362M1.7071 1.7071L22.2929 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -5611,8 +5620,8 @@ export function PenOff(props: IconProps) {
 export function PenSparkles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362" fill="none" />
-      <Path d="M5 1L5 9M1 5L9 5M19 16L19 22M16 19L22 19" />
+      <SvgPath d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362" fill="none" />
+      <SvgPath d="M5 1L5 9M1 5L9 5M19 16L19 22M16 19L22 19" />
     </Icon>
   )
 }
@@ -5620,7 +5629,7 @@ export function PenSparkles(props: IconProps) {
 export function Pen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362" fill="none" />
+      <SvgPath d="M21.0237 7.6904L9.8567 18.8573L2 22L5.1427 14.1433L16.3096 2.9763C16.9348 2.3512 17.7826 2 18.6667 2C19.5507 2 20.3986 2.3512 21.0237 2.9763C21.6488 3.6014 22 4.4493 22 5.3333C22 6.2174 21.6488 7.0652 21.0237 7.6904ZM15.0638 4.2222L19.7778 8.9362" fill="none" />
     </Icon>
   )
 }
@@ -5628,7 +5637,7 @@ export function Pen(props: IconProps) {
 export function PencilRuler(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.6665 20.0629L4.2218 15.5355L14.7577 4.9996C15.3203 4.437 16.0834 4.121 16.879 4.121C17.6747 4.121 18.4377 4.437 19.0004 4.9996C19.563 5.5623 19.879 6.3253 19.879 7.121C19.879 7.9166 19.563 8.6797 19.0004 9.2423L8.4645 19.7782L3.9371 21.3335C3.8326 21.3694 3.7228 21.3878 3.6122 21.3878C3.0599 21.3878 2.6122 20.9401 2.6122 20.3878C2.6122 20.2772 2.6306 20.1674 2.6665 20.0629ZM4.2218 15.5355L8.4645 19.7782M12.7071 7.0503L7.0503 12.7071L1.9996 7.6564L7.6565 1.9996ZM16.9497 11.2929L22.0004 16.3436L16.3436 22.0004L11.2929 16.9497ZM9.5251 3.8683L6.6967 6.6967M20.1317 14.4749L17.3033 17.3033" />
+      <SvgPath d="M2.6665 20.0629L4.2218 15.5355L14.7577 4.9996C15.3203 4.437 16.0834 4.121 16.879 4.121C17.6747 4.121 18.4377 4.437 19.0004 4.9996C19.563 5.5623 19.879 6.3253 19.879 7.121C19.879 7.9166 19.563 8.6797 19.0004 9.2423L8.4645 19.7782L3.9371 21.3335C3.8326 21.3694 3.7228 21.3878 3.6122 21.3878C3.0599 21.3878 2.6122 20.9401 2.6122 20.3878C2.6122 20.2772 2.6306 20.1674 2.6665 20.0629ZM4.2218 15.5355L8.4645 19.7782M12.7071 7.0503L7.0503 12.7071L1.9996 7.6564L7.6565 1.9996ZM16.9497 11.2929L22.0004 16.3436L16.3436 22.0004L11.2929 16.9497ZM9.5251 3.8683L6.6967 6.6967M20.1317 14.4749L17.3033 17.3033" />
     </Icon>
   )
 }
@@ -5636,7 +5645,7 @@ export function PencilRuler(props: IconProps) {
 export function Percent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15ZM3.7071 20.2929L20.2929 3.7071" />
+      <SvgPath d="M6 3C7.6569 3 9 4.3431 9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3ZM18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15ZM3.7071 20.2929L20.2929 3.7071" />
     </Icon>
   )
 }
@@ -5644,7 +5653,7 @@ export function Percent(props: IconProps) {
 export function PhoneCall(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM13.3294 4.074L14.0706 4.2726C16.8313 5.0123 18.9877 7.1687 19.7274 9.9294L19.926 10.6706M12.2942 7.9377L13.0353 8.1363C14.4156 8.5062 15.4938 9.5844 15.8637 10.9647L16.0623 11.7058" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM13.3294 4.074L14.0706 4.2726C16.8313 5.0123 18.9877 7.1687 19.7274 9.9294L19.926 10.6706M12.2942 7.9377L13.0353 8.1363C14.4156 8.5062 15.4938 9.5844 15.8637 10.9647L16.0623 11.7058" />
     </Icon>
   )
 }
@@ -5652,7 +5661,7 @@ export function PhoneCall(props: IconProps) {
 export function PhoneForwarded(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM15 5L22 5M18.7071 1.7071L22 5L18.7071 8.2929" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM15 5L22 5M18.7071 1.7071L22 5L18.7071 8.2929" />
     </Icon>
   )
 }
@@ -5660,7 +5669,7 @@ export function PhoneForwarded(props: IconProps) {
 export function PhoneIncoming(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM16.1464 7.8536L21.2929 2.7071M16 1L16 8L23 8" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM16.1464 7.8536L21.2929 2.7071M16 1L16 8L23 8" />
     </Icon>
   )
 }
@@ -5668,7 +5677,7 @@ export function PhoneIncoming(props: IconProps) {
 export function PhoneMissed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM22.2929 1.7071L15.7071 8.2929M15.7071 1.7071L22.2929 8.2929" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM22.2929 1.7071L15.7071 8.2929M15.7071 1.7071L22.2929 8.2929" />
     </Icon>
   )
 }
@@ -5676,7 +5685,7 @@ export function PhoneMissed(props: IconProps) {
 export function PhoneOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5.3288 14.4286C3.1634 11.3823 2 7.7375 2 4L2 2L9 2L9 8L7.0953 9.4285C7.4054 10.1656 7.778 10.8748 8.2091 11.5482M10.1005 13.8995C11.3822 15.1812 12.9007 16.2018 14.5715 16.9047L16 15L22 15L22 22L20 22C15.2261 22 10.6477 20.1036 7.2721 16.7279M22.2929 1.7071L1.7071 22.2929" fill="none" />
+      <SvgPath d="M5.3288 14.4286C3.1634 11.3823 2 7.7375 2 4L2 2L9 2L9 8L7.0953 9.4285C7.4054 10.1656 7.778 10.8748 8.2091 11.5482M10.1005 13.8995C11.3822 15.1812 12.9007 16.2018 14.5715 16.9047L16 15L22 15L22 22L20 22C15.2261 22 10.6477 20.1036 7.2721 16.7279M22.2929 1.7071L1.7071 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -5684,7 +5693,7 @@ export function PhoneOff(props: IconProps) {
 export function PhoneOutgoing(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM21.8536 2.1464L16.7071 7.2929M22 9L22 2L15 2" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4ZM21.8536 2.1464L16.7071 7.2929M22 9L22 2L15 2" />
     </Icon>
   )
 }
@@ -5692,7 +5701,7 @@ export function PhoneOutgoing(props: IconProps) {
 export function Phone(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4Z" fill="none" />
+      <SvgPath d="M2 4L2 2L9 2L9 8L7.0953 9.4285C8.5144 12.802 11.198 15.4856 14.5715 16.9047L16 15L22 15L22 22L20 22C10.0589 22 2 13.9411 2 4Z" fill="none" />
     </Icon>
   )
 }
@@ -5700,7 +5709,7 @@ export function Phone(props: IconProps) {
 export function PictureInPicture(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 9L22 4L2 4L2 20L9 20M12 12L22 12L22 20L12 20L12 12Z" />
+      <SvgPath d="M22 9L22 4L2 4L2 20L9 20M12 12L22 12L22 20L12 20L12 12Z" />
     </Icon>
   )
 }
@@ -5708,8 +5717,8 @@ export function PictureInPicture(props: IconProps) {
 export function Pig(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.0749 11.9925C4.0749 15.1509 5.0194 17.021 6.8228 18.0115L7.1038 18.166L7.1038 21L9.7355 21L11.6223 18.1555L12.5656 18.1555L14.4526 21L17.0346 21L17.0346 17.3785L17.4468 17.28C20.0664 16.6559 20.09 14.9685 20.0359 13.914L20.0102 13.4148L22 13.4148L22 10.5704L20.0301 10.5704L20.0264 10.0431C20.0161 8.5618 19.5959 7.4312 18.5591 6.9149L18.2263 6.7493L18.1968 3L17.7263 3.001C15.7712 3.1278 14.6975 3.9882 14.2076 4.6549L13.9724 4.9747L13.6162 4.9013C8.9271 3.9337 5.942 6.152 4.5466 9.5102C4.2408 10.2462 4.0749 11.0754 4.0749 11.9925ZM4.0749 11.9925C3.1315 11.6765 1.4333 10.3807 2.1881 7.7258L2.3943 6.9986" fill="none" />
-      <Path d="M17 9.5C17 10.0523 16.5523 10.5 16 10.5C15.4477 10.5 15 10.0523 15 9.5C15 8.9477 15.4477 8.5 16 8.5C16.5523 8.5 17 8.9477 17 9.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4.0749 11.9925C4.0749 15.1509 5.0194 17.021 6.8228 18.0115L7.1038 18.166L7.1038 21L9.7355 21L11.6223 18.1555L12.5656 18.1555L14.4526 21L17.0346 21L17.0346 17.3785L17.4468 17.28C20.0664 16.6559 20.09 14.9685 20.0359 13.914L20.0102 13.4148L22 13.4148L22 10.5704L20.0301 10.5704L20.0264 10.0431C20.0161 8.5618 19.5959 7.4312 18.5591 6.9149L18.2263 6.7493L18.1968 3L17.7263 3.001C15.7712 3.1278 14.6975 3.9882 14.2076 4.6549L13.9724 4.9747L13.6162 4.9013C8.9271 3.9337 5.942 6.152 4.5466 9.5102C4.2408 10.2462 4.0749 11.0754 4.0749 11.9925ZM4.0749 11.9925C3.1315 11.6765 1.4333 10.3807 2.1881 7.7258L2.3943 6.9986" fill="none" />
+      <SvgPath d="M17 9.5C17 10.0523 16.5523 10.5 16 10.5C15.4477 10.5 15 10.0523 15 9.5C15 8.9477 15.4477 8.5 16 8.5C16.5523 8.5 17 8.9477 17 9.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5717,8 +5726,8 @@ export function Pig(props: IconProps) {
 export function PiggyBank(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13.074 6C13.4604 5.3259 14.6805 4.1477 17.2892 4.0127L17.7895 3.9868L17.7895 4.5L17.7895 7.4175L17.7895 7.7645L18.1392 7.9171C19.311 8.4281 19.7857 9.5613 19.7979 11.0491L19.8021 11.579L20.314 11.579L21.5 11.579L22 11.579L22 12.079L22 13.9211L22 14.4211L21.5 14.4211L20.2839 14.4211L19.7799 14.4211L19.8085 14.9198C19.8692 15.978 19.8425 17.6743 16.8811 18.2913L16.4598 18.3791L16.4598 18.795L16.4598 21.5L16.4598 22L15.9598 22L13.8308 22L13.5789 22L13.429 21.7976L11.6236 19.3603L11.4737 19.1579L11.2218 19.1579L10.6729 19.1579L10.421 19.1579L10.2711 19.3603L8.4657 21.7976L8.3158 22L8.0639 22L5.8795 22L5.3795 22L5.3795 21.5L5.3795 19.4879L5.3795 19.1674L5.0791 19.0205C3.0584 18.0324 2 16.1626 2 13C2 12.0836 2.1851 11.2551 2.5263 10.5197C2.7763 9.9809 3.072 9.4716 3.4139 9M9 4C9 5.1046 8.1046 6 7 6C5.8954 6 5 5.1046 5 4C5 2.8954 5.8954 2 7 2C8.1046 2 9 2.8954 9 4Z" fill="none" />
-      <Path d="M17 10.5C17 11.0523 16.5523 11.5 16 11.5C15.4477 11.5 15 11.0523 15 10.5C15 9.9477 15.4477 9.5 16 9.5C16.5523 9.5 17 9.9477 17 10.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M13.074 6C13.4604 5.3259 14.6805 4.1477 17.2892 4.0127L17.7895 3.9868L17.7895 4.5L17.7895 7.4175L17.7895 7.7645L18.1392 7.9171C19.311 8.4281 19.7857 9.5613 19.7979 11.0491L19.8021 11.579L20.314 11.579L21.5 11.579L22 11.579L22 12.079L22 13.9211L22 14.4211L21.5 14.4211L20.2839 14.4211L19.7799 14.4211L19.8085 14.9198C19.8692 15.978 19.8425 17.6743 16.8811 18.2913L16.4598 18.3791L16.4598 18.795L16.4598 21.5L16.4598 22L15.9598 22L13.8308 22L13.5789 22L13.429 21.7976L11.6236 19.3603L11.4737 19.1579L11.2218 19.1579L10.6729 19.1579L10.421 19.1579L10.2711 19.3603L8.4657 21.7976L8.3158 22L8.0639 22L5.8795 22L5.3795 22L5.3795 21.5L5.3795 19.4879L5.3795 19.1674L5.0791 19.0205C3.0584 18.0324 2 16.1626 2 13C2 12.0836 2.1851 11.2551 2.5263 10.5197C2.7763 9.9809 3.072 9.4716 3.4139 9M9 4C9 5.1046 8.1046 6 7 6C5.8954 6 5 5.1046 5 4C5 2.8954 5.8954 2 7 2C8.1046 2 9 2.8954 9 4Z" fill="none" />
+      <SvgPath d="M17 10.5C17 11.0523 16.5523 11.5 16 11.5C15.4477 11.5 15 11.0523 15 10.5C15 9.9477 15.4477 9.5 16 9.5C16.5523 9.5 17 9.9477 17 10.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5726,7 +5735,7 @@ export function PiggyBank(props: IconProps) {
 export function PlaneLanding(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.155 11.6855L2.6599 7.3552L4.0754 7.4504L5.8214 10.1889L10.2889 10.6916L9.0027 4L11.9045 4.2652L15.4127 11.2656L18.1491 11.799C20.1301 12.1833 21.5109 14.0093 21.3231 15.9956L5.7735 14.25C4.4163 14.0972 3.329 13.0323 3.155 11.6855ZM1 20L23 20" fill="none" />
+      <SvgPath d="M3.155 11.6855L2.6599 7.3552L4.0754 7.4504L5.8214 10.1889L10.2889 10.6916L9.0027 4L11.9045 4.2652L15.4127 11.2656L18.1491 11.799C20.1301 12.1833 21.5109 14.0093 21.3231 15.9956L5.7735 14.25C4.4163 14.0972 3.329 13.0323 3.155 11.6855ZM1 20L23 20" fill="none" />
     </Icon>
   )
 }
@@ -5734,7 +5743,7 @@ export function PlaneLanding(props: IconProps) {
 export function PlaneTakeoff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.7587 15.0745L2 12.1466L3.0186 11.1053L6.0393 12.2978L9.9517 10.0831L4.8801 5.4079L7.3675 4L14.4372 7.5409L16.9659 6.3669C18.7954 5.5155 20.985 6.1836 21.9986 7.9022L8.3839 15.6142C7.1953 16.287 5.69 16.0629 4.7587 15.0745ZM1 20L23 20" fill="none" />
+      <SvgPath d="M4.7587 15.0745L2 12.1466L3.0186 11.1053L6.0393 12.2978L9.9517 10.0831L4.8801 5.4079L7.3675 4L14.4372 7.5409L16.9659 6.3669C18.7954 5.5155 20.985 6.1836 21.9986 7.9022L8.3839 15.6142C7.1953 16.287 5.69 16.0629 4.7587 15.0745ZM1 20L23 20" fill="none" />
     </Icon>
   )
 }
@@ -5742,7 +5751,7 @@ export function PlaneTakeoff(props: IconProps) {
 export function Plane(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.3777 6.8957L3.7367 5.2027L2.002 7.2022L8.4518 12.5M12.3777 6.8957M12.3777 6.8957L16.7849 3.6942C18.3007 2.5931 20.1262 2.0001 21.9998 2.0001C22 3.8248 21.3976 5.5984 20.2864 7.0458L16.9641 11.3727M12.3777 6.8957L6 16L2.631 16.6981L7.43 21.3248L8 18L16.9641 11.3727M11.5 15.5L17.1622 21.9981L19.2093 20.2862L16.9641 11.3727" fill="none" />
+      <SvgPath d="M12.3777 6.8957L3.7367 5.2027L2.002 7.2022L8.4518 12.5M12.3777 6.8957M12.3777 6.8957L16.7849 3.6942C18.3007 2.5931 20.1262 2.0001 21.9998 2.0001C22 3.8248 21.3976 5.5984 20.2864 7.0458L16.9641 11.3727M12.3777 6.8957L6 16L2.631 16.6981L7.43 21.3248L8 18L16.9641 11.3727M11.5 15.5L17.1622 21.9981L19.2093 20.2862L16.9641 11.3727" fill="none" />
     </Icon>
   )
 }
@@ -5750,7 +5759,7 @@ export function Plane(props: IconProps) {
 export function Play(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 4L18 12L6 20L6 4Z" />
+      <SvgPath d="M6 4L18 12L6 20L6 4Z" />
     </Icon>
   )
 }
@@ -5758,7 +5767,7 @@ export function Play(props: IconProps) {
 export function Plug(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 7L19 7L19 11C19 14.866 15.866 18 12 18C8.134 18 5 14.866 5 11L5 7ZM9 1L9 7M15 1L15 7M12 18L12 23" />
+      <SvgPath d="M5 7L19 7L19 11C19 14.866 15.866 18 12 18C8.134 18 5 14.866 5 11L5 7ZM9 1L9 7M15 1L15 7M12 18L12 23" />
     </Icon>
   )
 }
@@ -5766,7 +5775,7 @@ export function Plug(props: IconProps) {
 export function Plus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 12L20 12M11.995 20.005L11.995 4.005" />
+      <SvgPath d="M4 12L20 12M11.995 20.005L11.995 4.005" />
     </Icon>
   )
 }
@@ -5774,8 +5783,8 @@ export function Plus(props: IconProps) {
 export function Podcast(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.9641 13.866L15.4641 13C15.8152 12.3919 16 11.7021 16 11C16 8.7909 14.2091 7 12 7C9.7909 7 8 8.7909 8 11C8 11.7021 8.1848 12.3919 8.5359 13L9.0359 13.866M18.4282 15.866L18.9282 15C19.6303 13.7838 20 12.4043 20 11C20 6.5817 16.4183 3 12 3C7.5817 3 4 6.5817 4 11C4 12.4043 4.3697 13.7838 5.0718 15L5.5718 15.866M12 14L12 22" />
-      <Path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M14.9641 13.866L15.4641 13C15.8152 12.3919 16 11.7021 16 11C16 8.7909 14.2091 7 12 7C9.7909 7 8 8.7909 8 11C8 11.7021 8.1848 12.3919 8.5359 13L9.0359 13.866M18.4282 15.866L18.9282 15C19.6303 13.7838 20 12.4043 20 11C20 6.5817 16.4183 3 12 3C7.5817 3 4 6.5817 4 11C4 12.4043 4.3697 13.7838 5.0718 15L5.5718 15.866M12 14L12 22" />
+      <SvgPath d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5783,8 +5792,8 @@ export function Podcast(props: IconProps) {
 export function Podium1(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
-      <Path d="M15.7805 3.5968L17.5 2L17.5 8" />
+      <SvgPath d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
+      <SvgPath d="M15.7805 3.5968L17.5 2L17.5 8" />
     </Icon>
   )
 }
@@ -5792,8 +5801,8 @@ export function Podium1(props: IconProps) {
 export function Podium2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
-      <Path d="M15.3 4.4L15.3 3.4C15.3 2.3 16.116 2 17 2C17.884 2 18.7 2.5 18.7 3.5C18.7 4.9 15.3 6.3 15.3 7L19.7 7" />
+      <SvgPath d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
+      <SvgPath d="M15.3 4.4L15.3 3.4C15.3 2.3 16.116 2 17 2C17.884 2 18.7 2.5 18.7 3.5C18.7 4.9 15.3 6.3 15.3 7L19.7 7" />
     </Icon>
   )
 }
@@ -5801,8 +5810,8 @@ export function Podium2(props: IconProps) {
 export function Podium3(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
-      <Path d="M14.3 2L18.7 2L16.728 4.334C18.7 4.334 18.7 4.9706 18.7 5.9254C18.7 7.4107 15.606 7.1985 15.3 6.2437L14.9948 5.2914" />
+      <SvgPath d="M1 22L23 22M4 22L4 18.5L9 18.5L9 15L14 15L14 11.5L20 11.5L20 22L4 22Z" strokeLinejoin="miter" />
+      <SvgPath d="M14.3 2L18.7 2L16.728 4.334C18.7 4.334 18.7 4.9706 18.7 5.9254C18.7 7.4107 15.606 7.1985 15.3 6.2437L14.9948 5.2914" />
     </Icon>
   )
 }
@@ -5810,7 +5819,7 @@ export function Podium3(props: IconProps) {
 export function Podium(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 17.25L23 17.25M4 17.25L4 13.75L9 13.75L9 10.25L14 10.25L14 6.75L20 6.75L20 17.25L4 17.25Z" strokeLinejoin="miter" />
+      <SvgPath d="M1 17.25L23 17.25M4 17.25L4 13.75L9 13.75L9 10.25L14 10.25L14 6.75L20 6.75L20 17.25L4 17.25Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -5818,7 +5827,7 @@ export function Podium(props: IconProps) {
 export function PoundSterling(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 23L9 22L9 6C9 3.7909 10.7909 2 13 2C15.2091 2 17 3.7909 17 6C17 6.7021 16.8152 7.3919 16.4641 8L16.1754 8.5M5 15L6 15L15 15L16 15M3 22L4 22L20 22L21 22" fill="none" />
+      <SvgPath d="M9 23L9 22L9 6C9 3.7909 10.7909 2 13 2C15.2091 2 17 3.7909 17 6C17 6.7021 16.8152 7.3919 16.4641 8L16.1754 8.5M5 15L6 15L15 15L16 15M3 22L4 22L20 22L21 22" fill="none" />
     </Icon>
   )
 }
@@ -5826,7 +5835,7 @@ export function PoundSterling(props: IconProps) {
 export function PowerOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.0835 2.4348L16 2.8348C19.6443 4.4253 22 8.0238 22 12C22 13.2499 21.7657 14.4887 21.3092 15.6523L20.944 16.5832M19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22C6.4772 22 2 17.5228 2 12C2 9.3478 3.0536 6.8043 4.9289 4.9289M12 1L12 7.3431M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M15.0835 2.4348L16 2.8348C19.6443 4.4253 22 8.0238 22 12C22 13.2499 21.7657 14.4887 21.3092 15.6523L20.944 16.5832M19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22C6.4772 22 2 17.5228 2 12C2 9.3478 3.0536 6.8043 4.9289 4.9289M12 1L12 7.3431M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -5834,7 +5843,7 @@ export function PowerOff(props: IconProps) {
 export function Power(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.0886 4.0045L18.82 4.6865C20.8483 6.5779 22 9.2267 22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2267 3.1517 6.5779 5.18 4.6865L5.9114 4.0045M12 1L12 10.7563" />
+      <SvgPath d="M18.0886 4.0045L18.82 4.6865C20.8483 6.5779 22 9.2267 22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 9.2267 3.1517 6.5779 5.18 4.6865L5.9114 4.0045M12 1L12 10.7563" />
     </Icon>
   )
 }
@@ -5842,7 +5851,7 @@ export function Power(props: IconProps) {
 export function Printer(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 19L2 19L2 10L22 10L22 19L18 19M6 10L6 2L14 2L18 6L18 10M6 15L18 15L18 22L6 22L6 15Z" fill="none" />
+      <SvgPath d="M6 19L2 19L2 10L22 10L22 19L18 19M6 10L6 2L14 2L18 6L18 10M6 15L18 15L18 22L6 22L6 15Z" fill="none" />
     </Icon>
   )
 }
@@ -5850,8 +5859,8 @@ export function Printer(props: IconProps) {
 export function QrCode(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L8 3L8 8L3 8L3 3ZM16 3L21 3L21 8L16 8L16 3ZM16 16L21 16L21 21L16 21L16 16ZM12 6L12 12L18 12M12 22L12 16L6 16M9 12L2 12M3 15L3 22" fill="none" />
-      <Path d="M20 11L22 11L22 13L20 13L20 11ZM6 20L8 20L8 22L6 22L6 20ZM11 2L13 2L13 4L11 4L11 2Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L8 3L8 8L3 8L3 3ZM16 3L21 3L21 8L16 8L16 3ZM16 16L21 16L21 21L16 21L16 16ZM12 6L12 12L18 12M12 22L12 16L6 16M9 12L2 12M3 15L3 22" fill="none" />
+      <SvgPath d="M20 11L22 11L22 13L20 13L20 11ZM6 20L8 20L8 22L6 22L6 20ZM11 2L13 2L13 4L11 4L11 2Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5859,8 +5868,8 @@ export function QrCode(props: IconProps) {
 export function Question(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 10L8 9C8 6.7909 9.7909 5 12 5C14.2091 5 16 6.7909 16 9C16 10.6148 15.029 12.0712 13.5385 12.6923C12.6068 13.0805 12 13.9907 12 15L12 16" />
-      <Path d="M13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 10L8 9C8 6.7909 9.7909 5 12 5C14.2091 5 16 6.7909 16 9C16 10.6148 15.029 12.0712 13.5385 12.6923C12.6068 13.0805 12 13.9907 12 15L12 16" />
+      <SvgPath d="M13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5868,7 +5877,7 @@ export function Question(props: IconProps) {
 export function Queue(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 12L2 12L2 4ZM1 16L23 16M1 20L18 20" />
+      <SvgPath d="M2 4L22 4L22 12L2 12L2 4ZM1 16L23 16M1 20L18 20" />
     </Icon>
   )
 }
@@ -5876,7 +5885,7 @@ export function Queue(props: IconProps) {
 export function QuoteEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 9.5C10 12.9659 8.2018 16.1837 5.25 18C5.9991 17.3614 6.4306 16.4265 6.4306 15.4421C6.4306 14.2412 5.79 13.1315 4.75 12.5311C3.6671 11.9059 3 10.7504 3 9.5C3 7.567 4.567 6 6.5 6C8.433 6 10 7.567 10 9.5ZM21 9.5C21 12.9659 19.2018 16.1837 16.25 18C16.9991 17.3614 17.4306 16.4265 17.4306 15.4421C17.4306 14.2412 16.79 13.1315 15.75 12.5311C14.6671 11.9059 14 10.7504 14 9.5C14 7.567 15.567 6 17.5 6C19.433 6 21 7.567 21 9.5Z" fill="none" />
+      <SvgPath d="M10 9.5C10 12.9659 8.2018 16.1837 5.25 18C5.9991 17.3614 6.4306 16.4265 6.4306 15.4421C6.4306 14.2412 5.79 13.1315 4.75 12.5311C3.6671 11.9059 3 10.7504 3 9.5C3 7.567 4.567 6 6.5 6C8.433 6 10 7.567 10 9.5ZM21 9.5C21 12.9659 19.2018 16.1837 16.25 18C16.9991 17.3614 17.4306 16.4265 17.4306 15.4421C17.4306 14.2412 16.79 13.1315 15.75 12.5311C14.6671 11.9059 14 10.7504 14 9.5C14 7.567 15.567 6 17.5 6C19.433 6 21 7.567 21 9.5Z" fill="none" />
     </Icon>
   )
 }
@@ -5884,7 +5893,7 @@ export function QuoteEnd(props: IconProps) {
 export function QuoteSingleEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.5 9.5C15.5 12.9659 13.7018 16.1837 10.75 18C11.4991 17.3614 11.9306 16.4265 11.9306 15.4421C11.9306 14.2412 11.29 13.1315 10.25 12.5311C9.1671 11.9059 8.5 10.7504 8.5 9.5C8.5 7.567 10.067 6 12 6C13.933 6 15.5 7.567 15.5 9.5Z" fill="none" />
+      <SvgPath d="M15.5 9.5C15.5 12.9659 13.7018 16.1837 10.75 18C11.4991 17.3614 11.9306 16.4265 11.9306 15.4421C11.9306 14.2412 11.29 13.1315 10.25 12.5311C9.1671 11.9059 8.5 10.7504 8.5 9.5C8.5 7.567 10.067 6 12 6C13.933 6 15.5 7.567 15.5 9.5Z" fill="none" />
     </Icon>
   )
 }
@@ -5892,7 +5901,7 @@ export function QuoteSingleEnd(props: IconProps) {
 export function QuoteSingle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.5 14.5C8.5 11.0341 10.2982 7.8163 13.25 6C12.5009 6.6386 12.0694 7.5735 12.0694 8.5579C12.0694 9.7588 12.71 10.8685 13.75 11.4689C14.8329 12.0941 15.5 13.2496 15.5 14.5C15.5 16.433 13.933 18 12 18C10.067 18 8.5 16.433 8.5 14.5Z" fill="none" />
+      <SvgPath d="M8.5 14.5C8.5 11.0341 10.2982 7.8163 13.25 6C12.5009 6.6386 12.0694 7.5735 12.0694 8.5579C12.0694 9.7588 12.71 10.8685 13.75 11.4689C14.8329 12.0941 15.5 13.2496 15.5 14.5C15.5 16.433 13.933 18 12 18C10.067 18 8.5 16.433 8.5 14.5Z" fill="none" />
     </Icon>
   )
 }
@@ -5900,7 +5909,7 @@ export function QuoteSingle(props: IconProps) {
 export function Quote(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 14.5C14 11.0341 15.7982 7.8163 18.75 6C18.0009 6.6386 17.5694 7.5735 17.5694 8.5579C17.5694 9.7588 18.21 10.8685 19.25 11.4689C20.3329 12.0941 21 13.2496 21 14.5C21 16.433 19.433 18 17.5 18C15.567 18 14 16.433 14 14.5ZM3 14.5C3 11.0341 4.7982 7.8163 7.75 6C7.0009 6.6386 6.5694 7.5735 6.5694 8.5579C6.5694 9.7588 7.21 10.8685 8.25 11.4689C9.3329 12.0941 10 13.2496 10 14.5C10 16.433 8.433 18 6.5 18C4.567 18 3 16.433 3 14.5Z" fill="none" />
+      <SvgPath d="M14 14.5C14 11.0341 15.7982 7.8163 18.75 6C18.0009 6.6386 17.5694 7.5735 17.5694 8.5579C17.5694 9.7588 18.21 10.8685 19.25 11.4689C20.3329 12.0941 21 13.2496 21 14.5C21 16.433 19.433 18 17.5 18C15.567 18 14 16.433 14 14.5ZM3 14.5C3 11.0341 4.7982 7.8163 7.75 6C7.0009 6.6386 6.5694 7.5735 6.5694 8.5579C6.5694 9.7588 7.21 10.8685 8.25 11.4689C9.3329 12.0941 10 13.2496 10 14.5C10 16.433 8.433 18 6.5 18C4.567 18 3 16.433 3 14.5Z" fill="none" />
     </Icon>
   )
 }
@@ -5908,8 +5917,8 @@ export function Quote(props: IconProps) {
 export function Radar(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21.0729 7.7396L21.3207 8.3773C21.7697 9.5324 22 10.7608 22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C14.6522 2 17.1957 3.0536 19.0711 4.9289L12 12M16.2426 7.7574C15.1174 6.6321 13.5913 6 12 6C8.6863 6 6 8.6863 6 12C6 15.3137 8.6863 18 12 18C15.2313 18 17.8823 15.441 17.9963 12.2117L18.0303 11.247" fill="none" />
-      <Path d="M13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M21.0729 7.7396L21.3207 8.3773C21.7697 9.5324 22 10.7608 22 12C22 17.5228 17.5228 22 12 22C6.4772 22 2 17.5228 2 12C2 6.4772 6.4772 2 12 2C14.6522 2 17.1957 3.0536 19.0711 4.9289L12 12M16.2426 7.7574C15.1174 6.6321 13.5913 6 12 6C8.6863 6 6 8.6863 6 12C6 15.3137 8.6863 18 12 18C15.2313 18 17.8823 15.441 17.9963 12.2117L18.0303 11.247" fill="none" />
+      <SvgPath d="M13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -5917,7 +5926,7 @@ export function Radar(props: IconProps) {
 export function Radio(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 8L22 8L22 20L2 20L2 8ZM6 8L16.1788 3.9285M10 14C10 15.1046 9.1046 16 8 16C6.8954 16 6 15.1046 6 14C6 12.8954 6.8954 12 8 12C9.1046 12 10 12.8954 10 14ZM13 12L19 12M13 16L19 16" />
+      <SvgPath d="M2 8L22 8L22 20L2 20L2 8ZM6 8L16.1788 3.9285M10 14C10 15.1046 9.1046 16 8 16C6.8954 16 6 15.1046 6 14C6 12.8954 6.8954 12 8 12C9.1046 12 10 12.8954 10 14ZM13 12L19 12M13 16L19 16" />
     </Icon>
   )
 }
@@ -5925,7 +5934,7 @@ export function Radio(props: IconProps) {
 export function Receipt(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 9L13 9M7 13L17 13M4 2L20 2L20 20L16 22L12 20L8 22L4 20L4 2Z" />
+      <SvgPath d="M7 9L13 9M7 13L17 13M4 2L20 2L20 20L16 22L12 20L8 22L4 20L4 2Z" />
     </Icon>
   )
 }
@@ -5933,7 +5942,7 @@ export function Receipt(props: IconProps) {
 export function Record(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 12C20 16.4183 16.4183 20 12 20C7.5817 20 4 16.4183 4 12C4 7.5817 7.5817 4 12 4C16.4183 4 20 7.5817 20 12Z" />
+      <SvgPath d="M20 12C20 16.4183 16.4183 20 12 20C7.5817 20 4 16.4183 4 12C4 7.5817 7.5817 4 12 4C16.4183 4 20 7.5817 20 12Z" />
     </Icon>
   )
 }
@@ -5941,7 +5950,7 @@ export function Record(props: IconProps) {
 export function Recycle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.1906 7.9945L9.7855 3.5C10.9402 1.5 13.827 1.5 14.9817 3.5L17.2879 7.4945M13.0674 6.3636L17.2879 7.4945L18.4187 3.274M18.9992 10.4586L21.5941 14.953C22.7488 16.953 21.3054 19.453 18.996 19.453L14.3836 19.453M17.2235 16.6131L14.3836 19.453L17.2235 22.2929M11.3836 19.453L5.7712 19.453C3.4618 19.453 2.0184 16.953 3.1731 14.953L5.4793 10.9586M6.6102 15.179L5.4793 10.9586L1.2588 12.0894" />
+      <SvgPath d="M7.1906 7.9945L9.7855 3.5C10.9402 1.5 13.827 1.5 14.9817 3.5L17.2879 7.4945M13.0674 6.3636L17.2879 7.4945L18.4187 3.274M18.9992 10.4586L21.5941 14.953C22.7488 16.953 21.3054 19.453 18.996 19.453L14.3836 19.453M17.2235 16.6131L14.3836 19.453L17.2235 22.2929M11.3836 19.453L5.7712 19.453C3.4618 19.453 2.0184 16.953 3.1731 14.953L5.4793 10.9586M6.6102 15.179L5.4793 10.9586L1.2588 12.0894" />
     </Icon>
   )
 }
@@ -5949,7 +5958,7 @@ export function Recycle(props: IconProps) {
 export function RefreshCcw(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.5727 14.9172L20.7883 13.9407C20.929 13.3034 21 12.6527 21 12C21 7.0294 16.9706 3 12 3C9.5169 3 7.1441 4.0259 5.4432 5.8349L4.9867 6.3204M4.1631 2.1414L4.7999 6.5999L9.2586 5.9631M3.4273 9.0828L3.2117 10.0593C3.071 10.6966 3 11.3473 3 12C3 16.9706 7.0294 21 12 21C14.4831 21 16.8559 19.9741 18.5568 18.1651L19.0133 17.6796M19.8369 21.8586L19.2001 17.4001L14.7414 18.0369" />
+      <SvgPath d="M20.5727 14.9172L20.7883 13.9407C20.929 13.3034 21 12.6527 21 12C21 7.0294 16.9706 3 12 3C9.5169 3 7.1441 4.0259 5.4432 5.8349L4.9867 6.3204M4.1631 2.1414L4.7999 6.5999L9.2586 5.9631M3.4273 9.0828L3.2117 10.0593C3.071 10.6966 3 11.3473 3 12C3 16.9706 7.0294 21 12 21C14.4831 21 16.8559 19.9741 18.5568 18.1651L19.0133 17.6796M19.8369 21.8586L19.2001 17.4001L14.7414 18.0369" />
     </Icon>
   )
 }
@@ -5957,7 +5966,7 @@ export function RefreshCcw(props: IconProps) {
 export function RefreshCw(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.4273 14.9172L3.2117 13.9407C3.071 13.3034 3 12.6527 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C9.5169 21 7.1441 19.9741 5.4432 18.1651L4.9867 17.6796M4.1631 21.8586L4.7999 17.4001L9.2586 18.0369" />
+      <SvgPath d="M3.4273 14.9172L3.2117 13.9407C3.071 13.3034 3 12.6527 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C9.5169 21 7.1441 19.9741 5.4432 18.1651L4.9867 17.6796M4.1631 21.8586L4.7999 17.4001L9.2586 18.0369" />
     </Icon>
   )
 }
@@ -5965,7 +5974,7 @@ export function RefreshCw(props: IconProps) {
 export function Repeat1(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10.5547 4.2968L12.5 3L12.5 10M3 18L21 18L21 5L15.5 5M6.2929 14.7071L3 18L6.2929 21.2929M3 12L3 5L8 5" />
+      <SvgPath d="M10.5547 4.2968L12.5 3L12.5 10M3 18L21 18L21 5L15.5 5M6.2929 14.7071L3 18L6.2929 21.2929M3 12L3 5L8 5" />
     </Icon>
   )
 }
@@ -5973,7 +5982,7 @@ export function Repeat1(props: IconProps) {
 export function Repeat(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 13L3 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M21 11L21 18L3 18M6.2929 21.2929L3 18L6.2929 14.7071" />
+      <SvgPath d="M3 13L3 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M21 11L21 18L3 18M6.2929 21.2929L3 18L6.2929 14.7071" />
     </Icon>
   )
 }
@@ -5981,7 +5990,7 @@ export function Repeat(props: IconProps) {
 export function Replay(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
+      <SvgPath d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
     </Icon>
   )
 }
@@ -5989,7 +5998,7 @@ export function Replay(props: IconProps) {
 export function ReplyAll(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.2929 3.7071L2 10L8.2929 16.2929M14.2929 3.7071L8 10L14.2929 16.2929M8 10L22 10L22 21" />
+      <SvgPath d="M8.2929 3.7071L2 10L8.2929 16.2929M14.2929 3.7071L8 10L14.2929 16.2929M8 10L22 10L22 21" />
     </Icon>
   )
 }
@@ -5997,7 +6006,7 @@ export function ReplyAll(props: IconProps) {
 export function Reply(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.2929 3.7071L2 10L8.2929 16.2929M2 10L22 10L22 21" />
+      <SvgPath d="M8.2929 3.7071L2 10L8.2929 16.2929M2 10L22 10L22 21" />
     </Icon>
   )
 }
@@ -6005,7 +6014,7 @@ export function Reply(props: IconProps) {
 export function Rewind(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 17.998L13.5417 12L22 6.002L22 17.998ZM10 17.998L2 12L10 6.002L10 17.998Z" />
+      <SvgPath d="M22 17.998L13.5417 12L22 6.002L22 17.998ZM10 17.998L2 12L10 6.002L10 17.998Z" />
     </Icon>
   )
 }
@@ -6013,7 +6022,7 @@ export function Rewind(props: IconProps) {
 export function Rocket2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M7.0253 19.8031L4.5355 22.2929M3.4898 17.6818L1.7071 19.4645" />
+      <SvgPath d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M7.0253 19.8031L4.5355 22.2929M3.4898 17.6818L1.7071 19.4645" />
     </Icon>
   )
 }
@@ -6021,7 +6030,7 @@ export function Rocket2(props: IconProps) {
 export function RocketVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.3652 20.8056L14.6348 20.8056L15.8292 22L19 16.1684L15.9523 13.1206C16.0677 12.4475 16.1257 11.7657 16.1257 11.0828C16.1257 7.6016 14.6216 4.2903 12 1.9999C9.3784 4.2903 7.8743 7.6016 7.8743 11.0828C7.8743 11.7657 7.9323 12.4475 8.0477 13.1206L5 16.1684L8.1708 22L9.3652 20.8056ZM14.6348 20.8056L15.9523 13.1206M9.3652 20.8056L8.0477 13.1206" />
+      <SvgPath d="M9.3652 20.8056L14.6348 20.8056L15.8292 22L19 16.1684L15.9523 13.1206C16.0677 12.4475 16.1257 11.7657 16.1257 11.0828C16.1257 7.6016 14.6216 4.2903 12 1.9999C9.3784 4.2903 7.8743 7.6016 7.8743 11.0828C7.8743 11.7657 7.9323 12.4475 8.0477 13.1206L5 16.1684L8.1708 22L9.3652 20.8056ZM14.6348 20.8056L15.9523 13.1206M9.3652 20.8056L8.0477 13.1206" />
     </Icon>
   )
 }
@@ -6029,7 +6038,7 @@ export function RocketVertical(props: IconProps) {
 export function Rocket(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M2.0001 21.9999L4.4054 21.8679C5.5497 21.8051 6.4454 20.8589 6.4454 19.7129C6.4454 18.5209 5.4791 17.5546 4.2871 17.5546C3.1411 17.5546 2.1949 18.4503 2.1321 19.5946L2.0001 21.9999Z" />
+      <SvgPath d="M6.8103 13.5269L10.4731 17.1897L10.4731 19.9368L16.7303 17.6475L16.7303 12.7638C20.0352 10.4262 21.9999 6.63 21.9999 2.5819C21.9999 2.3922 21.9956 2.2025 21.987 2.013C21.7975 2.0044 21.6078 2.0001 21.4181 2.0001C17.37 2.0001 13.5738 3.9648 11.2362 7.2697L6.3525 7.2697L4.0632 13.5269L6.8103 13.5269ZM10.4731 17.1897L16.7303 12.7638M6.8103 13.5269L11.2362 7.2697M2.0001 21.9999L4.4054 21.8679C5.5497 21.8051 6.4454 20.8589 6.4454 19.7129C6.4454 18.5209 5.4791 17.5546 4.2871 17.5546C3.1411 17.5546 2.1949 18.4503 2.1321 19.5946L2.0001 21.9999Z" />
     </Icon>
   )
 }
@@ -6037,7 +6046,7 @@ export function Rocket(props: IconProps) {
 export function RotateCcw(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.4273 9.0828L3.2117 10.0593C3.071 10.6966 3 11.3473 3 12C3 16.9706 7.0294 21 12 21C16.9706 21 21 16.9706 21 12C21 7.0294 16.9706 3 12 3C9.5169 3 7.1441 4.0259 5.4432 5.8349L4.9867 6.3204M4.1631 2.1414L4.7999 6.5999L9.2586 5.9631" />
+      <SvgPath d="M3.4273 9.0828L3.2117 10.0593C3.071 10.6966 3 11.3473 3 12C3 16.9706 7.0294 21 12 21C16.9706 21 21 16.9706 21 12C21 7.0294 16.9706 3 12 3C9.5169 3 7.1441 4.0259 5.4432 5.8349L4.9867 6.3204M4.1631 2.1414L4.7999 6.5999L9.2586 5.9631" />
     </Icon>
   )
 }
@@ -6045,7 +6054,7 @@ export function RotateCcw(props: IconProps) {
 export function RotateCwPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M7 12L17 12M12 7L12 17" />
+      <SvgPath d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631M7 12L17 12M12 7L12 17" />
     </Icon>
   )
 }
@@ -6053,7 +6062,7 @@ export function RotateCwPlus(props: IconProps) {
 export function RotateCw(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631" />
+      <SvgPath d="M20.5727 9.0828L20.7883 10.0593C20.929 10.6966 21 11.3473 21 12C21 16.9706 16.9706 21 12 21C7.0294 21 3 16.9706 3 12C3 7.0294 7.0294 3 12 3C14.4831 3 16.8559 4.0259 18.5568 5.8349L19.0133 6.3204M19.8369 2.1414L19.2001 6.5999L14.7414 5.9631" />
     </Icon>
   )
 }
@@ -6061,7 +6070,7 @@ export function RotateCw(props: IconProps) {
 export function RouteOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM9 18L18 18M18 13.3431L18 3M14.7071 6.2929L18 3L21.2929 6.2929M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM9 18L18 18M18 13.3431L18 3M14.7071 6.2929L18 3L21.2929 6.2929M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -6069,7 +6078,7 @@ export function RouteOff(props: IconProps) {
 export function Route(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM9 18L18 18L18 3M14.7071 6.2929L18 3L21.2929 6.2929" />
+      <SvgPath d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM9 18L18 18L18 3M14.7071 6.2929L18 3L21.2929 6.2929" />
     </Icon>
   )
 }
@@ -6077,7 +6086,7 @@ export function Route(props: IconProps) {
 export function ScanBarcode(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M7 6L7 18M11 6L11 18M17 6L17 18" fill="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M7 6L7 18M11 6L11 18M17 6L17 18" fill="none" />
     </Icon>
   )
 }
@@ -6085,8 +6094,8 @@ export function ScanBarcode(props: IconProps) {
 export function ScanEye(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M6 12C6.531 9.1036 9.0553 7 12 7C14.9447 7 17.469 9.1036 18 12C17.469 14.8964 14.9447 17 12 17C9.0553 17 6.531 14.8964 6 12Z" fill="none" />
-      <Path d="M13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M6 12C6.531 9.1036 9.0553 7 12 7C14.9447 7 17.469 9.1036 18 12C17.469 14.8964 14.9447 17 12 17C9.0553 17 6.531 14.8964 6 12Z" fill="none" />
+      <SvgPath d="M13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6094,7 +6103,7 @@ export function ScanEye(props: IconProps) {
 export function ScanFace(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M9 9L9 12M15 9L15 12M8.2929 14.2929L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.7071 14.2929" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M9 9L9 12M15 9L15 12M8.2929 14.2929L9 15C10 16 11 16.5 12 16.5C13 16.5 14 16 15 15L15.7071 14.2929" />
     </Icon>
   )
 }
@@ -6102,7 +6111,7 @@ export function ScanFace(props: IconProps) {
 export function ScanLine(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M2 12L22 12" fill="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M2 12L22 12" fill="none" />
     </Icon>
   )
 }
@@ -6110,8 +6119,8 @@ export function ScanLine(props: IconProps) {
 export function ScanQrCode(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M12 6L12 12L18 12M12 22L12 16L6 16M9 12L2 12M7.5 6L7.5 9M16.5 15L16.5 18" fill="none" />
-      <Path d="M11 2L13 2L13 4L11 4L11 2ZM20 11L22 11L22 13L20 13L20 11ZM15.5 6.5L17.5 6.5L17.5 8.5L15.5 8.5L15.5 6.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M12 6L12 12L18 12M12 22L12 16L6 16M9 12L2 12M7.5 6L7.5 9M16.5 15L16.5 18" fill="none" />
+      <SvgPath d="M11 2L13 2L13 4L11 4L11 2ZM20 11L22 11L22 13L20 13L20 11ZM15.5 6.5L17.5 6.5L17.5 8.5L15.5 8.5L15.5 6.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6119,7 +6128,7 @@ export function ScanQrCode(props: IconProps) {
 export function ScanSearch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M14 11C14 12.6569 12.6569 14 11 14C9.3431 14 8 12.6569 8 11C8 9.3431 9.3431 8 11 8C12.6569 8 14 9.3431 14 11ZM13 13L16.2929 16.2929" fill="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M14 11C14 12.6569 12.6569 14 11 14C9.3431 14 8 12.6569 8 11C8 9.3431 9.3431 8 11 8C12.6569 8 14 9.3431 14 11ZM13 13L16.2929 16.2929" fill="none" />
     </Icon>
   )
 }
@@ -6127,7 +6136,7 @@ export function ScanSearch(props: IconProps) {
 export function ScanText(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M6 8L18 8M6 12L16 12M6 16L14 16" fill="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15M6 8L18 8M6 12L16 12M6 16L14 16" fill="none" />
     </Icon>
   )
 }
@@ -6135,7 +6144,7 @@ export function ScanText(props: IconProps) {
 export function Scan(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15" fill="none" />
+      <SvgPath d="M3 9L3 3L9 3M15 3L21 3L21 9M21 15L21 21L15 21M9 21L3 21L3 15" fill="none" />
     </Icon>
   )
 }
@@ -6143,7 +6152,7 @@ export function Scan(props: IconProps) {
 export function ScissorsHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3C7.6569 3 9 4.3431 9 6ZM9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM8.1213 8.1213L21.4324 17.2981M8.1213 15.8787L13.7474 12M16.8386 9.8689L21.4324 6.7019" fill="none" />
+      <SvgPath d="M9 6C9 7.6569 7.6569 9 6 9C4.3431 9 3 7.6569 3 6C3 4.3431 4.3431 3 6 3C7.6569 3 9 4.3431 9 6ZM9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM8.1213 8.1213L21.4324 17.2981M8.1213 15.8787L13.7474 12M16.8386 9.8689L21.4324 6.7019" fill="none" />
     </Icon>
   )
 }
@@ -6151,7 +6160,7 @@ export function ScissorsHorizontal(props: IconProps) {
 export function Scissors(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18ZM8.1213 15.8787L17.2981 2.5676M15.8787 15.8787L12 10.2526M9.8689 7.1614L6.7019 2.5676" fill="none" />
+      <SvgPath d="M9 18C9 19.6569 7.6569 21 6 21C4.3431 21 3 19.6569 3 18C3 16.3431 4.3431 15 6 15C7.6569 15 9 16.3431 9 18ZM21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18ZM8.1213 15.8787L17.2981 2.5676M15.8787 15.8787L12 10.2526M9.8689 7.1614L6.7019 2.5676" fill="none" />
     </Icon>
   )
 }
@@ -6159,7 +6168,7 @@ export function Scissors(props: IconProps) {
 export function Search2Check(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M8.5842 11.1214L10.5285 13.1213L13.4138 8.4002" />
+      <SvgPath d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M8.5842 11.1214L10.5285 13.1213L13.4138 8.4002" />
     </Icon>
   )
 }
@@ -6167,7 +6176,7 @@ export function Search2Check(props: IconProps) {
 export function Search2List(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7.8 9L12.2 9M7.8 13L14.2 13" />
+      <SvgPath d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7.8 9L12.2 9M7.8 13L14.2 13" />
     </Icon>
   )
 }
@@ -6175,7 +6184,7 @@ export function Search2List(props: IconProps) {
 export function Search2Minus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7 11L15 11" />
+      <SvgPath d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7 11L15 11" />
     </Icon>
   )
 }
@@ -6183,7 +6192,7 @@ export function Search2Minus(props: IconProps) {
 export function Search2Plus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7 11L15 11M11 7L11 15" />
+      <SvgPath d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M7 11L15 11M11 7L11 15" />
     </Icon>
   )
 }
@@ -6191,7 +6200,7 @@ export function Search2Plus(props: IconProps) {
 export function Search2X(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M8.5858 8.5858L13.4142 13.4142M13.4142 8.5858L8.5858 13.4142" />
+      <SvgPath d="M19 11C19 15.4183 15.4183 19 11 19C6.5817 19 3 15.4183 3 11C3 6.5817 6.5817 3 11 3C15.4183 3 19 6.5817 19 11ZM16.2929 16.2929L21.2929 21.2929M8.5858 8.5858L13.4142 13.4142M13.4142 8.5858L8.5858 13.4142" />
     </Icon>
   )
 }
@@ -6199,7 +6208,7 @@ export function Search2X(props: IconProps) {
 export function Search2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 11C19 15.4184 15.4184 19 11 19C6.5816 19 3 15.4184 3 11C3 6.5816 6.5816 3 11 3C15.4184 3 19 6.5816 19 11ZM16.6569 16.6569L21.2929 21.2929" />
+      <SvgPath d="M19 11C19 15.4184 15.4184 19 11 19C6.5816 19 3 15.4184 3 11C3 6.5816 6.5816 3 11 3C15.4184 3 19 6.5816 19 11ZM16.6569 16.6569L21.2929 21.2929" />
     </Icon>
   )
 }
@@ -6207,7 +6216,7 @@ export function Search2(props: IconProps) {
 export function SearchCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M7.5842 10.1214L9.5285 12.1213L12.4138 7.4002" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M7.5842 10.1214L9.5285 12.1213L12.4138 7.4002" />
     </Icon>
   )
 }
@@ -6215,7 +6224,7 @@ export function SearchCheck(props: IconProps) {
 export function SearchList(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6.8 8L11.2 8M6.8 12L13.2 12" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6.8 8L11.2 8M6.8 12L13.2 12" />
     </Icon>
   )
 }
@@ -6223,7 +6232,7 @@ export function SearchList(props: IconProps) {
 export function SearchMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6 10L14 10" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6 10L14 10" />
     </Icon>
   )
 }
@@ -6231,7 +6240,7 @@ export function SearchMinus(props: IconProps) {
 export function SearchPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6 10L14 10M10 6L10 14" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M6 10L14 10M10 6L10 14" />
     </Icon>
   )
 }
@@ -6239,7 +6248,7 @@ export function SearchPlus(props: IconProps) {
 export function SearchSlash(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M12.4142 7.5858L7.5858 12.4142" fill="none" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M12.4142 7.5858L7.5858 12.4142" fill="none" />
     </Icon>
   )
 }
@@ -6247,7 +6256,7 @@ export function SearchSlash(props: IconProps) {
 export function SearchX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M7.5858 7.5858L12.4142 12.4142M12.4142 7.5858L7.5858 12.4142" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.2929 14.2929L21.2929 21.2929M7.5858 7.5858L12.4142 12.4142M12.4142 7.5858L7.5858 12.4142" />
     </Icon>
   )
 }
@@ -6255,7 +6264,7 @@ export function SearchX(props: IconProps) {
 export function Search(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.9497 14.9497L21.2929 21.2929" />
+      <SvgPath d="M17 10C17 13.866 13.866 17 10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10ZM14.9497 14.9497L21.2929 21.2929" />
     </Icon>
   )
 }
@@ -6263,7 +6272,7 @@ export function Search(props: IconProps) {
 export function SendClock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5744 11.0404L6.1382 10.7426L2 7.9174L22 2L20.7043 6.3794L20.4923 7.0957M18.2562 5.7438L18.5491 5.4509L22 2M22 15.5C22 19.0899 19.0899 22 15.5 22C11.9101 22 9 19.0899 9 15.5C9 11.9101 11.9101 9 15.5 9C19.0899 9 22 11.9101 22 15.5ZM15.5 12L15.5 15.5L19 15.5" />
+      <SvgPath d="M6.5744 11.0404L6.1382 10.7426L2 7.9174L22 2L20.7043 6.3794L20.4923 7.0957M18.2562 5.7438L18.5491 5.4509L22 2M22 15.5C22 19.0899 19.0899 22 15.5 22C11.9101 22 9 19.0899 9 15.5C9 11.9101 11.9101 9 15.5 9C19.0899 9 22 11.9101 22 15.5ZM15.5 12L15.5 15.5L19 15.5" />
     </Icon>
   )
 }
@@ -6271,7 +6280,7 @@ export function SendClock(props: IconProps) {
 export function SendHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 2L22 12L2 22L3.8856 12L2 2ZM3.8856 12L22 12" fill="none" />
+      <SvgPath d="M2 2L22 12L2 22L3.8856 12L2 2ZM3.8856 12L22 12" fill="none" />
     </Icon>
   )
 }
@@ -6279,7 +6288,7 @@ export function SendHorizontal(props: IconProps) {
 export function Send(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 7.9174L22 2L16.0826 22L10.369 13.631L2 7.9174ZM10.369 13.631L22 2" fill="none" />
+      <SvgPath d="M2 7.9174L22 2L16.0826 22L10.369 13.631L2 7.9174ZM10.369 13.631L22 2" fill="none" />
     </Icon>
   )
 }
@@ -6287,8 +6296,8 @@ export function Send(props: IconProps) {
 export function Server(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 2L20 2L20 10L4 10L4 2ZM4 14L20 14L20 22L4 22L4 14Z" fill="none" />
-      <Path d="M9 6C9 6.5523 8.5523 7 8 7C7.4477 7 7 6.5523 7 6C7 5.4477 7.4477 5 8 5C8.5523 5 9 5.4477 9 6ZM13 6C13 6.5523 12.5523 7 12 7C11.4477 7 11 6.5523 11 6C11 5.4477 11.4477 5 12 5C12.5523 5 13 5.4477 13 6ZM9 18C9 18.5523 8.5523 19 8 19C7.4477 19 7 18.5523 7 18C7 17.4477 7.4477 17 8 17C8.5523 17 9 17.4477 9 18ZM13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4 2L20 2L20 10L4 10L4 2ZM4 14L20 14L20 22L4 22L4 14Z" fill="none" />
+      <SvgPath d="M9 6C9 6.5523 8.5523 7 8 7C7.4477 7 7 6.5523 7 6C7 5.4477 7.4477 5 8 5C8.5523 5 9 5.4477 9 6ZM13 6C13 6.5523 12.5523 7 12 7C11.4477 7 11 6.5523 11 6C11 5.4477 11.4477 5 12 5C12.5523 5 13 5.4477 13 6ZM9 18C9 18.5523 8.5523 19 8 19C7.4477 19 7 18.5523 7 18C7 17.4477 7.4477 17 8 17C8.5523 17 9 17.4477 9 18ZM13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6296,7 +6305,7 @@ export function Server(props: IconProps) {
 export function SettingsDot(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20.5 11.5L20.5 14L18.6155 14C18.1518 14 17.7566 14.3221 17.5956 14.757C17.5381 14.9123 17.4749 15.0648 17.4061 15.2143C17.2123 15.6355 17.2639 16.1428 17.5918 16.4707L18.9248 17.8037L16.8037 19.9248L15.4707 18.5918C15.1428 18.2639 14.6355 18.2123 14.2141 18.4058C14.0647 18.4745 13.9123 18.5376 13.7571 18.5949C13.3221 18.7556 13 19.1508 13 19.6145L13 21.5L10 21.5L10 19.6145C10 19.1508 9.6779 18.7556 9.2429 18.5951C9.0874 18.5377 8.9348 18.4746 8.7852 18.4059C8.3636 18.2124 7.8562 18.2641 7.5283 18.5922L6.1963 19.9248L4.0753 17.8038L5.4076 16.4706C5.7353 16.1427 5.7869 15.6356 5.5933 15.2143C5.5247 15.0649 5.4615 14.9124 5.4041 14.7571C5.2434 14.3221 4.8482 14 4.3845 14L2.5 14L2.5 11L4.3845 11C4.8482 11 5.2434 10.6779 5.404 10.2429C5.4614 10.0874 5.5245 9.9346 5.5933 9.785C5.7867 9.3635 5.7351 8.8562 5.4072 8.5283L4.0752 7.1963L6.1963 5.0752L7.5283 6.4072C7.8562 6.7351 8.3635 6.7867 8.785 6.5933C8.9346 6.5245 9.0874 6.4614 9.2429 6.404C9.6779 6.2434 10 5.8482 10 5.3845L10 3.5L12.5 3.5M11.5 10C12.8807 10 14 11.1193 14 12.5C14 13.8807 12.8807 15 11.5 15C10.1193 15 9 13.8807 9 12.5C9 11.1193 10.1193 10 11.5 10ZM18.5 2.5C20.1568 2.5 21.5 3.8432 21.5 5.5C21.5 7.1569 20.1568 8.5 18.5 8.5C16.8432 8.5 15.5 7.1569 15.5 5.5C15.5 3.8432 16.8432 2.5 18.5 2.5Z" />
+      <SvgPath d="M20.5 11.5L20.5 14L18.6155 14C18.1518 14 17.7566 14.3221 17.5956 14.757C17.5381 14.9123 17.4749 15.0648 17.4061 15.2143C17.2123 15.6355 17.2639 16.1428 17.5918 16.4707L18.9248 17.8037L16.8037 19.9248L15.4707 18.5918C15.1428 18.2639 14.6355 18.2123 14.2141 18.4058C14.0647 18.4745 13.9123 18.5376 13.7571 18.5949C13.3221 18.7556 13 19.1508 13 19.6145L13 21.5L10 21.5L10 19.6145C10 19.1508 9.6779 18.7556 9.2429 18.5951C9.0874 18.5377 8.9348 18.4746 8.7852 18.4059C8.3636 18.2124 7.8562 18.2641 7.5283 18.5922L6.1963 19.9248L4.0753 17.8038L5.4076 16.4706C5.7353 16.1427 5.7869 15.6356 5.5933 15.2143C5.5247 15.0649 5.4615 14.9124 5.4041 14.7571C5.2434 14.3221 4.8482 14 4.3845 14L2.5 14L2.5 11L4.3845 11C4.8482 11 5.2434 10.6779 5.404 10.2429C5.4614 10.0874 5.5245 9.9346 5.5933 9.785C5.7867 9.3635 5.7351 8.8562 5.4072 8.5283L4.0752 7.1963L6.1963 5.0752L7.5283 6.4072C7.8562 6.7351 8.3635 6.7867 8.785 6.5933C8.9346 6.5245 9.0874 6.4614 9.2429 6.404C9.6779 6.2434 10 5.8482 10 5.3845L10 3.5L12.5 3.5M11.5 10C12.8807 10 14 11.1193 14 12.5C14 13.8807 12.8807 15 11.5 15C10.1193 15 9 13.8807 9 12.5C9 11.1193 10.1193 10 11.5 10ZM18.5 2.5C20.1568 2.5 21.5 3.8432 21.5 5.5C21.5 7.1569 20.1568 8.5 18.5 8.5C16.8432 8.5 15.5 7.1569 15.5 5.5C15.5 3.8432 16.8432 2.5 18.5 2.5Z" />
     </Icon>
   )
 }
@@ -6304,7 +6313,7 @@ export function SettingsDot(props: IconProps) {
 export function Settings(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.9706 5.9076L17.3038 4.5753L19.4248 6.6963L18.0922 8.0283C17.7641 8.3562 17.7124 8.8636 17.9062 9.2851C17.975 9.4347 18.0383 9.5874 18.0958 9.7429C18.2566 10.1779 18.6518 10.5 19.1155 10.5L21 10.5L21 13.5L19.1155 13.5C18.6518 13.5 18.2566 13.8221 18.0956 14.257C18.0381 14.4123 17.9749 14.5648 17.9061 14.7143C17.7123 15.1355 17.7639 15.6428 18.0918 15.9707L19.4248 17.3037L17.3037 19.4248L15.9707 18.0918C15.6428 17.7639 15.1355 17.7123 14.7141 17.9058C14.5647 17.9745 14.4123 18.0376 14.2571 18.0949C13.8221 18.2556 13.5 18.6508 13.5 19.1145L13.5 21L10.5 21L10.5 19.1145C10.5 18.6508 10.1779 18.2556 9.7429 18.0951C9.5874 18.0377 9.4348 17.9746 9.2852 17.9059C8.8636 17.7124 8.3562 17.7641 8.0283 18.0922L6.6963 19.4248L4.5753 17.3038L5.9076 15.9706C6.2353 15.6427 6.2869 15.1356 6.0933 14.7143C6.0247 14.5649 5.9615 14.4124 5.9041 14.2571C5.7434 13.8221 5.3482 13.5 4.8845 13.5L3 13.5L3 10.5L4.8845 10.5C5.3482 10.5 5.7434 10.1779 5.904 9.7429C5.9614 9.5874 6.0245 9.4346 6.0933 9.285C6.2867 8.8635 6.2351 8.3562 5.9072 8.0283L4.5752 6.6963L6.6963 4.5752L8.0283 5.9072C8.3562 6.2351 8.8635 6.2867 9.285 6.0933C9.4346 6.0245 9.5874 5.9614 9.7429 5.904C10.1779 5.7434 10.5 5.3482 10.5 4.8845L10.5 3L13.5 3L13.5 4.8845C13.5 5.3482 13.8221 5.7434 14.2571 5.9041C14.4124 5.9615 14.5649 6.0247 14.7143 6.0933C15.1356 6.2869 15.6427 6.2353 15.9706 5.9076ZM12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" />
+      <SvgPath d="M15.9706 5.9076L17.3038 4.5753L19.4248 6.6963L18.0922 8.0283C17.7641 8.3562 17.7124 8.8636 17.9062 9.2851C17.975 9.4347 18.0383 9.5874 18.0958 9.7429C18.2566 10.1779 18.6518 10.5 19.1155 10.5L21 10.5L21 13.5L19.1155 13.5C18.6518 13.5 18.2566 13.8221 18.0956 14.257C18.0381 14.4123 17.9749 14.5648 17.9061 14.7143C17.7123 15.1355 17.7639 15.6428 18.0918 15.9707L19.4248 17.3037L17.3037 19.4248L15.9707 18.0918C15.6428 17.7639 15.1355 17.7123 14.7141 17.9058C14.5647 17.9745 14.4123 18.0376 14.2571 18.0949C13.8221 18.2556 13.5 18.6508 13.5 19.1145L13.5 21L10.5 21L10.5 19.1145C10.5 18.6508 10.1779 18.2556 9.7429 18.0951C9.5874 18.0377 9.4348 17.9746 9.2852 17.9059C8.8636 17.7124 8.3562 17.7641 8.0283 18.0922L6.6963 19.4248L4.5753 17.3038L5.9076 15.9706C6.2353 15.6427 6.2869 15.1356 6.0933 14.7143C6.0247 14.5649 5.9615 14.4124 5.9041 14.2571C5.7434 13.8221 5.3482 13.5 4.8845 13.5L3 13.5L3 10.5L4.8845 10.5C5.3482 10.5 5.7434 10.1779 5.904 9.7429C5.9614 9.5874 6.0245 9.4346 6.0933 9.285C6.2867 8.8635 6.2351 8.3562 5.9072 8.0283L4.5752 6.6963L6.6963 4.5752L8.0283 5.9072C8.3562 6.2351 8.8635 6.2867 9.285 6.0933C9.4346 6.0245 9.5874 5.9614 9.7429 5.904C10.1779 5.7434 10.5 5.3482 10.5 4.8845L10.5 3L13.5 3L13.5 4.8845C13.5 5.3482 13.8221 5.7434 14.2571 5.9041C14.4124 5.9615 14.5649 6.0247 14.7143 6.0933C15.1356 6.2869 15.6427 6.2353 15.9706 5.9076ZM12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" />
     </Icon>
   )
 }
@@ -6312,7 +6321,7 @@ export function Settings(props: IconProps) {
 export function Shapes2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.0009 3L16.7343 9.998L7.2674 9.998L12.0009 3ZM10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5ZM14 14L21 14L21 21L14 21L14 14Z" />
+      <SvgPath d="M12.0009 3L16.7343 9.998L7.2674 9.998L12.0009 3ZM10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5ZM14 14L21 14L21 21L14 21L14 14Z" />
     </Icon>
   )
 }
@@ -6320,7 +6329,7 @@ export function Shapes2(props: IconProps) {
 export function Shapes(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.7071 2.7071L10.2929 10.2929M10.2929 2.7071L2.7071 10.2929M17.5 3L21 10L14 10L17.5 3ZM10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5ZM14 14L21 14L21 21L14 21L14 14Z" />
+      <SvgPath d="M2.7071 2.7071L10.2929 10.2929M10.2929 2.7071L2.7071 10.2929M17.5 3L21 10L14 10L17.5 3ZM10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5ZM14 14L21 14L21 21L14 21L14 14Z" />
     </Icon>
   )
 }
@@ -6328,7 +6337,7 @@ export function Shapes(props: IconProps) {
 export function Share2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.5 5.0001L12.5 9.5001C7.5375 9.724 3.4917 13.5568 2.9999 18.4999C5.2767 15.9472 8.5347 14.4875 11.9552 14.4875C12.1369 14.4875 12.3185 14.4917 12.5 14.4999L12.5 18.9999L20.9999 12L12.5 5.0001Z" fill="none" />
+      <SvgPath d="M12.5 5.0001L12.5 9.5001C7.5375 9.724 3.4917 13.5568 2.9999 18.4999C5.2767 15.9472 8.5347 14.4875 11.9552 14.4875C12.1369 14.4875 12.3185 14.4917 12.5 14.4999L12.5 18.9999L20.9999 12L12.5 5.0001Z" fill="none" />
     </Icon>
   )
 }
@@ -6336,7 +6345,7 @@ export function Share2(props: IconProps) {
 export function Share(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.5918 10.4881L15.4082 6.5119M8.5918 13.5119L15.4082 17.4881M21 5C21 6.6569 19.6569 8 18 8C16.3431 8 15 6.6569 15 5C15 3.3431 16.3431 2 18 2C19.6569 2 21 3.3431 21 5ZM9 12C9 13.6569 7.6569 15 6 15C4.3431 15 3 13.6569 3 12C3 10.3431 4.3431 9 6 9C7.6569 9 9 10.3431 9 12ZM21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19C15 17.3431 16.3431 16 18 16C19.6569 16 21 17.3431 21 19Z" />
+      <SvgPath d="M8.5918 10.4881L15.4082 6.5119M8.5918 13.5119L15.4082 17.4881M21 5C21 6.6569 19.6569 8 18 8C16.3431 8 15 6.6569 15 5C15 3.3431 16.3431 2 18 2C19.6569 2 21 3.3431 21 5ZM9 12C9 13.6569 7.6569 15 6 15C4.3431 15 3 13.6569 3 12C3 10.3431 4.3431 9 6 9C7.6569 9 9 10.3431 9 12ZM21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19C15 17.3431 16.3431 16 18 16C19.6569 16 21 17.3431 21 19Z" />
     </Icon>
   )
 }
@@ -6344,7 +6353,7 @@ export function Share(props: IconProps) {
 export function ShieldCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7.7016 11.6644L10.6667 15L16.2984 8.6644" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7.7016 11.6644L10.6667 15L16.2984 8.6644" />
     </Icon>
   )
 }
@@ -6352,7 +6361,7 @@ export function ShieldCheck(props: IconProps) {
 export function ShieldKey(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.3954 10.8954 7.5 12 7.5C13.1046 7.5 14 8.3954 14 9.5ZM12 11.5L12 18.5M12 15.5L15 15.5" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.3954 10.8954 7.5 12 7.5C13.1046 7.5 14 8.3954 14 9.5ZM12 11.5L12 18.5M12 15.5L15 15.5" />
     </Icon>
   )
 }
@@ -6360,7 +6369,7 @@ export function ShieldKey(props: IconProps) {
 export function ShieldMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7 12L17 12" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7 12L17 12" />
     </Icon>
   )
 }
@@ -6368,7 +6377,7 @@ export function ShieldMinus(props: IconProps) {
 export function ShieldPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7 12L17 12M12 7L12 17" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM7 12L17 12M12 7L12 17" />
     </Icon>
   )
 }
@@ -6376,7 +6385,7 @@ export function ShieldPlus(props: IconProps) {
 export function ShieldX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088ZM8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
     </Icon>
   )
 }
@@ -6384,7 +6393,7 @@ export function ShieldX(props: IconProps) {
 export function Shield(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088Z" />
+      <SvgPath d="M20 5.3088L20 15.778L18.612 17.5729C17.4097 19.1277 15.5033 20.8703 12.8298 21.8525C12.2945 22.0492 11.7055 22.0492 11.1702 21.8525C8.4967 20.8703 6.5903 19.1277 5.388 17.5729L4 15.7778L4 5.3088L5.1825 5.1684C7.8303 4.8543 9.8295 3.5322 11.0242 2.3731C11.537 1.8756 12.463 1.8756 12.9758 2.3731C14.1705 3.5322 16.1697 4.8543 18.8175 5.1684L20 5.3088Z" />
     </Icon>
   )
 }
@@ -6392,7 +6401,7 @@ export function Shield(props: IconProps) {
 export function Ship(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 11.3L7 7L7 5L15 5L17 5L17 11.3M12 5L12 2M7.2083 20.6226L6.5521 20C4.6068 18.1541 3.6017 15.268 4.1928 12.6255C6.6256 11.3464 9.2068 10.1362 12 10C14.7932 10.1362 17.3744 11.3464 19.8072 12.6255C20.3892 15.2745 19.3973 18.1502 17.4479 20L17.2447 20.1928M1.485 20.0623L2 20.3479C4.3679 21.6637 7.179 20.7413 9.5 19.8407C11.671 18.7159 14.2704 18.7635 16.4239 19.8595C18.1685 20.6303 20.0809 21.0813 22 20.8551L22.8833 20.7513M12 13L12 16" fill="none" />
+      <SvgPath d="M7 11.3L7 7L7 5L15 5L17 5L17 11.3M12 5L12 2M7.2083 20.6226L6.5521 20C4.6068 18.1541 3.6017 15.268 4.1928 12.6255C6.6256 11.3464 9.2068 10.1362 12 10C14.7932 10.1362 17.3744 11.3464 19.8072 12.6255C20.3892 15.2745 19.3973 18.1502 17.4479 20L17.2447 20.1928M1.485 20.0623L2 20.3479C4.3679 21.6637 7.179 20.7413 9.5 19.8407C11.671 18.7159 14.2704 18.7635 16.4239 19.8595C18.1685 20.6303 20.0809 21.0813 22 20.8551L22.8833 20.7513M12 13L12 16" fill="none" />
     </Icon>
   )
 }
@@ -6400,7 +6409,7 @@ export function Ship(props: IconProps) {
 export function Shirt(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 2L20.5 4L22.0001 8.5L18.5 10.5L18 22L6 22L5.5 10.5L1.9999 8.5L3.5 4L9 2C9 3.6569 10.3431 5 12 5C13.6569 5 15 3.6569 15 2Z" />
+      <SvgPath d="M15 2L20.5 4L22.0001 8.5L18.5 10.5L18 22L6 22L5.5 10.5L1.9999 8.5L3.5 4L9 2C9 3.6569 10.3431 5 12 5C13.6569 5 15 3.6569 15 2Z" />
     </Icon>
   )
 }
@@ -6408,7 +6417,7 @@ export function Shirt(props: IconProps) {
 export function ShoppingBag(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.0572 7L19.9428 7M15 10L15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11L9 10M7 3L16.9999 3L20 7L20 21L4 21L4 7L7 3Z" />
+      <SvgPath d="M4.0572 7L19.9428 7M15 10L15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11L9 10M7 3L16.9999 3L20 7L20 21L4 21L4 7L7 3Z" />
     </Icon>
   )
 }
@@ -6416,7 +6425,7 @@ export function ShoppingBag(props: IconProps) {
 export function ShoppingBasket(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.0001 10L21.9999 10L19 21L5 21L2.0001 10ZM9 10L10 3L16 3L15 10" />
+      <SvgPath d="M2.0001 10L21.9999 10L19 21L5 21L2.0001 10ZM9 10L10 3L16 3L15 10" />
     </Icon>
   )
 }
@@ -6424,8 +6433,8 @@ export function ShoppingBasket(props: IconProps) {
 export function ShoppingCart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 3L4 3L5 7M5 7L21.9989 7L18.9999 15L7 15L5 7Z" />
-      <Path d="M10.5 20.5C10.5 21.3284 9.8284 22 9 22C8.1716 22 7.5 21.3284 7.5 20.5C7.5 19.6716 8.1716 19 9 19C9.8284 19 10.5 19.6716 10.5 20.5ZM18.5 20.5C18.5 21.3284 17.8284 22 17 22C16.1716 22 15.5 21.3284 15.5 20.5C15.5 19.6716 16.1716 19 17 19C17.8284 19 18.5 19.6716 18.5 20.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M1 3L4 3L5 7M5 7L21.9989 7L18.9999 15L7 15L5 7Z" />
+      <SvgPath d="M10.5 20.5C10.5 21.3284 9.8284 22 9 22C8.1716 22 7.5 21.3284 7.5 20.5C7.5 19.6716 8.1716 19 9 19C9.8284 19 10.5 19.6716 10.5 20.5ZM18.5 20.5C18.5 21.3284 17.8284 22 17 22C16.1716 22 15.5 21.3284 15.5 20.5C15.5 19.6716 16.1716 19 17 19C17.8284 19 18.5 19.6716 18.5 20.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6433,7 +6442,7 @@ export function ShoppingCart(props: IconProps) {
 export function Shredder(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 12L4 2L14 2L20 8L20 12M14 2L14 8L20 8M1 12L23 12M6 15L6 23M10 15L10 21M14 15L14 23M18 15L18 21" />
+      <SvgPath d="M4 12L4 2L14 2L20 8L20 12M14 2L14 8L20 8M1 12L23 12M6 15L6 23M10 15L10 21M14 15L14 23M18 15L18 21" />
     </Icon>
   )
 }
@@ -6441,7 +6450,7 @@ export function Shredder(props: IconProps) {
 export function Shuffle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 6L8.308 6L10.5316 9.6139M13.4684 14.3861L15.692 18L21 18M2 18L8.308 18L15.692 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M17.7071 14.7071L21 18L17.7071 21.2929" />
+      <SvgPath d="M2 6L8.308 6L10.5316 9.6139M13.4684 14.3861L15.692 18L21 18M2 18L8.308 18L15.692 6L21 6M17.7071 2.7071L21 6L17.7071 9.2929M17.7071 14.7071L21 18L17.7071 21.2929" />
     </Icon>
   )
 }
@@ -6449,8 +6458,8 @@ export function Shuffle(props: IconProps) {
 export function SignalHigh(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 21L7 15M12 21L12 11M17 21L17 7" />
-      <Path d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 21L7 15M12 21L12 11M17 21L17 7" />
+      <SvgPath d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6458,8 +6467,8 @@ export function SignalHigh(props: IconProps) {
 export function SignalLow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 21L7 15" />
-      <Path d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 21L7 15" />
+      <SvgPath d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6467,8 +6476,8 @@ export function SignalLow(props: IconProps) {
 export function SignalMedium(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 21L7 15M12 21L12 11" />
-      <Path d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 21L7 15M12 21L12 11" />
+      <SvgPath d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6476,8 +6485,8 @@ export function SignalMedium(props: IconProps) {
 export function Signal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 21L7 15M12 21L12 11M17 21L17 7M22 21L22 3" />
-      <Path d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 21L7 15M12 21L12 11M17 21L17 7M22 21L22 3" />
+      <SvgPath d="M1 19L3 19L3 21L1 21Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6485,7 +6494,7 @@ export function Signal(props: IconProps) {
 export function Siren(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 17L7 13C7 10.2386 9.2386 8 12 8C14.7614 8 17 10.2386 17 13L17 17M4 17L20 17L20 21L4 21L4 17ZM5.9289 6.9289L4.636 5.636M12 5L12 2M18.0711 6.9289L19.364 5.636" />
+      <SvgPath d="M7 17L7 13C7 10.2386 9.2386 8 12 8C14.7614 8 17 10.2386 17 13L17 17M4 17L20 17L20 21L4 21L4 17ZM5.9289 6.9289L4.636 5.636M12 5L12 2M18.0711 6.9289L19.364 5.636" />
     </Icon>
   )
 }
@@ -6493,7 +6502,7 @@ export function Siren(props: IconProps) {
 export function SkipBack(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 19L8.5108 12L19 5L19 19ZM5 4L5 20" />
+      <SvgPath d="M19 19L8.5108 12L19 5L19 19ZM5 4L5 20" />
     </Icon>
   )
 }
@@ -6501,7 +6510,7 @@ export function SkipBack(props: IconProps) {
 export function SkipForward(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 5L15.4892 12L5 19L5 5ZM19 4L19 20" />
+      <SvgPath d="M5 5L15.4892 12L5 19L5 5ZM19 4L19 20" />
     </Icon>
   )
 }
@@ -6509,7 +6518,7 @@ export function SkipForward(props: IconProps) {
 export function Slash(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.7071 22.2929L22.2929 1.7071" fill="none" />
+      <SvgPath d="M1.7071 22.2929L22.2929 1.7071" fill="none" />
     </Icon>
   )
 }
@@ -6517,7 +6526,7 @@ export function Slash(props: IconProps) {
 export function Sliders2Horizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.5 4L13.5 4C13.7761 4 14 4.2239 14 4.5L14 9.5C14 9.7761 13.7761 10 13.5 10L6.5 10C6.2239 10 6 9.7761 6 9.5L6 4.5C6 4.2239 6.2239 4 6.5 4ZM10.5 14L17.5 14C17.7761 14 18 14.2239 18 14.5L18 19.5C18 19.7761 17.7761 20 17.5 20L10.5 20C10.2239 20 10 19.7761 10 19.5L10 14.5C10 14.2239 10.2239 14 10.5 14ZM2 7L6 7M14 7L22 7M2 17L10 17M18 17L22 17" />
+      <SvgPath d="M6.5 4L13.5 4C13.7761 4 14 4.2239 14 4.5L14 9.5C14 9.7761 13.7761 10 13.5 10L6.5 10C6.2239 10 6 9.7761 6 9.5L6 4.5C6 4.2239 6.2239 4 6.5 4ZM10.5 14L17.5 14C17.7761 14 18 14.2239 18 14.5L18 19.5C18 19.7761 17.7761 20 17.5 20L10.5 20C10.2239 20 10 19.7761 10 19.5L10 14.5C10 14.2239 10.2239 14 10.5 14ZM2 7L6 7M14 7L22 7M2 17L10 17M18 17L22 17" />
     </Icon>
   )
 }
@@ -6525,7 +6534,7 @@ export function Sliders2Horizontal(props: IconProps) {
 export function Sliders2Vertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.5 6L9.5 6C9.7761 6 10 6.2239 10 6.5L10 13.5C10 13.7761 9.7761 14 9.5 14L4.5 14C4.2239 14 4 13.7761 4 13.5L4 6.5C4 6.2239 4.2239 6 4.5 6ZM14.5 10L19.5 10C19.7761 10 20 10.2239 20 10.5L20 17.5C20 17.7761 19.7761 18 19.5 18L14.5 18C14.2239 18 14 17.7761 14 17.5L14 10.5C14 10.2239 14.2239 10 14.5 10ZM7 2L7 6M7 14L7 22M17 2L17 10M17 18L17 22" />
+      <SvgPath d="M4.5 6L9.5 6C9.7761 6 10 6.2239 10 6.5L10 13.5C10 13.7761 9.7761 14 9.5 14L4.5 14C4.2239 14 4 13.7761 4 13.5L4 6.5C4 6.2239 4.2239 6 4.5 6ZM14.5 10L19.5 10C19.7761 10 20 10.2239 20 10.5L20 17.5C20 17.7761 19.7761 18 19.5 18L14.5 18C14.2239 18 14 17.7761 14 17.5L14 10.5C14 10.2239 14.2239 10 14.5 10ZM7 2L7 6M7 14L7 22M17 2L17 10M17 18L17 22" />
     </Icon>
   )
 }
@@ -6533,7 +6542,7 @@ export function Sliders2Vertical(props: IconProps) {
 export function SlidersHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 5L13 5M22 5L16 5M16 2L16 8M2 12L10 12M22 12L13 12M10 9L10 15M2 19L11 19M22 19L14 19M14 16L14 22" fill="none" />
+      <SvgPath d="M2 5L13 5M22 5L16 5M16 2L16 8M2 12L10 12M22 12L13 12M10 9L10 15M2 19L11 19M22 19L14 19M14 16L14 22" fill="none" />
     </Icon>
   )
 }
@@ -6541,7 +6550,7 @@ export function SlidersHorizontal(props: IconProps) {
 export function SlidersVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 2L5 13M5 22L5 16M2 16L8 16M12 2L12 10M12 22L12 13M9 10L15 10M19 2L19 11M19 22L19 14M16 14L22 14" fill="none" />
+      <SvgPath d="M5 2L5 13M5 22L5 16M2 16L8 16M12 2L12 10M12 22L12 13M9 10L15 10M19 2L19 11M19 22L19 14M16 14L22 14" fill="none" />
     </Icon>
   )
 }
@@ -6549,7 +6558,7 @@ export function SlidersVertical(props: IconProps) {
 export function SmartphoneArrowDownLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.1464 21.8536L18.2929 16.7071M13 15L13 22L20 22" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.1464 21.8536L18.2929 16.7071M13 15L13 22L20 22" />
     </Icon>
   )
 }
@@ -6557,7 +6566,7 @@ export function SmartphoneArrowDownLeft(props: IconProps) {
 export function SmartphoneArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 15L16 22M19.2929 18.7071L16 22L12.7071 18.7071" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 15L16 22M19.2929 18.7071L16 22L12.7071 18.7071" />
     </Icon>
   )
 }
@@ -6565,7 +6574,7 @@ export function SmartphoneArrowDown(props: IconProps) {
 export function SmartphoneArrowInDownRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.7071 16.7071L18.8536 21.8536M12 22L19 22L19 15" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.7071 16.7071L18.8536 21.8536M12 22L19 22L19 15" />
     </Icon>
   )
 }
@@ -6573,7 +6582,7 @@ export function SmartphoneArrowInDownRight(props: IconProps) {
 export function SmartphoneArrowInRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M12 19L19 19M15.7071 22.2929L19 19L15.7071 15.7071" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M12 19L19 19M15.7071 22.2929L19 19L15.7071 15.7071" />
     </Icon>
   )
 }
@@ -6581,7 +6590,7 @@ export function SmartphoneArrowInRight(props: IconProps) {
 export function SmartphoneArrowInUpRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M12 16L19 16L19 23M13.7071 21.2929L18.8536 16.1464" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M12 16L19 16L19 23M13.7071 21.2929L18.8536 16.1464" />
     </Icon>
   )
 }
@@ -6589,7 +6598,7 @@ export function SmartphoneArrowInUpRight(props: IconProps) {
 export function SmartphoneArrowInUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 23L16 16M19.2929 19.2929L16 16L12.7071 19.2929" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 23L16 16M19.2929 19.2929L16 16L12.7071 19.2929" />
     </Icon>
   )
 }
@@ -6597,7 +6606,7 @@ export function SmartphoneArrowInUp(props: IconProps) {
 export function SmartphoneArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M20 19L13 19M16.2929 22.2929L13 19L16.2929 15.7071" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M20 19L13 19M16.2929 22.2929L13 19L16.2929 15.7071" />
     </Icon>
   )
 }
@@ -6605,7 +6614,7 @@ export function SmartphoneArrowLeft(props: IconProps) {
 export function SmartphoneArrowUpLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.1464 16.1464L18.2929 21.2929M13 23L13 16L20 16" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M13.1464 16.1464L18.2929 21.2929M13 23L13 16L20 16" />
     </Icon>
   )
 }
@@ -6613,8 +6622,8 @@ export function SmartphoneArrowUpLeft(props: IconProps) {
 export function SmartphoneCast(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 11.0455L6 2L20 2L20 22L16 22L15 22M10.5 6L15.5 6M3 18L4 18C6.2091 18 8 19.7909 8 22L8 23M3 14L4 14C8.4183 14 12 17.5817 12 22L12 23" />
-      <Path d="M5 22C5 22.5523 4.5523 23 4 23C3.4477 23 3 22.5523 3 22C3 21.4477 3.4477 21 4 21C4.5523 21 5 21.4477 5 22Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M6 11.0455L6 2L20 2L20 22L16 22L15 22M10.5 6L15.5 6M3 18L4 18C6.2091 18 8 19.7909 8 22L8 23M3 14L4 14C8.4183 14 12 17.5817 12 22L12 23" />
+      <SvgPath d="M5 22C5 22.5523 4.5523 23 4 23C3.4477 23 3 22.5523 3 22C3 21.4477 3.4477 21 4 21C4.5523 21 5 21.4477 5 22Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6622,7 +6631,7 @@ export function SmartphoneCast(props: IconProps) {
 export function SmartphoneCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M12.7055 19.2971L15.3333 22L19.1467 15.76M14.5 6L9.5 6" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M12.7055 19.2971L15.3333 22L19.1467 15.76M14.5 6L9.5 6" />
     </Icon>
   )
 }
@@ -6630,7 +6639,7 @@ export function SmartphoneCheck(props: IconProps) {
 export function SmartphoneHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 9.5L6 14.5M2 5L2 19L22 19L22 5L2 5Z" />
+      <SvgPath d="M6 9.5L6 14.5M2 5L2 19L22 19L22 5L2 5Z" />
     </Icon>
   )
 }
@@ -6638,7 +6647,7 @@ export function SmartphoneHorizontal(props: IconProps) {
 export function SmartphoneMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M20 19L12 19" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M20 19L12 19" />
     </Icon>
   )
 }
@@ -6646,7 +6655,7 @@ export function SmartphoneMinus(props: IconProps) {
 export function SmartphonePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 15L16 23M20 19L12 19" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M14.5 6L9.5 6M16 15L16 23M20 19L12 19" />
     </Icon>
   )
 }
@@ -6654,7 +6663,7 @@ export function SmartphonePlus(props: IconProps) {
 export function SmartphoneX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 13L19 2L5 2L5 22L10 22M19.2929 15.7071L12.7071 22.2929M12.7071 15.7071L19.2929 22.2929M14.5 6L9.5 6" />
+      <SvgPath d="M19 13L19 2L5 2L5 22L10 22M19.2929 15.7071L12.7071 22.2929M12.7071 15.7071L19.2929 22.2929M14.5 6L9.5 6" />
     </Icon>
   )
 }
@@ -6662,7 +6671,7 @@ export function SmartphoneX(props: IconProps) {
 export function Smartphone(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.5 6L14.5 6M19 22L19 2L5 2L5 22L19 22Z" />
+      <SvgPath d="M9.5 6L14.5 6M19 22L19 2L5 2L5 22L19 22Z" />
     </Icon>
   )
 }
@@ -6670,7 +6679,7 @@ export function Smartphone(props: IconProps) {
 export function Snowflake(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.6795 12L19.3205 12M22.2929 14.9724L19.3205 12L22.2929 9.0276M1.7071 9.0276L4.6795 12L1.7071 14.9724M8.3397 5.6603L15.6603 18.3397M14.4809 22.7412L15.6603 18.3397L20.0617 19.5191M9.5191 1.2588L8.3397 5.6603L3.9383 4.4809M15.6603 5.6603L8.3397 18.3397M3.9383 19.5191L8.3397 18.3397L9.5191 22.7412M20.0617 4.4809L15.6603 5.6603L14.4809 1.2588" />
+      <SvgPath d="M4.6795 12L19.3205 12M22.2929 14.9724L19.3205 12L22.2929 9.0276M1.7071 9.0276L4.6795 12L1.7071 14.9724M8.3397 5.6603L15.6603 18.3397M14.4809 22.7412L15.6603 18.3397L20.0617 19.5191M9.5191 1.2588L8.3397 5.6603L3.9383 4.4809M15.6603 5.6603L8.3397 18.3397M3.9383 19.5191L8.3397 18.3397L9.5191 22.7412M20.0617 4.4809L15.6603 5.6603L14.4809 1.2588" />
     </Icon>
   )
 }
@@ -6678,7 +6687,7 @@ export function Snowflake(props: IconProps) {
 export function Sofa(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 18L2 8L8 8L8 14L16 14L16 8L22 8L22 18L2 18ZM5 8L5 4L19 4L19 8M5 18L5 21M19 18L19 21" fill="none" />
+      <SvgPath d="M2 18L2 8L8 8L8 14L16 14L16 8L22 8L22 18L2 18ZM5 8L5 4L19 4L19 8M5 18L5 21M19 18L19 21" fill="none" />
     </Icon>
   )
 }
@@ -6686,7 +6695,7 @@ export function Sofa(props: IconProps) {
 export function Soup(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12L22 12C20.9477 16.6771 16.794 20 12 20C7.206 20 3.0523 16.6771 2 12ZM4 20L20 20M5 9L5 8C5 7.2131 5.3705 6.4721 6 6C6.6295 5.5279 7 4.7869 7 4L7 3M11 9L11 8C11 7.2131 11.3705 6.4721 12 6C12.6295 5.5279 13 4.7869 13 4L13 3M17 9L17 8C17 7.2131 17.3705 6.4721 18 6C18.6295 5.5279 19 4.7869 19 4L19 3" fill="none" />
+      <SvgPath d="M2 12L22 12C20.9477 16.6771 16.794 20 12 20C7.206 20 3.0523 16.6771 2 12ZM4 20L20 20M5 9L5 8C5 7.2131 5.3705 6.4721 6 6C6.6295 5.5279 7 4.7869 7 4L7 3M11 9L11 8C11 7.2131 11.3705 6.4721 12 6C12.6295 5.5279 13 4.7869 13 4L13 3M17 9L17 8C17 7.2131 17.3705 6.4721 18 6C18.6295 5.5279 19 4.7869 19 4L19 3" fill="none" />
     </Icon>
   )
 }
@@ -6694,7 +6703,7 @@ export function Soup(props: IconProps) {
 export function Sparkle(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L14.7896 9.2104L21 12L14.7896 14.7896L12 21L9.2104 14.7896L3 12L9.2104 9.2104L12 3Z" fill="none" />
+      <SvgPath d="M12 3L14.7896 9.2104L21 12L14.7896 14.7896L12 21L9.2104 14.7896L3 12L9.2104 9.2104L12 3Z" fill="none" />
     </Icon>
   )
 }
@@ -6702,7 +6711,7 @@ export function Sparkle(props: IconProps) {
 export function Sparkles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 8.8628L16.9799 13.0201L21.1372 15L16.9799 16.9799L15 21.1372L13.0201 16.9799L8.8628 15L13.0201 13.0201L15 8.8628ZM6.25 2.8628L7.4521 5.0479L9.6372 6.25L7.4521 7.4521L6.25 9.6372L5.0479 7.4521L2.8628 6.25L5.0479 5.0479L6.25 2.8628Z" fill="none" />
+      <SvgPath d="M15 8.8628L16.9799 13.0201L21.1372 15L16.9799 16.9799L15 21.1372L13.0201 16.9799L8.8628 15L13.0201 13.0201L15 8.8628ZM6.25 2.8628L7.4521 5.0479L9.6372 6.25L7.4521 7.4521L6.25 9.6372L5.0479 7.4521L2.8628 6.25L5.0479 5.0479L6.25 2.8628Z" fill="none" />
     </Icon>
   )
 }
@@ -6710,8 +6719,8 @@ export function Sparkles(props: IconProps) {
 export function SquareActivity(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M6 12L8.5 12L10 8L14 16L15.5 12L18 12" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M6 12L8.5 12L10 8L14 16L15.5 12L18 12" />
     </Icon>
   )
 }
@@ -6719,9 +6728,9 @@ export function SquareActivity(props: IconProps) {
 export function SquareAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 6L12 14" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 6L12 14" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -6729,8 +6738,8 @@ export function SquareAlert(props: IconProps) {
 export function SquareAlignOffsetBottom(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 3L21 21L3 21L3 3L21 3Z" />
-      <Path d="M7 16L14 16M8 12L17 12M13 8L17 8" />
+      <SvgPath d="M21 3L21 21L3 21L3 3L21 3Z" />
+      <SvgPath d="M7 16L14 16M8 12L17 12M13 8L17 8" />
     </Icon>
   )
 }
@@ -6738,8 +6747,8 @@ export function SquareAlignOffsetBottom(props: IconProps) {
 export function SquareAlignOffsetLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 3L21 21L3 21L3 3L21 3Z" />
-      <Path d="M16 10L16 17M8 7L8 11M12 16L12 7" />
+      <SvgPath d="M21 3L21 21L3 21L3 3L21 3Z" />
+      <SvgPath d="M16 10L16 17M8 7L8 11M12 16L12 7" />
     </Icon>
   )
 }
@@ -6747,8 +6756,8 @@ export function SquareAlignOffsetLeft(props: IconProps) {
 export function SquareAlignOffsetRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 3L21 21L3 21L3 3L21 3Z" />
-      <Path d="M16 7L16 14M8 13L8 17M12 17L12 8" />
+      <SvgPath d="M21 3L21 21L3 21L3 3L21 3Z" />
+      <SvgPath d="M16 7L16 14M8 13L8 17M12 17L12 8" />
     </Icon>
   )
 }
@@ -6756,8 +6765,8 @@ export function SquareAlignOffsetRight(props: IconProps) {
 export function SquareAlignOffsetTop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 3L21 21L3 21L3 3L21 3Z" />
-      <Path d="M7 8L14 8M8 12L17 12M13 16L17 16" />
+      <SvgPath d="M21 3L21 21L3 21L3 3L21 3Z" />
+      <SvgPath d="M7 8L14 8M8 12L17 12M13 16L17 16" />
     </Icon>
   )
 }
@@ -6765,8 +6774,8 @@ export function SquareAlignOffsetTop(props: IconProps) {
 export function SquareArrowDownLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M9 8L9 15L16 15M9.1464 14.8536L15.2929 8.7071" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M9 8L9 15L16 15M9.1464 14.8536L15.2929 8.7071" />
     </Icon>
   )
 }
@@ -6774,8 +6783,8 @@ export function SquareArrowDownLeft(props: IconProps) {
 export function SquareArrowDownRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 15L15 15L15 8M8.7071 8.7071L14.8536 14.8536" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 15L15 15L15 8M8.7071 8.7071L14.8536 14.8536" />
     </Icon>
   )
 }
@@ -6783,8 +6792,8 @@ export function SquareArrowDownRight(props: IconProps) {
 export function SquareArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.6975 11.8119L12 16L16.3025 11.8119M12 7L12 15.9148" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.6975 11.8119L12 16L16.3025 11.8119M12 7L12 15.9148" />
     </Icon>
   )
 }
@@ -6792,8 +6801,8 @@ export function SquareArrowDown(props: IconProps) {
 export function SquareArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M17 12L8.0852 12M12.1881 7.6975L8 12L12.1881 16.3025" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M17 12L8.0852 12M12.1881 7.6975L8 12L12.1881 16.3025" />
     </Icon>
   )
 }
@@ -6801,8 +6810,8 @@ export function SquareArrowLeft(props: IconProps) {
 export function SquareArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 12L15.9148 12M11.8119 7.6975L16 12L11.8119 16.3025" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 12L15.9148 12M11.8119 7.6975L16 12L11.8119 16.3025" />
     </Icon>
   )
 }
@@ -6810,8 +6819,8 @@ export function SquareArrowRight(props: IconProps) {
 export function SquareArrowUTurnLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M10.8937 16.5L12.9203 16.5C14.6212 16.5 16 15.1569 16 13.5C16 11.8431 14.6212 10.5 12.9203 10.5L8.0833 10.5M11.1625 7.1909L8 10.5L11.1625 13.8091" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M10.8937 16.5L12.9203 16.5C14.6212 16.5 16 15.1569 16 13.5C16 11.8431 14.6212 10.5 12.9203 10.5L8.0833 10.5M11.1625 7.1909L8 10.5L11.1625 13.8091" />
     </Icon>
   )
 }
@@ -6819,8 +6828,8 @@ export function SquareArrowUTurnLeft(props: IconProps) {
 export function SquareArrowUTurnRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M15.9167 10.5L11.0797 10.5C9.3788 10.5 8 11.8431 8 13.5C8 15.1569 9.3788 16.5 11.0797 16.5L13.1063 16.5M12.8375 7.1909L16 10.5L12.8375 13.8091" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M15.9167 10.5L11.0797 10.5C9.3788 10.5 8 11.8431 8 13.5C8 15.1569 9.3788 16.5 11.0797 16.5L13.1063 16.5M12.8375 7.1909L16 10.5L12.8375 13.8091" />
     </Icon>
   )
 }
@@ -6828,8 +6837,8 @@ export function SquareArrowUTurnRight(props: IconProps) {
 export function SquareArrowUpLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M15.2929 15.2929L9.1464 9.1464M9 16L9 9L16 9" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M15.2929 15.2929L9.1464 9.1464M9 16L9 9L16 9" />
     </Icon>
   )
 }
@@ -6837,8 +6846,8 @@ export function SquareArrowUpLeft(props: IconProps) {
 export function SquareArrowUpRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 9L15 9L15 16M8.7071 15.2929L14.8536 9.1464" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 9L15 9L15 16M8.7071 15.2929L14.8536 9.1464" />
     </Icon>
   )
 }
@@ -6846,8 +6855,8 @@ export function SquareArrowUpRight(props: IconProps) {
 export function SquareArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.6975 12.1881L12 8L16.3025 12.1881M12 17L12 8.0852" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.6975 12.1881L12 8L16.3025 12.1881M12 17L12 8.0852" />
     </Icon>
   )
 }
@@ -6855,8 +6864,8 @@ export function SquareArrowUp(props: IconProps) {
 export function SquareBarChart2Down(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 7L8 11.6667M12 7L12 14.3333M16 7L16 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 7L8 11.6667M12 7L12 14.3333M16 7L16 17" />
     </Icon>
   )
 }
@@ -6864,8 +6873,8 @@ export function SquareBarChart2Down(props: IconProps) {
 export function SquareBarChart2HorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 8L17 8M9.6667 12L17 12M12.3333 16L17 16" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 8L17 8M9.6667 12L17 12M12.3333 16L17 16" />
     </Icon>
   )
 }
@@ -6873,8 +6882,8 @@ export function SquareBarChart2HorizontalEnd(props: IconProps) {
 export function SquareBarChart2HorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 8L17 8M7 12L14.3333 12M7 16L11.6667 16" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 8L17 8M7 12L14.3333 12M7 16L11.6667 16" />
     </Icon>
   )
 }
@@ -6882,8 +6891,8 @@ export function SquareBarChart2HorizontalStart(props: IconProps) {
 export function SquareBarChart2(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 12.3333L8 17M12 9.6667L12 17M16 7L16 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 12.3333L8 17M12 9.6667L12 17M16 7L16 17" />
     </Icon>
   )
 }
@@ -6891,8 +6900,8 @@ export function SquareBarChart2(props: IconProps) {
 export function SquareBarChartDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 7L8 14.3333M12 7L12 17M16 7L16 11.6667" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 7L8 14.3333M12 7L12 17M16 7L16 11.6667" />
     </Icon>
   )
 }
@@ -6900,8 +6909,8 @@ export function SquareBarChartDown(props: IconProps) {
 export function SquareBarChartHorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12.3333 8L17 8M7 12L17 12M9.6667 16L17 16" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12.3333 8L17 8M7 12L17 12M9.6667 16L17 16" />
     </Icon>
   )
 }
@@ -6909,8 +6918,8 @@ export function SquareBarChartHorizontalEnd(props: IconProps) {
 export function SquareBarChartHorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 8L11.6667 8M7 12L17 12M7 16L14.3333 16" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 8L11.6667 8M7 12L17 12M7 16L14.3333 16" />
     </Icon>
   )
 }
@@ -6918,8 +6927,8 @@ export function SquareBarChartHorizontalStart(props: IconProps) {
 export function SquareBarChart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8 9.6667L8 17M12 7L12 17M16 12.3333L16 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8 9.6667L8 17M12 7L12 17M16 12.3333L16 17" />
     </Icon>
   )
 }
@@ -6927,8 +6936,8 @@ export function SquareBarChart(props: IconProps) {
 export function SquareCaretDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 16.5L7 7.5L17 7.5L12 16.5Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 16.5L7 7.5L17 7.5L12 16.5Z" />
     </Icon>
   )
 }
@@ -6936,8 +6945,8 @@ export function SquareCaretDown(props: IconProps) {
 export function SquareCaretLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.5 12L16.5 17L16.5 7L7.5 12Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.5 12L16.5 17L16.5 7L7.5 12Z" />
     </Icon>
   )
 }
@@ -6945,8 +6954,8 @@ export function SquareCaretLeft(props: IconProps) {
 export function SquareCaretRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M16.5 12L7.5 17L7.5 7L16.5 12Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M16.5 12L7.5 17L7.5 7L16.5 12Z" />
     </Icon>
   )
 }
@@ -6954,8 +6963,8 @@ export function SquareCaretRight(props: IconProps) {
 export function SquareCaretUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 7.5L7 16.5L17 16.5L12 7.5Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 7.5L7 16.5L17 16.5L12 7.5Z" />
     </Icon>
   )
 }
@@ -6963,8 +6972,8 @@ export function SquareCaretUp(props: IconProps) {
 export function SquareCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.7016 11.6644L10.6667 15L16.2984 8.6644" />
     </Icon>
   )
 }
@@ -6972,8 +6981,8 @@ export function SquareCheck(props: IconProps) {
 export function SquareChevronDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.7071 9.7071L12 14L16.2929 9.7071" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.7071 9.7071L12 14L16.2929 9.7071" />
     </Icon>
   )
 }
@@ -6981,8 +6990,8 @@ export function SquareChevronDown(props: IconProps) {
 export function SquareChevronLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M14.2929 7.7071L10 12L14.2929 16.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M14.2929 7.7071L10 12L14.2929 16.2929" />
     </Icon>
   )
 }
@@ -6990,8 +6999,8 @@ export function SquareChevronLeft(props: IconProps) {
 export function SquareChevronRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M9.7071 7.7071L14 12L9.7071 16.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M9.7071 7.7071L14 12L9.7071 16.2929" />
     </Icon>
   )
 }
@@ -6999,8 +7008,8 @@ export function SquareChevronRight(props: IconProps) {
 export function SquareChevronUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.7071 14.2929L12 10L16.2929 14.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.7071 14.2929L12 10L16.2929 14.2929" />
     </Icon>
   )
 }
@@ -7008,8 +7017,8 @@ export function SquareChevronUp(props: IconProps) {
 export function SquareChevronsDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8.2071 6.9571L12 10.75L15.7929 6.9571M8.2071 12.9571L12 16.75L15.7929 12.9571" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8.2071 6.9571L12 10.75L15.7929 6.9571M8.2071 12.9571L12 16.75L15.7929 12.9571" />
     </Icon>
   )
 }
@@ -7017,8 +7026,8 @@ export function SquareChevronsDown(props: IconProps) {
 export function SquareChevronsLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M11.0429 8.2071L7.25 12L11.0429 15.7929M17.0429 8.2071L13.25 12L17.0429 15.7929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M11.0429 8.2071L7.25 12L11.0429 15.7929M17.0429 8.2071L13.25 12L17.0429 15.7929" />
     </Icon>
   )
 }
@@ -7026,8 +7035,8 @@ export function SquareChevronsLeft(props: IconProps) {
 export function SquareChevronsRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M6.9571 8.2071L10.75 12L6.9571 15.7929M12.9571 8.2071L16.75 12L12.9571 15.7929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M6.9571 8.2071L10.75 12L6.9571 15.7929M12.9571 8.2071L16.75 12L12.9571 15.7929" />
     </Icon>
   )
 }
@@ -7035,8 +7044,8 @@ export function SquareChevronsRight(props: IconProps) {
 export function SquareChevronsUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8.2071 11.0429L12 7.25L15.7929 11.0429M8.2071 17.0429L12 13.25L15.7929 17.0429" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8.2071 11.0429L12 7.25L15.7929 11.0429M8.2071 17.0429L12 13.25L15.7929 17.0429" />
     </Icon>
   )
 }
@@ -7044,8 +7053,8 @@ export function SquareChevronsUp(props: IconProps) {
 export function SquareCursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M10.2828 17L7 7L17 10.4431L12.7702 12.5871L10.2828 17Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M10.2828 17L7 7L17 10.4431L12.7702 12.5871L10.2828 17Z" />
     </Icon>
   )
 }
@@ -7053,8 +7062,8 @@ export function SquareCursor(props: IconProps) {
 export function SquareDashedFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
-      <Path d="M7 7L17 7L17 17L7 17L7 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
+      <SvgPath d="M7 7L17 7L17 17L7 17L7 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7062,8 +7071,8 @@ export function SquareDashedFull(props: IconProps) {
 export function SquareDashedHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
-      <Path d="M12 7L17 7L17 17L12 17L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
+      <SvgPath d="M12 7L17 7L17 17L12 17L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7071,8 +7080,8 @@ export function SquareDashedHalf(props: IconProps) {
 export function SquareDashedQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
-      <Path d="M12 7L17 7L17 12L12 12L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
+      <SvgPath d="M12 7L17 7L17 12L12 12L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7080,8 +7089,8 @@ export function SquareDashedQuarter(props: IconProps) {
 export function SquareDashedThreeQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
-      <Path d="M12 7L17 7L17 17L7 17L7 12L12 12L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
+      <SvgPath d="M12 7L17 7L17 17L7 17L7 12L12 12L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7089,7 +7098,7 @@ export function SquareDashedThreeQuarter(props: IconProps) {
 export function SquareDashed(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
+      <SvgPath d="M3 7L3 3L7 3M9.5 3L14.5 3M17 3L21 3L21 7M21 9.5L21 14.5M21 17L21 21L17 21M14.5 21L9.5 21M7 21L3 21L3 17M3 14.5L3 9.5" />
     </Icon>
   )
 }
@@ -7097,8 +7106,8 @@ export function SquareDashed(props: IconProps) {
 export function SquareFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 7L17 7L17 17L7 17L7 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 7L17 7L17 17L7 17L7 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7106,8 +7115,8 @@ export function SquareFull(props: IconProps) {
 export function SquareHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 7L17 7L17 17L12 17L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 7L17 7L17 17L12 17L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7115,8 +7124,8 @@ export function SquareHalf(props: IconProps) {
 export function SquareMenu(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 8L17 8M7 12L17 12M7 16L17 16" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 8L17 8M7 12L17 12M7 16L17 16" />
     </Icon>
   )
 }
@@ -7124,8 +7133,8 @@ export function SquareMenu(props: IconProps) {
 export function SquareMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 12L17 12" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 12L17 12" />
     </Icon>
   )
 }
@@ -7133,8 +7142,8 @@ export function SquareMinus(props: IconProps) {
 export function SquareMoreHorizontal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7.3333 10.6667C8.0697 10.6667 8.6666 11.2636 8.6666 12C8.6666 12.7364 8.0697 13.3333 7.3333 13.3333C6.5969 13.3333 6 12.7364 6 12C6 11.2636 6.5969 10.6667 7.3333 10.6667ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM16.6667 10.6667C17.4031 10.6667 18 11.2636 18 12C18 12.7364 17.4031 13.3333 16.6667 13.3333C15.9303 13.3333 15.3334 12.7364 15.3334 12C15.3334 11.2636 15.9303 10.6667 16.6667 10.6667Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7.3333 10.6667C8.0697 10.6667 8.6666 11.2636 8.6666 12C8.6666 12.7364 8.0697 13.3333 7.3333 13.3333C6.5969 13.3333 6 12.7364 6 12C6 11.2636 6.5969 10.6667 7.3333 10.6667ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM16.6667 10.6667C17.4031 10.6667 18 11.2636 18 12C18 12.7364 17.4031 13.3333 16.6667 13.3333C15.9303 13.3333 15.3334 12.7364 15.3334 12C15.3334 11.2636 15.9303 10.6667 16.6667 10.6667Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7142,8 +7151,8 @@ export function SquareMoreHorizontal(props: IconProps) {
 export function SquareMoreVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 6C12.7364 6 13.3333 6.5969 13.3333 7.3333C13.3333 8.0697 12.7364 8.6666 12 8.6666C11.2636 8.6666 10.6667 8.0697 10.6667 7.3333C10.6667 6.5969 11.2636 6 12 6ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM12 15.3334C12.7364 15.3334 13.3333 15.9303 13.3333 16.6667C13.3333 17.4031 12.7364 18 12 18C11.2636 18 10.6667 17.4031 10.6667 16.6667C10.6667 15.9303 11.2636 15.3334 12 15.3334Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 6C12.7364 6 13.3333 6.5969 13.3333 7.3333C13.3333 8.0697 12.7364 8.6666 12 8.6666C11.2636 8.6666 10.6667 8.0697 10.6667 7.3333C10.6667 6.5969 11.2636 6 12 6ZM12 10.6667C12.7364 10.6667 13.3333 11.2636 13.3333 12C13.3333 12.7364 12.7364 13.3333 12 13.3333C11.2636 13.3333 10.6667 12.7364 10.6667 12C10.6667 11.2636 11.2636 10.6667 12 10.6667ZM12 15.3334C12.7364 15.3334 13.3333 15.9303 13.3333 16.6667C13.3333 17.4031 12.7364 18 12 18C11.2636 18 10.6667 17.4031 10.6667 16.6667C10.6667 15.9303 11.2636 15.3334 12 15.3334Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7151,8 +7160,8 @@ export function SquareMoreVertical(props: IconProps) {
 export function SquareNavigation(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 21L21 21L21 3L3 3L3 21L5 21" />
-      <Path d="M8.5 19.5L12 12.5L15.5 19.5L12 18.6945L8.5 19.5Z" />
+      <SvgPath d="M19 21L21 21L21 3L3 3L3 21L5 21" />
+      <SvgPath d="M8.5 19.5L12 12.5L15.5 19.5L12 18.6945L8.5 19.5Z" />
     </Icon>
   )
 }
@@ -7160,7 +7169,7 @@ export function SquareNavigation(props: IconProps) {
 export function SquarePause(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 7L9 17M15 7L15 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 7L9 17M15 7L15 17" />
     </Icon>
   )
 }
@@ -7168,7 +7177,7 @@ export function SquarePause(props: IconProps) {
 export function SquarePen(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M13 3L3 3L3 21L21 21L21 11M10.5 13.5L14.6248 11.8501L20.4874 5.9874C21.1709 5.304 21.1709 4.196 20.4874 3.5126C19.804 2.8291 18.696 2.8291 18.0126 3.5126L12.1499 9.3752L10.5 13.5Z" />
+      <SvgPath d="M13 3L3 3L3 21L21 21L21 11M10.5 13.5L14.6248 11.8501L20.4874 5.9874C21.1709 5.304 21.1709 4.196 20.4874 3.5126C19.804 2.8291 18.696 2.8291 18.0126 3.5126L12.1499 9.3752L10.5 13.5Z" />
     </Icon>
   )
 }
@@ -7176,9 +7185,9 @@ export function SquarePen(props: IconProps) {
 export function SquarePercent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
-      <Path d="M7.7071 16.2929L16.2929 7.7071" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8.5 7C9.3285 7 10 7.6716 10 8.5C10 9.3285 9.3285 10 8.5 10C7.6716 10 7 9.3285 7 8.5C7 7.6716 7.6716 7 8.5 7ZM15.5 14C16.3285 14 17 14.6716 17 15.5C17 16.3285 16.3285 17 15.5 17C14.6716 17 14 16.3285 14 15.5C14 14.6716 14.6716 14 15.5 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7.7071 16.2929L16.2929 7.7071" />
     </Icon>
   )
 }
@@ -7186,7 +7195,7 @@ export function SquarePercent(props: IconProps) {
 export function SquarePlay(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM8.9627 7.3013L16.4807 12L8.9627 16.6987L8.9627 7.3013Z" />
     </Icon>
   )
 }
@@ -7194,8 +7203,8 @@ export function SquarePlay(props: IconProps) {
 export function SquarePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M7 12L17 12M11.995 17.005L11.995 7.005" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M7 12L17 12M11.995 17.005L11.995 7.005" />
     </Icon>
   )
 }
@@ -7203,8 +7212,8 @@ export function SquarePlus(props: IconProps) {
 export function SquareQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 7L17 7L17 12L12 12L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 7L17 7L17 12L12 12L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7212,9 +7221,9 @@ export function SquareQuarter(props: IconProps) {
 export function SquareQuestion(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M9.6 10.4L9.6 9.4C9.6 8.0745 10.6745 7 12 7C13.3255 7 14.4 8.0745 14.4 9.4C14.4 10.3689 13.8174 11.2427 12.9231 11.6154C12.3641 11.8483 12 12.3944 12 13L12 14" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7222,7 +7231,7 @@ export function SquareQuestion(props: IconProps) {
 export function SquareRecord(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM16 12C16 14.2091 14.2091 16 12 16C9.7909 16 8 14.2091 8 12C8 9.7909 9.7909 8 12 8C14.2091 8 16 9.7909 16 12Z" />
     </Icon>
   )
 }
@@ -7230,7 +7239,7 @@ export function SquareRecord(props: IconProps) {
 export function SquareSlash(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM15.2929 8.7071L8.7071 15.2929" fill="none" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM15.2929 8.7071L8.7071 15.2929" fill="none" />
     </Icon>
   )
 }
@@ -7238,7 +7247,7 @@ export function SquareSlash(props: IconProps) {
 export function SquareStop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM9 9L15 9L15 15L9 15L9 9Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM9 9L15 9L15 15L9 15L9 9Z" />
     </Icon>
   )
 }
@@ -7246,8 +7255,8 @@ export function SquareStop(props: IconProps) {
 export function SquareTerminalAsterisk(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M10 6.4648L10 13.5352M6.5547 12.2968L13.4453 7.7032M6.5547 7.7032L13.4453 12.2968M12 17L18 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M10 6.4648L10 13.5352M6.5547 12.2968L13.4453 7.7032M6.5547 7.7032L13.4453 12.2968M12 17L18 17" />
     </Icon>
   )
 }
@@ -7255,8 +7264,8 @@ export function SquareTerminalAsterisk(props: IconProps) {
 export function SquareTerminal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M6.7071 6.7071L11 11L6.7071 15.2929M12 17L18 17" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M6.7071 6.7071L11 11L6.7071 15.2929M12 17L18 17" />
     </Icon>
   )
 }
@@ -7264,8 +7273,8 @@ export function SquareTerminal(props: IconProps) {
 export function SquareThreeQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M12 7L17 7L17 17L7 17L7 12L12 12L12 7Z" strokeLinejoin="miter" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M12 7L17 7L17 17L7 17L7 12L12 12L12 7Z" strokeLinejoin="miter" />
     </Icon>
   )
 }
@@ -7273,8 +7282,8 @@ export function SquareThreeQuarter(props: IconProps) {
 export function SquareTrendingDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M6.7071 9.2071L10.2 12.7L12.7 10.2L16.8828 14.3828M13 14.5L17 14.5L17 10.5" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M6.7071 9.2071L10.2 12.7L12.7 10.2L16.8828 14.3828M13 14.5L17 14.5L17 10.5" />
     </Icon>
   )
 }
@@ -7282,8 +7291,8 @@ export function SquareTrendingDown(props: IconProps) {
 export function SquareTrendingUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M6.7071 14.7929L10.2 11.3L12.7 13.8L16.8828 9.6172M13 9.5L17 9.5L17 13.5" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M6.7071 14.7929L10.2 11.3L12.7 13.8L16.8828 9.6172M13 9.5L17 9.5L17 13.5" />
     </Icon>
   )
 }
@@ -7291,8 +7300,8 @@ export function SquareTrendingUp(props: IconProps) {
 export function SquareX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
-      <Path d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M8.7071 8.7071L15.2929 15.2929M15.2929 8.7071L8.7071 15.2929" />
     </Icon>
   )
 }
@@ -7300,7 +7309,7 @@ export function SquareX(props: IconProps) {
 export function Square(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3Z" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3Z" />
     </Icon>
   )
 }
@@ -7308,7 +7317,7 @@ export function Square(props: IconProps) {
 export function Star(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12.4614 2.8073L14.9876 8.8559L21.5398 9.379C21.7413 9.3951 21.9133 9.531 21.9756 9.7233C22.0379 9.9157 21.9783 10.1266 21.8245 10.2578L16.8339 14.5151L18.3593 20.8835C18.4064 21.0798 18.3307 21.2851 18.1675 21.404C18.0044 21.5229 17.7857 21.532 17.6132 21.4271L12 18.0127L6.3868 21.4271C6.2143 21.532 5.9956 21.5229 5.8325 21.404C5.6693 21.2851 5.5936 21.0798 5.6407 20.8835L7.1661 14.5151L2.1755 10.2578C2.0217 10.1266 1.962 9.9157 2.0244 9.7233C2.0867 9.531 2.2587 9.3951 2.4602 9.379L9.0124 8.8559L11.5386 2.8073C11.6164 2.6212 11.7983 2.5 12 2.5C12.2017 2.5 12.3836 2.6212 12.4614 2.8073Z" />
+      <SvgPath d="M12.4614 2.8073L14.9876 8.8559L21.5398 9.379C21.7413 9.3951 21.9133 9.531 21.9756 9.7233C22.0379 9.9157 21.9783 10.1266 21.8245 10.2578L16.8339 14.5151L18.3593 20.8835C18.4064 21.0798 18.3307 21.2851 18.1675 21.404C18.0044 21.5229 17.7857 21.532 17.6132 21.4271L12 18.0127L6.3868 21.4271C6.2143 21.532 5.9956 21.5229 5.8325 21.404C5.6693 21.2851 5.5936 21.0798 5.6407 20.8835L7.1661 14.5151L2.1755 10.2578C2.0217 10.1266 1.962 9.9157 2.0244 9.7233C2.0867 9.531 2.2587 9.3951 2.4602 9.379L9.0124 8.8559L11.5386 2.8073C11.6164 2.6212 11.7983 2.5 12 2.5C12.2017 2.5 12.3836 2.6212 12.4614 2.8073Z" />
     </Icon>
   )
 }
@@ -7316,7 +7325,7 @@ export function Star(props: IconProps) {
 export function StickyNoteCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14.7071 18.7071L17 21L21.2929 16.7071" />
+      <SvgPath d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14.7071 18.7071L17 21L21.2929 16.7071" />
     </Icon>
   )
 }
@@ -7324,7 +7333,7 @@ export function StickyNoteCheck(props: IconProps) {
 export function StickyNoteMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14 18L22 18" />
+      <SvgPath d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14 18L22 18" />
     </Icon>
   )
 }
@@ -7332,7 +7341,7 @@ export function StickyNoteMinus(props: IconProps) {
 export function StickyNoteOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L3 21L21 21M7.6569 3L15 3L21 9L21 16.3431M15 3L15 9L21 9M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M3 3L3 21L21 21M7.6569 3L15 3L21 9L21 16.3431M15 3L15 9L21 9M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -7340,7 +7349,7 @@ export function StickyNoteOff(props: IconProps) {
 export function StickyNotePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M18 14L18 22M14 18L22 18" />
+      <SvgPath d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M18 14L18 22M14 18L22 18" />
     </Icon>
   )
 }
@@ -7348,7 +7357,7 @@ export function StickyNotePlus(props: IconProps) {
 export function StickyNoteX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
+      <SvgPath d="M15 3L3 3L3 21L12 21M15 3L21 9L21 12M15 3L15 9L21 9M14.7071 14.7071L21.2929 21.2929M21.2929 14.7071L14.7071 21.2929" />
     </Icon>
   )
 }
@@ -7356,7 +7365,7 @@ export function StickyNoteX(props: IconProps) {
 export function StickyNote(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L15 3L21 9L21 21L3 21L3 3ZM15 3L15 9L21 9" />
+      <SvgPath d="M3 3L15 3L21 9L21 21L3 21L3 3ZM15 3L15 9L21 9" />
     </Icon>
   )
 }
@@ -7364,7 +7373,7 @@ export function StickyNote(props: IconProps) {
 export function StickyNotes(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L16 8L22 14L22 22L8 22L8 8ZM16 8L16 14L22 14" />
+      <SvgPath d="M16 5L16.0001 2L2 2L2 16.0001L5 16M8 8L16 8L22 14L22 22L8 22L8 8ZM16 8L16 14L22 14" />
     </Icon>
   )
 }
@@ -7372,7 +7381,7 @@ export function StickyNotes(props: IconProps) {
 export function Stop(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 5L19 5L19 19L5 19L5 5Z" />
+      <SvgPath d="M5 5L19 5L19 19L5 19L5 5Z" />
     </Icon>
   )
 }
@@ -7380,7 +7389,7 @@ export function Stop(props: IconProps) {
 export function Store(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 7.5L2 6L4.5 3L19.5 3L22 6L22 7.5C22 8.8807 20.8807 10 19.5 10C18.1193 10 17 8.8807 17 7.5C17 8.8807 15.8807 10 14.5 10C13.1193 10 12 8.8807 12 7.5C12 8.8807 10.8807 10 9.5 10C8.1193 10 7 8.8807 7 7.5C7 8.8807 5.8807 10 4.5 10C3.1193 10 2 8.8807 2 7.5ZM4 10L4 21L20 21L20 10M9 21L9 14L15 14L15 21M7 7.5L7 6M12 7.5L12 6M17 7.5L17 6" fill="none" />
+      <SvgPath d="M2 7.5L2 6L4.5 3L19.5 3L22 6L22 7.5C22 8.8807 20.8807 10 19.5 10C18.1193 10 17 8.8807 17 7.5C17 8.8807 15.8807 10 14.5 10C13.1193 10 12 8.8807 12 7.5C12 8.8807 10.8807 10 9.5 10C8.1193 10 7 8.8807 7 7.5C7 8.8807 5.8807 10 4.5 10C3.1193 10 2 8.8807 2 7.5ZM4 10L4 21L20 21L20 10M9 21L9 14L15 14L15 21M7 7.5L7 6M12 7.5L12 6M17 7.5L17 6" fill="none" />
     </Icon>
   )
 }
@@ -7388,7 +7397,7 @@ export function Store(props: IconProps) {
 export function Strikethrough(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 9L8 8C8 5.7909 9.7909 4 12 4C13.1093 4 14.1689 4.4607 14.9254 5.272L15.222 5.59M12 12C14.2091 12 16 13.7909 16 16C16 18.2091 14.2091 20 12 20C10.3184 20 8.8164 18.9483 8.2412 17.3681L8.0017 16.7101M2 12L22 12" fill="none" />
+      <SvgPath d="M8 9L8 8C8 5.7909 9.7909 4 12 4C13.1093 4 14.1689 4.4607 14.9254 5.272L15.222 5.59M12 12C14.2091 12 16 13.7909 16 16C16 18.2091 14.2091 20 12 20C10.3184 20 8.8164 18.9483 8.2412 17.3681L8.0017 16.7101M2 12L22 12" fill="none" />
     </Icon>
   )
 }
@@ -7396,7 +7405,7 @@ export function Strikethrough(props: IconProps) {
 export function Subtitles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM5 10L9 10M11 10L19 10M5 14L13 14M15 14L19 14" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM5 10L9 10M11 10L19 10M5 14L13 14M15 14L19 14" />
     </Icon>
   )
 }
@@ -7404,8 +7413,8 @@ export function Subtitles(props: IconProps) {
 export function SunDim(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.5147 16.5 7.5 14.4853 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12Z" fill="none" />
-      <Path d="M21.5 12C21.5 12.5523 21.0523 13 20.5 13C19.9477 13 19.5 12.5523 19.5 12C19.5 11.4477 19.9477 11 20.5 11C21.0523 11 21.5 11.4477 21.5 12ZM19.0104 18.0104C19.0104 18.5627 18.5627 19.0104 18.0104 19.0104C17.4581 19.0104 17.0104 18.5627 17.0104 18.0104C17.0104 17.4581 17.4581 17.0104 18.0104 17.0104C18.5627 17.0104 19.0104 17.4581 19.0104 18.0104ZM13 20.5C13 21.0523 12.5523 21.5 12 21.5C11.4477 21.5 11 21.0523 11 20.5C11 19.9477 11.4477 19.5 12 19.5C12.5523 19.5 13 19.9477 13 20.5ZM6.9896 18.0104C6.9896 18.5627 6.5419 19.0104 5.9896 19.0104C5.4373 19.0104 4.9896 18.5627 4.9896 18.0104C4.9896 17.4581 5.4373 17.0104 5.9896 17.0104C6.5419 17.0104 6.9896 17.4581 6.9896 18.0104ZM4.5 12C4.5 12.5523 4.0523 13 3.5 13C2.9477 13 2.5 12.5523 2.5 12C2.5 11.4477 2.9477 11 3.5 11C4.0523 11 4.5 11.4477 4.5 12ZM6.9896 5.9896C6.9896 6.5419 6.5419 6.9896 5.9896 6.9896C5.4373 6.9896 4.9896 6.5419 4.9896 5.9896C4.9896 5.4373 5.4373 4.9896 5.9896 4.9896C6.5419 4.9896 6.9896 5.4373 6.9896 5.9896ZM13 3.5C13 4.0523 12.5523 4.5 12 4.5C11.4477 4.5 11 4.0523 11 3.5C11 2.9477 11.4477 2.5 12 2.5C12.5523 2.5 13 2.9477 13 3.5ZM19.0104 5.9896C19.0104 6.5419 18.5627 6.9896 18.0104 6.9896C17.4581 6.9896 17.0104 6.5419 17.0104 5.9896C17.0104 5.4373 17.4581 4.9896 18.0104 4.9896C18.5627 4.9896 19.0104 5.4373 19.0104 5.9896Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.5147 16.5 7.5 14.4853 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12Z" fill="none" />
+      <SvgPath d="M21.5 12C21.5 12.5523 21.0523 13 20.5 13C19.9477 13 19.5 12.5523 19.5 12C19.5 11.4477 19.9477 11 20.5 11C21.0523 11 21.5 11.4477 21.5 12ZM19.0104 18.0104C19.0104 18.5627 18.5627 19.0104 18.0104 19.0104C17.4581 19.0104 17.0104 18.5627 17.0104 18.0104C17.0104 17.4581 17.4581 17.0104 18.0104 17.0104C18.5627 17.0104 19.0104 17.4581 19.0104 18.0104ZM13 20.5C13 21.0523 12.5523 21.5 12 21.5C11.4477 21.5 11 21.0523 11 20.5C11 19.9477 11.4477 19.5 12 19.5C12.5523 19.5 13 19.9477 13 20.5ZM6.9896 18.0104C6.9896 18.5627 6.5419 19.0104 5.9896 19.0104C5.4373 19.0104 4.9896 18.5627 4.9896 18.0104C4.9896 17.4581 5.4373 17.0104 5.9896 17.0104C6.5419 17.0104 6.9896 17.4581 6.9896 18.0104ZM4.5 12C4.5 12.5523 4.0523 13 3.5 13C2.9477 13 2.5 12.5523 2.5 12C2.5 11.4477 2.9477 11 3.5 11C4.0523 11 4.5 11.4477 4.5 12ZM6.9896 5.9896C6.9896 6.5419 6.5419 6.9896 5.9896 6.9896C5.4373 6.9896 4.9896 6.5419 4.9896 5.9896C4.9896 5.4373 5.4373 4.9896 5.9896 4.9896C6.5419 4.9896 6.9896 5.4373 6.9896 5.9896ZM13 3.5C13 4.0523 12.5523 4.5 12 4.5C11.4477 4.5 11 4.0523 11 3.5C11 2.9477 11.4477 2.5 12 2.5C12.5523 2.5 13 2.9477 13 3.5ZM19.0104 5.9896C19.0104 6.5419 18.5627 6.9896 18.0104 6.9896C17.4581 6.9896 17.0104 6.5419 17.0104 5.9896C17.0104 5.4373 17.4581 4.9896 18.0104 4.9896C18.5627 4.9896 19.0104 5.4373 19.0104 5.9896Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7413,7 +7422,7 @@ export function SunDim(props: IconProps) {
 export function SunMedium(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.5147 16.5 7.5 14.4853 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12ZM19.5 12L22 12M17.3033 17.3033L19.0711 19.0711M12 19.5L12 22M6.6967 17.3033L4.9289 19.0711M4.5 12L2 12M6.6967 6.6967L4.9289 4.9289M12 4.5L12 2M17.3033 6.6967L19.0711 4.9289" fill="none" />
+      <SvgPath d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.5147 16.5 7.5 14.4853 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4853 7.5 16.5 9.5147 16.5 12ZM19.5 12L22 12M17.3033 17.3033L19.0711 19.0711M12 19.5L12 22M6.6967 17.3033L4.9289 19.0711M4.5 12L2 12M6.6967 6.6967L4.9289 4.9289M12 4.5L12 2M17.3033 6.6967L19.0711 4.9289" fill="none" />
     </Icon>
   )
 }
@@ -7421,7 +7430,7 @@ export function SunMedium(props: IconProps) {
 export function Sun(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.5 12C16.5 14.4854 14.4854 16.5 12 16.5C9.5147 16.5 7.5 14.4854 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4854 7.5 16.5 9.5147 16.5 12ZM19.5 12L23 12M17.3033 17.3033L19.7782 19.7782M12 19.5L12 23M6.6967 17.3033L4.2218 19.7782M4.5 12L1 12M6.6967 6.6967L4.2218 4.2218M12 4.5L12 1M17.3033 6.6967L19.7782 4.2218" fill="none" />
+      <SvgPath d="M16.5 12C16.5 14.4854 14.4854 16.5 12 16.5C9.5147 16.5 7.5 14.4854 7.5 12C7.5 9.5147 9.5147 7.5 12 7.5C14.4854 7.5 16.5 9.5147 16.5 12ZM19.5 12L23 12M17.3033 17.3033L19.7782 19.7782M12 19.5L12 23M6.6967 17.3033L4.2218 19.7782M4.5 12L1 12M6.6967 6.6967L4.2218 4.2218M12 4.5L12 1M17.3033 6.6967L19.7782 4.2218" fill="none" />
     </Icon>
   )
 }
@@ -7429,7 +7438,7 @@ export function Sun(props: IconProps) {
 export function Sunrise(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.5 19L7.5 18C7.5 15.5147 9.5147 13.5 12 13.5C14.4853 13.5 16.5 15.5147 16.5 18L16.5 19M1 18L4.5 18M19.5 18L23 18M4.2218 10.2218L6.6967 12.6967M19.7782 10.2218L17.3033 12.6967M1 22L23 22M12 10L12 2M8.2071 5.7929L12 2L15.7929 5.7929" fill="none" />
+      <SvgPath d="M7.5 19L7.5 18C7.5 15.5147 9.5147 13.5 12 13.5C14.4853 13.5 16.5 15.5147 16.5 18L16.5 19M1 18L4.5 18M19.5 18L23 18M4.2218 10.2218L6.6967 12.6967M19.7782 10.2218L17.3033 12.6967M1 22L23 22M12 10L12 2M8.2071 5.7929L12 2L15.7929 5.7929" fill="none" />
     </Icon>
   )
 }
@@ -7437,7 +7446,7 @@ export function Sunrise(props: IconProps) {
 export function Sunset(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7.5 19L7.5 18C7.5 15.5147 9.5147 13.5 12 13.5C14.4853 13.5 16.5 15.5147 16.5 18L16.5 19M1 18L4.5 18M19.5 18L23 18M4.2218 10.2218L6.6967 12.6967M19.7782 10.2218L17.3033 12.6967M1 22L23 22M12 1L12 9M8.2071 5.2071L12 9L15.7929 5.2071" fill="none" />
+      <SvgPath d="M7.5 19L7.5 18C7.5 15.5147 9.5147 13.5 12 13.5C14.4853 13.5 16.5 15.5147 16.5 18L16.5 19M1 18L4.5 18M19.5 18L23 18M4.2218 10.2218L6.6967 12.6967M19.7782 10.2218L17.3033 12.6967M1 22L23 22M12 1L12 9M8.2071 5.2071L12 9L15.7929 5.2071" fill="none" />
     </Icon>
   )
 }
@@ -7445,8 +7454,8 @@ export function Sunset(props: IconProps) {
 export function SwatchBook(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 17L3 3L11 3L11 17C11 19.2091 9.2091 21 7 21C4.7909 21 3 19.2091 3 17ZM10.0642 19.5712L19.0632 8.8465L12.9348 3.7042L11 6.0101M7.6946 20.9392L21 18.5931L19.6109 10.7147L17.1284 11.1524" />
-      <Path d="M6 17C6 17.5523 6.4477 18 7 18C7.5523 18 8 17.5523 8 17C8 16.4477 7.5523 16 7 16C6.4477 16 6 16.4477 6 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M3 17L3 3L11 3L11 17C11 19.2091 9.2091 21 7 21C4.7909 21 3 19.2091 3 17ZM10.0642 19.5712L19.0632 8.8465L12.9348 3.7042L11 6.0101M7.6946 20.9392L21 18.5931L19.6109 10.7147L17.1284 11.1524" />
+      <SvgPath d="M6 17C6 17.5523 6.4477 18 7 18C7.5523 18 8 17.5523 8 17C8 16.4477 7.5523 16 7 16C6.4477 16 6 16.4477 6 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7454,7 +7463,7 @@ export function SwatchBook(props: IconProps) {
 export function SwissFranc(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 2L18 2L9 2L9 22L9 23M8 11L9 11L16 11L17 11M5 16L6 16L14 16L15 16" fill="none" />
+      <SvgPath d="M19 2L18 2L9 2L9 22L9 23M8 11L9 11L16 11L17 11M5 16L6 16L14 16L15 16" fill="none" />
     </Icon>
   )
 }
@@ -7462,7 +7471,7 @@ export function SwissFranc(props: IconProps) {
 export function Table(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M3 15L21 15M12 9L12 21" />
+      <SvgPath d="M3 3L21 3L21 21L3 21L3 3ZM3 9L21 9M3 15L21 15M12 9L12 21" />
     </Icon>
   )
 }
@@ -7470,8 +7479,8 @@ export function Table(props: IconProps) {
 export function TabletArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M19 13L19 20M22.2929 16.7071L19 20L15.7071 16.7071" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M19 13L19 20M22.2929 16.7071L19 20L15.7071 16.7071" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7479,8 +7488,8 @@ export function TabletArrowDown(props: IconProps) {
 export function TabletArrowInRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M15 17L22 17M18.7071 20.2929L22 17L18.7071 13.7071" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M15 17L22 17M18.7071 20.2929L22 17L18.7071 13.7071" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7488,8 +7497,8 @@ export function TabletArrowInRight(props: IconProps) {
 export function TabletArrowInUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M19 21L19 14M22.2929 17.2929L19 14L15.7071 17.2929" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M19 21L19 14M22.2929 17.2929L19 14L15.7071 17.2929" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7497,8 +7506,8 @@ export function TabletArrowInUp(props: IconProps) {
 export function TabletArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M23 17L16 17M19.2929 20.2929L16 17L19.2929 13.7071" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M23 17L16 17M19.2929 20.2929L16 17L19.2929 13.7071" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7506,8 +7515,8 @@ export function TabletArrowLeft(props: IconProps) {
 export function TabletCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M15.7055 17.2971L18.3333 20L22.1467 13.76" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M15.7055 17.2971L18.3333 20L22.1467 13.76" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7515,8 +7524,8 @@ export function TabletCheck(props: IconProps) {
 export function TabletMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M23 17L15 17" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M23 17L15 17" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7524,8 +7533,8 @@ export function TabletMinus(props: IconProps) {
 export function TabletPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M19 13L19 21M23 17L15 17" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M19 13L19 21M23 17L15 17" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7533,8 +7542,8 @@ export function TabletPlus(props: IconProps) {
 export function TabletVertical(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M20 22L4 22L4 2L20 2L20 22Z" />
-      <Path d="M8.5 13.5C9.3284 13.5 10 12.8284 10 12C10 11.1716 9.3284 10.5 8.5 10.5C7.6716 10.5 7 11.1716 7 12C7 12.8284 7.6716 13.5 8.5 13.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M20 22L4 22L4 2L20 2L20 22Z" />
+      <SvgPath d="M8.5 13.5C9.3284 13.5 10 12.8284 10 12C10 11.1716 9.3284 10.5 8.5 10.5C7.6716 10.5 7 11.1716 7 12C7 12.8284 7.6716 13.5 8.5 13.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7542,8 +7551,8 @@ export function TabletVertical(props: IconProps) {
 export function TabletX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 11L22 4L2 4L2 20L13 20M22.2929 13.7071L15.7071 20.2929M15.7071 13.7071L22.2929 20.2929" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 11L22 4L2 4L2 20L13 20M22.2929 13.7071L15.7071 20.2929M15.7071 13.7071L22.2929 20.2929" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7551,8 +7560,8 @@ export function TabletX(props: IconProps) {
 export function Tablet(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 20L22 4L2 4L2 20L22 20Z" />
-      <Path d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 20L22 4L2 4L2 20L22 20Z" />
+      <SvgPath d="M13.5 8.5C13.5 9.3284 12.8284 10 12 10C11.1716 10 10.5 9.3284 10.5 8.5C10.5 7.6716 11.1716 7 12 7C12.8284 7 13.5 7.6716 13.5 8.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7560,8 +7569,8 @@ export function Tablet(props: IconProps) {
 export function TagHorizontalEndPercent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L14.8284 4L22 12L14.8284 20L2 20L2 4ZM13.0429 15.2929L6.4571 8.7071" />
-      <Path d="M11.25 8.5C11.25 9.3284 11.9216 10 12.75 10C13.5784 10 14.25 9.3284 14.25 8.5C14.25 7.6716 13.5784 7 12.75 7C11.9216 7 11.25 7.6716 11.25 8.5ZM5.25 15.5C5.25 16.3284 5.9216 17 6.75 17C7.5784 17 8.25 16.3284 8.25 15.5C8.25 14.6716 7.5784 14 6.75 14C5.9216 14 5.25 14.6716 5.25 15.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 4L14.8284 4L22 12L14.8284 20L2 20L2 4ZM13.0429 15.2929L6.4571 8.7071" />
+      <SvgPath d="M11.25 8.5C11.25 9.3284 11.9216 10 12.75 10C13.5784 10 14.25 9.3284 14.25 8.5C14.25 7.6716 13.5784 7 12.75 7C11.9216 7 11.25 7.6716 11.25 8.5ZM5.25 15.5C5.25 16.3284 5.9216 17 6.75 17C7.5784 17 8.25 16.3284 8.25 15.5C8.25 14.6716 7.5784 14 6.75 14C5.9216 14 5.25 14.6716 5.25 15.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7569,8 +7578,8 @@ export function TagHorizontalEndPercent(props: IconProps) {
 export function TagHorizontalEnd(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L14.8284 4L22 12L14.8284 20L2 20L2 4Z" />
-      <Path d="M13.5 12C13.5 12.8284 14.1716 13.5 15 13.5C15.8284 13.5 16.5 12.8284 16.5 12C16.5 11.1716 15.8284 10.5 15 10.5C14.1716 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 4L14.8284 4L22 12L14.8284 20L2 20L2 4Z" />
+      <SvgPath d="M13.5 12C13.5 12.8284 14.1716 13.5 15 13.5C15.8284 13.5 16.5 12.8284 16.5 12C16.5 11.1716 15.8284 10.5 15 10.5C14.1716 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7578,8 +7587,8 @@ export function TagHorizontalEnd(props: IconProps) {
 export function TagHorizontalStartPercent(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 4L9.1716 4L2 12L9.1716 20L22 20L22 4ZM10.9571 15.2929L17.5429 8.7071" />
-      <Path d="M12.75 8.5C12.75 9.3284 12.0784 10 11.25 10C10.4216 10 9.75 9.3284 9.75 8.5C9.75 7.6716 10.4216 7 11.25 7C12.0784 7 12.75 7.6716 12.75 8.5ZM18.75 15.5C18.75 16.3284 18.0784 17 17.25 17C16.4216 17 15.75 16.3284 15.75 15.5C15.75 14.6716 16.4216 14 17.25 14C18.0784 14 18.75 14.6716 18.75 15.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 4L9.1716 4L2 12L9.1716 20L22 20L22 4ZM10.9571 15.2929L17.5429 8.7071" />
+      <SvgPath d="M12.75 8.5C12.75 9.3284 12.0784 10 11.25 10C10.4216 10 9.75 9.3284 9.75 8.5C9.75 7.6716 10.4216 7 11.25 7C12.0784 7 12.75 7.6716 12.75 8.5ZM18.75 15.5C18.75 16.3284 18.0784 17 17.25 17C16.4216 17 15.75 16.3284 15.75 15.5C15.75 14.6716 16.4216 14 17.25 14C18.0784 14 18.75 14.6716 18.75 15.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7587,8 +7596,8 @@ export function TagHorizontalStartPercent(props: IconProps) {
 export function TagHorizontalStart(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 4L9.1716 4L2 12L9.1716 20L22 20L22 4Z" />
-      <Path d="M10.5 12C10.5 12.8284 9.8284 13.5 9 13.5C8.1716 13.5 7.5 12.8284 7.5 12C7.5 11.1716 8.1716 10.5 9 10.5C9.8284 10.5 10.5 11.1716 10.5 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M22 4L9.1716 4L2 12L9.1716 20L22 20L22 4Z" />
+      <SvgPath d="M10.5 12C10.5 12.8284 9.8284 13.5 9 13.5C8.1716 13.5 7.5 12.8284 7.5 12C7.5 11.1716 8.1716 10.5 9 10.5C9.8284 10.5 10.5 11.1716 10.5 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7596,8 +7605,8 @@ export function TagHorizontalStart(props: IconProps) {
 export function Tag(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 2L12 2L22 12.8284L12.8284 22L2 12L2 2Z" />
-      <Path d="M9.5 8C9.5 8.8284 8.8284 9.5 8 9.5C7.1716 9.5 6.5 8.8284 6.5 8C6.5 7.1716 7.1716 6.5 8 6.5C8.8284 6.5 9.5 7.1716 9.5 8Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 2L12 2L22 12.8284L12.8284 22L2 12L2 2Z" />
+      <SvgPath d="M9.5 8C9.5 8.8284 8.8284 9.5 8 9.5C7.1716 9.5 6.5 8.8284 6.5 8C6.5 7.1716 7.1716 6.5 8 6.5C8.8284 6.5 9.5 7.1716 9.5 8Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7605,7 +7614,7 @@ export function Tag(props: IconProps) {
 export function Tape(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 8C2 4.6863 6.4772 2 12 2C17.5228 2 22 4.6863 22 8C22 11.3137 17.5228 14 12 14C6.4772 14 2 11.3137 2 8ZM7 8C7 6.8954 9.2386 6 12 6C14.7614 6 17 6.8954 17 8C17 9.1046 14.7614 10 12 10C9.2386 10 7 9.1046 7 8ZM2 8L2 16C2 19.3137 6.4772 22 12 22C17.5228 22 22 19.3137 22 16L22 8M17 13.1962L16 14.5295L17 15.8628L18 17.1962L17 18.5295L16 19.8628L17 21.1962" fill="none" />
+      <SvgPath d="M2 8C2 4.6863 6.4772 2 12 2C17.5228 2 22 4.6863 22 8C22 11.3137 17.5228 14 12 14C6.4772 14 2 11.3137 2 8ZM7 8C7 6.8954 9.2386 6 12 6C14.7614 6 17 6.8954 17 8C17 9.1046 14.7614 10 12 10C9.2386 10 7 9.1046 7 8ZM2 8L2 16C2 19.3137 6.4772 22 12 22C17.5228 22 22 19.3137 22 16L22 8M17 13.1962L16 14.5295L17 15.8628L18 17.1962L17 18.5295L16 19.8628L17 21.1962" fill="none" />
     </Icon>
   )
 }
@@ -7613,8 +7622,8 @@ export function Tape(props: IconProps) {
 export function TemperatureEmpty(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6Z" fill="none" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6Z" fill="none" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7622,8 +7631,8 @@ export function TemperatureEmpty(props: IconProps) {
 export function TemperatureFull(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 6L12 5" fill="none" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 6L12 5" fill="none" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7631,8 +7640,8 @@ export function TemperatureFull(props: IconProps) {
 export function TemperatureHalf(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 9L12 8" fill="none" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 9L12 8" fill="none" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7640,8 +7649,8 @@ export function TemperatureHalf(props: IconProps) {
 export function TemperatureHigh(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 6C4 3.7909 5.7909 2 8 2C10.2091 2 12 3.7909 12 6L12 11.5279C13.2726 12.6661 14 14.2926 14 16C14 19.3137 11.3137 22 8 22C4.6863 22 2 19.3137 2 16C2 14.2926 2.7274 12.6661 4 11.5279L4 6ZM8 16L8 7.5L8 6.5M22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3431 17.3431 2 19 2C20.6569 2 22 3.3431 22 5Z" fill="none" />
-      <Path d="M9.5 16C9.5 16.8284 8.8284 17.5 8 17.5C7.1716 17.5 6.5 16.8284 6.5 16C6.5 15.1716 7.1716 14.5 8 14.5C8.8284 14.5 9.5 15.1716 9.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4 6C4 3.7909 5.7909 2 8 2C10.2091 2 12 3.7909 12 6L12 11.5279C13.2726 12.6661 14 14.2926 14 16C14 19.3137 11.3137 22 8 22C4.6863 22 2 19.3137 2 16C2 14.2926 2.7274 12.6661 4 11.5279L4 6ZM8 16L8 7.5L8 6.5M22 5C22 6.6569 20.6569 8 19 8C17.3431 8 16 6.6569 16 5C16 3.3431 17.3431 2 19 2C20.6569 2 22 3.3431 22 5Z" fill="none" />
+      <SvgPath d="M9.5 16C9.5 16.8284 8.8284 17.5 8 17.5C7.1716 17.5 6.5 16.8284 6.5 16C6.5 15.1716 7.1716 14.5 8 14.5C8.8284 14.5 9.5 15.1716 9.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7649,8 +7658,8 @@ export function TemperatureHigh(props: IconProps) {
 export function TemperatureQuarter(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 11L12 10" fill="none" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8 6C8 3.7909 9.7909 2 12 2C14.2091 2 16 3.7909 16 6L16 11.5279C17.2726 12.6661 18 14.2926 18 16C18 19.3137 15.3137 22 12 22C8.6863 22 6 19.3137 6 16C6 14.2926 6.7274 12.6661 8 11.5279L8 6ZM12 16L12 11L12 10" fill="none" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7658,7 +7667,7 @@ export function TemperatureQuarter(props: IconProps) {
 export function TerminalAsterisk(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 19L12 19M8 4.5L8 15.5M3.6 13.3L12.4 6.7M3.6 6.7L12.4 13.3" />
+      <SvgPath d="M21 19L12 19M8 4.5L8 15.5M3.6 13.3L12.4 6.7M3.6 6.7L12.4 13.3" />
     </Icon>
   )
 }
@@ -7666,7 +7675,7 @@ export function TerminalAsterisk(props: IconProps) {
 export function TerminalCursor(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M21 18.9999L12 18.9999M15 4.6997L11.1917 16.2002L8.5317 10.5103L3.9995 8.208L15 4.6997Z" />
+      <SvgPath d="M21 18.9999L12 18.9999M15 4.6997L11.1917 16.2002L8.5317 10.5103L3.9995 8.208L15 4.6997Z" />
     </Icon>
   )
 }
@@ -7674,7 +7683,7 @@ export function TerminalCursor(props: IconProps) {
 export function Terminal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3.7191 4.7593L11.0001 11L3.6508 17.2993M21 19L12 19" />
+      <SvgPath d="M3.7191 4.7593L11.0001 11L3.6508 17.2993M21 19L12 19" />
     </Icon>
   )
 }
@@ -7682,7 +7691,7 @@ export function Terminal(props: IconProps) {
 export function TestTubeDiagonal(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.1339 2.5456L19.162 5.8195L9.514 20.6369C8.9604 21.4872 8.0146 22 7 22C5.3431 22 4 20.6569 4 19C4 18.4188 4.1688 17.8501 4.486 17.3631L14.1339 2.5456ZM13.0471 1.838L20.4544 6.661M7.3268 13L14.4866 13" fill="none" />
+      <SvgPath d="M14.1339 2.5456L19.162 5.8195L9.514 20.6369C8.9604 21.4872 8.0146 22 7 22C5.3431 22 4 20.6569 4 19C4 18.4188 4.1688 17.8501 4.486 17.3631L14.1339 2.5456ZM13.0471 1.838L20.4544 6.661M7.3268 13L14.4866 13" fill="none" />
     </Icon>
   )
 }
@@ -7690,7 +7699,7 @@ export function TestTubeDiagonal(props: IconProps) {
 export function TestTube(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 2L15 2L15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19L9 2ZM7 2L17 2M9 14L15 14" fill="none" />
+      <SvgPath d="M9 2L15 2L15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19L9 2ZM7 2L17 2M9 14L15 14" fill="none" />
     </Icon>
   )
 }
@@ -7698,7 +7707,7 @@ export function TestTube(props: IconProps) {
 export function TestTubes(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M3 2L9 2L9 19C9 20.6569 7.6569 22 6 22C4.3431 22 3 20.6569 3 19L3 2ZM1 2L11 2M3 13L9 13M15 2L21 2L21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19L15 2ZM13 2L23 2M15 16L21 16" fill="none" />
+      <SvgPath d="M3 2L9 2L9 19C9 20.6569 7.6569 22 6 22C4.3431 22 3 20.6569 3 19L3 2ZM1 2L11 2M3 13L9 13M15 2L21 2L21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19L15 2ZM13 2L23 2M15 16L21 16" fill="none" />
     </Icon>
   )
 }
@@ -7706,7 +7715,7 @@ export function TestTubes(props: IconProps) {
 export function TextQuote(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 5L17 5M3 11L3 20M6 12L22 12M6 19L22 19" fill="none" />
+      <SvgPath d="M2 5L17 5M3 11L3 20M6 12L22 12M6 19L22 19" fill="none" />
     </Icon>
   )
 }
@@ -7714,8 +7723,8 @@ export function TextQuote(props: IconProps) {
 export function ThermometerSnowflake(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.5 5C14.5 3.3431 15.8431 2 17.5 2C19.1569 2 20.5 3.3431 20.5 5L20.5 14.1459C21.4545 14.9996 22 16.2195 22 17.5C22 19.9853 19.9853 22 17.5 22C15.0147 22 13 19.9853 13 17.5C13 16.2195 13.5455 14.9996 14.5 14.1459L14.5 5ZM10.0696 10.2545L9.7809 10.7545L6.4148 16.5848M7.2605 19.7408L7.0619 18.9996L6.4148 16.5848L4 17.2319L3.2588 17.4305M11.5 12L10.5 12L3.7678 12M1.7071 14.0607L2 13.7678L3.7678 12L2 10.2322L1.7071 9.9393M10.0696 13.7455L9.7809 13.2455L6.4148 7.4152M3.2588 6.5695L4 6.7681L6.4148 7.4152L7.0619 5.0004L7.2605 4.2592" fill="none" />
-      <Path d="M19 17.5C19 18.3284 18.3284 19 17.5 19C16.6716 19 16 18.3284 16 17.5C16 16.6716 16.6716 16 17.5 16C18.3284 16 19 16.6716 19 17.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M14.5 5C14.5 3.3431 15.8431 2 17.5 2C19.1569 2 20.5 3.3431 20.5 5L20.5 14.1459C21.4545 14.9996 22 16.2195 22 17.5C22 19.9853 19.9853 22 17.5 22C15.0147 22 13 19.9853 13 17.5C13 16.2195 13.5455 14.9996 14.5 14.1459L14.5 5ZM10.0696 10.2545L9.7809 10.7545L6.4148 16.5848M7.2605 19.7408L7.0619 18.9996L6.4148 16.5848L4 17.2319L3.2588 17.4305M11.5 12L10.5 12L3.7678 12M1.7071 14.0607L2 13.7678L3.7678 12L2 10.2322L1.7071 9.9393M10.0696 13.7455L9.7809 13.2455L6.4148 7.4152M3.2588 6.5695L4 6.7681L6.4148 7.4152L7.0619 5.0004L7.2605 4.2592" fill="none" />
+      <SvgPath d="M19 17.5C19 18.3284 18.3284 19 17.5 19C16.6716 19 16 18.3284 16 17.5C16 16.6716 16.6716 16 17.5 16C18.3284 16 19 16.6716 19 17.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7723,8 +7732,8 @@ export function ThermometerSnowflake(props: IconProps) {
 export function ThermometerSun(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14.5 5C14.5 3.3431 15.8431 2 17.5 2C19.1569 2 20.5 3.3431 20.5 5L20.5 14.1459C21.4545 14.9996 22 16.2195 22 17.5C22 19.9853 19.9853 22 17.5 22C15.0147 22 13 19.9853 13 17.5C13 16.2195 13.5455 14.9996 14.5 14.1459L14.5 5ZM11.1286 12.4121L10.2144 12.4908C10.1431 12.4969 10.0716 12.5 10 12.5C8.6193 12.5 7.5 11.3807 7.5 10C7.5 8.6193 8.6193 7.5 10 7.5C10.1679 7.5 10.3355 7.5169 10.5 7.5505L11.3 7.7138M5.6967 14.3033L5.4038 14.5962L4.3431 15.6569L4.0503 15.9497M4.5 10L3.5 10L2 10L1 10M5.6967 5.6967L5.4038 5.4038L4.3431 4.3431L4.0503 4.0503M10 4.5L10 3.5L10 2L10 1" fill="none" />
-      <Path d="M19 17.5C19 18.3284 18.3284 19 17.5 19C16.6716 19 16 18.3284 16 17.5C16 16.6716 16.6716 16 17.5 16C18.3284 16 19 16.6716 19 17.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M14.5 5C14.5 3.3431 15.8431 2 17.5 2C19.1569 2 20.5 3.3431 20.5 5L20.5 14.1459C21.4545 14.9996 22 16.2195 22 17.5C22 19.9853 19.9853 22 17.5 22C15.0147 22 13 19.9853 13 17.5C13 16.2195 13.5455 14.9996 14.5 14.1459L14.5 5ZM11.1286 12.4121L10.2144 12.4908C10.1431 12.4969 10.0716 12.5 10 12.5C8.6193 12.5 7.5 11.3807 7.5 10C7.5 8.6193 8.6193 7.5 10 7.5C10.1679 7.5 10.3355 7.5169 10.5 7.5505L11.3 7.7138M5.6967 14.3033L5.4038 14.5962L4.3431 15.6569L4.0503 15.9497M4.5 10L3.5 10L2 10L1 10M5.6967 5.6967L5.4038 5.4038L4.3431 4.3431L4.0503 4.0503M10 4.5L10 3.5L10 2L10 1" fill="none" />
+      <SvgPath d="M19 17.5C19 18.3284 18.3284 19 17.5 19C16.6716 19 16 18.3284 16 17.5C16 16.6716 16.6716 16 17.5 16C18.3284 16 19 16.6716 19 17.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7732,7 +7741,7 @@ export function ThermometerSun(props: IconProps) {
 export function Thermometer(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.8787 2.8787C17.4413 2.3161 18.2044 2 19 2C20.6569 2 22 3.3431 22 5C22 5.7956 21.6839 6.5587 21.1213 7.1213L9.7781 18.4645C9.2155 19.0271 8.4525 19.3432 7.6568 19.3432C6 19.3432 4.6568 18 4.6568 16.3432C4.6568 15.5475 4.9729 14.7845 5.5355 14.2219L16.8787 2.8787ZM5.5355 18.4645L2 22L1.7071 22.2929M16.1716 3.5858L17.5858 5L17.8787 5.2929M13.3431 6.4142L14.7574 7.8284L15.0503 8.1213M10.5147 9.2426L11.9289 10.6569L12.2218 10.9497" fill="none" />
+      <SvgPath d="M16.8787 2.8787C17.4413 2.3161 18.2044 2 19 2C20.6569 2 22 3.3431 22 5C22 5.7956 21.6839 6.5587 21.1213 7.1213L9.7781 18.4645C9.2155 19.0271 8.4525 19.3432 7.6568 19.3432C6 19.3432 4.6568 18 4.6568 16.3432C4.6568 15.5475 4.9729 14.7845 5.5355 14.2219L16.8787 2.8787ZM5.5355 18.4645L2 22L1.7071 22.2929M16.1716 3.5858L17.5858 5L17.8787 5.2929M13.3431 6.4142L14.7574 7.8284L15.0503 8.1213M10.5147 9.2426L11.9289 10.6569L12.2218 10.9497" fill="none" />
     </Icon>
   )
 }
@@ -7740,7 +7749,7 @@ export function Thermometer(props: IconProps) {
 export function ThumbsDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M22 14L16 14L14 22L9 22L8 14L2 14L6.5 2L22 2ZM16 14L16 2" fill="none" />
+      <SvgPath d="M22 14L16 14L14 22L9 22L8 14L2 14L6.5 2L22 2ZM16 14L16 2" fill="none" />
     </Icon>
   )
 }
@@ -7748,7 +7757,7 @@ export function ThumbsDown(props: IconProps) {
 export function ThumbsUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 10L8 10L10 2L15 2L16 10L22 10L17.5 22L2 22ZM8 10L8 22" fill="none" />
+      <SvgPath d="M2 10L8 10L10 2L15 2L16 10L22 10L17.5 22L2 22ZM8 10L8 22" fill="none" />
     </Icon>
   )
 }
@@ -7756,7 +7765,7 @@ export function ThumbsUp(props: IconProps) {
 export function TimerReset(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9.2985 21.5962L10.2749 21.8118C10.8414 21.9369 11.4199 22 12 22C16.4183 22 20 18.4183 20 14C20 9.5817 16.4183 6 12 6C7.5817 6 4 9.5817 4 14C4 16.2072 4.9119 18.3163 6.5199 19.8283L7.0054 20.2848M3.1415 21.0634L7.2849 20.4716L6.6931 16.3281M8 2L16 2M12 2L12 6M12 15L12 9M17.6569 8.3431L19.2929 6.7071" />
+      <SvgPath d="M9.2985 21.5962L10.2749 21.8118C10.8414 21.9369 11.4199 22 12 22C16.4183 22 20 18.4183 20 14C20 9.5817 16.4183 6 12 6C7.5817 6 4 9.5817 4 14C4 16.2072 4.9119 18.3163 6.5199 19.8283L7.0054 20.2848M3.1415 21.0634L7.2849 20.4716L6.6931 16.3281M8 2L16 2M12 2L12 6M12 15L12 9M17.6569 8.3431L19.2929 6.7071" />
     </Icon>
   )
 }
@@ -7764,7 +7773,7 @@ export function TimerReset(props: IconProps) {
 export function Timer(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 6C16.4183 6 20 9.5817 20 14C20 18.4183 16.4183 22 12 22C7.5817 22 4 18.4183 4 14C4 9.5817 7.5817 6 12 6ZM8 2L16 2M12 2L12 6M12 15L12 9M17.6569 8.3431L19.2929 6.7071" />
+      <SvgPath d="M12 6C16.4183 6 20 9.5817 20 14C20 18.4183 16.4183 22 12 22C7.5817 22 4 18.4183 4 14C4 9.5817 7.5817 6 12 6ZM8 2L16 2M12 2L12 6M12 15L12 9M17.6569 8.3431L19.2929 6.7071" />
     </Icon>
   )
 }
@@ -7772,8 +7781,8 @@ export function Timer(props: IconProps) {
 export function ToggleOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.5 6L21.5 6C21.7761 6 22 6.2239 22 6.5L22 17.5C22 17.7761 21.7761 18 21.5 18L2.5 18C2.2239 18 2 17.7761 2 17.5L2 6.5C2 6.2239 2.2239 6 2.5 6Z" />
-      <Path d="M6.5 10L9.5 10C9.7761 10 10 10.2239 10 10.5L10 13.5C10 13.7761 9.7761 14 9.5 14L6.5 14C6.2239 14 6 13.7761 6 13.5L6 10.5C6 10.2239 6.2239 10 6.5 10Z" />
+      <SvgPath d="M2.5 6L21.5 6C21.7761 6 22 6.2239 22 6.5L22 17.5C22 17.7761 21.7761 18 21.5 18L2.5 18C2.2239 18 2 17.7761 2 17.5L2 6.5C2 6.2239 2.2239 6 2.5 6Z" />
+      <SvgPath d="M6.5 10L9.5 10C9.7761 10 10 10.2239 10 10.5L10 13.5C10 13.7761 9.7761 14 9.5 14L6.5 14C6.2239 14 6 13.7761 6 13.5L6 10.5C6 10.2239 6.2239 10 6.5 10Z" />
     </Icon>
   )
 }
@@ -7781,8 +7790,8 @@ export function ToggleOff(props: IconProps) {
 export function ToggleOn(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2.5 6L21.5 6C21.7761 6 22 6.2239 22 6.5L22 17.5C22 17.7761 21.7761 18 21.5 18L2.5 18C2.2239 18 2 17.7761 2 17.5L2 6.5C2 6.2239 2.2239 6 2.5 6Z" />
-      <Path d="M14.5 10L17.5 10C17.7761 10 18 10.2239 18 10.5L18 13.5C18 13.7761 17.7761 14 17.5 14L14.5 14C14.2239 14 14 13.7761 14 13.5L14 10.5C14 10.2239 14.2239 10 14.5 10Z" />
+      <SvgPath d="M2.5 6L21.5 6C21.7761 6 22 6.2239 22 6.5L22 17.5C22 17.7761 21.7761 18 21.5 18L2.5 18C2.2239 18 2 17.7761 2 17.5L2 6.5C2 6.2239 2.2239 6 2.5 6Z" />
+      <SvgPath d="M14.5 10L17.5 10C17.7761 10 18 10.2239 18 10.5L18 13.5C18 13.7761 17.7761 14 17.5 14L14.5 14C14.2239 14 14 13.7761 14 13.5L14 10.5C14 10.2239 14.2239 10 14.5 10Z" />
     </Icon>
   )
 }
@@ -7790,7 +7799,7 @@ export function ToggleOn(props: IconProps) {
 export function Toggles(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.5 2L19.5 2C19.7761 2 20 2.2239 20 2.5L20 9.5C20 9.7761 19.7761 10 19.5 10L4.5 10C4.2239 10 4 9.7761 4 9.5L4 2.5C4 2.2239 4.2239 2 4.5 2ZM4.5 14L19.5 14C19.7761 14 20 14.2239 20 14.5L20 21.5C20 21.7761 19.7761 22 19.5 22L4.5 22C4.2239 22 4 21.7761 4 21.5L4 14.5C4 14.2239 4.2239 14 4.5 14ZM12 2L12 10M12 14L12 22" />
+      <SvgPath d="M4.5 2L19.5 2C19.7761 2 20 2.2239 20 2.5L20 9.5C20 9.7761 19.7761 10 19.5 10L4.5 10C4.2239 10 4 9.7761 4 9.5L4 2.5C4 2.2239 4.2239 2 4.5 2ZM4.5 14L19.5 14C19.7761 14 20 14.2239 20 14.5L20 21.5C20 21.7761 19.7761 22 19.5 22L4.5 22C4.2239 22 4 21.7761 4 21.5L4 14.5C4 14.2239 4.2239 14 4.5 14ZM12 2L12 10M12 14L12 22" />
     </Icon>
   )
 }
@@ -7798,7 +7807,7 @@ export function Toggles(props: IconProps) {
 export function Toolbox(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 8L19 8L22 11L22 21L2 21L2 11L5 8ZM2 14L22 14M8 11L8 17M16 11L16 17M8 8L8 3L16 3L16 8" />
+      <SvgPath d="M5 8L19 8L22 11L22 21L2 21L2 11L5 8ZM2 14L22 14M8 11L8 17M16 11L16 17M8 8L8 3L16 3L16 8" />
     </Icon>
   )
 }
@@ -7806,8 +7815,8 @@ export function Toolbox(props: IconProps) {
 export function TrafficLight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 2L17 2L17 17L7 17L7 2ZM8 5L4 5M16 5L20 5M8 10L4 10M16 10L20 10M12 16L12 23" />
-      <Path d="M13.5 7C13.5 7.8284 12.8284 8.5 12 8.5C11.1716 8.5 10.5 7.8284 10.5 7C10.5 6.1716 11.1716 5.5 12 5.5C12.8284 5.5 13.5 6.1716 13.5 7ZM13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M7 2L17 2L17 17L7 17L7 2ZM8 5L4 5M16 5L20 5M8 10L4 10M16 10L20 10M12 16L12 23" />
+      <SvgPath d="M13.5 7C13.5 7.8284 12.8284 8.5 12 8.5C11.1716 8.5 10.5 7.8284 10.5 7C10.5 6.1716 11.1716 5.5 12 5.5C12.8284 5.5 13.5 6.1716 13.5 7ZM13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7815,8 +7824,8 @@ export function TrafficLight(props: IconProps) {
 export function Train(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4 2L20 2L20 18L4 18L4 2ZM4 9L20 9M4 5L1 5M20 5L23 5M7 18L4.7236 22.5528M17 18L19.2764 22.5528" fill="none" />
-      <Path d="M10 13.5C10 14.3284 9.3284 15 8.5 15C7.6716 15 7 14.3284 7 13.5C7 12.6716 7.6716 12 8.5 12C9.3284 12 10 12.6716 10 13.5ZM17 13.5C17 14.3284 16.3284 15 15.5 15C14.6716 15 14 14.3284 14 13.5C14 12.6716 14.6716 12 15.5 12C16.3284 12 17 12.6716 17 13.5Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M4 2L20 2L20 18L4 18L4 2ZM4 9L20 9M4 5L1 5M20 5L23 5M7 18L4.7236 22.5528M17 18L19.2764 22.5528" fill="none" />
+      <SvgPath d="M10 13.5C10 14.3284 9.3284 15 8.5 15C7.6716 15 7 14.3284 7 13.5C7 12.6716 7.6716 12 8.5 12C9.3284 12 10 12.6716 10 13.5ZM17 13.5C17 14.3284 16.3284 15 15.5 15C14.6716 15 14 14.3284 14 13.5C14 12.6716 14.6716 12 15.5 12C16.3284 12 17 12.6716 17 13.5Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7824,7 +7833,7 @@ export function Train(props: IconProps) {
 export function TreePalm(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11.8 8C11.8552 5.2229 14.1223 3.0004 16.9 3.0004C19.6777 3.0004 21.9448 5.2229 22 8L19.7 8L18.7 7L17.7 8L12 8L11 8M10.6 8C10.5449 5.6647 8.6359 3.8003 6.3 3.8003C3.9641 3.8003 2.0551 5.6647 2 8L4 8L5 7L6 8L10.2 8L11.2 8M11.2 8C13.6354 11.0148 14.9639 14.7734 14.9639 18.649C14.9639 19.4355 14.9091 20.2211 14.8 21C14 21 11.9 21 10.6 21C11.2 19.5 11.2 18 11 16.5L10.8843 15.6322M11 9.0998C8.95 7.9799 6.3809 8.7009 5.213 10.7239C4.045 12.7468 4.7051 15.3323 6.7 16.5476L7.7 14.8156L7.334 13.4496L8.7 13.0835L10.8 9.4462L11.0887 8.9462" fill="none" />
+      <SvgPath d="M11.8 8C11.8552 5.2229 14.1223 3.0004 16.9 3.0004C19.6777 3.0004 21.9448 5.2229 22 8L19.7 8L18.7 7L17.7 8L12 8L11 8M10.6 8C10.5449 5.6647 8.6359 3.8003 6.3 3.8003C3.9641 3.8003 2.0551 5.6647 2 8L4 8L5 7L6 8L10.2 8L11.2 8M11.2 8C13.6354 11.0148 14.9639 14.7734 14.9639 18.649C14.9639 19.4355 14.9091 20.2211 14.8 21C14 21 11.9 21 10.6 21C11.2 19.5 11.2 18 11 16.5L10.8843 15.6322M11 9.0998C8.95 7.9799 6.3809 8.7009 5.213 10.7239C4.045 12.7468 4.7051 15.3323 6.7 16.5476L7.7 14.8156L7.334 13.4496L8.7 13.0835L10.8 9.4462L11.0887 8.9462" fill="none" />
     </Icon>
   )
 }
@@ -7832,7 +7841,7 @@ export function TreePalm(props: IconProps) {
 export function TrendingDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.7071 6.7071L8.5 13.5L13.5 8.5L21.8243 16.8243M15 17L22 17L22 10" />
+      <SvgPath d="M1.7071 6.7071L8.5 13.5L13.5 8.5L21.8243 16.8243M15 17L22 17L22 10" />
     </Icon>
   )
 }
@@ -7840,7 +7849,7 @@ export function TrendingDown(props: IconProps) {
 export function TrendingUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1.7071 17.2929L8.5 10.5L13.5 15.5L21.8243 7.1757M15 7L22 7L22 14" />
+      <SvgPath d="M1.7071 17.2929L8.5 10.5L13.5 15.5L21.8243 7.1757M15 7L22 7L22 14" />
     </Icon>
   )
 }
@@ -7848,9 +7857,9 @@ export function TrendingUp(props: IconProps) {
 export function TriangleAlert(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 3L2 21L22 21L12 3Z" />
-      <Path d="M12 10L12 14" />
-      <Path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M12 3L2 21L22 21L12 3Z" />
+      <SvgPath d="M12 10L12 14" />
+      <SvgPath d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7858,7 +7867,7 @@ export function TriangleAlert(props: IconProps) {
 export function Trophy(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 2L18 2L18 9C18 12.3137 15.3137 15 12 15C8.6863 15 6 12.3137 6 9L6 2ZM6 5L2 5L2 11L6.3249 11M18 5L22 5L22 11L17.6751 11M12 15L12 19M6 19L18 19L18 22L6 22L6 19Z" />
+      <SvgPath d="M6 2L18 2L18 9C18 12.3137 15.3137 15 12 15C8.6863 15 6 12.3137 6 9L6 2ZM6 5L2 5L2 11L6.3249 11M18 5L22 5L22 11L17.6751 11M12 15L12 19M6 19L18 19L18 22L6 22L6 19Z" />
     </Icon>
   )
 }
@@ -7866,7 +7875,7 @@ export function Trophy(props: IconProps) {
 export function TruckArrowDown(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 3L4.5 9M1.7071 6.2071L4.5 9L7.2929 6.2071" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 3L4.5 9M1.7071 6.2071L4.5 9L7.2929 6.2071" fill="none" />
     </Icon>
   )
 }
@@ -7874,7 +7883,7 @@ export function TruckArrowDown(props: IconProps) {
 export function TruckArrowLeft(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM8 6.5L2 6.5M4.7929 3.7071L2 6.5L4.7929 9.2929" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM8 6.5L2 6.5M4.7929 3.7071L2 6.5L4.7929 9.2929" fill="none" />
     </Icon>
   )
 }
@@ -7882,7 +7891,7 @@ export function TruckArrowLeft(props: IconProps) {
 export function TruckArrowRight(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1 6.5L7 6.5M4.2071 3.7071L7 6.5L4.2071 9.2929" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1 6.5L7 6.5M4.2071 3.7071L7 6.5L4.2071 9.2929" fill="none" />
     </Icon>
   )
 }
@@ -7890,7 +7899,7 @@ export function TruckArrowRight(props: IconProps) {
 export function TruckArrowUp(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 10L4.5 4M1.7071 6.7929L4.5 4L7.2929 6.7929" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 10L4.5 4M1.7071 6.7929L4.5 4L7.2929 6.7929" fill="none" />
     </Icon>
   )
 }
@@ -7898,7 +7907,7 @@ export function TruckArrowUp(props: IconProps) {
 export function TruckCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1.7071 6.2071L3.6667 8.1667L7.2929 4.5404" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1.7071 6.2071L3.6667 8.1667L7.2929 4.5404" fill="none" />
     </Icon>
   )
 }
@@ -7906,7 +7915,7 @@ export function TruckCheck(props: IconProps) {
 export function TruckElectric(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM5.6262 3.7071L2.8333 6.5L6.1667 6.5L3.3738 9.2929" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM5.6262 3.7071L2.8333 6.5L6.1667 6.5L3.3738 9.2929" fill="none" />
     </Icon>
   )
 }
@@ -7914,7 +7923,7 @@ export function TruckElectric(props: IconProps) {
 export function TruckMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1 6.5L8 6.5" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1 6.5L8 6.5" fill="none" />
     </Icon>
   )
 }
@@ -7922,7 +7931,7 @@ export function TruckMinus(props: IconProps) {
 export function TruckPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 3L4.5 10M1 6.5L8 6.5" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM4.5 3L4.5 10M1 6.5L8 6.5" fill="none" />
     </Icon>
   )
 }
@@ -7930,7 +7939,7 @@ export function TruckPlus(props: IconProps) {
 export function TruckX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1.7071 3.7071L7.2929 9.2929M7.2929 3.7071L1.7071 9.2929" fill="none" />
+      <SvgPath d="M14 18L14 4L10 4M2 12L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18ZM1.7071 3.7071L7.2929 9.2929M7.2929 3.7071L1.7071 9.2929" fill="none" />
     </Icon>
   )
 }
@@ -7938,7 +7947,7 @@ export function TruckX(props: IconProps) {
 export function Truck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 18L14 4L2 4L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18Z" />
+      <SvgPath d="M14 18L14 4L2 4L2 18L5 18M9 18L14 18M19 18L22 18L22 12.1716L17.8284 8L14 8M9 18C9 19.1046 8.1046 20 7 20C5.8954 20 5 19.1046 5 18C5 16.8954 5.8954 16 7 16C8.1046 16 9 16.8954 9 18ZM19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18Z" />
     </Icon>
   )
 }
@@ -7946,7 +7955,7 @@ export function Truck(props: IconProps) {
 export function TypeOutline(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 3L22 3L22 11L18 11L18 7L14 7L14 17L18 17L18 21L6 21L6 17L10 17L10 7L6 7L6 11L2 11L2 3Z" />
+      <SvgPath d="M2 3L22 3L22 11L18 11L18 7L14 7L14 17L18 17L18 21L6 21L6 17L10 17L10 7L6 7L6 11L2 11L2 3Z" />
     </Icon>
   )
 }
@@ -7954,7 +7963,7 @@ export function TypeOutline(props: IconProps) {
 export function UmbrellaOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M4.929 4.929C3.1193 6.7386 2 9.2386 2 12C3.25 10 5.75 10 7 12C8.25 10 10.75 10 12 12M12 12L12 19C12 20.6569 13.3431 22 15 22C16.6569 22 18 20.6569 18 19L18 18M7.1691 3.2422C8.6011 2.4506 10.248 2 12 2C17.5228 2 22 6.4772 22 12C20.75 10 18.25 10 17 12C16.6205 11.3927 16.1257 10.9699 15.5857 10.7314M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M4.929 4.929C3.1193 6.7386 2 9.2386 2 12C3.25 10 5.75 10 7 12C8.25 10 10.75 10 12 12M12 12L12 19C12 20.6569 13.3431 22 15 22C16.6569 22 18 20.6569 18 19L18 18M7.1691 3.2422C8.6011 2.4506 10.248 2 12 2C17.5228 2 22 6.4772 22 12C20.75 10 18.25 10 17 12C16.6205 11.3927 16.1257 10.9699 15.5857 10.7314M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -7962,7 +7971,7 @@ export function UmbrellaOff(props: IconProps) {
 export function Umbrella(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12C20.75 10 18.25 10 17 12C15.75 10 13.25 10 12 12C10.75 10 8.25 10 7 12C5.75 10 3.25 10 2 12ZM12 12L12 19C12 20.6569 13.3431 22 15 22C16.6569 22 18 20.6569 18 19L18 18" />
+      <SvgPath d="M2 12C2 6.4772 6.4772 2 12 2C17.5228 2 22 6.4772 22 12C20.75 10 18.25 10 17 12C15.75 10 13.25 10 12 12C10.75 10 8.25 10 7 12C5.75 10 3.25 10 2 12ZM12 12L12 19C12 20.6569 13.3431 22 15 22C16.6569 22 18 20.6569 18 19L18 18" />
     </Icon>
   )
 }
@@ -7970,7 +7979,7 @@ export function Umbrella(props: IconProps) {
 export function Underline(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 2L6 11C6 14.3137 8.6863 17 12 17C15.3137 17 18 14.3137 18 11L18 2M2 21L22 21" fill="none" />
+      <SvgPath d="M6 2L6 11C6 14.3137 8.6863 17 12 17C15.3137 17 18 14.3137 18 11L18 2M2 21L22 21" fill="none" />
     </Icon>
   )
 }
@@ -7978,7 +7987,7 @@ export function Underline(props: IconProps) {
 export function Unlink(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.3282 11.7071L6.0353 12C5.2444 12.791 4.8 13.8637 4.8 14.9823C4.8 16.1009 5.2444 17.1737 6.0353 17.9647C6.8263 18.7556 7.8991 19.2 9.0177 19.2C10.1363 19.2 11.209 18.7556 12 17.9647L12.2929 17.6718M17.6718 12.2929L17.9647 12C18.7556 11.209 19.2 10.1363 19.2 9.0177C19.2 7.8991 18.7556 6.8263 17.9647 6.0353C17.1737 5.2444 16.1009 4.8 14.9823 4.8C13.8637 4.8 12.791 5.2444 12 6.0353L11.7071 6.3282M8.8 7.4L8.8 3M7.4 8.8L3 8.8M15.2 16.6L15.2 21M16.6 15.2L21 15.2" fill="none" />
+      <SvgPath d="M6.3282 11.7071L6.0353 12C5.2444 12.791 4.8 13.8637 4.8 14.9823C4.8 16.1009 5.2444 17.1737 6.0353 17.9647C6.8263 18.7556 7.8991 19.2 9.0177 19.2C10.1363 19.2 11.209 18.7556 12 17.9647L12.2929 17.6718M17.6718 12.2929L17.9647 12C18.7556 11.209 19.2 10.1363 19.2 9.0177C19.2 7.8991 18.7556 6.8263 17.9647 6.0353C17.1737 5.2444 16.1009 4.8 14.9823 4.8C13.8637 4.8 12.791 5.2444 12 6.0353L11.7071 6.3282M8.8 7.4L8.8 3M7.4 8.8L3 8.8M15.2 16.6L15.2 21M16.6 15.2L21 15.2" fill="none" />
     </Icon>
   )
 }
@@ -7986,8 +7995,8 @@ export function Unlink(props: IconProps) {
 export function Unlock(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M16.5 10L16.5 6.5C16.5 4.0147 14.4853 2 12 2C9.5147 2 7.5 4.0147 7.5 6.5L7.5 7.5M4 10L4 22L20 22L20 10L4 10Z" />
-      <Path d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M16.5 10L16.5 6.5C16.5 4.0147 14.4853 2 12 2C9.5147 2 7.5 4.0147 7.5 6.5L7.5 7.5M4 10L4 22L20 22L20 10L4 10Z" />
+      <SvgPath d="M13.5 16C13.5 16.8284 12.8284 17.5 12 17.5C11.1716 17.5 10.5 16.8284 10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -7995,7 +8004,7 @@ export function Unlock(props: IconProps) {
 export function Upload(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 15L12 3M7.7071 7.2929L12 3L16.2929 7.2929M4 17L4 21L20 21L20 17" />
+      <SvgPath d="M12 15L12 3M7.7071 7.2929L12 3L16.2929 7.2929M4 17L4 21L20 21L20 17" />
     </Icon>
   )
 }
@@ -8003,8 +8012,8 @@ export function Upload(props: IconProps) {
 export function UsbDrive(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L14 4L14 20L2 20L2 4ZM14 6L22 6L22 18L14 18" fill="none" />
-      <Path d="M19 10C19 10.5523 18.5523 11 18 11C17.4477 11 17 10.5523 17 10C17 9.4477 17.4477 9 18 9C18.5523 9 19 9.4477 19 10ZM19 14C19 14.5523 18.5523 15 18 15C17.4477 15 17 14.5523 17 14C17 13.4477 17.4477 13 18 13C18.5523 13 19 13.4477 19 14Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M2 4L14 4L14 20L2 20L2 4ZM14 6L22 6L22 18L14 18" fill="none" />
+      <SvgPath d="M19 10C19 10.5523 18.5523 11 18 11C17.4477 11 17 10.5523 17 10C17 9.4477 17.4477 9 18 9C18.5523 9 19 9.4477 19 10ZM19 14C19 14.5523 18.5523 15 18 15C17.4477 15 17 14.5523 17 14C17 13.4477 17.4477 13 18 13C18.5523 13 19 13.4477 19 14Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8012,7 +8021,7 @@ export function UsbDrive(props: IconProps) {
 export function Usb(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 12C6 13.1046 5.1046 14 4 14C2.8954 14 2 13.1046 2 12C2 10.8954 2.8954 10 4 10C5.1046 10 6 10.8954 6 12ZM16.5 6C16.5 7.1046 15.6046 8 14.5 8C13.3954 8 12.5 7.1046 12.5 6C12.5 4.8954 13.3954 4 14.5 4C15.6046 4 16.5 4.8954 16.5 6ZM11 16L15 16L15 20L11 20L11 16ZM6 12L22 12M10 12L13.3 7.6M10 12L13 16M19.7071 9.7071L22 12L19.7071 14.2929" fill="none" />
+      <SvgPath d="M6 12C6 13.1046 5.1046 14 4 14C2.8954 14 2 13.1046 2 12C2 10.8954 2.8954 10 4 10C5.1046 10 6 10.8954 6 12ZM16.5 6C16.5 7.1046 15.6046 8 14.5 8C13.3954 8 12.5 7.1046 12.5 6C12.5 4.8954 13.3954 4 14.5 4C15.6046 4 16.5 4.8954 16.5 6ZM11 16L15 16L15 20L11 20L11 16ZM6 12L22 12M10 12L13.3 7.6M10 12L13 16M19.7071 9.7071L22 12L19.7071 14.2929" fill="none" />
     </Icon>
   )
 }
@@ -8020,7 +8029,7 @@ export function Usb(props: IconProps) {
 export function UserCheck(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.7016 6.6644L18 9.25L22.2526 4.4659M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
+      <SvgPath d="M15.7016 6.6644L18 9.25L22.2526 4.4659M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
     </Icon>
   )
 }
@@ -8028,7 +8037,7 @@ export function UserCheck(props: IconProps) {
 export function UserMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15 7L23 7M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
+      <SvgPath d="M15 7L23 7M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
     </Icon>
   )
 }
@@ -8036,7 +8045,7 @@ export function UserMinus(props: IconProps) {
 export function UserPlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M19 3L19 11M15 7L23 7M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
+      <SvgPath d="M19 3L19 11M15 7L23 7M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
     </Icon>
   )
 }
@@ -8044,7 +8053,7 @@ export function UserPlus(props: IconProps) {
 export function UserVoice(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 14L11 14C14.3137 14 17 16.6863 17 20L17 21L3 21L3 20C3 16.6863 5.6863 14 9 14ZM10 4C11.6569 4 13 5.3431 13 7C13 8.6569 11.6569 10 10 10C8.3431 10 7 8.6569 7 7C7 5.3431 8.3431 4 10 4ZM15.5622 2.634L16.0622 3.5C16.6766 4.5641 17 5.7712 17 7C17 8.2288 16.6766 9.4359 16.0622 10.5L15.5622 11.366M19.9985 2.3636L20.247 3C20.7446 4.2749 21 5.6314 21 7C21 8.9309 20.4917 10.8278 19.5263 12.5L19.0263 13.366" />
+      <SvgPath d="M9 14L11 14C14.3137 14 17 16.6863 17 20L17 21L3 21L3 20C3 16.6863 5.6863 14 9 14ZM10 4C11.6569 4 13 5.3431 13 7C13 8.6569 11.6569 10 10 10C8.3431 10 7 8.6569 7 7C7 5.3431 8.3431 4 10 4ZM15.5622 2.634L16.0622 3.5C16.6766 4.5641 17 5.7712 17 7C17 8.2288 16.6766 9.4359 16.0622 10.5L15.5622 11.366M19.9985 2.3636L20.247 3C20.7446 4.2749 21 5.6314 21 7C21 8.9309 20.4917 10.8278 19.5263 12.5L19.0263 13.366" />
     </Icon>
   )
 }
@@ -8052,7 +8061,7 @@ export function UserVoice(props: IconProps) {
 export function UserX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M15.7071 3.7071L22.2929 10.2929M22.2929 3.7071L15.7071 10.2929M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
+      <SvgPath d="M15.7071 3.7071L22.2929 10.2929M22.2929 3.7071L15.7071 10.2929M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4Z" />
     </Icon>
   )
 }
@@ -8060,7 +8069,7 @@ export function UserX(props: IconProps) {
 export function User(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 14L13 14C16.3137 14 19 16.6863 19 20L19 21L5 21L5 20C5 16.6863 7.6863 14 11 14ZM12 4C13.6569 4 15 5.3431 15 7C15 8.6569 13.6569 10 12 10C10.3431 10 9 8.6569 9 7C9 5.3431 10.3431 4 12 4Z" />
+      <SvgPath d="M11 14L13 14C16.3137 14 19 16.6863 19 20L19 21L5 21L5 20C5 16.6863 7.6863 14 11 14ZM12 4C13.6569 4 15 5.3431 15 7C15 8.6569 13.6569 10 12 10C10.3431 10 9 8.6569 9 7C9 5.3431 10.3431 4 12 4Z" />
     </Icon>
   )
 }
@@ -8068,7 +8077,7 @@ export function User(props: IconProps) {
 export function Users(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4ZM15 4L16 4C17.6569 4 19 5.3431 19 7C19 8.6569 17.6569 10 16 10L15 10M17.4121 14.0823L18.3333 14.4713C20.554 15.409 22 17.589 22 20C22 20.5523 21.5523 21 21 21L20 21" />
+      <SvgPath d="M8 14L10 14C13.3137 14 16 16.6863 16 20L16 21L2 21L2 20C2 16.6863 4.6863 14 8 14ZM9 4C10.6569 4 12 5.3431 12 7C12 8.6569 10.6569 10 9 10C7.3431 10 6 8.6569 6 7C6 5.3431 7.3431 4 9 4ZM15 4L16 4C17.6569 4 19 5.3431 19 7C19 8.6569 17.6569 10 16 10L15 10M17.4121 14.0823L18.3333 14.4713C20.554 15.409 22 17.589 22 20C22 20.5523 21.5523 21 21 21L20 21" />
     </Icon>
   )
 }
@@ -8076,7 +8085,7 @@ export function Users(props: IconProps) {
 export function Venus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18 8C18 11.3137 15.3137 14 12 14C8.6863 14 6 11.3137 6 8C6 4.6863 8.6863 2 12 2C15.3137 2 18 4.6863 18 8ZM12 14L12 23M7.5 19L16.5 19" fill="none" />
+      <SvgPath d="M18 8C18 11.3137 15.3137 14 12 14C8.6863 14 6 11.3137 6 8C6 4.6863 8.6863 2 12 2C15.3137 2 18 4.6863 18 8ZM12 14L12 23M7.5 19L16.5 19" fill="none" />
     </Icon>
   )
 }
@@ -8084,7 +8093,7 @@ export function Venus(props: IconProps) {
 export function Video(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 12L16 12L16 21L2 21L2 12ZM16 15L22 12L22 21L16 18M8 5.5C8 6.8807 6.8807 8 5.5 8C4.1193 8 3 6.8807 3 5.5C3 4.1193 4.1193 3 5.5 3C6.8807 3 8 4.1193 8 5.5ZM17 5.5C17 6.8807 15.8807 8 14.5 8C13.1193 8 12 6.8807 12 5.5C12 4.1193 13.1193 3 14.5 3C15.8807 3 17 4.1193 17 5.5Z" />
+      <SvgPath d="M2 12L16 12L16 21L2 21L2 12ZM16 15L22 12L22 21L16 18M8 5.5C8 6.8807 6.8807 8 5.5 8C4.1193 8 3 6.8807 3 5.5C3 4.1193 4.1193 3 5.5 3C6.8807 3 8 4.1193 8 5.5ZM17 5.5C17 6.8807 15.8807 8 14.5 8C13.1193 8 12 6.8807 12 5.5C12 4.1193 13.1193 3 14.5 3C15.8807 3 17 4.1193 17 5.5Z" />
     </Icon>
   )
 }
@@ -8092,7 +8101,7 @@ export function Video(props: IconProps) {
 export function VisionPro(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M7 7L17 7C19.7614 7 22 9.2386 22 12C22 14.7614 19.7614 17 17 17L15.39 17L13.61 14.3166L10.39 14.3166L8.61 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7Z" />
+      <SvgPath d="M7 7L17 7C19.7614 7 22 9.2386 22 12C22 14.7614 19.7614 17 17 17L15.39 17L13.61 14.3166L10.39 14.3166L8.61 17L7 17C4.2386 17 2 14.7614 2 12C2 9.2386 4.2386 7 7 7Z" />
     </Icon>
   )
 }
@@ -8100,7 +8109,7 @@ export function VisionPro(props: IconProps) {
 export function VolumeLow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15.0772 6.2227L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909L15.0772 17.7773" />
+      <SvgPath d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15.0772 6.2227L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909L15.0772 17.7773" />
     </Icon>
   )
 }
@@ -8108,7 +8117,7 @@ export function VolumeLow(props: IconProps) {
 export function VolumeMinus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15 12L23 12" />
+      <SvgPath d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15 12L23 12" />
     </Icon>
   )
 }
@@ -8116,7 +8125,7 @@ export function VolumeMinus(props: IconProps) {
 export function VolumeOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M11 11L11 22L6.0001 15L2 15L2 9L6.0001 9L7.2312 7.2312M15.4907 6.6131L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 12.112 17.9973 12.2238 17.992 12.3351L17.9444 13.334M18.2362 3.704L18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 13.2746 21.7788 14.5254 21.3585 15.7016L21.022 16.6433M1.7071 1.7071L22.2929 22.2929" />
+      <SvgPath d="M11 11L11 22L6.0001 15L2 15L2 9L6.0001 9L7.2312 7.2312M15.4907 6.6131L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 12.112 17.9973 12.2238 17.992 12.3351L17.9444 13.334M18.2362 3.704L18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 13.2746 21.7788 14.5254 21.3585 15.7016L21.022 16.6433M1.7071 1.7071L22.2929 22.2929" />
     </Icon>
   )
 }
@@ -8124,7 +8133,7 @@ export function VolumeOff(props: IconProps) {
 export function VolumePlus(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM19 8L19 16M15 12L23 12" />
+      <SvgPath d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM19 8L19 16M15 12L23 12" />
     </Icon>
   )
 }
@@ -8132,7 +8141,7 @@ export function VolumePlus(props: IconProps) {
 export function VolumeX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15.7071 8.7071L22.2929 15.2929M22.2929 8.7071L15.7071 15.2929" />
+      <SvgPath d="M2 9L6 9L11 4.0019L11 19.9981L6 15L2 15L2 9ZM15.7071 8.7071L22.2929 15.2929M22.2929 8.7071L15.7071 15.2929" />
     </Icon>
   )
 }
@@ -8140,7 +8149,7 @@ export function VolumeX(props: IconProps) {
 export function Volume(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 9L6 9L11 4L11 20L6 15L2 15L2 9ZM15.0772 6.2227L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909L15.0772 17.7773M18.2608 3.7273L18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 15.0279 20.7519 17.9218 18.5498 20L18.2608 20.2727" />
+      <SvgPath d="M2 9L6 9L11 4L11 20L6 15L2 15L2 9ZM15.0772 6.2227L15.8044 6.9091C17.2058 8.2316 18 10.0732 18 12C18 13.9268 17.2058 15.7684 15.8044 17.0909L15.0772 17.7773M18.2608 3.7273L18.5498 4C20.7519 6.0782 22 8.9721 22 12C22 15.0279 20.7519 17.9218 18.5498 20L18.2608 20.2727" />
     </Icon>
   )
 }
@@ -8148,7 +8157,7 @@ export function Volume(props: IconProps) {
 export function WalletCards(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M2 4L22 4L22 20L2 20L2 4ZM2 8L22 8M2 12L6 12L6 13C6 14.1046 6.8954 15 8 15C9.1046 15 10 14.1046 10 13L10 12L22 12" />
+      <SvgPath d="M2 4L22 4L22 20L2 20L2 4ZM2 8L22 8M2 12L6 12L6 13C6 14.1046 6.8954 15 8 15C9.1046 15 10 14.1046 10 13L10 12L22 12" />
     </Icon>
   )
 }
@@ -8156,7 +8165,7 @@ export function WalletCards(props: IconProps) {
 export function Wallet(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M5 3L18 3L18 7L21 7L21 21L3 21L3 5C3 3.8954 3.8954 3 5 3ZM3 5C3 6.1046 3.8954 7 5 7L18 7M21 12L16 12L16 16L21 16" fill="none" />
+      <SvgPath d="M5 3L18 3L18 7L21 7L21 21L3 21L3 5C3 3.8954 3.8954 3 5 3ZM3 5C3 6.1046 3.8954 7 5 7L18 7M21 12L16 12L16 16L21 16" fill="none" />
     </Icon>
   )
 }
@@ -8164,7 +8173,7 @@ export function Wallet(props: IconProps) {
 export function Watch(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6 6L18 6L18 18L6 18L6 6ZM8 6L8.5 2L15.5 2L16 6M8 18L8.5 22L15.5 22L16 18" />
+      <SvgPath d="M6 6L18 6L18 18L6 18L6 6ZM8 6L8.5 2L15.5 2L16 6M8 18L8.5 22L15.5 22L16 18" />
     </Icon>
   )
 }
@@ -8172,7 +8181,7 @@ export function Watch(props: IconProps) {
 export function WholeWord(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M10 11C10 12.6569 8.6569 14 7 14C5.3431 14 4 12.6569 4 11C4 9.3431 5.3431 8 7 8C8.6569 8 10 9.3431 10 11ZM10 7L10 15M14 3L14 15M20 11C20 12.6569 18.6569 14 17 14C15.3431 14 14 12.6569 14 11C14 9.3431 15.3431 8 17 8C18.6569 8 20 9.3431 20 11ZM2 16L2 20L22 20L22 16" />
+      <SvgPath d="M10 11C10 12.6569 8.6569 14 7 14C5.3431 14 4 12.6569 4 11C4 9.3431 5.3431 8 7 8C8.6569 8 10 9.3431 10 11ZM10 7L10 15M14 3L14 15M20 11C20 12.6569 18.6569 14 17 14C15.3431 14 14 12.6569 14 11C14 9.3431 15.3431 8 17 8C18.6569 8 20 9.3431 20 11ZM2 16L2 20L22 20L22 16" />
     </Icon>
   )
 }
@@ -8180,8 +8189,8 @@ export function WholeWord(props: IconProps) {
 export function WifiExclamation(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.2451 14 12.4898 14.0225 12.7308 14.0673L13.714 14.2501M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C12.4903 10 12.9795 10.0451 13.4616 10.1346L14.4448 10.3171M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538M17 11L17 15" />
-      <Path d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM18 18C18 18.5523 17.5523 19 17 19C16.4477 19 16 18.5523 16 18C16 17.4477 16.4477 17 17 17C17.5523 17 18 17.4477 18 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.2451 14 12.4898 14.0225 12.7308 14.0673L13.714 14.2501M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C12.4903 10 12.9795 10.0451 13.4616 10.1346L14.4448 10.3171M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538M17 11L17 15" />
+      <SvgPath d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM18 18C18 18.5523 17.5523 19 17 19C16.4477 19 16 18.5523 16 18C16 17.4477 16.4477 17 17 17C17.5523 17 18 17.4477 18 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8189,8 +8198,8 @@ export function WifiExclamation(props: IconProps) {
 export function WifiInfo(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.2451 14 12.4898 14.0225 12.7308 14.0673L13.714 14.2501M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C12.4903 10 12.9795 10.0451 13.4616 10.1346L14.4448 10.3171M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538M17 15L17 19" />
-      <Path d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM18 12C18 12.5523 17.5523 13 17 13C16.4477 13 16 12.5523 16 12C16 11.4477 16.4477 11 17 11C17.5523 11 18 11.4477 18 12Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.2451 14 12.4898 14.0225 12.7308 14.0673L13.714 14.2501M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C12.4903 10 12.9795 10.0451 13.4616 10.1346L14.4448 10.3171M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538M17 15L17 19" />
+      <SvgPath d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18ZM18 12C18 12.5523 17.5523 13 17 13C16.4477 13 16 12.5523 16 12C16 11.4477 16.4477 11 17 11C17.5523 11 18 11.4477 18 12Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8198,8 +8207,8 @@ export function WifiInfo(props: IconProps) {
 export function WifiLow(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M9 15.3167L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15 15.3167" />
-      <Path d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M9 15.3167L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15 15.3167" />
+      <SvgPath d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8207,8 +8216,8 @@ export function WifiLow(props: IconProps) {
 export function WifiMedium(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15.412 15.6853M6.3334 12.3353L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C13.9678 10 15.8666 10.7253 17.3333 12.0372L17.6666 12.3353" />
-      <Path d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15.412 15.6853M6.3334 12.3353L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C13.9678 10 15.8666 10.7253 17.3333 12.0372L17.6666 12.3353" />
+      <SvgPath d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8216,8 +8225,8 @@ export function WifiMedium(props: IconProps) {
 export function WifiX(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.588 15.6853L7.3333 15.0186C8.0667 14.3626 9.0161 14 10 14C10.399 14 10.7958 14.0597 11.1771 14.1771L12.1328 14.4714M3.9214 12.7039L4.6667 12.0372C6.1334 10.7253 8.0322 10 10 10C10.798 10 11.5916 10.1194 12.3542 10.3542L13.3099 10.6485M1.6667 9.3538L2 9.0557C4.2001 7.0879 7.0483 6 10 6C12.4013 6 14.7473 6.7204 16.7347 8.0681L17.5623 8.6293M15.7071 11.7071L22.2929 18.2929M22.2929 11.7071L15.7071 18.2929" />
-      <Path d="M11 18C11 18.5523 10.5523 19 10 19C9.4477 19 9 18.5523 9 18C9 17.4477 9.4477 17 10 17C10.5523 17 11 17.4477 11 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M6.588 15.6853L7.3333 15.0186C8.0667 14.3626 9.0161 14 10 14C10.399 14 10.7958 14.0597 11.1771 14.1771L12.1328 14.4714M3.9214 12.7039L4.6667 12.0372C6.1334 10.7253 8.0322 10 10 10C10.798 10 11.5916 10.1194 12.3542 10.3542L13.3099 10.6485M1.6667 9.3538L2 9.0557C4.2001 7.0879 7.0483 6 10 6C12.4013 6 14.7473 6.7204 16.7347 8.0681L17.5623 8.6293M15.7071 11.7071L22.2929 18.2929M22.2929 11.7071L15.7071 18.2929" />
+      <SvgPath d="M11 18C11 18.5523 10.5523 19 10 19C9.4477 19 9 18.5523 9 18C9 17.4477 9.4477 17 10 17C10.5523 17 11 17.4477 11 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8225,8 +8234,8 @@ export function WifiX(props: IconProps) {
 export function Wifi(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15.412 15.6853M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C13.9678 10 15.8666 10.7253 17.3333 12.0372L18.0786 12.7039M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538" />
-      <Path d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
+      <SvgPath d="M8.588 15.6853L9.3333 15.0186C10.0667 14.3626 11.0161 14 12 14C12.9839 14 13.9333 14.3626 14.6667 15.0186L15.412 15.6853M5.9214 12.7039L6.6667 12.0372C8.1334 10.7253 10.0322 10 12 10C13.9678 10 15.8666 10.7253 17.3333 12.0372L18.0786 12.7039M3.6667 9.3538L4 9.0557C6.2001 7.0879 9.0483 6 12 6C14.9517 6 17.7999 7.0879 20 9.0557L20.3333 9.3538" />
+      <SvgPath d="M13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18Z" fill="currentColor" stroke="none" />
     </Icon>
   )
 }
@@ -8234,7 +8243,7 @@ export function Wifi(props: IconProps) {
 export function WindTurbine(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M12 7L12 1M14.1651 10.75L18.9952 13.5387M9.8349 10.75L5.0048 13.5387M12 12L12 22M4 22L20 22M15.5005 2.283L16 2.5718C18.4752 4.0009 20 6.6419 20 9.5C20 9.5146 20 9.5292 19.9999 9.5438L19.9931 10.537M4.0069 10.537L4.0001 9.5438C4 9.5292 4 9.5146 4 9.5C4 6.6419 5.5248 4.0009 8 2.5718L8.4995 2.283M14.5 9.5C14.5 10.8807 13.3807 12 12 12C10.6193 12 9.5 10.8807 9.5 9.5C9.5 8.1193 10.6193 7 12 7C13.3807 7 14.5 8.1193 14.5 9.5Z" fill="none" />
+      <SvgPath d="M12 7L12 1M14.1651 10.75L18.9952 13.5387M9.8349 10.75L5.0048 13.5387M12 12L12 22M4 22L20 22M15.5005 2.283L16 2.5718C18.4752 4.0009 20 6.6419 20 9.5C20 9.5146 20 9.5292 19.9999 9.5438L19.9931 10.537M4.0069 10.537L4.0001 9.5438C4 9.5292 4 9.5146 4 9.5C4 6.6419 5.5248 4.0009 8 2.5718L8.4995 2.283M14.5 9.5C14.5 10.8807 13.3807 12 12 12C10.6193 12 9.5 10.8807 9.5 9.5C9.5 8.1193 10.6193 7 12 7C13.3807 7 14.5 8.1193 14.5 9.5Z" fill="none" />
     </Icon>
   )
 }
@@ -8242,7 +8251,7 @@ export function WindTurbine(props: IconProps) {
 export function Wind(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M1 6L12 6C13.1046 6 14 5.1046 14 4C14 2.8954 13.1046 2 12 2C11.4696 2 10.9609 2.2107 10.5858 2.5858L9.8787 3.2929M5 12L20 12C21.1046 12 22 11.1046 22 10C22 8.8954 21.1046 8 20 8C19.4696 8 18.9609 8.2107 18.5858 8.5858L17.8787 9.2929M1 18L15 18C16.1046 18 17 18.8954 17 20C17 21.1046 16.1046 22 15 22C14.4696 22 13.9609 21.7893 13.5858 21.4142L12.8787 20.7071" />
+      <SvgPath d="M1 6L12 6C13.1046 6 14 5.1046 14 4C14 2.8954 13.1046 2 12 2C11.4696 2 10.9609 2.2107 10.5858 2.5858L9.8787 3.2929M5 12L20 12C21.1046 12 22 11.1046 22 10C22 8.8954 21.1046 8 20 8C19.4696 8 18.9609 8.2107 18.5858 8.5858L17.8787 9.2929M1 18L15 18C16.1046 18 17 18.8954 17 20C17 21.1046 16.1046 22 15 22C14.4696 22 13.9609 21.7893 13.5858 21.4142L12.8787 20.7071" />
     </Icon>
   )
 }
@@ -8250,7 +8259,7 @@ export function Wind(props: IconProps) {
 export function Wrench(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M18.682 8.8536L21.5105 6.0251C22.6901 8.8902 21.6836 12.1896 19.1055 13.9083C16.5275 15.627 13.0947 15.2871 10.9038 13.0962C8.7129 10.9053 8.373 7.4725 10.0917 4.8945C11.8104 2.3164 15.1098 1.3099 17.9749 2.4896L13.3786 7.0858L16.9142 10.6214ZM15.3955 14.9992C15.3688 14.9987 15.342 14.9985 15.3152 14.9985C13.9891 14.9985 12.7173 15.5253 11.7797 16.463L7.1213 21.1213C6.5587 21.6839 5.7956 22 5 22C3.3431 22 2 20.6569 2 19C2 18.2044 2.3161 17.4413 2.8787 16.8787L7.537 12.2203C8.4747 11.2827 9.0015 10.0109 9.0015 8.6848C9.0015 8.658 9.0013 8.6312 9.0008 8.6045" />
+      <SvgPath d="M18.682 8.8536L21.5105 6.0251C22.6901 8.8902 21.6836 12.1896 19.1055 13.9083C16.5275 15.627 13.0947 15.2871 10.9038 13.0962C8.7129 10.9053 8.373 7.4725 10.0917 4.8945C11.8104 2.3164 15.1098 1.3099 17.9749 2.4896L13.3786 7.0858L16.9142 10.6214ZM15.3955 14.9992C15.3688 14.9987 15.342 14.9985 15.3152 14.9985C13.9891 14.9985 12.7173 15.5253 11.7797 16.463L7.1213 21.1213C6.5587 21.6839 5.7956 22 5 22C3.3431 22 2 20.6569 2 19C2 18.2044 2.3161 17.4413 2.8787 16.8787L7.537 12.2203C8.4747 11.2827 9.0015 10.0109 9.0015 8.6848C9.0015 8.658 9.0013 8.6312 9.0008 8.6045" />
     </Icon>
   )
 }
@@ -8258,7 +8267,7 @@ export function Wrench(props: IconProps) {
 export function X(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M6.7071 6.7071L17.2929 17.2929M17.2929 6.7071L6.7071 17.2929" />
+      <SvgPath d="M6.7071 6.7071L17.2929 17.2929M17.2929 6.7071L6.7071 17.2929" />
     </Icon>
   )
 }
@@ -8266,7 +8275,7 @@ export function X(props: IconProps) {
 export function ZapOff(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M17.6213 13.3786L20.9999 10L14.2426 10M13.1553 8.9127L14 3.0001L10.6214 6.3787M8.5 8.5L3.0001 14L11 14L10 20.9999L15.5 15.5M1.7071 1.7071L22.2929 22.2929" fill="none" />
+      <SvgPath d="M17.6213 13.3786L20.9999 10L14.2426 10M13.1553 8.9127L14 3.0001L10.6214 6.3787M8.5 8.5L3.0001 14L11 14L10 20.9999L15.5 15.5M1.7071 1.7071L22.2929 22.2929" fill="none" />
     </Icon>
   )
 }
@@ -8274,7 +8283,7 @@ export function ZapOff(props: IconProps) {
 export function Zap(props: IconProps) {
   return (
     <Icon fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="butt" strokeLinejoin="round" {...props}>
-      <Path d="M14 3.0001L3.0001 14L11 14L10 20.9999L20.9999 10L13 10L14 3.0001Z" fill="none" />
+      <SvgPath d="M14 3.0001L3.0001 14L11 14L10 20.9999L20.9999 10L13 10L14 3.0001Z" fill="none" />
     </Icon>
   )
 }
