@@ -11,7 +11,12 @@
 npm i @keyline-icons/react-native react-native-svg
 ```
 
-Peer dependencies: `react` >= 18, `react-native` *, `react-native-svg` >= 15.
+Peer dependencies: `react` >= 18, `react-native` >= 0.79, `react-native-svg` >= 15.
+
+React Native 0.79 is the floor because the style entry points (`/fill`,
+`/sharp/duotone` and the rest) resolve through the package `exports` map, which
+Metro reads by default from that release (Metro 0.82). On an older Metro they fail to
+resolve unless you set `resolver.unstable_enablePackageExports = true`.
 
 ```tsx
 import { ArrowUpRight, Check, Menu } from "@keyline-icons/react-native"
@@ -34,7 +39,7 @@ Every named icon takes `react-native-svg`'s `SvgProps` plus `size`:
 | Prop | Default | Notes |
 | --- | --- | --- |
 | `size` | `24` | Sets both `width` and `height`. |
-| `color` | | Applied on the root `Svg`. Path attributes keep `currentColor` where the SVG uses it. |
+| `color` | | Applied on the root `Svg`; every painted stroke and fill in the set is `currentColor`, so this is the icon's colour. Left unset, `react-native-svg` paints it black. |
 | `strokeWidth` | `2` | The set is drawn at 2 on a 24 grid. Fill drawings carry no stroke of their own. |
 | `style` | | React Native layout style on the root `Svg`. |
 
@@ -86,7 +91,7 @@ export function Dynamic({ name }: { name: string }) {
 
 | Prop | Default | Notes |
 | --- | --- | --- |
-| `name` | required | Kebab-case SVG basename (`check`, `arrow-up-right`). |
+| `name` | required | Kebab-case SVG basename (`check`, `arrow-up-right`). Typed as `IconName` for autocomplete, but any string is accepted. |
 | `iconStyle` | `"stroke"` | `'stroke' \| 'two-tone' \| 'duotone' \| 'fill'` |
 | `corners` | `"rounded"` | `'rounded' \| 'sharp'` |
 
@@ -100,10 +105,12 @@ preset. Some drawings are solid by definition, `square-half` and the other
 fraction sectors among them, and forcing a stroke onto those paints an outline
 over every knockout.
 
-**`sideEffects: false` and ESM.** Named imports from a style entry point
-tree-shake in Metro and any modern bundler, so an app importing three icons
-from `@keyline-icons/react-native` ships three. Importing `/icon` does not
-tree-shake: it is the full registry.
+**`sideEffects: false` and ESM.** The flag lets webpack-style bundlers (Expo
+web, `react-native-web`) drop the icons you do not import. Metro does not
+tree-shake by default: importing from `@keyline-icons/react-native` puts every
+component of that style in your bundle, however few you use. They are plain
+functions with no work at import time, so the cost is bundle size, not startup.
+Importing `/icon` loads all eight styles.
 
 **Generated, not written.** The components come from `icons/<style>/*.svg` via
 `pipeline/build-react-native.mjs`. Do not edit `packages/react-native/src/`.
