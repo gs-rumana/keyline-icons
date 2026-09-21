@@ -1,0 +1,84 @@
+{
+  "name": "@keyline-icons/react-native",
+  "version": "1.0.0",
+  "description": "Keyline Icons for React Native — stroke, two-tone, duotone and fill, rounded or sharp, on one 24×24 grid.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Keyline Icons (https://keylineicons.com)",
+  "homepage": "https://keylineicons.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keyline-icons/keyline-icons.git",
+    "directory": "packages/react-native"
+  },
+  "bugs": "https://github.com/keyline-icons/keyline-icons/issues",
+  "keywords": [
+    "icons",
+    "react-native",
+    "react-native-svg",
+    "svg",
+    "icon-set"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./two-tone": {
+      "types": "./dist/two-tone.d.ts",
+      "default": "./dist/two-tone.js"
+    },
+    "./duotone": {
+      "types": "./dist/duotone.d.ts",
+      "default": "./dist/duotone.js"
+    },
+    "./fill": {
+      "types": "./dist/fill.d.ts",
+      "default": "./dist/fill.js"
+    },
+    "./sharp": {
+      "types": "./dist/sharp.d.ts",
+      "default": "./dist/sharp.js"
+    },
+    "./sharp/two-tone": {
+      "types": "./dist/sharp-two-tone.d.ts",
+      "default": "./dist/sharp-two-tone.js"
+    },
+    "./sharp/duotone": {
+      "types": "./dist/sharp-duotone.d.ts",
+      "default": "./dist/sharp-duotone.js"
+    },
+    "./sharp/fill": {
+      "types": "./dist/sharp-fill.d.ts",
+      "default": "./dist/sharp-fill.js"
+    },
+    "./icon": {
+      "types": "./dist/icon.d.ts",
+      "default": "./dist/icon.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.79",
+    "react-native-svg": ">=15"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "tsc -p tsconfig.json",
+    "test": "node --test test/*.mjs"
+  }
+}

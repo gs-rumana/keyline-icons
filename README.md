@@ -198,6 +198,7 @@ pnpm install
 pnpm dev            # the site
 pnpm icons:build    # raw/ -> icons/
 pnpm icons:react    # icons/ -> components/icons/ and packages/react/
+pnpm icons:react-native # icons/ -> packages/react-native/
 pnpm icons:lint     # geometry and coverage rules
 pnpm icons:ci       # everything CI runs
 ```

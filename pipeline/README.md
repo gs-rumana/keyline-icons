@@ -11,7 +11,8 @@ find one.
 ```bash
 pnpm icons:build     # raw/ -> icons/
 pnpm icons:lint      # check icons/
-pnpm icons:react     # icons/stroke/ -> components/icons/index.tsx
+pnpm icons:react     # icons/ -> components/icons/ and packages/react/
+pnpm icons:react-native # icons/ -> packages/react-native/src/
 pnpm icons:demos     # check the demo pages against icons/
 pnpm readmes:check   # check the counts typed into the READMEs against icons/
 pnpm readmes:fix     # rewrite those counts in place
@@ -53,14 +54,17 @@ in its `AFTER`, run it again, and append each run to the same file until no
 diffed, because a part-digest otherwise reports every icon it never reached as
 deleted from Figma, which is the loudest possible way to say "keep pasting".
 
-Both generators take `--check`, which writes nothing and exits non-zero if the
+The generators take `--check`, which writes nothing and exits non-zero if the
 output would differ — `build.mjs --check` for `icons/`, `build-react.mjs --check`
-for `components/icons/index.tsx`. The second matters because a stale generated
-module fails silently: the old component is still exported, so `tsc` happily
-checks the app against a module the set no longer backs.
+for `components/icons/index.tsx` and `packages/react/src/`, and
+`build-react-native.mjs --check` for `packages/react-native/src/`. The React
+checks matter because a stale generated module fails silently: the old
+component is still exported, so `tsc` happily checks the app against a module
+the set no longer backs.
 
 ```bash
 pnpm icons:react:check
+pnpm icons:react-native:check
 ```
 
 ## Layout
@@ -73,7 +77,8 @@ pipeline/
   lib/svg.mjs               SVG reader + normalizer
   build.mjs                 raw/ -> icons/
   lint.mjs                  geometry + coverage rules
-  build-react.mjs           icons/stroke/ -> components/icons/index.tsx
+  build-react.mjs           icons/ -> components/icons/index.tsx and packages/react/src/
+  build-react-native.mjs    icons/ -> packages/react-native/src/
   build-brand.mjs           public/logo/logo.svg -> app/ icons
   build-paper.mjs           icons/ -> previews/paper/ HTML sheets
   check-paper.mjs           check the Paper file against previews/paper/
@@ -90,6 +95,11 @@ component spreads its own root attributes rather than a shared preset, because
 some drawings in `icons/stroke/` carry no stroke of their own — `square-half`
 and the other fraction sectors are solid by definition — and painting one on
 would outline every knockout.
+
+`build-react-native` is the same restatement for `@keyline-icons/react-native`:
+SVG tags become `react-native-svg` primitives (`Path`, `Circle`, …) and a ninth
+module, `icon.tsx`, holds the `KeylineIcon` registry. It never writes the web
+modules, so the two packages cannot drift from each other by sharing a file.
 
 Styles are `stroke`, `duotone`, `fill`. One icon name lives in up to three
 style folders — the folder is the disambiguator, so `square-arrow-down` is one
@@ -609,9 +619,11 @@ kept the old name, taking down `/demo/mobile`.
 
 ## What `check-readmes` checks
 
-Eleven numbers, spread across `README.md` and `packages/react/README.md`: the
-icon count, the three per-style counts, the SVG total and the two container
-counts, plus the four the React package repeats.
+Eleven numbers used to be the whole list; the React Native README now repeats
+the same four style counts plus the set total, spread across `README.md`,
+`packages/react/README.md` and `packages/react-native/README.md`: the
+icon count, the four per-style counts, the SVG total and the two container
+counts, plus the four each package repeats.
 
 They are the only counts in the project that are *prose*. The site calls
 `loadIcons()` per request, the Figma cover and the paper sheets are generated,

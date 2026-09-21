@@ -12,6 +12,7 @@ them.** The source of truth is `raw/`, and everything else is built from it:
 ```
 raw/<name>/*.svg   ->  icons/<style>/<name>.svg   ->  components/icons/index.tsx
                                                   ->  packages/react/src/index.tsx
+                                                  ->  packages/react-native/src/*.tsx
 ```
 
 A hand-edit to a generated file passes review, gets committed, and is silently
@@ -47,9 +48,9 @@ Anything you have already staged is kept.
 pnpm icons:ci
 ```
 
-That is exactly what CI runs: the sync checks for `icons/`, the React modules and
-the Figma cover, then the geometry linter, the demo reference check and
-`tsc --noEmit`. If it passes locally it passes on GitHub.
+That is exactly what CI runs: the sync checks for `icons/`, the React and
+React Native modules and the Figma cover, then the geometry linter, the demo
+reference check and `tsc --noEmit`. If it passes locally it passes on GitHub.
 
 Two checks sit outside it deliberately and are worth running by hand if you have
 touched what they cover:

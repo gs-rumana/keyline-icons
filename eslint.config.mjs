@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated RN components import react-native-svg primitives the Next
+    // eslint config does not resolve, and unused Circle/Rect imports are
+    // intentional so every module shares one header.
+    "packages/react-native/src/**",
   ]),
 ]);
 
