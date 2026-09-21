@@ -9,7 +9,11 @@
     "skipLibCheck": true,
     "declaration": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "react-native-svg": ["./types/react-native-svg.d.ts"]
+    }
   },
   "include": ["src"]
 }
