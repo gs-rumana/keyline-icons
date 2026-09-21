@@ -21,6 +21,8 @@
     "keywords:check": "node pipeline/build-keywords.mjs --check",
     "icons:react": "node pipeline/build-react.mjs",
     "icons:react:check": "node pipeline/build-react.mjs --check",
+    "icons:react-native": "node pipeline/build-react-native.mjs",
+    "icons:react-native:check": "node pipeline/build-react-native.mjs --check",
     "brand:build": "node pipeline/build-brand.mjs",
     "brand:check": "node pipeline/build-brand.mjs --check",
     "cover:build": "node pipeline/build-cover.mjs",
