@@ -231,10 +231,27 @@ export { KeylineIcon }
 `
 }
 
+function buildRegistryJson(built) {
+  const styles = ["stroke", "two-tone", "duotone", "fill"]
+  const cornerKeys = ["rounded", "sharp"]
+  const out = {}
+  for (const style of styles) {
+    out[style] = {}
+    for (const corner of cornerKeys) {
+      const mod = built.find(
+        (m) => m.style === style && apiCorners(m.corners) === corner
+      )
+      out[style][corner] = mod.names
+    }
+  }
+  return `${JSON.stringify(out, null, 2)}\n`
+}
+
 const built = []
 for (const mod of MODULES) built.push({ ...mod, ...(await build(mod.style, mod.corners)) })
 
 const iconText = buildIcon(built)
+const registryText = buildRegistryJson(built)
 const targets = [
   ...built.map((m) => ({
     label: `packages/react-native/src/${m.file}`,
@@ -246,6 +263,12 @@ const targets = [
     label: "packages/react-native/src/icon.tsx",
     path: join(SRC, "icon.tsx"),
     text: iconText,
+    rel: "icons/",
+  },
+  {
+    label: "packages/react-native/src/registry.json",
+    path: join(SRC, "registry.json"),
+    text: registryText,
     rel: "icons/",
   },
 ]
@@ -282,4 +305,5 @@ if (check) {
     console.log(`Wrote ${m.count} components to packages/react-native/src/${m.file}`)
   }
   console.log(`Wrote KeylineIcon registry to packages/react-native/src/icon.tsx`)
+  console.log(`Wrote name registry to packages/react-native/src/registry.json`)
 }
